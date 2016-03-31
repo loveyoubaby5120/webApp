@@ -1,4 +1,4 @@
-var mongoose = require('model');
+var mongoose = require('mongoose');
 require('./model.js');
 
 var Book = mongoose.model('Book');

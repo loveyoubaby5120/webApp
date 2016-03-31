@@ -8,7 +8,7 @@ var  cond_or = {
 		{author:'pankai'},
 		{author:'kai'}
 	]
-};
+};	
 
 var  cond_add = {
 	$add: [
@@ -23,6 +23,6 @@ Book.find(cond_or,function(err,docs){
 		return;
 	}
 
-	console.log('cond: ',cond,'result: ',docs);
+	console.log('cond: ',cond_or,'result: ',docs);
 
 });
