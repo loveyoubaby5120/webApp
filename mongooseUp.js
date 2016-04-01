@@ -8,7 +8,7 @@ var UserSchema = mongoose.Schema({
 });
 
 var BookSchema = new mongoose.Schema({
-title: {
+		title: {
 		type: String,
 		enum: ['pankai','system'],
 		default: 'pankai',
@@ -57,18 +57,18 @@ title: {
 });
 
 
-BookSchema.virtual('userBlog').get(function(){
-	return this.title + ' is blog url ' + this.blog;
-});
+// BookSchema.virtual('titleBlog').get(function(){
+// 	return this.title + ' is blog url ' + this.blog;
+// });
 
-BookSchema.set('toJSON',{getters:true,virtual:true});
+// BookSchema.set('toJSON',{getters:true,virtual:true});
 
 
-BookSchema.statics.findByISBN = function(isbn,cb){
-	this.findOne({isbn:isbn},function(err,doc){
-		cb(err,doc);
-	});
-};
+// BookSchema.statics.findByISBN = function(isbn,cb){
+// 	this.findOne({isbn:isbn},function(err,doc){
+// 		cb(err,doc);
+// 	});
+// };
 
 
 BookSchema.methods.print = function(){
@@ -78,17 +78,17 @@ BookSchema.methods.print = function(){
 }
 
 
-BookSchema.post('save',function(next){
-	console.log('this is BookSchema post save middleware');
-	// next();   ?????????????
-});
+// BookSchema.post('save',function(next){
+// 	console.log('this is BookSchema post save middleware');
+// 	next();   //?????????????
+// });
 
 
-BookSchema.pre('save',true,function(next,done){
-	console.log('this is BookSchema pre save middleware');
-	next();
-	done();
-});
+// BookSchema.pre('save',true,function(next,done){
+// 	console.log('this is BookSchema pre save middleware');
+// 	next();
+// 	done();
+// });
 
 
 var User = mongoose.model('UserSchema',UserSchema);
