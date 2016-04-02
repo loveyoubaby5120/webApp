@@ -1,3 +1,7 @@
+var redis = require('redis');
+
+var client = redis.createClient(6379,'localhost');
+
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/webApp');
