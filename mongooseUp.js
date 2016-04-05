@@ -16,7 +16,7 @@ var BookSchema = new mongoose.Schema({
 		type: String,
 		enum: ['pankai','system'],
 		default: 'pankai',
-		trim: true,
+		trim: true,	
 		get: function(title){
 			if(!title) return title;
 			if(0 !== title.indexOf('pk_') && 0!== title.indexOf('pk_'));
