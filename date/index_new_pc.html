@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/base.css"/>
     <script src="js/jquery.min.js"></script>
     <script src="js/angular.min.js"></script>
+    <script src="js/echarts.js"></script>
 </head>
 <body ng-controller="MyController">
 
@@ -120,10 +121,239 @@
 
             <div class="right">
                 <ul class="option">
-                    <li class="active"><a href="javascript:;">榜单</a></li>
-                    <li><a href="javascript:;">趋势</a></li>
+                    <li class="bd"><a href="javascript:;">榜单</a></li>
+                    <li class="qs active"><a href="javascript:;">趋势</a></li>
                 </ul>
-                <div class='table blur'>
+
+                <div class='qs_more'>
+                    <div class="title">
+                        新闻资讯
+                    </div>
+                    <div class="qs_info">
+                        <ul class="qs_left">
+                            <li class="title bzrc">本周热词</li>
+                            <li class="jtb"></li>
+                            <li class="item top"><a href="javascript:;">题舆论走势</a></li>
+                            <li class="item active"><a href="javascript:;">互联网+</a></li>
+                            <li class="item"><a href="javascript:;">题舆论走势</a></li>
+                            <li class="item"><a href="javascript:;">题舆论走势</a></li>
+                            <li class="title dzbq">定制标签</li>
+                            <li class="jtb"></li>
+                            <li class="item top"><a href="javascript:;">题舆论走势</a></li>
+                            <li class="item"><a href="javascript:;">题舆论走势</a></li>
+                            <li class="item"><a href="javascript:;">题舆论走势</a></li>
+                            <li class="item"><a href="javascript:;">题舆论走势</a></li>
+                        </ul>
+                        <div class="qs_right">
+                            <div class="chart">
+                                <ul>
+                                    <li><a href="javascript:;">话题传播数量趋势</a></li>
+                                    <li class="center active"><a href="javascript:;">题舆论走势</a></li>
+                                    <li><a href="javascript:;">话题脉搏</a></li>
+                                </ul>
+
+                                <div id="main" style="width: 530px;height:400px;"></div>
+                            </div>
+
+                            <div class="step1">
+                                帐户影响力排名
+                            </div>
+                            
+                            <ul class="step1_info">
+                                <li class="item">
+                                    <div class="step1_left">
+                                        <img src="images/hqkj.png" alt=""/>
+                                        <div>
+                                            <p>环球科学ScientificAmerican</p>
+                                            <p>微信号：huanqiukexue</p>
+                                            <p class="btn">
+                                                <span class="btn_left">用户态度</span><span class="btn_right">正面</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="step1_right">
+                                        <ul>
+                                            <li>
+                                                <p>预测粉丝数</p>
+                                                <p>6,666,666</p>
+                                            </li>
+                                            <li class="center">
+                                                <p>相关阅读</p>
+                                                <p>6,666,666</p>
+                                            </li>
+                                            <li>
+                                                <p>相关点赞</p>
+                                                <p>6,666,666</p>
+                                            </li>
+                                        </ul>
+                                        <div>
+                                            <span>话题影响指数</span>
+                                            <i></i><i></i><i></i><i></i><i></i>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="item two">
+                                    <div class="step1_left">
+                                        <img src="images/hqkj.png" alt=""/>
+                                        <div>
+                                            <p>环球科学ScientificAmerican</p>
+                                            <p>微信号：huanqiukexue</p>
+                                            <p class="btn">
+                                                <span class="btn_left">用户态度</span><span class="btn_right">正面</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="step1_right">
+                                        <ul>
+                                            <li>
+                                                <p>预测粉丝数</p>
+                                                <p>6,666,666</p>
+                                            </li>
+                                            <li class="center">
+                                                <p>相关阅读</p>
+                                                <p>6,666,666</p>
+                                            </li>
+                                            <li>
+                                                <p>相关点赞</p>
+                                                <p>6,666,666</p>
+                                            </li>
+                                        </ul>
+                                        <div>
+                                            <span>话题影响指数</span>
+                                            <i></i><i></i><i></i><i></i><i></i>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="item">
+                                    <div class="step1_left">
+                                        <img src="images/hqkj.png" alt=""/>
+                                        <div>
+                                            <p>环球科学ScientificAmerican</p>
+                                            <p>微信号：huanqiukexue</p>
+                                            <p class="btn">
+                                                <span class="btn_left">用户态度</span><span class="btn_right">正面</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="step1_right">
+                                        <ul>
+                                            <li>
+                                                <p>预测粉丝数</p>
+                                                <p>6,666,666</p>
+                                            </li>
+                                            <li class="center">
+                                                <p>相关阅读</p>
+                                                <p>6,666,666</p>
+                                            </li>
+                                            <li>
+                                                <p>相关点赞</p>
+                                                <p>6,666,666</p>
+                                            </li>
+                                        </ul>
+                                        <div>
+                                            <span>话题影响指数</span>
+                                            <i></i><i></i><i></i><i></i><i></i>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="step2">
+                                文章影响力排名
+                            </div>
+
+                            <ul class="step2_info">
+                                <li class="item">
+                                    <div class="topic">
+                                        男女胎儿比例为何不是1：1？
+                                    </div>
+                                    <div class="writer">
+                                        <span>原创</span>
+                                        <span>撰文 凯特·朗</span>
+                                    </div>
+                                    <div class="introduce">
+                                        <p>
+                                            科学家发现，在怀孕的不同阶段，男女胎儿的比例会发生变化。产房里，新生儿是男孩的几率比女孩稍微大一点。在美国，51.3％的活产婴儿是男性，这一比例在过去70年内基本保持不变。专家认为，这种偏向男性的性别比例在受孕时就开始了。
+                                        </p>
+                                    </div>
+                                    <div class="other">
+                                        <div class="other_left">2016-03-23  17:09</div>
+                                        <div class="other_right2">73</div>
+                                        <div class="other_right1">阅读  10357</div>
+                                    </div>
+                                </li>
+
+                                <li class="item">
+                                    <div class="topic">
+                                        男女胎儿比例为何不是1：1？
+                                    </div>
+                                    <div class="writer">
+                                        <span>原创</span>
+                                        <span>撰文 凯特·朗</span>
+                                    </div>
+                                    <div class="introduce">
+                                        <p>
+                                            科学家发现，在怀孕的不同阶段，男女胎儿的比例会发生变化。产房里，新生儿是男孩的几率比女孩稍微大一点。在美国，51.3％的活产婴儿是男性，这一比例在过去70年内基本保持不变。专家认为，这种偏向男性的性别比例在受孕时就开始了。
+                                        </p>
+                                    </div>
+                                    <div class="other">
+                                        <div class="other_left">2016-03-23  17:09</div>
+                                        <div class="other_right2">73</div>
+                                        <div class="other_right1">阅读  10357</div>
+                                    </div>
+                                </li>
+
+                                <li class="item">
+                                    <div class="topic">
+                                        男女胎儿比例为何不是1：1？
+                                    </div>
+                                    <div class="writer">
+                                        <span>原创</span>
+                                        <span>撰文 凯特·朗</span>
+                                    </div>
+                                    <div class="introduce">
+                                        <p>
+                                            科学家发现，在怀孕的不同阶段，男女胎儿的比例会发生变化。产房里，新生儿是男孩的几率比女孩稍微大一点。在美国，51.3％的活产婴儿是男性，这一比例在过去70年内基本保持不变。专家认为，这种偏向男性的性别比例在受孕时就开始了。
+                                        </p>
+                                    </div>
+                                    <div class="other">
+                                        <div class="other_left">2016-03-23  17:09</div>
+                                        <div class="other_right2">73</div>
+                                        <div class="other_right1">阅读  10357</div>
+                                    </div>
+                                </li>
+
+                                <li class="item">
+                                    <div class="topic">
+                                        男女胎儿比例为何不是1：1？
+                                    </div>
+                                    <div class="writer">
+                                        <span>原创</span>
+                                        <span>撰文 凯特·朗</span>
+                                    </div>
+                                    <div class="introduce">
+                                        <p>
+                                            科学家发现，在怀孕的不同阶段，男女胎儿的比例会发生变化。产房里，新生儿是男孩的几率比女孩稍微大一点。在美国，51.3％的活产婴儿是男性，这一比例在过去70年内基本保持不变。专家认为，这种偏向男性的性别比例在受孕时就开始了。
+                                        </p>
+                                    </div>
+                                    <div class="other">
+                                        <div class="other_left">2016-03-23  17:09</div>
+                                        <div class="other_right2">73</div>
+                                        <div class="other_right1">阅读  10357</div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <div class="showMore"><div class="last jtb"></div><span>显示更多信息</span></div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class='table blur' style='display:none;'>
                     <table class="bc">
                         <thead>
                         <tr>
@@ -155,13 +385,12 @@
 
                         </tbody>
                     </table>
-                    <div class="showMore" ng-click="showTable($event,$index);"><div class="last jtb"></div><span>{{MoreTitle}}</span></div>
+                    <div class="showMore" ng-click="showTable($event,0);"><div class="last jtb"></div><span>{{MoreTitle}}</span></div>
                 </div>
             </div>
-
-            
-
         </div>
+
+        <div class="go_top" id="go_top" onclick="myScroll()"></div>
     </div>
 
     <div class="footer">
@@ -169,5 +398,127 @@
         <p>QQ交流群:①3252352345  ②234234234  ③234234234</p>
     </div>
     <script src="js/app_pc.js"></script>
+
+
+    <script>
+
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        var option = {
+            title: {
+                text: ''
+            },
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    boundaryGap : false,
+                    data : ['周一','周二','周三','周四','周五','周六','周日']
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name:'邮件营销',
+                    type:'line',
+                    stack: '总量',
+                    areaStyle: {normal: {}},
+                    data:[120, 132, 101, 134, 90, 230, 210]
+                },
+                {
+                    name:'联盟广告',
+                    type:'line',
+                    stack: '总量',
+                    areaStyle: {normal: {}},
+                    data:[220, 182, 191, 234, 290, 330, 310]
+                },
+                {
+                    name:'视频广告',
+                    type:'line',
+                    stack: '总量',
+                    areaStyle: {normal: {}},
+                    data:[150, 232, 201, 154, 190, 330, 410]
+                },
+                {
+                    name:'直接访问',
+                    type:'line',
+                    stack: '总量',
+                    areaStyle: {normal: {}},
+                    data:[320, 332, 301, 334, 390, 330, 320]
+                },
+                {
+                    name:'搜索引擎',
+                    type:'line',
+                    stack: '总量',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top'
+                        }
+                    },
+                    areaStyle: {normal: {}},
+                    data:[820, 932, 901, 934, 1290, 1330, 1320]
+                }
+            ]
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+
+        function myScroll() 
+        { 
+            //前边是获取chrome等一般浏览器 如果获取不到就是ie了 就用ie的办法获取 
+            var x=document.body.scrollTop||document.documentElement.scrollTop; 
+            var timer=setInterval(function(){ 
+                x=x-200; 
+                if(x<100) 
+                { 
+                    x=0; 
+                    window.scrollTo(x,x); 
+                    clearInterval(timer); 
+                } 
+                window.scrollTo(x,x); 
+            },30); 
+        } 
+
+        
+        setInterval(function(){
+            var x = document.body.scrollTop||document.documentElement.scrollTop; 
+            if(x<=0){
+                var oDiv = document.getElementById('go_top'); 
+                oDiv.style.display = 'none';
+            }
+            else{
+                var oDiv = document.getElementById('go_top'); 
+                oDiv.style.display = 'block';
+            }
+        },30);
+
+
+    </script>
+
 </body>
 </html>
