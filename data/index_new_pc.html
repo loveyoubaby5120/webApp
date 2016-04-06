@@ -81,10 +81,17 @@
     <div class="date">
         <div class="date_info">
             <div class="select_data1">
+
+                <a class='ok' href="javascript:;">最近30天</a><span class='down'>ˇ</span>
+                <ul class="select">
+                    <li class="option">最近30天</li>
+                    <li class="option">最近60天</li>
+                </ul>
+                <!-- 
                 <select>
                     <option>最近30天</option>
                     <option>最近60天</option>
-                </select>
+                </select> -->
             </div>
             <div>
                 <span class="date_num">2</span>
@@ -122,11 +129,11 @@
 
             <div class="right">
                 <ul class="option">
-                    <li class="bd"><a href="javascript:;" onclick="$('.table').show();$('.qs_more').hide();$(this).parent().parent().find('li').removeClass('active');$(this).parent().addClass('active');">榜单</a></li>
-                    <li class="qs active"><a href="javascript:;" onclick="$('.qs_more').show();$('.table').hide();$(this).parent().parent().find('li').removeClass('active');$(this).parent().addClass('active');">趋势</a></li>
+                    <li class="bd active"><a href="javascript:;" onclick="$('.table').show();$('.qs_more').hide();$(this).parent().parent().find('li').removeClass('active');$(this).parent().addClass('active');">榜单</a></li>
+                    <li class="qs"><a href="javascript:;" onclick="$('.qs_more').show();$('.table').hide();$(this).parent().parent().find('li').removeClass('active');$(this).parent().addClass('active');">趋势</a></li>
                 </ul>
 
-                <div class='qs_more' style='display:auto;'>
+                <div class='qs_more' style='display:none;'>
                     <div class="title">
                         新闻资讯
                     </div>
@@ -335,7 +342,8 @@
                 </div>
 
 
-                <div class='table blur' style='display:none;'>
+                <div class='table blur' style='display:auto;'>
+                <div class="bc title"><p class="type ng-binding">排名</p></div>
                     <table class="bc">
                         <thead>
                         <tr>
@@ -355,7 +363,7 @@
                         <tr ng-repeat='nr in item' ng-show="$index < 15 || toggle == true" ng-class="{'even':$index%2 == 0}">
                             <td></td>
                             <td ng-click="show();">
-                                <div class="number ">{{$index+1 | number : 0}}</div>
+                                <div class="number" ng-class="{'number2':$index<3}">{{$index+1 | number : 0}}</div>
                             </td>
                             <td class="text "><div>{{nr.name}}</div></td>
                             <td class="text "><div>{{nr.number}}</div></td>
@@ -363,7 +371,7 @@
                             <td class="text "><div>{{nr.xd}}</div></td>
                             <td class="text "><div>{{nr.zc}}</div></td>
                             <td class="last "><div>{{nr.jd}}</div></td>
-                            <td class="text"><a href="javascript:;" onclick="window.location.href = 'index_new_pc_info.html';">进入</a></td>
+                            <td class="text goto_info"><a href="javascript:;" onclick="window.location.href = 'index_new_pc_info.html';">进入&nbsp;></a></td>
                             <td></td>
                         </tr>
 
@@ -509,6 +517,18 @@
         
 
         scrollFunc();
+
+
+        $('.date .select_data1').mouseover(function(){
+            var _this = $(this);
+            $(this).find('.select').show();
+            $(this).find('.select').on('click','.option',function(){
+                _this.find('.ok').text($(this).text());
+                _this.find('.select').hide();
+            });
+        }).mouseout(function(){
+            $(this).find('.select').hide();
+        });
 
 
     </script>

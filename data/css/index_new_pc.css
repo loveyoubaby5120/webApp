@@ -151,11 +151,12 @@
 
 .table .title{
     position: absolute;
-    top: 5px;
-    left: 8px;
-    color: #ecc200;
-    background-size: cover;
+    top: 15px;
+    left: 19px;
+    color: #fff;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
     line-height: 13px;
     width: 32px;
     height: 42px;
@@ -253,6 +254,17 @@
     color: #585755;
 }
 
+.table tbody tr .text.goto_info{
+    
+}
+
+.table tbody tr .text.goto_info a{
+    color: #000;
+    background: #dce2e2;
+    padding: 3px 15px;
+    border-radius: 15px;
+}
+
 .table tbody tr .last{
     color: #d6a57c;
 }
@@ -260,11 +272,19 @@
 
 .number{
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
+    width: 25px;
+    height: 25px;
+    line-height: 29px;
+    color: #f6501e;
+    background-image: url('../images/wjx2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.number2{
+    background-image: url('../images/wjx.png') !important;
     color: white;
-    background-color:#f6501e;
 }
 
 /*--------------------------------------------------------------------------------------------------------------------*/
