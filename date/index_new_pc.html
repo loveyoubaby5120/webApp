@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
     <meta charset="UTF-8">
-    <title>北京数絮科技</title>
-    <link rel="stylesheet" href="css/index_new_pc.css"/>
+    <title>飞拓无限</title>
     <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/index_new_pc.css"/>
     <script src="js/jquery.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/echarts.js"></script>
@@ -121,11 +122,11 @@
 
             <div class="right">
                 <ul class="option">
-                    <li class="bd"><a href="javascript:;">榜单</a></li>
-                    <li class="qs active"><a href="javascript:;">趋势</a></li>
+                    <li class="bd"><a href="javascript:;" onclick="$('.table').show();$('.qs_more').hide();$(this).parent().parent().find('li').removeClass('active');$(this).parent().addClass('active');">榜单</a></li>
+                    <li class="qs active"><a href="javascript:;" onclick="$('.qs_more').show();$('.table').hide();$(this).parent().parent().find('li').removeClass('active');$(this).parent().addClass('active');">趋势</a></li>
                 </ul>
 
-                <div class='qs_more'>
+                <div class='qs_more' style='display:auto;'>
                     <div class="title">
                         新闻资讯
                     </div>
@@ -147,9 +148,9 @@
                         <div class="qs_right">
                             <div class="chart">
                                 <ul>
-                                    <li><a href="javascript:;">话题传播数量趋势</a></li>
-                                    <li class="center active"><a href="javascript:;">题舆论走势</a></li>
-                                    <li><a href="javascript:;">话题脉搏</a></li>
+                                    <li class="item first"><a href="javascript:;">话题传播数量趋势</a></li>
+                                    <li class="item active"><a href="javascript:;">题舆论走势</a></li>
+                                    <li class="item"><a href="javascript:;">话题脉搏</a></li>
                                 </ul>
 
                                 <div id="main" style="width: 530px;height:400px;"></div>
@@ -160,7 +161,7 @@
                             </div>
                             
                             <ul class="step1_info">
-                                <li class="item">
+                                <li class="item" onclick="window.location.href = 'index_new_pc_info.html';">
                                     <div class="step1_left">
                                         <img src="images/hqkj.png" alt=""/>
                                         <div>
@@ -174,16 +175,16 @@
                                     <div class="step1_right">
                                         <ul>
                                             <li>
-                                                <p>预测粉丝数</p>
-                                                <p>6,666,666</p>
+                                                <p class="step1_title">预测粉丝数</p>
+                                                <p class="num">6,666,666</p>
                                             </li>
                                             <li class="center">
-                                                <p>相关阅读</p>
-                                                <p>6,666,666</p>
+                                                <p class="step1_title">相关阅读</p>
+                                                <p class="num">6,666,666</p>
                                             </li>
                                             <li>
-                                                <p>相关点赞</p>
-                                                <p>6,666,666</p>
+                                                <p class="step1_title">相关点赞</p>
+                                                <p class="num">6,666,666</p>
                                             </li>
                                         </ul>
                                         <div>
@@ -193,7 +194,7 @@
                                     </div>
                                 </li>
 
-                                <li class="item two">
+                                <li class="item" onclick="window.location.href = 'index_new_pc_info.html';">
                                     <div class="step1_left">
                                         <img src="images/hqkj.png" alt=""/>
                                         <div>
@@ -207,16 +208,16 @@
                                     <div class="step1_right">
                                         <ul>
                                             <li>
-                                                <p>预测粉丝数</p>
-                                                <p>6,666,666</p>
+                                                <p class="step1_title">预测粉丝数</p>
+                                                <p class="num">6,666,666</p>
                                             </li>
                                             <li class="center">
-                                                <p>相关阅读</p>
-                                                <p>6,666,666</p>
+                                                <p class="step1_title">相关阅读</p>
+                                                <p class="num">6,666,666</p>
                                             </li>
                                             <li>
-                                                <p>相关点赞</p>
-                                                <p>6,666,666</p>
+                                                <p class="step1_title">相关点赞</p>
+                                                <p class="num">6,666,666</p>
                                             </li>
                                         </ul>
                                         <div>
@@ -226,7 +227,7 @@
                                     </div>
                                 </li>
 
-                                <li class="item">
+                                <li class="item" onclick="window.location.href = 'index_new_pc_info.html';">
                                     <div class="step1_left">
                                         <img src="images/hqkj.png" alt=""/>
                                         <div>
@@ -240,16 +241,16 @@
                                     <div class="step1_right">
                                         <ul>
                                             <li>
-                                                <p>预测粉丝数</p>
-                                                <p>6,666,666</p>
+                                                <p class="step1_title">预测粉丝数</p>
+                                                <p class="num">6,666,666</p>
                                             </li>
                                             <li class="center">
-                                                <p>相关阅读</p>
-                                                <p>6,666,666</p>
+                                                <p class="step1_title">相关阅读</p>
+                                                <p class="num">6,666,666</p>
                                             </li>
                                             <li>
-                                                <p>相关点赞</p>
-                                                <p>6,666,666</p>
+                                                <p class="step1_title">相关点赞</p>
+                                                <p class="num">6,666,666</p>
                                             </li>
                                         </ul>
                                         <div>
@@ -325,25 +326,6 @@
                                     </div>
                                 </li>
 
-                                <li class="item">
-                                    <div class="topic">
-                                        男女胎儿比例为何不是1：1？
-                                    </div>
-                                    <div class="writer">
-                                        <span>原创</span>
-                                        <span>撰文 凯特·朗</span>
-                                    </div>
-                                    <div class="introduce">
-                                        <p>
-                                            科学家发现，在怀孕的不同阶段，男女胎儿的比例会发生变化。产房里，新生儿是男孩的几率比女孩稍微大一点。在美国，51.3％的活产婴儿是男性，这一比例在过去70年内基本保持不变。专家认为，这种偏向男性的性别比例在受孕时就开始了。
-                                        </p>
-                                    </div>
-                                    <div class="other">
-                                        <div class="other_left">2016-03-23  17:09</div>
-                                        <div class="other_right2">73</div>
-                                        <div class="other_right1">阅读  10357</div>
-                                    </div>
-                                </li>
                             </ul>
                             
                             <div class="showMore"><div class="last jtb"></div><span>显示更多信息</span></div>
@@ -363,8 +345,9 @@
                             <th class="w_15"><div><p class="">微信账号</p></div></th>
                             <th class="w_15"><div><p class="">粉丝黏性</p></div></th>
                             <th class="w_15"><div><p class="">增长潜力</p></div></th>
-                            <th class="w_15"><div><p class="">粉丝活跃度</p></div></th>
+                            <th class="w_20"><div><p class="">粉丝活跃度</p></div></th>
                             <th class="w_15"><div><p class="">综合热度</p></div></th>
+                            <th class="w_15"><div><p class="">查看详细</p></div></th>
                             <th class="w_2"></th>
                         </tr>
                         </thead>
@@ -380,6 +363,7 @@
                             <td class="text "><div>{{nr.xd}}</div></td>
                             <td class="text "><div>{{nr.zc}}</div></td>
                             <td class="last "><div>{{nr.jd}}</div></td>
+                            <td class="text"><a href="javascript:;" onclick="window.location.href = 'index_new_pc_info.html';">进入</a></td>
                             <td></td>
                         </tr>
 
@@ -395,98 +379,100 @@
 
     <div class="footer">
         <p>版权所有 Copyright 2015,ALL Rights Reserved | 京 ICP 备 14052239 号 -2 |</p>
-        <p>QQ交流群:①3252352345  ②234234234  ③234234234</p>
     </div>
     <script src="js/app_pc.js"></script>
 
 
     <script>
 
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('main'));
+        function run(){
+             // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('main'));
 
-        var option = {
-            title: {
-                text: ''
-            },
-            tooltip : {
-                trigger: 'axis'
-            },
-            legend: {
-                data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
-            },
-            toolbox: {
-                feature: {
-                    saveAsImage: {}
-                }
-            },
-            grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
-                containLabel: true
-            },
-            xAxis : [
-                {
-                    type : 'category',
-                    boundaryGap : false,
-                    data : ['周一','周二','周三','周四','周五','周六','周日']
-                }
-            ],
-            yAxis : [
-                {
-                    type : 'value'
-                }
-            ],
-            series : [
-                {
-                    name:'邮件营销',
-                    type:'line',
-                    stack: '总量',
-                    areaStyle: {normal: {}},
-                    data:[120, 132, 101, 134, 90, 230, 210]
+            var option = {
+                title: {
+                    text: ''
                 },
-                {
-                    name:'联盟广告',
-                    type:'line',
-                    stack: '总量',
-                    areaStyle: {normal: {}},
-                    data:[220, 182, 191, 234, 290, 330, 310]
+                tooltip : {
+                    trigger: 'axis'
                 },
-                {
-                    name:'视频广告',
-                    type:'line',
-                    stack: '总量',
-                    areaStyle: {normal: {}},
-                    data:[150, 232, 201, 154, 190, 330, 410]
+                legend: {
+                    data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
                 },
-                {
-                    name:'直接访问',
-                    type:'line',
-                    stack: '总量',
-                    areaStyle: {normal: {}},
-                    data:[320, 332, 301, 334, 390, 330, 320]
+                toolbox: {
+                    feature: {
+                        saveAsImage: {}
+                    }
                 },
-                {
-                    name:'搜索引擎',
-                    type:'line',
-                    stack: '总量',
-                    label: {
-                        normal: {
-                            show: true,
-                            position: 'top'
-                        }
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis : [
+                    {
+                        type : 'category',
+                        boundaryGap : false,
+                        data : ['周一','周二','周三','周四','周五','周六','周日']
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value'
+                    }
+                ],
+                series : [
+                    {
+                        name:'邮件营销',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:[120, 132, 101, 134, 90, 230, 210]
                     },
-                    areaStyle: {normal: {}},
-                    data:[820, 932, 901, 934, 1290, 1330, 1320]
-                }
-            ]
-        };
+                    {
+                        name:'联盟广告',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:[220, 182, 191, 234, 290, 330, 310]
+                    },
+                    {
+                        name:'视频广告',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:[150, 232, 201, 154, 190, 330, 410]
+                    },
+                    {
+                        name:'直接访问',
+                        type:'line',
+                        stack: '总量',
+                        areaStyle: {normal: {}},
+                        data:[320, 332, 301, 334, 390, 330, 320]
+                    },
+                    {
+                        name:'搜索引擎',
+                        type:'line',
+                        stack: '总量',
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'top'
+                            }
+                        },
+                        areaStyle: {normal: {}},
+                        data:[820, 932, 901, 934, 1290, 1330, 1320]
+                    }
+                ]
+            };
 
 
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        }
 
+        run();
 
         function myScroll() 
         { 
@@ -504,8 +490,7 @@
             },30); 
         } 
 
-        
-        setInterval(function(){
+        var scrollFunc=function(e){
             var x = document.body.scrollTop||document.documentElement.scrollTop; 
             if(x<=0){
                 var oDiv = document.getElementById('go_top'); 
@@ -515,7 +500,15 @@
                 var oDiv = document.getElementById('go_top'); 
                 oDiv.style.display = 'block';
             }
-        },30);
+        }  
+        /*注册事件*/  
+        if(document.addEventListener){  
+            document.addEventListener('DOMMouseScroll',scrollFunc,false);  
+        }//W3C  
+        window.onmousewheel=document.onmousewheel=scrollFunc;//IE/Opera/Chrome/Safari  
+        
+
+        scrollFunc();
 
 
     </script>
