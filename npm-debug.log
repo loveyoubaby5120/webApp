@@ -1,0 +1,444 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/5.0.0/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'memwatch' ]
+2 info using npm@3.3.9
+3 info using node@v5.0.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData memwatch
+8 silly fetchNamedPackageData memwatch
+9 silly mapToRegistry name memwatch
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry uri https://registry.npmjs.org/memwatch
+13 verbose request uri https://registry.npmjs.org/memwatch
+14 verbose request no auth needed
+15 info attempt registry request try #1 at 12:38:11
+16 verbose request id 13348fff3768bbe4
+17 http request GET https://registry.npmjs.org/memwatch
+18 http 200 https://registry.npmjs.org/memwatch
+19 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+19 verbose headers   etag: '"6YI9XSFTLJLL3OLXUXSQP1AU9"',
+19 verbose headers   'content-type': 'application/json',
+19 verbose headers   'content-encoding': 'gzip',
+19 verbose headers   'cache-control': 'max-age=300',
+19 verbose headers   'content-length': '4472',
+19 verbose headers   'accept-ranges': 'bytes',
+19 verbose headers   date: 'Thu, 07 Apr 2016 04:32:59 GMT',
+19 verbose headers   via: '1.1 varnish',
+19 verbose headers   age: '58',
+19 verbose headers   connection: 'keep-alive',
+19 verbose headers   'x-served-by': 'cache-lhr6321-LHR',
+19 verbose headers   'x-cache': 'HIT',
+19 verbose headers   'x-cache-hits': '1',
+19 verbose headers   'x-timer': 'S1460003579.678774,VS0,VE0',
+19 verbose headers   vary: 'Accept-Encoding' }
+20 silly get cb [ 200,
+20 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+20 silly get     etag: '"6YI9XSFTLJLL3OLXUXSQP1AU9"',
+20 silly get     'content-type': 'application/json',
+20 silly get     'content-encoding': 'gzip',
+20 silly get     'cache-control': 'max-age=300',
+20 silly get     'content-length': '4472',
+20 silly get     'accept-ranges': 'bytes',
+20 silly get     date: 'Thu, 07 Apr 2016 04:32:59 GMT',
+20 silly get     via: '1.1 varnish',
+20 silly get     age: '58',
+20 silly get     connection: 'keep-alive',
+20 silly get     'x-served-by': 'cache-lhr6321-LHR',
+20 silly get     'x-cache': 'HIT',
+20 silly get     'x-cache-hits': '1',
+20 silly get     'x-timer': 'S1460003579.678774,VS0,VE0',
+20 silly get     vary: 'Accept-Encoding' } ]
+21 verbose get saving memwatch to /Users/pankai/.npm/registry.npmjs.org/memwatch/.cache.json
+22 silly install normalizeTree
+23 silly loadCurrentTree Finishing
+24 silly loadIdealTree Starting
+25 silly install loadIdealTree
+26 silly cloneCurrentTree Starting
+27 silly install cloneCurrentTreeToIdealTree
+28 silly cloneCurrentTree Finishing
+29 silly loadShrinkwrap Starting
+30 silly install loadShrinkwrap
+31 silly loadShrinkwrap Finishing
+32 silly loadAllDepsIntoIdealTree Starting
+33 silly install loadAllDepsIntoIdealTree
+34 silly resolveWithNewModule memwatch@0.2.2 checking installable status
+35 silly cache add args [ 'memwatch', null ]
+36 verbose cache add spec memwatch
+37 silly cache add parsed spec Result {
+37 silly cache add   raw: 'memwatch',
+37 silly cache add   scope: null,
+37 silly cache add   name: 'memwatch',
+37 silly cache add   rawSpec: '',
+37 silly cache add   spec: '*',
+37 silly cache add   type: 'range' }
+38 silly addNamed memwatch@*
+39 verbose addNamed "*" is a valid semver range for memwatch
+40 silly addNameRange { name: 'memwatch', range: '*', hasData: false }
+41 silly mapToRegistry name memwatch
+42 silly mapToRegistry using default registry
+43 silly mapToRegistry registry https://registry.npmjs.org/
+44 silly mapToRegistry uri https://registry.npmjs.org/memwatch
+45 verbose addNameRange registry:https://registry.npmjs.org/memwatch not in flight; fetching
+46 verbose get https://registry.npmjs.org/memwatch not expired, no request
+47 silly addNameRange number 2 { name: 'memwatch', range: '*', hasData: true }
+48 silly addNameRange versions [ 'memwatch',
+48 silly addNameRange   [ '0.1.0',
+48 silly addNameRange     '0.1.1',
+48 silly addNameRange     '0.1.2',
+48 silly addNameRange     '0.1.3',
+48 silly addNameRange     '0.1.4',
+48 silly addNameRange     '0.1.5',
+48 silly addNameRange     '0.2.0',
+48 silly addNameRange     '0.2.1',
+48 silly addNameRange     '0.2.2' ] ]
+49 silly addNamed memwatch@0.2.2
+50 verbose addNamed "0.2.2" is a plain semver version for memwatch
+51 silly mapToRegistry name memwatch
+52 silly mapToRegistry using default registry
+53 silly mapToRegistry registry https://registry.npmjs.org/
+54 silly mapToRegistry uri https://registry.npmjs.org/memwatch
+55 verbose addRemoteTarball https://registry.npmjs.org/memwatch/-/memwatch-0.2.2.tgz not in flight; adding
+56 verbose addRemoteTarball [ 'https://registry.npmjs.org/memwatch/-/memwatch-0.2.2.tgz',
+56 verbose addRemoteTarball   '779e8cd982532b6221b6ed1c1269098bee16f92c' ]
+57 info retry fetch attempt 1 at 12:38:13
+58 info attempt registry request try #1 at 12:38:13
+59 http fetch GET https://registry.npmjs.org/memwatch/-/memwatch-0.2.2.tgz
+60 http fetch 200 https://registry.npmjs.org/memwatch/-/memwatch-0.2.2.tgz
+61 silly fetchAndShaCheck shasum 779e8cd982532b6221b6ed1c1269098bee16f92c
+62 verbose addTmpTarball /var/folders/3k/9h41vr255mv6rn0xqq7sp99r0000gn/T/npm-22717-624cbb10/registry.npmjs.org/memwatch/-/memwatch-0.2.2.tgz not in flight; adding
+63 verbose addTmpTarball already have metadata; skipping unpack for memwatch@0.2.2
+64 silly cache afterAdd memwatch@0.2.2
+65 verbose afterAdd /Users/pankai/.npm/memwatch/0.2.2/package/package.json not in flight; writing
+66 verbose afterAdd /Users/pankai/.npm/memwatch/0.2.2/package/package.json written
+67 silly loadAllDepsIntoIdealTree Finishing
+68 silly idealTree:prePrune pankai_webapp@1.0.0
+68 silly idealTree:prePrune ├── accepts@1.2.13
+68 silly idealTree:prePrune ├── array-flatten@1.1.1
+68 silly idealTree:prePrune ├── async@1.5.2
+68 silly idealTree:prePrune ├── basic-auth@1.0.3
+68 silly idealTree:prePrune ├── bluebird@2.10.2
+68 silly idealTree:prePrune ├── bson@0.4.21
+68 silly idealTree:prePrune ├── content-disposition@0.5.1
+68 silly idealTree:prePrune ├── content-type@1.0.1
+68 silly idealTree:prePrune ├── cookie-signature@1.0.6
+68 silly idealTree:prePrune ├── cookie@0.1.5
+68 silly idealTree:prePrune ├── core-util-is@1.0.2
+68 silly idealTree:prePrune ├── debug@2.2.0
+68 silly idealTree:prePrune ├── depd@1.1.0
+68 silly idealTree:prePrune ├── destroy@1.0.4
+68 silly idealTree:prePrune ├── ee-first@1.1.1
+68 silly idealTree:prePrune ├── es6-promise@3.0.2
+68 silly idealTree:prePrune ├── escape-html@1.0.3
+68 silly idealTree:prePrune ├── etag@1.7.0
+68 silly idealTree:prePrune ├── express@4.13.4
+68 silly idealTree:prePrune ├── finalhandler@0.4.1
+68 silly idealTree:prePrune ├── forwarded@0.1.0
+68 silly idealTree:prePrune ├── fresh@0.3.0
+68 silly idealTree:prePrune ├── hooks-fixed@1.1.0
+68 silly idealTree:prePrune ├── http-errors@1.3.1
+68 silly idealTree:prePrune ├── inherits@2.0.1
+68 silly idealTree:prePrune ├── ipaddr.js@1.0.5
+68 silly idealTree:prePrune ├── isarray@0.0.1
+68 silly idealTree:prePrune ├── kareem@1.0.1
+68 silly idealTree:prePrune ├── media-typer@0.3.0
+68 silly idealTree:prePrune ├── memwatch@0.2.2
+68 silly idealTree:prePrune ├── merge-descriptors@1.0.1
+68 silly idealTree:prePrune ├── methods@1.1.2
+68 silly idealTree:prePrune ├── mime-db@1.22.0
+68 silly idealTree:prePrune ├── mime-types@2.1.10
+68 silly idealTree:prePrune ├── mime@1.3.4
+68 silly idealTree:prePrune ├── mongodb-core@1.3.9
+68 silly idealTree:prePrune ├── mongodb@2.1.10
+68 silly idealTree:prePrune ├── mongoose@4.4.10
+68 silly idealTree:prePrune ├── morgan@1.7.0
+68 silly idealTree:prePrune ├── mpath@0.2.1
+68 silly idealTree:prePrune ├── mpromise@0.5.5
+68 silly idealTree:prePrune ├─┬ mquery@1.10.0
+68 silly idealTree:prePrune │ └── sliced@0.0.5
+68 silly idealTree:prePrune ├── ms@0.7.1
+68 silly idealTree:prePrune ├── muri@1.1.0
+68 silly idealTree:prePrune ├── negotiator@0.5.3
+68 silly idealTree:prePrune ├── on-finished@2.3.0
+68 silly idealTree:prePrune ├── on-headers@1.0.1
+68 silly idealTree:prePrune ├── parseurl@1.3.1
+68 silly idealTree:prePrune ├── path-to-regexp@0.1.7
+68 silly idealTree:prePrune ├── proxy-addr@1.0.10
+68 silly idealTree:prePrune ├── qs@4.0.0
+68 silly idealTree:prePrune ├── range-parser@1.0.3
+68 silly idealTree:prePrune ├── readable-stream@1.0.31
+68 silly idealTree:prePrune ├─┬ redis@2.5.3
+68 silly idealTree:prePrune │ ├── double-ended-queue@2.1.0-0
+68 silly idealTree:prePrune │ ├── redis-commands@1.1.0
+68 silly idealTree:prePrune │ └── redis-parser@1.3.0
+68 silly idealTree:prePrune ├── regexp-clone@0.0.1
+68 silly idealTree:prePrune ├── require_optional@1.0.0
+68 silly idealTree:prePrune ├── resolve-from@2.0.0
+68 silly idealTree:prePrune ├── semver@5.1.0
+68 silly idealTree:prePrune ├── send@0.13.1
+68 silly idealTree:prePrune ├── serve-static@1.10.2
+68 silly idealTree:prePrune ├── sliced@1.0.1
+68 silly idealTree:prePrune ├── statuses@1.2.1
+68 silly idealTree:prePrune ├── string_decoder@0.10.31
+68 silly idealTree:prePrune ├── type-is@1.6.12
+68 silly idealTree:prePrune ├── unpipe@1.0.0
+68 silly idealTree:prePrune ├── utils-merge@1.0.0
+68 silly idealTree:prePrune └── vary@1.0.1
+69 silly loadIdealTree Finishing
+70 silly currentTree pankai_webapp@1.0.0
+70 silly currentTree ├── accepts@1.2.13
+70 silly currentTree ├── array-flatten@1.1.1
+70 silly currentTree ├── async@1.5.2
+70 silly currentTree ├── basic-auth@1.0.3
+70 silly currentTree ├── bluebird@2.10.2
+70 silly currentTree ├── bson@0.4.21
+70 silly currentTree ├── content-disposition@0.5.1
+70 silly currentTree ├── content-type@1.0.1
+70 silly currentTree ├── cookie-signature@1.0.6
+70 silly currentTree ├── cookie@0.1.5
+70 silly currentTree ├── core-util-is@1.0.2
+70 silly currentTree ├── debug@2.2.0
+70 silly currentTree ├── depd@1.1.0
+70 silly currentTree ├── destroy@1.0.4
+70 silly currentTree ├── ee-first@1.1.1
+70 silly currentTree ├── es6-promise@3.0.2
+70 silly currentTree ├── escape-html@1.0.3
+70 silly currentTree ├── etag@1.7.0
+70 silly currentTree ├── express@4.13.4
+70 silly currentTree ├── finalhandler@0.4.1
+70 silly currentTree ├── forwarded@0.1.0
+70 silly currentTree ├── fresh@0.3.0
+70 silly currentTree ├── hooks-fixed@1.1.0
+70 silly currentTree ├── http-errors@1.3.1
+70 silly currentTree ├── inherits@2.0.1
+70 silly currentTree ├── ipaddr.js@1.0.5
+70 silly currentTree ├── isarray@0.0.1
+70 silly currentTree ├── kareem@1.0.1
+70 silly currentTree ├── media-typer@0.3.0
+70 silly currentTree ├── merge-descriptors@1.0.1
+70 silly currentTree ├── methods@1.1.2
+70 silly currentTree ├── mime-db@1.22.0
+70 silly currentTree ├── mime-types@2.1.10
+70 silly currentTree ├── mime@1.3.4
+70 silly currentTree ├── mongodb-core@1.3.9
+70 silly currentTree ├── mongodb@2.1.10
+70 silly currentTree ├── mongoose@4.4.10
+70 silly currentTree ├── morgan@1.7.0
+70 silly currentTree ├── mpath@0.2.1
+70 silly currentTree ├── mpromise@0.5.5
+70 silly currentTree ├─┬ mquery@1.10.0
+70 silly currentTree │ └── sliced@0.0.5
+70 silly currentTree ├── ms@0.7.1
+70 silly currentTree ├── muri@1.1.0
+70 silly currentTree ├── negotiator@0.5.3
+70 silly currentTree ├── on-finished@2.3.0
+70 silly currentTree ├── on-headers@1.0.1
+70 silly currentTree ├── parseurl@1.3.1
+70 silly currentTree ├── path-to-regexp@0.1.7
+70 silly currentTree ├── proxy-addr@1.0.10
+70 silly currentTree ├── qs@4.0.0
+70 silly currentTree ├── range-parser@1.0.3
+70 silly currentTree ├── readable-stream@1.0.31
+70 silly currentTree ├─┬ redis@2.5.3
+70 silly currentTree │ ├── double-ended-queue@2.1.0-0
+70 silly currentTree │ ├── redis-commands@1.1.0
+70 silly currentTree │ └── redis-parser@1.3.0
+70 silly currentTree ├── regexp-clone@0.0.1
+70 silly currentTree ├── require_optional@1.0.0
+70 silly currentTree ├── resolve-from@2.0.0
+70 silly currentTree ├── semver@5.1.0
+70 silly currentTree ├── send@0.13.1
+70 silly currentTree ├── serve-static@1.10.2
+70 silly currentTree ├── sliced@1.0.1
+70 silly currentTree ├── statuses@1.2.1
+70 silly currentTree ├── string_decoder@0.10.31
+70 silly currentTree ├── type-is@1.6.12
+70 silly currentTree ├── unpipe@1.0.0
+70 silly currentTree ├── utils-merge@1.0.0
+70 silly currentTree └── vary@1.0.1
+71 silly idealTree pankai_webapp@1.0.0
+71 silly idealTree ├── accepts@1.2.13
+71 silly idealTree ├── array-flatten@1.1.1
+71 silly idealTree ├── async@1.5.2
+71 silly idealTree ├── basic-auth@1.0.3
+71 silly idealTree ├── bluebird@2.10.2
+71 silly idealTree ├── bson@0.4.21
+71 silly idealTree ├── content-disposition@0.5.1
+71 silly idealTree ├── content-type@1.0.1
+71 silly idealTree ├── cookie-signature@1.0.6
+71 silly idealTree ├── cookie@0.1.5
+71 silly idealTree ├── core-util-is@1.0.2
+71 silly idealTree ├── debug@2.2.0
+71 silly idealTree ├── depd@1.1.0
+71 silly idealTree ├── destroy@1.0.4
+71 silly idealTree ├── ee-first@1.1.1
+71 silly idealTree ├── es6-promise@3.0.2
+71 silly idealTree ├── escape-html@1.0.3
+71 silly idealTree ├── etag@1.7.0
+71 silly idealTree ├── express@4.13.4
+71 silly idealTree ├── finalhandler@0.4.1
+71 silly idealTree ├── forwarded@0.1.0
+71 silly idealTree ├── fresh@0.3.0
+71 silly idealTree ├── hooks-fixed@1.1.0
+71 silly idealTree ├── http-errors@1.3.1
+71 silly idealTree ├── inherits@2.0.1
+71 silly idealTree ├── ipaddr.js@1.0.5
+71 silly idealTree ├── isarray@0.0.1
+71 silly idealTree ├── kareem@1.0.1
+71 silly idealTree ├── media-typer@0.3.0
+71 silly idealTree ├── memwatch@0.2.2
+71 silly idealTree ├── merge-descriptors@1.0.1
+71 silly idealTree ├── methods@1.1.2
+71 silly idealTree ├── mime-db@1.22.0
+71 silly idealTree ├── mime-types@2.1.10
+71 silly idealTree ├── mime@1.3.4
+71 silly idealTree ├── mongodb-core@1.3.9
+71 silly idealTree ├── mongodb@2.1.10
+71 silly idealTree ├── mongoose@4.4.10
+71 silly idealTree ├── morgan@1.7.0
+71 silly idealTree ├── mpath@0.2.1
+71 silly idealTree ├── mpromise@0.5.5
+71 silly idealTree ├─┬ mquery@1.10.0
+71 silly idealTree │ └── sliced@0.0.5
+71 silly idealTree ├── ms@0.7.1
+71 silly idealTree ├── muri@1.1.0
+71 silly idealTree ├── negotiator@0.5.3
+71 silly idealTree ├── on-finished@2.3.0
+71 silly idealTree ├── on-headers@1.0.1
+71 silly idealTree ├── parseurl@1.3.1
+71 silly idealTree ├── path-to-regexp@0.1.7
+71 silly idealTree ├── proxy-addr@1.0.10
+71 silly idealTree ├── qs@4.0.0
+71 silly idealTree ├── range-parser@1.0.3
+71 silly idealTree ├── readable-stream@1.0.31
+71 silly idealTree ├─┬ redis@2.5.3
+71 silly idealTree │ ├── double-ended-queue@2.1.0-0
+71 silly idealTree │ ├── redis-commands@1.1.0
+71 silly idealTree │ └── redis-parser@1.3.0
+71 silly idealTree ├── regexp-clone@0.0.1
+71 silly idealTree ├── require_optional@1.0.0
+71 silly idealTree ├── resolve-from@2.0.0
+71 silly idealTree ├── semver@5.1.0
+71 silly idealTree ├── send@0.13.1
+71 silly idealTree ├── serve-static@1.10.2
+71 silly idealTree ├── sliced@1.0.1
+71 silly idealTree ├── statuses@1.2.1
+71 silly idealTree ├── string_decoder@0.10.31
+71 silly idealTree ├── type-is@1.6.12
+71 silly idealTree ├── unpipe@1.0.0
+71 silly idealTree ├── utils-merge@1.0.0
+71 silly idealTree └── vary@1.0.1
+72 silly generateActionsToTake Starting
+73 silly install generateActionsToTake
+74 silly generateActionsToTake Finishing
+75 silly diffTrees action count 1
+76 silly diffTrees add memwatch@0.2.2
+77 silly decomposeActions action count 8
+78 silly decomposeActions fetch memwatch@0.2.2
+79 silly decomposeActions extract memwatch@0.2.2
+80 silly decomposeActions preinstall memwatch@0.2.2
+81 silly decomposeActions build memwatch@0.2.2
+82 silly decomposeActions install memwatch@0.2.2
+83 silly decomposeActions postinstall memwatch@0.2.2
+84 silly decomposeActions test memwatch@0.2.2
+85 silly decomposeActions finalize memwatch@0.2.2
+86 silly executeActions Starting
+87 silly install executeActions
+88 silly doSerial global-install 0
+89 silly doParallel fetch 1
+90 verbose lock using /Users/pankai/.npm/_locks/staging-3db01eb9d3fee7a4.lock for /Users/pankai/project/webApp/node_modules/.staging
+91 silly doParallel extract 1
+92 silly extract memwatch@0.2.2
+93 verbose unbuild node_modules/.staging/memwatch-ec8597dd3a26fda45449335a284a920d
+94 silly gentlyRm /Users/pankai/project/webApp/node_modules/.staging/memwatch-ec8597dd3a26fda45449335a284a920d is being purged from base /Users/pankai/project/webApp
+95 verbose gentlyRm don't care about contents; nuking /Users/pankai/project/webApp/node_modules/.staging/memwatch-ec8597dd3a26fda45449335a284a920d
+96 verbose tar unpack /Users/pankai/.npm/memwatch/0.2.2/package.tgz
+97 verbose tar unpacking to /Users/pankai/project/webApp/node_modules/.staging/memwatch-ec8597dd3a26fda45449335a284a920d
+98 silly gentlyRm /Users/pankai/project/webApp/node_modules/.staging/memwatch-ec8597dd3a26fda45449335a284a920d is being purged
+99 verbose gentlyRm don't care about contents; nuking /Users/pankai/project/webApp/node_modules/.staging/memwatch-ec8597dd3a26fda45449335a284a920d
+100 silly gunzTarPerm modes [ '755', '644' ]
+101 silly gunzTarPerm extractEntry package.json
+102 silly gunzTarPerm extractEntry .npmignore
+103 silly gunzTarPerm extractEntry README.md
+104 silly gunzTarPerm extractEntry tests.js
+105 silly gunzTarPerm extractEntry foo.js
+106 silly gunzTarPerm extractEntry include.js
+107 silly gunzTarPerm extractEntry .travis.yml
+108 silly gunzTarPerm extractEntry ChangeLog
+109 silly gunzTarPerm extractEntry #wscript#
+110 silly gunzTarPerm extractEntry binding.gyp
+111 silly gunzTarPerm extractEntry src/heapdiff.cc
+112 silly gunzTarPerm extractEntry src/heapdiff.hh
+113 silly gunzTarPerm extractEntry src/init.cc
+114 silly gunzTarPerm extractEntry src/memwatch.cc
+115 silly gunzTarPerm extractEntry src/memwatch.hh
+116 silly gunzTarPerm extractEntry src/platformcompat.hh
+117 silly gunzTarPerm extractEntry src/util.cc
+118 silly gunzTarPerm extractEntry src/util.hh
+119 silly gunzTarPerm extractEntry examples/basic_heapdiff.js
+120 silly gunzTarPerm extractEntry examples/do_nothing_server.js
+121 silly gunzTarPerm extractEntry examples/slightly_leaky.js
+122 silly doParallel preinstall 1
+123 silly preinstall memwatch@0.2.2 /Users/pankai/project/webApp/node_modules/.staging/memwatch-ec8597dd3a26fda45449335a284a920d
+124 info lifecycle memwatch@0.2.2~preinstall: memwatch@0.2.2
+125 silly lifecycle memwatch@0.2.2~preinstall: no script for preinstall, continuing
+126 silly doReverseSerial remove 0
+127 silly doSerial move 0
+128 silly doSerial finalize 1
+129 silly finalize /Users/pankai/project/webApp/node_modules/memwatch
+130 silly doSerial build 1
+131 silly build memwatch@0.2.2
+132 info linkStuff memwatch@0.2.2
+133 silly linkStuff memwatch@0.2.2 has /Users/pankai/project/webApp/node_modules as its parent node_modules
+134 verbose linkBins memwatch@0.2.2
+135 verbose linkMans memwatch@0.2.2
+136 silly doSerial global-link 0
+137 silly doParallel update-linked 0
+138 silly doSerial install 1
+139 silly install memwatch@0.2.2 /Users/pankai/project/webApp/node_modules/.staging/memwatch-ec8597dd3a26fda45449335a284a920d
+140 info lifecycle memwatch@0.2.2~install: memwatch@0.2.2
+141 verbose lifecycle memwatch@0.2.2~install: unsafe-perm in lifecycle true
+142 verbose lifecycle memwatch@0.2.2~install: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/pankai/project/webApp/node_modules/memwatch/node_modules/.bin:/Users/pankai/project/webApp/node_modules/.bin:/Users/pankai/bin:/usr/local/bin:/Users/pankai/.nvm/versions/node/v5.9.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/Users/pankai/.pyenv/bin
+143 verbose lifecycle memwatch@0.2.2~install: CWD: /Users/pankai/project/webApp/node_modules/memwatch
+144 silly lifecycle memwatch@0.2.2~install: Args: [ '-c', 'node-gyp rebuild' ]
+145 silly lifecycle memwatch@0.2.2~install: Returned: code: 1  signal: null
+146 info lifecycle memwatch@0.2.2~install: Failed to exec install script
+147 verbose unlock done using /Users/pankai/.npm/_locks/staging-3db01eb9d3fee7a4.lock for /Users/pankai/project/webApp/node_modules/.staging
+148 silly rollbackFailedOptional Starting
+149 silly rollbackFailedOptional Finishing
+150 silly runTopLevelLifecycles Starting
+151 silly runTopLevelLifecycles Finishing
+152 silly install printInstalled
+153 warn EPACKAGEJSON pankai_webapp@1.0.0 No repository field.
+154 verbose stack Error: memwatch@0.2.2 install: `node-gyp rebuild`
+154 verbose stack Exit status 1
+154 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:233:16)
+154 verbose stack     at emitTwo (events.js:87:13)
+154 verbose stack     at EventEmitter.emit (events.js:172:7)
+154 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+154 verbose stack     at emitTwo (events.js:87:13)
+154 verbose stack     at ChildProcess.emit (events.js:172:7)
+154 verbose stack     at maybeClose (internal/child_process.js:818:16)
+154 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+155 verbose pkgid memwatch@0.2.2
+156 verbose cwd /Users/pankai/project/webApp
+157 error Darwin 15.2.0
+158 error argv "/usr/local/Cellar/node/5.0.0/bin/node" "/usr/local/bin/npm" "install" "memwatch"
+159 error node v5.0.0
+160 error npm  v3.3.9
+161 error code ELIFECYCLE
+162 error memwatch@0.2.2 install: `node-gyp rebuild`
+162 error Exit status 1
+163 error Failed at the memwatch@0.2.2 install script 'node-gyp rebuild'.
+163 error This is most likely a problem with the memwatch package,
+163 error not with npm itself.
+163 error Tell the author that this fails on your system:
+163 error     node-gyp rebuild
+163 error You can get their info via:
+163 error     npm owner ls memwatch
+163 error There is likely additional logging output above.
+164 verbose exit [ 1, true ]

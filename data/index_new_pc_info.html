@@ -8,6 +8,11 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/echarts.js"></script>
+    <link rel="stylesheet" href="css/jquery.datetimepicker.css" />
+    <script src="js/jquery.datetimepicker.js"></script>
+
+    <link rel="stylesheet" href="css/mmnt.css" />
+    <script src="js/mmnt-info.js"></script>
 </head>
 <body ng-controller="MyController">
 
@@ -119,7 +124,10 @@
                             </select>
                         </div>
                         <div class="dateTime">
-                            <span>2016年2月15至2016年3月15日</span>
+                            <span>
+                                <!-- 2016年2月15至2016年3月15日 -->
+                                <input type="text" id="periodpickerstart"/>
+                            </span>
                         </div>
                         <div class="title">
                             影响力指数变化
@@ -147,7 +155,10 @@
                         </select>
                     </div>
                     <div class="dateTime">
-                        <span>2016年2月15至2016年3月15日</span>
+                        <span>
+                            <!-- 2016年2月15至2016年3月15日 -->
+                             <input type="text" id="periodpickerstart2"/>
+                        </span>
                     </div>
                 </div>
                 <ul>
@@ -397,6 +408,48 @@
     <script>
 
 
+        jQuery('#periodpickerstart').periodpicker({
+            lang: 'zh-cn',
+            norange: false, // use only one value
+            cells: [1, 2], // show only one month
+            resizeButton: true, // deny resize picker
+            fullsizeButton: true,
+            fullsizeOnDblClick: true,
+
+            clearButtonInButton:true,
+            timepicker: false, // use timepicker
+            timepickerOptions: {
+                hours: true,
+                minutes: true,
+                seconds: false,
+                ampm: true
+            }
+        });
+
+        jQuery('#periodpickerstart').periodpicker('value', '2016/03/12');
+
+
+        jQuery('#periodpickerstart2').periodpicker({
+            ang: 'zh-cn',
+            norange: false, // use only one value
+            cells: [1, 2], // show only one month
+            resizeButton: true, // deny resize picker
+            fullsizeButton: true,
+            fullsizeOnDblClick: true,
+
+            clearButtonInButton:true,
+            timepicker: false, // use timepicker
+            timepickerOptions: {
+                hours: true,
+                minutes: true,
+                seconds: false,
+                ampm: true
+            }
+        });
+
+
+        jQuery('#periodpickerstart2').periodpicker('value', '2016/03/12');
+
         function run(){
              // 基于准备好的dom，初始化echarts实例
             var myChart = echarts.init(document.getElementById('main1'));
@@ -528,6 +581,8 @@
                 { 
                     x=0; 
                     window.scrollTo(x,x); 
+                    var oDiv = document.getElementById('go_top'); 
+                    oDiv.style.display = 'none';
                     clearInterval(timer); 
                 } 
                 window.scrollTo(x,x); 
@@ -553,6 +608,9 @@
         
 
         scrollFunc();
+
+
+
 
 
     </script>

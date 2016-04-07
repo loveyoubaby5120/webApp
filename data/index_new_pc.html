@@ -129,8 +129,8 @@
 
             <div class="right">
                 <ul class="option">
-                    <li class="bd active"><a href="javascript:;" onclick="$('.table').show();$('.qs_more').hide();$(this).parent().parent().find('li').removeClass('active');$(this).parent().addClass('active');">榜单</a></li>
-                    <li class="qs"><a href="javascript:;" onclick="$('.qs_more').show();$('.table').hide();$(this).parent().parent().find('li').removeClass('active');$(this).parent().addClass('active');">趋势</a></li>
+                    <li class="bd active"><a href="javascript:;">榜单</a></li>
+                    <li class="qs"><a href="javascript:;">趋势</a></li>
                 </ul>
 
                 <div class='qs_more' style='display:none;'>
@@ -491,7 +491,9 @@
                 if(x<100) 
                 { 
                     x=0; 
-                    window.scrollTo(x,x); 
+                    window.scrollTo(x,x);
+                    var oDiv = document.getElementById('go_top'); 
+                    oDiv.style.display = 'none';
                     clearInterval(timer); 
                 } 
                 window.scrollTo(x,x); 
@@ -530,6 +532,11 @@
             $(this).find('.select').hide();
         });
 
+
+        $('.content .info .right .option').on('click','li a',function(){
+            $('.table').toggle();$('.qs_more').toggle();
+            $(this).parent().parent().find('li').removeClass('active');$(this).parent().addClass('active');
+        });
 
     </script>
 
