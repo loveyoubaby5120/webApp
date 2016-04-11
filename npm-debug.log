@@ -1,10 +1,10 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/Cellar/node/5.0.0/bin/node',
-1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli [ '/Users/pankai/.nvm/versions/node/v5.9.1/bin/node',
+1 verbose cli   '/Users/pankai/.nvm/versions/node/v5.9.1/bin/npm',
 1 verbose cli   'install',
 1 verbose cli   'memwatch' ]
-2 info using npm@3.3.9
-3 info using node@v5.0.0
+2 info using npm@3.7.3
+3 info using node@v5.9.1
 4 silly loadCurrentTree Starting
 5 silly install loadCurrentTree
 6 silly install readLocalPackageData
@@ -16,429 +16,1277 @@
 12 silly mapToRegistry uri https://registry.npmjs.org/memwatch
 13 verbose request uri https://registry.npmjs.org/memwatch
 14 verbose request no auth needed
-15 info attempt registry request try #1 at 12:38:11
-16 verbose request id 13348fff3768bbe4
-17 http request GET https://registry.npmjs.org/memwatch
-18 http 200 https://registry.npmjs.org/memwatch
-19 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-19 verbose headers   etag: '"6YI9XSFTLJLL3OLXUXSQP1AU9"',
-19 verbose headers   'content-type': 'application/json',
-19 verbose headers   'content-encoding': 'gzip',
-19 verbose headers   'cache-control': 'max-age=300',
-19 verbose headers   'content-length': '4472',
-19 verbose headers   'accept-ranges': 'bytes',
-19 verbose headers   date: 'Thu, 07 Apr 2016 04:32:59 GMT',
-19 verbose headers   via: '1.1 varnish',
-19 verbose headers   age: '58',
-19 verbose headers   connection: 'keep-alive',
-19 verbose headers   'x-served-by': 'cache-lhr6321-LHR',
-19 verbose headers   'x-cache': 'HIT',
-19 verbose headers   'x-cache-hits': '1',
-19 verbose headers   'x-timer': 'S1460003579.678774,VS0,VE0',
-19 verbose headers   vary: 'Accept-Encoding' }
-20 silly get cb [ 200,
-20 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-20 silly get     etag: '"6YI9XSFTLJLL3OLXUXSQP1AU9"',
-20 silly get     'content-type': 'application/json',
-20 silly get     'content-encoding': 'gzip',
-20 silly get     'cache-control': 'max-age=300',
-20 silly get     'content-length': '4472',
-20 silly get     'accept-ranges': 'bytes',
-20 silly get     date: 'Thu, 07 Apr 2016 04:32:59 GMT',
-20 silly get     via: '1.1 varnish',
-20 silly get     age: '58',
-20 silly get     connection: 'keep-alive',
-20 silly get     'x-served-by': 'cache-lhr6321-LHR',
-20 silly get     'x-cache': 'HIT',
-20 silly get     'x-cache-hits': '1',
-20 silly get     'x-timer': 'S1460003579.678774,VS0,VE0',
-20 silly get     vary: 'Accept-Encoding' } ]
-21 verbose get saving memwatch to /Users/pankai/.npm/registry.npmjs.org/memwatch/.cache.json
-22 silly install normalizeTree
-23 silly loadCurrentTree Finishing
-24 silly loadIdealTree Starting
-25 silly install loadIdealTree
-26 silly cloneCurrentTree Starting
-27 silly install cloneCurrentTreeToIdealTree
-28 silly cloneCurrentTree Finishing
-29 silly loadShrinkwrap Starting
-30 silly install loadShrinkwrap
-31 silly loadShrinkwrap Finishing
-32 silly loadAllDepsIntoIdealTree Starting
-33 silly install loadAllDepsIntoIdealTree
-34 silly resolveWithNewModule memwatch@0.2.2 checking installable status
-35 silly cache add args [ 'memwatch', null ]
-36 verbose cache add spec memwatch
-37 silly cache add parsed spec Result {
-37 silly cache add   raw: 'memwatch',
-37 silly cache add   scope: null,
-37 silly cache add   name: 'memwatch',
-37 silly cache add   rawSpec: '',
-37 silly cache add   spec: '*',
-37 silly cache add   type: 'range' }
-38 silly addNamed memwatch@*
-39 verbose addNamed "*" is a valid semver range for memwatch
-40 silly addNameRange { name: 'memwatch', range: '*', hasData: false }
-41 silly mapToRegistry name memwatch
-42 silly mapToRegistry using default registry
-43 silly mapToRegistry registry https://registry.npmjs.org/
-44 silly mapToRegistry uri https://registry.npmjs.org/memwatch
-45 verbose addNameRange registry:https://registry.npmjs.org/memwatch not in flight; fetching
-46 verbose get https://registry.npmjs.org/memwatch not expired, no request
-47 silly addNameRange number 2 { name: 'memwatch', range: '*', hasData: true }
-48 silly addNameRange versions [ 'memwatch',
-48 silly addNameRange   [ '0.1.0',
-48 silly addNameRange     '0.1.1',
-48 silly addNameRange     '0.1.2',
-48 silly addNameRange     '0.1.3',
-48 silly addNameRange     '0.1.4',
-48 silly addNameRange     '0.1.5',
-48 silly addNameRange     '0.2.0',
-48 silly addNameRange     '0.2.1',
-48 silly addNameRange     '0.2.2' ] ]
-49 silly addNamed memwatch@0.2.2
-50 verbose addNamed "0.2.2" is a plain semver version for memwatch
-51 silly mapToRegistry name memwatch
-52 silly mapToRegistry using default registry
-53 silly mapToRegistry registry https://registry.npmjs.org/
-54 silly mapToRegistry uri https://registry.npmjs.org/memwatch
-55 verbose addRemoteTarball https://registry.npmjs.org/memwatch/-/memwatch-0.2.2.tgz not in flight; adding
-56 verbose addRemoteTarball [ 'https://registry.npmjs.org/memwatch/-/memwatch-0.2.2.tgz',
-56 verbose addRemoteTarball   '779e8cd982532b6221b6ed1c1269098bee16f92c' ]
-57 info retry fetch attempt 1 at 12:38:13
-58 info attempt registry request try #1 at 12:38:13
-59 http fetch GET https://registry.npmjs.org/memwatch/-/memwatch-0.2.2.tgz
-60 http fetch 200 https://registry.npmjs.org/memwatch/-/memwatch-0.2.2.tgz
-61 silly fetchAndShaCheck shasum 779e8cd982532b6221b6ed1c1269098bee16f92c
-62 verbose addTmpTarball /var/folders/3k/9h41vr255mv6rn0xqq7sp99r0000gn/T/npm-22717-624cbb10/registry.npmjs.org/memwatch/-/memwatch-0.2.2.tgz not in flight; adding
-63 verbose addTmpTarball already have metadata; skipping unpack for memwatch@0.2.2
-64 silly cache afterAdd memwatch@0.2.2
-65 verbose afterAdd /Users/pankai/.npm/memwatch/0.2.2/package/package.json not in flight; writing
-66 verbose afterAdd /Users/pankai/.npm/memwatch/0.2.2/package/package.json written
-67 silly loadAllDepsIntoIdealTree Finishing
-68 silly idealTree:prePrune pankai_webapp@1.0.0
-68 silly idealTree:prePrune ├── accepts@1.2.13
-68 silly idealTree:prePrune ├── array-flatten@1.1.1
-68 silly idealTree:prePrune ├── async@1.5.2
-68 silly idealTree:prePrune ├── basic-auth@1.0.3
-68 silly idealTree:prePrune ├── bluebird@2.10.2
-68 silly idealTree:prePrune ├── bson@0.4.21
-68 silly idealTree:prePrune ├── content-disposition@0.5.1
-68 silly idealTree:prePrune ├── content-type@1.0.1
-68 silly idealTree:prePrune ├── cookie-signature@1.0.6
-68 silly idealTree:prePrune ├── cookie@0.1.5
-68 silly idealTree:prePrune ├── core-util-is@1.0.2
-68 silly idealTree:prePrune ├── debug@2.2.0
-68 silly idealTree:prePrune ├── depd@1.1.0
-68 silly idealTree:prePrune ├── destroy@1.0.4
-68 silly idealTree:prePrune ├── ee-first@1.1.1
-68 silly idealTree:prePrune ├── es6-promise@3.0.2
-68 silly idealTree:prePrune ├── escape-html@1.0.3
-68 silly idealTree:prePrune ├── etag@1.7.0
-68 silly idealTree:prePrune ├── express@4.13.4
-68 silly idealTree:prePrune ├── finalhandler@0.4.1
-68 silly idealTree:prePrune ├── forwarded@0.1.0
-68 silly idealTree:prePrune ├── fresh@0.3.0
-68 silly idealTree:prePrune ├── hooks-fixed@1.1.0
-68 silly idealTree:prePrune ├── http-errors@1.3.1
-68 silly idealTree:prePrune ├── inherits@2.0.1
-68 silly idealTree:prePrune ├── ipaddr.js@1.0.5
-68 silly idealTree:prePrune ├── isarray@0.0.1
-68 silly idealTree:prePrune ├── kareem@1.0.1
-68 silly idealTree:prePrune ├── media-typer@0.3.0
-68 silly idealTree:prePrune ├── memwatch@0.2.2
-68 silly idealTree:prePrune ├── merge-descriptors@1.0.1
-68 silly idealTree:prePrune ├── methods@1.1.2
-68 silly idealTree:prePrune ├── mime-db@1.22.0
-68 silly idealTree:prePrune ├── mime-types@2.1.10
-68 silly idealTree:prePrune ├── mime@1.3.4
-68 silly idealTree:prePrune ├── mongodb-core@1.3.9
-68 silly idealTree:prePrune ├── mongodb@2.1.10
-68 silly idealTree:prePrune ├── mongoose@4.4.10
-68 silly idealTree:prePrune ├── morgan@1.7.0
-68 silly idealTree:prePrune ├── mpath@0.2.1
-68 silly idealTree:prePrune ├── mpromise@0.5.5
-68 silly idealTree:prePrune ├─┬ mquery@1.10.0
-68 silly idealTree:prePrune │ └── sliced@0.0.5
-68 silly idealTree:prePrune ├── ms@0.7.1
-68 silly idealTree:prePrune ├── muri@1.1.0
-68 silly idealTree:prePrune ├── negotiator@0.5.3
-68 silly idealTree:prePrune ├── on-finished@2.3.0
-68 silly idealTree:prePrune ├── on-headers@1.0.1
-68 silly idealTree:prePrune ├── parseurl@1.3.1
-68 silly idealTree:prePrune ├── path-to-regexp@0.1.7
-68 silly idealTree:prePrune ├── proxy-addr@1.0.10
-68 silly idealTree:prePrune ├── qs@4.0.0
-68 silly idealTree:prePrune ├── range-parser@1.0.3
-68 silly idealTree:prePrune ├── readable-stream@1.0.31
-68 silly idealTree:prePrune ├─┬ redis@2.5.3
-68 silly idealTree:prePrune │ ├── double-ended-queue@2.1.0-0
-68 silly idealTree:prePrune │ ├── redis-commands@1.1.0
-68 silly idealTree:prePrune │ └── redis-parser@1.3.0
-68 silly idealTree:prePrune ├── regexp-clone@0.0.1
-68 silly idealTree:prePrune ├── require_optional@1.0.0
-68 silly idealTree:prePrune ├── resolve-from@2.0.0
-68 silly idealTree:prePrune ├── semver@5.1.0
-68 silly idealTree:prePrune ├── send@0.13.1
-68 silly idealTree:prePrune ├── serve-static@1.10.2
-68 silly idealTree:prePrune ├── sliced@1.0.1
-68 silly idealTree:prePrune ├── statuses@1.2.1
-68 silly idealTree:prePrune ├── string_decoder@0.10.31
-68 silly idealTree:prePrune ├── type-is@1.6.12
-68 silly idealTree:prePrune ├── unpipe@1.0.0
-68 silly idealTree:prePrune ├── utils-merge@1.0.0
-68 silly idealTree:prePrune └── vary@1.0.1
-69 silly loadIdealTree Finishing
-70 silly currentTree pankai_webapp@1.0.0
-70 silly currentTree ├── accepts@1.2.13
-70 silly currentTree ├── array-flatten@1.1.1
-70 silly currentTree ├── async@1.5.2
-70 silly currentTree ├── basic-auth@1.0.3
-70 silly currentTree ├── bluebird@2.10.2
-70 silly currentTree ├── bson@0.4.21
-70 silly currentTree ├── content-disposition@0.5.1
-70 silly currentTree ├── content-type@1.0.1
-70 silly currentTree ├── cookie-signature@1.0.6
-70 silly currentTree ├── cookie@0.1.5
-70 silly currentTree ├── core-util-is@1.0.2
-70 silly currentTree ├── debug@2.2.0
-70 silly currentTree ├── depd@1.1.0
-70 silly currentTree ├── destroy@1.0.4
-70 silly currentTree ├── ee-first@1.1.1
-70 silly currentTree ├── es6-promise@3.0.2
-70 silly currentTree ├── escape-html@1.0.3
-70 silly currentTree ├── etag@1.7.0
-70 silly currentTree ├── express@4.13.4
-70 silly currentTree ├── finalhandler@0.4.1
-70 silly currentTree ├── forwarded@0.1.0
-70 silly currentTree ├── fresh@0.3.0
-70 silly currentTree ├── hooks-fixed@1.1.0
-70 silly currentTree ├── http-errors@1.3.1
-70 silly currentTree ├── inherits@2.0.1
-70 silly currentTree ├── ipaddr.js@1.0.5
-70 silly currentTree ├── isarray@0.0.1
-70 silly currentTree ├── kareem@1.0.1
-70 silly currentTree ├── media-typer@0.3.0
-70 silly currentTree ├── merge-descriptors@1.0.1
-70 silly currentTree ├── methods@1.1.2
-70 silly currentTree ├── mime-db@1.22.0
-70 silly currentTree ├── mime-types@2.1.10
-70 silly currentTree ├── mime@1.3.4
-70 silly currentTree ├── mongodb-core@1.3.9
-70 silly currentTree ├── mongodb@2.1.10
-70 silly currentTree ├── mongoose@4.4.10
-70 silly currentTree ├── morgan@1.7.0
-70 silly currentTree ├── mpath@0.2.1
-70 silly currentTree ├── mpromise@0.5.5
-70 silly currentTree ├─┬ mquery@1.10.0
-70 silly currentTree │ └── sliced@0.0.5
-70 silly currentTree ├── ms@0.7.1
-70 silly currentTree ├── muri@1.1.0
-70 silly currentTree ├── negotiator@0.5.3
-70 silly currentTree ├── on-finished@2.3.0
-70 silly currentTree ├── on-headers@1.0.1
-70 silly currentTree ├── parseurl@1.3.1
-70 silly currentTree ├── path-to-regexp@0.1.7
-70 silly currentTree ├── proxy-addr@1.0.10
-70 silly currentTree ├── qs@4.0.0
-70 silly currentTree ├── range-parser@1.0.3
-70 silly currentTree ├── readable-stream@1.0.31
-70 silly currentTree ├─┬ redis@2.5.3
-70 silly currentTree │ ├── double-ended-queue@2.1.0-0
-70 silly currentTree │ ├── redis-commands@1.1.0
-70 silly currentTree │ └── redis-parser@1.3.0
-70 silly currentTree ├── regexp-clone@0.0.1
-70 silly currentTree ├── require_optional@1.0.0
-70 silly currentTree ├── resolve-from@2.0.0
-70 silly currentTree ├── semver@5.1.0
-70 silly currentTree ├── send@0.13.1
-70 silly currentTree ├── serve-static@1.10.2
-70 silly currentTree ├── sliced@1.0.1
-70 silly currentTree ├── statuses@1.2.1
-70 silly currentTree ├── string_decoder@0.10.31
-70 silly currentTree ├── type-is@1.6.12
-70 silly currentTree ├── unpipe@1.0.0
-70 silly currentTree ├── utils-merge@1.0.0
-70 silly currentTree └── vary@1.0.1
-71 silly idealTree pankai_webapp@1.0.0
-71 silly idealTree ├── accepts@1.2.13
-71 silly idealTree ├── array-flatten@1.1.1
-71 silly idealTree ├── async@1.5.2
-71 silly idealTree ├── basic-auth@1.0.3
-71 silly idealTree ├── bluebird@2.10.2
-71 silly idealTree ├── bson@0.4.21
-71 silly idealTree ├── content-disposition@0.5.1
-71 silly idealTree ├── content-type@1.0.1
-71 silly idealTree ├── cookie-signature@1.0.6
-71 silly idealTree ├── cookie@0.1.5
-71 silly idealTree ├── core-util-is@1.0.2
-71 silly idealTree ├── debug@2.2.0
-71 silly idealTree ├── depd@1.1.0
-71 silly idealTree ├── destroy@1.0.4
-71 silly idealTree ├── ee-first@1.1.1
-71 silly idealTree ├── es6-promise@3.0.2
-71 silly idealTree ├── escape-html@1.0.3
-71 silly idealTree ├── etag@1.7.0
-71 silly idealTree ├── express@4.13.4
-71 silly idealTree ├── finalhandler@0.4.1
-71 silly idealTree ├── forwarded@0.1.0
-71 silly idealTree ├── fresh@0.3.0
-71 silly idealTree ├── hooks-fixed@1.1.0
-71 silly idealTree ├── http-errors@1.3.1
-71 silly idealTree ├── inherits@2.0.1
-71 silly idealTree ├── ipaddr.js@1.0.5
-71 silly idealTree ├── isarray@0.0.1
-71 silly idealTree ├── kareem@1.0.1
-71 silly idealTree ├── media-typer@0.3.0
-71 silly idealTree ├── memwatch@0.2.2
-71 silly idealTree ├── merge-descriptors@1.0.1
-71 silly idealTree ├── methods@1.1.2
-71 silly idealTree ├── mime-db@1.22.0
-71 silly idealTree ├── mime-types@2.1.10
-71 silly idealTree ├── mime@1.3.4
-71 silly idealTree ├── mongodb-core@1.3.9
-71 silly idealTree ├── mongodb@2.1.10
-71 silly idealTree ├── mongoose@4.4.10
-71 silly idealTree ├── morgan@1.7.0
-71 silly idealTree ├── mpath@0.2.1
-71 silly idealTree ├── mpromise@0.5.5
-71 silly idealTree ├─┬ mquery@1.10.0
-71 silly idealTree │ └── sliced@0.0.5
-71 silly idealTree ├── ms@0.7.1
-71 silly idealTree ├── muri@1.1.0
-71 silly idealTree ├── negotiator@0.5.3
-71 silly idealTree ├── on-finished@2.3.0
-71 silly idealTree ├── on-headers@1.0.1
-71 silly idealTree ├── parseurl@1.3.1
-71 silly idealTree ├── path-to-regexp@0.1.7
-71 silly idealTree ├── proxy-addr@1.0.10
-71 silly idealTree ├── qs@4.0.0
-71 silly idealTree ├── range-parser@1.0.3
-71 silly idealTree ├── readable-stream@1.0.31
-71 silly idealTree ├─┬ redis@2.5.3
-71 silly idealTree │ ├── double-ended-queue@2.1.0-0
-71 silly idealTree │ ├── redis-commands@1.1.0
-71 silly idealTree │ └── redis-parser@1.3.0
-71 silly idealTree ├── regexp-clone@0.0.1
-71 silly idealTree ├── require_optional@1.0.0
-71 silly idealTree ├── resolve-from@2.0.0
-71 silly idealTree ├── semver@5.1.0
-71 silly idealTree ├── send@0.13.1
-71 silly idealTree ├── serve-static@1.10.2
-71 silly idealTree ├── sliced@1.0.1
-71 silly idealTree ├── statuses@1.2.1
-71 silly idealTree ├── string_decoder@0.10.31
-71 silly idealTree ├── type-is@1.6.12
-71 silly idealTree ├── unpipe@1.0.0
-71 silly idealTree ├── utils-merge@1.0.0
-71 silly idealTree └── vary@1.0.1
-72 silly generateActionsToTake Starting
-73 silly install generateActionsToTake
-74 silly generateActionsToTake Finishing
-75 silly diffTrees action count 1
-76 silly diffTrees add memwatch@0.2.2
-77 silly decomposeActions action count 8
-78 silly decomposeActions fetch memwatch@0.2.2
-79 silly decomposeActions extract memwatch@0.2.2
-80 silly decomposeActions preinstall memwatch@0.2.2
-81 silly decomposeActions build memwatch@0.2.2
-82 silly decomposeActions install memwatch@0.2.2
-83 silly decomposeActions postinstall memwatch@0.2.2
-84 silly decomposeActions test memwatch@0.2.2
-85 silly decomposeActions finalize memwatch@0.2.2
-86 silly executeActions Starting
-87 silly install executeActions
-88 silly doSerial global-install 0
-89 silly doParallel fetch 1
-90 verbose lock using /Users/pankai/.npm/_locks/staging-3db01eb9d3fee7a4.lock for /Users/pankai/project/webApp/node_modules/.staging
-91 silly doParallel extract 1
-92 silly extract memwatch@0.2.2
-93 verbose unbuild node_modules/.staging/memwatch-ec8597dd3a26fda45449335a284a920d
-94 silly gentlyRm /Users/pankai/project/webApp/node_modules/.staging/memwatch-ec8597dd3a26fda45449335a284a920d is being purged from base /Users/pankai/project/webApp
-95 verbose gentlyRm don't care about contents; nuking /Users/pankai/project/webApp/node_modules/.staging/memwatch-ec8597dd3a26fda45449335a284a920d
-96 verbose tar unpack /Users/pankai/.npm/memwatch/0.2.2/package.tgz
-97 verbose tar unpacking to /Users/pankai/project/webApp/node_modules/.staging/memwatch-ec8597dd3a26fda45449335a284a920d
-98 silly gentlyRm /Users/pankai/project/webApp/node_modules/.staging/memwatch-ec8597dd3a26fda45449335a284a920d is being purged
-99 verbose gentlyRm don't care about contents; nuking /Users/pankai/project/webApp/node_modules/.staging/memwatch-ec8597dd3a26fda45449335a284a920d
-100 silly gunzTarPerm modes [ '755', '644' ]
-101 silly gunzTarPerm extractEntry package.json
-102 silly gunzTarPerm extractEntry .npmignore
-103 silly gunzTarPerm extractEntry README.md
-104 silly gunzTarPerm extractEntry tests.js
-105 silly gunzTarPerm extractEntry foo.js
-106 silly gunzTarPerm extractEntry include.js
-107 silly gunzTarPerm extractEntry .travis.yml
-108 silly gunzTarPerm extractEntry ChangeLog
-109 silly gunzTarPerm extractEntry #wscript#
-110 silly gunzTarPerm extractEntry binding.gyp
-111 silly gunzTarPerm extractEntry src/heapdiff.cc
-112 silly gunzTarPerm extractEntry src/heapdiff.hh
-113 silly gunzTarPerm extractEntry src/init.cc
-114 silly gunzTarPerm extractEntry src/memwatch.cc
-115 silly gunzTarPerm extractEntry src/memwatch.hh
-116 silly gunzTarPerm extractEntry src/platformcompat.hh
-117 silly gunzTarPerm extractEntry src/util.cc
-118 silly gunzTarPerm extractEntry src/util.hh
-119 silly gunzTarPerm extractEntry examples/basic_heapdiff.js
-120 silly gunzTarPerm extractEntry examples/do_nothing_server.js
-121 silly gunzTarPerm extractEntry examples/slightly_leaky.js
-122 silly doParallel preinstall 1
-123 silly preinstall memwatch@0.2.2 /Users/pankai/project/webApp/node_modules/.staging/memwatch-ec8597dd3a26fda45449335a284a920d
-124 info lifecycle memwatch@0.2.2~preinstall: memwatch@0.2.2
-125 silly lifecycle memwatch@0.2.2~preinstall: no script for preinstall, continuing
-126 silly doReverseSerial remove 0
-127 silly doSerial move 0
-128 silly doSerial finalize 1
-129 silly finalize /Users/pankai/project/webApp/node_modules/memwatch
-130 silly doSerial build 1
-131 silly build memwatch@0.2.2
-132 info linkStuff memwatch@0.2.2
-133 silly linkStuff memwatch@0.2.2 has /Users/pankai/project/webApp/node_modules as its parent node_modules
-134 verbose linkBins memwatch@0.2.2
-135 verbose linkMans memwatch@0.2.2
-136 silly doSerial global-link 0
-137 silly doParallel update-linked 0
-138 silly doSerial install 1
-139 silly install memwatch@0.2.2 /Users/pankai/project/webApp/node_modules/.staging/memwatch-ec8597dd3a26fda45449335a284a920d
-140 info lifecycle memwatch@0.2.2~install: memwatch@0.2.2
-141 verbose lifecycle memwatch@0.2.2~install: unsafe-perm in lifecycle true
-142 verbose lifecycle memwatch@0.2.2~install: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/pankai/project/webApp/node_modules/memwatch/node_modules/.bin:/Users/pankai/project/webApp/node_modules/.bin:/Users/pankai/bin:/usr/local/bin:/Users/pankai/.nvm/versions/node/v5.9.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/Users/pankai/.pyenv/bin
-143 verbose lifecycle memwatch@0.2.2~install: CWD: /Users/pankai/project/webApp/node_modules/memwatch
-144 silly lifecycle memwatch@0.2.2~install: Args: [ '-c', 'node-gyp rebuild' ]
-145 silly lifecycle memwatch@0.2.2~install: Returned: code: 1  signal: null
-146 info lifecycle memwatch@0.2.2~install: Failed to exec install script
-147 verbose unlock done using /Users/pankai/.npm/_locks/staging-3db01eb9d3fee7a4.lock for /Users/pankai/project/webApp/node_modules/.staging
-148 silly rollbackFailedOptional Starting
-149 silly rollbackFailedOptional Finishing
-150 silly runTopLevelLifecycles Starting
-151 silly runTopLevelLifecycles Finishing
-152 silly install printInstalled
-153 warn EPACKAGEJSON pankai_webapp@1.0.0 No repository field.
-154 verbose stack Error: memwatch@0.2.2 install: `node-gyp rebuild`
-154 verbose stack Exit status 1
-154 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:233:16)
-154 verbose stack     at emitTwo (events.js:87:13)
-154 verbose stack     at EventEmitter.emit (events.js:172:7)
-154 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
-154 verbose stack     at emitTwo (events.js:87:13)
-154 verbose stack     at ChildProcess.emit (events.js:172:7)
-154 verbose stack     at maybeClose (internal/child_process.js:818:16)
-154 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
-155 verbose pkgid memwatch@0.2.2
-156 verbose cwd /Users/pankai/project/webApp
-157 error Darwin 15.2.0
-158 error argv "/usr/local/Cellar/node/5.0.0/bin/node" "/usr/local/bin/npm" "install" "memwatch"
-159 error node v5.0.0
-160 error npm  v3.3.9
-161 error code ELIFECYCLE
-162 error memwatch@0.2.2 install: `node-gyp rebuild`
-162 error Exit status 1
-163 error Failed at the memwatch@0.2.2 install script 'node-gyp rebuild'.
-163 error This is most likely a problem with the memwatch package,
-163 error not with npm itself.
-163 error Tell the author that this fails on your system:
-163 error     node-gyp rebuild
-163 error You can get their info via:
-163 error     npm owner ls memwatch
-163 error There is likely additional logging output above.
-164 verbose exit [ 1, true ]
+15 info attempt registry request try #1 at 12:42:34
+16 verbose request id 27af0916e8c3f175
+17 verbose etag "D175VP6ZNUJ8WQ8X1ZCFFKTOF"
+18 http request GET https://registry.npmjs.org/memwatch
+19 http 304 https://registry.npmjs.org/memwatch
+20 verbose headers { date: 'Thu, 07 Apr 2016 04:37:21 GMT',
+20 verbose headers   via: '1.1 varnish',
+20 verbose headers   'cache-control': 'max-age=300',
+20 verbose headers   etag: '"D175VP6ZNUJ8WQ8X1ZCFFKTOF"',
+20 verbose headers   age: '65',
+20 verbose headers   connection: 'keep-alive',
+20 verbose headers   'x-served-by': 'cache-itm7420-ITM',
+20 verbose headers   'x-cache': 'HIT',
+20 verbose headers   'x-cache-hits': '1',
+20 verbose headers   'x-timer': 'S1460003841.111762,VS0,VE0',
+20 verbose headers   vary: 'Accept-Encoding' }
+21 silly get cb [ 304,
+21 silly get   { date: 'Thu, 07 Apr 2016 04:37:21 GMT',
+21 silly get     via: '1.1 varnish',
+21 silly get     'cache-control': 'max-age=300',
+21 silly get     etag: '"D175VP6ZNUJ8WQ8X1ZCFFKTOF"',
+21 silly get     age: '65',
+21 silly get     connection: 'keep-alive',
+21 silly get     'x-served-by': 'cache-itm7420-ITM',
+21 silly get     'x-cache': 'HIT',
+21 silly get     'x-cache-hits': '1',
+21 silly get     'x-timer': 'S1460003841.111762,VS0,VE0',
+21 silly get     vary: 'Accept-Encoding' } ]
+22 verbose etag https://registry.npmjs.org/memwatch from cache
+23 verbose get saving memwatch to /Users/pankai/.npm/registry.npmjs.org/memwatch/.cache.json
+24 verbose correctMkdir /Users/pankai/.npm correctMkdir not in flight; initializing
+25 silly install normalizeTree
+26 silly loadCurrentTree Finishing
+27 silly loadIdealTree Starting
+28 silly install loadIdealTree
+29 silly cloneCurrentTree Starting
+30 silly install cloneCurrentTreeToIdealTree
+31 silly cloneCurrentTree Finishing
+32 silly loadShrinkwrap Starting
+33 silly install loadShrinkwrap
+34 silly loadShrinkwrap Finishing
+35 silly loadAllDepsIntoIdealTree Starting
+36 silly install loadAllDepsIntoIdealTree
+37 silly resolveWithNewModule memwatch@0.2.2 checking installable status
+38 silly cache add args [ 'memwatch', null ]
+39 verbose cache add spec memwatch
+40 silly cache add parsed spec Result {
+40 silly cache add   raw: 'memwatch',
+40 silly cache add   scope: null,
+40 silly cache add   name: 'memwatch',
+40 silly cache add   rawSpec: '',
+40 silly cache add   spec: 'latest',
+40 silly cache add   type: 'tag' }
+41 silly addNamed memwatch@latest
+42 verbose addNamed "latest" is being treated as a dist-tag for memwatch
+43 info addNameTag [ 'memwatch', 'latest' ]
+44 silly mapToRegistry name memwatch
+45 silly mapToRegistry using default registry
+46 silly mapToRegistry registry https://registry.npmjs.org/
+47 silly mapToRegistry uri https://registry.npmjs.org/memwatch
+48 verbose addNameTag registry:https://registry.npmjs.org/memwatch not in flight; fetching
+49 verbose get https://registry.npmjs.org/memwatch not expired, no request
+50 silly addNameTag next cb for memwatch with tag latest
+51 silly addNamed memwatch@0.2.2
+52 verbose addNamed "0.2.2" is a plain semver version for memwatch
+53 silly cache afterAdd memwatch@0.2.2
+54 verbose afterAdd /Users/pankai/.npm/memwatch/0.2.2/package/package.json not in flight; writing
+55 verbose correctMkdir /Users/pankai/.npm correctMkdir not in flight; initializing
+56 verbose afterAdd /Users/pankai/.npm/memwatch/0.2.2/package/package.json written
+57 silly loadAllDepsIntoIdealTree Finishing
+58 silly idealTree:prePrune pankai_webapp@1.0.0
+58 silly idealTree:prePrune ├── abbrev@1.0.7
+58 silly idealTree:prePrune ├── accepts@1.2.13
+58 silly idealTree:prePrune ├── ansi-regex@2.0.0
+58 silly idealTree:prePrune ├── ansi-styles@2.2.1
+58 silly idealTree:prePrune ├── ansi@0.3.1
+58 silly idealTree:prePrune ├─┬ are-we-there-yet@1.1.2
+58 silly idealTree:prePrune │ ├── isarray@1.0.0
+58 silly idealTree:prePrune │ └── readable-stream@2.0.6
+58 silly idealTree:prePrune ├── array-flatten@1.1.1
+58 silly idealTree:prePrune ├── array-index@1.0.0
+58 silly idealTree:prePrune ├── asn1@0.2.3
+58 silly idealTree:prePrune ├── assert-plus@0.2.0
+58 silly idealTree:prePrune ├── async@1.5.2
+58 silly idealTree:prePrune ├── aws-sign2@0.6.0
+58 silly idealTree:prePrune ├─┬ aws4@1.3.2
+58 silly idealTree:prePrune │ └── lru-cache@4.0.1
+58 silly idealTree:prePrune ├── balanced-match@0.3.0
+58 silly idealTree:prePrune ├── basic-auth@1.0.3
+58 silly idealTree:prePrune ├─┬ bl@1.1.2
+58 silly idealTree:prePrune │ ├── isarray@1.0.0
+58 silly idealTree:prePrune │ └── readable-stream@2.0.6
+58 silly idealTree:prePrune ├── block-stream@0.0.8
+58 silly idealTree:prePrune ├── bluebird@2.10.2
+58 silly idealTree:prePrune ├── boom@2.10.1
+58 silly idealTree:prePrune ├── brace-expansion@1.1.3
+58 silly idealTree:prePrune ├── bson@0.4.21
+58 silly idealTree:prePrune ├── caseless@0.11.0
+58 silly idealTree:prePrune ├── chalk@1.1.3
+58 silly idealTree:prePrune ├── combined-stream@1.0.5
+58 silly idealTree:prePrune ├── commander@2.9.0
+58 silly idealTree:prePrune ├── concat-map@0.0.1
+58 silly idealTree:prePrune ├── content-disposition@0.5.1
+58 silly idealTree:prePrune ├── content-type@1.0.1
+58 silly idealTree:prePrune ├── cookie-signature@1.0.6
+58 silly idealTree:prePrune ├── cookie@0.1.5
+58 silly idealTree:prePrune ├── core-util-is@1.0.2
+58 silly idealTree:prePrune ├── cryptiles@2.0.5
+58 silly idealTree:prePrune ├── d@0.1.1
+58 silly idealTree:prePrune ├─┬ dashdash@1.13.0
+58 silly idealTree:prePrune │ └── assert-plus@1.0.0
+58 silly idealTree:prePrune ├── debug@2.2.0
+58 silly idealTree:prePrune ├── delayed-stream@1.0.0
+58 silly idealTree:prePrune ├── delegates@1.0.0
+58 silly idealTree:prePrune ├── depd@1.1.0
+58 silly idealTree:prePrune ├── destroy@1.0.4
+58 silly idealTree:prePrune ├── ecc-jsbn@0.1.1
+58 silly idealTree:prePrune ├── ee-first@1.1.1
+58 silly idealTree:prePrune ├── es5-ext@0.10.11
+58 silly idealTree:prePrune ├── es6-iterator@2.0.0
+58 silly idealTree:prePrune ├── es6-promise@3.0.2
+58 silly idealTree:prePrune ├── es6-symbol@3.0.2
+58 silly idealTree:prePrune ├── escape-html@1.0.3
+58 silly idealTree:prePrune ├── escape-string-regexp@1.0.5
+58 silly idealTree:prePrune ├── etag@1.7.0
+58 silly idealTree:prePrune ├── express@4.13.4
+58 silly idealTree:prePrune ├── extend@3.0.0
+58 silly idealTree:prePrune ├── extsprintf@1.0.2
+58 silly idealTree:prePrune ├── finalhandler@0.4.1
+58 silly idealTree:prePrune ├── forever-agent@0.6.1
+58 silly idealTree:prePrune ├── form-data@1.0.0-rc4
+58 silly idealTree:prePrune ├── forwarded@0.1.0
+58 silly idealTree:prePrune ├── fresh@0.3.0
+58 silly idealTree:prePrune ├── fstream@1.0.8
+58 silly idealTree:prePrune ├── gauge@1.2.7
+58 silly idealTree:prePrune ├── generate-function@2.0.0
+58 silly idealTree:prePrune ├── generate-object-property@1.2.0
+58 silly idealTree:prePrune ├─┬ glob@4.5.3
+58 silly idealTree:prePrune │ └── minimatch@2.0.10
+58 silly idealTree:prePrune ├── graceful-fs@4.1.3
+58 silly idealTree:prePrune ├── graceful-readlink@1.0.1
+58 silly idealTree:prePrune ├── har-validator@2.0.6
+58 silly idealTree:prePrune ├── has-ansi@2.0.0
+58 silly idealTree:prePrune ├── has-unicode@2.0.0
+58 silly idealTree:prePrune ├── hawk@3.1.3
+58 silly idealTree:prePrune ├── hoek@2.16.3
+58 silly idealTree:prePrune ├── hooks-fixed@1.1.0
+58 silly idealTree:prePrune ├── http-errors@1.3.1
+58 silly idealTree:prePrune ├── http-signature@1.1.1
+58 silly idealTree:prePrune ├── inflight@1.0.4
+58 silly idealTree:prePrune ├── inherits@2.0.1
+58 silly idealTree:prePrune ├── ipaddr.js@1.0.5
+58 silly idealTree:prePrune ├── is-absolute@0.1.7
+58 silly idealTree:prePrune ├── is-my-json-valid@2.13.1
+58 silly idealTree:prePrune ├── is-property@1.0.2
+58 silly idealTree:prePrune ├── is-relative@0.1.3
+58 silly idealTree:prePrune ├── is-typedarray@1.0.0
+58 silly idealTree:prePrune ├── isarray@0.0.1
+58 silly idealTree:prePrune ├── isexe@1.1.2
+58 silly idealTree:prePrune ├── isstream@0.1.2
+58 silly idealTree:prePrune ├── jodid25519@1.0.2
+58 silly idealTree:prePrune ├── jsbn@0.1.0
+58 silly idealTree:prePrune ├── json-schema@0.2.2
+58 silly idealTree:prePrune ├── json-stringify-safe@5.0.1
+58 silly idealTree:prePrune ├── jsonpointer@2.0.0
+58 silly idealTree:prePrune ├── jsprim@1.2.2
+58 silly idealTree:prePrune ├── kareem@1.0.1
+58 silly idealTree:prePrune ├── lodash.pad@4.2.0
+58 silly idealTree:prePrune ├── lodash.padend@4.3.0
+58 silly idealTree:prePrune ├── lodash.padstart@4.3.0
+58 silly idealTree:prePrune ├── lodash.tostring@4.1.2
+58 silly idealTree:prePrune ├── lru-cache@2.7.3
+58 silly idealTree:prePrune ├── media-typer@0.3.0
+58 silly idealTree:prePrune ├── memwatch@0.2.2
+58 silly idealTree:prePrune ├── merge-descriptors@1.0.1
+58 silly idealTree:prePrune ├── methods@1.1.2
+58 silly idealTree:prePrune ├── mime-db@1.22.0
+58 silly idealTree:prePrune ├── mime-types@2.1.10
+58 silly idealTree:prePrune ├── mime@1.3.4
+58 silly idealTree:prePrune ├── minimatch@1.0.0
+58 silly idealTree:prePrune ├── minimist@0.0.8
+58 silly idealTree:prePrune ├── mkdirp@0.5.1
+58 silly idealTree:prePrune ├── mongodb-core@1.3.9
+58 silly idealTree:prePrune ├── mongodb@2.1.10
+58 silly idealTree:prePrune ├── mongoose@4.4.10
+58 silly idealTree:prePrune ├── morgan@1.7.0
+58 silly idealTree:prePrune ├── mpath@0.2.1
+58 silly idealTree:prePrune ├── mpromise@0.5.5
+58 silly idealTree:prePrune ├─┬ mquery@1.10.0
+58 silly idealTree:prePrune │ └── sliced@0.0.5
+58 silly idealTree:prePrune ├── ms@0.7.1
+58 silly idealTree:prePrune ├── muri@1.1.0
+58 silly idealTree:prePrune ├── negotiator@0.5.3
+58 silly idealTree:prePrune ├── node-gyp@3.3.1
+58 silly idealTree:prePrune ├── node-uuid@1.4.7
+58 silly idealTree:prePrune ├── nopt@3.0.6
+58 silly idealTree:prePrune ├── npmlog@2.0.3
+58 silly idealTree:prePrune ├── oauth-sign@0.8.1
+58 silly idealTree:prePrune ├── on-finished@2.3.0
+58 silly idealTree:prePrune ├── on-headers@1.0.1
+58 silly idealTree:prePrune ├── once@1.3.3
+58 silly idealTree:prePrune ├── os-homedir@1.0.1
+58 silly idealTree:prePrune ├── os-tmpdir@1.0.1
+58 silly idealTree:prePrune ├── osenv@0.1.3
+58 silly idealTree:prePrune ├── parseurl@1.3.1
+58 silly idealTree:prePrune ├── path-array@1.0.1
+58 silly idealTree:prePrune ├── path-is-absolute@1.0.0
+58 silly idealTree:prePrune ├── path-to-regexp@0.1.7
+58 silly idealTree:prePrune ├── pinkie-promise@2.0.0
+58 silly idealTree:prePrune ├── pinkie@2.0.4
+58 silly idealTree:prePrune ├── process-nextick-args@1.0.6
+58 silly idealTree:prePrune ├── proxy-addr@1.0.10
+58 silly idealTree:prePrune ├── pseudomap@1.0.2
+58 silly idealTree:prePrune ├── qs@4.0.0
+58 silly idealTree:prePrune ├── range-parser@1.0.3
+58 silly idealTree:prePrune ├── readable-stream@1.0.31
+58 silly idealTree:prePrune ├─┬ redis@2.5.3
+58 silly idealTree:prePrune │ ├── double-ended-queue@2.1.0-0
+58 silly idealTree:prePrune │ ├── redis-commands@1.1.0
+58 silly idealTree:prePrune │ └── redis-parser@1.3.0
+58 silly idealTree:prePrune ├── regexp-clone@0.0.1
+58 silly idealTree:prePrune ├─┬ request@2.70.0
+58 silly idealTree:prePrune │ └── qs@6.1.0
+58 silly idealTree:prePrune ├── require_optional@1.0.0
+58 silly idealTree:prePrune ├── resolve-from@2.0.0
+58 silly idealTree:prePrune ├─┬ rimraf@2.5.2
+58 silly idealTree:prePrune │ ├── glob@7.0.3
+58 silly idealTree:prePrune │ └── minimatch@3.0.0
+58 silly idealTree:prePrune ├── semver@5.1.0
+58 silly idealTree:prePrune ├── send@0.13.1
+58 silly idealTree:prePrune ├── serve-static@1.10.2
+58 silly idealTree:prePrune ├── sigmund@1.0.1
+58 silly idealTree:prePrune ├── sliced@1.0.1
+58 silly idealTree:prePrune ├── sntp@1.0.9
+58 silly idealTree:prePrune ├── sshpk@1.7.4
+58 silly idealTree:prePrune ├── statuses@1.2.1
+58 silly idealTree:prePrune ├── string_decoder@0.10.31
+58 silly idealTree:prePrune ├── stringstream@0.0.5
+58 silly idealTree:prePrune ├── strip-ansi@3.0.1
+58 silly idealTree:prePrune ├── supports-color@2.0.0
+58 silly idealTree:prePrune ├── tar@2.2.1
+58 silly idealTree:prePrune ├── tough-cookie@2.2.2
+58 silly idealTree:prePrune ├── tunnel-agent@0.4.2
+58 silly idealTree:prePrune ├── tweetnacl@0.14.3
+58 silly idealTree:prePrune ├── type-is@1.6.12
+58 silly idealTree:prePrune ├── unpipe@1.0.0
+58 silly idealTree:prePrune ├── util-deprecate@1.0.2
+58 silly idealTree:prePrune ├── utils-merge@1.0.0
+58 silly idealTree:prePrune ├── vary@1.0.1
+58 silly idealTree:prePrune ├── verror@1.3.6
+58 silly idealTree:prePrune ├── which@1.2.4
+58 silly idealTree:prePrune ├── wrappy@1.0.1
+58 silly idealTree:prePrune ├── xtend@4.0.1
+58 silly idealTree:prePrune └── yallist@2.0.0
+59 silly loadIdealTree Finishing
+60 silly currentTree pankai_webapp@1.0.0
+60 silly currentTree ├── abbrev@1.0.7
+60 silly currentTree ├── accepts@1.2.13
+60 silly currentTree ├── ansi-regex@2.0.0
+60 silly currentTree ├── ansi-styles@2.2.1
+60 silly currentTree ├── ansi@0.3.1
+60 silly currentTree ├─┬ are-we-there-yet@1.1.2
+60 silly currentTree │ ├── isarray@1.0.0
+60 silly currentTree │ └── readable-stream@2.0.6
+60 silly currentTree ├── array-flatten@1.1.1
+60 silly currentTree ├── array-index@1.0.0
+60 silly currentTree ├── asn1@0.2.3
+60 silly currentTree ├── assert-plus@0.2.0
+60 silly currentTree ├── async@1.5.2
+60 silly currentTree ├── aws-sign2@0.6.0
+60 silly currentTree ├─┬ aws4@1.3.2
+60 silly currentTree │ └── lru-cache@4.0.1
+60 silly currentTree ├── balanced-match@0.3.0
+60 silly currentTree ├── basic-auth@1.0.3
+60 silly currentTree ├─┬ bl@1.1.2
+60 silly currentTree │ ├── isarray@1.0.0
+60 silly currentTree │ └── readable-stream@2.0.6
+60 silly currentTree ├── block-stream@0.0.8
+60 silly currentTree ├── bluebird@2.10.2
+60 silly currentTree ├── boom@2.10.1
+60 silly currentTree ├── brace-expansion@1.1.3
+60 silly currentTree ├── bson@0.4.21
+60 silly currentTree ├── caseless@0.11.0
+60 silly currentTree ├── chalk@1.1.3
+60 silly currentTree ├── combined-stream@1.0.5
+60 silly currentTree ├── commander@2.9.0
+60 silly currentTree ├── concat-map@0.0.1
+60 silly currentTree ├── content-disposition@0.5.1
+60 silly currentTree ├── content-type@1.0.1
+60 silly currentTree ├── cookie-signature@1.0.6
+60 silly currentTree ├── cookie@0.1.5
+60 silly currentTree ├── core-util-is@1.0.2
+60 silly currentTree ├── cryptiles@2.0.5
+60 silly currentTree ├── d@0.1.1
+60 silly currentTree ├─┬ dashdash@1.13.0
+60 silly currentTree │ └── assert-plus@1.0.0
+60 silly currentTree ├── debug@2.2.0
+60 silly currentTree ├── delayed-stream@1.0.0
+60 silly currentTree ├── delegates@1.0.0
+60 silly currentTree ├── depd@1.1.0
+60 silly currentTree ├── destroy@1.0.4
+60 silly currentTree ├── ecc-jsbn@0.1.1
+60 silly currentTree ├── ee-first@1.1.1
+60 silly currentTree ├── es5-ext@0.10.11
+60 silly currentTree ├── es6-iterator@2.0.0
+60 silly currentTree ├── es6-promise@3.0.2
+60 silly currentTree ├── es6-symbol@3.0.2
+60 silly currentTree ├── escape-html@1.0.3
+60 silly currentTree ├── escape-string-regexp@1.0.5
+60 silly currentTree ├── etag@1.7.0
+60 silly currentTree ├── express@4.13.4
+60 silly currentTree ├── extend@3.0.0
+60 silly currentTree ├── extsprintf@1.0.2
+60 silly currentTree ├── finalhandler@0.4.1
+60 silly currentTree ├── forever-agent@0.6.1
+60 silly currentTree ├── form-data@1.0.0-rc4
+60 silly currentTree ├── forwarded@0.1.0
+60 silly currentTree ├── fresh@0.3.0
+60 silly currentTree ├── fstream@1.0.8
+60 silly currentTree ├── gauge@1.2.7
+60 silly currentTree ├── generate-function@2.0.0
+60 silly currentTree ├── generate-object-property@1.2.0
+60 silly currentTree ├─┬ glob@4.5.3
+60 silly currentTree │ └── minimatch@2.0.10
+60 silly currentTree ├── graceful-fs@4.1.3
+60 silly currentTree ├── graceful-readlink@1.0.1
+60 silly currentTree ├── har-validator@2.0.6
+60 silly currentTree ├── has-ansi@2.0.0
+60 silly currentTree ├── has-unicode@2.0.0
+60 silly currentTree ├── hawk@3.1.3
+60 silly currentTree ├── hoek@2.16.3
+60 silly currentTree ├── hooks-fixed@1.1.0
+60 silly currentTree ├── http-errors@1.3.1
+60 silly currentTree ├── http-signature@1.1.1
+60 silly currentTree ├── inflight@1.0.4
+60 silly currentTree ├── inherits@2.0.1
+60 silly currentTree ├── ipaddr.js@1.0.5
+60 silly currentTree ├── is-absolute@0.1.7
+60 silly currentTree ├── is-my-json-valid@2.13.1
+60 silly currentTree ├── is-property@1.0.2
+60 silly currentTree ├── is-relative@0.1.3
+60 silly currentTree ├── is-typedarray@1.0.0
+60 silly currentTree ├── isarray@0.0.1
+60 silly currentTree ├── isexe@1.1.2
+60 silly currentTree ├── isstream@0.1.2
+60 silly currentTree ├── jodid25519@1.0.2
+60 silly currentTree ├── jsbn@0.1.0
+60 silly currentTree ├── json-schema@0.2.2
+60 silly currentTree ├── json-stringify-safe@5.0.1
+60 silly currentTree ├── jsonpointer@2.0.0
+60 silly currentTree ├── jsprim@1.2.2
+60 silly currentTree ├── kareem@1.0.1
+60 silly currentTree ├── lodash.pad@4.2.0
+60 silly currentTree ├── lodash.padend@4.3.0
+60 silly currentTree ├── lodash.padstart@4.3.0
+60 silly currentTree ├── lodash.tostring@4.1.2
+60 silly currentTree ├── lru-cache@2.7.3
+60 silly currentTree ├── media-typer@0.3.0
+60 silly currentTree ├── merge-descriptors@1.0.1
+60 silly currentTree ├── methods@1.1.2
+60 silly currentTree ├── mime-db@1.22.0
+60 silly currentTree ├── mime-types@2.1.10
+60 silly currentTree ├── mime@1.3.4
+60 silly currentTree ├── minimatch@1.0.0
+60 silly currentTree ├── minimist@0.0.8
+60 silly currentTree ├── mkdirp@0.5.1
+60 silly currentTree ├── mongodb-core@1.3.9
+60 silly currentTree ├── mongodb@2.1.10
+60 silly currentTree ├── mongoose@4.4.10
+60 silly currentTree ├── morgan@1.7.0
+60 silly currentTree ├── mpath@0.2.1
+60 silly currentTree ├── mpromise@0.5.5
+60 silly currentTree ├─┬ mquery@1.10.0
+60 silly currentTree │ └── sliced@0.0.5
+60 silly currentTree ├── ms@0.7.1
+60 silly currentTree ├── muri@1.1.0
+60 silly currentTree ├── negotiator@0.5.3
+60 silly currentTree ├── node-gyp@3.3.1
+60 silly currentTree ├── node-uuid@1.4.7
+60 silly currentTree ├── nopt@3.0.6
+60 silly currentTree ├── npmlog@2.0.3
+60 silly currentTree ├── oauth-sign@0.8.1
+60 silly currentTree ├── on-finished@2.3.0
+60 silly currentTree ├── on-headers@1.0.1
+60 silly currentTree ├── once@1.3.3
+60 silly currentTree ├── os-homedir@1.0.1
+60 silly currentTree ├── os-tmpdir@1.0.1
+60 silly currentTree ├── osenv@0.1.3
+60 silly currentTree ├── parseurl@1.3.1
+60 silly currentTree ├── path-array@1.0.1
+60 silly currentTree ├── path-is-absolute@1.0.0
+60 silly currentTree ├── path-to-regexp@0.1.7
+60 silly currentTree ├── pinkie-promise@2.0.0
+60 silly currentTree ├── pinkie@2.0.4
+60 silly currentTree ├── process-nextick-args@1.0.6
+60 silly currentTree ├── proxy-addr@1.0.10
+60 silly currentTree ├── pseudomap@1.0.2
+60 silly currentTree ├── qs@4.0.0
+60 silly currentTree ├── range-parser@1.0.3
+60 silly currentTree ├── readable-stream@1.0.31
+60 silly currentTree ├─┬ redis@2.5.3
+60 silly currentTree │ ├── double-ended-queue@2.1.0-0
+60 silly currentTree │ ├── redis-commands@1.1.0
+60 silly currentTree │ └── redis-parser@1.3.0
+60 silly currentTree ├── regexp-clone@0.0.1
+60 silly currentTree ├─┬ request@2.70.0
+60 silly currentTree │ └── qs@6.1.0
+60 silly currentTree ├── require_optional@1.0.0
+60 silly currentTree ├── resolve-from@2.0.0
+60 silly currentTree ├─┬ rimraf@2.5.2
+60 silly currentTree │ ├── glob@7.0.3
+60 silly currentTree │ └── minimatch@3.0.0
+60 silly currentTree ├── semver@5.1.0
+60 silly currentTree ├── send@0.13.1
+60 silly currentTree ├── serve-static@1.10.2
+60 silly currentTree ├── sigmund@1.0.1
+60 silly currentTree ├── sliced@1.0.1
+60 silly currentTree ├── sntp@1.0.9
+60 silly currentTree ├── sshpk@1.7.4
+60 silly currentTree ├── statuses@1.2.1
+60 silly currentTree ├── string_decoder@0.10.31
+60 silly currentTree ├── stringstream@0.0.5
+60 silly currentTree ├── strip-ansi@3.0.1
+60 silly currentTree ├── supports-color@2.0.0
+60 silly currentTree ├── tar@2.2.1
+60 silly currentTree ├── tough-cookie@2.2.2
+60 silly currentTree ├── tunnel-agent@0.4.2
+60 silly currentTree ├── tweetnacl@0.14.3
+60 silly currentTree ├── type-is@1.6.12
+60 silly currentTree ├── unpipe@1.0.0
+60 silly currentTree ├── util-deprecate@1.0.2
+60 silly currentTree ├── utils-merge@1.0.0
+60 silly currentTree ├── vary@1.0.1
+60 silly currentTree ├── verror@1.3.6
+60 silly currentTree ├── which@1.2.4
+60 silly currentTree ├── wrappy@1.0.1
+60 silly currentTree ├── xtend@4.0.1
+60 silly currentTree └── yallist@2.0.0
+61 silly idealTree pankai_webapp@1.0.0
+61 silly idealTree ├── abbrev@1.0.7
+61 silly idealTree ├── accepts@1.2.13
+61 silly idealTree ├── ansi-regex@2.0.0
+61 silly idealTree ├── ansi-styles@2.2.1
+61 silly idealTree ├── ansi@0.3.1
+61 silly idealTree ├─┬ are-we-there-yet@1.1.2
+61 silly idealTree │ ├── isarray@1.0.0
+61 silly idealTree │ └── readable-stream@2.0.6
+61 silly idealTree ├── array-flatten@1.1.1
+61 silly idealTree ├── array-index@1.0.0
+61 silly idealTree ├── asn1@0.2.3
+61 silly idealTree ├── assert-plus@0.2.0
+61 silly idealTree ├── async@1.5.2
+61 silly idealTree ├── aws-sign2@0.6.0
+61 silly idealTree ├─┬ aws4@1.3.2
+61 silly idealTree │ └── lru-cache@4.0.1
+61 silly idealTree ├── balanced-match@0.3.0
+61 silly idealTree ├── basic-auth@1.0.3
+61 silly idealTree ├─┬ bl@1.1.2
+61 silly idealTree │ ├── isarray@1.0.0
+61 silly idealTree │ └── readable-stream@2.0.6
+61 silly idealTree ├── block-stream@0.0.8
+61 silly idealTree ├── bluebird@2.10.2
+61 silly idealTree ├── boom@2.10.1
+61 silly idealTree ├── brace-expansion@1.1.3
+61 silly idealTree ├── bson@0.4.21
+61 silly idealTree ├── caseless@0.11.0
+61 silly idealTree ├── chalk@1.1.3
+61 silly idealTree ├── combined-stream@1.0.5
+61 silly idealTree ├── commander@2.9.0
+61 silly idealTree ├── concat-map@0.0.1
+61 silly idealTree ├── content-disposition@0.5.1
+61 silly idealTree ├── content-type@1.0.1
+61 silly idealTree ├── cookie-signature@1.0.6
+61 silly idealTree ├── cookie@0.1.5
+61 silly idealTree ├── core-util-is@1.0.2
+61 silly idealTree ├── cryptiles@2.0.5
+61 silly idealTree ├── d@0.1.1
+61 silly idealTree ├─┬ dashdash@1.13.0
+61 silly idealTree │ └── assert-plus@1.0.0
+61 silly idealTree ├── debug@2.2.0
+61 silly idealTree ├── delayed-stream@1.0.0
+61 silly idealTree ├── delegates@1.0.0
+61 silly idealTree ├── depd@1.1.0
+61 silly idealTree ├── destroy@1.0.4
+61 silly idealTree ├── ecc-jsbn@0.1.1
+61 silly idealTree ├── ee-first@1.1.1
+61 silly idealTree ├── es5-ext@0.10.11
+61 silly idealTree ├── es6-iterator@2.0.0
+61 silly idealTree ├── es6-promise@3.0.2
+61 silly idealTree ├── es6-symbol@3.0.2
+61 silly idealTree ├── escape-html@1.0.3
+61 silly idealTree ├── escape-string-regexp@1.0.5
+61 silly idealTree ├── etag@1.7.0
+61 silly idealTree ├── express@4.13.4
+61 silly idealTree ├── extend@3.0.0
+61 silly idealTree ├── extsprintf@1.0.2
+61 silly idealTree ├── finalhandler@0.4.1
+61 silly idealTree ├── forever-agent@0.6.1
+61 silly idealTree ├── form-data@1.0.0-rc4
+61 silly idealTree ├── forwarded@0.1.0
+61 silly idealTree ├── fresh@0.3.0
+61 silly idealTree ├── fstream@1.0.8
+61 silly idealTree ├── gauge@1.2.7
+61 silly idealTree ├── generate-function@2.0.0
+61 silly idealTree ├── generate-object-property@1.2.0
+61 silly idealTree ├─┬ glob@4.5.3
+61 silly idealTree │ └── minimatch@2.0.10
+61 silly idealTree ├── graceful-fs@4.1.3
+61 silly idealTree ├── graceful-readlink@1.0.1
+61 silly idealTree ├── har-validator@2.0.6
+61 silly idealTree ├── has-ansi@2.0.0
+61 silly idealTree ├── has-unicode@2.0.0
+61 silly idealTree ├── hawk@3.1.3
+61 silly idealTree ├── hoek@2.16.3
+61 silly idealTree ├── hooks-fixed@1.1.0
+61 silly idealTree ├── http-errors@1.3.1
+61 silly idealTree ├── http-signature@1.1.1
+61 silly idealTree ├── inflight@1.0.4
+61 silly idealTree ├── inherits@2.0.1
+61 silly idealTree ├── ipaddr.js@1.0.5
+61 silly idealTree ├── is-absolute@0.1.7
+61 silly idealTree ├── is-my-json-valid@2.13.1
+61 silly idealTree ├── is-property@1.0.2
+61 silly idealTree ├── is-relative@0.1.3
+61 silly idealTree ├── is-typedarray@1.0.0
+61 silly idealTree ├── isarray@0.0.1
+61 silly idealTree ├── isexe@1.1.2
+61 silly idealTree ├── isstream@0.1.2
+61 silly idealTree ├── jodid25519@1.0.2
+61 silly idealTree ├── jsbn@0.1.0
+61 silly idealTree ├── json-schema@0.2.2
+61 silly idealTree ├── json-stringify-safe@5.0.1
+61 silly idealTree ├── jsonpointer@2.0.0
+61 silly idealTree ├── jsprim@1.2.2
+61 silly idealTree ├── kareem@1.0.1
+61 silly idealTree ├── lodash.pad@4.2.0
+61 silly idealTree ├── lodash.padend@4.3.0
+61 silly idealTree ├── lodash.padstart@4.3.0
+61 silly idealTree ├── lodash.tostring@4.1.2
+61 silly idealTree ├── lru-cache@2.7.3
+61 silly idealTree ├── media-typer@0.3.0
+61 silly idealTree ├── memwatch@0.2.2
+61 silly idealTree ├── merge-descriptors@1.0.1
+61 silly idealTree ├── methods@1.1.2
+61 silly idealTree ├── mime-db@1.22.0
+61 silly idealTree ├── mime-types@2.1.10
+61 silly idealTree ├── mime@1.3.4
+61 silly idealTree ├── minimatch@1.0.0
+61 silly idealTree ├── minimist@0.0.8
+61 silly idealTree ├── mkdirp@0.5.1
+61 silly idealTree ├── mongodb-core@1.3.9
+61 silly idealTree ├── mongodb@2.1.10
+61 silly idealTree ├── mongoose@4.4.10
+61 silly idealTree ├── morgan@1.7.0
+61 silly idealTree ├── mpath@0.2.1
+61 silly idealTree ├── mpromise@0.5.5
+61 silly idealTree ├─┬ mquery@1.10.0
+61 silly idealTree │ └── sliced@0.0.5
+61 silly idealTree ├── ms@0.7.1
+61 silly idealTree ├── muri@1.1.0
+61 silly idealTree ├── negotiator@0.5.3
+61 silly idealTree ├── node-gyp@3.3.1
+61 silly idealTree ├── node-uuid@1.4.7
+61 silly idealTree ├── nopt@3.0.6
+61 silly idealTree ├── npmlog@2.0.3
+61 silly idealTree ├── oauth-sign@0.8.1
+61 silly idealTree ├── on-finished@2.3.0
+61 silly idealTree ├── on-headers@1.0.1
+61 silly idealTree ├── once@1.3.3
+61 silly idealTree ├── os-homedir@1.0.1
+61 silly idealTree ├── os-tmpdir@1.0.1
+61 silly idealTree ├── osenv@0.1.3
+61 silly idealTree ├── parseurl@1.3.1
+61 silly idealTree ├── path-array@1.0.1
+61 silly idealTree ├── path-is-absolute@1.0.0
+61 silly idealTree ├── path-to-regexp@0.1.7
+61 silly idealTree ├── pinkie-promise@2.0.0
+61 silly idealTree ├── pinkie@2.0.4
+61 silly idealTree ├── process-nextick-args@1.0.6
+61 silly idealTree ├── proxy-addr@1.0.10
+61 silly idealTree ├── pseudomap@1.0.2
+61 silly idealTree ├── qs@4.0.0
+61 silly idealTree ├── range-parser@1.0.3
+61 silly idealTree ├── readable-stream@1.0.31
+61 silly idealTree ├─┬ redis@2.5.3
+61 silly idealTree │ ├── double-ended-queue@2.1.0-0
+61 silly idealTree │ ├── redis-commands@1.1.0
+61 silly idealTree │ └── redis-parser@1.3.0
+61 silly idealTree ├── regexp-clone@0.0.1
+61 silly idealTree ├─┬ request@2.70.0
+61 silly idealTree │ └── qs@6.1.0
+61 silly idealTree ├── require_optional@1.0.0
+61 silly idealTree ├── resolve-from@2.0.0
+61 silly idealTree ├─┬ rimraf@2.5.2
+61 silly idealTree │ ├── glob@7.0.3
+61 silly idealTree │ └── minimatch@3.0.0
+61 silly idealTree ├── semver@5.1.0
+61 silly idealTree ├── send@0.13.1
+61 silly idealTree ├── serve-static@1.10.2
+61 silly idealTree ├── sigmund@1.0.1
+61 silly idealTree ├── sliced@1.0.1
+61 silly idealTree ├── sntp@1.0.9
+61 silly idealTree ├── sshpk@1.7.4
+61 silly idealTree ├── statuses@1.2.1
+61 silly idealTree ├── string_decoder@0.10.31
+61 silly idealTree ├── stringstream@0.0.5
+61 silly idealTree ├── strip-ansi@3.0.1
+61 silly idealTree ├── supports-color@2.0.0
+61 silly idealTree ├── tar@2.2.1
+61 silly idealTree ├── tough-cookie@2.2.2
+61 silly idealTree ├── tunnel-agent@0.4.2
+61 silly idealTree ├── tweetnacl@0.14.3
+61 silly idealTree ├── type-is@1.6.12
+61 silly idealTree ├── unpipe@1.0.0
+61 silly idealTree ├── util-deprecate@1.0.2
+61 silly idealTree ├── utils-merge@1.0.0
+61 silly idealTree ├── vary@1.0.1
+61 silly idealTree ├── verror@1.3.6
+61 silly idealTree ├── which@1.2.4
+61 silly idealTree ├── wrappy@1.0.1
+61 silly idealTree ├── xtend@4.0.1
+61 silly idealTree └── yallist@2.0.0
+62 silly generateActionsToTake Starting
+63 silly install generateActionsToTake
+64 silly generateActionsToTake Finishing
+65 silly diffTrees action count 3
+66 silly diffTrees add memwatch@0.2.2
+67 silly diffTrees update mongoose@4.4.10
+68 silly diffTrees update node-gyp@3.3.1
+69 silly decomposeActions action count 24
+70 silly decomposeActions fetch memwatch@0.2.2
+71 silly decomposeActions extract memwatch@0.2.2
+72 silly decomposeActions test memwatch@0.2.2
+73 silly decomposeActions preinstall memwatch@0.2.2
+74 silly decomposeActions build memwatch@0.2.2
+75 silly decomposeActions install memwatch@0.2.2
+76 silly decomposeActions postinstall memwatch@0.2.2
+77 silly decomposeActions finalize memwatch@0.2.2
+78 silly decomposeActions fetch mongoose@4.4.10
+79 silly decomposeActions extract mongoose@4.4.10
+80 silly decomposeActions test mongoose@4.4.10
+81 silly decomposeActions preinstall mongoose@4.4.10
+82 silly decomposeActions build mongoose@4.4.10
+83 silly decomposeActions install mongoose@4.4.10
+84 silly decomposeActions postinstall mongoose@4.4.10
+85 silly decomposeActions finalize mongoose@4.4.10
+86 silly decomposeActions fetch node-gyp@3.3.1
+87 silly decomposeActions extract node-gyp@3.3.1
+88 silly decomposeActions test node-gyp@3.3.1
+89 silly decomposeActions preinstall node-gyp@3.3.1
+90 silly decomposeActions build node-gyp@3.3.1
+91 silly decomposeActions install node-gyp@3.3.1
+92 silly decomposeActions postinstall node-gyp@3.3.1
+93 silly decomposeActions finalize node-gyp@3.3.1
+94 silly executeActions Starting
+95 silly install executeActions
+96 silly doSerial global-install 0
+97 silly doParallel fetch 3
+98 verbose correctMkdir /Users/pankai/.npm/_locks correctMkdir not in flight; initializing
+99 verbose lock using /Users/pankai/.npm/_locks/staging-3db01eb9d3fee7a4.lock for /Users/pankai/project/webApp/node_modules/.staging
+100 silly doParallel extract 3
+101 silly extract memwatch@0.2.2
+102 silly extract mongoose@4.4.10
+103 silly extract node-gyp@3.3.1
+104 verbose unbuild node_modules/.staging/memwatch-1e5085ac
+105 silly gentlyRm /Users/pankai/project/webApp/node_modules/.staging/memwatch-1e5085ac is being purged from base /Users/pankai/project/webApp
+106 verbose gentlyRm don't care about contents; nuking /Users/pankai/project/webApp/node_modules/.staging/memwatch-1e5085ac
+107 verbose unbuild node_modules/.staging/mongoose-093f932e
+108 verbose tar unpack /Users/pankai/.npm/memwatch/0.2.2/package.tgz
+109 verbose tar unpacking to /Users/pankai/project/webApp/node_modules/.staging/memwatch-1e5085ac
+110 silly gentlyRm /Users/pankai/project/webApp/node_modules/.staging/memwatch-1e5085ac is being purged
+111 verbose gentlyRm don't care about contents; nuking /Users/pankai/project/webApp/node_modules/.staging/memwatch-1e5085ac
+112 verbose unbuild node_modules/.staging/node-gyp-885446e1
+113 silly gunzTarPerm modes [ '755', '644' ]
+114 silly gentlyRm /Users/pankai/project/webApp/node_modules/.staging/mongoose-093f932e is being purged from base /Users/pankai/project/webApp
+115 verbose gentlyRm don't care about contents; nuking /Users/pankai/project/webApp/node_modules/.staging/mongoose-093f932e
+116 verbose tar unpack /Users/pankai/.npm/mongoose/4.4.10/package.tgz
+117 verbose tar unpacking to /Users/pankai/project/webApp/node_modules/.staging/mongoose-093f932e
+118 silly gentlyRm /Users/pankai/project/webApp/node_modules/.staging/mongoose-093f932e is being purged
+119 verbose gentlyRm don't care about contents; nuking /Users/pankai/project/webApp/node_modules/.staging/mongoose-093f932e
+120 silly gentlyRm /Users/pankai/project/webApp/node_modules/.staging/node-gyp-885446e1 is being purged from base /Users/pankai/project/webApp
+121 verbose gentlyRm don't care about contents; nuking /Users/pankai/project/webApp/node_modules/.staging/node-gyp-885446e1
+122 silly gunzTarPerm modes [ '755', '644' ]
+123 verbose tar unpack /Users/pankai/.npm/node-gyp/3.3.1/package.tgz
+124 verbose tar unpacking to /Users/pankai/project/webApp/node_modules/.staging/node-gyp-885446e1
+125 silly gentlyRm /Users/pankai/project/webApp/node_modules/.staging/node-gyp-885446e1 is being purged
+126 verbose gentlyRm don't care about contents; nuking /Users/pankai/project/webApp/node_modules/.staging/node-gyp-885446e1
+127 silly gunzTarPerm modes [ '755', '644' ]
+128 silly gunzTarPerm extractEntry package.json
+129 silly gunzTarPerm extractEntry package.json
+130 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+131 silly gunzTarPerm extractEntry package.json
+132 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+133 silly gunzTarPerm extractEntry .npmignore
+134 silly gunzTarPerm extractEntry README.md
+135 silly gunzTarPerm extractEntry .npmignore
+136 silly gunzTarPerm modified mode [ '.npmignore', 436, 420 ]
+137 silly gunzTarPerm extractEntry README.md
+138 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+139 silly gunzTarPerm extractEntry .npmignore
+140 silly gunzTarPerm modified mode [ '.npmignore', 436, 420 ]
+141 silly gunzTarPerm extractEntry README.md
+142 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+143 silly gunzTarPerm extractEntry tests.js
+144 silly gunzTarPerm extractEntry foo.js
+145 silly gunzTarPerm extractEntry website.js
+146 silly gunzTarPerm modified mode [ 'website.js', 436, 420 ]
+147 silly gunzTarPerm extractEntry LICENSE
+148 silly gunzTarPerm modified mode [ 'LICENSE', 436, 420 ]
+149 silly gunzTarPerm extractEntry addon.gypi
+150 silly gunzTarPerm modified mode [ 'addon.gypi', 436, 420 ]
+151 silly gunzTarPerm extractEntry index.js
+152 silly gunzTarPerm modified mode [ 'index.js', 436, 420 ]
+153 silly gunzTarPerm extractEntry include.js
+154 silly gunzTarPerm extractEntry .travis.yml
+155 silly gunzTarPerm extractEntry static.js
+156 silly gunzTarPerm modified mode [ 'static.js', 436, 420 ]
+157 silly gunzTarPerm extractEntry .eslintrc.yml
+158 silly gunzTarPerm modified mode [ '.eslintrc.yml', 436, 420 ]
+159 silly gunzTarPerm extractEntry CHANGELOG.md
+160 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 436, 420 ]
+161 silly gunzTarPerm extractEntry ChangeLog
+162 silly gunzTarPerm extractEntry #wscript#
+163 silly gunzTarPerm extractEntry .eslintignore
+164 silly gunzTarPerm modified mode [ '.eslintignore', 436, 420 ]
+165 silly gunzTarPerm extractEntry .travis.yml
+166 silly gunzTarPerm modified mode [ '.travis.yml', 436, 420 ]
+167 silly gunzTarPerm extractEntry History.md
+168 silly gunzTarPerm modified mode [ 'History.md', 436, 420 ]
+169 silly gunzTarPerm extractEntry 0002-gyp-apply-https-codereview.chromium.org-11361103.patch
+170 silly gunzTarPerm modified mode [ '0002-gyp-apply-https-codereview.chromium.org-11361103.patch',
+170 silly gunzTarPerm   436,
+170 silly gunzTarPerm   420 ]
+171 silly gunzTarPerm extractEntry binding.gyp
+172 silly gunzTarPerm extractEntry lib/ES6Promise.js
+173 silly gunzTarPerm modified mode [ 'lib/ES6Promise.js', 436, 420 ]
+174 silly gunzTarPerm extractEntry lib/document.js
+175 silly gunzTarPerm modified mode [ 'lib/document.js', 436, 420 ]
+176 silly gunzTarPerm extractEntry .jshintrc
+177 silly gunzTarPerm modified mode [ '.jshintrc', 436, 420 ]
+178 silly gunzTarPerm extractEntry 0003-gyp-don-t-use-links-at-all-just-copy-the-files-inste.patch
+179 silly gunzTarPerm modified mode [ '0003-gyp-don-t-use-links-at-all-just-copy-the-files-inste.patch',
+179 silly gunzTarPerm   436,
+179 silly gunzTarPerm   420 ]
+180 silly gunzTarPerm extractEntry src/heapdiff.cc
+181 silly gunzTarPerm extractEntry src/heapdiff.hh
+182 silly gunzTarPerm extractEntry lib/document_provider.js
+183 silly gunzTarPerm modified mode [ 'lib/document_provider.js', 436, 420 ]
+184 silly gunzTarPerm extractEntry lib/utils.js
+185 silly gunzTarPerm modified mode [ 'lib/utils.js', 436, 420 ]
+186 silly gunzTarPerm extractEntry bin/node-gyp.js
+187 silly gunzTarPerm modified mode [ 'bin/node-gyp.js', 509, 493 ]
+188 silly gunzTarPerm extractEntry gyp/.npmignore
+189 silly gunzTarPerm modified mode [ 'gyp/.npmignore', 436, 420 ]
+190 silly gunzTarPerm extractEntry src/init.cc
+191 silly gunzTarPerm extractEntry src/memwatch.cc
+192 silly gunzTarPerm extractEntry lib/statemachine.js
+193 silly gunzTarPerm modified mode [ 'lib/statemachine.js', 436, 420 ]
+194 silly gunzTarPerm extractEntry lib/connectionstate.js
+195 silly gunzTarPerm modified mode [ 'lib/connectionstate.js', 436, 420 ]
+196 silly gunzTarPerm extractEntry gyp/LICENSE
+197 silly gunzTarPerm modified mode [ 'gyp/LICENSE', 436, 420 ]
+198 silly gunzTarPerm extractEntry gyp/DEPS
+199 silly gunzTarPerm modified mode [ 'gyp/DEPS', 436, 420 ]
+200 silly gunzTarPerm extractEntry src/memwatch.hh
+201 silly gunzTarPerm extractEntry src/platformcompat.hh
+202 silly gunzTarPerm extractEntry lib/index.js
+203 silly gunzTarPerm modified mode [ 'lib/index.js', 436, 420 ]
+204 silly gunzTarPerm extractEntry lib/aggregate.js
+205 silly gunzTarPerm modified mode [ 'lib/aggregate.js', 436, 420 ]
+206 silly gunzTarPerm extractEntry gyp/tools/README
+207 silly gunzTarPerm modified mode [ 'gyp/tools/README', 436, 420 ]
+208 silly gunzTarPerm extractEntry gyp/tools/Xcode/README
+209 silly gunzTarPerm modified mode [ 'gyp/tools/Xcode/README', 436, 420 ]
+210 silly gunzTarPerm extractEntry src/util.cc
+211 silly gunzTarPerm extractEntry src/util.hh
+212 silly gunzTarPerm extractEntry lib/model.js
+213 silly gunzTarPerm modified mode [ 'lib/model.js', 436, 420 ]
+214 silly gunzTarPerm extractEntry lib/promise.js
+215 silly gunzTarPerm modified mode [ 'lib/promise.js', 436, 420 ]
+216 silly gunzTarPerm extractEntry gyp/tools/Xcode/Specifications/gyp.pbfilespec
+217 silly gunzTarPerm modified mode [ 'gyp/tools/Xcode/Specifications/gyp.pbfilespec', 436, 420 ]
+218 silly gunzTarPerm extractEntry gyp/tools/Xcode/Specifications/gyp.xclangspec
+219 silly gunzTarPerm modified mode [ 'gyp/tools/Xcode/Specifications/gyp.xclangspec', 436, 420 ]
+220 silly gunzTarPerm extractEntry examples/basic_heapdiff.js
+221 silly gunzTarPerm extractEntry examples/do_nothing_server.js
+222 silly gunzTarPerm extractEntry lib/promise_provider.js
+223 silly gunzTarPerm modified mode [ 'lib/promise_provider.js', 436, 420 ]
+224 silly gunzTarPerm extractEntry lib/connection.js
+225 silly gunzTarPerm modified mode [ 'lib/connection.js', 436, 420 ]
+226 silly gunzTarPerm extractEntry gyp/tools/emacs/README
+227 silly gunzTarPerm modified mode [ 'gyp/tools/emacs/README', 436, 420 ]
+228 silly gunzTarPerm extractEntry gyp/tools/emacs/gyp-tests.el
+229 silly gunzTarPerm modified mode [ 'gyp/tools/emacs/gyp-tests.el', 436, 420 ]
+230 silly gunzTarPerm extractEntry examples/slightly_leaky.js
+231 silly gunzTarPerm extractEntry gyp/tools/emacs/gyp.el
+232 silly gunzTarPerm modified mode [ 'gyp/tools/emacs/gyp.el', 436, 420 ]
+233 silly gunzTarPerm extractEntry gyp/tools/emacs/run-unit-tests.sh
+234 silly gunzTarPerm modified mode [ 'gyp/tools/emacs/run-unit-tests.sh', 509, 493 ]
+235 silly gunzTarPerm extractEntry lib/query.js
+236 silly gunzTarPerm modified mode [ 'lib/query.js', 436, 420 ]
+237 silly gunzTarPerm extractEntry lib/collection.js
+238 silly gunzTarPerm modified mode [ 'lib/collection.js', 436, 420 ]
+239 silly gunzTarPerm extractEntry lib/queryhelpers.js
+240 silly gunzTarPerm modified mode [ 'lib/queryhelpers.js', 436, 420 ]
+241 silly gunzTarPerm extractEntry lib/cast.js
+242 silly gunzTarPerm modified mode [ 'lib/cast.js', 436, 420 ]
+243 silly gunzTarPerm extractEntry lib/querystream.js
+244 silly gunzTarPerm modified mode [ 'lib/querystream.js', 436, 420 ]
+245 silly gunzTarPerm extractEntry gyp/tools/emacs/testdata/media.gyp
+246 silly gunzTarPerm modified mode [ 'gyp/tools/emacs/testdata/media.gyp', 436, 420 ]
+247 silly gunzTarPerm extractEntry gyp/tools/emacs/testdata/media.gyp.fontified
+248 silly gunzTarPerm modified mode [ 'gyp/tools/emacs/testdata/media.gyp.fontified', 436, 420 ]
+249 silly gunzTarPerm extractEntry lib/browserDocument.js
+250 silly gunzTarPerm modified mode [ 'lib/browserDocument.js', 436, 420 ]
+251 silly gunzTarPerm extractEntry lib/schematype.js
+252 silly gunzTarPerm modified mode [ 'lib/schematype.js', 436, 420 ]
+253 silly gunzTarPerm extractEntry gyp/tools/graphviz.py
+254 silly gunzTarPerm modified mode [ 'gyp/tools/graphviz.py', 509, 493 ]
+255 silly gunzTarPerm extractEntry gyp/tools/pretty_gyp.py
+256 silly gunzTarPerm modified mode [ 'gyp/tools/pretty_gyp.py', 509, 493 ]
+257 silly gunzTarPerm extractEntry lib/browser.js
+258 silly gunzTarPerm modified mode [ 'lib/browser.js', 436, 420 ]
+259 silly gunzTarPerm extractEntry lib/schema.js
+260 silly gunzTarPerm modified mode [ 'lib/schema.js', 436, 420 ]
+261 silly gunzTarPerm extractEntry lib/error.js
+262 silly gunzTarPerm modified mode [ 'lib/error.js', 436, 420 ]
+263 silly gunzTarPerm extractEntry gyp/tools/pretty_sln.py
+264 silly gunzTarPerm modified mode [ 'gyp/tools/pretty_sln.py', 509, 493 ]
+265 silly gunzTarPerm extractEntry gyp/tools/pretty_vcproj.py
+266 silly gunzTarPerm modified mode [ 'gyp/tools/pretty_vcproj.py', 509, 493 ]
+267 silly gunzTarPerm extractEntry lib/virtualtype.js
+268 silly gunzTarPerm modified mode [ 'lib/virtualtype.js', 436, 420 ]
+269 silly gunzTarPerm extractEntry lib/internal.js
+270 silly gunzTarPerm modified mode [ 'lib/internal.js', 436, 420 ]
+271 silly gunzTarPerm extractEntry gyp/OWNERS
+272 silly gunzTarPerm modified mode [ 'gyp/OWNERS', 436, 420 ]
+273 silly gunzTarPerm extractEntry gyp/PRESUBMIT.py
+274 silly gunzTarPerm modified mode [ 'gyp/PRESUBMIT.py', 436, 420 ]
+275 silly gunzTarPerm extractEntry lib/schema/array.js
+276 silly gunzTarPerm modified mode [ 'lib/schema/array.js', 436, 420 ]
+277 silly gunzTarPerm extractEntry lib/schema/buffer.js
+278 silly gunzTarPerm modified mode [ 'lib/schema/buffer.js', 436, 420 ]
+279 silly gunzTarPerm extractEntry gyp/buildbot/aosp_manifest.xml
+280 silly gunzTarPerm modified mode [ 'gyp/buildbot/aosp_manifest.xml', 436, 420 ]
+281 silly gunzTarPerm extractEntry gyp/buildbot/buildbot_run.py
+282 silly gunzTarPerm modified mode [ 'gyp/buildbot/buildbot_run.py', 509, 493 ]
+283 silly gunzTarPerm extractEntry lib/schema/date.js
+284 silly gunzTarPerm modified mode [ 'lib/schema/date.js', 436, 420 ]
+285 silly gunzTarPerm extractEntry lib/schema/documentarray.js
+286 silly gunzTarPerm modified mode [ 'lib/schema/documentarray.js', 436, 420 ]
+287 silly gunzTarPerm extractEntry lib/schema/embedded.js
+288 silly gunzTarPerm modified mode [ 'lib/schema/embedded.js', 436, 420 ]
+289 silly gunzTarPerm extractEntry lib/schema/boolean.js
+290 silly gunzTarPerm modified mode [ 'lib/schema/boolean.js', 436, 420 ]
+291 silly gunzTarPerm extractEntry gyp/buildbot/commit_queue/README
+292 silly gunzTarPerm modified mode [ 'gyp/buildbot/commit_queue/README', 436, 420 ]
+293 silly gunzTarPerm extractEntry gyp/buildbot/commit_queue/OWNERS
+294 silly gunzTarPerm modified mode [ 'gyp/buildbot/commit_queue/OWNERS', 436, 420 ]
+295 silly gunzTarPerm extractEntry lib/schema/mixed.js
+296 silly gunzTarPerm modified mode [ 'lib/schema/mixed.js', 436, 420 ]
+297 silly gunzTarPerm extractEntry lib/schema/number.js
+298 silly gunzTarPerm modified mode [ 'lib/schema/number.js', 436, 420 ]
+299 silly gunzTarPerm extractEntry gyp/buildbot/commit_queue/cq_config.json
+300 silly gunzTarPerm modified mode [ 'gyp/buildbot/commit_queue/cq_config.json', 436, 420 ]
+301 silly gunzTarPerm extractEntry gyp/codereview.settings
+302 silly gunzTarPerm modified mode [ 'gyp/codereview.settings', 436, 420 ]
+303 silly gunzTarPerm extractEntry lib/schema/objectid.js
+304 silly gunzTarPerm modified mode [ 'lib/schema/objectid.js', 436, 420 ]
+305 silly gunzTarPerm extractEntry lib/schema/string.js
+306 silly gunzTarPerm modified mode [ 'lib/schema/string.js', 436, 420 ]
+307 silly gunzTarPerm extractEntry lib/schema/index.js
+308 silly gunzTarPerm modified mode [ 'lib/schema/index.js', 436, 420 ]
+309 silly gunzTarPerm extractEntry lib/schema/operators/bitwise.js
+310 silly gunzTarPerm modified mode [ 'lib/schema/operators/bitwise.js', 436, 420 ]
+311 silly gunzTarPerm extractEntry lib/services/updateValidators.js
+312 silly gunzTarPerm modified mode [ 'lib/services/updateValidators.js', 436, 420 ]
+313 silly gunzTarPerm extractEntry gyp/AUTHORS
+314 silly gunzTarPerm modified mode [ 'gyp/AUTHORS', 436, 420 ]
+315 silly gunzTarPerm extractEntry gyp/gyp
+316 silly gunzTarPerm modified mode [ 'gyp/gyp', 509, 493 ]
+317 silly gunzTarPerm extractEntry lib/error/browserMissingSchema.js
+318 silly gunzTarPerm modified mode [ 'lib/error/browserMissingSchema.js', 436, 420 ]
+319 silly gunzTarPerm extractEntry lib/error/divergentArray.js
+320 silly gunzTarPerm modified mode [ 'lib/error/divergentArray.js', 436, 420 ]
+321 silly gunzTarPerm extractEntry lib/error/messages.js
+322 silly gunzTarPerm modified mode [ 'lib/error/messages.js', 436, 420 ]
+323 silly gunzTarPerm extractEntry gyp/gyp.bat
+324 silly gunzTarPerm modified mode [ 'gyp/gyp.bat', 509, 493 ]
+325 silly gunzTarPerm extractEntry gyp/gyp_main.py
+326 silly gunzTarPerm modified mode [ 'gyp/gyp_main.py', 509, 493 ]
+327 silly gunzTarPerm extractEntry lib/error/missingSchema.js
+328 silly gunzTarPerm modified mode [ 'lib/error/missingSchema.js', 436, 420 ]
+329 silly gunzTarPerm extractEntry lib/error/cast.js
+330 silly gunzTarPerm modified mode [ 'lib/error/cast.js', 436, 420 ]
+331 silly gunzTarPerm extractEntry gyp/gyptest.py
+332 silly gunzTarPerm modified mode [ 'gyp/gyptest.py', 509, 493 ]
+333 silly gunzTarPerm extractEntry gyp/pylib/gyp/flock_tool.py
+334 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/flock_tool.py', 509, 493 ]
+335 silly gentlyRm /Users/pankai/project/webApp/node_modules/.staging/memwatch-1e5085ac/node_modules is being purged
+336 verbose gentlyRm don't care about contents; nuking /Users/pankai/project/webApp/node_modules/.staging/memwatch-1e5085ac/node_modules
+337 silly gunzTarPerm extractEntry lib/error/overwriteModel.js
+338 silly gunzTarPerm modified mode [ 'lib/error/overwriteModel.js', 436, 420 ]
+339 silly gunzTarPerm extractEntry lib/error/strict.js
+340 silly gunzTarPerm modified mode [ 'lib/error/strict.js', 436, 420 ]
+341 silly gunzTarPerm extractEntry gyp/pylib/gyp/MSVSNew.py
+342 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/MSVSNew.py', 436, 420 ]
+343 silly gunzTarPerm extractEntry gyp/pylib/gyp/MSVSSettings.py
+344 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/MSVSSettings.py', 436, 420 ]
+345 silly gunzTarPerm extractEntry lib/error/validation.js
+346 silly gunzTarPerm modified mode [ 'lib/error/validation.js', 436, 420 ]
+347 silly gunzTarPerm extractEntry lib/error/validator.js
+348 silly gunzTarPerm modified mode [ 'lib/error/validator.js', 436, 420 ]
+349 silly gunzTarPerm extractEntry lib/error/version.js
+350 silly gunzTarPerm modified mode [ 'lib/error/version.js', 436, 420 ]
+351 silly gunzTarPerm extractEntry lib/error/objectExpected.js
+352 silly gunzTarPerm modified mode [ 'lib/error/objectExpected.js', 436, 420 ]
+353 silly gunzTarPerm extractEntry gyp/pylib/gyp/MSVSSettings_test.py
+354 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/MSVSSettings_test.py', 509, 493 ]
+355 silly gunzTarPerm extractEntry gyp/pylib/gyp/MSVSToolFile.py
+356 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/MSVSToolFile.py', 436, 420 ]
+357 silly gunzTarPerm extractEntry gyp/pylib/gyp/MSVSUserFile.py
+358 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/MSVSUserFile.py', 436, 420 ]
+359 silly gunzTarPerm extractEntry gyp/pylib/gyp/MSVSUtil.py
+360 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/MSVSUtil.py', 436, 420 ]
+361 silly gunzTarPerm extractEntry gyp/pylib/gyp/MSVSVersion.py
+362 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/MSVSVersion.py', 436, 420 ]
+363 silly gunzTarPerm extractEntry lib/types/array.js
+364 silly gunzTarPerm modified mode [ 'lib/types/array.js', 436, 420 ]
+365 silly gunzTarPerm extractEntry lib/types/buffer.js
+366 silly gunzTarPerm modified mode [ 'lib/types/buffer.js', 436, 420 ]
+367 silly gunzTarPerm extractEntry lib/types/documentarray.js
+368 silly gunzTarPerm modified mode [ 'lib/types/documentarray.js', 436, 420 ]
+369 silly gunzTarPerm extractEntry lib/types/embedded.js
+370 silly gunzTarPerm modified mode [ 'lib/types/embedded.js', 436, 420 ]
+371 silly gunzTarPerm extractEntry lib/types/index.js
+372 silly gunzTarPerm modified mode [ 'lib/types/index.js', 436, 420 ]
+373 silly gunzTarPerm extractEntry lib/types/objectid.js
+374 silly gunzTarPerm modified mode [ 'lib/types/objectid.js', 436, 420 ]
+375 silly gunzTarPerm extractEntry lib/types/subdocument.js
+376 silly gunzTarPerm modified mode [ 'lib/types/subdocument.js', 436, 420 ]
+377 silly gunzTarPerm extractEntry gyp/pylib/gyp/__init__.py
+378 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/__init__.py', 509, 493 ]
+379 silly gunzTarPerm extractEntry gyp/pylib/gyp/common.py
+380 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/common.py', 436, 420 ]
+381 silly gunzTarPerm extractEntry gyp/pylib/gyp/common_test.py
+382 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/common_test.py', 509, 493 ]
+383 silly gunzTarPerm extractEntry lib/drivers/index.js
+384 silly gunzTarPerm modified mode [ 'lib/drivers/index.js', 436, 420 ]
+385 silly gunzTarPerm extractEntry lib/drivers/SPEC.md
+386 silly gunzTarPerm modified mode [ 'lib/drivers/SPEC.md', 436, 420 ]
+387 silly gunzTarPerm extractEntry lib/drivers/browser/ReadPreference.js
+388 silly gunzTarPerm modified mode [ 'lib/drivers/browser/ReadPreference.js', 436, 420 ]
+389 silly gunzTarPerm extractEntry lib/drivers/browser/binary.js
+390 silly gunzTarPerm modified mode [ 'lib/drivers/browser/binary.js', 436, 420 ]
+391 silly gunzTarPerm extractEntry lib/drivers/browser/index.js
+392 silly gunzTarPerm modified mode [ 'lib/drivers/browser/index.js', 436, 420 ]
+393 silly gunzTarPerm extractEntry lib/drivers/browser/objectid.js
+394 silly gunzTarPerm modified mode [ 'lib/drivers/browser/objectid.js', 436, 420 ]
+395 silly gunzTarPerm extractEntry lib/drivers/node-mongodb-native/ReadPreference.js
+396 silly gunzTarPerm modified mode [ 'lib/drivers/node-mongodb-native/ReadPreference.js', 436, 420 ]
+397 silly gunzTarPerm extractEntry lib/drivers/node-mongodb-native/binary.js
+398 silly gunzTarPerm modified mode [ 'lib/drivers/node-mongodb-native/binary.js', 436, 420 ]
+399 silly gunzTarPerm extractEntry lib/drivers/node-mongodb-native/collection.js
+400 silly gunzTarPerm modified mode [ 'lib/drivers/node-mongodb-native/collection.js', 436, 420 ]
+401 silly gunzTarPerm extractEntry lib/drivers/node-mongodb-native/connection.js
+402 silly gunzTarPerm modified mode [ 'lib/drivers/node-mongodb-native/connection.js', 436, 420 ]
+403 silly gunzTarPerm extractEntry lib/drivers/node-mongodb-native/index.js
+404 silly gunzTarPerm modified mode [ 'lib/drivers/node-mongodb-native/index.js', 436, 420 ]
+405 silly gunzTarPerm extractEntry lib/drivers/node-mongodb-native/objectid.js
+406 silly gunzTarPerm modified mode [ 'lib/drivers/node-mongodb-native/objectid.js', 436, 420 ]
+407 silly gunzTarPerm extractEntry CONTRIBUTING.md
+408 silly gunzTarPerm modified mode [ 'CONTRIBUTING.md', 436, 420 ]
+409 silly gunzTarPerm extractEntry release-items.md
+410 silly gunzTarPerm modified mode [ 'release-items.md', 436, 420 ]
+411 silly gunzTarPerm extractEntry History.md
+412 silly gunzTarPerm modified mode [ 'History.md', 436, 420 ]
+413 silly gunzTarPerm extractEntry examples/README.md
+414 silly gunzTarPerm modified mode [ 'examples/README.md', 436, 420 ]
+415 silly gunzTarPerm extractEntry examples/doc-methods.js
+416 silly gunzTarPerm modified mode [ 'examples/doc-methods.js', 436, 420 ]
+417 silly gunzTarPerm extractEntry examples/statics/person.js
+418 silly gunzTarPerm modified mode [ 'examples/statics/person.js', 436, 420 ]
+419 silly gunzTarPerm extractEntry examples/statics/statics.js
+420 silly gunzTarPerm modified mode [ 'examples/statics/statics.js', 436, 420 ]
+421 silly gunzTarPerm extractEntry examples/express/README.md
+422 silly gunzTarPerm modified mode [ 'examples/express/README.md', 436, 420 ]
+423 silly gunzTarPerm extractEntry examples/express/connection-sharing/package.json
+424 silly gunzTarPerm modified mode [ 'examples/express/connection-sharing/package.json', 436, 420 ]
+425 silly gunzTarPerm extractEntry examples/express/connection-sharing/README.md
+426 silly gunzTarPerm modified mode [ 'examples/express/connection-sharing/README.md', 436, 420 ]
+427 silly gunzTarPerm extractEntry examples/express/connection-sharing/app.js
+428 silly gunzTarPerm modified mode [ 'examples/express/connection-sharing/app.js', 436, 420 ]
+429 silly gunzTarPerm extractEntry examples/express/connection-sharing/modelA.js
+430 silly gunzTarPerm modified mode [ 'examples/express/connection-sharing/modelA.js', 436, 420 ]
+431 silly gunzTarPerm extractEntry examples/express/connection-sharing/routes.js
+432 silly gunzTarPerm modified mode [ 'examples/express/connection-sharing/routes.js', 436, 420 ]
+433 silly gunzTarPerm extractEntry examples/geospatial/package.json
+434 silly gunzTarPerm modified mode [ 'examples/geospatial/package.json', 436, 420 ]
+435 silly gunzTarPerm extractEntry examples/geospatial/geoJSONSchema.js
+436 silly gunzTarPerm modified mode [ 'examples/geospatial/geoJSONSchema.js', 436, 420 ]
+437 silly gunzTarPerm extractEntry examples/geospatial/geoJSONexample.js
+438 silly gunzTarPerm modified mode [ 'examples/geospatial/geoJSONexample.js', 436, 420 ]
+439 silly gunzTarPerm extractEntry examples/geospatial/geospatial.js
+440 silly gunzTarPerm modified mode [ 'examples/geospatial/geospatial.js', 436, 420 ]
+441 silly gunzTarPerm extractEntry examples/geospatial/person.js
+442 silly gunzTarPerm modified mode [ 'examples/geospatial/person.js', 436, 420 ]
+443 silly gunzTarPerm extractEntry examples/globalschemas/gs_example.js
+444 silly gunzTarPerm modified mode [ 'examples/globalschemas/gs_example.js', 436, 420 ]
+445 silly gunzTarPerm extractEntry examples/globalschemas/person.js
+446 silly gunzTarPerm modified mode [ 'examples/globalschemas/person.js', 436, 420 ]
+447 silly gunzTarPerm extractEntry examples/lean/package.json
+448 silly gunzTarPerm modified mode [ 'examples/lean/package.json', 436, 420 ]
+449 silly gunzTarPerm extractEntry examples/lean/lean.js
+450 silly gunzTarPerm modified mode [ 'examples/lean/lean.js', 436, 420 ]
+451 silly gunzTarPerm extractEntry examples/lean/person.js
+452 silly gunzTarPerm modified mode [ 'examples/lean/person.js', 436, 420 ]
+453 silly gunzTarPerm extractEntry examples/aggregate/package.json
+454 silly gunzTarPerm modified mode [ 'examples/aggregate/package.json', 436, 420 ]
+455 silly gunzTarPerm extractEntry examples/aggregate/aggregate.js
+456 silly gunzTarPerm modified mode [ 'examples/aggregate/aggregate.js', 436, 420 ]
+457 silly gunzTarPerm extractEntry examples/aggregate/person.js
+458 silly gunzTarPerm modified mode [ 'examples/aggregate/person.js', 436, 420 ]
+459 silly gunzTarPerm extractEntry examples/population/population-across-three-collections.js
+460 silly gunzTarPerm modified mode [ 'examples/population/population-across-three-collections.js',
+460 silly gunzTarPerm   436,
+460 silly gunzTarPerm   420 ]
+461 silly gunzTarPerm extractEntry examples/population/population-basic.js
+462 silly gunzTarPerm modified mode [ 'examples/population/population-basic.js', 436, 420 ]
+463 silly gunzTarPerm extractEntry examples/population/population-of-existing-doc.js
+464 silly gunzTarPerm modified mode [ 'examples/population/population-of-existing-doc.js', 436, 420 ]
+465 silly gunzTarPerm extractEntry examples/population/population-of-multiple-existing-docs.js
+466 silly gunzTarPerm modified mode [ 'examples/population/population-of-multiple-existing-docs.js',
+466 silly gunzTarPerm   436,
+466 silly gunzTarPerm   420 ]
+467 silly gunzTarPerm extractEntry examples/population/population-options.js
+468 silly gunzTarPerm modified mode [ 'examples/population/population-options.js', 436, 420 ]
+469 silly gunzTarPerm extractEntry examples/population/population-plain-objects.js
+470 silly gunzTarPerm modified mode [ 'examples/population/population-plain-objects.js', 436, 420 ]
+471 silly gunzTarPerm extractEntry examples/promises/package.json
+472 silly gunzTarPerm modified mode [ 'examples/promises/package.json', 436, 420 ]
+473 silly gunzTarPerm extractEntry examples/promises/person.js
+474 silly gunzTarPerm modified mode [ 'examples/promises/person.js', 436, 420 ]
+475 silly gunzTarPerm extractEntry examples/promises/promise.js
+476 silly gunzTarPerm modified mode [ 'examples/promises/promise.js', 436, 420 ]
+477 silly gunzTarPerm extractEntry examples/querybuilder/package.json
+478 silly gunzTarPerm modified mode [ 'examples/querybuilder/package.json', 436, 420 ]
+479 silly gunzTarPerm extractEntry examples/querybuilder/person.js
+480 silly gunzTarPerm modified mode [ 'examples/querybuilder/person.js', 436, 420 ]
+481 silly gunzTarPerm extractEntry examples/querybuilder/querybuilder.js
+482 silly gunzTarPerm modified mode [ 'examples/querybuilder/querybuilder.js', 436, 420 ]
+483 silly gunzTarPerm extractEntry examples/replicasets/package.json
+484 silly gunzTarPerm modified mode [ 'examples/replicasets/package.json', 436, 420 ]
+485 silly gunzTarPerm extractEntry examples/replicasets/person.js
+486 silly gunzTarPerm modified mode [ 'examples/replicasets/person.js', 436, 420 ]
+487 silly gunzTarPerm extractEntry examples/replicasets/replica-sets.js
+488 silly gunzTarPerm modified mode [ 'examples/replicasets/replica-sets.js', 436, 420 ]
+489 silly gunzTarPerm extractEntry examples/schema/schema.js
+490 silly gunzTarPerm modified mode [ 'examples/schema/schema.js', 436, 420 ]
+491 silly gunzTarPerm extractEntry examples/schema/storing-schemas-as-json/index.js
+492 silly gunzTarPerm modified mode [ 'examples/schema/storing-schemas-as-json/index.js', 436, 420 ]
+493 silly gunzTarPerm extractEntry examples/schema/storing-schemas-as-json/schema.json
+494 silly gunzTarPerm modified mode [ 'examples/schema/storing-schemas-as-json/schema.json',
+494 silly gunzTarPerm   436,
+494 silly gunzTarPerm   420 ]
+495 silly gunzTarPerm extractEntry examples/mapreduce/package.json
+496 silly gunzTarPerm modified mode [ 'examples/mapreduce/package.json', 436, 420 ]
+497 silly gunzTarPerm extractEntry examples/mapreduce/mapreduce.js
+498 silly gunzTarPerm modified mode [ 'examples/mapreduce/mapreduce.js', 436, 420 ]
+499 silly gunzTarPerm extractEntry examples/mapreduce/person.js
+500 silly gunzTarPerm modified mode [ 'examples/mapreduce/person.js', 436, 420 ]
+501 silly gunzTarPerm extractEntry gyp/pylib/gyp/easy_xml.py
+502 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/easy_xml.py', 436, 420 ]
+503 silly gunzTarPerm extractEntry gyp/pylib/gyp/easy_xml_test.py
+504 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/easy_xml_test.py', 509, 493 ]
+505 silly gunzTarPerm extractEntry gyp/pylib/gyp/MSVSProject.py
+506 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/MSVSProject.py', 436, 420 ]
+507 silly gunzTarPerm extractEntry gyp/pylib/gyp/generator/gypsh.py
+508 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/generator/gypsh.py', 436, 420 ]
+509 silly gunzTarPerm extractEntry gyp/pylib/gyp/generator/__init__.py
+510 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/generator/__init__.py', 436, 420 ]
+511 silly gunzTarPerm extractEntry gyp/pylib/gyp/generator/android.py
+512 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/generator/android.py', 436, 420 ]
+513 silly gunzTarPerm extractEntry gyp/pylib/gyp/generator/cmake.py
+514 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/generator/cmake.py', 436, 420 ]
+515 silly gunzTarPerm extractEntry gyp/pylib/gyp/generator/dump_dependency_json.py
+516 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/generator/dump_dependency_json.py', 436, 420 ]
+517 silly gunzTarPerm extractEntry gyp/pylib/gyp/generator/eclipse.py
+518 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/generator/eclipse.py', 436, 420 ]
+519 silly gunzTarPerm extractEntry gyp/pylib/gyp/generator/gypd.py
+520 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/generator/gypd.py', 436, 420 ]
+521 silly gunzTarPerm extractEntry gyp/pylib/gyp/generator/analyzer.py
+522 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/generator/analyzer.py', 436, 420 ]
+523 silly gunzTarPerm extractEntry gyp/pylib/gyp/generator/make.py
+524 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/generator/make.py', 436, 420 ]
+525 silly gunzTarPerm extractEntry gyp/pylib/gyp/generator/msvs.py
+526 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/generator/msvs.py', 436, 420 ]
+527 silly gunzTarPerm extractEntry gyp/pylib/gyp/generator/msvs_test.py
+528 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/generator/msvs_test.py', 509, 493 ]
+529 silly gunzTarPerm extractEntry gyp/pylib/gyp/generator/ninja.py
+530 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/generator/ninja.py', 436, 420 ]
+531 silly gunzTarPerm extractEntry gyp/pylib/gyp/generator/ninja_test.py
+532 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/generator/ninja_test.py', 436, 420 ]
+533 silly gunzTarPerm extractEntry gyp/pylib/gyp/generator/xcode.py
+534 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/generator/xcode.py', 436, 420 ]
+535 silly gunzTarPerm extractEntry gyp/pylib/gyp/generator/xcode_test.py
+536 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/generator/xcode_test.py', 436, 420 ]
+537 silly gunzTarPerm extractEntry gyp/pylib/gyp/input.py
+538 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/input.py', 436, 420 ]
+539 silly gunzTarPerm extractEntry gyp/pylib/gyp/input_test.py
+540 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/input_test.py', 509, 493 ]
+541 silly gunzTarPerm extractEntry gyp/pylib/gyp/mac_tool.py
+542 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/mac_tool.py', 509, 493 ]
+543 silly gunzTarPerm extractEntry gyp/pylib/gyp/msvs_emulation.py
+544 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/msvs_emulation.py', 436, 420 ]
+545 silly gunzTarPerm extractEntry gyp/pylib/gyp/ninja_syntax.py
+546 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/ninja_syntax.py', 436, 420 ]
+547 silly gunzTarPerm extractEntry gyp/pylib/gyp/ordered_dict.py
+548 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/ordered_dict.py', 436, 420 ]
+549 silly gunzTarPerm extractEntry gyp/pylib/gyp/simple_copy.py
+550 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/simple_copy.py', 436, 420 ]
+551 silly gunzTarPerm extractEntry gyp/pylib/gyp/win_tool.py
+552 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/win_tool.py', 509, 493 ]
+553 silly gunzTarPerm extractEntry gyp/pylib/gyp/xcode_emulation.py
+554 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/xcode_emulation.py', 436, 420 ]
+555 silly gunzTarPerm extractEntry gyp/pylib/gyp/xcode_ninja.py
+556 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/xcode_ninja.py', 436, 420 ]
+557 silly gunzTarPerm extractEntry gyp/pylib/gyp/xcodeproj_file.py
+558 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/xcodeproj_file.py', 436, 420 ]
+559 silly gunzTarPerm extractEntry gyp/pylib/gyp/xml_fix.py
+560 silly gunzTarPerm modified mode [ 'gyp/pylib/gyp/xml_fix.py', 436, 420 ]
+561 silly gunzTarPerm extractEntry gyp/samples/samples
+562 silly gunzTarPerm modified mode [ 'gyp/samples/samples', 509, 493 ]
+563 silly gunzTarPerm extractEntry gyp/samples/samples.bat
+564 silly gunzTarPerm modified mode [ 'gyp/samples/samples.bat', 436, 420 ]
+565 silly gunzTarPerm extractEntry gyp/setup.py
+566 silly gunzTarPerm modified mode [ 'gyp/setup.py', 509, 493 ]
+567 silly gunzTarPerm extractEntry gyp/data/win/large-pdb-shim.cc
+568 silly gunzTarPerm modified mode [ 'gyp/data/win/large-pdb-shim.cc', 436, 420 ]
+569 silly gunzTarPerm extractEntry lib/build.js
+570 silly gunzTarPerm modified mode [ 'lib/build.js', 436, 420 ]
+571 silly gunzTarPerm extractEntry lib/clean.js
+572 silly gunzTarPerm modified mode [ 'lib/clean.js', 436, 420 ]
+573 silly gunzTarPerm extractEntry lib/configure.js
+574 silly gunzTarPerm modified mode [ 'lib/configure.js', 436, 420 ]
+575 silly gunzTarPerm extractEntry lib/find-node-directory.js
+576 silly gunzTarPerm modified mode [ 'lib/find-node-directory.js', 436, 420 ]
+577 silly gunzTarPerm extractEntry lib/install.js
+578 silly gunzTarPerm modified mode [ 'lib/install.js', 436, 420 ]
+579 silly gunzTarPerm extractEntry lib/list.js
+580 silly gunzTarPerm modified mode [ 'lib/list.js', 436, 420 ]
+581 silly gunzTarPerm extractEntry lib/node-gyp.js
+582 silly gunzTarPerm modified mode [ 'lib/node-gyp.js', 436, 420 ]
+583 silly gunzTarPerm extractEntry lib/process-release.js
+584 silly gunzTarPerm modified mode [ 'lib/process-release.js', 436, 420 ]
+585 silly gunzTarPerm extractEntry lib/rebuild.js
+586 silly gunzTarPerm modified mode [ 'lib/rebuild.js', 436, 420 ]
+587 silly gunzTarPerm extractEntry lib/remove.js
+588 silly gunzTarPerm modified mode [ 'lib/remove.js', 436, 420 ]
+589 silly gunzTarPerm extractEntry 0001-gyp-always-install-into-PRODUCT_DIR.patch
+590 silly gunzTarPerm modified mode [ '0001-gyp-always-install-into-PRODUCT_DIR.patch', 436, 420 ]
+591 silly gunzTarPerm extractEntry src/win_delay_load_hook.c
+592 silly gunzTarPerm modified mode [ 'src/win_delay_load_hook.c', 436, 420 ]
+593 silly gunzTarPerm extractEntry test/simple-proxy.js
+594 silly gunzTarPerm modified mode [ 'test/simple-proxy.js', 436, 420 ]
+595 silly gunzTarPerm extractEntry test/test-download.js
+596 silly gunzTarPerm modified mode [ 'test/test-download.js', 436, 420 ]
+597 silly gunzTarPerm extractEntry test/test-find-node-directory.js
+598 silly gunzTarPerm modified mode [ 'test/test-find-node-directory.js', 436, 420 ]
+599 silly gunzTarPerm extractEntry test/test-find-python.js
+600 silly gunzTarPerm modified mode [ 'test/test-find-python.js', 436, 420 ]
+601 silly gunzTarPerm extractEntry test/test-options.js
+602 silly gunzTarPerm modified mode [ 'test/test-options.js', 436, 420 ]
+603 silly gunzTarPerm extractEntry test/test-process-release.js
+604 silly gunzTarPerm modified mode [ 'test/test-process-release.js', 436, 420 ]
+605 silly gunzTarPerm extractEntry test/docker.sh
+606 silly gunzTarPerm modified mode [ 'test/docker.sh', 509, 493 ]
+607 silly gunzTarPerm extractEntry test/fixtures/ca-bundle.crt
+608 silly gunzTarPerm modified mode [ 'test/fixtures/ca-bundle.crt', 436, 420 ]
+609 silly gunzTarPerm extractEntry test/fixtures/ca.crt
+610 silly gunzTarPerm modified mode [ 'test/fixtures/ca.crt', 436, 420 ]
+611 silly gunzTarPerm extractEntry test/fixtures/server.crt
+612 silly gunzTarPerm modified mode [ 'test/fixtures/server.crt', 436, 420 ]
+613 silly gunzTarPerm extractEntry test/fixtures/server.key
+614 silly gunzTarPerm modified mode [ 'test/fixtures/server.key', 436, 420 ]
+615 silly gentlyRm /Users/pankai/project/webApp/node_modules/.staging/node-gyp-885446e1/node_modules is being purged
+616 verbose gentlyRm don't care about contents; nuking /Users/pankai/project/webApp/node_modules/.staging/node-gyp-885446e1/node_modules
+617 silly gentlyRm /Users/pankai/project/webApp/node_modules/.staging/mongoose-093f932e/node_modules is being purged
+618 verbose gentlyRm don't care about contents; nuking /Users/pankai/project/webApp/node_modules/.staging/mongoose-093f932e/node_modules
+619 silly doParallel preinstall 3
+620 silly preinstall memwatch@0.2.2 /Users/pankai/project/webApp/node_modules/.staging/memwatch-1e5085ac
+621 info lifecycle memwatch@0.2.2~preinstall: memwatch@0.2.2
+622 silly preinstall mongoose@4.4.10 /Users/pankai/project/webApp/node_modules/.staging/mongoose-093f932e
+623 info lifecycle mongoose@4.4.10~preinstall: mongoose@4.4.10
+624 silly preinstall node-gyp@3.3.1 /Users/pankai/project/webApp/node_modules/.staging/node-gyp-885446e1
+625 info lifecycle node-gyp@3.3.1~preinstall: node-gyp@3.3.1
+626 silly lifecycle memwatch@0.2.2~preinstall: no script for preinstall, continuing
+627 silly lifecycle mongoose@4.4.10~preinstall: no script for preinstall, continuing
+628 silly lifecycle node-gyp@3.3.1~preinstall: no script for preinstall, continuing
+629 silly doReverseSerial remove 0
+630 silly doSerial move 0
+631 silly doSerial finalize 3
+632 silly finalize /Users/pankai/project/webApp/node_modules/memwatch
+633 silly finalize /Users/pankai/project/webApp/node_modules/mongoose
+634 silly finalize /Users/pankai/project/webApp/node_modules/node-gyp
+635 silly doSerial build 3
+636 silly build memwatch@0.2.2
+637 info linkStuff memwatch@0.2.2
+638 silly linkStuff memwatch@0.2.2 has /Users/pankai/project/webApp/node_modules as its parent node_modules
+639 verbose linkBins memwatch@0.2.2
+640 verbose linkMans memwatch@0.2.2
+641 silly build mongoose@4.4.10
+642 info linkStuff mongoose@4.4.10
+643 silly linkStuff mongoose@4.4.10 has /Users/pankai/project/webApp/node_modules as its parent node_modules
+644 verbose linkBins mongoose@4.4.10
+645 verbose linkMans mongoose@4.4.10
+646 silly build node-gyp@3.3.1
+647 info linkStuff node-gyp@3.3.1
+648 silly linkStuff node-gyp@3.3.1 has /Users/pankai/project/webApp/node_modules as its parent node_modules
+649 warn prefer global node-gyp@3.3.1 should be installed with -g
+650 verbose linkBins node-gyp@3.3.1
+651 verbose link bins [ { 'node-gyp': './bin/node-gyp.js' },
+651 verbose link bins   '/Users/pankai/project/webApp/node_modules/.bin',
+651 verbose link bins   false ]
+652 verbose linkMans node-gyp@3.3.1
+653 silly doSerial global-link 0
+654 silly doParallel update-linked 0
+655 silly doSerial install 3
+656 silly install memwatch@0.2.2 /Users/pankai/project/webApp/node_modules/.staging/memwatch-1e5085ac
+657 info lifecycle memwatch@0.2.2~install: memwatch@0.2.2
+658 verbose lifecycle memwatch@0.2.2~install: unsafe-perm in lifecycle true
+659 verbose lifecycle memwatch@0.2.2~install: PATH: /Users/pankai/.nvm/versions/node/v5.9.1/lib/node_modules/npm/bin/node-gyp-bin:/Users/pankai/project/webApp/node_modules/memwatch/node_modules/.bin:/Users/pankai/project/webApp/node_modules/.bin:/Users/pankai/.nvm/versions/node/v5.9.1/bin:/Users/pankai/.nvm/versions/node/v5.9.1/bin:/Users/pankai/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/Users/pankai/.pyenv/bin
+660 verbose lifecycle memwatch@0.2.2~install: CWD: /Users/pankai/project/webApp/node_modules/memwatch
+661 silly lifecycle memwatch@0.2.2~install: Args: [ '-c', 'node-gyp rebuild' ]
+662 silly lifecycle memwatch@0.2.2~install: Returned: code: 1  signal: null
+663 info lifecycle memwatch@0.2.2~install: Failed to exec install script
+664 verbose unlock done using /Users/pankai/.npm/_locks/staging-3db01eb9d3fee7a4.lock for /Users/pankai/project/webApp/node_modules/.staging
+665 silly rollbackFailedOptional Starting
+666 silly rollbackFailedOptional Finishing
+667 silly runTopLevelLifecycles Starting
+668 silly runTopLevelLifecycles Finishing
+669 silly install printInstalled
+670 warn pankai_webapp@1.0.0 No repository field.
+671 verbose stack Error: memwatch@0.2.2 install: `node-gyp rebuild`
+671 verbose stack Exit status 1
+671 verbose stack     at EventEmitter.<anonymous> (/Users/pankai/.nvm/versions/node/v5.9.1/lib/node_modules/npm/lib/utils/lifecycle.js:239:16)
+671 verbose stack     at emitTwo (events.js:100:13)
+671 verbose stack     at EventEmitter.emit (events.js:185:7)
+671 verbose stack     at ChildProcess.<anonymous> (/Users/pankai/.nvm/versions/node/v5.9.1/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+671 verbose stack     at emitTwo (events.js:100:13)
+671 verbose stack     at ChildProcess.emit (events.js:185:7)
+671 verbose stack     at maybeClose (internal/child_process.js:850:16)
+671 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
+672 verbose pkgid memwatch@0.2.2
+673 verbose cwd /Users/pankai/project/webApp
+674 error Darwin 15.2.0
+675 error argv "/Users/pankai/.nvm/versions/node/v5.9.1/bin/node" "/Users/pankai/.nvm/versions/node/v5.9.1/bin/npm" "install" "memwatch"
+676 error node v5.9.1
+677 error npm  v3.7.3
+678 error code ELIFECYCLE
+679 error memwatch@0.2.2 install: `node-gyp rebuild`
+679 error Exit status 1
+680 error Failed at the memwatch@0.2.2 install script 'node-gyp rebuild'.
+680 error Make sure you have the latest version of node.js and npm installed.
+680 error If you do, this is most likely a problem with the memwatch package,
+680 error not with npm itself.
+680 error Tell the author that this fails on your system:
+680 error     node-gyp rebuild
+680 error You can get information on how to open an issue for this project with:
+680 error     npm bugs memwatch
+680 error Or if that isn't available, you can get their info via:
+680 error     npm owner ls memwatch
+680 error There is likely additional logging output above.
+681 verbose exit [ 1, true ]
