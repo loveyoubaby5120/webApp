@@ -1,4 +1,7 @@
+/** @jsx React.DOM */
+
 var React = require('react');
+
 
 var HelloWord = React.createClass({
 	render: function(){
@@ -16,10 +19,10 @@ var HelloWord = React.createClass({
 });
 
 
-ReactDOM.render(
-  <HelloWord />,
-  document.getElementById('app')
-);
+// ReactDOM.render(
+//   <HelloWord />,
+//   document.getElementById('app')
+// );
 
 
 module.exports.HelloWord = HelloWord;

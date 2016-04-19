@@ -1,12 +1,12 @@
 var express = require('express');
-var React = require('../public/lib/react/react-with-addons.min.js');
+var React = require('react');
 var Hello = React.createFactory(require('../public/js/index.js').HelloWord);
 var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	var Hello = React
-  res.render('index', { Hello: HelloWord });
+	var Hello = React.randerToString(Hell({}));
+  res.render('index', { Hello: Hello });
 });
 
 module.exports = router;
