@@ -3,7 +3,7 @@
 // var React = require('react');
 
 
-var HelloWord = React.createClass({
+var HelloAbout = React.createClass({
 	render: function(){
 		return <p ref='childp'>Hello,{(function(obj){
 
@@ -11,19 +11,19 @@ var HelloWord = React.createClass({
 				return obj.props.name;
 			}
 			else{
-				return "world";
+				return "about";
 			}
 
-		})(this)}      <a href='/about'>go to about</a></p>;
+		})(this)}      <a href='/'>go to index</a></p>;
 	}
 });
 
 
 ReactDOM.render(
-  <HelloWord />,
+  <HelloAbout />,
   document.getElementById('app')
 );
 
 
-// module.exports.HelloWord = HelloWord;
+// module.exports.HelloAbout = HelloAbout;
 
