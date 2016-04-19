@@ -22,5 +22,5 @@ ReactDOM.render(
 );
 
 
-
+module.exports.HelloWord = HelloWord;
 
