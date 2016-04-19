@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var path = require('path');
 
 
 module.exports = function(){
@@ -7,9 +8,18 @@ module.exports = function(){
 	var app = express();
 
 	app.use(bodyParser.json());
-	app.use(express.static("./public"));
+	app.use(express.static("public"));
 
+	app.set('view engine', 'ejs');
+	app.set('views', path.join(__dirname, '../views'));
+
+	//加载路由方法一
 	require('../app/routes/news.server.routes')(app);
+
+	//加载路由方法二
+	var routes = require('../routes/index.js');
+
+	app.use('/',routes);
 
 	app.use(function(req, res, next){
 		res.status(404);
