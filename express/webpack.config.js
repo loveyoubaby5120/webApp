@@ -10,7 +10,7 @@ module.exports = {
 		paath: './public/dest',      //输出目录
 		// finlename: 'app.js',  //输出文件名
 		finlename: '[name].js',  //输出文件名
-		publicPath: "./out/",				//html引用路径，在这里是本地地址。
+		publicPath: "./server/",				//html引用路径，在这里是本地地址。
 	}，
 	plugins:[
 		new webpack.optimize.CommonsChunkPlugin("common.js")   //提取共同的代码
