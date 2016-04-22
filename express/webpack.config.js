@@ -7,6 +7,12 @@ var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 //允许错误不打断程序
 var NoErrorsPlugin = webpack.NoErrorsPlugin;
+//单独使用style标签加载css并设置其路径
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+//压缩html
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+
 
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 
@@ -24,16 +30,26 @@ module.exports = {
 	},
     //Server Configuration options
     devServer:{
-        contentBase: '',  //静态资源的目录 相对路径,相对于当前路径 默认为当前config所在的目录
-        devtool: 'eval',
-        hot: true,        //自动刷新
-        inline: true,    
-        port: 3005        
+    	//静态资源的目录 相对路径,相对于当前路径 默认为当前config所在的目录
+        contentBase: './public/',
+        //自动刷新
+        hot: true,
+        //嵌入webpack-dev-server运行时包
+        inline: true,
+        //控制台是否输出
+        quiet：false,
+        //过滤无用信息
+        noInfo: false,
+        //端口
+        port: 3005,
+        //代理
+        proxy: {
+		   "*": "http://localhost:9090"
+	  	},
     },
-    devtool: 'eval',
 	output: {
 		//输出目录
-		paath: './public/dest',
+		path: './public/dest',
 		//输出文件名
 		// finlename: 'app.js',
 		// //输出文件名
@@ -70,7 +86,33 @@ module.exports = {
 	      		{from: 'www'}
 	    	], 
 	    	path.resolve(__dirname,"src")
-	    )
+	    ),
+	    //单独使用style标签加载css并设置其路径
+	    new ExtractTextPlugin("css/[name].css"),
+	    //根据模板插入css/js等生成最终HTML
+	    new HtmlWebpackPlugin({
+	    	//favicon路径
+    		favicon:'./src/img/favicon.ico',
+    		//生成的html存放路径，相对于 path
+			filename:'/view/index.html',
+			//html模板路径
+			template:'./src/view/index.html',
+			//允许插件修改哪些内容，包括head与body
+			inject:true,
+			//为静态资源生成hash值
+			hash:true,
+			//压缩HTML文件
+			minify:{
+				//移除HTML中的注释
+				removeComments:true,
+				//删除空白符与换行符
+				collapseWhitespace:true
+			}
+		}),
+		//打开浏览器
+	    new OpenBrowserPlugin({
+	      url: 'http://localhost:8080'
+	    })
 	],
 	module: {
 		preLoaders: [
