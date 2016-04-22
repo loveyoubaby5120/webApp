@@ -11,6 +11,14 @@ var NoErrorsPlugin = webpack.NoErrorsPlugin;
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 //压缩html
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+/**
+* definePlugin 接收字符串插入到代码当中, 所以你需要的话可以写上 JS 的字符串  （多变量传递）
+* 控制台输入  env DEBUG=true webpack-dev-server  在js里面可以使用变量   __DEV__   这个变量名是自定时的可以更改
+ */
+var devFlagPlugin = new webpack.DefinePlugin({
+  __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
+});
+
 
 
 
@@ -21,8 +29,11 @@ module.exports = {
 	entry:{
 		app:'./public/js/index.js',
 		app2:'./public/js/about.js',
+		app3: ["./index.js", "./about.js"],
 		//【1】注意这里
-		common: ["./public/dest/common"]
+		common: ["./public/dest/common"],
+		//第三方库
+        vendor: ['jquery']
 	},
 	//用于指明程序自动补全识别哪些后缀
 	resolve: {
@@ -54,10 +65,18 @@ module.exports = {
 		// finlename: 'app.js',
 		// //输出文件名
 		finlename: '[name].js',
+		//数组里面文件的文件夹名  【id】 [name]  [hash]  [chunkhash]
+        chunkFilename: "[id].bundle.js"
 		//html引用路径，在这里是本地地址。
 		publicPath: "./server/",
 	},
 	plugins:[
+	    //这个可以使jquery变成全局变量，妮不用在自己文件require('jquery')了
+	    new webpack.ProvidePlugin({
+	      $: "jquery",
+	      jQuery: "jquery",
+	      "window.jQuery": "jquery"
+	    }),
 		//提取共同的代码
 		//【2】注意这里  这两个地方市用来配置common.js模块单独打包的
 		new CommonsChunkPlugin(
@@ -68,6 +87,7 @@ module.exports = {
 	            filename: "common.js"
         	}
         ),
+        new CommonsChunkPlugin('init.js'),
 		//压缩js
 		new uglifyJsPlugin({
 	      compress: {
@@ -112,7 +132,9 @@ module.exports = {
 		//打开浏览器
 	    new OpenBrowserPlugin({
 	      url: 'http://localhost:8080'
-	    })
+	    }),
+	    //definePlugin 接收字符串插入到代码当中, 所以你需要的话可以写上 JS 的字符串
+	    devFlagPlugin
 	],
 	module: {
 		preLoaders: [
@@ -126,10 +148,18 @@ module.exports = {
 		loders: [
 		    {
 		    	////打包静态资源
-		    	test: /\.(js|jsx)$/, //正则表达式匹配 .js 和 .jsx 文件  ç
-		    	loader: 'babel-loader?optional=runtime&stage=0',//对匹配的文件进行处理的loader 
+		    	//正则表达式匹配 .js 和 .jsx 文件 
+		    	test: /\.(js|jsx)$/, 
+		    	//对匹配的文件进行处理的loader 
+		    	loader: 'babel-loader?optional=runtime&stage=0',
 		    	exclude: [nodeModulesPath]//排除node module中的文件
-		    }
+		    },
+		    {
+		    	test: /\.js[x]?$/, 
+		    	//对匹配的文件进行处理的loader    jsx 转换   react 识别  es6 to es5
+		    	loader: 'babel-loader?presets[]=es2015&presets[]=react',
+        		exclude: [nodeModulesPath]//排除node module中的文件
+			},
 			{
 				test: /\.jsx$/, //匹配文件
 				loader: 'jsx-loder', // jsx转化为js    npm install jsx-loder
@@ -138,24 +168,27 @@ module.exports = {
 			{
 				// use ! to chain loaders
 				test: /\.less$/, 
-				loader: 'style-loader!css-loader!less-loader',  //npm install css-loader --save -dev npm install style-loader --save -dev
+				//npm install css-loader --save -dev npm install style-loader --save -dev
+				loader: 'style-loader!css-loader!less-loader',
         		exclude: [nodeModulesPath]//排除node module中的文件 
 			}, 
 		    {   
 		    	//打包静态资源
 		    	test: /\.css$/,
-		    	loader: 'style-loader!css-loader' ,  //npm install css-loader --save -dev npm install style-loader --save -dev
+		    	//npm install css-loader --save -dev npm install style-loader --save -dev
+		    	loader: 'style-loader!css-loader' ,
         		exclude: [nodeModulesPath]//排除node module中的文件 
 		    },
 		    {   
 		    	// 可以通过url-loader把较小的图片转换成base64的字符串内嵌在生成的文件里。 npm install url-loader --save -dev
 		    	test: /\.(png|jpg)$/,
-		    	loader: 'url-loader?limit=8192',    //   query: { mimetype: "image/png" }  //限制大小小于8.192k的
+		    	loader: 'url-loader?limit=8192',    // query: { mimetype: "image/png" }  //限制大小小于8.192k的
         		exclude: [nodeModulesPath]//排除node module中的文件 
 		    },
 		    {
 		    	test:/\.(png|woff|svg|ttf|eot)$/,
-		    	loader:'url-loader?limit=10000',//限制大小小于10k的
+		    	//限制大小小于10k的
+		    	loader:'url-loader?limit=10000',
         		exclude: [nodeModulesPath]//排除node module中的文件 
 	    	},
 	    	{   
