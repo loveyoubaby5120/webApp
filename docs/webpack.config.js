@@ -1,6 +1,5 @@
 // 把指定文件夹下的文件复制到指定的目录 npm install transfer-webpack-plugin  -save
 var TransferWebpackPlugin = require('transfer-webpack-plugin');
-var path = requier('path');
 var webpack = requier('webpack');
 //压缩js插件
 var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
@@ -12,9 +11,17 @@ var NoErrorsPlugin = webpack.NoErrorsPlugin;
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 //压缩html
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+/**
+* definePlugin 接收字符串插入到代码当中, 所以你需要的话可以写上 JS 的字符串  （多变量传递）
+* 控制台输入  env DEBUG=true webpack-dev-server  在js里面可以使用变量   __DEV__   这个变量名是自定时的可以更改
+ */
+var devFlagPlugin = new webpack.DefinePlugin({
+  __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
+});
 
 //模块热替换(HMR)交换, 添加, 或者删除模块, 同时应用持续运行, 不需要 页面刷新.
-var HotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin;
+// var HotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin;
+
 
 
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
@@ -26,11 +33,13 @@ module.exports = {
 		app2:'./public/js/about.js',
 		app3: ["./index.js", "./about.js"],
 		//【1】注意这里
-		common: ["./public/dest/common"]
+		common: ["./public/dest/common"],
+		//第三方库
+        vendor: ['jquery']
 	},
 	//用于指明程序自动补全识别哪些后缀
 	resolve: {
-	    extensions: ['', '.js']
+	    extensions: ['', '.coffee', '.js']
 	},
     //Server Configuration options
     devServer:{
@@ -64,6 +73,12 @@ module.exports = {
 		publicPath: "./server/",
 	},
 	plugins:[
+	    //这个可以使jquery变成全局变量，妮不用在自己文件require('jquery')了
+	    new webpack.ProvidePlugin({
+	      $: "jquery",
+	      jQuery: "jquery",
+	      "window.jQuery": "jquery"
+	    }),
 		//提取共同的代码
 		//【2】注意这里  这两个地方市用来配置common.js模块单独打包的
 		new CommonsChunkPlugin(
@@ -96,12 +111,34 @@ module.exports = {
 	    ),
 	    //单独使用style标签加载css并设置其路径
 	    new ExtractTextPlugin("css/[name].css"),
+	    //根据模板插入css/js等生成最终HTML
+	    new HtmlWebpackPlugin({
+	    	//favicon路径
+    		favicon:'./src/img/favicon.ico',
+    		//生成的html存放路径，相对于 path
+			filename:'/view/index.html',
+			//html模板路径
+			template:'./src/view/index.html',
+			//允许插件修改哪些内容，包括head与body
+			inject:true,
+			//为静态资源生成hash值
+			hash:true,
+			//压缩HTML文件
+			minify:{
+				//移除HTML中的注释
+				removeComments:true,
+				//删除空白符与换行符
+				collapseWhitespace:true
+			}
+		}),
 		//打开浏览器
 	    new OpenBrowserPlugin({
 	      url: 'http://localhost:8080'
 	    }),
+	    //definePlugin 接收字符串插入到代码当中, 所以你需要的话可以写上 JS 的字符串
+	    devFlagPlugin,
 	    //模块热替换(HMR)交换, 添加, 或者删除模块, 同时应用持续运行, 不需要 页面刷新.
-	    HotModuleReplacementPlugin();
+	    // HotModuleReplacementPlugin();
 	],
 	module: {
 		preLoaders: [
@@ -114,20 +151,19 @@ module.exports = {
 	    ],
 		loders: [
 		    {
-		    	////打包静态资源    //对匹配的文件进行处理的loader    jsx 转换   react 识别  es6 to es5
+		    	////打包静态资源
 		    	//正则表达式匹配 .js 和 .jsx 文件 
-		    	test: /\.js[x]$/, 
+		    	test: /\.(js|jsx)$/, 
 		    	//对匹配的文件进行处理的loader 
-		    	loader: 'babel-loader',
-		    	query: { optional: "runtime", 'stage' : 0 , 'presets' : [ 'es2015', 'react']},
+		    	loader: 'babel-loader?optional=runtime&stage=0',
 		    	exclude: [nodeModulesPath]//排除node module中的文件
 		    },
-		 //    {
-		 //    	test: /\.js[x]?$/, 
-		 //    	//对匹配的文件进行处理的loader    jsx 转换   react 识别  es6 to es5
-		 //    	loader: 'babel-loader?presets[]=es2015&presets[]=react',
-   //      		exclude: [nodeModulesPath]//排除node module中的文件
-			// },
+		    {
+		    	test: /\.js[x]?$/, 
+		    	//对匹配的文件进行处理的loader    jsx 转换   react 识别  es6 to es5
+		    	loader: 'babel-loader?presets[]=es2015&presets[]=react',
+        		exclude: [nodeModulesPath]//排除node module中的文件
+			},
 			{
 				test: /\.jsx$/, //匹配文件
 				loader: 'jsx-loder', // jsx转化为js    npm install jsx-loder
