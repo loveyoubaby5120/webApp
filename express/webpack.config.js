@@ -14,7 +14,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 //模块热替换(HMR)交换, 添加, 或者删除模块, 同时应用持续运行, 不需要 页面刷新.
-var HotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin;
+// var HotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin;
 
 
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
@@ -101,7 +101,7 @@ module.exports = {
 	      url: 'http://localhost:8080'
 	    }),
 	    //模块热替换(HMR)交换, 添加, 或者删除模块, 同时应用持续运行, 不需要 页面刷新.
-	    HotModuleReplacementPlugin();
+	    // HotModuleReplacementPlugin();
 	],
 	module: {
 		preLoaders: [
