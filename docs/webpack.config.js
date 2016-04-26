@@ -39,8 +39,17 @@ module.exports = {
 	},
 	//用于指明程序自动补全识别哪些后缀
 	resolve: {
-	    extensions: ['', '.coffee', '.js']
-	},
+        //查找module的话从这里开始查找
+        root: '/', //绝对路径
+        //自动扩展文件后缀名，意味着我们require模块可以省略不写后缀名
+        extensions: ['', '.js', '.json', '.scss'],
+        //模块别名定义，方便后续直接引用别名，无须多写长长的地址
+        alias: {
+            AppStore : 'js/stores/AppStores.js',//后续直接 require('AppStore') 即可
+            ActionType : 'js/actions/ActionType.js',
+            AppAction : 'js/actions/AppAction.js'
+        }
+    },
     //Server Configuration options
     devServer:{
     	//静态资源的目录 相对路径,相对于当前路径 默认为当前config所在的目录
