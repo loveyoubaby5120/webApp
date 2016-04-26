@@ -14,11 +14,36 @@ webpackJsonp([1],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var App = _react2.default.createClass({/*...*/
-	  displayName: 'App'
+	var App = _react2.default.createClass({
+	  displayName: 'App',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'a',
+	      null,
+	      '   '
+	    );
+	  }
 	});
-	var About = _react2.default.createClass({/*...*/
-	  displayName: 'About'
+	var About = _react2.default.createClass({
+	  displayName: 'About',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'a',
+	      null,
+	      '   '
+	    );
+	  }
+	});
+
+	var NoMatch = _react2.default.createClass({
+	  displayName: 'NoMatch',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'a',
+	      null,
+	      '   '
+	    );
+	  }
 	});
 	// etc.
 

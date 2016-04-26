@@ -3,8 +3,22 @@ import { render } from 'react-dom'
 import { Router, Route, Link ,browserHistory } from 'react-router'
 
 
-const App = React.createClass({/*...*/})
-const About = React.createClass({/*...*/})
+const App = React.createClass({
+	render() {
+		return (<a>   </a>);
+	}
+})
+const About = React.createClass({
+	render(){
+		return (<a>   </a>);
+	}
+})
+
+const NoMatch = React.createClass({
+	render(){
+		return (<a>   </a>);
+	}
+})
 // etc.
 
 const Users = React.createClass({
@@ -40,7 +54,6 @@ const User = React.createClass({
     return (
       <div>
         <h2>{this.state.user.name}</h2>
-        {/* etc. */}
       </div>
     )
   }

@@ -1,8 +1,9 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-var HelloWord = React.createClass({
-	render: function(){
+class HelloWord extends React.Component{
+
+	render(){
 		return <p ref='childp'>Hello,{(function(obj){
 
 			if(obj.props.name){
@@ -14,7 +15,22 @@ var HelloWord = React.createClass({
 
 		})(this)}      <a href='/other'>go to other</a></p>;
 	}
-});
+}
+
+// var HelloWord = React.createClass({
+// 	render: function(){
+// 		return <p ref='childp'>Hello,{(function(obj){
+
+// 			if(obj.props.name){
+// 				return obj.props.name;
+// 			}
+// 			else{
+// 				return "world";
+// 			}
+
+// 		})(this)}      <a href='/other'>go to other</a></p>;
+// 	}
+// });
 
 
 render(
