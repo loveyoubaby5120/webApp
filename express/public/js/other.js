@@ -2,27 +2,8 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Router, Route, Link, browserHistory } from 'react-router'
 
-const App = React.createClass({
-  render(){
-    return (
-      <p></p>
-      )
-  }
-})
-const About = React.createClass({
-  render(){
-    return (
-      <p></p>
-      )
-  }
-})
-const NoMatch = React.createClass({
-  render(){
-    return (
-      <p></p>
-      )
-  }
-})
+const App = React.createClass({/*...*/})
+const About = React.createClass({/*...*/})
 // etc.
 
 const Users = React.createClass({

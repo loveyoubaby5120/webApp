@@ -17,6 +17,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "handlebars": "^4.0.5",
     "handlebars-loader": "^1.2.0",
+    "history": "^2.1.0",
     "html-webpack-plugin": "^2.16.0",
     "install": "^0.6.1",
     "jsx-loader": "^0.13.2",
