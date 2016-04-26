@@ -75,7 +75,7 @@ module.exports = {
 		//输出文件名
 		// finlename: 'app.js',
 		// //输出文件名
-		finlename: '[name].js',
+		filename: '[name].js',
 		//数组里面文件的文件夹名  【id】 [name]  [hash]  [chunkhash]
         chunkFilename: "[id].bundle.js"
 		//html引用路径，在这里是本地地址。
@@ -158,7 +158,7 @@ module.exports = {
 		      exclude: [nodeModulesPath]  //排除不处理的目录
 		    },
 	    ],
-		loders: [
+		loaders: [
 		    {
 		    	////打包静态资源
 		    	//正则表达式匹配 .js 和 .jsx 文件 

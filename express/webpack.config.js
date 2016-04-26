@@ -32,16 +32,14 @@ module.exports = {
 		path: './public/dest',
 		//输出文件名
 		// finlename: 'app.js',
-		// //输出文件名
-		finlename: '[name].js',
-		//数组里面文件的文件夹名  【id】 [name]  [hash]  [chunkhash]
-        chunkFilename: "[id].bundle.js",
-		//html引用路径，在这里是本地地址。
-		publicPath: "/dest/",
+		// //输出文件名  【id】 [name]  [hash]  [chunkhash]
+		filename: '[name].js',
+		//html引用路径，在这里是本地地址
+		publicPath: "/dest/"
 	},
 	//用于指明程序自动补全识别哪些后缀
 	resolve: {
-	    extensions: ['', '.js']
+	    extensions: ['', '.js', '.jsx']
 	},
 	devtool:'eval',
 	plugins:[
@@ -69,43 +67,30 @@ module.exports = {
 	    // HotModuleReplacementPlugin();
 	],
 	module: {
-		loders: [
+		loaders: [
 		    {
 		    	////打包静态资源    //对匹配的文件进行处理的loader    jsx 转换   react 识别  es6 to es5
 		    	//正则表达式匹配 .js 和 .jsx 文件 
-		    	test: /\.js[x]$/, 
+		    	test: /\.js[x]?$/,
 		    	//对匹配的文件进行处理的loader 
-		    	loader: 'babel',
-		    	query: {'presets' : [ 'es2015', "stage-0", 'react']},
+		    	loader: 'babel-loader',
+		    	query: {'presets' : [ 'es2015', 'react']},
 		    	exclude: [nodeModulesPath]//排除node module中的文件
 		    },
 			{
 				// use ! to chain loaders
-				test: /\.less$/, 
+				test: /\.(less|css)$/, 
 				//npm install css-loader --save -dev npm install style-loader --save -dev
 				loader: 'style-loader!css-loader!less-loader',
         		exclude: [nodeModulesPath]//排除node module中的文件 
-			}, 
-		    {   
-		    	//打包静态资源
-		    	test: /\.css$/,
-		    	//npm install css-loader --save -dev npm install style-loader --save -dev
-		    	loader: 'style-loader!css-loader' ,
-        		exclude: [nodeModulesPath]//排除node module中的文件 
-		    },
+			},
 		    {   
 		    	// 可以通过url-loader把较小的图片转换成base64的字符串内嵌在生成的文件里。 npm install url-loader --save -dev
 		    	test: /\.(png|jpg)$/,
-		    	loader: 'url-loader?limit=8192',    // query: { mimetype: "image/png" }  //限制大小小于8.192k的
+		    	loader: 'url-loader?limit=10000',    // query: { mimetype: "image/png" }  //限制大小小于10k的
         		exclude: [nodeModulesPath]//排除node module中的文件 
 		    },
-		    {
-		    	test:/\.(png|woff|svg|ttf|eot)$/,
-		    	//限制大小小于10k的
-		    	loader:'url-loader?limit=10000',
-        		exclude: [nodeModulesPath]//排除node module中的文件 
-	    	},
-	    	{   
+	    	{
 	    		// 打包template   npm install handlebars-loader --save -dev  npm install handlebars -save//是必须的
 	    		test: /\.html$/,
 	    		loader: "handlebars-loader",

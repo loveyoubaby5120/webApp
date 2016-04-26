@@ -1,8 +1,3 @@
-// /** @jsx React.DOM */
-
-// var React = require('react');
-
-
 var HelloWord = React.createClass({
 	render: function(){
 		return <p ref='childp'>Hello,{(function(obj){
