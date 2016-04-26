@@ -26,6 +26,7 @@ module.exports = {
 	entry:{
 		// exprees: './config/express.js',
 		app:'./public/js/index.js',
+		other: './public/js/other.js',
 	},
 	output: {
 		//输出目录
@@ -34,6 +35,7 @@ module.exports = {
 		// finlename: 'app.js',
 		// //输出文件名  【id】 [name]  [hash]  [chunkhash]
 		filename: '[name].js',
+		chunkFilename: '[id].bundle.js',
 		//html引用路径，在这里是本地地址
 		publicPath: "/dest/"
 	},
@@ -41,20 +43,19 @@ module.exports = {
 	resolve: {
 	    extensions: ['', '.js', '.jsx']
 	},
-	// devtool:'cheap-source-map',
 	plugins:[
 		//提取共同的代码
         new CommonsChunkPlugin('common.js'),
 		//压缩js
-		new uglifyJsPlugin({
-	      compress: {
-	        warnings: false
-	      },
-	      //排除混淆关键字
-	      mangle: {
-	      	except: ['require' ,'exports' ,'module' ,'$']
-	      }
-	    }),
+		// new uglifyJsPlugin({
+	 //      compress: {
+	 //        warnings: false
+	 //      },
+	 //      //排除混淆关键字
+	 //      mangle: {
+	 //      	except: ['require' ,'exports' ,'module' ,'$']
+	 //      }
+	 //    }),
 	    //允许错误不打断程序
     	new NoErrorsPlugin(),
 	    //单独使用style标签加载css并设置其路径

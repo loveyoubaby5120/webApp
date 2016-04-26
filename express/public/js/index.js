@@ -12,7 +12,7 @@ var HelloWord = React.createClass({
 				return "world";
 			}
 
-		})(this)}      <a href='/about'>go to about</a></p>;
+		})(this)}      <a href='/other'>go to other</a></p>;
 	}
 });
 

@@ -10,9 +10,9 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/about', function(req, res, next) {
+router.get('/other', function(req, res, next) {
 	// var Hello = React.randerToString(Hell({}));
-  res.render('about', { title: 'about' });
+  res.render('other', { title: 'other' });
 });
 
 module.exports = router;
