@@ -20,7 +20,7 @@ var devFlagPlugin = new webpack.DefinePlugin({
 });
 
 //模块热替换(HMR)交换, 添加, 或者删除模块, 同时应用持续运行, 不需要 页面刷新.
-// var HotModuleReplacementPlugin = new webpack.HotModuleReplacementPlugin;
+// var HotModuleReplacementPlugin = webpack.HotModuleReplacementPlugin;
 
 
 
@@ -147,7 +147,7 @@ module.exports = {
 	    //definePlugin 接收字符串插入到代码当中, 所以你需要的话可以写上 JS 的字符串
 	    devFlagPlugin,
 	    //模块热替换(HMR)交换, 添加, 或者删除模块, 同时应用持续运行, 不需要 页面刷新.
-	    // HotModuleReplacementPlugin();
+	    // new HotModuleReplacementPlugin();
 	],
 	module: {
 		preLoaders: [

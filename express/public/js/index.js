@@ -1,3 +1,6 @@
+import React from 'react'
+import { render } from 'react-dom'
+
 var HelloWord = React.createClass({
 	render: function(){
 		return <p ref='childp'>Hello,{(function(obj){
@@ -14,7 +17,7 @@ var HelloWord = React.createClass({
 });
 
 
-ReactDOM.render(
+render(
   <HelloWord />,
   document.getElementById('app')
 );
