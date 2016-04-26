@@ -17,32 +17,19 @@ webpackJsonp([1],[
 	var App = _react2.default.createClass({
 	  displayName: 'App',
 	  render: function render() {
-	    return _react2.default.createElement(
-	      'a',
-	      null,
-	      '   '
-	    );
+	    return _react2.default.createElement('p', null);
 	  }
 	});
 	var About = _react2.default.createClass({
 	  displayName: 'About',
 	  render: function render() {
-	    return _react2.default.createElement(
-	      'a',
-	      null,
-	      '   '
-	    );
+	    return _react2.default.createElement('p', null);
 	  }
 	});
-
 	var NoMatch = _react2.default.createClass({
 	  displayName: 'NoMatch',
 	  render: function render() {
-	    return _react2.default.createElement(
-	      'a',
-	      null,
-	      '   '
-	    );
+	    return _react2.default.createElement('p', null);
 	  }
 	});
 	// etc.
