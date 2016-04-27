@@ -4,6 +4,13 @@ webpackJsonp([1],[
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.PageNotFound = exports.App = exports.User = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -14,92 +21,136 @@ webpackJsonp([1],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var App = _react2.default.createClass({/*...*/
-	  displayName: 'App'
-	});
-	var About = _react2.default.createClass({/*...*/
-	  displayName: 'About'
-	});
-	// etc.
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var Users = _react2.default.createClass({
-	  displayName: 'Users',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        'h1',
-	        null,
-	        'Users'
-	      ),
-	      _react2.default.createElement(
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var User = exports.User = function (_React$Component) {
+	  _inherits(User, _React$Component);
+
+	  function User() {
+	    _classCallCheck(this, User);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(User).apply(this, arguments));
+	  }
+
+	  _createClass(User, [{
+	    key: 'render',
+	    value: function render() {
+	      var userID = this.props.params.userID;
+	      var query = this.props.location.query;
+
+	      var age = query && query.showAge ? '33' : '';
+
+	      return _react2.default.createElement(
 	        'div',
-	        { className: 'master' },
+	        { className: 'User' },
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          'User id: ',
+	          userID
+	        ),
+	        age
+	      );
+	    }
+	  }]);
+
+	  return User;
+	}(_react2.default.Component);
+
+	var App = exports.App = function (_React$Component2) {
+	  _inherits(App, _React$Component2);
+
+	  function App() {
+	    _classCallCheck(this, App);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
+	  }
+
+	  _createClass(App, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
 	        _react2.default.createElement(
 	          'ul',
 	          null,
-	          this.state.users.map(function (user) {
-	            return _react2.default.createElement(
-	              'li',
-	              { key: user.id },
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: '/user/' + user.id },
-	                user.name
-	              )
-	            );
-	          })
-	        )
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'detail' },
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '/user/bob', activeClassName: 'active' },
+	              'Bob'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: { pathname: '/user/bob', query: { showAge: true } }, activeClassName: 'active' },
+	              'Bob With Query Params'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            null,
+	            _react2.default.createElement(
+	              _reactRouter.Link,
+	              { to: '/user/sally', activeClassName: 'active' },
+	              'Sally'
+	            )
+	          )
+	        ),
 	        this.props.children
-	      )
-	    );
-	  }
-	});
+	      );
+	    }
+	  }]);
 
-	var User = _react2.default.createClass({
-	  displayName: 'User',
-	  componentDidMount: function componentDidMount() {
-	    this.setState({
-	      // route components are rendered with useful information, like URL params
-	      user: findUserById(this.props.params.userId)
-	    });
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        'h2',
+	  return App;
+	}(_react2.default.Component);
+
+	var PageNotFound = exports.PageNotFound = function (_React$Component3) {
+	  _inherits(PageNotFound, _React$Component3);
+
+	  function PageNotFound() {
+	    _classCallCheck(this, PageNotFound);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(PageNotFound).apply(this, arguments));
+	  }
+
+	  _createClass(PageNotFound, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
 	        null,
-	        this.state.user.name
-	      )
-	    );
-	  }
-	});
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          'Page Not Found.'
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          'Go to ',
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/' },
+	            'Home Page'
+	          )
+	        )
+	      );
+	    }
+	  }]);
 
-	// Declarative route configuration (could also load this config lazily
-	// instead, all you really need is a single root route, you don't need to
-	// colocate the entire config).
-	(0, _reactDom.render)(_react2.default.createElement(
-	  _reactRouter.Router,
-	  { history: _reactRouter.browserHistory },
-	  _react2.default.createElement(
-	    _reactRouter.Route,
-	    { path: '/', component: App },
-	    _react2.default.createElement(_reactRouter.Route, { path: 'about', component: About }),
-	    _react2.default.createElement(
-	      _reactRouter.Route,
-	      { path: 'users', component: Users },
-	      _react2.default.createElement(_reactRouter.Route, { path: '/user/:userId', component: User })
-	    ),
-	    _react2.default.createElement(_reactRouter.Route, { path: '*', component: NoMatch })
-	  )
-	), document.body);
+	  return PageNotFound;
+	}(_react2.default.Component);
 
 /***/ },
 /* 1 */,

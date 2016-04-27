@@ -27,6 +27,7 @@ module.exports = {
 		// exprees: './config/express.js',
 		app:'./public/js/index.js',
 		other: './public/js/other.js',
+		router: './public/js/router.js',
 	},
 	output: {
 		//输出目录

@@ -1,61 +1,49 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, Link, browserHistory } from 'react-router'
+import { browserHistory, Router, Route, Link } from 'react-router'
 
-const App = React.createClass({/*...*/})
-const About = React.createClass({/*...*/})
-// etc.
 
-const Users = React.createClass({
+export class User extends React.Component {
   render() {
+    let { userID } = this.props.params
+    let { query } = this.props.location
+    let age = query && query.showAge ? '33' : ''
+
     return (
-      <div>
-        <h1>Users</h1>
-        <div className="master">
-          <ul>
-            {/* use Link to route around the app */}
-            {this.state.users.map(user => (
-              <li key={user.id}><Link to={`/user/${user.id}`}>{user.name}</Link></li>
-            ))}
-          </ul>
-        </div>
-        <div className="detail">
-          {this.props.children}
-        </div>
+      <div className="User">
+        <h1>User id: {userID}</h1>
+        {age}
       </div>
     )
   }
-})
+}
 
-const User = React.createClass({
-  componentDidMount() {
-    this.setState({
-      // route components are rendered with useful information, like URL params
-      user: findUserById(this.props.params.userId)
-    })
-  },
-
+export class App extends React.Component {
   render() {
     return (
       <div>
-        <h2>{this.state.user.name}</h2>
-        {/* etc. */}
+        <ul>
+          <li><Link to="/user/bob" activeClassName="active">Bob</Link></li>
+          <li><Link to={{ pathname: '/user/bob', query: { showAge: true } }} activeClassName="active">Bob With Query Params</Link></li>
+          <li><Link to="/user/sally" activeClassName="active">Sally</Link></li>
+        </ul>
+        {this.props.children}
       </div>
     )
   }
-})
+}
 
-// Declarative route configuration (could also load this config lazily
-// instead, all you really need is a single root route, you don't need to
-// colocate the entire config).
-render((
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <Route path="about" component={About}/>
-      <Route path="users" component={Users}>
-        <Route path="/user/:userId" component={User}/>
-      </Route>
-      <Route path="*" component={NoMatch}/>
-    </Route>
-  </Router>
-), document.body)
+export class PageNotFound extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Page Not Found.</h1>
+        <p>
+          Go to <Link to="/">Home Page</Link>
+        </p>
+      </div>
+    )
+  }
+}
+
+
