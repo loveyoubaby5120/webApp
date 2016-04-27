@@ -47,3 +47,4 @@ export class PageNotFound extends React.Component {
 }
 
 
+export = {App}
