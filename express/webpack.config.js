@@ -3,7 +3,7 @@ var path = require('path');
 //压缩js插件
 // var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 //提取共同的代码
-// var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 //允许错误不打断程序
 var NoErrorsPlugin = webpack.NoErrorsPlugin;
 //单独使用style标签加载css并设置其路径
@@ -43,9 +43,10 @@ module.exports = {
 	        js: path.resolve(__dirname, 'public','js')
 	    }
 	},
+	devtool: 'inline-source-map',
 	plugins:[
 		//提取共同的代码
-        // new CommonsChunkPlugin('common.js'),
+        new CommonsChunkPlugin('common.js'),
 		//压缩js
 		// new uglifyJsPlugin({
 	 //      compress: {
