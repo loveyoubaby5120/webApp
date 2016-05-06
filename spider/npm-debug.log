@@ -1,0 +1,31 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/5.0.0/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'uninstall',
+1 verbose cli   'pyspreadsheet',
+1 verbose cli   '--save-dev' ]
+2 info using npm@3.3.9
+3 info using node@v5.0.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly rollbackFailedOptional Starting
+8 silly rollbackFailedOptional Finishing
+9 silly runTopLevelLifecycles Starting
+10 silly runTopLevelLifecycles Finishing
+11 silly install printInstalled
+12 verbose stack Error: ENOENT: no such file or directory, stat '/Users/pankai/project/webApp/spider/node_modules/pyspreadsheet'
+12 verbose stack     at Error (native)
+13 verbose cwd /Users/pankai/project/webApp/spider
+14 error Darwin 15.4.0
+15 error argv "/usr/local/Cellar/node/5.0.0/bin/node" "/usr/local/bin/npm" "uninstall" "pyspreadsheet" "--save-dev"
+16 error node v5.0.0
+17 error npm  v3.3.9
+18 error path /Users/pankai/project/webApp/spider/node_modules/pyspreadsheet
+19 error code ENOENT
+20 error errno -2
+21 error syscall stat
+22 error enoent ENOENT: no such file or directory, stat '/Users/pankai/project/webApp/spider/node_modules/pyspreadsheet'
+22 error enoent This is most likely not a problem with npm itself
+22 error enoent and is related to npm not being able to find a file.
+23 verbose exit [ -2, true ]
