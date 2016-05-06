@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "cheerio": "^0.20.0",
+    "excel-export": "^0.5.1",
     "formidable": "^1.0.17",
     "fs": "0.0.2",
     "lei-stream": "^1.0.5",

@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var formidable = require('formidable');
 var fs = require('fs');
+var xlsx = require('node-xlsx');
 var path = require('path');
 var SpreadsheetReader = require('pyspreadsheet').SpreadsheetReader;
 
@@ -16,19 +17,19 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
 
 
-	SpreadsheetReader.read('a.xlsx', function (err, workbook) {
-		// Iterate on sheets
-		workbook.sheets.forEach(function (sheet) {
-			console.log('sheet: %s', sheet.name);
-				// Iterate on rows
-			sheet.rows.forEach(function (row) {
-				// Iterate on cells
-				row.forEach(function (cell) {
-					console.log('%s: %s', cell.address, cell.value);
-				});
-			});
-		});
-	});
+	// SpreadsheetReader.read('a.xlsx', function (err, workbook) {
+	// 	// Iterate on sheets
+	// 	workbook.sheets.forEach(function (sheet) {
+	// 		console.log('sheet: %s', sheet.name);
+	// 			// Iterate on rows
+	// 		sheet.rows.forEach(function (row) {
+	// 			// Iterate on cells
+	// 			row.forEach(function (cell) {
+	// 				console.log('%s: %s', cell.address, cell.value);
+	// 			});
+	// 		});
+	// 	});
+	// });
 
 	// var xlsxPath = path.resolve(__dirname, '../public/avatar/0.0.5849197695497423.xlsx');
 	// console.log(xlsxPath);
