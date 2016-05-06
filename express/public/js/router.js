@@ -1,10 +1,10 @@
 import React from 'react'
-import { render } from 'react-dom'
+import ReactDom from 'react-dom'
 import { browserHistory, Router, Route } from 'react-router'
 import * as other from './other.js'
 
 
-render((
+ReactDom.render((
   <Router history={browserHistory}>
     <Route path="/other" component={other.App}>
       <Route path="user/:userID" component={other.User} />

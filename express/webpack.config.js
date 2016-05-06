@@ -89,7 +89,7 @@ module.exports = {
 				// use ! to chain loaders
 				test: /\.(less|css)$/, 
 				//npm install css-loader --save -dev npm install style-loader --save -dev
-				loader: 'style-loader!css-loader!less-loader',
+				loader: 'style-loader!css!less',
         		exclude: [nodeModulesPath]//排除node module中的文件 
 			},
 		    {   

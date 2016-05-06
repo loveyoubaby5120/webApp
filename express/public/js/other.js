@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-dom'
+// import ReactDom from 'react-dom'
 import { Link } from 'react-router'
 
 export class User extends React.Component {
