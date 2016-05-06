@@ -17,9 +17,9 @@ router.get('/', function(req, res) {
 
 router.post('/', function(req, res) {
 
-	
+	var xlsxPath = path.resolve(__dirname, './a.xlsx');
 
-	parseXlsx('a.xlsx', function(err, data) {
+	parseXlsx(xlsxPath, function(err, data) {
 		console.log(data)
 	  if(err) throw err;
 	    // data is an array of arrays
