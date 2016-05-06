@@ -1,0 +1,18 @@
+{
+  "name": "spider",
+  "description": "",
+  "main": "",
+  "authors": [
+    "pankai <loveyoubaby5120@sina.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/loveyoubaby5120/webApp",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
