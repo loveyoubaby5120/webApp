@@ -11,6 +11,7 @@
     "debug": "~2.2.0",
     "ejs": "^2.4.1",
     "express": "~4.13.1",
+    "file-loader": "^0.8.5",
     "morgan": "~1.6.1",
     "path": "^0.12.7",
     "serve-favicon": "~2.3.0"

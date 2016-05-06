@@ -105,8 +105,25 @@ router.post('/', function(req, res) {
 	// console.log(xlsxPath);
 
 
-	var obj = xlsx.parse('a.xlsx');
+	var obj = xlsx.parse("./a.xlsx");
 	console.log(JSON.stringify(obj));
+
+	res.end();
+
+	// var obj = xlsx.parse('D:/test.xlsx');
+	// //第一个工作表的数据
+	// var data = obj.worksheets[0].data;
+	// //列数
+	// var maxCol = obj.worksheets[0].maxCol;
+	// //行数
+	// var maxRow = obj.worksheets[0].maxRow;
+
+	// for(var i=0;i<maxRow;i++) {
+	// 	console.log("第"+(i+1)+"行的数据：");
+	// 	for(var j=0;j<maxCol;j++) {
+	// 		console.log(data[i][j].value);
+	// 	}
+	// }
 
 	// var file = xlsx.build(obj);
 	// fs.writeFileSync('b.xlsx', file, 'binary');
