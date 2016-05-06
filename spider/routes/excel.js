@@ -4,8 +4,6 @@ var formidable = require('formidable');
 var fs = require('fs');
 var xlsx = require('node-xlsx');
 var path = require('path');
-//npm install pyspreadsheet --save-dev
-// var SpreadsheetReader = require('pyspreadsheet').SpreadsheetReader;
 var excelPort = require('excel-export');
 
 var TITLE = 'formidable上传示例';
@@ -81,34 +79,12 @@ router.post('/', function(req, res) {
 
 
 
-
-
-	// SpreadsheetReader.read('a.xlsx', function (err, workbook) {
-	// 	// Iterate on sheets
-	// 	workbook.sheets.forEach(function (sheet) {
-	// 		console.log('sheet: %s', sheet.name);
-	// 			// Iterate on rows
-	// 		sheet.rows.forEach(function (row) {
-	// 			// Iterate on cells
-	// 			row.forEach(function (cell) {
-	// 				console.log('%s: %s', cell.address, cell.value);
-	// 			});
-	// 		});
-	// 	});
-	// });
-
-
-
-
-
 	// var xlsxPath = path.resolve(__dirname, '../public/avatar/0.0.5849197695497423.xlsx');
 	// console.log(xlsxPath);
 
 
-	var obj = xlsx.parse("./a.xlsx");
-	console.log(JSON.stringify(obj));
-
-	res.end();
+	// var obj = xlsx.parse("./a.xlsx");
+	// console.log(JSON.stringify(obj));
 
 	// var obj = xlsx.parse('D:/test.xlsx');
 	// //第一个工作表的数据
@@ -180,8 +156,8 @@ router.post('/', function(req, res) {
 
 
 
-	// res.locals.success = '上传成功';
-	// res.render('excel', { title: TITLE ,content:'上传文件'});
+	res.locals.success = '上传成功';
+	res.render('excel', { title: TITLE ,content:'上传文件'});
 });
 
 module.exports = router;
