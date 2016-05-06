@@ -5,6 +5,7 @@ var fs = require('fs');
 var xlsx = require('node-xlsx');
 var path = require('path');
 var excelPort = require('excel-export');
+var parseXlsx = require('excel');
 
 var TITLE = 'formidable上传示例';
 var AVATAR_UPLOAD_FOLDER = '/avatar/';
@@ -15,6 +16,14 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res) {
+
+	
+
+	parseXlsx('a.xlsx', function(err, data) {
+		console.log(data)
+	  if(err) throw err;
+	    // data is an array of arrays
+	});
 
     // var datas = [['a','b','c','d','e','f','g','h','i'],['a2','b2','c2','d2','e2','f2','g2','h2','i2']];
     // var conf = {};

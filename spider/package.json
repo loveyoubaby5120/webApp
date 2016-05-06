@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "cheerio": "^0.20.0",
+    "excel": "^0.1.5",
     "excel-export": "^0.5.1",
     "formidable": "^1.0.17",
     "fs": "0.0.2",
@@ -25,6 +26,7 @@
     "node-xlsx": "^0.7.1",
     "request": "^2.72.0",
     "request-promise": "^3.0.0",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "xlsx": "^0.8.0"
   }
 }
