@@ -2,28 +2,45 @@ var express = require('express');
 var router = express.Router();
 var formidable = require('formidable');
 var fs = require('fs');
-var xlsx = require('node-xlsx');
+var nodeXlsx = require('node-xlsx');
 var path = require('path');
 var excelPort = require('excel-export');
 var parseXlsx = require('excel');
+var xlsx = require('xlsx');
 
 var TITLE = 'formidable上传示例';
 var AVATAR_UPLOAD_FOLDER = '/avatar/';
 
 /* GET home page. */
+// router.get('/', function(req, res) {
+//   // res.render('excel', { title: TITLE ,content:'上传文件'});
+//   res.render('excel', { title: TITLE ,content:'上传文件'});
+// });
+
 router.get('/', function(req, res) {
-  res.render('excel', { title: TITLE ,content:'上传文件'});
-});
 
-router.post('/', function(req, res) {
 
-	var xlsxPath = path.resolve(__dirname, './a.xlsx');
+	var workbook = xlsx.readFile('a.xlsx');
 
-	parseXlsx(xlsxPath, function(err, data) {
-		console.log(data)
-	  if(err) throw err;
-	    // data is an array of arrays
-	});
+	// // 获取 Excel 中所有表名
+	// var sheetNames = workbook.SheetNames; // 返回 ['sheet1', 'sheet2']
+	// // 根据表名获取对应某张表
+	// var worksheet = workbook.Sheets[sheetNames[0]];
+
+	// console.log(sheetNames);
+
+	// console.log(worksheet);
+
+
+	res.render('excel', { title: TITLE ,content:'上传文件'});
+
+	// var xlsxPath = path.resolve(__dirname, './a.xlsx');
+
+	// parseXlsx(xlsxPath, function(err, data) {
+	// 	console.log(data);
+	// 	if(err) throw err;
+	//     // data is an array of arrays
+	// });
 
     // var datas = [['a','b','c','d','e','f','g','h','i'],['a2','b2','c2','d2','e2','f2','g2','h2','i2']];
     // var conf = {};
@@ -92,10 +109,10 @@ router.post('/', function(req, res) {
 	// console.log(xlsxPath);
 
 
-	// var obj = xlsx.parse("./a.xlsx");
-	// console.log(JSON.stringify(obj));
+	// var obj = nodeXlsx.parse("./a.xlsx");
+	// console.log(obj);
 
-	// var obj = xlsx.parse('D:/test.xlsx');
+	// var obj = nodeXlsx.parse('./a.xlsx');
 	// //第一个工作表的数据
 	// var data = obj.worksheets[0].data;
 	// //列数
@@ -110,9 +127,12 @@ router.post('/', function(req, res) {
 	// 	}
 	// }
 
-	// var file = xlsx.build(obj);
-	// fs.writeFileSync('b.xlsx', file, 'binary');
+	// var obj = {"worksheets":[{"data":[["姓名","性别","年龄"],["李晓龙","男","24"]]}]};
+ //    var file = nodeXlsx.build(obj);
+ //    fs.writeFileSync('b.xlsx', file, 'binary');
 
+	// var file = nodeXlsx.build(obj);
+	// fs.writeFileSync('b.xlsx', file, 'binary');
 
 
 
@@ -165,8 +185,8 @@ router.post('/', function(req, res) {
 
 
 
-	res.locals.success = '上传成功';
-	res.render('excel', { title: TITLE ,content:'上传文件'});
+	// res.locals.success = '上传成功';
+	// res.render('excel', { title: TITLE ,content:'上传文件'});
 });
 
 module.exports = router;
