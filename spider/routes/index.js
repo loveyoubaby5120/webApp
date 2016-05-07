@@ -58,11 +58,12 @@ router.post('/', function(req, res, next) {
 						    fs.appendFile('./public/url.txt',bizNum,function(err){  
 						        if(err) throw err;  
 						        // console.log('write TEXT into TEXT');  
-						    });  
+						    });
+						      
 						    fs.appendFile('./public/url.txt','\n',function(err){  
 						        if(err) throw err;  
 						        // console.log('write TEXT into TEXT');  
-						    });  
+						    });
 
 						}
 					}

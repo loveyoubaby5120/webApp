@@ -23,7 +23,6 @@ requestPomise.prototype.send=function(params){
 	if(params.url){
 		for(var j = 0; j<searchs.length; j++){
 			var gotoUrl = 'http://www.gsdata.cn/query/wx?q='+searchs[j]+'&search_field=undefined';	
-
 			rp(gotoUrl)
 				.then(function(body){
 					$ = cheerio.load(body);
