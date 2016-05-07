@@ -40,6 +40,11 @@ var nodemon = require('gulp-nodemon ');
 //合并js
 var concat = require('gulp-concat');
  
+//解析xlsx
+var gulpXlsx = require('gulp-js-xlsx');
+
+//重命名文件
+var rename = require('gulp-rename');
 
 
 var paths = {
@@ -58,6 +63,19 @@ var paths = {
   ],
   publicJs: './public/js'
 };
+
+
+
+/*解析xlsx-------------------------------------------------------------------------------------------------------------------------*/
+
+gulp.task('default', function () {
+  gulp.src('src/**/*.xlsx')
+    .pipe(gulpXlsx.run({
+      parseWorksheet: 'tree'
+    }))
+    .pipe(rename({extname: '.json'}))
+    .pipe(gulp.dest('dist'));
+});
 
 
 /*启动浏览器-------------------------------------------------------------------------------------------------------------------------*/

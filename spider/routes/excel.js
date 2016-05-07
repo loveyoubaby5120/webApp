@@ -8,6 +8,8 @@ var excelPort = require('excel-export');
 var parseXlsx = require('excel');
 var xlsx = require('xlsx');
 
+var requestPomise=require('./request-promise.js');
+
 var TITLE = 'formidable上传示例';
 var AVATAR_UPLOAD_FOLDER = '/avatar/';
 
@@ -18,9 +20,13 @@ var AVATAR_UPLOAD_FOLDER = '/avatar/';
 // });
 
 router.get('/', function(req, res) {
+	// var Json = {'biz':[],'url':[]};
+	// var parmas = {url: 'caixinwang,rmrbwx',"Json": Json};
+	requestPomise.send({
+		url: 'caixinwang,rmrbwx',
+	});
 
-
-	var workbook = xlsx.readFile('a.xlsx');
+	// var workbook = xlsx.readFile('a.xlsx');
 
 	// // 获取 Excel 中所有表名
 	// var sheetNames = workbook.SheetNames; // 返回 ['sheet1', 'sheet2']

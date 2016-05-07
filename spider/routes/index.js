@@ -28,7 +28,6 @@ router.post('/', function(req, res, next) {
 
 
 	var searchs = req.body.url.split(',');
-	var bool = false;
 	if(req.body.url){
 		for(search in searchs){
 			var gotoUrl = 'http://www.gsdata.cn/query/wx?q='+searchs[search]+'&search_field=undefined';	
@@ -36,6 +35,8 @@ router.post('/', function(req, res, next) {
 			var Json = {};
 			var url = [];
 			var biz = [];
+			Json.biz = biz;
+			Json.url = url;
 			rp(gotoUrl)
 				.then(function(body){
 					$ = cheerio.load(body);
@@ -65,9 +66,6 @@ router.post('/', function(req, res, next) {
 
 						}
 					}
-
-					Json.biz = biz;
-					Json.url = url
 					
 				})
 				.catch(function(){
