@@ -43,6 +43,18 @@ module.exports = function(){
 		locals: locals
 	});
 
+
+	// app.env = process.env.NODE_ENV || 'development';
+
+	// render(app, {
+	// 	root: path.join(__dirname, '../views'),
+	// 	layout: 'template',
+	// 	viewExt: 'html',
+	// 	cache: ('development' !== app.env),
+	// 	debug: ('development' === app.env)
+	// });
+
+
 	app.context.render = co.wrap(app.context.render);
 
 
@@ -100,7 +112,7 @@ module.exports = function(){
 
 	app.use(route.get('/:name', function*(name) {
     	// this.body = 'Hello '+name;
-    	this.render('index',{title:name});
+    	// this.render('index',{title:name});
 	}));
 
 	// response
@@ -114,7 +126,7 @@ module.exports = function(){
 
 		// console.log('response 1');
 	  	// this.body = 'Hello World';
-	  	this.render('/index',{title: 'aaa'});
+	  	yield this.render("/index", {title: "用户登录", layout: false});
 	  	// console.log('response 2');
 	});
 
