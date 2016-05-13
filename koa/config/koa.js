@@ -3,6 +3,7 @@ var path = require('path');
 var route = require('koa-route');
 var router = require('koa-router');
 var render = require('koa-ejs');
+var co = require('co');
 var logger = require('koa-logger');
 var bodyParser = require('koa-bodyparser');
 var staticServer = require('koa-static');
@@ -25,6 +26,8 @@ module.exports = function(){
 		}
 	};
 
+
+
 	render(app, {
 		root: path.join(__dirname, '../views'),
 		layout: 'template',
@@ -33,6 +36,8 @@ module.exports = function(){
 		debug: true,
 		locals: locals
 	});
+
+	app.context.render = co.wrap(app.context.render);
 
 
 	// app.use(bodyParser({
@@ -82,7 +87,7 @@ module.exports = function(){
 
 	app.use(route.get('/:name', function*(name) {
     	// this.body = 'Hello '+name;
-    	// yield this.render('index',{title,name});
+    	this.render('index',{title:name});
 	}));
 
 	// response
@@ -96,7 +101,7 @@ module.exports = function(){
 
 		// console.log('response 1');
 	  	// this.body = 'Hello World';
-	  	yield this.render('index');
+	  	this.render('index',{title: 'aaa'});
 	  	// console.log('response 2');
 	});
 
