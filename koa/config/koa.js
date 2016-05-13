@@ -114,7 +114,7 @@ module.exports = function(){
 
 		// console.log('response 1');
 	  	// this.body = 'Hello World';
-	  	this.render('index',{title: 'aaa'});
+	  	this.render('/index',{title: 'aaa'});
 	  	// console.log('response 2');
 	});
 
