@@ -1,11 +1,17 @@
 var koa = require('koa');
 var path = require('path');
+
 var route = require('koa-route');
 var router = require('koa-router');
+
 var render = require('koa-ejs');
 var co = require('co');
+var views = require('koa-views');
+
 var logger = require('koa-logger');
+
 var bodyParser = require('koa-bodyparser');
+
 var staticServer = require('koa-static');
 // var views = require('koa-views');
 // app.use(views('./views', 'jade'));
@@ -39,6 +45,13 @@ module.exports = function(){
 
 	app.context.render = co.wrap(app.context.render);
 
+
+	// app.use(views(__dirname + '../views', {
+	// 	extension: 'ejs',
+	// 	map: {
+	// 		html: 'ejs'
+	// 	}
+	// }));
 
 	// app.use(bodyParser({
 	// 	detectJSON: function (ctx) {
