@@ -1,10 +1,23 @@
 var koa = require('koa');
-
+var route = require('koa-route');
+var render = require('koa-ejs');
+var logger = require('koa-logger')
 var app = koa();
 
 module.exports = function(){
 	console.log('init koa...');
 	
+	app.use(logger())
+
+	render(app, {
+	  root: path.join(__dirname, 'view'),
+	  layout: 'template',
+	  viewExt: 'html',
+	  cache: false,
+	  debug: true,
+	  locals: locals,
+	  filters: filters
+	});
 
 	// x-response-time
 
@@ -29,6 +42,11 @@ module.exports = function(){
 		console.log('%s %s - %s', this.method, this.url, ms);
 		console.log('logger 3');
 	});
+
+
+	app.use(route.get('/:name', function*(name) {
+    	this.body = 'Hello '+name;
+	}));
 
 	// response
 
