@@ -3,14 +3,13 @@ var router = new Router();
 
 router.get('/', function *(next) {
 	// this.body = 'Hello '+ this.params.name;
-	console.log(1);
-	this.render('index', { title: 'index', layout: false });
+	yield this.render("/index", {title: "用户登录", layout: false, url: this.request.url });
 });
 
 
 
-router.get('/other(/*)?', function *(next) {
-	this.render('other', { title: 'other', layout: false });
+router.get('/other[/*]?', function *(next) {
+	yield this.render('other', { title: 'other', layout: false, url: this.request.url });
 });
 
 module.exports = router;

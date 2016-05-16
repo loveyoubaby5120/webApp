@@ -78,33 +78,18 @@ module.exports = function(){
 
 	var routes = require('../routes/index.js');
 
-	app.use(routes.routes());
+	app
+		.use(routes.routes())
+		.use(routes.allowedMethods());
 
-	// app.use(Router(app));
-	// routes(app);
-
-/*------------------------------------------------------------------------------------------------------------------------------*/
-
-	// var forums = new Router();
-	// var posts = new Router();
-
-	// posts.get('/', function *(next) {
-	// 	yield this.render("/index", {title: "用户登录", layout: false});
-	// });
-	// posts.get('/:pid', function *(next) {
-	// 	this.body = 'Hello World';
-	// });
-	// forums.use('/forums/:fid/posts', posts.routes(), posts.allowedMethods());
-
-	// // responds to "/forums/123/posts" and "/forums/123/posts/123"
-	// app.use(forums.routes());
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
 	// var router = new Router();
 
 	// router.get('/', function *(next) {
-	//   this.body = 'Hello World!';
+	//   // this.body = 'Hello World!';
+	//   yield this.render("/index", {title: "用户登录", layout: false});
 	// });
  
 	// app
