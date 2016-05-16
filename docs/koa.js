@@ -1,6 +1,11 @@
 var koa = require('koa');
 var path = require('path');
 
+var onerror = require('Koa-onerror');
+
+// var mount = require('koa-mount');
+
+
 var route = require('koa-route');
 var Router = require('koa-router');
 
@@ -96,6 +101,15 @@ module.exports = function(){
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
+ 
+	// async function hello(ctx, next){
+	//   await next();
+	//   ctx.body = 'Hello';
+	// }
+	// app.use(mount('/hello', hello));
+
+/*------------------------------------------------------------------------------------------------------------------------------*/
+
 	// var forums = new Router();
 	// var posts = new Router();
 
@@ -173,14 +187,18 @@ module.exports = function(){
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
-	app.on('error', function(err){
-		log.error('server error', err);
-	});
 
-	app.on('error', function(err, ctx){
-		log.error('server error', err, ctx);
-	});
+	// app.on('error', function(err){
+	// 	log.error('server error', err);
+	// });
 
+	// app.on('error', function(err, ctx){
+	// 	log.error('server error', err, ctx);
+	// });
+
+/*------------------------------------------------------------------------------------------------------------------------------*/
+
+	onerror(app);
 
 	return app;
 }
