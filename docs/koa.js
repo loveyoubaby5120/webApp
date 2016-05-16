@@ -15,6 +15,8 @@ var logger = require('koa-logger');
 var bodyParser = require('koa-bodyparser');
 
 var staticServer = require('koa-static');
+// var views = require('koa-views');
+// app.use(views('./views', 'jade'));
 
 var app = koa();
 
@@ -47,8 +49,28 @@ module.exports = function(){
 	});
 
 
+	// app.env = process.env.NODE_ENV || 'development';
+
+	// render(app, {
+	// 	root: path.join(__dirname, '../views'),
+	// 	layout: 'template',
+	// 	viewExt: 'html',
+	// 	cache: ('development' !== app.env),
+	// 	debug: ('development' === app.env)
+	// });
+	
+
 	app.context.render = co.wrap(app.context.render);
 
+
+/*------------------------------------------------------------------------------------------------------------------------------*/
+
+	// app.use(views(__dirname + '../views', {
+	// 	extension: 'ejs',
+	// 	map: {
+	// 		html: 'ejs'
+	// 	}
+	// }));
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -63,8 +85,7 @@ module.exports = function(){
 	// 		ctx.throw('body parse error', 422);
 	// 	}
 	// }));
-
-
+	
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
 	app.use(staticServer(path.join(__dirname,'../public')));
@@ -72,13 +93,6 @@ module.exports = function(){
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
 	app.use(logger());
-
-/*------------------------------------------------------------------------------------------------------------------------------*/
-
-	app.use(routes.routes());
-
-	// app.use(Router(app));
-	// routes(app);
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -98,21 +112,48 @@ module.exports = function(){
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
-	// var router = new Router();
+	var router = new Router();
 
-	// router.get('/', function *(next) {
-	//   this.body = 'Hello World!';
-	// });
+	router.get('/', function *(next) {
+	  this.body = 'Hello World!';
+	});
  
-	// app
-	//   .use(router.routes())
-	//   .use(router.allowedMethods());
+	app
+	  .use(router.routes())
+	  .use(router.allowedMethods());
+
+/*------------------------------------------------------------------------------------------------------------------------------*/
+
+	// x-response-time
+
+	app.use(function *(next){
+		var start = new Date;
+		// console.log('x-response-time 1');
+		yield next;
+		// console.log('x-response-time 2');
+		var ms = new Date - start;
+		this.set('X-Response-Time', ms + 'ms');
+		// console.log('x-response-time 3');
+	});
+
+	// logger
+
+	app.use(function *(next){
+		var start = new Date;
+		// console.log('logger 1');
+		yield next;
+		// console.log('logger 2');
+		var ms = new Date - start;
+		console.log('%s %s - %s', this.method, this.url, ms);
+		// console.log('logger 3');
+	});
+
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
 	// app.use(route.get('/:name', function*(name) {
  //    	this.body = 'Hello '+name;
- // 		yield this.render("/index", {title: "用户登录", layout: false});
+ //    	this.render('index',{title:name});
 	// }));
 
 	// response
