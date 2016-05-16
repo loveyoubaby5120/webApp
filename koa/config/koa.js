@@ -37,7 +37,7 @@ module.exports = function(){
 	render(app, {
 		root: path.join(__dirname, '../views'),
 		layout: 'template',
-		viewExt: 'html',
+		viewExt: 'ejs',
 		cache: false,
 		debug: true,
 		locals: locals
