@@ -6,8 +6,6 @@ var onerror = require('Koa-onerror');
 var route = require('koa-route');
 var Router = require('koa-router');
 
-var routes = require('../routes/index.js')
-
 var render = require('koa-ejs');
 var co = require('co');
 var views = require('koa-views');
@@ -76,6 +74,9 @@ module.exports = function(){
 	app.use(logger());
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
+
+
+	var routes = require('../routes/index.js');
 
 	app.use(routes.routes());
 
@@ -146,7 +147,7 @@ module.exports = function(){
 
 	onerror(app);
 
-	
+
 
 
 	return app;
