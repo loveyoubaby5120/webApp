@@ -19,6 +19,7 @@ var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 var entries ={
 	app:'./public/js/index.js',
 	router: './public/js/router.js',
+	webGL: './public/js/webGL.js',
 }
 
 
@@ -56,6 +57,14 @@ module.exports = {
 		        chunks: chunks,
 		        minChunks: chunks.length, // 提取所有entry共同依赖的模块
 		        filename: 'common.js'
+        	}
+        ),
+        new CommonsChunkPlugin(
+			{
+				name: 'common_webGL', // 将公共模块提取，生成名为`vendors`的chunk
+		        chunks: ['webGL'],
+		        minChunks: Infinity, // 提取所有entry共同依赖的模块
+		        filename: 'common_webGL.js'
         	}
         ),
 		//压缩js
