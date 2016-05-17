@@ -12,7 +12,8 @@ var views = require('koa-views');
 
 var logger = require('koa-logger');
 
-var bodyParser = require('koa-bodyparser');
+// var bodyParser = require('koa-bodyparser');
+var bodyParser = require('koa-body-parser');
 
 var staticServer = require('koa-static');
 
@@ -51,6 +52,7 @@ module.exports = function(){
 
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
+	app.use(bodyParser());
 
 	// app.use(bodyParser({
 	// 	detectJSON: function (ctx) {

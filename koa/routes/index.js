@@ -7,9 +7,14 @@ router.get('/', function *(next) {
 });
 
 
-
-router.get('/other[/*]?', function *(next) {
+router.get('/other(\/.*)*', function *(next) {
 	yield this.render('other', { title: 'other', layout: false, url: this.request.url });
 });
+
+
+router.get('/webGL(\/.*)*', function *(next) {
+	yield this.render('webGL', { title: 'webGL', layout: false, url: this.request.url });
+});
+
 
 module.exports = router;

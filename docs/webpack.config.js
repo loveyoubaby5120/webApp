@@ -26,17 +26,30 @@ var devFlagPlugin = new webpack.DefinePlugin({
 
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 
+var nodeModulesPath = path.resolve(__dirname, 'node_modules');
+
+var entries ={
+	app:'./public/js/index.js',
+	app2:'./public/js/about.js',
+	app3: ["./index.js", "./about.js"],
+	//【1】注意这里
+	common: ["./public/dest/common"],
+	//第三方库
+    vendor: ['jquery']
+}
+
 module.exports = {
 	// entry: './public/js/index.js', //接入点
-	entry:{
-		app:'./public/js/index.js',
-		app2:'./public/js/about.js',
-		app3: ["./index.js", "./about.js"],
-		//【1】注意这里
-		common: ["./public/dest/common"],
-		//第三方库
-        vendor: ['jquery']
-	},
+	// entry:{
+	// 	app:'./public/js/index.js',
+	// 	app2:'./public/js/about.js',
+	// 	app3: ["./index.js", "./about.js"],
+	// 	//【1】注意这里
+	// 	common: ["./public/dest/common"],
+	// 	//第三方库
+ //        vendor: ['jquery']
+	// },
+	entry: entries,
 	//用于指明程序自动补全识别哪些后缀
 	resolve: {
         //查找module的话从这里开始查找
@@ -98,6 +111,31 @@ module.exports = {
 	            filename: "common.js"
         	}
         ),
+        new CommonsChunkPlugin(
+			{
+				name: 'vendors', // 将公共模块提取，生成名为`vendors`的chunk
+		        chunks: chunks,
+		        // chunks: ['app','app2','app3','common'],
+		        minChunks: chunks.length, // 提取所有entry共同依赖的模块
+		        // minChunks: Infinity,
+		        filename: 'vendor.js'
+        	}
+        ),
+		new CommonsChunkPlugin(
+			{
+				// names: ["app", "subPageA"]
+				// (choose the chunks, or omit for all chunks)
+
+				children: true,
+				// (use all children of the chunk)
+
+				async: true,
+				// (create an async commons chunk)
+
+				// minChunks: 3,
+				// (3 children must share the module before it's separated)
+			}
+		),
         new CommonsChunkPlugin('init.js'),
 		//压缩js
 		new uglifyJsPlugin({

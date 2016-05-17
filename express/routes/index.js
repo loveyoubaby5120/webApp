@@ -9,8 +9,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'index' });
 });
 
-
-router.get('/other(/*)?', function(req, res, next) {
+// /other(/*)?
+router.get('/other(\/.*)*', function(req, res, next) {
 	// var Hello = React.randerToString(Hell({}));
   res.render('other', { title: 'other' });
 });

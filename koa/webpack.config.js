@@ -16,14 +16,17 @@ var NoErrorsPlugin = webpack.NoErrorsPlugin;
 
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 
+var entries ={
+	app:'./public/js/index.js',
+	router: './public/js/router.js',
+}
+
+
+var chunks = Object.keys(entries);
+
 module.exports = {
 	// entry: './public/js/index.js', //接入点
-	entry:{
-		// exprees: './config/express.js',
-		app:'./public/js/index.js',
-		// other: './public/js/other.js',
-		router: './public/js/router.js',
-	},
+	entry: entries,
 	output: {
 		//输出目录
 		path: './public/dest',
@@ -46,7 +49,15 @@ module.exports = {
 	devtool: 'inline-source-map',
 	plugins:[
 		//提取共同的代码
-        new CommonsChunkPlugin('common.js'),
+        // new CommonsChunkPlugin('common.js'),
+        new CommonsChunkPlugin(
+			{
+				name: 'vendors', // 将公共模块提取，生成名为`vendors`的chunk
+		        chunks: chunks,
+		        minChunks: chunks.length, // 提取所有entry共同依赖的模块
+		        filename: 'common.js'
+        	}
+        ),
 		//压缩js
 		// new uglifyJsPlugin({
 	 //      compress: {
