@@ -17,7 +17,7 @@ var NoErrorsPlugin = webpack.NoErrorsPlugin;
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 
 var entries ={
-	app:'./public/js/index.js',
+	router: './public/js/router.js',
 }
 
 

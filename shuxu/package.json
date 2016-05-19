@@ -1,8 +1,8 @@
 {
   "name": "shuxu",
   "version": "1.0.0",
-  "description": "",
   "main": "bin/www",
+  "description": "",
   "scripts": {
     "start": "nodemon bin/www",
     "start2": "nodemon --harmony bin/www"
