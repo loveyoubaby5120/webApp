@@ -14,6 +14,10 @@ router.get('/', function(req, res, next) {
         // console.log('write TEXT into TEXT');  
     });
 
+	var num = 0;
+
+
+
 	for(files of filesList){
 
 		var data = fs.readFileSync(files.read,'utf-8');
@@ -24,12 +28,15 @@ router.get('/', function(req, res, next) {
         var author = $('#post-user').text();
         var Json = {'title': title.trim(), 'time': time, 'author': author};
 
+
+        if(Json.title){
+        	num++;
+        	console.log(num);
+        }
+
 		fs.writeFileSync(files.write, JSON.stringify(Json));
 
 	}
-
-
-
 
 	console.log('end spider');
 

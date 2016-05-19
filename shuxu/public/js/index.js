@@ -2,6 +2,7 @@ import React from 'react'
 // import ReactDom from 'react-dom'
 import { Link } from 'react-router'
 
+
 export class User extends React.Component {
   render() {
     let { userID } = this.props.params
@@ -22,9 +23,9 @@ export class App extends React.Component {
     return (
       <div>
         <ul>
-          <li><Link to="/other/user/bob" activeClassName="active">Bob</Link></li>
-          <li><Link to={{ pathname: '/other/user/bob', query: { showAge: true } }} activeClassName="active">Bob With Query Params</Link></li>
-          <li><Link to="/other/user/sally" activeClassName="active">Sally</Link></li>
+          <li><Link to="/user/bob" activeClassName="active">Bob</Link></li>
+          <li><Link to={{ pathname: '/user/bob', query: { showAge: true } }} activeClassName="active">Bob With Query Params</Link></li>
+          <li><Link to="/user/sally" activeClassName="active">Sally</Link></li>
         </ul>
         {this.props.children}
       </div>
