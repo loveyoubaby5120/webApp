@@ -1,0 +1,17 @@
+<h3 class="tc">E-mail List</h3>
+<table>
+	<thead>
+		<tr>
+			<th>Sender</th>
+			<th>Subject</th>
+			<th>Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in messages">
+			<td ng-bind="item.sender"></td>
+			<td><a ng-href="#/list-{{item.id}}.html" ng-bind="item.subject"></a></td>
+			<td ng-bind="item.date"></td>
+		</tr>
+	</tbody>
+</table>
