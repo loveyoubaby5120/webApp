@@ -1,83 +1,39 @@
 var express = require('express');
 var router = express.Router();
-var request = require('request');
-var rp = require('request-promise');
 var cheerio = require('cheerio');
 
-var URL = require('url');
-
 var fs = require('fs');
-var readLine = require('lei-stream').readLine;
 
-
-
-/* GET home page. */
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' ,content:'请输入公众号'});
-});
-
-
-router.post('/', function(req, res, next) {
 	console.log('start spider');
-
-	fs.writeFile('./public/url.txt','',function(err){  
+	var filesList = [];
+	readFile('./public/content',filesList);
+	fs.writeFile(`./public/url.txt`,JSON.stringify(filesList),function(err){  
         if(err) throw err;  
         // console.log('write TEXT into TEXT');  
     });
 
+	for(files of filesList){
 
-	var searchs = req.body.url.split(',');
-	if(req.body.url){
-		for(search in searchs){
-			var gotoUrl = 'http://www.gsdata.cn/query/wx?q='+searchs[search]+'&search_field=undefined';	
-		
-			var Json = {};
-			var url = [];
-			var biz = [];
-			Json.biz = biz;
-			Json.url = url;
-			rp(gotoUrl)
-				.then(function(body){
-					$ = cheerio.load(body);
-					var list = $('#content .container .row .article-container .article-ul li');
-					if(list.length>0){
-						for(var i = 0; i<list.length; i++){
-							var aUrl = list.find('.number-img .img-bg').attr('href');
-							var gotoUrl = 'http://www.gsdata.cn/' + aUrl;
-							url.push(gotoUrl);
+		var data = fs.readFileSync(files.read,'utf-8');
 
-							var bizUrl = list.find('.number-txt .wx-sp .sp-txt').eq(1).find('a').attr('href');
+		 $ = cheerio.load(data);
+        var title = $('#activity-name').text();
+        var time = $('#post-date').text();
+        var author = $('#post-user').text();
+        var Json = {'title': title.trim(), 'time': time, 'author': author};
 
-							var arg = URL.parse(bizUrl,true).query
+		fs.writeFileSync(files.write, JSON.stringify(Json));
 
-							bizNum = arg['__biz'];
-
-							biz.push(bizNum);
-
-						    fs.appendFile('./public/url.txt',bizNum,function(err){  
-						        if(err) throw err;  
-						        // console.log('write TEXT into TEXT');  
-						    });
-						      
-						    fs.appendFile('./public/url.txt','\n',function(err){  
-						        if(err) throw err;  
-						        // console.log('write TEXT into TEXT');  
-						    });
-
-						}
-					}
-					
-				})
-				.catch(function(){
-					// res.render('index', { title: 'Express' ,content:'读取失败'});
-				});
-		}
 	}
+
+
+
 
 	console.log('end spider');
 
-	res.render('index', { title: 'Express' ,content:'操作成功，请查看文件url.txt'});
+	res.end();
 
 });
 
@@ -85,5 +41,34 @@ function sleep(milliSeconds) {
     var startTime = new Date().getTime(); 
     while (new Date().getTime() < startTime + milliSeconds);
  };
+
+
+ //遍历读取文件
+function readFile(path,filesList)
+{
+	files = fs.readdirSync(path);//需要用到同步读取
+	files.forEach(walk);
+	function walk(file)
+	{ 
+		states = fs.statSync(path+'/'+file);   
+		if(states.isDirectory())
+		{
+			readFile(path+'/'+file,filesList);
+		}
+		else
+		{ 
+			//创建一个对象保存信息
+			var obj = new Object();
+			obj.size = states.size;//文件大小，以字节为单位
+			obj.name = file;//文件名
+			obj.path = path+'/'+file; //文件绝对路径
+
+			obj.read = "./public/content/"+ file;
+			obj.write = "./public/upload/"+ file;
+
+			filesList.push(obj);
+		}  
+	}
+}
 
 module.exports = router;
