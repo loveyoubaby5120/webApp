@@ -1,15 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router'
-// import '../css/less.less'
 
-export class Mask extends React.Component {
+export default class Mask extends React.Component {
   render() {
-    
+
     return (
       <div className="mask">
         <div className="instructions">
-          <i class="close" onclick="(function(){$('.mask').hide(0,function(){$('body').css({'overflow':'auto','position':'relative'});});})()">×</i>
-            <p class="title">说明</p>
+          <i className="close" onclick="(function(){$('.mask').hide(0,function(){$('body').css({'overflow':'auto','position':'relative'});});})()">×</i>
+            <p className="title">说明</p>
             <ul>
                 <li>通过数据抓取技术和合作方提供的数据，我们获得了数百万个公众号的发布频率、文章内容、实时阅读数和实时点赞数。我们采用了这些数据，结合最前沿的数据分析学术研究，对微信公众号在社交网络中的影响力进行了深入、细致和全面的探索，最后进行了分类和排序。在计算影响力的时候，我们主要进行了以下几种分析：</li>
                 <li class="label">1，指标预测</li>
@@ -29,3 +28,4 @@ export class Mask extends React.Component {
     )
   }
 }
+

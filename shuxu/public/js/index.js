@@ -1,47 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router'
-import Mask from './Mask.js'
-
-export class User extends React.Component {
-  render() {
-    let { userID } = this.props.params
-    let { query } = this.props.location
-    let age = query && query.showAge ? '33' : ''
-
-    return (
-      <div className="User">
-        <h1>User id: {userID}</h1>
-        {age}
-      </div>
-    )
-  }
-}
-
-
+import Mask from 'mask.js'
+import Top from 'top.js'
 
 
 export class App extends React.Component {
   render() {
     return (
       <Mask></Mask>
+      // <Top></Top>
     )
   }
 }
 
-// export class App extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         <ul>
-//           <li><Link to="/index/user/bob" activeClassName="active">Bob</Link></li>
-//           <li><Link to={{ pathname: '/index/user/bob', query: { showAge: true } }} activeClassName="active">Bob With Query Params</Link></li>
-//           <li><Link to="/index/user/sally" activeClassName="active">Sally</Link></li>
-//         </ul>
-//         {this.props.children}
-//       </div>
-//     )
-//   }
-// }
 
 export class PageNotFound extends React.Component {
   render() {
