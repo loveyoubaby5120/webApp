@@ -1,6 +1,6 @@
 import React from 'react'
-// import ReactDom from 'react-dom'
 import { Link } from 'react-router'
+import Mask from './Mask.js'
 
 export class User extends React.Component {
   render() {
@@ -17,20 +17,31 @@ export class User extends React.Component {
   }
 }
 
+
+
+
 export class App extends React.Component {
   render() {
     return (
-      <div>
-        <ul>
-          <li><Link to="/index/user/bob" activeClassName="active">Bob</Link></li>
-          <li><Link to={{ pathname: '/index/user/bob', query: { showAge: true } }} activeClassName="active">Bob With Query Params</Link></li>
-          <li><Link to="/index/user/sally" activeClassName="active">Sally</Link></li>
-        </ul>
-        {this.props.children}
-      </div>
+      <Mask></Mask>
     )
   }
 }
+
+// export class App extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//         <ul>
+//           <li><Link to="/index/user/bob" activeClassName="active">Bob</Link></li>
+//           <li><Link to={{ pathname: '/index/user/bob', query: { showAge: true } }} activeClassName="active">Bob With Query Params</Link></li>
+//           <li><Link to="/index/user/sally" activeClassName="active">Sally</Link></li>
+//         </ul>
+//         {this.props.children}
+//       </div>
+//     )
+//   }
+// }
 
 export class PageNotFound extends React.Component {
   render() {
