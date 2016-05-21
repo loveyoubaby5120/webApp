@@ -4,6 +4,8 @@ import Mask from 'mask.js'
 import Top from 'top.js'
 import Header from 'header.js'
 import Date from 'date.js'
+import Content from 'content.js'
+import Footer from 'footer.js'
 
 
 export class App extends React.Component {
@@ -14,6 +16,8 @@ export class App extends React.Component {
         <Top></Top>
         <Header></Header>
         <Date></Date>
+        <Content></Content>
+        <Footer></Footer>
       </div>
     )
   }

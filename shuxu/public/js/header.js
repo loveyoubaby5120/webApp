@@ -33,7 +33,7 @@ export default class Header extends React.Component {
                     </div>
                 </li>
             </ul>
-            <div className="introducing"">
+            <div className="introducing">
                 数据说明
             </div>
         </div>
