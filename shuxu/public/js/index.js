@@ -2,13 +2,19 @@ import React from 'react'
 import { Link } from 'react-router'
 import Mask from 'mask.js'
 import Top from 'top.js'
+import Header from 'header.js'
+import Date from 'date.js'
 
 
 export class App extends React.Component {
   render() {
     return (
-      <Mask></Mask>
-      // <Top></Top>
+      <div>
+        <Mask></Mask>
+        <Top></Top>
+        <Header></Header>
+        <Date></Date>
+      </div>
     )
   }
 }

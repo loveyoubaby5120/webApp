@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 import { browserHistory, Router, Route } from 'react-router'
-import * as index from './index.js'
+import * as index from 'index.js'
 
 
 

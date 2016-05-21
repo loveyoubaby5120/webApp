@@ -1,7 +1,7 @@
 *{
     -webkit-overflow-scrolling : touch;
 }
-body,#app{
+body{
     min-width: 1000px;
 }
 
