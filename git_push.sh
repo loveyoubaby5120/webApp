@@ -1,3 +1,11 @@
 #!/bin/bash
 
-echo -e 'start add';git add .;echo -e '\nend add\nstart commit';git commit -m 'log';echo -e '\nend commit\nstart push';git push;echo -e '\nend push\n'
+echo -e '****************************start add****************************';
+git add .;
+echo -e '\n****************************end add****************************';
+echo -e '\n****************************start commit****************************';
+git commit -m 'log';
+echo -e '\n****************************end commit****************************';
+echo -e '\n****************************start push****************************';
+git push;
+echo -e '\n****************************end push****************************\n'
