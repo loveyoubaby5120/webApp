@@ -1,4 +1,4 @@
-var express = require('express');
+	var express = require('express');
 var router = express.Router();
 var cheerio = require('cheerio');
 
@@ -18,6 +18,7 @@ router.get('/', function(req, res, next) {
 
 
 
+
 	for(files of filesList){
 
 		var data = fs.readFileSync(files.read,'utf-8');
@@ -26,12 +27,13 @@ router.get('/', function(req, res, next) {
         var title = $('#activity-name').text();
         var time = $('#post-date').text();
         var author = $('#post-user').text();
-        var Json = {'title': title.trim(), 'time': time, 'author': author};
+        var content = $('#js_content').find('p span').text();
+        var Json = {'title': title.trim(), 'time': time, 'author': author, 'content': content};
 
 
         if(Json.title){
         	num++;
-        	console.log(num);
+        	// console.log(num);
         }
 
 		fs.writeFileSync(files.write, JSON.stringify(Json));
