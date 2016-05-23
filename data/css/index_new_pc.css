@@ -61,7 +61,7 @@
     font-size:20px;
     line-height:55px;
     text-indent:25px;
-    color：#5a5a5a;
+    color:#5a5a5a;
     background:#dbe3e3 url('../images/hy.png') 30px center no-repeat;
 }
 
@@ -101,7 +101,7 @@
     font-size:20px;
     line-height:55px;
     text-indent:25px;
-    color：#5a5a5a;
+    color:#5a5a5a;
     border-right: 1px #e6e6e6 solid;
 }
 
@@ -412,6 +412,7 @@
 .content .info .right .qs_more .qs_info .qs_right .step1_info .item .step1_left div{
     width: 160px;
     display: inline-block;
+    left: 5px;
 }
 
 .content .info .right .qs_more .qs_info .qs_right .step1_info .item .step1_left div p{
