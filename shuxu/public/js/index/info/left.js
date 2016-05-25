@@ -14,13 +14,16 @@ export default class Info_Left extends React.Component {
                     datas: data,
                     gzh_id: _this.props.gzh_id
                 };
-                if(data.length>0){
-                    _this.onClick(data[0].id)
-                }
 
             }
         })
 
+    }
+
+    componentDidMount(){
+        if(this.state.datas.length>0){
+            this.onClick(this.state.datas[0].id)
+        }
     }
 
 
