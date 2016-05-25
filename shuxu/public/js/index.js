@@ -31,6 +31,11 @@ export class App extends React.Component {
 
 
 export class App_info extends React.Component {
+  constructor(props) {
+        super(props);
+        let { query } = this.props.location;
+        console.log(query);
+  }
   render() {
     return (
       <div>
