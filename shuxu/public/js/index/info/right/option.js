@@ -17,10 +17,6 @@ export default class Option extends React.Component {
 	    	initChildShow: newState
 	    });
 	    this.props.callbackParent(newState);
-	    console.log(event);
-	    console.log(event.target);
-        $('.option li').removeClass('active');
-        // $(this).addClass('active');
   }
 
 
@@ -28,8 +24,8 @@ export default class Option extends React.Component {
 
 	    return (
 	        <ul className="option">
-	            <li className="bd active" onClick={this.onChangeShow.bind(this,'bd_more')}><a href="javascript:;" >榜单</a></li>
-	            <li className="qs" onClick={this.onChangeShow.bind(this,'qs_more')}><a href="javascript:;">趋势</a></li>
+	            <li className={this.state.initChildShow=='bd_more' ? "bd active" : "bd"} onClick={this.onChangeShow.bind(this,'bd_more')}><a href="javascript:;" >榜单</a></li>
+	            <li className={this.state.initChildShow=='qs_more' ? "qs active " : "qs"} onClick={this.onChangeShow.bind(this,'qs_more')}><a href="javascript:;">趋势</a></li>
 	        </ul>
 	    )
   	}

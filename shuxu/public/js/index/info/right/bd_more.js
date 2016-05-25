@@ -4,13 +4,56 @@ import { Link } from 'react-router'
 export default class Bd_more extends React.Component {
     constructor(props) {
         super(props);
+        var _this = this;
+        $.ajax({
+            url: '/gzh_profile_list',
+            async:false,
+            success: function(data){
+                _this.state = {
+                    datas: data
+                };
+
+            }
+        })
     }
 
 
+
+
     render() {
+        var options = [];
+        this.state.datas.forEach(function(data,index){
+            console.log(index);
+            var node;
+            if(index%2==0){
+                node = <tr className="even">;
+                            
+            }
+            else{
+                node = <tr>
+            }
+            console.log(index);
+            if(true){
+                node += <td></td><td><div className="number number2">1</div></td>;
+            }
+            else{
+                node += <td></td><td><div className="number number2">1</div></td>;
+            }
+
+            node += <td className="text "><div>卡娃2微卡</div></td>
+                            <td className="text "><div>kawa01</div></td>
+                            <td className="text "><div>4.28</div></td>
+                            <td className="text "><div>15.21</div></td>
+                            <td className="text "><div>15.21</div></td>
+                            <td className="last "><div>1.00</div></td>
+                            <td className="text goto_info"><a href="javascript:;">进入&nbsp;></a></td>
+                            <td></td>
+                        </tr>
+            options.push(node);
+        });
         return (
             // <div className='table blur auto'>
-            <div className={this.props.show=='bd_more' ? "table blur auto" : "table blur none"}>
+            <div className={this.props.show =='bd_more' ? "table blur auto" : "table blur none"}>
                 <div className="bc title"><p className="type ng-binding">排名</p></div>
                 <table className="bc">
                     <thead>
@@ -28,21 +71,7 @@ export default class Bd_more extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <div className="number">1</div>
-                            </td>
-                            <td className="text "><div>卡娃微卡</div></td>
-                            <td className="text "><div>kawa01</div></td>
-                            <td className="text "><div>4.28</div></td>
-                            <td className="text "><div>15.21</div></td>
-                            <td className="text "><div>15.21</div></td>
-                            <td className="last "><div>1.00</div></td>
-                            <td className="text goto_info"><a href="javascript:;">进入&nbsp;></a></td>
-                            <td></td>
-                        </tr>
-
+                        {options}
                     </tbody>
                 </table>
                 <div className="showMore"><div className="last jtb"></div><span></span></div>
