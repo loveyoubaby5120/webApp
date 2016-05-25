@@ -89,7 +89,7 @@ export default class Bd_more extends React.Component {
             var div8 = React.createElement('div',null,'--');
             var td8 = React.createElement('td',{className:'text'},div8);
             
-            var a9 = React.createElement('a',{href:"javascript:;"},'进入 >');
+            var a9 = React.createElement('a',{href:"/index_info?gzh_id="+data.id},'进入 >');
             var td9 = React.createElement('td',{className:'text goto_info'},a9);
             
             var td10 = React.createElement('td');
