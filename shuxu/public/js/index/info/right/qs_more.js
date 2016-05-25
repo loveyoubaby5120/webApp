@@ -1,30 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router'
 import Info from './qs/info.js'
+import $ from 'jquery'
 
 export default class Qs_more extends React.Component {
-  render() {
 
-    return (
-    	<div className='qs_more' style={
-                (function(obj){
+    componentWillReceiveProps(newProps){
+    }
 
-                    if(obj.props.show == 'qs_more'){
-                        return {display: 'auto'};
-                    }
-                    else{
-                        return {display: 'none'};
-                    }
+    render() {
 
-                })(this)
-                
-            }>
-        	<div className="title">
-                新闻资讯
+        return (
+        	<div className={this.props.show=='qs_more' ? "qs_more auto" : "qs_more none"}>
+
+            	<div className="title">
+                    新闻资讯
+                </div>
+                <Info></Info>
             </div>
-            <Info></Info>
-        </div>
-    )
-  }
+        )
+    }
 }
 

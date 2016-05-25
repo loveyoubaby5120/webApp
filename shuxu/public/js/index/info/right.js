@@ -8,16 +8,23 @@ export default class Info_Right extends React.Component {
 	constructor(props) {
         super(props);
 		this.state = {
-			show: 'qs_more'
+			show: 'bd_more'
 		};
     }
+
+
+    onChildChanged(newState){
+    	this.setState({
+	    	show: newState
+	    });
+	}
 
 
   	render() {
 
 	    return (
 	        <div className="right">
-	        	<Option></Option>
+	        	<Option initChildShow={this.state.show} callbackParent={this.onChildChanged.bind(this)}></Option>
 	        	<Bd_more show={this.state.show}></Bd_more>
 	        	<Qs_more show={this.state.show}></Qs_more>
 	        </div>

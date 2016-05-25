@@ -9,19 +9,8 @@ export default class Bd_more extends React.Component {
 
     render() {
         return (
-            <div className='table blur' style={
-                (function(obj){
-
-                    if(obj.props.show == 'bd_more'){
-                        return {display: 'auto'};
-                    }
-                    else{
-                        return {display: 'none'};
-                    }
-
-                })(this)
-                
-            }>
+            // <div className='table blur auto'>
+            <div className={this.props.show=='bd_more' ? "table blur auto" : "table blur none"}>
                 <div className="bc title"><p className="type ng-binding">排名</p></div>
                 <table className="bc">
                     <thead>
