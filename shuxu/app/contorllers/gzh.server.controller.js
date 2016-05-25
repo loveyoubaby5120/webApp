@@ -47,7 +47,22 @@ c = wrapper(connection);
 // console.log(new Date().timestamp(1464061279).format('yyyy-MM-dd/q'));
 
 module.exports = {
-	list: function *(next){
+	map_info: function *(next){
+		var sql = 'select * from gzh_type';
+		var rows = yield c.query(sql);
+		this.body = rows;
+	},
+	gzh_type_List: function *(next){
+		var sql = 'select * from gzh_type';
+		var rows = yield c.query(sql);
+		this.body = rows;
+	},
+	gzh_profile_list: function *(next){
+		var sql = 'select * from gzh_profile limit 30';
+		var rows = yield c.query(sql);
+		this.body = rows;
+	},
+	article_profile_list: function *(next){
 		var sql = 'select *,from_unixtime(pub_time,"%Y-%m-%d") as dateTime from article_profile limit 10';
 
 

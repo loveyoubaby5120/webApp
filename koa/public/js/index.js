@@ -40,13 +40,13 @@ class HelloWord extends React.Component{
 		});
 	}
 
-	//组件接收到舒心
+	//组件接收到属性
 	componentWillReceiveProps(newProps){
 		console.log('HelloWord to componentWillReceiveProps');
 		console.log(newProps);
 	}
 
-	//组件接受到新属性状态触发（课判断组件是否更新）
+	//组件接受到新属性状态触发（可判断组件是否更新）
 	shouldComponentUpdate(){
 		console.log('HelloWord to shouldComponentUpdate');
 		return true;
