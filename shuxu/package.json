@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "co": "^4.6.0",
+    "co-mysql": "^1.0.0",
     "koa": "^1.2.0",
     "koa-body-parser": "^1.1.2",
     "koa-bodyparser": "^3.1.0",
@@ -21,7 +22,7 @@
     "koa-router": "^5.4.0",
     "koa-static": "^2.0.0",
     "koa-views": "^4.1.0",
-    "mongoose": "^4.4.16",
+    "mysql": "^2.10.2",
     "path": "^0.12.7",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",

@@ -84,6 +84,12 @@ module.exports = function(){
 		.use(routes.routes())
 		.use(routes.allowedMethods());
 
+	var serverRoutes = require('../app/routes/gzh.server.routes.js');
+
+	app
+		.use(serverRoutes.routes())
+		.use(serverRoutes.allowedMethods());
+
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
