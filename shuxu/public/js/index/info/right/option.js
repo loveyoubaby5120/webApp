@@ -17,7 +17,7 @@ export default class Option extends React.Component {
 	    	initChildShow: newState
 	    });
 	    this.props.callbackParent(newState);
-  }
+  	}
 
 
   	render() {

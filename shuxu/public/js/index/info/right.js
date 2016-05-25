@@ -12,8 +12,8 @@ export default class Info_Right extends React.Component {
 		};
     }
 
-
     onChildChanged(newState){
+
     	this.setState({
 	    	show: newState
 	    });
@@ -25,8 +25,8 @@ export default class Info_Right extends React.Component {
 	    return (
 	        <div className="right">
 	        	<Option initChildShow={this.state.show} callbackParent={this.onChildChanged.bind(this)}></Option>
-	        	<Bd_more show={this.state.show}></Bd_more>
-	        	<Qs_more show={this.state.show}></Qs_more>
+	        	<Bd_more show={this.state.show} gzh_id={this.props.gzh_id}></Bd_more>
+	        	<Qs_more show={this.state.show} gzh_id={this.props.gzh_id}></Qs_more>
 	        </div>
 	    )
   	}

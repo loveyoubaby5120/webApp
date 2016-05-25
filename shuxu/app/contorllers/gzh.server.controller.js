@@ -58,6 +58,7 @@ module.exports = {
 		this.body = rows;
 	},
 	gzh_profile_list: function *(next){
+		console.log(this.query.gzh_id);
 		var sql = 'select * from gzh_profile limit 30';
 		if(this.query.limitNum && isNaN(this.query.limitNum))
 			sql = 'select * from gzh_profile';

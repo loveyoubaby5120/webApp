@@ -11,8 +11,12 @@ export default class Info_Left extends React.Component {
             async:false,
             success: function(data){
                 _this.state = {
-                    datas: data
+                    datas: data,
+                    gzh_id: _this.props.gzh_id
                 };
+                if(data.length>0){
+                    _this.onClick(data[0].id)
+                }
 
             }
         })
@@ -20,23 +24,24 @@ export default class Info_Left extends React.Component {
     }
 
 
-    componentWillMount(){
-        
-
-    }
-
-    componentDidMount(){
-
+    onClick(val){
+        var newState = val;
+        this.setState({
+            datas: this.state.datas,
+            gzh_id: newState
+        });
+        this.props.callbackParent(newState);
+        $('#app>div>.content>.info>.left>.item').removeClass('active');
+        $('#app>div>.content>.info>.left>.item:eq('+(val-1)+')').addClass('active');
     }
 
 
     render() {
+        
         var options = [];
+        var _this = this;
         this.state.datas.forEach(function(data,index){
-            if(index==0)
-                options.push(<li className="item active"><a href="javascript:;">{data.name}</a></li>);
-            else
-                options.push(<li className="item"><a href="javascript:;">{data.name}</a></li>);
+            options.push(<li key={index} className={_this.state.gzh_id==data.id ? "item active" : "item"}  onClick={_this.onClick.bind(_this,data.id)}><a href="javascript:;">{data.name}</a></li>);
         });
         return (
             <ul className="left">

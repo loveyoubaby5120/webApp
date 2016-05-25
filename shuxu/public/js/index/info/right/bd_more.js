@@ -7,7 +7,8 @@ export default class Bd_more extends React.Component {
         this.state = {
             datas: [],
             nodes: [],
-            limitNum: 30
+            limitNum: 30,
+            gzh_id: this.props.gzh_id
         }
         
     }
@@ -18,17 +19,26 @@ export default class Bd_more extends React.Component {
         this.setNodes();
     }
 
+    //组件接收到属性
+    componentWillReceiveProps(newProps){
+        console.log('HelloWord to componentWillReceiveProps');
+        console.log(newProps);
+        this.state.limitNum = 30;
+        setNodes(){
+    }
+
 
     setNodes(){
-
         var _this = this;
+        console.log(this.props.gzh_id);
         $.ajax({
-            url: '/gzh_profile_list?limitNum='+this.state.limitNum,
+            url: '/gzh_profile_list?limitNum='+this.state.limitNum+'&gzh_id='+this.props.gzh_id,
             async:false,
             success: function(data){
                 _this.state = {
                     datas: data,
-                    nodes: []
+                    nodes: [],
+                    limitNum: _this.state.limitNum
                 }
             }
         });
@@ -88,10 +98,10 @@ export default class Bd_more extends React.Component {
 
 
             if((index+num)%2==0){
-                var tr = React.createElement('tr',{className:'even'},td,td2,td3,td4,td5,td6,td7,td8,td9,td10);
+                var tr = React.createElement('tr',{className:'even',key:index},td,td2,td3,td4,td5,td6,td7,td8,td9,td10);
             }
             else{
-                var tr = React.createElement('tr',{className:''},td,td2,td3,td4,td5,td6,td7,td8,td9,td10);
+                var tr = React.createElement('tr',{className:'',key:index},td,td2,td3,td4,td5,td6,td7,td8,td9,td10);
             }
 
             options.push(tr);
@@ -113,7 +123,6 @@ export default class Bd_more extends React.Component {
 
 
     render() {
-        
         return (
             // <div className='table blur auto'>
             <div className={this.props.show=='bd_more' ? "table blur auto" : "table blur none"}>
@@ -137,7 +146,7 @@ export default class Bd_more extends React.Component {
                         {this.state.nodes}
                     </tbody>
                 </table>
-                <div className="showMore" onClick={this.showAll.bind(this)} ><div className="last jtb"></div><span>查看更多</span></div>
+                <div className={isNaN(this.state.limitNum) ? 'showMore none' : 'showMore'} onClick={this.showAll.bind(this)} ><div className="last jtb"></div><span>查看更多</span></div>
             </div>
         )
     }
