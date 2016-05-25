@@ -11,16 +11,16 @@ export default class Option extends React.Component {
 		};
     }
 
-    onChangeShow(val){
+    onChangeShow(val,event){
 	    var newState = val;
-	    console.log(val);
 	    this.setState({
 	    	initChildShow: newState
 	    });
 	    this.props.callbackParent(newState);
-
-	    $('.table').toggle();$('.qs_more').toggle();
-        $(this).parent().parent().find('li').removeClass('active');$(this).parent().addClass('active');
+	    console.log(event);
+	    console.log(event.target);
+        $('.option li').removeClass('active');
+        // $(this).addClass('active');
   }
 
 
