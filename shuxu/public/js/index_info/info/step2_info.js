@@ -21,15 +21,19 @@ export default class Step2_info extends React.Component {
     }
 
 
+    onClick(url){
+        window.open(url, "_blank");
+    }
+
+
     render() {
         var option = [];
-
+        var _this = this;
         this.state.datas.forEach(function(data,index){
-            console.log(index);
             var node;
             node = <li key={index} className="item">
                         <div className="item_content">
-                            <div className="topic">
+                            <div className="topic" onClick={_this.onClick.bind(_this,data.url)}>
                             {data.title}
                             </div>
                             <div className="writer">

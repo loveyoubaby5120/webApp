@@ -97,7 +97,7 @@ module.exports = {
 		this.body = rows;
 	},
 	article_profile_info: function *(next){
-		var sql = 'select * from (select *,from_unixtime(pub_time,"%Y-%m-%d %h:%i") as dateTime from article_profile c,\
+		var sql = 'select * from (select DISTINCT *,from_unixtime(pub_time,"%Y-%m-%d %h:%i") as dateTime from article_profile c,\
 					(select * from read_num as a,(select max(time) as RMaxtime from read_num group by article_id) as b where a.time=b.RMaxtime) d,\
 					(select time as zan_time,article_id as art_id,ZMaxtime,zan_num from zan_num as a,(select max(time) as ZMaxtime from zan_num group by article_id) as b where a.time=b.ZMaxtime) e \
 					where c.id=d.article_id and c.id=e.art_id) as f';
