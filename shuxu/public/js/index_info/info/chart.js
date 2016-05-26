@@ -5,7 +5,7 @@ export default class Chart extends React.Component {
 
     componentDidMount(){
 
-        $('#periodpickerstart2').periodpicker({
+        jQuery('#periodpickerstart').periodpicker({
             lang: 'zh-cn',
             norange: false, // use only one value
             cells: [1, 2], // show only one month
@@ -25,7 +25,7 @@ export default class Chart extends React.Component {
             // onOkButtonClick
              onOkButtonClick: function () {
                 // var val = this.startinput.val();
-                var dates = $('#periodpickerstart2').periodpicker('value');
+                var dates = jQuery('#periodpickerstart').periodpicker('value');
 
                 // dates[0] dates[1]
 
@@ -42,6 +42,37 @@ export default class Chart extends React.Component {
 
             }
         });
+
+
+
+        jQuery('#periodpickerstart').periodpicker('value', '2016/03/12');
+
+
+        jQuery('#periodpickerstart2').periodpicker({
+            ang: 'zh-cn',
+            norange: false, // use only one value
+            cells: [1, 2], // show only one month
+            resizeButton: true, // deny resize picker
+            fullsizeButton: true,
+            fullsizeOnDblClick: true,
+
+            clearButtonInButton:true,
+            timepicker: false, // use timepicker
+            timepickerOptions: {
+                hours: true,
+                minutes: true,
+                seconds: false,
+                ampm: true
+            }
+        });
+
+
+        jQuery('#periodpickerstart2').periodpicker('value', '2016/03/12');
+
+
+
+
+
     }
 
 
