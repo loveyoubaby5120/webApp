@@ -47,8 +47,8 @@ c = wrapper(connection);
 // console.log(new Date().timestamp(1464061279).format('yyyy-MM-dd/q'));
 
 module.exports = {
-	map_info: function *(next){
-		var sql = 'select * from gzh_type';
+	map: function *(next){
+		var sql = 'select (select from_unixtime(max(pub_time),"%m月%d日 %H整") from article_profile) as time,(select count(*) from gzh_profile) as gzhCount,(select count(*) from article_profile) as artCount,(select sum(read_num) from read_num) as readSum';
 		var rows = yield c.query(sql);
 		this.body = rows;
 	},
@@ -90,5 +90,31 @@ module.exports = {
 		// connection.query(sql, function (error, results, fields) {
 		// 	if(error) throw error
 		// });
+	},
+	map_info: function *(next){
+		var sql = 'select * from info where id='+this.query.gzh_id;
+		var rows = yield c.query(sql);
+		this.body = rows;
+	},
+	article_profile_info: function *(next){
+		var sql = 'select * from (select *,from_unixtime(pub_time,"%Y-%m-%d %h:%i") as dateTime from article_profile c,\
+					(select * from read_num as a,(select max(time) as RMaxtime from read_num group by article_id) as b where a.time=b.RMaxtime) d,\
+					(select time as zan_time,article_id as art_id,ZMaxtime,zan_num from zan_num as a,(select max(time) as ZMaxtime from zan_num group by article_id) as b where a.time=b.ZMaxtime) e \
+					where c.id=d.article_id and c.id=e.art_id) as f';
+
+		sql += ' where 1=1';
+		sql += ' and gzh_id='+this.query.gzh_id;
+		if(this.query.type==1){
+			sql += ' and date_sub(curdate(), INTERVAL 7 DAY) <= date(f.dateTime) order by f.pub_time desc';
+		}
+		else{
+			sql += ' order by f.pub_time desc limit 10';
+		}
+
+
+		var rows = yield c.query(sql);
+		this.body = rows;
+
 	}
+
 }

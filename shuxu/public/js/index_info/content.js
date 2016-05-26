@@ -3,11 +3,14 @@ import { Link } from 'react-router'
 import Info from './info.js'
 
 export default class Content extends React.Component {
+
+
+
   render() {
 
     return (
         <div className="content">
-        	<Info></Info>
+        	<Info gzh_id={this.props.gzh_id}></Info>
         	<div class="go_top" id="go_top" onclick="myScroll()"></div>
         </div>
     )

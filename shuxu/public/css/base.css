@@ -54,9 +54,9 @@ del {text-decoration:line-through;}
 .z9999999{z-index: 9999999;}
 .zoom{zoom:1}
 .hidden{visibility:hidden;}
-.none{display:none;}
-.auto{display:auto;}
-.block {display:block;}
+.none{display:none !important;}
+.auto{display:auto !important;}
+.block {display:block !important;}
 .inline-block{display: inline-block;}
 /******长度 高度*******/
 .w_1{width: 1%;}

@@ -27,7 +27,7 @@ export default class Info extends React.Component {
                 </div>
                 <hr className="right" />
             </div>
-            <Step2_info></Step2_info>
+            <Step2_info gzh_id={this.props.gzh_id} type='1'></Step2_info>
             <div className="step step3">
                 <hr className="left" />
                 <div>
@@ -35,7 +35,7 @@ export default class Info extends React.Component {
                 </div>
                 <hr className="right" />
             </div>
-            <Step2_info></Step2_info>
+            <Step2_info gzh_id={this.props.gzh_id} type='2'></Step2_info>
         </div>
     )
   }

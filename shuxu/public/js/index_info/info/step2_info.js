@@ -2,77 +2,64 @@ import React from 'react'
 import { Link } from 'react-router'
 
 export default class Step2_info extends React.Component {
-  render() {
+
+
+    constructor(props) {
+        super(props);
+        var _this = this;
+        $.ajax({
+            url: '/article_profile_info?gzh_id='+this.props.gzh_id+'&type='+this.props.type,
+            async:false,
+            success: function(data){
+                _this.state = {
+                    datas: data
+                };
+
+            }
+        })
+
+    }
+
+
+    render() {
+        var option = [];
+
+        this.state.datas.forEach(function(data,index){
+            console.log(index);
+            var node;
+            node = <li key={index} className="item">
+                        <div className="item_content">
+                            <div className="topic">
+                            {data.title}
+                            </div>
+                            <div className="writer">
+                                <span>原创</span>
+                                <span>撰文 --</span>
+                            </div>
+                            <div className="introduce">
+                                <p>
+                                    {data.digest}
+                                </p>
+                            </div>
+                        </div>
+                        <div className="other">
+                            <div className="other_left">{data.dateTime}</div>
+                            <div className="other_right1">{data.read_num}</div>
+                            <div className="other_right2">{data.zan_num}</div>
+                        </div>
+                    </li>
+
+            option.push(node);
+        });
+
 
     return (
-        <ul className="step2_info">
-                <li className="item">
-                    <div className="item_content">
-                        <div className="topic">
-                        百万年中仅有的20分钟，天文学家首次捕捉到转瞬即逝的恒星爆炸冲击波
-                        </div>
-                        <div className="writer">
-                            <span>原创</span>
-                            <span>撰文 韩晶晶</span>
-                        </div>
-                        <div className="introduce">
-                            <p>
-                                20分钟，不要说对于拥有亿万年寿命的恒星，即使对于我们人类来说，也是非常短暂的一段时间。而在天文学家的努力下，大质量恒星数百万年生命中仅会经历一次的特殊20分钟，竟然也被他们捕捉到了。
-                            </p>
-                        </div>
-                    </div>
-                    <div className="other">
-                        <div className="other_left">2016-03-23  17:09</div>
-                        <div className="other_right1">10357</div>
-                        <div className="other_right2">73</div>
-                    </div>
-                </li>
+            <ul className="step2_info">
+                    {option}
 
-                <li className="item">
-                    <div className="item_content">
-                        <div className="topic">
-                        百万年中仅有的20分钟，天文学家首次捕捉到转瞬即逝的恒星爆炸冲击波
-                        </div>
-                        <div className="writer">
-                            <span>原创</span>
-                            <span>撰文 韩晶晶</span>
-                        </div>
-                        <div className="introduce">
-                            <p>
-                                20分钟，不要说对于拥有亿万年寿命的恒星，即使对于我们人类来说，也是非常短暂的一段时间。而在天文学家的努力下，大质量恒星数百万年生命中仅会经历一次的特殊20分钟，竟然也被他们捕捉到了。
-                            </p>
-                        </div>
-                    </div>
-                    <div className="other">
-                        <div className="other_left">2016-03-23  17:09</div>
-                        <div className="other_right1">10357</div>
-                        <div className="other_right2">73</div>
-                    </div>
-                </li>
-
-                <li className="item">
-                    <div className="item_content">
-                        <div className="topic">
-                        百万年中仅有的20分钟，天文学家首次捕捉到转瞬即逝的恒星爆炸冲击波
-                        </div>
-                        <div className="writer">
-                            <span>原创</span>
-                            <span>撰文 韩晶晶</span>
-                        </div>
-                        <div className="introduce">
-                            <p>
-                                20分钟，不要说对于拥有亿万年寿命的恒星，即使对于我们人类来说，也是非常短暂的一段时间。而在天文学家的努力下，大质量恒星数百万年生命中仅会经历一次的特殊20分钟，竟然也被他们捕捉到了。
-                            </p>
-                        </div>
-                    </div>
-                    <div className="other">
-                        <div className="other_left">2016-03-23  17:09</div>
-                        <div className="other_right1">10357</div>
-                        <div className="other_right2">73</div>
-                    </div>
-                </li>
-            </ul>
-    )
-  }
+                    
+                </ul>
+        )
+    }
 }
 
