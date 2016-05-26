@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
 import Info from './qs/info.js'
-import $ from 'jquery'
 
 export default class Qs_more extends React.Component {
 

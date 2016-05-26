@@ -10,7 +10,7 @@ export default class Info extends React.Component {
 
     return (
         <div className="info">
-	        <Ranking></Ranking>
+	        <Ranking gzh_id={this.props.gzh_id}></Ranking>
 	        <div className="step step1">
 	            <hr className="left" />
 	            <div>
@@ -18,8 +18,8 @@ export default class Info extends React.Component {
 	            </div>
 	            <hr className="right" />
 	        </div>
-	        <Chart></Chart>
-	        <Statistics></Statistics>
+	        <Chart gzh_id={this.props.gzh_id}></Chart>
+	        <Statistics gzh_id={this.props.gzh_id}></Statistics>
 	        <div className="step step2">
                 <hr className="left" />
                 <div>

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router'
-import $ from 'jquery'
 
 export default class Info_Left extends React.Component {
     constructor(props) {

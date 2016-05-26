@@ -48,7 +48,7 @@ c = wrapper(connection);
 
 module.exports = {
 	map: function *(next){
-		var sql = 'select (select from_unixtime(max(pub_time),"%m月%d日 %H整") from article_profile) as time,(select count(*) from gzh_profile) as gzhCount,(select count(*) from article_profile) as artCount,(select sum(read_num) from read_num) as readSum';
+		var sql = 'select (select from_unixtime(max(pub_time),"%m月%d日 %H整") from article_profile) as time,(select count(*) from gzh_profile) as gzhCount,(select count(*) from article_profile) as artCount,(select sum(read_num) from (select DISTINCT * from read_num as a,(select max(time) as RMaxtime from read_num group by article_id) as b where a.time=b.RMaxtime) e) as readSum';
 		var rows = yield c.query(sql);
 		this.body = rows;
 	},
@@ -95,6 +95,82 @@ module.exports = {
 		var sql = 'select * from info where id='+this.query.gzh_id;
 		var rows = yield c.query(sql);
 		this.body = rows;
+	},
+	ranking_info: function *(next){
+		var sql = 'select * from info where id='+this.query.gzh_id;
+		var rows = yield c.query(sql);
+		this.body = rows;
+	},
+	chart_info: function *(next){
+		var sql = 'select * from info where id='+this.query.gzh_id;
+		var rows = yield c.query(sql);
+		this.body = rows;
+	},
+	statistics_info: function *(next){
+		var list = [];
+		var sql = 'select count(*) cs from (select pub_time from article_profile where gzh_id='+this.query.gzh_id+' group by pub_time) a';
+		var rows = yield c.query(sql);
+
+
+		var sql2 = 'select count(*) ps from article_profile where gzh_id='+this.query.gzh_id;
+		var rows2 = yield c.query(sql2);
+
+		var sql3 = 'select count(*) as sw \
+					from \
+					(\
+					select DISTINCT *,from_unixtime(pub_time,"%Y-%m-%d %h:%i") as dateTime from article_profile c,\
+					(select * from read_num as a,(select max(time) as RMaxtime from read_num group by article_id) as b where a.time=b.RMaxtime) d,\
+					(select time as zan_time,article_id as art_id,ZMaxtime,zan_num from zan_num as a,(select max(time) as ZMaxtime from zan_num group by article_id) as b where a.time=b.ZMaxtime) e \
+					where c.id=d.article_id and c.id=e.art_id\
+					) as f\
+					where gzh_id='+this.query.gzh_id+' and read_num>=100000 order by f.pub_time desc';
+		var rows3 = yield c.query(sql3);
+
+
+		var sql4 = 'select count(*) count,Max(read_num) maxRead,sum(read_num) sumRead,sum(zan_num) sumZan \
+					from \
+					(\
+					select DISTINCT *,from_unixtime(pub_time,"%Y-%m-%d %h:%i") as dateTime from article_profile c,\
+					(select * from read_num as a,(select max(time) as RMaxtime from read_num group by article_id) as b where a.time=b.RMaxtime) d,\
+					(select time as zan_time,article_id as art_id,ZMaxtime,zan_num from zan_num as a,(select max(time) as ZMaxtime from zan_num group by article_id) as b where a.time=b.ZMaxtime) e \
+					where c.id=d.article_id and c.id=e.art_id\
+					) as f\
+					where gzh_id='+this.query.gzh_id+' order by f.pub_time desc';
+		var rows4 = yield c.query(sql4);
+
+
+		var sql5 = 'select count(*) ttCount,sum(read_num) ttSumRead \
+					from \
+					(\
+					select DISTINCT *,from_unixtime(pub_time,"%Y-%m-%d %h:%i") as dateTime from article_profile c,\
+					(select * from read_num as a,(select max(time) as RMaxtime from read_num group by article_id) as b where a.time=b.RMaxtime) d,\
+					(select time as zan_time,article_id as art_id,ZMaxtime,zan_num from zan_num as a,(select max(time) as ZMaxtime from zan_num group by article_id) as b where a.time=b.ZMaxtime) e \
+					where c.id=d.article_id and c.id=e.art_id\
+					) as f\
+					where f.url like "%idx=1%" and gzh_id='+this.query.gzh_id+' order by f.pub_time desc';
+		var rows5 = yield c.query(sql5);
+
+		list.push(rows);
+		list.push(rows2);
+		list.push(rows3);
+		list.push(rows4);
+		list.push(rows5);
+
+		// var json = {'cs':rows[0].cs,'ps',rows2[0].ps,'sw':rows3[0].sw,'count':rows4[0].count,'maxRead':rows4[0].maxRead,'sumRead':rows4[0].sumRead,'sumZan':rows4[0].sumZan,'ttCount':rows5[0].ttCount,'ttSumRead':rows5[0].ttSumRead};
+		
+		var json = {};
+
+		json.cs = rows[0].cs;
+		json.ps = rows2[0].ps;
+		json.sw = rows3[0].sw;
+		json.count = rows4[0].count;
+		json.maxRead = rows4[0].maxRead;
+		json.sumRead = rows4[0].sumRead;
+		json.sumZan = rows4[0].sumZan;
+		json.ttCount = rows5[0].ttCount;
+		json.ttSumRead = rows5[0].ttSumRead;
+
+		this.body = json;
 	},
 	article_profile_info: function *(next){
 		var sql = 'select * from (select DISTINCT *,from_unixtime(pub_time,"%Y-%m-%d %h:%i") as dateTime from article_profile c,\
