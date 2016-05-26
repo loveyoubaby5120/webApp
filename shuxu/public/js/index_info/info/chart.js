@@ -5,49 +5,6 @@ export default class Chart extends React.Component {
 
     componentDidMount(){
 
-        jQuery('#periodpickerstart').periodpicker({
-            lang: 'zh-cn',
-            norange: false, // use only one value
-            cells: [1, 2], // show only one month
-            resizeButton: true, // deny resize picker
-            fullsizeButton: true,
-            fullsizeOnDblClick: true,
-
-            clearButtonInButton:true,
-            timepicker: false, // use timepicker
-            timepickerOptions: {
-                hours: true,
-                minutes: true,
-                seconds: false,
-                ampm: true
-            },
-            // onAfterShow
-            // onOkButtonClick
-             onOkButtonClick: function () {
-                // var val = this.startinput.val();
-                var dates = jQuery('#periodpickerstart').periodpicker('value');
-
-                // dates[0] dates[1]
-
-                // console.log(dates[0].toISOString().slice(0,10));
-
-                // console.log(dates[0].toLocaleDateString());
-
-                // var y = dates[0].getFullYear();  
-                // var m = dates[0].getMonth() + 1;  
-                // m = m < 10 ? '0' + m : m;  
-                // var d = dates[0].getDate();  
-                // d = d < 10 ? ('0' + d) : d;
-                // console.log(y + '-' + m + '-' + d);
-
-            }
-        });
-
-
-
-        jQuery('#periodpickerstart').periodpicker('value', '2016/03/12');
-
-
         jQuery('#periodpickerstart2').periodpicker({
             ang: 'zh-cn',
             norange: false, // use only one value
@@ -63,7 +20,14 @@ export default class Chart extends React.Component {
                 minutes: true,
                 seconds: false,
                 ampm: true
+            },
+             onOkButtonClick: function () {
+                var dates = jQuery('#periodpickerstart').periodpicker('value');
+                // dates[0] dates[1]
+                console.log(dates[0].toISOString().slice(0,10));
+
             }
+
         });
 
 
