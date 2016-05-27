@@ -235,7 +235,7 @@ module.exports = {
 
 		var ztj = ``;
 		var zzd = ``;
-		var index = this.query.days;
+		var daysNum = this.query.days;
 		for(var i =1;i<31;i++){
 			if(index=='other'){
 				array.push(0);
@@ -243,7 +243,7 @@ module.exports = {
 				continue;
 			}
 			ztj = tj +` and date_sub(curdate(), INTERVAL ${i} DAY) <= date(dateTime)`;
-			zzd = zd +`,from_unixtime(max(pub_time),'%Y-%m-%d') as date`;
+			zzd = zd +`,from_unixtime(min(pub_time),'%Y-%m-%d') as date`;
 			var sql = `call art_info("${zzd}","${ztj}","","","desc")`;
 			var rows = yield c.query(sql);
 			dateArray.push(rows[0][0].date);
@@ -259,6 +259,7 @@ module.exports = {
 			else if(index=='other'){
 				array.push(0);
 			}
+
 			
 		}
 		this.body = [array,dateArray];
