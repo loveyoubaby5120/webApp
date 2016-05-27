@@ -166,7 +166,7 @@ module.exports = {
 				array.push(rows[0][0].count);
 			}
 			else if(index=='avg'){
-				array.push(rows[0][0].sum);
+				array.push(rows[0][0].sum ? Math.floor(rows[0][0].sum/rows[0][0].count) : '0');
 			}
 			else if(index=='other'){
 				array.push(0);
