@@ -127,11 +127,11 @@ export default class Chart extends React.Component {
             url: '/chart_Days_info?gzh_id='+this.props.gzh_id+'&type='+type,
             async: true,
             success: function(data){
-                for(var i = data[0].length; i >=0;i--){
+                for(var i = data[0].length-1; i >=0;i--){
                     _this.state.myChart.addData([
                         [
                             0,        // 系列索引
-                            array[i], // 新增数据
+                            data[0][i], // 新增数据
                             true,     // 新增数据是否从队列头部插入
                             false    // 是否增加队列长度，false则自定删除原有数据，队头插入删队尾，队尾插入删队头
                         ]
