@@ -235,7 +235,7 @@ module.exports = {
 
 		var ztj = ``;
 		var zzd = ``;
-
+		var index = this.query.days;
 		for(var i =1;i<31;i++){
 			if(index=='other'){
 				array.push(0);
