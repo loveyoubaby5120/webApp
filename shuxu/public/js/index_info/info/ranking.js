@@ -59,23 +59,23 @@ export default class Ranking extends React.Component {
                     <ul className="map">
                         <li className="item zpm">
                             <p className="title">总排名</p>
-                            <p className="num">59</p>
+                            <p className="num">--</p>
                         </li>
                         <li className="item yxlzs">
                             <p className="title">影响力指数<span>?</span></p>
-                            <p className="num">695</p>
+                            <p className="num">--</p>
                         </li>
                         <li className="item hypm">
                             <p className="title">行业排名</p>
-                            <p className="num">13</p>
+                            <p className="num">--</p>
                         </li>
                         <li className="item lszgzpm">
                             <p className="title">历史最高总排名</p>
-                            <p className="num">17</p>
+                            <p className="num">--</p>
                         </li>
                         <li className="item lszghypm">
                             <p className="title">历史最高行业排名</p>
-                            <p className="num">4</p>
+                            <p className="num">--</p>
                         </li>
                     </ul>
                     <div className="chart">

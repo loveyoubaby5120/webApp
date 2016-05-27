@@ -102,9 +102,167 @@ module.exports = {
 		this.body = rows;
 	},
 	chart_info: function *(next){
-		var sql = 'select * from info where id='+this.query.gzh_id;
-		var rows = yield c.query(sql);
-		this.body = rows;
+		var array = [];
+		var zd = ``;
+		var tj = ``;
+		var index = '';
+		if(this.query.type==1){
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum`;
+			tj = ` and gzh_id=${this.query.gzh_id}`;
+			index = `sum`;
+		}
+
+		if(this.query.type==2){
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum`;
+			tj = ` and f.url like '%idx=1%' and gzh_id=${this.query.gzh_id}`;
+			index = `sum`;
+		}
+
+		if(this.query.type==3){
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(id) as count`;
+			tj = ` and gzh_id=${this.query.gzh_id}`;
+			index = `avg`;
+		}
+
+		if(this.query.type==4){
+			zd = ``;
+			tj = ``;
+			index = `other`;
+		}
+
+		if(this.query.type==5){
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(id) as count`;
+			tj = ` and gzh_id=${this.query.gzh_id}`;
+			index = `count`;
+		}
+
+		if(this.query.type==6){
+			zd = ``;
+			tj = ``;
+			index = `other`;
+		}
+
+		if(this.query.type==7){
+			zd = ``;
+			tj = ``;
+			index = `other`;
+		}
+
+		if(this.query.type==8){
+			zd = `case when sum(zan_num) then sum(zan_num) else 0 end as sum,count(id) as count`;
+			tj = `and gzh_id=${this.query.gzh_id}`;
+			index = `sum`;
+		}
+
+		var ztj = ``;
+		for(var i =1;i<13;i++){
+			if(index=='other'){
+				array.push(0);
+				continue;
+			}
+			ztj = tj +` and from_unixtime(pub_time,'%Y年%m月%d日') like '%${i}月%'`;
+			var sql = `call art_info("${zd}","${ztj}","","","desc")`;
+			var rows = yield c.query(sql);
+			if(index=='sum'){
+				array.push(rows[0][0].sum);
+			}
+			else if(index=='count'){
+				array.push(rows[0][0].count);
+			}
+			else if(index=='avg'){
+				array.push(rows[0][0].sum ? Math.floor(rows[0][0].sum/rows[0][0].count) : '0');
+			}
+			else if(index=='other'){
+				array.push(0);
+			}
+			
+		}
+		this.body = array;
+	},
+	chart_days_info: function *(next){
+		var array = [];
+		var dateArray = [];
+		var zd = ``;
+		var tj = ``;
+		var index = '';
+		if(this.query.type==1){
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum`;
+			tj = ` and gzh_id=${this.query.gzh_id}`;
+			index = `sum`;
+		}
+
+		if(this.query.type==2){
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum`;
+			tj = ` and f.url like '%idx=1%' and gzh_id=${this.query.gzh_id}`;
+			index = `sum`;
+		}
+
+		if(this.query.type==3){
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(id) as count`;
+			tj = ` and gzh_id=${this.query.gzh_id}`;
+			index = `avg`;
+		}
+
+		if(this.query.type==4){
+			zd = ``;
+			tj = ``;
+			index = `other`;
+		}
+
+		if(this.query.type==5){
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(id) as count`;
+			tj = ` and gzh_id=${this.query.gzh_id}`;
+			index = `count`;
+		}
+
+		if(this.query.type==6){
+			zd = ``;
+			tj = ``;
+			index = `other`;
+		}
+
+		if(this.query.type==7){
+			zd = ``;
+			tj = ``;
+			index = `other`;
+		}
+
+		if(this.query.type==8){
+			zd = `case when sum(zan_num) then sum(zan_num) else 0 end as sum,count(id) as count`;
+			tj = `and gzh_id=${this.query.gzh_id}`;
+			index = `sum`;
+		}
+
+		var ztj = ``;
+		var zzd = ``;
+		var daysNum = this.query.days;
+		for(var i =1;i<31;i++){
+			if(index=='other'){
+				array.push(0);
+				dateArray.push(rows[0][0].date);
+				continue;
+			}
+			ztj = tj +` and date_sub(curdate(), INTERVAL ${i} DAY) <= date(dateTime)`;
+			zzd = zd +`,from_unixtime(min(pub_time),'%Y-%m-%d') as date`;
+			var sql = `call art_info("${zzd}","${ztj}","","","desc")`;
+			var rows = yield c.query(sql);
+			dateArray.push(rows[0][0].date);
+			if(index=='sum'){
+				array.push(rows[0][0].sum);
+			}
+			else if(index=='count'){
+				array.push(rows[0][0].count);
+			}
+			else if(index=='avg'){
+				array.push(rows[0][0].sum ? Math.floor(rows[0][0].sum/rows[0][0].count) : '0');
+			}
+			else if(index=='other'){
+				array.push(0);
+			}
+
+			
+		}
+		this.body = [array,dateArray];
 	},
 	statistics_info: function *(next){
 		var list = [];
@@ -173,23 +331,34 @@ module.exports = {
 		this.body = json;
 	},
 	article_profile_info: function *(next){
-		var sql = 'select * from (select DISTINCT *,from_unixtime(pub_time,"%Y-%m-%d %h:%i") as dateTime from article_profile c,\
-					(select * from read_num as a,(select max(time) as RMaxtime from read_num group by article_id) as b where a.time=b.RMaxtime) d,\
-					(select time as zan_time,article_id as art_id,ZMaxtime,zan_num from zan_num as a,(select max(time) as ZMaxtime from zan_num group by article_id) as b where a.time=b.ZMaxtime) e \
-					where c.id=d.article_id and c.id=e.art_id) as f';
+		// var sql = 'select * from (select DISTINCT *,from_unixtime(pub_time,"%Y-%m-%d %h:%i") as dateTime from article_profile c,\
+		// 			(select * from read_num as a,(select max(time) as RMaxtime from read_num group by article_id) as b where a.time=b.RMaxtime) d,\
+		// 			(select time as zan_time,article_id as art_id,ZMaxtime,zan_num from zan_num as a,(select max(time) as ZMaxtime from zan_num group by article_id) as b where a.time=b.ZMaxtime) e \
+		// 			where c.id=d.article_id and c.id=e.art_id) as f';
 
-		sql += ' where 1=1';
-		sql += ' and gzh_id='+this.query.gzh_id;
+		// sql += ' where 1=1';
+		// sql += ' and gzh_id='+this.query.gzh_id;
+		// if(this.query.type==1){
+		// 	sql += ' and date_sub(curdate(), INTERVAL 7 DAY) <= date(f.dateTime) order by f.pub_time desc';
+		// }
+		// else{
+		// 	sql += ' order by f.pub_time desc limit 10';
+		// }
+		
+		var where = ' and gzh_id='+this.query.gzh_id;
+		var limit = '';
 		if(this.query.type==1){
-			sql += ' and date_sub(curdate(), INTERVAL 7 DAY) <= date(f.dateTime) order by f.pub_time desc';
+			where += ' and date_sub(curdate(), INTERVAL 7 DAY) <= date(f.dateTime)';
 		}
 		else{
-			sql += ' order by f.pub_time desc limit 10';
+			limit = '10';
 		}
+
+		var sql = 'call art_info("","'+where+'","'+limit+'","pub_time","desc")';
 
 
 		var rows = yield c.query(sql);
-		this.body = rows;
+		this.body = rows[0];
 
 	}
 
