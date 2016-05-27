@@ -46,24 +46,13 @@ export default class Chart extends React.Component {
             myChart: myChart
         });
 
-        this.onChart(myChart,false,'month');
-
-        this.access(this.state.type);
+        this.onChart(myChart,false);
 
        
     }
 
 
-    onChart(myChart,re,dateType,XD){
-        var xData = [];
-
-        if(dateType=='month'){
-            xData = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
-        }
-        else{
-            xData = XD;
-        }
-
+    onChart(myChart,re){
 
         if(re)
             myChart.restore();
@@ -93,7 +82,7 @@ export default class Chart extends React.Component {
                 xAxis : [
                     {
                         type : 'category',
-                        data : xData
+                        data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
                     }
                 ],
                 yAxis : [
@@ -105,7 +94,8 @@ export default class Chart extends React.Component {
                     {
                         name:'发文数',
                         type:'bar',
-                        data:[0,0,0,0,0,0,0,0,0,0,0,0],
+                        // data:this.access(1),
+                        data:this.access(this.state.type),
                         markPoint : {
                             data : [
                                 {type : 'max', name: '最大值'},
@@ -132,19 +122,14 @@ export default class Chart extends React.Component {
         });
         var array;
         $.ajax({
-            url: '/chart_Days_info?gzh_id='+this.props.gzh_id+'&type='+type,
-            async: true,
+            url: '/chart_info?gzh_id='+this.props.gzh_id+'&type='+type,
+            async:false,
             success: function(data){
                 array = data;
             }
         });
 
         return array;
-    }
-
-
-    onClickDays(type){
-        console.log();
     }
 
     onClick(type){
@@ -170,7 +155,7 @@ export default class Chart extends React.Component {
             <div className="chart">
                 <div className="date_check">
                     <div className="select_data1">
-                        <select onChange={this.onClickDays.bind(this)} ref='select'>
+                        <select>
                             <option>最近30天</option>
                             <option>最近60天</option>
                         </select>

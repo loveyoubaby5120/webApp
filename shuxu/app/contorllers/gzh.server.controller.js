@@ -181,6 +181,7 @@ module.exports = {
 	},
 	chart_days_info: function *(next){
 		var array = [];
+		var dateArray = [];
 		var zd = ``;
 		var tj = ``;
 		var index = '';
@@ -233,14 +234,19 @@ module.exports = {
 		}
 
 		var ztj = ``;
-		for(var i =1;i<13;i++){
+		var zzd = ``;
+
+		for(var i =1;i<31;i++){
 			if(index=='other'){
 				array.push(0);
+				dateArray.push(rows[0][0].date);
 				continue;
 			}
-			ztj = tj +` and from_unixtime(pub_time,'%Y年%m月%d日') like '%${i}月%'`;
-			var sql = `call art_info("${zd}","${ztj}","","","desc")`;
+			ztj = tj +` and date_sub(curdate(), INTERVAL ${i} DAY) <= date(dateTime)`;
+			zzd = zd +`,from_unixtime(max(pub_time),'%Y-%m-%d') as date`;
+			var sql = `call art_info("${zzd}","${ztj}","","","desc")`;
 			var rows = yield c.query(sql);
+			dateArray.push(rows[0][0].date);
 			if(index=='sum'){
 				array.push(rows[0][0].sum);
 			}
@@ -255,7 +261,7 @@ module.exports = {
 			}
 			
 		}
-		this.body = array;
+		this.body = [array,dateArray];
 	},
 	statistics_info: function *(next){
 		var list = [];
