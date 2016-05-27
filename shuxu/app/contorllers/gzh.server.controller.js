@@ -177,8 +177,84 @@ module.exports = {
 			}
 			
 		}
+		this.body = array;
+	},
+	chart_days_info: function *(next){
+		var array = [];
+		var zd = ``;
+		var tj = ``;
+		var index = '';
+		if(this.query.type==1){
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum`;
+			tj = ` and gzh_id=${this.query.gzh_id}`;
+			index = `sum`;
+		}
 
+		if(this.query.type==2){
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum`;
+			tj = ` and f.url like '%idx=1%' and gzh_id=${this.query.gzh_id}`;
+			index = `sum`;
+		}
 
+		if(this.query.type==3){
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(id) as count`;
+			tj = ` and gzh_id=${this.query.gzh_id}`;
+			index = `avg`;
+		}
+
+		if(this.query.type==4){
+			zd = ``;
+			tj = ``;
+			index = `other`;
+		}
+
+		if(this.query.type==5){
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(id) as count`;
+			tj = ` and gzh_id=${this.query.gzh_id}`;
+			index = `count`;
+		}
+
+		if(this.query.type==6){
+			zd = ``;
+			tj = ``;
+			index = `other`;
+		}
+
+		if(this.query.type==7){
+			zd = ``;
+			tj = ``;
+			index = `other`;
+		}
+
+		if(this.query.type==8){
+			zd = `case when sum(zan_num) then sum(zan_num) else 0 end as sum,count(id) as count`;
+			tj = `and gzh_id=${this.query.gzh_id}`;
+			index = `sum`;
+		}
+
+		var ztj = ``;
+		for(var i =1;i<13;i++){
+			if(index=='other'){
+				array.push(0);
+				continue;
+			}
+			ztj = tj +` and from_unixtime(pub_time,'%Y年%m月%d日') like '%${i}月%'`;
+			var sql = `call art_info("${zd}","${ztj}","","","desc")`;
+			var rows = yield c.query(sql);
+			if(index=='sum'){
+				array.push(rows[0][0].sum);
+			}
+			else if(index=='count'){
+				array.push(rows[0][0].count);
+			}
+			else if(index=='avg'){
+				array.push(rows[0][0].sum ? Math.floor(rows[0][0].sum/rows[0][0].count) : '0');
+			}
+			else if(index=='other'){
+				array.push(0);
+			}
+			
+		}
 		this.body = array;
 	},
 	statistics_info: function *(next){
