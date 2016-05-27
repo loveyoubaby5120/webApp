@@ -148,11 +148,13 @@ export default class Chart extends React.Component {
         this.setState({
             type: type
         });
+        var _this = this;
         var array;
         $.ajax({
             url: '/chart_Days_info?gzh_id='+this.props.gzh_id+'&type='+type,
-            async: false,
+            async: true,
             success: function(data){
+                _this.onChart(_this.state.myChart,false,data);
                 array = data;
             }
         });
@@ -162,10 +164,10 @@ export default class Chart extends React.Component {
 
 
     onClickDays(type){
-
+        this.state.myChart.clear();
         var array = this.accessChange(this.state.type);
 
-        this.onChart(this.state.myChart,false,'days',array);
+        
 
         
     }
