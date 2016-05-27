@@ -42,11 +42,12 @@ export default class Chart extends React.Component {
 
         var myChart = echarts.init(document.getElementById('main2'));
 
-        this.setState({
-            myChart: myChart
-        });
+        this.state = {
+            myChart: myChart,
+            type: 1
+        }
 
-        this.onChart(myChart,false,'month');
+        this.onChart(myChart,false,[[0,0,0,0,0,0,0,0,0,0,0,0],['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']]);
 
         this.access(this.state.type);
 
@@ -54,17 +55,7 @@ export default class Chart extends React.Component {
     }
 
 
-    onChart(myChart,re,dateType,XD){
-        var xData = [];
-
-        if(dateType=='month'){
-            xData = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
-        }
-        else{
-            xData = XD;
-        }
-
-
+    onChart(myChart,re,XD){
         if(re)
             myChart.restore();
 
@@ -93,7 +84,7 @@ export default class Chart extends React.Component {
                 xAxis : [
                     {
                         type : 'category',
-                        data : xData
+                        data : XD[1]
                     }
                 ],
                 yAxis : [
@@ -105,7 +96,7 @@ export default class Chart extends React.Component {
                     {
                         name:'发文数',
                         type:'bar',
-                        data:[0,0,0,0,0,0,0,0,0,0,0,0],
+                        data: XD[0],
                         markPoint : {
                             data : [
                                 {type : 'max', name: '最大值'},
@@ -131,9 +122,36 @@ export default class Chart extends React.Component {
             type: type
         });
         var array;
+        var _this = this;
         $.ajax({
             url: '/chart_Days_info?gzh_id='+this.props.gzh_id+'&type='+type,
             async: true,
+            success: function(data){
+                for(var i = data[0].length; i >=0;i--){
+                    _this.state.myChart.addData([
+                        [
+                            0,        // 系列索引
+                            array[i], // 新增数据
+                            true,     // 新增数据是否从队列头部插入
+                            false    // 是否增加队列长度，false则自定删除原有数据，队头插入删队尾，队尾插入删队头
+                        ]
+                    ]);
+                }
+
+            }
+        });
+
+    }
+
+
+    accessChange(type){
+        this.setState({
+            type: type
+        });
+        var array;
+        $.ajax({
+            url: '/chart_Days_info?gzh_id='+this.props.gzh_id+'&type='+type,
+            async: false,
             success: function(data){
                 array = data;
             }
@@ -144,23 +162,19 @@ export default class Chart extends React.Component {
 
 
     onClickDays(type){
-        console.log();
+
+        var array = this.accessChange(this.state.type);
+
+        this.onChart(this.state.myChart,false,'days',array);
+
+        
     }
 
     onClick(type){
         this.state.myChart.restore();
 
-        var array = this.access(type);
-        for(var i = array.length; i >=0;i--){
-            this.state.myChart.addData([
-                [
-                    0,        // 系列索引
-                    array[i], // 新增数据
-                    true,     // 新增数据是否从队列头部插入
-                    false    // 是否增加队列长度，false则自定删除原有数据，队头插入删队尾，队尾插入删队头
-                ]
-            ]);
-        }
+        this.access(type);
+        
     }
 
 
