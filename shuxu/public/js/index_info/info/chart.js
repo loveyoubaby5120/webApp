@@ -49,7 +49,7 @@ export default class Chart extends React.Component {
 
         this.onChart(myChart,false,[[0,0,0,0,0,0,0,0,0,0,0,0],['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']]);
 
-        this.access(this.state.type);
+        this.accessChange(this.state.type);
 
        
     }
