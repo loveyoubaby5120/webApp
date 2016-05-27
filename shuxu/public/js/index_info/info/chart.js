@@ -136,12 +136,11 @@ export default class Chart extends React.Component {
         this.state.myChart.restore();
 
         var array = this.access(type);
-        for(var obj of array){
-
+        for(var i = array.length; i >=0;i--){
             this.state.myChart.addData([
                 [
                     0,        // 系列索引
-                    obj, // 新增数据
+                    array[i], // 新增数据
                     true,     // 新增数据是否从队列头部插入
                     false    // 是否增加队列长度，false则自定删除原有数据，队头插入删队尾，队尾插入删队头
                 ]

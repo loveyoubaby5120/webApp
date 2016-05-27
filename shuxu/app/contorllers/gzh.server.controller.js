@@ -103,69 +103,77 @@ module.exports = {
 	},
 	chart_info: function *(next){
 		var array = [];
+		var zd = ``;
+		var tj = ``;
+		var index = '';
 		if(this.query.type==1){
-			for(var i =1;i<13;i++){
-				var sql = `call art_info("case when sum(read_num) then sum(read_num) else 0 end as sum"," and from_unixtime(pub_time,'%Y年%m月%d日') like '%${i}月%' and gzh_id=${this.query.gzh_id}","","","desc")`;
-				var rows = yield c.query(sql);
-				array.push(rows[0][0].sum);
-			}
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum`;
+			tj = ` and gzh_id=${this.query.gzh_id}`;
+			index = `sum`;
 		}
 
 		if(this.query.type==2){
-			for(var i =1;i<13;i++){
-				var sql = `call art_info("case when sum(read_num) then sum(read_num) else 0 end as sum"," and f.url like '%idx=1%' and from_unixtime(pub_time,'%Y年%m月%d日') like '%${i}月%' and gzh_id=${this.query.gzh_id}","","","desc")`;
-				var rows = yield c.query(sql);
-				array.push(rows[0][0].sum);
-			}
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum`;
+			tj = ` and f.url like '%idx=1%' and gzh_id=${this.query.gzh_id}`;
+			index = `sum`;
 		}
 
 		if(this.query.type==3){
-			for(var i =1;i<13;i++){
-				var sql = `call art_info("case when sum(read_num) then sum(read_num) else 0 end as sum,count(id) as count"," and from_unixtime(pub_time,'%Y年%m月%d日') like '%${i}月%' and gzh_id=${this.query.gzh_id}","","","desc")`;
-				var rows = yield c.query(sql);
-				array.push(rows[0][0].sum/rows[0][0].count ? Math.floor(rows[0][0].sum/rows[0][0].count) : 0);
-			}
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(id) as count`;
+			tj = ` and gzh_id=${this.query.gzh_id}`;
+			index = `avg`;
 		}
 
 		if(this.query.type==4){
-			for(var i =1;i<13;i++){
-				// var sql = `call art_info(""," and from_unixtime(pub_time,'%Y年%m月%d日') like '%${i}月%' and gzh_id=${this.query.gzh_id}","","","desc")`;
-				// var rows = yield c.query(sql);
-				array.push(0);
-			}
+			zd = ``;
+			tj = ``;
+			index = `other`;
 		}
 
 		if(this.query.type==5){
-			for(var i =1;i<13;i++){
-				var sql = `call art_info("case when sum(read_num) then sum(read_num) else 0 end as sum,count(id) as count,sum(read_num)/count(id) as avg"," and from_unixtime(pub_time,'%Y年%m月%d日') like '%${i}月%' and gzh_id=${this.query.gzh_id}","","","desc")`;
-				var rows = yield c.query(sql);
-				array.push(rows[0][0].count);
-			}
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(id) as count`;
+			tj = ` and gzh_id=${this.query.gzh_id}`;
+			index = `count`;
 		}
 
 		if(this.query.type==6){
-			for(var i =1;i<13;i++){
-				// var sql = `call art_info(""," and from_unixtime(pub_time,'%Y年%m月%d日') like '%${i}月%' and gzh_id=${this.query.gzh_id}","","","desc")`;
-				// var rows = yield c.query(sql);
-				array.push(0);
-			}
+			zd = ``;
+			tj = ``;
+			index = `other`;
 		}
 
 		if(this.query.type==7){
-			for(var i =1;i<13;i++){
-				// var sql = `call art_info(""," and from_unixtime(pub_time,'%Y年%m月%d日') like '%${i}月%' and gzh_id=${this.query.gzh_id}","","","desc")`;
-				// var rows = yield c.query(sql);
-				array.push(0);
-			}
+			zd = ``;
+			tj = ``;
+			index = `other`;
 		}
 
 		if(this.query.type==8){
-			for(var i =1;i<13;i++){
-				var sql = `call art_info("case when sum(zan_num) then sum(zan_num) else 0 end as sum,count(id) as count"," and from_unixtime(pub_time,'%Y年%m月%d日') like '%${i}月%' and gzh_id=${this.query.gzh_id}","","","desc")`;
-				var rows = yield c.query(sql);
+			zd = `case when sum(zan_num) then sum(zan_num) else 0 end as sum,count(id) as count`;
+			tj = `and gzh_id=${this.query.gzh_id}`;
+			index = `sum`;
+		}
+
+		var ztj = ``;
+		for(var i =1;i<13;i++){
+			ztj = tj +` and from_unixtime(pub_time,'%Y年%m月%d日') like '%${i}月%'`;
+			var sql = `call art_info("${zd}","${ztj}","","","desc")`;
+			var rows = yield c.query(sql);
+			if(index=='sum'){
 				array.push(rows[0][0].sum);
 			}
+			else if(index=='count'){
+				array.push(rows[0][0].count);
+			}
+			else if(index=='avg'){
+				array.push(rows[0][0].sum);
+			}
+			else if(index=='other'){
+				array.push(0);
+			}
+			
 		}
+
 
 		this.body = array;
 	},
