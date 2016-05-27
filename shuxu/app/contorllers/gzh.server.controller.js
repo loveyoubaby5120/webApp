@@ -156,6 +156,10 @@ module.exports = {
 
 		var ztj = ``;
 		for(var i =1;i<13;i++){
+			if(index=='other'){
+				array.push(0);
+				continue;
+			}
 			ztj = tj +` and from_unixtime(pub_time,'%Y年%m月%d日') like '%${i}月%'`;
 			var sql = `call art_info("${zd}","${ztj}","","","desc")`;
 			var rows = yield c.query(sql);
