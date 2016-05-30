@@ -4,25 +4,30 @@ import { Link } from 'react-router'
 export default class Info_Left extends React.Component {
     constructor(props) {
         super(props);
-        var _this = this;
-        $.ajax({
-            url: '/gzh_type_List',
-            async:false,
-            success: function(data){
-                _this.state = {
-                    datas: data,
-                    gzh_id: _this.props.gzh_id
-                };
-
-            }
-        })
+        this.state = {
+            datas: [],
+            gzh_id: this.props.gzh_id
+        };
 
     }
 
     componentDidMount(){
-        if(this.state.datas.length>0){
-            this.onClick(this.state.datas[0].id)
-        }
+         var _this = this;
+        $.ajax({
+            url: '/gzh_type_List',
+            async:true,
+            success: function(data){
+                _this.setState ({
+                    datas: data
+                });
+
+                if(data.length>0){
+                    _this.onClick(data[0].id)
+                }
+
+            }
+        })
+
     }
 
 

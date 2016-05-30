@@ -5,15 +5,23 @@ export default class Header extends React.Component {
 
     constructor(props) {
         super(props);
+         this.state = {
+            datas: [{"time":"--","gzhCount":'--',"artCount":'--',"readSum":'--'}],
+            show: this.props.show
+        };
+    }
+
+
+    componentDidMount(){
+        
         var _this = this;
         $.ajax({
             url: '/map',
-            async:false,
+            async:true,
             success: function(data){
-                _this.state = {
-                    datas: data,
-                    show: _this.props.show
-                };
+                _this.setState({
+                    datas: data
+                });
 
             }
         })

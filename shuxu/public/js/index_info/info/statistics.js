@@ -5,18 +5,25 @@ export default class Statistics extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            datas:{"cs":'--',"ps":'--',"sw":'--',"count":'--',"maxRead":'--',"sumRead":'--',"sumZan":'--',"ttCount":'--',"ttSumRead":'--'}
+        }
+        
+
+    }
+
+    componentDidMount(){
         var _this = this;
         $.ajax({
             url: '/statistics_info?gzh_id='+this.props.gzh_id,
-            async:false,
+            async:true,
             success: function(data){
-                _this.state = {
+                _this.setState({
                     datas: data
-                };
+                });
 
             }
         })
-
     }
 
 

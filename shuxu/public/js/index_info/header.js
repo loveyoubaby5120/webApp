@@ -5,19 +5,39 @@ export default class Header extends React.Component {
 
     constructor(props) {
         super(props);
-        
+
+        this.state = {
+            datas: [
+                {
+                    "nick_name":"--",
+                    "english_id":"--",
+                    "biz":"--",
+                    "qrcode":null,
+                    "avatar":null,
+                    "descrip":null,
+                    "id":0,
+                    "tag":null,
+                    "source":0,
+                    "type":0,
+                    "name":"--"
+                }
+            ]
+        };
+    }
+
+
+    componentDidMount(){
         var _this = this;
         $.ajax({
             url: '/map_info?gzh_id='+this.props.gzh_id,
-            async:false,
+            async:true,
             success: function(data){
-                _this.state = {
+                _this.setState({
                     datas: data
-                };
+                });
 
             }
         })
-
     }
 
 
