@@ -152,7 +152,7 @@
 .table .title{
     position: absolute;
     top: 15px;
-    left: 19px;
+    left: 22px;
     color: #fff;
     background-size: contain;
     background-position: center;
@@ -274,16 +274,19 @@
     border-radius: 50%;
     width: 25px;
     height: 25px;
-    line-height: 29px;
+    line-height: 26px;
     color: #f6501e;
-    background-image: url('../images/wjx2.png');
+    border: 1px #f6501e solid;
+    background-color: #fff;
+    // background-image: url('../images/wjx2.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 }
 
 .number2{
-    background-image: url('../images/wjx.png') !important;
+    background-color: #FF4F12;
+    // background-image: url('../images/wjx.png') !important;
     color: white;
 }
 

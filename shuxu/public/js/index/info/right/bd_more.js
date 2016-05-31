@@ -83,8 +83,8 @@ export default class Bd_more extends React.Component {
                     var div7 = React.createElement('div',null,'--');
                     var td7 = React.createElement('td',{className:'text'},div7);
                     
-                    var div8 = React.createElement('div',null,'--');
-                    var td8 = React.createElement('td',{className:'text'},div8);
+                    // var div8 = React.createElement('div',null,'--');
+                    // var td8 = React.createElement('td',{className:'text'},div8);
                     
                     var a9 = React.createElement('a',{href:"/index_info?gzh_id="+data.id},'进入 >');
                     var td9 = React.createElement('td',{className:'text goto_info'},a9);
@@ -93,10 +93,10 @@ export default class Bd_more extends React.Component {
 
 
                     if((index+num)%2==0){
-                        var tr = React.createElement('tr',{className:'even',key:index},td,td2,td3,td4,td5,td6,td7,td8,td9,td10);
+                        var tr = React.createElement('tr',{className:'even',key:index},td,td2,td3,td4,td5,td6,td7,td9,td10);
                     }
                     else{
-                        var tr = React.createElement('tr',{className:'',key:index},td,td2,td3,td4,td5,td6,td7,td8,td9,td10);
+                        var tr = React.createElement('tr',{className:'',key:index},td,td2,td3,td4,td5,td6,td7,td9,td10);
                     }
 
                     options.push(tr);
@@ -137,7 +137,6 @@ export default class Bd_more extends React.Component {
                             <th className="w_15"><div><p className="">粉丝黏性</p></div></th>
                             <th className="w_15"><div><p className="">增长潜力</p></div></th>
                             <th className="w_20"><div><p className="">粉丝活跃度</p></div></th>
-                            <th className="w_15"><div><p className="">综合热度</p></div></th>
                             <th className="w_15"><div><p className="">查看详细</p></div></th>
                             <th className="w_2"></th>
                         </tr>
