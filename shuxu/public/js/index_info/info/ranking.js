@@ -16,51 +16,10 @@ export default class Ranking extends React.Component {
 
     componentDidMount(){
 
-        jQuery('#periodpickerstart').periodpicker({
-            lang: 'zh-cn',
-            norange: false, // use only one value
-            cells: [1, 2], // show only one month
-            resizeButton: true, // deny resize picker
-            fullsizeButton: true,
-            fullsizeOnDblClick: true,
-
-            clearButtonInButton:true,
-            timepicker: false, // use timepicker
-            timepickerOptions: {
-                hours: true,
-                minutes: true,
-                seconds: false,
-                ampm: true
-            },
-            // onAfterShow
-            // onOkButtonClick
-             onOkButtonClick: function () {
-                // var val = this.startinput.val();
-                var dates = jQuery('#periodpickerstart').periodpicker('value');
-
-                // dates[0] dates[1]
-
-                // console.log(dates[0].toISOString().slice(0,10));
-
-                // console.log(dates[0].toLocaleDateString());
-
-                // var y = dates[0].getFullYear();  
-                // var m = dates[0].getMonth() + 1;  
-                // m = m < 10 ? '0' + m : m;  
-                // var d = dates[0].getDate();  
-                // d = d < 10 ? ('0' + d) : d;
-                // console.log(y + '-' + m + '-' + d);
-
-            }
-        });
 
 
 
-        jQuery('#periodpickerstart').periodpicker('value', '2016/03/12');
-
-
-
-        var myChart = echarts.init(document.getElementById('main2'));
+        var myChart = echarts.init(document.getElementById('main1'));
 
         this.state = {
             myChart: myChart,
@@ -73,7 +32,7 @@ export default class Ranking extends React.Component {
                 var x = []
                 var res = [];
                 var date = [];
-                var len = 30;
+                var len = 7;
                 while (len--) {
                     res.unshift(0);
                     date.unshift('');
@@ -86,7 +45,7 @@ export default class Ranking extends React.Component {
 
         this.onChart(myChart,false,XD);
         this.state.myChart.clear();
-        this.accessChange(30);
+        this.accessChange(7);
 
     }
 
@@ -108,7 +67,6 @@ export default class Ranking extends React.Component {
                 toolbox: {
                     show : true,
                     feature : {
-                        dataView : {show: true, readOnly: false},
                         magicType : {show: true, type: ['line', 'bar']},
                         restore : {show: true},
                         saveAsImage : {show: true}
@@ -129,7 +87,7 @@ export default class Ranking extends React.Component {
                 series : [
                     {
                         name:this.state.legendNames[0],
-                        type:'bar',
+                        type:'line',
                         data: XD[0],
                         markPoint : {
                             data : [
@@ -165,6 +123,13 @@ export default class Ranking extends React.Component {
 
     }
 
+    onClickDays(even,type){
+        this.state.myChart.clear(); 
+        var num = even.target.value;
+        console.log(num);
+        this.accessChange(num);
+    }
+
     render() {
 
         return (
@@ -194,14 +159,14 @@ export default class Ranking extends React.Component {
                     <div className="chart">
                         <div className="date_check">
                             <div className="select_data1">
-                                <select>
-                                    <option>最近30天</option>
-                                    <option>最近60天</option>
+                                <select onChange={this.onClickDays.bind(this)} ref='select'>
+                                    <option value='7'>最近7天</option>
+                                    <option value='30'>最近30天</option>
+                                    <option value='60'>最近60天</option>
                                 </select>
                             </div>
                             <div className="dateTime">
                                 <span>
-                                    <input type="text" id="periodpickerstart"/>
                                 </span>
                             </div>
                             <div className="title">

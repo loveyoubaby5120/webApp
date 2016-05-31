@@ -37,6 +37,8 @@ export default class Bd_more extends React.Component {
                     limitNum: _this.state.limitNum,
                     gzh_id: _this.state.gzh_id
                 });
+
+
                 var options = [];
                 var num = _this.state.nodes.length;
                 datas.forEach(function(data,index){
@@ -80,7 +82,7 @@ export default class Bd_more extends React.Component {
                     var div6 = React.createElement('div',null,'--');
                     var td6 = React.createElement('td',{className:'text'},div6);
                     
-                    var div7 = React.createElement('div',null,'--');
+                    var div7 = React.createElement('div',null,data.w_index);
                     var td7 = React.createElement('td',{className:'text'},div7);
                     
                     // var div8 = React.createElement('div',null,'--');
@@ -136,7 +138,7 @@ export default class Bd_more extends React.Component {
                             <th className="w_15"><div><p className="">微信账号</p></div></th>
                             <th className="w_15"><div><p className="">粉丝黏性</p></div></th>
                             <th className="w_15"><div><p className="">增长潜力</p></div></th>
-                            <th className="w_20"><div><p className="">粉丝活跃度</p></div></th>
+                            <th className="w_20"><div><p className="">影响指数</p></div></th>
                             <th className="w_15"><div><p className="">查看详细</p></div></th>
                             <th className="w_2"></th>
                         </tr>

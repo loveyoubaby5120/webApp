@@ -12,33 +12,6 @@ export default class Chart extends React.Component {
 
     componentDidMount(){
 
-        jQuery('#periodpickerstart2').periodpicker({
-            ang: 'zh-cn',
-            norange: false, // use only one value
-            cells: [1, 2], // show only one month
-            resizeButton: true, // deny resize picker
-            fullsizeButton: true,
-            fullsizeOnDblClick: true,
-
-            clearButtonInButton:true,
-            timepicker: false, // use timepicker
-            timepickerOptions: {
-                hours: true,
-                minutes: true,
-                seconds: false,
-                ampm: true
-            },
-             onOkButtonClick: function () {
-                var dates = jQuery('#periodpickerstart').periodpicker('value');
-                // dates[0] dates[1]
-                console.log(dates[0].toISOString().slice(0,10));
-
-            }
-
-        });
-
-
-        jQuery('#periodpickerstart2').periodpicker('value', '2016/03/12');
 
         var myChart = echarts.init(document.getElementById('main2'));
 
@@ -53,7 +26,7 @@ export default class Chart extends React.Component {
                 var x = []
                 var res = [];
                 var date = [];
-                var len = 30;
+                var len = 7;
                 while (len--) {
                     res.unshift(0);
                     date.unshift('');
@@ -67,7 +40,7 @@ export default class Chart extends React.Component {
         // this.onChart(myChart,false,[[0,0,0,0,0,0,0,0,0,0,0,0],['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']]);
         this.onChart(myChart,false,XD);
         this.state.myChart.clear();
-        this.accessChange(this.state.type,30);
+        this.accessChange(this.state.type,7);
 
        
     }
@@ -91,7 +64,6 @@ export default class Chart extends React.Component {
                 toolbox: {
                     show : true,
                     feature : {
-                        dataView : {show: true, readOnly: false},
                         magicType : {show: true, type: ['line', 'bar']},
                         restore : {show: true},
                         saveAsImage : {show: true}
@@ -205,13 +177,13 @@ export default class Chart extends React.Component {
                 <div className="date_check">
                     <div className="select_data1">
                         <select onChange={this.onClickDays.bind(this)} ref='select'>
+                            <option value='7'>最近7天</option>
                             <option value='30'>最近30天</option>
                             <option value='60'>最近60天</option>
                         </select>
                     </div>
                     <div className="dateTime">
                         <span>
-                             <input type="text" id="periodpickerstart2"/>
                         </span>
                     </div>
                 </div>
@@ -219,7 +191,6 @@ export default class Chart extends React.Component {
                     <li className={this.state.type==1 ? "item first active" : "item first"} onClick={this.onClick.bind(this,1,'总阅读时')}><a href="javascript:;">总阅读数</a></li>
                     <li className={this.state.type==2 ? "item active" : "item"} onClick={this.onClick.bind(this,2,'头条阅读数')}><a href="javascript:;">头条阅读数</a></li>
                     <li className={this.state.type==3 ? "item active" : "item"} onClick={this.onClick.bind(this,3,'平均阅读数')}><a href="javascript:;">平均阅读数</a></li>
-                    <li className={this.state.type==4 ? "item active" : "item"} onClick={this.onClick.bind(this,4,'影响力指数')}><a href="javascript:;">影响力指数</a></li>
                     <li className={this.state.type==5 ? "item active" : "item"} onClick={this.onClick.bind(this,5,'发文数')}><a href="javascript:;">发文数</a></li>
                     <li className={this.state.type==6 ? "item active" : "item"} onClick={this.onClick.bind(this,6,'预测粉丝数')}><a href="javascript:;">预测粉丝数</a></li>
                     <li className={this.state.type==7 ? "item active" : "item"} onClick={this.onClick.bind(this,7,'预测转发数')}><a href="javascript:;">预测转发数</a></li>

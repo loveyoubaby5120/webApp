@@ -40,12 +40,12 @@ export default class Statistics extends React.Component {
                         <li className="xx"></li>
                         <li className="item">
                             <div className="num sjx2">{this.state.datas.ps}</div>
-                            <div className="title">发布次数</div>
+                            <div className="title">发文篇数</div>
                         </li>
                         <li className="xx"></li>
                         <li className="item">
                             <div className="num sjx3">{this.state.datas.sw}</div>
-                            <div className="title">10+发布</div>
+                            <div className="title">10w+发布</div>
                         </li>
                         <li className="xx"></li>
                         <li className="item last">

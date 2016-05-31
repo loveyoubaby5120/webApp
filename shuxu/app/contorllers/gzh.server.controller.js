@@ -7,40 +7,73 @@ var connection = mysqldb();
 c = wrapper(connection);
 // p = wrapper(pool);
 
-// Date.prototype.format = function (format) {
-//     var date = {
-//         "M+": this.getMonth() + 1,
-//         "d+": this.getDate(),
-//         "h+": this.getHours(),
-//         "m+": this.getMinutes(),
-//         "s+": this.getSeconds(),
-//         "q+": Math.floor((this.getMonth() + 3) / 3),
-//         "S+": this.getMilliseconds()
-//     };
-//     if (/(y+)/i.test(format)) {
-//         format = format.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length));
-//     }
-//     for (var k in date) {
-//         if (new RegExp("(" + k + ")").test(format)) {
-//             format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? date[k] : ("00" + date[k]).substr(("" + date[k]).length));
-//         }
-//     }
-//     return format;
-// };
+Date.prototype.format = function (format) {
+    var date = {
+        "M+": this.getMonth() + 1,
+        "d+": this.getDate(),
+        "h+": this.getHours(),
+        "m+": this.getMinutes(),
+        "s+": this.getSeconds(),
+        "q+": Math.floor((this.getMonth() + 3) / 3),
+        "S+": this.getMilliseconds()
+    };
+    if (/(y+)/i.test(format)) {
+        format = format.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length));
+    }
+    for (var k in date) {
+        if (new RegExp("(" + k + ")").test(format)) {
+            format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? date[k] : ("00" + date[k]).substr(("" + date[k]).length));
+        }
+    }
+    return format;
+};
 
-// Date.prototype.timestamp = function(v){
-//     if (/^(-)?\d{1,10}$/.test(v)) {
-//         v = v * 1000;
-//     } else if (/^(-)?\d{1,13}$/.test(v)) {
-//         v = v * 1;
-//     } else {
-//         console.log("时间戳格式不正确");
-//         return;
-//     }
-//     var dateObj = new Date(v);
-//     if (dateObj.format('yyyy') == "NaN") { /*alert("时间戳格式不正确");*/return; }
-//     return dateObj;
-// }
+Date.prototype.timestamp = function(v){
+    if (/^(-)?\d{1,10}$/.test(v)) {
+        v = v * 1000;
+    } else if (/^(-)?\d{1,13}$/.test(v)) {
+        v = v * 1;
+    } else {
+        console.log("时间戳格式不正确");
+        return;
+    }
+    var dateObj = new Date(v);
+    if (dateObj.format('yyyy') == "NaN") { /*alert("时间戳格式不正确");*/return; }
+    return dateObj;
+}
+
+
+
+
+function GetDateDiff(startTime, endTime, diffType) {
+    //将xxxx-xx-xx的时间格式，转换为 xxxx/xx/xx的格式 
+    startTime = startTime.replace(/\-/g, "/");
+    endTime = endTime.replace(/\-/g, "/");
+
+    //将计算间隔类性字符转换为小写
+    diffType = diffType.toLowerCase();
+    var sTime = new Date(startTime);      //开始时间
+    var eTime = new Date(endTime);  //结束时间
+    //作为除数的数字
+    var divNum = 1;
+    switch (diffType) {
+        case "second":
+            divNum = 1000;
+            break;
+        case "minute":
+            divNum = 1000 * 60;
+            break;
+        case "hour":
+            divNum = 1000 * 3600;
+            break;
+        case "day":
+            divNum = 1000 * 3600 * 24;
+            break;
+        default:
+            break;
+    }
+    return parseInt((eTime.getTime() - sTime.getTime()) / parseInt(divNum));
+}
 
 
 
@@ -58,15 +91,15 @@ module.exports = {
 		this.body = rows;
 	},
 	gzh_profile_list: function *(next){
-		// var sql = 'select gzh_profile.*,e.* from gzh_profile inner join (select DISTINCT * from gzh_rank as a,(select max(time) as RMaxtime from gzh_rank group by rank) as b where a.time=b.RMaxtime) e on gzh_profile.id=e.gzh_id where type='+this.query.gzh_id+' order by e.rank';
 		var sql = ``;
 		if(this.query.limitNum && isNaN(this.query.limitNum)){
-			sql = `call gzh_info("*,max(time)"," and type = ${this.query.gzh_id} group by id","","rank","")`;
+			sql = `call gzh_info("*"," and type = ${this.query.gzh_id} and time=maxTime group by id","","rank","")`;
 		}
 		else{
-			// sql += ' limit '+this.query.limitNum;
-			sql = `call gzh_info("*,max(time)"," and type = ${this.query.gzh_id} group by id","${this.query.limitNum}","rank","")`;
+			sql = `call gzh_info(""," and type = ${this.query.gzh_id} and time=maxTime group by id","${this.query.limitNum}","rank","")`;
 		}
+
+		console.log(sql);
 		
 		var rows = yield c.query(sql);
 		this.body = rows[0];
@@ -101,21 +134,23 @@ module.exports = {
 	ranking_info: function *(next){
 		var array = [];
 		var dateArray = [];
-		var zd = `case when sum(read_num) then sum(read_num) else 0 end as sum`;
+		var zd = ``;
 		var tj = ` and gzh_id=${this.query.gzh_id}`;
 
 		var daysNum = this.query.days;
 
 
 		var ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(dateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(dateTime) group by year(dateTime),month(dateTime),day(dateTime)`;
-		var zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
-		var sql = `call gzh_info("${zzd}","${ztj}","","rank","")`;
+		var sql = `call doSql("${zd}","${ztj}","","time","desc","gzh_profile_rank_influence")`;
 		var rows = yield c.query(sql);
 		for(var i =rows[0].length-1; i>=0;i--){
-			dateArray.push(rows[0][i].date);
-			array.push(rows[0][i].rank);
+			dateArray.push(rows[0][i].dateTime);
+			array.push(rows[0][i].w_index);
 			
 		}
+
+
+		
 
 
 		this.body = [array,dateArray];
@@ -255,48 +290,21 @@ module.exports = {
 		var ztj = ``;
 		var zzd = ``;
 		var daysNum = this.query.days;
-		// for(var i =1;i<=daysNum;i++){
-		// 	if(index=='other'){
-		// 		array.push(0);
-		// 		dateArray.push(rows[0][0].date);
-		// 		continue;
-		// 	}
-		// 	ztj = tj +` and date_sub(curdate(), INTERVAL 30 DAY) <= date(dateTime) and date_sub(curdate(), INTERVAL ${i} DAY) >= date(dateTime)`;
-		// 	zzd = zd +`,from_unixtime(max(pub_time),'%Y-%m-%d') as date`;
-		// 	var sql = `call art_info("${zzd}","${ztj}","","","desc")`;
-		// 	var rows = yield c.query(sql);
-		// 	dateArray.push(rows[0][0].date);
-		// 	if(index=='sum'){
-		// 		array.push(rows[0][0].sum);
-		// 	}
-		// 	else if(index=='count'){
-		// 		array.push(rows[0][0].count);
-		// 	}
-		// 	else if(index=='avg'){
-		// 		array.push(rows[0][0].sum ? Math.floor(rows[0][0].sum/rows[0][0].count) : '0');
-		// 	}
-		// 	else if(index=='other'){
-		// 		array.push(0);
-		// 	}
-		// 	console.log(i);
-		// }
-
 
 		ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(dateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(dateTime) group by year(dateTime),month(dateTime),day(dateTime)`;
 		zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
 		var sql = `call art_info("${zzd}","${ztj}","","","desc")`;
-		console.log(sql);
 		var rows = yield c.query(sql);
 		var countDay=0,sumDay=0;
 		for(var i =rows[0].length-1; i>=0;i--){
 			dateArray.push(rows[0][i].date);
 
 			if(rows[0][i].sum){
-				sumDay += rows[0][i].sum;
+				// sumDay += rows[0][i].sum;
 				sumDay = rows[0][i].sum;
 			}
 			if(rows[0][i].count){
-				countDay += rows[0][i].count;
+				// countDay += rows[0][i].count;
 				countDay = rows[0][i].count;
 			}
 			if(index=='sum'){
@@ -307,7 +315,6 @@ module.exports = {
 			}
 			else if(index=='avg'){
 				array.push(sumDay ? Math.floor(sumDay/countDay) : '0');
-				// array.push(rows[0][0].sum ? Math.floor(rows[0][0].sum/rows[0][0].count) : '0');
 			}
 			else if(index=='other'){
 				array.push(0);
@@ -327,7 +334,29 @@ module.exports = {
 		// 		dateArray.unshift(new Date(new Date(dateArray[0]).getTime()-1000*60*60*24).toISOString().slice(0,10));
 		// 	}
 		// }
+		
 
+		var days = GetDateDiff(dateArray[0],dateArray[dateArray.length-1],'day');
+		if(days>dateArray.length){
+			var dateA = [];
+			var arrayA = [];
+			for(var i = 0; i<days; i++){
+				var n = GetDateDiff(dateArray[i],dateArray[(i+1)],'day');
+				
+				if(n>1){
+					var d = new Date(new Date(dateArray[0]).getTime()-1000*60*60*24).toISOString().slice(0,10);
+					for(var j = 0;j<n-1;j++){
+						dateA.push(d);
+						arrayA.push(0);
+					}
+				}
+
+				dateA.push(dateArray[i]);
+				arrayA.push(array[i]);
+			}
+			dateArray = dateA;
+			array = arrayA;
+		}
 
 		this.body = [array,dateArray];
 	},
@@ -365,7 +394,7 @@ module.exports = {
 		json.sw = rows3[0][0].sw;
 		json.count = rows4[0][0].count;
 		if(rows4[0][0].maxRead=='100001')
-			json.maxRead = "10+";
+			json.maxRead = "10w+";
 		else
 			json.maxRead = rows4[0][0].maxRead;
 		json.sumRead = rows4[0][0].sumRead;

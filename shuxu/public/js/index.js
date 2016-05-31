@@ -35,7 +35,6 @@ export class App extends React.Component {
         <Mask show={this.state.show} callbackParent={this.onShow.bind(this)}></Mask>
         <Top></Top>
         <Header show={this.state.show} callbackParent={this.onShow.bind(this)}></Header>
-        <Date></Date>
         <Content></Content>
         <Footer></Footer>
       </div>

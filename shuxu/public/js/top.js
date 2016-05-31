@@ -11,8 +11,6 @@ export default class Top extends React.Component {
                 <span className="left"></span><span className="right">微信公众号排行榜</span>
             </div>
             <div className="right_div">
-                <input type="text" placeholder="请输入微信公众号id,名称" />
-                <i></i>
             </div>
         </div>
     </div>
