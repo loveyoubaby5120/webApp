@@ -82,15 +82,15 @@ export default class Statistics extends React.Component {
                                 </li>
                                 <li className="item yds">
                                     <p className="title">阅读数</p>
-                                    <p className="introduce">{Math.floor(this.state.datas.sumRead/this.state.datas.count)}</p>
+                                    <p className="introduce">{Math.floor(this.state.datas.sumRead/this.state.datas.count) ? Math.floor(this.state.datas.sumRead/this.state.datas.count) : 0}</p>
                                 </li>
                                 <li className="item ttyds">
                                     <p className="title">头条阅读数</p>
-                                    <p className="introduce">{Math.floor(this.state.datas.ttSumRead/this.state.datas.ttCount)}</p>
+                                    <p className="introduce">{Math.floor(this.state.datas.ttSumRead/this.state.datas.ttCount) ? Math.floor(this.state.datas.ttSumRead/this.state.datas.ttCount) : 0}</p>
                                 </li>
                                 <li className="item dzs">
                                     <p className="title">点赞数</p>
-                                    <p className="introduce">{Math.floor(this.state.datas.sumZan/this.state.datas.count)}</p>
+                                    <p className="introduce">{Math.floor(this.state.datas.sumZan/this.state.datas.count) ? Math.floor(this.state.datas.sumZan/this.state.datas.count) : 0}</p>
                                 </li>
                             </ol>
                         </li>

@@ -58,16 +58,18 @@ module.exports = {
 		this.body = rows;
 	},
 	gzh_profile_list: function *(next){
-		var sql = 'select * from gzh_profile where type='+this.query.gzh_id;
+		// var sql = 'select gzh_profile.*,e.* from gzh_profile inner join (select DISTINCT * from gzh_rank as a,(select max(time) as RMaxtime from gzh_rank group by rank) as b where a.time=b.RMaxtime) e on gzh_profile.id=e.gzh_id where type='+this.query.gzh_id+' order by e.rank';
+		var sql = ``;
 		if(this.query.limitNum && isNaN(this.query.limitNum)){
-
+			sql = `call gzh_info("*,max(time)"," and type = ${this.query.gzh_id} group by id","","rank","")`;
 		}
 		else{
-			sql += ' limit '+this.query.limitNum;
+			// sql += ' limit '+this.query.limitNum;
+			sql = `call gzh_info("*,max(time)"," and type = ${this.query.gzh_id} group by id","${this.query.limitNum}","rank","")`;
 		}
 		
 		var rows = yield c.query(sql);
-		this.body = rows;
+		this.body = rows[0];
 	},
 	article_profile_list: function *(next){
 		var sql = 'select *,from_unixtime(pub_time,"%Y-%m-%d") as dateTime from article_profile limit 10';
@@ -97,9 +99,26 @@ module.exports = {
 		this.body = rows;
 	},
 	ranking_info: function *(next){
-		var sql = 'select * from info where id='+this.query.gzh_id;
+		var array = [];
+		var dateArray = [];
+		var zd = `case when sum(read_num) then sum(read_num) else 0 end as sum`;
+		var tj = ` and gzh_id=${this.query.gzh_id}`;
+
+		var daysNum = this.query.days;
+
+
+		var ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(dateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(dateTime) group by year(dateTime),month(dateTime),day(dateTime)`;
+		var zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
+		var sql = `call gzh_info("${zzd}","${ztj}","","rank","")`;
 		var rows = yield c.query(sql);
-		this.body = rows;
+		for(var i =rows[0].length-1; i>=0;i--){
+			dateArray.push(rows[0][i].date);
+			array.push(rows[0][i].rank);
+			
+		}
+
+
+		this.body = [array,dateArray];
 	},
 	chart_info: function *(next){
 		var array = [];
@@ -266,6 +285,7 @@ module.exports = {
 		ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(dateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(dateTime) group by year(dateTime),month(dateTime),day(dateTime)`;
 		zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
 		var sql = `call art_info("${zzd}","${ztj}","","","desc")`;
+		console.log(sql);
 		var rows = yield c.query(sql);
 		var countDay=0,sumDay=0;
 		for(var i =rows[0].length-1; i>=0;i--){
@@ -325,10 +345,10 @@ module.exports = {
 		var rows3 = yield c.query(sql3);
 
 
-		sql4 = `call art_info('count(*) count,Max(read_num) maxRead,sum(read_num) sumRead,sum(zan_num) sumZan',' and gzh_id=`+this.query.gzh_id+`','','pub_time','desc')`;
+		sql4 = `call art_info('count(*) count,case when Max(read_num) then Max(read_num) else 0 end as maxRead,case when sum(read_num) then sum(read_num) else 0 end as sumRead,case when sum(zan_num) then sum(zan_num) else 0 end as sumZan',' and gzh_id=`+this.query.gzh_id+`','','pub_time','desc')`;
 		var rows4 = yield c.query(sql4);
 
-		sql5 = `call art_info('count(*) ttCount,sum(read_num) ttSumRead',' and gzh_id=`+this.query.gzh_id+` and url like "%idx=1%"','','pub_time','desc')`;
+		sql5 = `call art_info('count(*) ttCount,case when sum(read_num) then sum(read_num) else 0 end as ttSumRead',' and gzh_id=`+this.query.gzh_id+` and url like "%idx=1%"','','pub_time','desc')`;
 		var rows5 = yield c.query(sql5);
 
 		list.push(rows);
