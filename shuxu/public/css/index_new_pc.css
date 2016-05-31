@@ -263,6 +263,8 @@
     background: #dce2e2;
     padding: 3px 15px;
     border-radius: 15px;
+    position: relative;
+    z-index: 100;
 }
 
 .table tbody tr .last{
