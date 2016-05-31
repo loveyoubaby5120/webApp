@@ -99,7 +99,6 @@ module.exports = {
 			sql = `call gzh_info(""," and type = ${this.query.gzh_id} and time=maxTime group by id","${this.query.limitNum}","rank","")`;
 		}
 
-		console.log(sql);
 		
 		var rows = yield c.query(sql);
 		this.body = rows[0];
@@ -289,8 +288,7 @@ module.exports = {
 
 		var ztj = ``;
 		var zzd = ``;
-		var daysNum = this.query.days;
-
+		var daysNum = parseInt(this.query.days)+1;
 		ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(dateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(dateTime) group by year(dateTime),month(dateTime),day(dateTime)`;
 		zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
 		var sql = `call art_info("${zzd}","${ztj}","","","desc")`;
@@ -341,10 +339,15 @@ module.exports = {
 			var dateA = [];
 			var arrayA = [];
 			for(var i = 0; i<days; i++){
+				if(i==days-1){
+					dateA.push(dateArray[i]);
+					arrayA.push(array[i]);
+					continue;
+				}
 				var n = GetDateDiff(dateArray[i],dateArray[(i+1)],'day');
 				
 				if(n>1){
-					var d = new Date(new Date(dateArray[0]).getTime()-1000*60*60*24).toISOString().slice(0,10);
+					var d = new Date(new Date(dateArray[i]).getTime()-1000*60*60*24).toISOString().slice(0,10);
 					for(var j = 0;j<n-1;j++){
 						dateA.push(d);
 						arrayA.push(0);
@@ -358,6 +361,30 @@ module.exports = {
 			array = arrayA;
 		}
 
+		var dateA = [];
+		var arrayA = [];
+		var dNum = array.length;
+		if(array.length==daysNum){
+			dNum = 30;
+		}
+		for(var i =0; i<dNum;i++){
+			if(dNum==30){
+				dateA.push(dateArray[i+1]);
+				arrayA.push((array[i+1]-array[i]));
+				continue;
+			}
+			if(i==0){
+				dateA.push(dateArray[i]);
+				arrayA.push((array[i+1]-0));
+				continue;
+			}
+			dateA.push(dateArray[i]);
+			arrayA.push((array[i]-array[i-1]));
+			
+			
+		}
+
+		// this.body = [arrayA,dateA];
 		this.body = [array,dateArray];
 	},
 	statistics_info: function *(next){
