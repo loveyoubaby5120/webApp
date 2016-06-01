@@ -278,7 +278,7 @@ module.exports = {
 		ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(dateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(dateTime) group by year(dateTime),month(dateTime),day(dateTime)`;
 		zzd = zd +`,from_unixtime(time,'%Y-%m-%d') as date`;
 		var sql = `call doSql("${zzd}","${ztj}","","dateTime","desc","art_read_zan")`;
-		console.log(sql);
+
 		var rows = yield c.query(sql);
 		var countDay=0,sumDay=0;
 		for(var i =rows[0].length-1; i>=0;i--){
