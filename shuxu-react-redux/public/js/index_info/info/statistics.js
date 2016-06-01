@@ -12,10 +12,25 @@ export default class Statistics extends React.Component {
 
     }
 
+
+    componentWillReceiveProps(newProps){
+        var _this = this;
+        $.ajax({
+            url: '/statistics_info?gzh_id='+this.props.gzh_id+'&day='+newProps.day,
+            async:true,
+            success: function(data){
+                _this.setState({
+                    datas: data
+                });
+
+            }
+        })
+    }
+
     componentDidMount(){
         var _this = this;
         $.ajax({
-            url: '/statistics_info?gzh_id='+this.props.gzh_id,
+            url: '/statistics_info?gzh_id='+this.props.gzh_id+'&day='+this.props.day,
             async:true,
             success: function(data){
                 _this.setState({
@@ -40,12 +55,12 @@ export default class Statistics extends React.Component {
                         <li className="xx"></li>
                         <li className="item">
                             <div className="num sjx2">{this.state.datas.ps}</div>
-                            <div className="title">发布次数</div>
+                            <div className="title">发文篇数</div>
                         </li>
                         <li className="xx"></li>
                         <li className="item">
                             <div className="num sjx3">{this.state.datas.sw}</div>
-                            <div className="title">10+发布</div>
+                            <div className="title">10w+发布</div>
                         </li>
                         <li className="xx"></li>
                         <li className="item last">
@@ -82,15 +97,15 @@ export default class Statistics extends React.Component {
                                 </li>
                                 <li className="item yds">
                                     <p className="title">阅读数</p>
-                                    <p className="introduce">{Math.floor(this.state.datas.sumRead/this.state.datas.count)}</p>
+                                    <p className="introduce">{Math.floor(this.state.datas.sumRead/this.state.datas.count) ? Math.floor(this.state.datas.sumRead/this.state.datas.count) : 0}</p>
                                 </li>
                                 <li className="item ttyds">
                                     <p className="title">头条阅读数</p>
-                                    <p className="introduce">{Math.floor(this.state.datas.ttSumRead/this.state.datas.ttCount)}</p>
+                                    <p className="introduce">{Math.floor(this.state.datas.ttSumRead/this.state.datas.ttCount) ? Math.floor(this.state.datas.ttSumRead/this.state.datas.ttCount) : 0}</p>
                                 </li>
                                 <li className="item dzs">
                                     <p className="title">点赞数</p>
-                                    <p className="introduce">{Math.floor(this.state.datas.sumZan/this.state.datas.count)}</p>
+                                    <p className="introduce">{Math.floor(this.state.datas.sumZan/this.state.datas.count) ? Math.floor(this.state.datas.sumZan/this.state.datas.count) : 0}</p>
                                 </li>
                             </ol>
                         </li>

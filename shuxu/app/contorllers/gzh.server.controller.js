@@ -149,9 +149,6 @@ module.exports = {
 		}
 
 
-		
-
-
 		this.body = [array,dateArray];
 	},
 	chart_info: function *(next){
@@ -177,16 +174,17 @@ module.exports = {
 			index = `avg`;
 		}
 
-		if(this.query.type==4){
-			zd = ``;
-			tj = ``;
-			index = `other`;
-		}
 
-		if(this.query.type==5){
+		if(this.query.type==4){
 			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(id) as count`;
 			tj = ` and gzh_id=${this.query.gzh_id}`;
 			index = `count`;
+		}
+
+		if(this.query.type==5){
+			zd = ``;
+			tj = ``;
+			index = `other`;
 		}
 
 		if(this.query.type==6){
@@ -196,12 +194,6 @@ module.exports = {
 		}
 
 		if(this.query.type==7){
-			zd = ``;
-			tj = ``;
-			index = `other`;
-		}
-
-		if(this.query.type==8){
 			zd = `case when sum(zan_num) then sum(zan_num) else 0 end as sum,count(id) as count`;
 			tj = `and gzh_id=${this.query.gzh_id}`;
 			index = `sum`;
@@ -256,16 +248,17 @@ module.exports = {
 			index = `avg`;
 		}
 
-		if(this.query.type==4){
-			zd = ``;
-			tj = ``;
-			index = `other`;
-		}
 
-		if(this.query.type==5){
+		if(this.query.type==4){
 			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(id) as count`;
 			tj = ` and gzh_id=${this.query.gzh_id}`;
 			index = `count`;
+		}
+
+		if(this.query.type==5){
+			zd = ``;
+			tj = ``;
+			index = `other`;
 		}
 
 		if(this.query.type==6){
@@ -275,12 +268,6 @@ module.exports = {
 		}
 
 		if(this.query.type==7){
-			zd = ``;
-			tj = ``;
-			index = `other`;
-		}
-
-		if(this.query.type==8){
 			zd = `case when sum(zan_num) then sum(zan_num) else 0 end as sum,count(id) as count`;
 			tj = `and gzh_id=${this.query.gzh_id}`;
 			index = `sum`;
@@ -290,8 +277,9 @@ module.exports = {
 		var zzd = ``;
 		var daysNum = parseInt(this.query.days)+1;
 		ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(dateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(dateTime) group by year(dateTime),month(dateTime),day(dateTime)`;
-		zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
-		var sql = `call art_info("${zzd}","${ztj}","","","desc")`;
+		zzd = zd +`,from_unixtime(time,'%Y-%m-%d') as date`;
+		var sql = `call doSql("${zzd}","${ztj}","","dateTime","desc","art_read_zan")`;
+		console.log(sql);
 		var rows = yield c.query(sql);
 		var countDay=0,sumDay=0;
 		for(var i =rows[0].length-1; i>=0;i--){
@@ -324,15 +312,6 @@ module.exports = {
 			dateArray.push(new Date().toISOString().slice(0,10));
 		}
 
-
-		// if(array.length<daysNum){
-		// 	var maxNum = daysNum-array.length;
-		// 	for(var i = 0;i<maxNum;i++){
-		// 		array.unshift(array[0]);
-		// 		dateArray.unshift(new Date(new Date(dateArray[0]).getTime()-1000*60*60*24).toISOString().slice(0,10));
-		// 	}
-		// }
-		
 
 		var days = GetDateDiff(dateArray[0],dateArray[dateArray.length-1],'day');
 		if(days>dateArray.length){
@@ -375,7 +354,7 @@ module.exports = {
 			}
 			if(i==0){
 				dateA.push(dateArray[i]);
-				arrayA.push((array[i+1]-0));
+				arrayA.push((array[i]));
 				continue;
 			}
 			dateA.push(dateArray[i]);

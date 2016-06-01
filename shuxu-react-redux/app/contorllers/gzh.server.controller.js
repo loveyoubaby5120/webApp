@@ -7,40 +7,73 @@ var connection = mysqldb();
 c = wrapper(connection);
 // p = wrapper(pool);
 
-// Date.prototype.format = function (format) {
-//     var date = {
-//         "M+": this.getMonth() + 1,
-//         "d+": this.getDate(),
-//         "h+": this.getHours(),
-//         "m+": this.getMinutes(),
-//         "s+": this.getSeconds(),
-//         "q+": Math.floor((this.getMonth() + 3) / 3),
-//         "S+": this.getMilliseconds()
-//     };
-//     if (/(y+)/i.test(format)) {
-//         format = format.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length));
-//     }
-//     for (var k in date) {
-//         if (new RegExp("(" + k + ")").test(format)) {
-//             format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? date[k] : ("00" + date[k]).substr(("" + date[k]).length));
-//         }
-//     }
-//     return format;
-// };
+Date.prototype.format = function (format) {
+    var date = {
+        "M+": this.getMonth() + 1,
+        "d+": this.getDate(),
+        "h+": this.getHours(),
+        "m+": this.getMinutes(),
+        "s+": this.getSeconds(),
+        "q+": Math.floor((this.getMonth() + 3) / 3),
+        "S+": this.getMilliseconds()
+    };
+    if (/(y+)/i.test(format)) {
+        format = format.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length));
+    }
+    for (var k in date) {
+        if (new RegExp("(" + k + ")").test(format)) {
+            format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? date[k] : ("00" + date[k]).substr(("" + date[k]).length));
+        }
+    }
+    return format;
+};
 
-// Date.prototype.timestamp = function(v){
-//     if (/^(-)?\d{1,10}$/.test(v)) {
-//         v = v * 1000;
-//     } else if (/^(-)?\d{1,13}$/.test(v)) {
-//         v = v * 1;
-//     } else {
-//         console.log("时间戳格式不正确");
-//         return;
-//     }
-//     var dateObj = new Date(v);
-//     if (dateObj.format('yyyy') == "NaN") { /*alert("时间戳格式不正确");*/return; }
-//     return dateObj;
-// }
+Date.prototype.timestamp = function(v){
+    if (/^(-)?\d{1,10}$/.test(v)) {
+        v = v * 1000;
+    } else if (/^(-)?\d{1,13}$/.test(v)) {
+        v = v * 1;
+    } else {
+        console.log("时间戳格式不正确");
+        return;
+    }
+    var dateObj = new Date(v);
+    if (dateObj.format('yyyy') == "NaN") { /*alert("时间戳格式不正确");*/return; }
+    return dateObj;
+}
+
+
+
+
+function GetDateDiff(startTime, endTime, diffType) {
+    //将xxxx-xx-xx的时间格式，转换为 xxxx/xx/xx的格式 
+    startTime = startTime.replace(/\-/g, "/");
+    endTime = endTime.replace(/\-/g, "/");
+
+    //将计算间隔类性字符转换为小写
+    diffType = diffType.toLowerCase();
+    var sTime = new Date(startTime);      //开始时间
+    var eTime = new Date(endTime);  //结束时间
+    //作为除数的数字
+    var divNum = 1;
+    switch (diffType) {
+        case "second":
+            divNum = 1000;
+            break;
+        case "minute":
+            divNum = 1000 * 60;
+            break;
+        case "hour":
+            divNum = 1000 * 3600;
+            break;
+        case "day":
+            divNum = 1000 * 3600 * 24;
+            break;
+        default:
+            break;
+    }
+    return parseInt((eTime.getTime() - sTime.getTime()) / parseInt(divNum));
+}
 
 
 
@@ -58,16 +91,17 @@ module.exports = {
 		this.body = rows;
 	},
 	gzh_profile_list: function *(next){
-		var sql = 'select * from gzh_profile where type='+this.query.gzh_id;
+		var sql = ``;
 		if(this.query.limitNum && isNaN(this.query.limitNum)){
-
+			sql = `call gzh_info("*"," and type = ${this.query.gzh_id} and time=maxTime group by id","","rank","")`;
 		}
 		else{
-			sql += ' limit '+this.query.limitNum;
+			sql = `call gzh_info(""," and type = ${this.query.gzh_id} and time=maxTime group by id","${this.query.limitNum}","rank","")`;
 		}
+
 		
 		var rows = yield c.query(sql);
-		this.body = rows;
+		this.body = rows[0];
 	},
 	article_profile_list: function *(next){
 		var sql = 'select *,from_unixtime(pub_time,"%Y-%m-%d") as dateTime from article_profile limit 10';
@@ -97,9 +131,25 @@ module.exports = {
 		this.body = rows;
 	},
 	ranking_info: function *(next){
-		var sql = 'select * from info where id='+this.query.gzh_id;
+		var array = [];
+		var dateArray = [];
+		var zd = ``;
+		var tj = ` and gzh_id=${this.query.gzh_id}`;
+
+		var daysNum = this.query.days;
+
+
+		var ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(dateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(dateTime) group by year(dateTime),month(dateTime),day(dateTime)`;
+		var sql = `call doSql("${zd}","${ztj}","","time","desc","gzh_profile_rank_influence")`;
 		var rows = yield c.query(sql);
-		this.body = rows;
+		for(var i =rows[0].length-1; i>=0;i--){
+			dateArray.push(rows[0][i].dateTime);
+			array.push(rows[0][i].w_index);
+			
+		}
+
+
+		this.body = [array,dateArray];
 	},
 	chart_info: function *(next){
 		var array = [];
@@ -124,16 +174,17 @@ module.exports = {
 			index = `avg`;
 		}
 
-		if(this.query.type==4){
-			zd = ``;
-			tj = ``;
-			index = `other`;
-		}
 
-		if(this.query.type==5){
+		if(this.query.type==4){
 			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(id) as count`;
 			tj = ` and gzh_id=${this.query.gzh_id}`;
 			index = `count`;
+		}
+
+		if(this.query.type==5){
+			zd = ``;
+			tj = ``;
+			index = `other`;
 		}
 
 		if(this.query.type==6){
@@ -143,12 +194,6 @@ module.exports = {
 		}
 
 		if(this.query.type==7){
-			zd = ``;
-			tj = ``;
-			index = `other`;
-		}
-
-		if(this.query.type==8){
 			zd = `case when sum(zan_num) then sum(zan_num) else 0 end as sum,count(id) as count`;
 			tj = `and gzh_id=${this.query.gzh_id}`;
 			index = `sum`;
@@ -203,16 +248,17 @@ module.exports = {
 			index = `avg`;
 		}
 
-		if(this.query.type==4){
-			zd = ``;
-			tj = ``;
-			index = `other`;
-		}
 
-		if(this.query.type==5){
+		if(this.query.type==4){
 			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(id) as count`;
 			tj = ` and gzh_id=${this.query.gzh_id}`;
 			index = `count`;
+		}
+
+		if(this.query.type==5){
+			zd = ``;
+			tj = ``;
+			index = `other`;
 		}
 
 		if(this.query.type==6){
@@ -222,12 +268,6 @@ module.exports = {
 		}
 
 		if(this.query.type==7){
-			zd = ``;
-			tj = ``;
-			index = `other`;
-		}
-
-		if(this.query.type==8){
 			zd = `case when sum(zan_num) then sum(zan_num) else 0 end as sum,count(id) as count`;
 			tj = `and gzh_id=${this.query.gzh_id}`;
 			index = `sum`;
@@ -235,48 +275,22 @@ module.exports = {
 
 		var ztj = ``;
 		var zzd = ``;
-		var daysNum = this.query.days;
-		// for(var i =1;i<=daysNum;i++){
-		// 	if(index=='other'){
-		// 		array.push(0);
-		// 		dateArray.push(rows[0][0].date);
-		// 		continue;
-		// 	}
-		// 	ztj = tj +` and date_sub(curdate(), INTERVAL 30 DAY) <= date(dateTime) and date_sub(curdate(), INTERVAL ${i} DAY) >= date(dateTime)`;
-		// 	zzd = zd +`,from_unixtime(max(pub_time),'%Y-%m-%d') as date`;
-		// 	var sql = `call art_info("${zzd}","${ztj}","","","desc")`;
-		// 	var rows = yield c.query(sql);
-		// 	dateArray.push(rows[0][0].date);
-		// 	if(index=='sum'){
-		// 		array.push(rows[0][0].sum);
-		// 	}
-		// 	else if(index=='count'){
-		// 		array.push(rows[0][0].count);
-		// 	}
-		// 	else if(index=='avg'){
-		// 		array.push(rows[0][0].sum ? Math.floor(rows[0][0].sum/rows[0][0].count) : '0');
-		// 	}
-		// 	else if(index=='other'){
-		// 		array.push(0);
-		// 	}
-		// 	console.log(i);
-		// }
-
-
+		var daysNum = parseInt(this.query.days)+1;
 		ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(dateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(dateTime) group by year(dateTime),month(dateTime),day(dateTime)`;
-		zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
-		var sql = `call art_info("${zzd}","${ztj}","","","desc")`;
+		zzd = zd +`,from_unixtime(time,'%Y-%m-%d') as date`;
+		var sql = `call doSql("${zzd}","${ztj}","","dateTime","desc","art_read_zan")`;
+		console.log(sql);
 		var rows = yield c.query(sql);
 		var countDay=0,sumDay=0;
 		for(var i =rows[0].length-1; i>=0;i--){
 			dateArray.push(rows[0][i].date);
 
 			if(rows[0][i].sum){
-				sumDay += rows[0][i].sum;
+				// sumDay += rows[0][i].sum;
 				sumDay = rows[0][i].sum;
 			}
 			if(rows[0][i].count){
-				countDay += rows[0][i].count;
+				// countDay += rows[0][i].count;
 				countDay = rows[0][i].count;
 			}
 			if(index=='sum'){
@@ -287,7 +301,6 @@ module.exports = {
 			}
 			else if(index=='avg'){
 				array.push(sumDay ? Math.floor(sumDay/countDay) : '0');
-				// array.push(rows[0][0].sum ? Math.floor(rows[0][0].sum/rows[0][0].count) : '0');
 			}
 			else if(index=='other'){
 				array.push(0);
@@ -300,42 +313,78 @@ module.exports = {
 		}
 
 
-		// if(array.length<daysNum){
-		// 	var maxNum = daysNum-array.length;
-		// 	for(var i = 0;i<maxNum;i++){
-		// 		array.unshift(array[0]);
-		// 		dateArray.unshift(new Date(new Date(dateArray[0]).getTime()-1000*60*60*24).toISOString().slice(0,10));
-		// 	}
-		// }
+		var days = GetDateDiff(dateArray[0],dateArray[dateArray.length-1],'day');
+		if(days>dateArray.length){
+			var dateA = [];
+			var arrayA = [];
+			for(var i = 0; i<days; i++){
+				if(i==days-1){
+					dateA.push(dateArray[i]);
+					arrayA.push(array[i]);
+					continue;
+				}
+				var n = GetDateDiff(dateArray[i],dateArray[(i+1)],'day');
+				
+				if(n>1){
+					var d = new Date(new Date(dateArray[i]).getTime()-1000*60*60*24).toISOString().slice(0,10);
+					for(var j = 0;j<n-1;j++){
+						dateA.push(d);
+						arrayA.push(0);
+					}
+				}
 
+				dateA.push(dateArray[i]);
+				arrayA.push(array[i]);
+			}
+			dateArray = dateA;
+			array = arrayA;
+		}
 
+		var dateA = [];
+		var arrayA = [];
+		var dNum = array.length;
+		if(array.length==daysNum){
+			dNum = 30;
+		}
+		for(var i =0; i<dNum;i++){
+			if(dNum==30){
+				dateA.push(dateArray[i+1]);
+				arrayA.push((array[i+1]-array[i]));
+				continue;
+			}
+			if(i==0){
+				dateA.push(dateArray[i]);
+				arrayA.push((array[i]));
+				continue;
+			}
+			dateA.push(dateArray[i]);
+			arrayA.push((array[i]-array[i-1]));
+			
+			
+		}
+
+		// this.body = [arrayA,dateA];
 		this.body = [array,dateArray];
 	},
 	statistics_info: function *(next){
-		var list = [];
-		var sql = 'select count(*) cs from (select pub_time from article_profile where gzh_id='+this.query.gzh_id+' group by pub_time) a';
+		var query = ' and date_sub(curdate(), INTERVAL '+this.query.day+' DAY) <= date(from_unixtime(pub_time,"%Y-%m-%d")) and date_sub(curdate(), INTERVAL 1 DAY) >= date(from_unixtime(pub_time,"%Y-%m-%d"))';
+		var sql = 'select count(*) cs from (select pub_time from article_profile where gzh_id='+this.query.gzh_id+query+' group by pub_time) a';
 		var rows = yield c.query(sql);
 
 
-		var sql2 = 'select count(*) ps from article_profile where gzh_id='+this.query.gzh_id;
+		var sql2 = 'select count(*) ps from article_profile where gzh_id='+this.query.gzh_id+query;
 		var rows2 = yield c.query(sql2);
 
 
-		sql3 = `call art_info('count(*) as sw',' and gzh_id=`+this.query.gzh_id+` and read_num>=100000','','pub_time','desc')`;
+		sql3 = `call art_info('count(*) as sw',' and gzh_id=`+this.query.gzh_id+` and read_num>=100000${query}','','pub_time','desc')`;
 		var rows3 = yield c.query(sql3);
 
 
-		sql4 = `call art_info('count(*) count,Max(read_num) maxRead,sum(read_num) sumRead,sum(zan_num) sumZan',' and gzh_id=`+this.query.gzh_id+`','','pub_time','desc')`;
+		sql4 = `call art_info('count(*) count,case when Max(read_num) then Max(read_num) else 0 end as maxRead,case when sum(read_num) then sum(read_num) else 0 end as sumRead,case when sum(zan_num) then sum(zan_num) else 0 end as sumZan',' and gzh_id=`+this.query.gzh_id+`${query}','','pub_time','desc')`;
 		var rows4 = yield c.query(sql4);
 
-		sql5 = `call art_info('count(*) ttCount,sum(read_num) ttSumRead',' and gzh_id=`+this.query.gzh_id+` and url like "%idx=1%"','','pub_time','desc')`;
+		sql5 = `call art_info('count(*) ttCount,case when sum(read_num) then sum(read_num) else 0 end as ttSumRead',' and gzh_id=`+this.query.gzh_id+` and url like "%idx=1%"${query}','','pub_time','desc')`;
 		var rows5 = yield c.query(sql5);
-
-		list.push(rows);
-		list.push(rows2);
-		list.push(rows3);
-		list.push(rows4);
-		list.push(rows5);
 
 		
 		var json = {};
@@ -345,7 +394,7 @@ module.exports = {
 		json.sw = rows3[0][0].sw;
 		json.count = rows4[0][0].count;
 		if(rows4[0][0].maxRead=='100001')
-			json.maxRead = "10+";
+			json.maxRead = "10w+";
 		else
 			json.maxRead = rows4[0][0].maxRead;
 		json.sumRead = rows4[0][0].sumRead;
