@@ -388,30 +388,24 @@ module.exports = {
 		this.body = [array,dateArray];
 	},
 	statistics_info: function *(next){
-		var list = [];
-		var sql = 'select count(*) cs from (select pub_time from article_profile where gzh_id='+this.query.gzh_id+' group by pub_time) a';
+		var query = ' and date_sub(curdate(), INTERVAL '+this.query.day+' DAY) <= date(from_unixtime(pub_time,"%Y-%m-%d")) and date_sub(curdate(), INTERVAL 1 DAY) >= date(from_unixtime(pub_time,"%Y-%m-%d"))';
+		var sql = 'select count(*) cs from (select pub_time from article_profile where gzh_id='+this.query.gzh_id+query+' group by pub_time) a';
 		var rows = yield c.query(sql);
 
 
-		var sql2 = 'select count(*) ps from article_profile where gzh_id='+this.query.gzh_id;
+		var sql2 = 'select count(*) ps from article_profile where gzh_id='+this.query.gzh_id+query;
 		var rows2 = yield c.query(sql2);
 
 
-		sql3 = `call art_info('count(*) as sw',' and gzh_id=`+this.query.gzh_id+` and read_num>=100000','','pub_time','desc')`;
+		sql3 = `call art_info('count(*) as sw',' and gzh_id=`+this.query.gzh_id+` and read_num>=100000${query}','','pub_time','desc')`;
 		var rows3 = yield c.query(sql3);
 
 
-		sql4 = `call art_info('count(*) count,case when Max(read_num) then Max(read_num) else 0 end as maxRead,case when sum(read_num) then sum(read_num) else 0 end as sumRead,case when sum(zan_num) then sum(zan_num) else 0 end as sumZan',' and gzh_id=`+this.query.gzh_id+`','','pub_time','desc')`;
+		sql4 = `call art_info('count(*) count,case when Max(read_num) then Max(read_num) else 0 end as maxRead,case when sum(read_num) then sum(read_num) else 0 end as sumRead,case when sum(zan_num) then sum(zan_num) else 0 end as sumZan',' and gzh_id=`+this.query.gzh_id+`${query}','','pub_time','desc')`;
 		var rows4 = yield c.query(sql4);
 
-		sql5 = `call art_info('count(*) ttCount,case when sum(read_num) then sum(read_num) else 0 end as ttSumRead',' and gzh_id=`+this.query.gzh_id+` and url like "%idx=1%"','','pub_time','desc')`;
+		sql5 = `call art_info('count(*) ttCount,case when sum(read_num) then sum(read_num) else 0 end as ttSumRead',' and gzh_id=`+this.query.gzh_id+` and url like "%idx=1%"${query}','','pub_time','desc')`;
 		var rows5 = yield c.query(sql5);
-
-		list.push(rows);
-		list.push(rows2);
-		list.push(rows3);
-		list.push(rows4);
-		list.push(rows5);
 
 		
 		var json = {};

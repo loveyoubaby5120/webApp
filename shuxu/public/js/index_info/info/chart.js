@@ -153,6 +153,8 @@ export default class Chart extends React.Component {
         this.state.myChart.clear(); 
         var num = even.target.value;
         this.accessChange(this.state.type,num);
+        
+        this.props.callbackParent(num);
     }
 
     onClick(type,legendName){

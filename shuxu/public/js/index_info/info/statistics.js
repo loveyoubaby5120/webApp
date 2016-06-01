@@ -12,10 +12,25 @@ export default class Statistics extends React.Component {
 
     }
 
+
+    componentWillReceiveProps(newProps){
+        var _this = this;
+        $.ajax({
+            url: '/statistics_info?gzh_id='+this.props.gzh_id+'&day='+newProps.day,
+            async:true,
+            success: function(data){
+                _this.setState({
+                    datas: data
+                });
+
+            }
+        })
+    }
+
     componentDidMount(){
         var _this = this;
         $.ajax({
-            url: '/statistics_info?gzh_id='+this.props.gzh_id,
+            url: '/statistics_info?gzh_id='+this.props.gzh_id+'&day='+this.props.day,
             async:true,
             success: function(data){
                 _this.setState({
