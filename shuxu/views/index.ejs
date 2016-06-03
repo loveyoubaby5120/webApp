@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html manifest='index.appcache'>
 <head>
 	<meta charset="utf-8">
 	<title><%= title %></title>
@@ -14,6 +14,58 @@
     <script src="../lib/other/mmnt-info.js"></script>
 
     <script type="text/javascript">
+
+    if(window.applicationCache){
+        console.log("支持离线缓存");
+    }
+    else{
+        console.log("不支持离线缓存");
+    }
+
+
+    var appCache = window.applicationCache;
+    switch (appCache.status) { 
+    case appCache.UNCACHED: // UNCACHED == 0 
+        console.log('UNCACHED');
+        break; 
+    case appCache.IDLE: // IDLE == 1 
+        console.log('IDLE');
+        break; 
+    case appCache.CHECKING: // CHECKING == 2 
+        console.log('CHECKING');
+        break; 
+    case appCache.DOWNLOADING: // DOWNLOADING == 3 
+        console.log('DOWNLOADING');
+        break; 
+    case appCache.UPDATEREADY: // UPDATEREADY == 4 
+        console.log('UPDATEREADY');
+        break; 
+    case appCache.OBSOLETE: // OBSOLETE == 5 
+        console.log('OBSOLETE');
+        break; 
+    default: 
+        console.log('UKNOWN CACHE STATUS');
+        break; 
+    };
+
+    appCache.update(); // Attempt to update the user's cache.  
+    
+    if (appCache.status == window.applicationCache.UPDATEREADY) {  
+        appCache.swapCache(); // The fetch was successful, swap in the new cache.  
+    }  
+
+    window.applicationCache.addEventListener('updateready',function(e){
+        console.log(window.applicationCache.status == window.applicationCache.UPDATEREADY);
+        console.log(window.applicationCache.status);
+        console.log(window.applicationCache.UPDATEREADY);
+        if(window.applicationCache.status == window.applicationCache.UPDATEREADY){
+            window.applicationCache.swapCache();
+            
+            if(confirm("loding new?")){
+                window.location.reload()
+            }
+        }
+    },false);
     	console.log('<%= url%>');
     </script>
 </head>
