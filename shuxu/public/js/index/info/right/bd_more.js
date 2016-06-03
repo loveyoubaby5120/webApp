@@ -150,7 +150,7 @@ export default class Bd_more extends React.Component {
                         {this.state.nodes}
                     </tbody>
                 </table>
-                <div className={isNaN(this.state.limitNum) || this.state.datas.length<=this.state.limitNum ? 'showMore none' : 'showMore'} onClick={this.showAll.bind(this)} ><div className="last jtb"></div><span>查看更多</span></div>
+                <div className={isNaN(this.state.limitNum) || this.state.datas.length<this.state.limitNum ? 'showMore none' : 'showMore'} onClick={this.showAll.bind(this)} ><div className="last jtb"></div><span>查看更多</span></div>
             </div>
         )
     }
