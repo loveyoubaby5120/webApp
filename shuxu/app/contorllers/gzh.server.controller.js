@@ -257,7 +257,7 @@ module.exports = {
 		}
 
 		if(this.query.type==2){
-			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum`;
+			zd = `case when max(read_num) then max(read_num) else 0 end as sum`;
 			tj = ` and url like '%idx=1%' and gzh_id=${this.query.gzh_id}`;
 			index = `sum`;
 		}
@@ -297,16 +297,24 @@ module.exports = {
 		var zzd = ``;
 		var daysNum = parseInt(this.query.days)+1;
 		var daysNum = parseInt(this.query.days);
-		ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(dateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(dateTime) group by year(dateTime),month(dateTime),day(dateTime)`;
-		zzd = zd +`,from_unixtime(time,'%Y-%m-%d') as date`;
+		ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d')) and date_sub(curdate(), INTERVAL 1 DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d')) group by year(from_unixtime(pub_time,'%Y-%m-%d')),month(from_unixtime(pub_time,'%Y-%m-%d')),day(from_unixtime(pub_time,'%Y-%m-%d'))`;
+
+		if(this.query.type==2){
+			ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(pDateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(pDateTime) group by year(pDateTime),month(pDateTime),day(pDateTime)`;
+		}
+
+		zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
+
 		var sql = ``;
-		sql = `call doSql("${zzd}","${ztj}","","dateTime","desc","art_read_zan")`;
+		sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","art_read_zan")`;
 		if(this.query.type==4){
 			ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d')) and date_sub(curdate(), INTERVAL 1 DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d')) group by year(from_unixtime(pub_time,'%Y-%m-%d')),month(from_unixtime(pub_time,'%Y-%m-%d')),day(from_unixtime(pub_time,'%Y-%m-%d'))`;
 			zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
 			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","article_profile")`;
 		}
 		
+		// console.log(sql);
+
 		var rows = yield c.query(sql);
 		var countDay=0,sumDay=0;
 		for(var i =rows[0].length-1; i>=0;i--){
@@ -339,33 +347,34 @@ module.exports = {
 			dateArray.push(new Date().toISOString().slice(0,10));
 		}
 
-
 		var days = GetDateDiff(dateArray[0],dateArray[dateArray.length-1],'day');
 		if(days>dateArray.length){
 			var dateA = [];
 			var arrayA = [];
-			for(var i = 0; i<days; i++){
-				if(i==days-1){
+			for(var i = 0; i<dateArray.length; i++){
+				if(i==dateArray.length-1){
 					dateA.push(dateArray[i]);
 					arrayA.push(array[i]);
 					continue;
 				}
+
+				dateA.push(dateArray[i]);
+				arrayA.push(array[i]);
+
 				var n = GetDateDiff(dateArray[i],dateArray[(i+1)],'day');
 				
 				if(n>1){
-					var d = new Date(new Date(dateArray[i]).getTime()-1000*60*60*24).toISOString().slice(0,10);
 					for(var j = 0;j<n-1;j++){
+						var d = new Date(new Date(dateA[dateA.length-1]).getTime()+1000*60*60*24).toISOString().slice(0,10);
 						dateA.push(d);
 						arrayA.push(0);
 					}
 				}
-
-				dateA.push(dateArray[i]);
-				arrayA.push(array[i]);
 			}
 			dateArray = dateA;
 			array = arrayA;
 		}
+
 
 		var dateA = [];
 		var arrayA = [];
@@ -390,6 +399,7 @@ module.exports = {
 			
 		}
 
+
 		// this.body = [arrayA,dateA];
 		this.body = [array,dateArray];
 	},
@@ -413,7 +423,6 @@ module.exports = {
 		sql5 = `call art_info('count(*) ttCount,case when sum(read_num) then sum(read_num) else 0 end as ttSumRead',' and gzh_id=`+this.query.gzh_id+` and url like "%idx=1%"${query}','','pub_time','desc')`;
 		var rows5 = yield c.query(sql5);
 
-		
 		var json = {};
 
 		json.cs = rows[0].cs;

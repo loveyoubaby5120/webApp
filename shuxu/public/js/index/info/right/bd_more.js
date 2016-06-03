@@ -28,7 +28,7 @@ export default class Bd_more extends React.Component {
     setNodes(){
         var _this = this;
         _this.setState({
-            nodes: []
+            // nodes: []
         });
         $.ajax({
             url: '/gzh_profile_list?limitNum='+this.state.limitNum+'&type='+this.state.type,
