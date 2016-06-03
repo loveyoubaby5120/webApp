@@ -251,7 +251,7 @@ module.exports = {
 		var tj = ``;
 		var index = '';
 		if(this.query.type==1){
-			zd = `case when max(read_num) then max(read_num) else 0 end as sum`;
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum`;
 			tj = ` and gzh_id=${this.query.gzh_id}`;
 			index = `sum`;
 		}
@@ -263,7 +263,7 @@ module.exports = {
 		}
 
 		if(this.query.type==3){
-			zd = `case when max(read_num) then max(read_num) else 0 end as sum,count(id) as count`;
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(*) as count`;
 			tj = ` and gzh_id=${this.query.gzh_id}`;
 			index = `avg`;
 		}
@@ -288,7 +288,7 @@ module.exports = {
 		}
 
 		if(this.query.type==7){
-			zd = `case when max(zan_num) then max(zan_num) else 0 end as sum,count(id) as count`;
+			zd = `case when sum(zan_num) then sum(zan_num) else 0 end as sum,count(*) as count`;
 			tj = `and gzh_id=${this.query.gzh_id}`;
 			index = `sum`;
 		}
@@ -307,13 +307,20 @@ module.exports = {
 
 		var sql = ``;
 		sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","art_read_zan")`;
+
+		if(this.query.type==1 || this.query.type==3 || this.query.type==7){
+			ztj = ` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(pDateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(pDateTime) group by year(pDateTime),month(pDateTime),day(pDateTime)`;
+			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","(select max(read_num) as read_num,max(zan_num) as zan_num,pDateTime,pub_time from art_read_zan where gzh_id=${this.query.gzh_id} group by year(pDateTime),month(pDateTime),day(pDateTime),id order by pub_time,id)")`;
+		}
+
+
 		if(this.query.type==4){
 			ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d')) and date_sub(curdate(), INTERVAL 1 DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d')) group by year(from_unixtime(pub_time,'%Y-%m-%d')),month(from_unixtime(pub_time,'%Y-%m-%d')),day(from_unixtime(pub_time,'%Y-%m-%d'))`;
 			zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
 			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","article_profile")`;
 		}
+
 		
-		console.log(sql);
 
 		var rows = yield c.query(sql);
 		var countDay=0,sumDay=0;
