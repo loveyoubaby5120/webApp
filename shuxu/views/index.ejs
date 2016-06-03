@@ -54,20 +54,28 @@
         appCache.swapCache(); // The fetch was successful, swap in the new cache.  
     }
 
-    window.applicationCache.addEventListener('updateready', function(){
-        console.log('updateready!');
-        window.applicationCache.swapCache();
-    });
-
-    window.applicationCache.addEventListener('updateready',function(e){
-        if(window.applicationCache.status == window.applicationCache.UPDATEREADY){
-            window.applicationCache.swapCache();
-            
-            if(confirm("loding new?")){
-                window.location.reload()
+    if (typeof document.addEventListener != "undefined") { 
+         window.applicationCache.addEventListener('updateready',function(e){
+            if(window.applicationCache.status == window.applicationCache.UPDATEREADY){
+                window.applicationCache.swapCache();
+                
+                if(confirm("loding new?")){
+                    window.location.reload()
+                }
             }
-        }
-    },false);
+        },false);
+    } else { 
+         window.applicationCache.attachEvent('onupdateready',function(e){
+            if(window.applicationCache.status == window.applicationCache.UPDATEREADY){
+                window.applicationCache.swapCache();
+                
+                if(confirm("loding new?")){
+                    window.location.reload()
+                }
+            }
+        });
+    } 
+   
     	console.log('<%= url%>');
     </script>
 </head>
