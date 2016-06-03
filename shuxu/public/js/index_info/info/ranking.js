@@ -119,6 +119,16 @@ export default class Ranking extends React.Component {
             url: '/ranking_info?gzh_id='+this.props.gzh_id+'&days='+days,
             async: true,
             success: function(data){
+
+                _this.setState({
+                    zpm: data[2].zpm,
+                    yxlzs: data[2].yxlzs,
+                    hypm: data[2].hypm,
+                    lszgzpm: data[2].lszgzpm,
+                    lszghypm: data[2].lszghypm,
+                });
+
+
                 if(data[0].length==0){
                     _this.onChart(_this.state.myChart,false,_this.state.XD);
                 }

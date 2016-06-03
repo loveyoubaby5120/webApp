@@ -132,6 +132,7 @@ module.exports = {
 	ranking_info: function *(next){
 		var array = [];
 		var dateArray = [];
+		var map = {};
 		var zd = ``;
 		var tj = ` and gzh_id=${this.query.gzh_id}`;
 
@@ -147,8 +148,28 @@ module.exports = {
 			
 		}
 
+		sql = `call doSql("","${tj}","","time","desc","gzh_rank")`;
+		rows = yield c.query(sql);
+		map.zpm = rows[0][0].rank;
 
-		this.body = [array,dateArray];
+		sql = `call doSql("","${tj}","","time","desc","gzh_influence")`;
+		rows = yield c.query(sql);
+		map.yxlzs = rows[0][0].w_index.toFixed(2);
+
+		sql = `call doSql("","${tj}","","time","desc","gzh_type_rank")`;
+		rows = yield c.query(sql);
+		map.hypm = rows[0][0].rank;
+
+		sql = `call doSql("","${tj}","","rank","asc","gzh_rank")`;
+		rows = yield c.query(sql);
+		map.lszgzpm = rows[0][0].rank;
+
+		sql = `call doSql("","${tj}","","rank","asc","gzh_type_rank")`;
+		rows = yield c.query(sql);
+		map.lszghypm = rows[0][0].rank;
+
+
+		this.body = [array,dateArray,map];
 	},
 	chart_info: function *(next){
 		var array = [];

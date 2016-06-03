@@ -26,38 +26,40 @@
     var appCache = window.applicationCache;
     switch (appCache.status) { 
     case appCache.UNCACHED: // UNCACHED == 0 
-        console.log('UNCACHED');
+        console.log('0 === 未缓存');
         break; 
     case appCache.IDLE: // IDLE == 1 
-        console.log('IDLE');
+        console.log('1 === 空闲（缓存为最新状态）');
         break; 
     case appCache.CHECKING: // CHECKING == 2 
-        console.log('CHECKING');
+        console.log('2 === 检查中');
         break; 
     case appCache.DOWNLOADING: // DOWNLOADING == 3 
-        console.log('DOWNLOADING');
+        console.log('3 === 下载中');
         break; 
     case appCache.UPDATEREADY: // UPDATEREADY == 4 
-        console.log('UPDATEREADY');
+        console.log('4 === 更新就绪');
         break; 
     case appCache.OBSOLETE: // OBSOLETE == 5 
-        console.log('OBSOLETE');
+        console.log('5 === 缓存过期');
         break; 
     default: 
-        console.log('UKNOWN CACHE STATUS');
+        console.log('不识别的缓存状态');
         break; 
     };
 
     appCache.update(); // Attempt to update the user's cache.  
-    
+
     if (appCache.status == window.applicationCache.UPDATEREADY) {  
         appCache.swapCache(); // The fetch was successful, swap in the new cache.  
-    }  
+    }
+
+    window.applicationCache.addEventListener('updateready', function(){
+        console.log('updateready!');
+        window.applicationCache.swapCache();
+    });
 
     window.applicationCache.addEventListener('updateready',function(e){
-        console.log(window.applicationCache.status == window.applicationCache.UPDATEREADY);
-        console.log(window.applicationCache.status);
-        console.log(window.applicationCache.UPDATEREADY);
         if(window.applicationCache.status == window.applicationCache.UPDATEREADY){
             window.applicationCache.swapCache();
             
