@@ -82,12 +82,16 @@ function GetDateDiff(startTime, endTime, diffType) {
 module.exports = {
 	map: function *(next){
 		var sql = 'select (select from_unixtime(max(pub_time),"%m月%d日 %H时整") from article_profile) as time,(select count(*) from gzh_profile) as gzhCount,(select count(*) from article_profile) as artCount,(select sum(read_num) from (select DISTINCT * from read_num as a,(select max(time) as RMaxtime from read_num group by article_id) as b where a.time=b.RMaxtime) e) as readSum';
+		console.log('map start sql');
 		var rows = yield c.query(sql);
+		console.log('map end sql');
 		this.body = rows;
 	},
 	gzh_type_List: function *(next){
 		var sql = 'select * from gzh_type';
+		console.log('gzh_type_List start sql');
 		var rows = yield c.query(sql);
+		console.log('gzh_type_List end sql');
 		this.body = rows;
 	},
 	gzh_profile_list: function *(next){
@@ -99,7 +103,11 @@ module.exports = {
 			sql = `call gzh_info(""," and type = ${this.query.type} and time=maxTime group by id","${this.query.limitNum}","rank","")`;
 		}
 
+		console.log('gzh_profile_list start sql');
+
 		var rows = yield c.query(sql);
+
+		console.log('gzh_profile_list end sql');
 		this.body = rows[0];
 	},
 	article_profile_list: function *(next){
