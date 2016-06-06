@@ -15,7 +15,7 @@ export default class Qs_more extends React.Component {
             	<div className="title">
                     新闻资讯
                 </div>
-                <Info></Info>
+                <Info type={this.props.type}></Info>
             </div>
         )
     }

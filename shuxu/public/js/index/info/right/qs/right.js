@@ -9,7 +9,7 @@ export default class Right extends React.Component {
 
     return (
         <div className="qs_right">
-	        <Chart></Chart>
+	        <Chart type={this.props.type}></Chart>
 	        <div className="step1">
 	            帐户影响力排名
 	        </div>

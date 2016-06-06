@@ -11,6 +11,9 @@ router.get('/gzh_profile_list', GzhController.gzh_profile_list);
 
 router.get('/article_profile_list', GzhController.article_profile_list);
 
+router.get('/chart_days', GzhController.chart_days);
+
+
 
 
 

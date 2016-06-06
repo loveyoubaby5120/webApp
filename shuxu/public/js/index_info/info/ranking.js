@@ -138,7 +138,7 @@ export default class Ranking extends React.Component {
             },
             error: function(msg){
                 console.log(msg);
-                this.onChart(myChart,false,this.state.XD);
+                _this.onChart(_this.state.myChart,false,_this.state.XD);
             }
         });
 

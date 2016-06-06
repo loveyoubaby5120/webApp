@@ -192,6 +192,28 @@ module.exports = {
 
 		
 	},
+	chart_days: function *(next){
+		var array = [];
+		var zd = ``;
+		var tj = ``;
+		if(this.query.type==1){
+
+			
+		}
+
+		else if(this.query.type==2){
+
+		}
+
+		else if(this.query.type==3){
+
+		}
+
+		var ztj = tj + ` and type=${this.query.gzh_type}`;
+		var sql = `call doSql("${zd}","${tj}","","type","desc",'(select 1 as type)')`;
+		var rows = yield querySql(sql);
+		this.body = rows;
+	},
 	map_info: function *(next){
 		var sql = 'select * from info where id='+this.query.gzh_id;
 		var rows = yield querySql(sql);
