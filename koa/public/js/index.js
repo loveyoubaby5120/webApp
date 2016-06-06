@@ -93,13 +93,11 @@ class HelloWord extends React.Component{
 
 					{
 						(function(obj){
-							var a = '';
+							var a = [];
 							console.log(obj.state.data);
 							obj.state.data.forEach(function(data,index){
-					            // a += <li key=index className=obj.state.titleId==index ? "item active" : "item" onClick=obj.active.bind(this,index) >data</li>;
-					            a +=<li>index</li>
+					            a.push(<li key={index} className={obj.state.titleId==index ? "item active" : "item"} onClick={obj.active.bind(obj,index)} >data</li>);
 					        });
-							console.log(a[0]);
 					        return a;
 						})(this)
 						 
