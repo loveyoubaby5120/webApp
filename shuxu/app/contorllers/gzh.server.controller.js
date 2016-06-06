@@ -2,7 +2,7 @@ var mysqldb = require('../../config/mysql');
 var wrapper = require('co-mysql');
 
 // var connection = mysqldb();
-// var pool = mysqldb('pool');
+var pool = mysqldb('pool');
 
 // c = wrapper(connection);
 // p = wrapper(pool);
@@ -103,13 +103,12 @@ function querySql2(sql){
 //内部对mysql的封装，执行sql语句
 function execQuery(sql, callback) {
     var errinfo;
-    var pool = mysqldb('pool');
+
     pool.getConnection(function(err, connection) {
         if (err) {
             errinfo = 'DB-获取数据库连接异常！';
             throw errinfo;
         } else {
-        	console.log(sql);
             var querys = connection.query(sql, function(err, rows) {
                 release(connection);
                 if (err) {
