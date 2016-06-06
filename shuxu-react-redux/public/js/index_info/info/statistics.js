@@ -8,7 +8,6 @@ export default class Statistics extends React.Component {
         this.state = {
             datas:{"cs":'--',"ps":'--',"sw":'--',"count":'--',"maxRead":'--',"sumRead":'--',"sumZan":'--',"ttCount":'--',"ttSumRead":'--'}
         }
-        
 
     }
 

@@ -5,30 +5,7 @@ export default class Ranking extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            zpm: '--',
-            yxlzs: '--',
-            hypm: '--',
-            lszgzpm: '--',
-            lszghypm: '--'
-        }
-    }
-
-    componentDidMount(){
-
-
-
-
-        var myChart = echarts.init(document.getElementById('main1'));
-
-        this.state = {
-            myChart: myChart,
-            type: 1,
-            legendNames:[]
-        }
-
-
-         var XD = (function (){
+        var XD = (function (){
                 var x = []
                 var res = [];
                 var date = [];
@@ -41,9 +18,34 @@ export default class Ranking extends React.Component {
                 x.push(date);
                 return x;
             })()
+        this.state = {
+            zpm: '--',
+            yxlzs: '--',
+            hypm: '--',
+            lszgzpm: '--',
+            lszghypm: '--',
+            XD: XD
+        }
+    }
+
+    componentDidMount(){
+
+        var myChart = echarts.init(document.getElementById('main1'));
+
+        this.state = {
+            myChart: myChart,
+            type: 1,
+            legendNames:[],
+            zpm: this.state.zpm,
+            yxlzs: this.state.yxlzs,
+            hypm: this.state.hypm,
+            lszgzpm: this.state.lszgzpm,
+            lszghypm: this.state.lszghypm,
+            XD: this.state.XD
+        }
 
 
-        this.onChart(myChart,false,XD);
+        this.onChart(myChart,false,this.state.XD);
         this.state.myChart.clear();
         this.accessChange(7);
 
@@ -117,7 +119,26 @@ export default class Ranking extends React.Component {
             url: '/ranking_info?gzh_id='+this.props.gzh_id+'&days='+days,
             async: true,
             success: function(data){
-                _this.onChart(_this.state.myChart,false,data);
+
+                _this.setState({
+                    zpm: data[2].zpm,
+                    yxlzs: data[2].yxlzs,
+                    hypm: data[2].hypm,
+                    lszgzpm: data[2].lszgzpm,
+                    lszghypm: data[2].lszghypm,
+                });
+
+
+                if(data[0].length==0){
+                    _this.onChart(_this.state.myChart,false,_this.state.XD);
+                }
+                else{
+                    _this.onChart(_this.state.myChart,false,data);
+                }
+            },
+            error: function(msg){
+                console.log(msg);
+                this.onChart(myChart,false,this.state.XD);
             }
         });
 

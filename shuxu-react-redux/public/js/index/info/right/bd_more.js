@@ -8,7 +8,7 @@ export default class Bd_more extends React.Component {
             datas: [],
             nodes: [],
             limitNum: 30,
-            gzh_id: this.props.gzh_id
+            type: this.props.type
         }
     }
 
@@ -20,22 +20,25 @@ export default class Bd_more extends React.Component {
     //组件接收到属性
     componentWillReceiveProps(newProps){
         this.state.limitNum = 30;
-        this.state.gzh_id = newProps.gzh_id;
+        this.state.type = newProps.type;
         this.setNodes();
     }
 
 
     setNodes(){
         var _this = this;
+        _this.setState({
+            // nodes: []
+        });
         $.ajax({
-            url: '/gzh_profile_list?limitNum='+this.state.limitNum+'&gzh_id='+this.state.gzh_id,
+            url: '/gzh_profile_list?limitNum='+this.state.limitNum+'&type='+this.state.type,
             async:true,
             success: function(datas){
                 _this.setState({
                     datas: datas,
                     nodes: [],
                     limitNum: _this.state.limitNum,
-                    gzh_id: _this.state.gzh_id
+                    type: _this.state.type
                 });
 
 
@@ -147,7 +150,7 @@ export default class Bd_more extends React.Component {
                         {this.state.nodes}
                     </tbody>
                 </table>
-                <div className={isNaN(this.state.limitNum) || this.state.datas.length==0 ? 'showMore none' : 'showMore'} onClick={this.showAll.bind(this)} ><div className="last jtb"></div><span>查看更多</span></div>
+                <div className={isNaN(this.state.limitNum) || this.state.datas.length<this.state.limitNum ? 'showMore none' : 'showMore'} onClick={this.showAll.bind(this)} ><div className="last jtb"></div><span>查看更多</span></div>
             </div>
         )
     }

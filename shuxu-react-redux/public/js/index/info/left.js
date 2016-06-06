@@ -6,7 +6,7 @@ export default class Info_Left extends React.Component {
         super(props);
         this.state = {
             datas: [],
-            gzh_id: this.props.gzh_id
+            type: this.props.type
         };
 
     }
@@ -35,7 +35,7 @@ export default class Info_Left extends React.Component {
         var newState = val;
         this.setState({
             datas: this.state.datas,
-            gzh_id: newState
+            type: newState
         });
         this.props.callbackParent(newState);
         $('#app>div>.content>.info>.left>.item').removeClass('active');
@@ -48,7 +48,7 @@ export default class Info_Left extends React.Component {
         var options = [];
         var _this = this;
         this.state.datas.forEach(function(data,index){
-            options.push(<li key={index} className={_this.state.gzh_id==data.id ? "item active" : "item"}  onClick={_this.onClick.bind(_this,data.id)}><a href="javascript:;">{data.name}</a></li>);
+            options.push(<li key={index} className={_this.state.type==data.id ? "item active" : "item"}  onClick={_this.onClick.bind(_this,data.id)}><a href="javascript:;">{data.name}</a></li>);
         });
         return (
             <ul className="left">

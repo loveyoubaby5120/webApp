@@ -82,25 +82,32 @@ function GetDateDiff(startTime, endTime, diffType) {
 module.exports = {
 	map: function *(next){
 		var sql = 'select (select from_unixtime(max(pub_time),"%m月%d日 %H时整") from article_profile) as time,(select count(*) from gzh_profile) as gzhCount,(select count(*) from article_profile) as artCount,(select sum(read_num) from (select DISTINCT * from read_num as a,(select max(time) as RMaxtime from read_num group by article_id) as b where a.time=b.RMaxtime) e) as readSum';
+		console.log('map start sql');
 		var rows = yield c.query(sql);
+		console.log('map end sql');
 		this.body = rows;
 	},
 	gzh_type_List: function *(next){
 		var sql = 'select * from gzh_type';
+		console.log('gzh_type_List start sql');
 		var rows = yield c.query(sql);
+		console.log('gzh_type_List end sql');
 		this.body = rows;
 	},
 	gzh_profile_list: function *(next){
 		var sql = ``;
 		if(this.query.limitNum && isNaN(this.query.limitNum)){
-			sql = `call gzh_info("*"," and type = ${this.query.gzh_id} and time=maxTime group by id","","rank","")`;
+			sql = `call gzh_info("*"," and type = ${this.query.type} and time=maxTime group by id","","rank","")`;
 		}
 		else{
-			sql = `call gzh_info(""," and type = ${this.query.gzh_id} and time=maxTime group by id","${this.query.limitNum}","rank","")`;
+			sql = `call gzh_info(""," and type = ${this.query.type} and time=maxTime group by id","${this.query.limitNum}","rank","")`;
 		}
 
-		
+		console.log('gzh_profile_list start sql');
+
 		var rows = yield c.query(sql);
+
+		console.log('gzh_profile_list end sql');
 		this.body = rows[0];
 	},
 	article_profile_list: function *(next){
@@ -133,6 +140,7 @@ module.exports = {
 	ranking_info: function *(next){
 		var array = [];
 		var dateArray = [];
+		var map = {};
 		var zd = ``;
 		var tj = ` and gzh_id=${this.query.gzh_id}`;
 
@@ -148,8 +156,28 @@ module.exports = {
 			
 		}
 
+		sql = `call doSql("","${tj}","","time","desc","gzh_rank")`;
+		rows = yield c.query(sql);
+		map.zpm = rows[0][0].rank;
 
-		this.body = [array,dateArray];
+		sql = `call doSql("","${tj}","","time","desc","gzh_influence")`;
+		rows = yield c.query(sql);
+		map.yxlzs = rows[0][0].w_index.toFixed(2);
+
+		sql = `call doSql("","${tj}","","time","desc","gzh_type_rank")`;
+		rows = yield c.query(sql);
+		map.hypm = rows[0][0].rank;
+
+		sql = `call doSql("","${tj}","","rank","asc","gzh_rank")`;
+		rows = yield c.query(sql);
+		map.lszgzpm = rows[0][0].rank;
+
+		sql = `call doSql("","${tj}","","rank","asc","gzh_type_rank")`;
+		rows = yield c.query(sql);
+		map.lszghypm = rows[0][0].rank;
+
+
+		this.body = [array,dateArray,map];
 	},
 	chart_info: function *(next){
 		var array = [];
@@ -237,20 +265,20 @@ module.exports = {
 		}
 
 		if(this.query.type==2){
-			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum`;
-			tj = ` and f.url like '%idx=1%' and gzh_id=${this.query.gzh_id}`;
+			zd = `case when max(read_num) then max(read_num) else 0 end as sum`;
+			tj = ` and url like '%idx=1%' and gzh_id=${this.query.gzh_id}`;
 			index = `sum`;
 		}
 
 		if(this.query.type==3){
-			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(id) as count`;
+			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(*) as count`;
 			tj = ` and gzh_id=${this.query.gzh_id}`;
 			index = `avg`;
 		}
 
 
 		if(this.query.type==4){
-			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(id) as count`;
+			zd = `count(id) as count`;
 			tj = ` and gzh_id=${this.query.gzh_id}`;
 			index = `count`;
 		}
@@ -268,7 +296,7 @@ module.exports = {
 		}
 
 		if(this.query.type==7){
-			zd = `case when sum(zan_num) then sum(zan_num) else 0 end as sum,count(id) as count`;
+			zd = `case when sum(zan_num) then sum(zan_num) else 0 end as sum,count(*) as count`;
 			tj = `and gzh_id=${this.query.gzh_id}`;
 			index = `sum`;
 		}
@@ -276,10 +304,34 @@ module.exports = {
 		var ztj = ``;
 		var zzd = ``;
 		var daysNum = parseInt(this.query.days)+1;
-		ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(dateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(dateTime) group by year(dateTime),month(dateTime),day(dateTime)`;
-		zzd = zd +`,from_unixtime(time,'%Y-%m-%d') as date`;
-		var sql = `call doSql("${zzd}","${ztj}","","dateTime","desc","art_read_zan")`;
-		console.log(sql);
+
+
+		var daysNum = parseInt(this.query.days);
+		// ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(dateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(dateTime) group by year(dateTime),month(dateTime),day(dateTime)`;
+		ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(pDateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(pDateTime) group by year(pDateTime),month(pDateTime),day(pDateTime)`;
+		// if(this.query.type==2){
+		// 	ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(pDateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(pDateTime) group by year(pDateTime),month(pDateTime),day(pDateTime)`;
+		// }
+
+		zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
+
+		var sql = ``;
+		sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","art_read_zan")`;
+
+		if(this.query.type==1 || this.query.type==3 || this.query.type==7){
+			ztj = ` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(pDateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(pDateTime) group by year(pDateTime),month(pDateTime),day(pDateTime)`;
+			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","(select max(read_num) as read_num,max(zan_num) as zan_num,pDateTime,pub_time from art_read_zan where gzh_id=${this.query.gzh_id} group by year(pDateTime),month(pDateTime),day(pDateTime),id order by pub_time,id)")`;
+		}
+
+
+		if(this.query.type==4){
+			ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d')) and date_sub(curdate(), INTERVAL 1 DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d')) group by year(from_unixtime(pub_time,'%Y-%m-%d')),month(from_unixtime(pub_time,'%Y-%m-%d')),day(from_unixtime(pub_time,'%Y-%m-%d'))`;
+			zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
+			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","article_profile")`;
+		}
+
+		
+
 		var rows = yield c.query(sql);
 		var countDay=0,sumDay=0;
 		for(var i =rows[0].length-1; i>=0;i--){
@@ -312,33 +364,34 @@ module.exports = {
 			dateArray.push(new Date().toISOString().slice(0,10));
 		}
 
-
 		var days = GetDateDiff(dateArray[0],dateArray[dateArray.length-1],'day');
 		if(days>dateArray.length){
 			var dateA = [];
 			var arrayA = [];
-			for(var i = 0; i<days; i++){
-				if(i==days-1){
+			for(var i = 0; i<dateArray.length; i++){
+				if(i==dateArray.length-1){
 					dateA.push(dateArray[i]);
 					arrayA.push(array[i]);
 					continue;
 				}
+
+				dateA.push(dateArray[i]);
+				arrayA.push(array[i]);
+
 				var n = GetDateDiff(dateArray[i],dateArray[(i+1)],'day');
 				
 				if(n>1){
-					var d = new Date(new Date(dateArray[i]).getTime()-1000*60*60*24).toISOString().slice(0,10);
 					for(var j = 0;j<n-1;j++){
+						var d = new Date(new Date(dateA[dateA.length-1]).getTime()+1000*60*60*24).toISOString().slice(0,10);
 						dateA.push(d);
 						arrayA.push(0);
 					}
 				}
-
-				dateA.push(dateArray[i]);
-				arrayA.push(array[i]);
 			}
 			dateArray = dateA;
 			array = arrayA;
 		}
+
 
 		var dateA = [];
 		var arrayA = [];
@@ -363,6 +416,7 @@ module.exports = {
 			
 		}
 
+
 		// this.body = [arrayA,dateA];
 		this.body = [array,dateArray];
 	},
@@ -386,7 +440,6 @@ module.exports = {
 		sql5 = `call art_info('count(*) ttCount,case when sum(read_num) then sum(read_num) else 0 end as ttSumRead',' and gzh_id=`+this.query.gzh_id+` and url like "%idx=1%"${query}','','pub_time','desc')`;
 		var rows5 = yield c.query(sql5);
 
-		
 		var json = {};
 
 		json.cs = rows[0].cs;
