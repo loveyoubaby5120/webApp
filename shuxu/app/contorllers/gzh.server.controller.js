@@ -1,10 +1,10 @@
 var mysqldb = require('../../config/mysql');
 var wrapper = require('co-mysql');
 
-var connection = mysqldb();
+// var connection = mysqldb();
 // var pool = mysqldb('pool');
 
-c = wrapper(connection);
+// c = wrapper(connection);
 // p = wrapper(pool);
 
 Date.prototype.format = function (format) {
@@ -79,12 +79,70 @@ function GetDateDiff(startTime, endTime, diffType) {
 
 // console.log(new Date().timestamp(1464061279).format('yyyy-MM-dd/q'));
 
-function querySql(sql){
-		connection = mysqldb();
-		c = wrapper(connection);
-		var rows = c.query(sql);
+function querySql2(sql){
+		// connection = mysqldb();
+		// c = wrapper(connection);
+		// var rows = c.query(sql);
+		// connection.end();
+		var rows = [];
+
+		var connection = mysqldb();
+		connection.query(sql, function (error, results, fields) {
+			if(error) throw error;
+			rows = results;
+			console.log('The solution is: ', rows[0]);
+		});
+
 		connection.end();
 		return rows;
+}
+
+
+
+
+//内部对mysql的封装，执行sql语句
+function execQuery(sql, callback) {
+    var errinfo;
+    var pool = mysqldb('pool');
+    pool.getConnection(function(err, connection) {
+        if (err) {
+            errinfo = 'DB-获取数据库连接异常！';
+            throw errinfo;
+        } else {
+        	console.log(sql);
+            var querys = connection.query(sql, function(err, rows) {
+                release(connection);
+                if (err) {
+                    errinfo = 'DB-SQL语句执行错误:' + err;
+                    callback(err);
+                } else {
+                    callback(null,rows);        //注意：第一个参数必须为null
+                }
+            });
+        }
+    });
+}
+
+function release(connection) {
+    try {
+        connection.release(function(error) {
+            if (error) {
+                console.log('DB-关闭数据库连接异常！');
+            }
+        });
+    } catch (err) {}
+}
+//对外接口返回Promise函数形式
+function querySql(sql){
+    return new Promise(function(resolve, reject){
+        execQuery(sql, function(err, rows){
+            if(err){
+                reject(err);
+            }else{
+                resolve(rows);
+            }
+        })
+    });
 }
 
 module.exports = {
@@ -133,9 +191,7 @@ module.exports = {
 
 
 
-		// connection.query(sql, function (error, results, fields) {
-		// 	if(error) throw error
-		// });
+		
 	},
 	map_info: function *(next){
 		var sql = 'select * from info where id='+this.query.gzh_id;
