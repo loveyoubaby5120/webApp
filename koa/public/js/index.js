@@ -11,6 +11,8 @@ class HelloWord extends React.Component{
 		posterFrameSrc: 'abc',
 		videoSrc: '/',
 		initialCount: 0,
+		data: [0,1,2,3],
+		titleId: 0
 	}
 	
 	static propTypes = {
@@ -26,6 +28,8 @@ class HelloWord extends React.Component{
 		this.state = {
 			count: props.initialCount,
 			src: props.posterFrameSrc,
+			data: [0,1,2,3],
+			titleId: 0
 		};
 
 		console.log('HelloWord to constructor');
@@ -61,6 +65,13 @@ class HelloWord extends React.Component{
 		this.setState({count: this.state.count + 1});
 	}
 
+	active(val){
+		this.setState({
+			titleId: val,
+			data: [0,1,2,3]
+		});
+	}
+
 	//加载组件
 	render(){
 		console.log('HelloWord to render');
@@ -73,10 +84,25 @@ class HelloWord extends React.Component{
 								return obj.props.name;
 							}
 							else{
-								return "world";
+								return <a>world</a>;
 							}
 
 						})(this)
+					}
+
+
+					{
+						(function(obj){
+							var a = '';
+							console.log(obj.state.data);
+							obj.state.data.forEach(function(data,index){
+					            // a += <li key=index className=obj.state.titleId==index ? "item active" : "item" onClick=obj.active.bind(this,index) >data</li>;
+					            a +=<li>index</li>
+					        });
+							console.log(a[0]);
+					        return a;
+						})(this)
+						 
 					}
 					<a className='ml' href='/other'>go to other</a>
 
