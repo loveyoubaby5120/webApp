@@ -249,8 +249,8 @@
 
 .table tbody tr .text div{
     display: block;
-    width: 200%;
-    margin-left: -50%;
+    // width: 200%;
+    // margin-left: -50%;
     color: #585755;
 }
 

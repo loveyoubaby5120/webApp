@@ -33,7 +33,7 @@ export default class Chart extends React.Component {
         this.state = {
             myChart: myChart,
             type: 1,
-            legendNames:[],
+            legendNames:['话题传播数量趋势'],
             XD: this.state.XD
         }
 

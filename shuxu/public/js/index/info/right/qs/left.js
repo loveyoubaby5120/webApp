@@ -7,7 +7,7 @@ export default class Left extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            datas: [],
+            datas: [[],[]],
             gzh_type: this.props.type,
             titleId: 0
         }

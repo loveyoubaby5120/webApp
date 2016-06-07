@@ -35,7 +35,7 @@ export default class Ranking extends React.Component {
         this.state = {
             myChart: myChart,
             type: 1,
-            legendNames:[],
+            legendNames:['影响力指数'],
             zpm: this.state.zpm,
             yxlzs: this.state.yxlzs,
             hypm: this.state.hypm,

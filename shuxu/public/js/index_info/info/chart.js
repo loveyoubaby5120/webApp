@@ -32,7 +32,7 @@ export default class Chart extends React.Component {
         this.state = {
             myChart: myChart,
             type: 1,
-            legendNames:[],
+            legendNames:['总阅读数'],
             XD: this.state.XD
         }
 
@@ -206,7 +206,7 @@ export default class Chart extends React.Component {
                     </div>
                 </div>
                 <ul>
-                    <li className={this.state.type==1 ? "item first active" : "item first"} onClick={this.onClick.bind(this,1,'总阅读时')}><a href="javascript:;">总阅读数</a></li>
+                    <li className={this.state.type==1 ? "item first active" : "item first"} onClick={this.onClick.bind(this,1,'总阅读数')}><a href="javascript:;">总阅读数</a></li>
                     <li className={this.state.type==2 ? "item active" : "item"} onClick={this.onClick.bind(this,2,'头条阅读数')}><a href="javascript:;">头条阅读数</a></li>
                     <li className={this.state.type==3 ? "item active" : "item"} onClick={this.onClick.bind(this,3,'平均阅读数')}><a href="javascript:;">平均阅读数</a></li>
                     <li className={this.state.type==4 ? "item active" : "item"} onClick={this.onClick.bind(this,4,'发文数')}><a href="javascript:;">发文数</a></li>
