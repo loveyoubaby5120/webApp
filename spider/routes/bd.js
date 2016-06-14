@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request');
+var async = require('async');
+
 var rp = require('request-promise');
 
 var mongoose = require('mongoose');
@@ -59,10 +61,11 @@ router.get('/', function(req, res, next) {
 			'Referer': 'http://www.gsdata.cn/rank/detail',
 			'Cookie': 'PHPSESSID=sk9he9uvqb7i7vfd08no2q2ho2; bdshare_firstime=1465889026970; Hm_lvt_293b2731d4897253b117bb45d9bb7023=1465887653; Hm_lpvt_293b2731d4897253b117bb45d9bb7023=1465889858',
 			'Connection': 'keep-alive'
-	    }
+	    },
+	    json: true
 	}
 
-	var Json = {};
+	var Json = [];
 	var count = 0;
 	var errorNum = 0;
 	var success = 0;
@@ -78,37 +81,40 @@ router.get('/', function(req, res, next) {
 			reOptions.qs.page = i;
 			reOptions.qs.t = Math.random();
 
-			(function(num,op){
-				request(op,function(error, response,body){
-				if(!error && response.statusCode ==200){
-					success++;
-					console.log('成功获取' + success + '条');
-					body = JSON.parse(body); 
-					console.log(body);
-					if(body){
-						for(var j = 0; j < body.data.rows.length; j++){
-							var wechat = new WeChat(body.data.rows[j]);
-							wechat.save(function(err){
-								if(err){
-									return next(err);
-								}
-								
-								return j;
-							});
+			Json.push(reOptions);
 
-						}
-					}
-				}
-				else{
-					errorNum++;
-					console.log(error);
-					console.log('一共错误' + errorNum + '条');
-					console.log('第' + num + '条');
+			// (function(num,op){
+			// 	request(op,function(error, response,body){
+			// 		if(!error && response.statusCode ==200){
+			// 			success++;
+			// 			console.log('成功获取' + success + '条');
+			// 			if(body){
+			// 				for(var j = 0; j < body.data.rows.length; j++){
+			// 					// var wechat = new WeChat(body.data.rows[j]);
+			// 					// wechat.save(function(err){
+			// 					// 	if(err){
+			// 					// 		return next(err);
+			// 					// 	}
+									
+			// 					// 	return j;
+			// 					// });
 
-				}
+			// 				}
+			// 			}
+			// 			else{
+			// 				console.log(response.request.path);
+			// 			}
+			// 		}
+			// 		else{
+			// 			errorNum++;
+			// 			console.log(error);
+			// 			console.log('一共错误' + errorNum + '条');
+			// 			console.log('第' + num + '条');
 
-			});
-			})(count,reOptions);
+			// 		}
+
+			// 	});
+			// })(count,reOptions);
 			
 			
 
@@ -120,14 +126,14 @@ router.get('/', function(req, res, next) {
 			// 		if(body){
 			// 			console.log(body.data.error);
 			// 			for(var j = 0; j < body.data.rows.length; j++){
-			// 				var wechat = new WeChat(body.data.rows[j]);
-			// 				wechat.save(function(err){
-			// 					if(err){
-			// 						return next(err);
-			// 					}
+			// 				// var wechat = new WeChat(body.data.rows[j]);
+			// 				// wechat.save(function(err){
+			// 				// 	if(err){
+			// 				// 		return next(err);
+			// 				// 	}
 								
-			// 					return j;
-			// 				});
+			// 				// 	return j;
+			// 				// });
 
 			// 			}
 			// 		}
@@ -145,27 +151,56 @@ router.get('/', function(req, res, next) {
 		}
 	}
 
+
+	async.forEachLimit(Json, 10, function(item, callback){
+		request(item,function(error, response,body){
+			if(!error && response.statusCode ==200){
+				success++;
+				console.log('成功获取' + success + '条');
+				if(body){
+					for(var j = 0; j < body.data.rows.length; j++){
+						// var wechat = new WeChat(body.data.rows[j]);
+						// wechat.save(function(err){
+						// 	if(err){
+						// 		return next(err);
+						// 	}
+							
+						// 	return j;
+						// });
+
+					}
+				}
+				else{
+					console.log(response.request.path);
+				}
+			}
+			else{
+				errorNum++;
+				console.log(error);
+				console.log('一共错误' + errorNum + '条');
+				console.log('第' + num + '条');
+
+			}
+
+		});
+	});
+
 	console.log(count);
 	console.log('end spider');
 
-	var pagesize = parseInt(req.query.pagesize,10) || 10;
-	var pagestart = parseInt(req.query.pagestart,10) || 10;
+	// var pagesize = parseInt(req.query.pagesize,10) || 10;
+	// var pagestart = parseInt(req.query.pagestart,10) || 10;
 
-	WeChat
-	.find()
-	.exec(function(err, docs){
-		if(err){
-			return next(err);
-		}
-		return res.json(docs.length);
-	});
+	// WeChat
+	// .find()
+	// .exec(function(err, docs){
+	// 	if(err){
+	// 		return next(err);
+	// 	}
+	// 	return res.json(docs.length);
+	// });
 });
 
-
-function sleep(milliSeconds) { 
-    var startTime = new Date().getTime(); 
-    while (new Date().getTime() < startTime + milliSeconds);
- };
 
 module.exports = router;
   

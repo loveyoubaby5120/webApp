@@ -20,6 +20,7 @@
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
+    "async": "^1.5.2",
     "cheerio": "^0.20.0",
     "excel": "^0.1.5",
     "excel-export": "^0.5.1",
