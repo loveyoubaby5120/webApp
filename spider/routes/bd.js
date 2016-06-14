@@ -1,105 +1,92 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request');
-var cheerio = require('cheerio');
-
 var rp = require('request-promise');
 
-var URL = require('url');
+var mongoose = require('mongoose');
+var WeChat = mongoose.model('WeChat');
 
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
 
-  res.render('index', { title: 'Express' });
-});
-
-
-router.post('/', function(req, res, next) {
 	console.log('start spider');
-	var searchs = req.body.url.split(',');
-	for(search in searchs){
-		var gotoUrl = 'http://www.gsdata.cn/query/wx?q='+searchs[search]+'&search_field=undefined';	
-	
-		console.log('gotoUrl: '+gotoUrl);
-		
-		var Json = {};
-		var url = [];
-		var biz = [];
-		// request('http://www.gsdata.cn/query/wx?q=caixinwang&search_field=undefined',function(error, response,body){
-		// 	if(!error && response.statusCode ==200){
-		// 		$ = cheerio.load(body);
-		// 		var list = $('#content .container .row .article-container .article-ul li');
-				
-		// 		if(list.length>0){
-		// 			for(var i = 0; i<list.length; i++){
-		// 				var aUrl = list.find('.number-img .img-bg').attr('href');
-		// 				var gotoUrl = 'http://www.gsdata.cn/' + aUrl;
-		// 				url.push(gotoUrl);
 
-		// 				// request(gotoUrl,function(error2, response2,body2){
-		// 				// 	if(!error2 && response2.statusCode ==200){
-		// 				// 		$2 = cheerio.load(body2);
-		// 				// 		var li = $2('#content .container .row .article-container .article-ul li');
-		// 				// 		if(li.length>0){
-		// 				// 			biz.push(li.find('.wx-img a').attr('href'));
-		// 				// 		}
-		// 				// 	}
-		// 				// });
+	var options = {
+	    uri: 'http://www.gsdata.cn/newRank/getwxranks',
+	    qs: {
+	    	gid:'205',
+			date:'2016-06-13',
+			page:'1',
+			type:'day',
+			cp:'all',
+			t:'0.9095617456105527',
+			action:'',
+	    },
+	    headers: {
+	    	'Host': 'www.gsdata.cn',
+			'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:37.0) Gecko/20100101 Firefox/37.0',
+			'Accept': 'application/json, text/javascript, */*; q=0.01',
+			'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+			'Accept-Encoding': 'gzip, deflate, sdch',
+			'X-Requested-With': 'XMLHttpRequest',
+			'Referer': 'http://www.gsdata.cn/rank/detail',
+			'Cookie': 'PHPSESSID=sk9he9uvqb7i7vfd08no2q2ho2; bdshare_firstime=1465889026970; Hm_lvt_293b2731d4897253b117bb45d9bb7023=1465887653; Hm_lpvt_293b2731d4897253b117bb45d9bb7023=1465889858',
+			'Connection': 'keep-alive'
+	    },
+	    json: true // Automatically parses the JSON string in the response 
+	};
 
-		// 			}
-		// 		}
-
-		// 		Json.biz = biz;
-		// 		Json.url = url
-
-		// 	}
-
-		// });
-
-		rp(gotoUrl)
-			.then(function(body){
-				$ = cheerio.load(body);
-				var list = $('#content .container .row .article-container .article-ul li');
-				if(list.length>0){
-					for(var i = 0; i<list.length; i++){
-						var aUrl = list.find('.number-img .img-bg').attr('href');
-						var gotoUrl = 'http://www.gsdata.cn/' + aUrl;
-						url.push(gotoUrl);
-
-						var bizUrl = list.find('.number-txt .wx-sp .sp-txt').eq(1).find('a').attr('href');
-
-						var arg = URL.parse(bizUrl,true).query
-
-						bizNum = arg['__biz'];
-
-						biz.push(bizNum);
-
-		// 				rp(gotoUrl)
-		// 					.then(function(body2){
-		// 						$2 = cheerio.load(body2);
-		// 						var script = $2('script').get(5).children[0].data;
-
-		// 						var li = $2('#content .container .row .article-container .article-ul li');
-		// 						if(li.length>0){
-		// 							biz.push(li.find('.wx-img a').attr('href'));
-		// 						}
-		// 						// res.json(Json);
-		// 					});
+	var Json = {};
+	var c = 0;
+	var e = 0;
+	for(var z=0; z<365; z++){
+		var d = new Date(new Date(options.qs.date).getTime()-1000*60*60*24).toISOString().slice(0,10);
+		options.qs.date = d;
+		sleep(1);
+		for(var i =1 ; i<6; i++){
+			options.qs.page = i;
+			options.qs.t = Math.random();
+			rp(options)
+				.then(function(body){
+					if(body.data != undefined){
+						for(var j = 0; j < body.data.rows.length; j++){
+							// var wechat = new WeChat(body.data.rows[j]);
+							// wechat.save(function(err){
+							// 	if(err){
+							// 		return next(err);
+							// 	}
+							// 	e++;
+							// 	console.log(e);
+							// 	return j;
+							// });
 
 
+						}
 					}
-				}
+					
+					
+				});
 
-				Json.biz = biz;
-				Json.url = url
-				
-				res.json(Json);
-			});
-
-
-		console.log('end spider');
+			c++;
+		}
+		options.qs.page = 1;
 	}
+
+	console.log(c);
+	console.log('end spider');
+
+	var pagesize = parseInt(req.query.pagesize,10) || 10;
+	var pagestart = parseInt(req.query.pagestart,10) || 10;
+
+	WeChat
+	.find()
+	.exec(function(err, docs){
+		if(err){
+			return next(err);
+		}
+		return res.json(docs.length);
+	});
 });
 
 
