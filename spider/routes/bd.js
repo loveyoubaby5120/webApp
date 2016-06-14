@@ -142,7 +142,7 @@ router.get('/', function(req, res, next) {
 
 function httpRequest(Json,str,end){
 	var arr = Json.slice(str,end);
-	async.forEachLimit(arr, 100, function(item, callback){
+	async.forEachLimit(arr, 50, function(item, callback){
 		request(item,function(error, response,body){
 			if(!error && response.statusCode ==200){
 				if(body){
