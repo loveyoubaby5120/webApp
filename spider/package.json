@@ -27,6 +27,7 @@
     "formidable": "^1.0.17",
     "fs": "0.0.2",
     "lei-stream": "^1.0.5",
+    "md5": "^2.1.0",
     "node-xlsx": "^0.7.1",
     "request": "^2.72.0",
     "request-promise": "^3.0.0",

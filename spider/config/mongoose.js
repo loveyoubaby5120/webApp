@@ -6,5 +6,6 @@ module.exports = function(){
 
 	require('../app/models/news.server.model');
 	require('../app/models/wechat.server.model');
+	require('../app/models/newrank.server.model');
 	return db;
 }

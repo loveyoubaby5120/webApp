@@ -123,7 +123,7 @@ router.get('/', function(req, res, next) {
 	}
 
 	
-	httpRequest(Json,0,100);
+	httpRequest(Json,0,50);
 	
 
 	console.log(count);
@@ -168,7 +168,7 @@ function httpRequest(Json,str,end){
 			}
 			if(arr[arr.length-1]==item && end <= Json.length){
 				console.log(end);
-				httpRequest(Json,end,(end+100));
+				httpRequest(Json,end,(end+50));
 			}
 
 		},function(err, result){
