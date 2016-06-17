@@ -412,7 +412,7 @@ module.exports = {
 			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","article_profile")`;
 		}
 
-		
+		// console.log(sql);
 
 		var rows = yield querySql(sql);
 		var countDay=0,sumDay=0;
@@ -446,7 +446,7 @@ module.exports = {
 			dateArray.push(new Date().toISOString().slice(0,10));
 		}
 
-		var days = GetDateDiff(dateArray[0],dateArray[dateArray.length-1],'day');
+		var days = GetDateDiff(dateArray[0],dateArray[dateArray.length-1],'day')+1;
 		if(days>dateArray.length){
 			var dateA = [];
 			var arrayA = [];
@@ -475,14 +475,35 @@ module.exports = {
 		}
 
 
+		var strDate = GetDateDiff(dateArray[dateArray.length-1],new Date().toISOString().slice(0,10),'day')-1;
+		var lastDate = GetDateDiff(new Date(new Date().getTime()-1000*60*60*24*this.query.days).toISOString().slice(0,10),new Date(dateArray[0]).toISOString().slice(0,10),'day');
+		if(this.query.days>dateArray.length){
+
+			if(strDate>0){
+				for(var i = 0; i<strDate; i++){
+					var d = new Date(new Date(dateArray[dateArray.length-1]).getTime()+1000*60*60*24).toISOString().slice(0,10);
+					dateArray.push(d);
+					array.push(0);
+				}
+			}
+			if(lastDate>0){
+				for(var i = 0; i<lastDate; i++){
+					var d = new Date(new Date(dateArray[0]).getTime()-1000*60*60*24).toISOString().slice(0,10);
+					dateArray.unshift(d);
+					array.unshift(0);
+				}
+			}
+		}
+
+
 		var dateA = [];
 		var arrayA = [];
 		var dNum = array.length;
 		if(array.length==daysNum){
-			dNum = 30;
+			dNum = this.query.days;
 		}
 		for(var i =0; i<dNum;i++){
-			if(dNum==30){
+			if(dNum==this.query.days){
 				dateA.push(dateArray[i+1]);
 				arrayA.push((array[i+1]-array[i]));
 				continue;
