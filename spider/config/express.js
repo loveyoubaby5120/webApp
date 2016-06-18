@@ -26,6 +26,7 @@ module.exports = function(){
 	var weixin = require('../routes/weixin');
 	var bd = require('../routes/bd');
 	var newrank = require('../routes/newrank');
+	var demo = require('../routes/demo');
 
 	app.use('/', routes);
 	app.use('/users', users);
@@ -33,6 +34,7 @@ module.exports = function(){
 	app.use('/weixin', weixin);
 	app.use('/bd', bd);
 	app.use('/newrank', newrank);
+	app.use('/demo', demo);
 
 	app.use(function(req, res, next){
 		res.status(404);
