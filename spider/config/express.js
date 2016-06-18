@@ -27,6 +27,7 @@ module.exports = function(){
 	var bd = require('../routes/bd');
 	var newrank = require('../routes/newrank');
 	var demo = require('../routes/demo');
+	var yyzc = require('../routes/yyzc');
 
 	app.use('/', routes);
 	app.use('/users', users);
@@ -35,6 +36,7 @@ module.exports = function(){
 	app.use('/bd', bd);
 	app.use('/newrank', newrank);
 	app.use('/demo', demo);
+	app.use('/yyzc/servlet/validateCodeServlet', yyzc);
 
 	app.use(function(req, res, next){
 		res.status(404);
