@@ -36,8 +36,8 @@ module.exports = function(){
 	app.use('/weixin', weixin);
 	app.use('/bd', bd);
 	app.use('/newrank', newrank);
+	app.use('/yyzc', yyzc);
 	app.use('/', demo);
-	// app.use('/yyzc', yyzc);
 
 	app.use(function(req, res, next){
 		res.status(404);

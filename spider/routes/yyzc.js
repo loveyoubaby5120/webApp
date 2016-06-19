@@ -1,31 +1,61 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request');
+var request = request.defaults({jar: true});
 var cheerio = require('cheerio');
 var fs = require('fs');
 
 /* GET home page. */
 
 router.get('/servlet/validateCodeServlet', function(req, res, next) {
-	// 获取移动端post数据
-	var urlSuffix="http://61.161.203.48/yyzc/servlet/validateCodeServlet?"+new Date().getTime();
-	// var tokenServer="http://192.169.1.15:8080/HttpClientTest/servlet/GetTokenServlet";
-	console.log('start spider');
-
-
-	// request(urlSuffix).pipe(fs.createWriteStream('../public/yyzc/servlet'));
 	
+	if(req.url.indexOf('?validateCode=')!=-1){
+		var urlSuffix="http://61.161.203.48/yyzc"+req.url;
+		
+		var options = {
+			uri: urlSuffix,
+			method: 'get',
+			json: true
+		};
+			
+		request(options,function(_error, _response,_body){
+			console.log(_response.statusCode);
+				if(!_error && _response.statusCode ==200){;
+					res.send(_body);
 
-	var opts={
-        url:urlSuffix
+				}else{
+					console.log("'错误-链接异常-"+_error+"-"+options.uri+"'");
+				}
+
+			},function(err, result){
+				if(err){
+					console.log("'错误-链接未发送-"+err+"-"+options.uri+"'");
+				}else{
+					console.log('获取请求成功');
+				}
+				
+			});
+	}
+	else{
+		// 获取移动端post数据
+		var urlSuffix="http://61.161.203.48/yyzc/servlet/validateCodeServlet?"+new Date().getTime();
+		// var tokenServer="http://192.169.1.15:8080/HttpClientTest/servlet/GetTokenServlet";
+		console.log('start spider');
+
+
+		// request(urlSuffix).pipe(fs.createWriteStream('../public/yyzc/servlet'));	
+		
+
+		var opts={
+			url:urlSuffix
+		}
+		//console.log(urlSuffix);
+
+
+		var stream = request(urlSuffix);
+		req.pipe(stream);
+		stream.pipe(res);
     }
-    console.log(urlSuffix);
-
-
-    var stream = request(urlSuffix);
-    req.pipe(stream);
-    stream.pipe(res);
-    
     // request.get(opts, function (err, response, body) {
     //     var type = response.headers["content-type"];
     //     // res.writeHead(200,{
