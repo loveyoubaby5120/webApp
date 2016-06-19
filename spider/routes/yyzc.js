@@ -6,7 +6,7 @@ var fs = require('fs');
 
 /* GET home page. */
 
-router.get('/', function(req, res, next) {
+router.get('/servlet/validateCodeServlet', function(req, res, next) {
 	// 获取移动端post数据
 	var urlSuffix="http://61.161.203.48/yyzc/servlet/validateCodeServlet?"+new Date().getTime();
 	// var tokenServer="http://192.169.1.15:8080/HttpClientTest/servlet/GetTokenServlet";

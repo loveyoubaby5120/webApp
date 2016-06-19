@@ -9,6 +9,7 @@ module.exports = function(){
 	var app = express();
 
 	app.use(bodyParser.json());
+	app.use(bodyParser.urlencoded({ extended: true }));
 	app.use(express.static("public"));
 
 	app.set('view engine', 'ejs');
@@ -29,14 +30,14 @@ module.exports = function(){
 	var demo = require('../routes/demo');
 	var yyzc = require('../routes/yyzc');
 
-	app.use('/', routes);
+	// app.use('/', routes);
 	app.use('/users', users);
 	app.use('/excel', excel);
 	app.use('/weixin', weixin);
 	app.use('/bd', bd);
 	app.use('/newrank', newrank);
-	app.use('/demo', demo);
-	app.use('/yyzc/servlet/validateCodeServlet', yyzc);
+	app.use('/', demo);
+	// app.use('/yyzc', yyzc);
 
 	app.use(function(req, res, next){
 		res.status(404);
