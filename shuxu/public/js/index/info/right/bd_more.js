@@ -173,7 +173,7 @@ export default class Bd_more extends React.Component {
                         </div>
                     </div>
                     <div className="options">
-                        <div className="query long"><span className='ok'>高端商务</span></div>
+                        <div className="query long"><input className='ok' type='text' placeholder='微信号'/></div>
                         <div className="query submit"><a className='ok' href="javascript:;">提交</a></div>
                     </div>
                 </div>
