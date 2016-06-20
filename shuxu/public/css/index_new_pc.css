@@ -142,6 +142,101 @@
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 
+.content .info .right .formOptions{
+    padding: 15px 0 0px 10px;
+}
+
+.content .info .right .formOptions .options{
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.content .info .right .formOptions .options .query{
+    display:inline-block;
+    width: 130px;
+    height: 30px;
+    margin-right: 20px;
+    line-height:32px;
+    text-align: left;
+    cursor: pointer;
+    // text-indent: 10px;
+    // background-color: #fbfbfb;
+    // border-radius: 15px;
+    // box-shadow: 1px 1px 1px #efebeb;
+}
+
+.content .info .right .formOptions .options .query .ok{
+    display:inline-block;
+    width: 100%;
+    text-align: left;
+    text-indent: 15px;
+    background-color: #fbfbfb;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px #efebeb;
+    color: #9e9e9f;
+    position: absolute;
+    z-index: 3;
+    // font-size: 15px;
+}
+
+.content .info .right .formOptions .options .long{
+    width: 280px;
+}
+
+.content .info .right .formOptions .options .long .ok{
+    z-index: 1;
+}
+
+.content .info .right .formOptions .options .submit .ok{
+    text-align: center;
+    background-color: #f6501e;
+    padding: 0px;
+    text-indent: 0px;
+    z-index: 1;
+}
+
+.content .info .right .formOptions .options .submit .ok{
+    color: #ffffff;
+    font-size: 15px;
+    padding-left: 0px;
+}
+
+.content .info .right .formOptions .options .query .down{
+    color: #9e9e9f;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -7px;
+    font-size:25px;
+    z-index: 3;
+}
+
+.content .info .right .formOptions .options .query .select{
+    background: rgba(233, 234, 236, 0.8);
+    text-indent: 15px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index:2;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px #efebeb;
+    display: none;
+}
+
+.content .info .right .formOptions .options .query .select .option{
+    text-align: left;
+    color: #9e9e9f;
+    height: 30px;
+    border: 0px;
+}
+
+.content .info .right .formOptions .options .query .select .option:hover{
+    color: #f6501e;
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
 .table{
     margin:0 auto;
     padding:15px 0 20px 10px;
@@ -211,6 +306,15 @@
     line-height: 15px;
 }
 
+.table table tbody tr:hover{
+    background-color: #fcf8e3;
+}
+
+.table tbody tr:hover .text.goto_info a{
+    color: #ffffff;
+    background: #f6501e;
+}
+
 .table table tr td{
     padding:5px 2px;
     word-wrap: break-word;
@@ -265,6 +369,11 @@
     border-radius: 15px;
     position: relative;
     z-index: 10;
+}
+
+.table tbody tr .text.goto_info a:hover{
+    color: #ffffff;
+    background: #f6501e;
 }
 
 .table tbody tr .last{
