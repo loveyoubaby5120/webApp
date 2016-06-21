@@ -147,20 +147,16 @@ export default class Bd_more extends React.Component {
                             <a className='ok' href="javascript:;">年龄</a><span className='down'>ˇ</span>
                             <ul className="select">
                                 <li className="option">年龄</li>
-                                <li className="option">18-30岁</li>
-                                <li className="option">31-40岁</li>
-                                <li className="option">41-50岁</li>
-                                <li className="option">51以上</li>
+                                <li className="option">年轻</li>
+                                <li className="option">成熟</li>
                             </ul>
                         </div>
                          <div className="query">
                             <a className='ok' href="javascript:;">车价</a><span className='down'>ˇ</span>
                             <ul className="select">
                                 <li className="option">车价</li>
-                                <li className="option">0-10万</li>
-                                <li className="option">11-50万</li>
-                                <li className="option">51-100万</li>
-                                <li className="option">100万以上</li>
+                                <li className="option">高配</li>
+                                <li className="option">经济</li>
                             </ul>
                         </div>
                          <div className="query">
