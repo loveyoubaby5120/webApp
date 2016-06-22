@@ -118,22 +118,22 @@ export default class Chart extends React.Component {
             type: type
         });
         var _this = this;
-        $.ajax({
-            url: '/chart_days?gzh_type='+this.state.gzh_type+'&type='+type,
-            async: true,
-            success: function(data){
-                if(data[0].length==0){
-                    _this.onChart(_this.state.myChart,false,_this.state.XD);
-                }
-                else{
-                    _this.onChart(_this.state.myChart,false,data);
-                }
-            },
-            error: function(msg){
-                console.log(msg);
-                _this.onChart(_this.state.myChart,false,_this.state.XD);
-            }
-        });
+        // $.ajax({
+        //     url: '/chart_days?gzh_type='+this.state.gzh_type+'&type='+type,
+        //     async: true,
+        //     success: function(data){
+        //         if(data[0].length==0){
+        //             _this.onChart(_this.state.myChart,false,_this.state.XD);
+        //         }
+        //         else{
+        //             _this.onChart(_this.state.myChart,false,data);
+        //         }
+        //     },
+        //     error: function(msg){
+        //         console.log(msg);
+        //         _this.onChart(_this.state.myChart,false,_this.state.XD);
+        //     }
+        // });
 
     }
 
@@ -145,7 +145,7 @@ export default class Chart extends React.Component {
         this.setState({
             legendNames:legendNames
         });
-        this.accessChange(type);
+        this.accessChange(type);    
         
     }
 

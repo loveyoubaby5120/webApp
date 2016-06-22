@@ -16,20 +16,20 @@ export default class Left extends React.Component {
 
     componentDidMount(){
          var _this = this;
-        $.ajax({
-            url: '/gzh_type_List',
-            async:true,
-            success: function(data){
-                _this.setState ({
-                    datas: data
-                });
+        // $.ajax({
+        //     url: '/gzh_type_List',
+        //     async:true,
+        //     success: function(data){
+        //         _this.setState ({
+        //             datas: data
+        //         });
 
-                if(data.length>0){
-                    _this.onClick(data[0].id)
-                }
+        //         if(data.length>0){
+        //             _this.onClick(data[0].id)
+        //         }
 
-            }
-        })
+        //     }
+        // })
 
     }
 
@@ -52,7 +52,7 @@ export default class Left extends React.Component {
         });
 
         this.state.datas[1].forEach(function(data,index){
-            options.push(<li key={index} className={_this.state.titleId==data.id ? "item active" : "item"}  onClick={_this.onClick.bind(_this,data.id)}><a href="javascript:;">{data.name}</a></li>);
+            options2.push(<li key={index} className={_this.state.titleId==data.id ? "item active" : "item"}  onClick={_this.onClick.bind(_this,data.id)}><a href="javascript:;">{data.name}</a></li>);
         });
 
         return (

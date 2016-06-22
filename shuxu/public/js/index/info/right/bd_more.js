@@ -15,6 +15,17 @@ export default class Bd_more extends React.Component {
     componentDidMount(){
         this.state.limitNum = 30;
         this.setNodes();
+
+        $('.options .query').mouseover(function(){
+            var _this = $(this);
+            $(this).find('.select').show();
+            $(this).find('.select').on('click','.option',function(){
+                _this.find('.ok').text($(this).text());
+                _this.find('.select').hide();
+            });
+        }).mouseout(function(){
+            $(this).find('.select').hide();
+        });
     }
 
     //组件接收到属性
@@ -129,28 +140,61 @@ export default class Bd_more extends React.Component {
 
     render() {
         return (
-            // <div className='table blur auto'>
-            <div className={this.props.show=='bd_more' ? "table blur auto" : "table blur none"}>
-                <div className="bc title"><p className="type ng-binding">排名</p></div>
-                <table className="bc">
-                    <thead>
-                        <tr>
-                            <th className="w_2"></th>
-                            <th className="w_10"></th>
-                            <th className="w_15"><div><p className="">微信名称</p></div></th>
-                            <th className="w_15"><div><p className="">微信账号</p></div></th>
-                            <th className="w_15"><div><p className="">粉丝黏性</p></div></th>
-                            <th className="w_15"><div><p className="">增长潜力</p></div></th>
-                            <th className="w_20"><div><p className="">影响指数</p></div></th>
-                            <th className="w_15"><div><p className="">查看详细</p></div></th>
-                            <th className="w_2"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.nodes}
-                    </tbody>
-                </table>
-                <div className={isNaN(this.state.limitNum) || this.state.datas.length<this.state.limitNum ? 'showMore none' : 'showMore'} onClick={this.showAll.bind(this)} ><div className="last jtb"></div><span>查看更多</span></div>
+            <div className={this.props.show=='bd_more' ? "auto" : "none"}>
+                <div className="formOptions">
+                    <div className="options">
+                        <div className="query">
+                            <a className='ok' href="javascript:;">年龄</a><span className='down'>ˇ</span>
+                            <ul className="select">
+                                <li className="option">年龄</li>
+                                <li className="option">年轻</li>
+                                <li className="option">成熟</li>
+                            </ul>
+                        </div>
+                         <div className="query">
+                            <a className='ok' href="javascript:;">车价</a><span className='down'>ˇ</span>
+                            <ul className="select">
+                                <li className="option">车价</li>
+                                <li className="option">高配</li>
+                                <li className="option">经济</li>
+                            </ul>
+                        </div>
+                         <div className="query">
+                            <a className='ok' href="javascript:;">地域</a><span className='down'>ˇ</span>
+                            <ul className="select">
+                                <li className="option">地域</li>
+                                <li className="option">北京</li>
+                                <li className="option">上海</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="options">
+                        <div className="query long"><input className='ok' type='text' placeholder='微信号'/></div>
+                        <div className="query submit"><a className='ok' href="javascript:;">提交</a></div>
+                    </div>
+                </div>
+                <div className={this.props.show=='bd_more' ? "table blur auto" : "table blur none"}>
+                    <div className="bc title"><p className="type ng-binding">排名</p></div>
+                    <table className="bc">
+                        <thead>
+                            <tr>
+                                <th className="w_2"></th>
+                                <th className="w_10"></th>
+                                <th className="w_15"><div><p className="">微信名称</p></div></th>
+                                <th className="w_15"><div><p className="">微信账号</p></div></th>
+                                <th className="w_15"><div><p className="">粉丝黏性</p></div></th>
+                                <th className="w_15"><div><p className="">增长潜力</p></div></th>
+                                <th className="w_20"><div><p className="">影响指数</p></div></th>
+                                <th className="w_15"><div><p className="">查看详细</p></div></th>
+                                <th className="w_2"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.state.nodes}
+                        </tbody>
+                    </table>
+                    <div className={isNaN(this.state.limitNum) || this.state.datas.length<this.state.limitNum ? 'showMore none' : 'showMore'} onClick={this.showAll.bind(this)} ><div className="last jtb"></div><span>查看更多</span></div>
+                </div>    
             </div>
         )
     }
