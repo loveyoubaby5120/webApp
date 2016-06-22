@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 python3 /home/weixin_info/crawler/get_new_article.py && \
 python3 /home/weixin_info/crawler/get_content.py && \
 python3 /home/weixin_info/crawler/get_focus_article.py && \
