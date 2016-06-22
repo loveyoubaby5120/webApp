@@ -25,7 +25,7 @@ router.get(/yyzc(\/.*)*$/, function(req, res, next) {
 			    uri: urlSuffix+e,
 			    method: 'get',
 			    headers: {
-			    	'Cookie': 'session.id=aaaaaa'
+			    	'Cookie': 'session.id=aaaaaa;abc=ddd'
 			    },
 			    json: true
 			};
@@ -35,9 +35,10 @@ router.get(/yyzc(\/.*)*$/, function(req, res, next) {
 				if(!_error && _response.statusCode ==200){
 					var option = {};
 					// res.send(_response.request.uri.pathname.split(';')[1]);
-					// res.send(_response);
-					res.append('Set-Cookie','session.id=aaaaaa');
-					res.send(_body);
+					res.send(_response);
+					// res.append('Set-Cookie','session.id=aaaaaa');
+					// res.append('Set-Cookie','abc=ddd');
+					// res.send(_body);
 					// $ = cheerio.load(_body);
 					//if($){
 						//var src=$(".mid.validateCode").attr("src")
