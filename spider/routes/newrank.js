@@ -13,11 +13,32 @@ var mongoose = require('mongoose');
 var NewRank = mongoose.model('NewRank');
 
 var key = ['跑步','科技','母婴','商业','旅行','运动'];
+var form_rank_name_group_arr = ['资讯','生活'];
+var form_rank_name_arr = ['科技','学术','财富','商业','旅行'];
+
+var form_Date = [
+				{key_index:1,group:'资讯',name:'科技'},{key_index:1,group:'资讯',name:'学术'},{key_index:3,group:'资讯',name:'财富'},
+				{key_index:3,group:'暂无',name:'商业'},{key_index:4,group:'生活',name:'旅行'}
+			];
+
+var form_Date_index = 0;
+
+var index = form_Date[form_Date_index].key_index;
+
+var form_rank_name_group = form_Date[form_Date_index].group;
+var form_rank_name = form_Date[form_Date_index].name;
 
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
 
+
+	form_Date_index = req.query.index;
+
+	index = form_Date[form_Date_index].key_index;
+
+	form_rank_name_group = form_Date[form_Date_index].group;
+	form_rank_name = form_Date[form_Date_index].name;
 
 	console.log('start spider');
 
@@ -34,13 +55,13 @@ router.get('/', function(req, res, next) {
 	var count = 0;
 	var errorNum = 0;
 	var success = 0;
-	for(var z=0; z<16; z++){
+	for(var z=0; z<7; z++){
 		var d = new Date(new Date(date).getTime()-1000*60*60*24).toISOString().slice(0,10);
 		date = d;
 		var formDate = {
 		    	'end': d,
-				'rank_name': '汽车',
-				'rank_name_group': '资讯',
+				'rank_name': form_rank_name,
+				'rank_name_group': form_rank_name_group,
 				'start': d,
 		    };
 		var url = '/xdnphb/list/day/rank?AppKey=joker';
@@ -170,6 +191,8 @@ function httpRequest(Json,str,end,noXlsx,res){
 							// console.log(j);
 						}
 						else{
+							editJson.key = key[index];
+							editJson.tag = index;
 							editJson.account = editJson.wx_name;
 							editJson.name = editJson.wx_nickname;
 							editJson.getTime = item.form.start;

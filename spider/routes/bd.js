@@ -12,13 +12,27 @@ var mongoose = require('mongoose');
 var NewRank = mongoose.model('NewRank');
 
 var key = ['跑步','科技','母婴','商业','旅行','运动'];
-
+var qs_gzh_id_Arr = [30174,242,12480,43201,43176,42,8527,26488,26377,26482,4267,196,4485,27502,28082,28226];
+var qs_gzh_id_str_Arr = [
+					{key_index:0,name:'生活->跑步',id:30174},{key_index:1,name:'行业->大数据',id:242},{key_index:1,name:'行业->学术',id:12480},
+					{key_index:1,name:'行业->VR',id:43201},{key_index:1,name:'行业->无人机',id:43176},{key_index:1,name:'生活->科技',id:42},
+					{key_index:1,name:'商业->手机',id:8527},{key_index:2,name:'生活->亲子',id:26488},{key_index:3,name:'商业->企业家',id:26377},
+					{key_index:3,name:'商业->企业',id:26482},{key_index:3,name:'行业->财经',id:4267},{key_index:4,name:'行业->旅游',id:196},
+					{key_index:5,name:'生活->运动',id:4485},{key_index:5,name:'生活->足球',id:27502},{key_index:5,name:'生活->篮球',id:28082},
+					{key_index:5,name:'生活->高尔夫',id:28226}
+				];
+var qs_option_index = 0;
+var index = qs_gzh_id_str_Arr[qs_option_index].key_index;
+var qs_gzh_id = qs_gzh_id_str_Arr[qs_option_index].id;
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
+	qs_option_index = req.query.index;
 
+	index = qs_gzh_id_str_Arr[qs_option_index].key_index;
+	qs_gzh_id = qs_gzh_id_str_Arr[qs_option_index].id;
 
-
+	
 	var obj = nodeXlsx.parse("./WeChat.xlsx");
 	var noXlsx = {};
 	for(var i = 0; i< obj[0].data.length; i++){
@@ -45,7 +59,7 @@ router.get('/', function(req, res, next) {
 			var options = {
 			    uri: 'http://www.gsdata.cn/newRank/getwxranks',
 			    qs: {
-			    	gid:'205',
+			    	gid: qs_gzh_id,
 					date:d,
 					page:i,
 					type:'day',
@@ -180,8 +194,11 @@ function httpRequest(Json,str,end,noXlsx,res){
 							// console.log(j);
 						}
 						else{
+							rows.key = key[index];
+							rows.tag = index;
 							rows.account = rows.wx_name;
 							rows.name = rows.wx_nickname;
+							rows.getTime = item.qs.date;
 							var newrank = new NewRank(rows);
 							newrank.save(function(err){
 								if(err){
