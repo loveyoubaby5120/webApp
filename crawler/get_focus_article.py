@@ -4,7 +4,7 @@ from datetime import datetime,timedelta
 da = datetime.now() - timedelta(days=30)
 time = int(da.timestamp())
 
-cnx = connector.connect(user='root',password='weixinweixin',host='127.0.0.1',database='weixin')
+cnx = connector.connect(user='root',password='',host='127.0.0.1',database='weixin')
 cursor = cnx.cursor()
 cursor.execute('truncate focus_article')
 cnx.commit()

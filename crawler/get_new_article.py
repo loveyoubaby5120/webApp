@@ -8,7 +8,7 @@ from html.parser import HTMLParser
 def unescape(s):
     return re.sub(r'\\(.)','\g<1>',s)
 
-cnx = connector.connect(user ='root',password='weixinweixin',database = 'weixin',host ='127.0.0.1')
+cnx = connector.connect(user ='root',password='',database = 'weixin',host ='127.0.0.1')
 cursor =  cnx.cursor()
 hp =  HTMLParser()
 

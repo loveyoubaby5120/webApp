@@ -4,7 +4,7 @@ from math import log
 
 coff_a = 0.5
 
-cnx = connector.connect(user='root',password='weixinweixin',host='127.0.0.1',database='weixin')
+cnx = connector.connect(user='root',password='',host='127.0.0.1',database='weixin')
 cursor = cnx.cursor()
 
 cursor.execute('select article_id from focus_article')

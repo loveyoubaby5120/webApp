@@ -6,7 +6,7 @@ from operator import itemgetter
 
 coff_b = 1
 
-cnx = connector.connect(user='root',password='weixinweixin',host='127.0.0.1',database='weixin')
+cnx = connector.connect(user='root',password='',host='127.0.0.1',database='weixin')
 cursor = cnx.cursor()
 
 cursor.execute('select id,type from gzh_profile')

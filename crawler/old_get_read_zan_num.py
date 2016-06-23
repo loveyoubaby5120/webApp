@@ -6,7 +6,7 @@ import json
 import requests
 import time
 
-cnx = connector.connect(user='root',password='weixinweixin',host='127.0.0.1',database='weixin')
+cnx = connector.connect(user='root',password='',host='127.0.0.1',database='weixin')
 cursor = cnx.cursor()
 
 def insert_data(ctime,aid,read_num,zan_num):

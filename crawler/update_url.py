@@ -11,7 +11,7 @@ fro = end-timedelta(hours=1)
 from_h = int(fro.timestamp())
 end_h = int(end.timestamp())
 
-cnx = connector.connect(user='root',password='weixinweixin',host='127.0.0.1',database='weixin')
+cnx = connector.connect(user='root',password='',host='127.0.0.1',database='weixin')
 cursor = cnx.cursor()
 
 cursor.execute('select url,id from article_profile')

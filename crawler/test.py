@@ -2,7 +2,7 @@ import  mysql.connector as connector
 import requests
 import json
 
-cnx = connector.connect(user='root',password='weixinweixin',host='127.0.0.1',database='weixin')
+cnx = connector.connect(user='root',password='',host='127.0.0.1',database='weixin')
 cursor = cnx.cursor()
 
 cursor.execute('select url from article_profile where id = 1692')

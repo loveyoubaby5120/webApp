@@ -10,7 +10,7 @@ fro = end-timedelta(hours=1)
 from_h = int(fro.timestamp())
 end_h = int(end.timestamp())
 
-cnx = connector.connect(user='root',password='weixinweixin',host='127.0.0.1',database='weixin')
+cnx = connector.connect(user='root',password='',host='127.0.0.1',database='weixin')
 cursor = cnx.cursor()
 
 cursor.execute('update zan_num set time=%s where time between %s and %s',[end_h,from_h,end_h])
