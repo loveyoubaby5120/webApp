@@ -14,11 +14,11 @@ var NewRank = mongoose.model('NewRank');
 
 router.get('/', function(req, res, next) {
 
-	// NewRank.remove(function(err){
-	//     if(!err){
-	//         console.log('删除数据');
-	//     }
-	// });
+	NewRank.remove(function(err){
+	    if(!err){
+	        console.log('删除数据');
+	    }
+	});
 
 	console.log('start spider');
 
