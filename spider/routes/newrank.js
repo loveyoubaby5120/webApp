@@ -12,7 +12,7 @@ var md5 = require('md5');
 var mongoose = require('mongoose');
 var NewRank = mongoose.model('NewRank');
 
-var key = ['跑步'，'科技','母婴','商业','旅行','运动'];
+var key = ['跑步','科技','母婴','商业','旅行','运动'];
 
 /* GET home page. */
 

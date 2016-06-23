@@ -11,7 +11,7 @@ var mongoose = require('mongoose');
 // var WeChat = mongoose.model('WeChat');
 var NewRank = mongoose.model('NewRank');
 
-var key = ['跑步'，'科技','母婴','商业','旅行','运动'];
+var key = ['跑步','科技','母婴','商业','旅行','运动'];
 
 /* GET home page. */
 
