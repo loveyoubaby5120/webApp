@@ -5,31 +5,36 @@ var async = require('async');
 
 var rp = require('request-promise');
 
+var nodeXlsx = require('node-xlsx');
+
 var md5 = require('md5');
 
 var mongoose = require('mongoose');
 var NewRank = mongoose.model('NewRank');
 
+var key = ['跑步'，'科技','母婴','商业','旅行','运动'];
+
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
 
-	NewRank.remove(function(err){
-	    if(!err){
-	        console.log('删除数据');
-	    }
-	});
 
 	console.log('start spider');
 
-	var date = new Date().toISOString().slice(0,10);
-	date = new Date(new Date(date).getTime()-1000*60*60*24).toISOString().slice(0,10);
 
+	var obj = nodeXlsx.parse("./WeChat.xlsx");
+	var noXlsx = {};
+	for(var i = 0; i< obj[0].data.length; i++){
+		noXlsx[obj[0].data[i][0]] = obj[0].data[i];
+	}
+
+
+	var date = new Date().toISOString().slice(0,10);
 	var Json = [];
 	var count = 0;
 	var errorNum = 0;
 	var success = 0;
-	for(var z=0; z<365; z++){
+	for(var z=0; z<16; z++){
 		var d = new Date(new Date(date).getTime()-1000*60*60*24).toISOString().slice(0,10);
 		date = d;
 		var formDate = {
@@ -103,7 +108,7 @@ router.get('/', function(req, res, next) {
 
 	// });
 	
-	httpRequest(Json,0,1);
+	httpRequest(Json,0,50,noXlsx,res);
 	
 
 	console.log(count);
@@ -130,9 +135,9 @@ function nonce(){
 }
 
 
-function httpRequest(Json,str,end){
+function httpRequest(Json,str,end,noXlsx,res){
 	var arr = Json.slice(str,end);
-	async.forEachLimit(arr, 1, function(item, callback){
+	async.forEachLimit(arr, 50, function(item, callback){
 		request(item,function(error, response,body){
 			if(!error && response.statusCode ==200){
 				if(body){
@@ -147,16 +152,36 @@ function httpRequest(Json,str,end){
 						console.log(body.value.length);
 					}
 					for(var j = 0; j < body.value.length; j++){
-						var editJson = body.value[j];
-						editJson.getTime = item.form.start;
-						var newrank = new NewRank(editJson);
-						newrank.save(function(err){
-							if(err){
-								return next(err);
-							}
+						// var editJson = body.value[j];
+						// editJson.getTime = item.form.start;
+						// var newrank = new NewRank(editJson);
+						// newrank.save(function(err){
+						// 	if(err){
+						// 		return next(err);
+						// 	}
 							
-							return j;
-						});
+						// 	return j;
+						// });
+
+						var editJson = body.value[j];
+						if(noXlsx[editJson.name]){
+							// console.log(rows.wx_name);
+							// console.log(noXlsx[rows.wx_name]);
+							// console.log(j);
+						}
+						else{
+							editJson.account = editJson.wx_name;
+							editJson.name = editJson.wx_nickname;
+							editJson.getTime = item.form.start;
+							var newrank = new NewRank(editJson);
+							newrank.save(function(err){
+								if(err){
+									return next(err);
+								}
+								
+								return j;
+							});
+						}
 
 					}
 				}
@@ -170,8 +195,11 @@ function httpRequest(Json,str,end){
 			}
 			if(arr[arr.length-1]==item && end <= Json.length){
 				console.log(end);
-				sleep(2000);
-				httpRequest(Json,end,(end+1));
+				httpRequest(Json,end,(end+50),noXlsx,res);
+			}
+			if(Json[Json.length-1]==item){
+				console.log('结束');
+				res.send('结束');
 			}
 
 		},function(err, result){

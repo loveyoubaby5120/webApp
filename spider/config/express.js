@@ -29,7 +29,6 @@ module.exports = function(){
 	var newrank = require('../routes/newrank');
 	var demo = require('../routes/demo');
 	var yyzc = require('../routes/yyzc');
-	var gsdata_and_newrank = require('../routes/gsdata_and_newrank');
 
 	// app.use('/', routes);
 	app.use('/users', users);
@@ -39,7 +38,6 @@ module.exports = function(){
 	app.use('/newrank', newrank);
 	app.use('/yyzc', yyzc);
 	// app.use('/', demo);
-	app.use('/gsdata_and_newrank', gsdata_and_newrank);
 
 	app.use(function(req, res, next){
 		res.status(404);

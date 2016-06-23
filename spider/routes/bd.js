@@ -5,22 +5,38 @@ var async = require('async');
 
 var rp = require('request-promise');
 
+var nodeXlsx = require('node-xlsx');
+
 var mongoose = require('mongoose');
-var WeChat = mongoose.model('WeChat');
+// var WeChat = mongoose.model('WeChat');
+var NewRank = mongoose.model('NewRank');
+
+var key = ['跑步'，'科技','母婴','商业','旅行','运动'];
 
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
 
+
+
+	var obj = nodeXlsx.parse("./WeChat.xlsx");
+	var noXlsx = {};
+	for(var i = 0; i< obj[0].data.length; i++){
+		noXlsx[obj[0].data[i][0]] = obj[0].data[i];
+	}
+	// res.send(noXlsx);
+
 	console.log('start spider');
 
 	var date = '2016-06-13';
+
+	date = new Date().toISOString().slice(0,10);
 
 	var Json = [];
 	var count = 0;
 	var errorNum = 0;
 	var success = 0;
-	for(var z=0; z<365; z++){
+	for(var z=0; z<7; z++){
 		var d = new Date(new Date(date).getTime()-1000*60*60*24).toISOString().slice(0,10);
 		date = d;
 
@@ -123,7 +139,7 @@ router.get('/', function(req, res, next) {
 	}
 
 	
-	httpRequest(Json,0,50);
+	httpRequest(Json,0,50,noXlsx,res);
 	
 
 	console.log(count);
@@ -140,21 +156,42 @@ router.get('/', function(req, res, next) {
 
 
 
-function httpRequest(Json,str,end){
+function httpRequest(Json,str,end,noXlsx,res){
 	var arr = Json.slice(str,end);
 	async.forEachLimit(arr, 50, function(item, callback){
 		request(item,function(error, response,body){
 			if(!error && response.statusCode ==200){
 				if(body){
 					for(var j = 0; j < body.data.rows.length; j++){
-						var wechat = new WeChat(body.data.rows[j]);
-						wechat.save(function(err){
-							if(err){
-								return next(err);
-							}
+						// var wechat = new WeChat(body.data.rows[j]);
+						// wechat.save(function(err){
+						// 	if(err){
+						// 		return next(err);
+						// 	}
 							
-							return j;
-						});
+						// 	return j;
+						// });
+						
+						var rows = body.data.rows[j];
+						
+						if(noXlsx[rows.wx_name]){
+							// console.log(rows.wx_name);
+							// console.log(noXlsx[rows.wx_name]);
+							// console.log(j);
+						}
+						else{
+							rows.account = rows.wx_name;
+							rows.name = rows.wx_nickname;
+							var newrank = new NewRank(rows);
+							newrank.save(function(err){
+								if(err){
+									return next(err);
+								}
+								
+								return j;
+							});
+						}
+						
 
 					}
 				}
@@ -166,9 +203,14 @@ function httpRequest(Json,str,end){
 				console.log(error);
 				console.log(response);
 			}
+
 			if(arr[arr.length-1]==item && end <= Json.length){
 				console.log(end);
-				httpRequest(Json,end,(end+50));
+				httpRequest(Json,end,(end+50),noXlsx,res);
+			}
+			if(Json[Json.length-1]==item){
+				console.log('结束');
+				res.send('结束');
 			}
 
 		},function(err, result){
