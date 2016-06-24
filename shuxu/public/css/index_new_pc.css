@@ -144,6 +144,7 @@
 
 .content .info .right .formOptions{
     padding: 15px 0 0px 10px;
+    display: none;
 }
 
 .content .info .right .formOptions .options{

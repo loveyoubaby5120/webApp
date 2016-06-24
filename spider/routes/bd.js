@@ -27,12 +27,9 @@ var qs_gzh_id = qs_gzh_id_str_Arr[qs_option_index].id;
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
-	qs_option_index = req.query.index;
-
-	index = qs_gzh_id_str_Arr[qs_option_index].key_index;
-	qs_gzh_id = qs_gzh_id_str_Arr[qs_option_index].id;
-
 	
+
+
 	var obj = nodeXlsx.parse("./WeChat.xlsx");
 	var noXlsx = {};
 	for(var i = 0; i< obj[0].data.length; i++){
@@ -42,119 +39,130 @@ router.get('/', function(req, res, next) {
 
 	console.log('start spider');
 
-	var date = '2016-06-13';
 
-	date = new Date().toISOString().slice(0,10);
 
-	var Json = [];
-	var count = 0;
-	var errorNum = 0;
-	var success = 0;
-	for(var z=0; z<7; z++){
-		var d = new Date(new Date(date).getTime()-1000*60*60*24).toISOString().slice(0,10);
-		date = d;
 
-		for(var i =1 ; i<6; i++){
+	for(var eee = 0; eee < qs_gzh_id_str_Arr.length;eee++){
+		qs_option_index = eee;
+		index = qs_gzh_id_str_Arr[qs_option_index].key_index;
+		qs_gzh_id = qs_gzh_id_str_Arr[qs_option_index].id;
 
-			var options = {
-			    uri: 'http://www.gsdata.cn/newRank/getwxranks',
-			    qs: {
-			    	gid: qs_gzh_id,
-					date:d,
-					page:i,
-					type:'day',
-					cp:'all',
-					t:Math.random(),
-					action:'',
-			    },
-			    headers: {
-			    	'Host': 'www.gsdata.cn',
-					'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:37.0) Gecko/20100101 Firefox/37.0',
-					'Accept': 'application/json, text/javascript, */*; q=0.01',
-					'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
-					'Accept-Encoding': 'gzip, deflate, sdch',
-					'X-Requested-With': 'XMLHttpRequest',
-					'Referer': 'http://www.gsdata.cn/rank/detail',
-					'Cookie': 'PHPSESSID=sk9he9uvqb7i7vfd08no2q2ho2; bdshare_firstime=1465889026970; Hm_lvt_293b2731d4897253b117bb45d9bb7023=1465887653; Hm_lpvt_293b2731d4897253b117bb45d9bb7023=1465889858',
-					'Connection': 'keep-alive'
-			    },
-			    json: true // Automatically parses the JSON string in the response 
-			};
-			
+		var key_index = qs_gzh_id_str_Arr[qs_option_index].key_index;
+		var date = '2016-06-17';
 
-			Json.push(options);
+		date = new Date().toISOString().slice(0,10);
 
-			// (function(num,op){
-			// 	request(op,function(error, response,body){
-			// 		if(!error && response.statusCode ==200){
-			// 			success++;
-			// 			console.log('成功获取' + success + '条');
-			// 			if(body){
-			// 				for(var j = 0; j < body.data.rows.length; j++){
-			// 					// var wechat = new WeChat(body.data.rows[j]);
-			// 					// wechat.save(function(err){
-			// 					// 	if(err){
-			// 					// 		return next(err);
-			// 					// 	}
+		var Json = [];
+		var count = 0;
+		var errorNum = 0;
+		var success = 0;
+		for(var z=0; z<7; z--){
+			var d = new Date(new Date(date).getTime()-1000*60*60*24).toISOString().slice(0,10);
+			date = d;
+			if(d=='2014-11-30'){
+				break;
+			}
+			for(var i =1 ; i<6; i++){
+
+				var options = {
+				    uri: 'http://www.gsdata.cn/newRank/getwxranks',
+				    qs: {
+				    	gid: qs_gzh_id,
+						date:d,
+						page:i,
+						type:'day',
+						cp:'all',
+						t:Math.random(),
+						action:'',
+				    },
+				    headers: {
+				    	'Host': 'www.gsdata.cn',
+						'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:37.0) Gecko/20100101 Firefox/37.0',
+						'Accept': 'application/json, text/javascript, */*; q=0.01',
+						'Accept-Language': 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3',
+						'Accept-Encoding': 'gzip, deflate, sdch',
+						'X-Requested-With': 'XMLHttpRequest',
+						'Referer': 'http://www.gsdata.cn/rank/detail',
+						'Cookie': 'PHPSESSID=sk9he9uvqb7i7vfd08no2q2ho2; bdshare_firstime=1465889026970; Hm_lvt_293b2731d4897253b117bb45d9bb7023=1465887653; Hm_lpvt_293b2731d4897253b117bb45d9bb7023=1465889858',
+						'Connection': 'keep-alive'
+				    },
+				    json: true // Automatically parses the JSON string in the response 
+				};
+				
+
+				Json.push(options);
+
+				// (function(num,op){
+				// 	request(op,function(error, response,body){
+				// 		if(!error && response.statusCode ==200){
+				// 			success++;
+				// 			console.log('成功获取' + success + '条');
+				// 			if(body){
+				// 				for(var j = 0; j < body.data.rows.length; j++){
+				// 					// var wechat = new WeChat(body.data.rows[j]);
+				// 					// wechat.save(function(err){
+				// 					// 	if(err){
+				// 					// 		return next(err);
+				// 					// 	}
+										
+				// 					// 	return j;
+				// 					// });
+
+				// 				}
+				// 			}
+				// 			else{
+				// 				console.log(response.request.path);
+				// 			}
+				// 		}
+				// 		else{
+				// 			errorNum++;
+				// 			console.log(error);
+				// 			console.log('一共错误' + errorNum + '条');
+				// 			console.log('第' + num + '条');
+
+				// 		}
+
+				// 	});
+				// })(count,options);
+				
+				
+
+				// (function(num,op){
+				// 	rp(op)
+				// 	.then(function(body){
+				// 		success++;
+				// 		console.log('成功获取' + success + '条');
+				// 		if(body){
+				// 			console.log(body.data.error);
+				// 			for(var j = 0; j < body.data.rows.length; j++){
+				// 				// var wechat = new WeChat(body.data.rows[j]);
+				// 				// wechat.save(function(err){
+				// 				// 	if(err){
+				// 				// 		return next(err);
+				// 				// 	}
 									
-			// 					// 	return j;
-			// 					// });
+				// 				// 	return j;
+				// 				// });
 
-			// 				}
-			// 			}
-			// 			else{
-			// 				console.log(response.request.path);
-			// 			}
-			// 		}
-			// 		else{
-			// 			errorNum++;
-			// 			console.log(error);
-			// 			console.log('一共错误' + errorNum + '条');
-			// 			console.log('第' + num + '条');
+				// 			}
+				// 		}
+						
+				// 	},function(error){
+				// 		errorNum++;
+				// 		console.log(error);
+				// 		console.log('一共错误' + errorNum + '条');
+				// 		console.log('第' + num + '条');
+				// 	});
+				// })(count,options);
+				
 
-			// 		}
-
-			// 	});
-			// })(count,options);
-			
-			
-
-			// (function(num,op){
-			// 	rp(op)
-			// 	.then(function(body){
-			// 		success++;
-			// 		console.log('成功获取' + success + '条');
-			// 		if(body){
-			// 			console.log(body.data.error);
-			// 			for(var j = 0; j < body.data.rows.length; j++){
-			// 				// var wechat = new WeChat(body.data.rows[j]);
-			// 				// wechat.save(function(err){
-			// 				// 	if(err){
-			// 				// 		return next(err);
-			// 				// 	}
-								
-			// 				// 	return j;
-			// 				// });
-
-			// 			}
-			// 		}
-					
-			// 	},function(error){
-			// 		errorNum++;
-			// 		console.log(error);
-			// 		console.log('一共错误' + errorNum + '条');
-			// 		console.log('第' + num + '条');
-			// 	});
-			// })(count,options);
-			
-
-			count++;
+				count++;
+			}
 		}
-	}
 
-	
-	httpRequest(Json,0,50,noXlsx,res);
-	
+		
+		httpRequest(Json,0,50,noXlsx,res,key_index);
+	}
 
 	console.log(count);
 	console.log('end spider');
@@ -170,12 +178,12 @@ router.get('/', function(req, res, next) {
 
 
 
-function httpRequest(Json,str,end,noXlsx,res){
+function httpRequest(Json,str,end,noXlsx,res,key_index){
 	var arr = Json.slice(str,end);
 	async.forEachLimit(arr, 50, function(item, callback){
 		request(item,function(error, response,body){
 			if(!error && response.statusCode ==200){
-				if(body){
+				if(body && body.data && body.data.rows){
 					for(var j = 0; j < body.data.rows.length; j++){
 						// var wechat = new WeChat(body.data.rows[j]);
 						// wechat.save(function(err){
@@ -194,8 +202,8 @@ function httpRequest(Json,str,end,noXlsx,res){
 							// console.log(j);
 						}
 						else{
-							rows.key = key[index];
-							rows.tag = index;
+							rows.key = key[key_index];
+							rows.tag = key_index;
 							rows.account = rows.wx_name;
 							rows.name = rows.wx_nickname;
 							rows.getTime = item.qs.date;
@@ -223,11 +231,11 @@ function httpRequest(Json,str,end,noXlsx,res){
 
 			if(arr[arr.length-1]==item && end <= Json.length){
 				console.log(end);
-				httpRequest(Json,end,(end+50),noXlsx,res);
+				httpRequest(Json,end,(end+50),noXlsx,res,key_index);
 			}
 			if(Json[Json.length-1]==item){
 				console.log('结束');
-				res.send('结束');
+				// res.send('结束');
 			}
 
 		},function(err, result){
