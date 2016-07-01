@@ -516,22 +516,10 @@ function transition(index) {
 
     chart('data/d3_'+index+'.json');
 
-}
 
-function zhexian(){
-     var width = 640,
-        height = 400,
-        margin = 30,
-        x = d3.scale.linear() // <-A
-            .domain([0, 10])
-            .range([margin, width - margin]),
-        y = d3.scale.linear() // <-B
-            .domain([0, 10])
-            .range([height - margin, margin]);
-        
-    var data = [ // <-C
+    data = [ // <-C
         [
-            {x: 0, y: 5},{x: 1, y: 9},{x: 2, y: 7},
+            {x: 0, y: 0},{x: 1, y: 9},{x: 2, y: 7},
             {x: 3, y: 5},{x: 4, y: 3},{x: 6, y: 4},
             {x: 7, y: 2},{x: 8, y: 3},{x: 9, y: 2}
         ],
@@ -540,77 +528,107 @@ function zhexian(){
             return {x: i, y: Math.sin(i) + 5};
         })
     ];
-    
-    var line = d3.svg.line() // <-D
-            .x(function(d){return x(d.x);})
-            .y(function(d){return y(d.y);});
+
+
+    zhexian(data);
+
+}
+
+var data = [ // <-C
+        [
+            {x: 0, y: 5},{x: 1, y: 9},{x: 2, y: 7},
+            {x: 3, y: 5},{x: 4, y: 3},{x: 6, y: 4},
+            {x: 7, y: 2},{x: 8, y: 3},{x: 9, y: 2}
+        ],
         
-    var svg = d3.select("#main2").append("svg");
+        d3.range(10).map(function(i){
+            return {x: i, y: Math.sin(i+15) + 5};
+        })
+    ];
+
+var width2 = 640,
+    height2 = 400,
+    margin2 = 30,
+    x2 = d3.scale.linear() // <-A
+        .domain([0, 10])
+        .range([margin2, width2 - margin2]),
+    y2 = d3.scale.linear() // <-B
+        .domain([0, 10])
+        .range([height2 - margin2, margin2]);
     
-    svg.attr("height", height)
-        .attr("width", width);
+
+var line = d3.svg.line() // <-D
+        .x(function(d){return x2(d.x);})
+        .y(function(d){return y2(d.y);});
+    
+var svg2 = d3.select("#main2").append("svg");
+
+svg2.attr("height", height2)
+    .attr("width", width2);
+
+
+ zhexian(data);
+function zhexian(data){
+     
         
-     svg.selectAll("path.line")
+     svg2.selectAll("path.line")
             .data(data)
         .enter()
             .append("path") // <-E
             .attr("class", "line")            
             .attr("d", function(d){return line(d);}); // <-F
             
-    renderAxes(svg);
         
-    function renderAxes(svg){ // <-G
-        var xAxis = d3.svg.axis()
-                .scale(x.range([0, quadrantWidth()]))
-                .orient("bottom");            
-                
-        var yAxis = d3.svg.axis()
-                .scale(y.range([quadrantHeight(), 0]))
-                .orient("left");
-        
-        svg.append("g")        
-            .attr("class", "axis")
-            .attr("transform", function(){
-                return "translate(" + xStart() 
-                    + "," + yStart() + ")";
-            })
-            .call(xAxis);
+    var xAxis2 = d3.svg.axis()
+            .scale(x2.range([0, quadrantWidth()]))
+            .orient("bottom")
+            .ticks(d3.time.weeks);            
             
-        svg.append("g")        
-            .attr("class", "axis")
-            .attr("transform", function(){
-                return "translate(" + xStart() 
-                    + "," + yEnd() + ")";
-            })
-            .call(yAxis);
-    }
+    var yAxis2 = d3.svg.axis()
+            .scale(y2.range([quadrantHeight(), 0]))
+            .orient("left");
+    
+    svg2.append("g")        
+        .attr("class", "axis")
+        .attr("transform", function(){
+            return "translate(" + xStart() 
+                + "," + yStart() + ")";
+        })
+        .call(xAxis2);
+        
+    svg2.append("g")        
+        .attr("class", "axis")
+        .attr("transform", function(){
+            return "translate(" + xStart() 
+                + "," + yEnd() + ")";
+        })
+        .call(yAxis2);
         
     function xStart(){
-        return margin;
+        return margin2;
     }        
     
     function yStart(){
-        return height - margin;
+        return height2 - margin2;
     }
     
     function xEnd(){
-        return width - margin;
+        return width2 - margin2;
     }
     
     function yEnd(){
-        return margin;
+        return margin2;
     }
     
     function quadrantWidth(){
-        return width - 2 * margin;
+        return width2 - 2 * margin2;
     }
     
     function quadrantHeight(){
-        return height - 2 * margin;
+        return height2 - 2 * margin2;
     }    
  }  
 
- zhexian();
 </script>
 </body>
 </html>
