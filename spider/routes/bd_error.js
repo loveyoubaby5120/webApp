@@ -74,7 +74,6 @@ router.get('/', function(req, res, next) {
 						cp:'all',
 						t:Math.random(),
 						action:'',
-						key_index:key_index
 				    },
 				    headers: {
 				    	'Host': 'www.gsdata.cn',
@@ -92,6 +91,69 @@ router.get('/', function(req, res, next) {
 				
 
 				Json.push(options);
+
+				// (function(num,op){
+				// 	request(op,function(error, response,body){
+				// 		if(!error && response.statusCode ==200){
+				// 			success++;
+				// 			console.log('成功获取' + success + '条');
+				// 			if(body){
+				// 				for(var j = 0; j < body.data.rows.length; j++){
+				// 					// var wechat = new WeChat(body.data.rows[j]);
+				// 					// wechat.save(function(err){
+				// 					// 	if(err){
+				// 					// 		return next(err);
+				// 					// 	}
+										
+				// 					// 	return j;
+				// 					// });
+
+				// 				}
+				// 			}
+				// 			else{
+				// 				console.log(response.request.path);
+				// 			}
+				// 		}
+				// 		else{
+				// 			errorNum++;
+				// 			console.log(error);
+				// 			console.log('一共错误' + errorNum + '条');
+				// 			console.log('第' + num + '条');
+
+				// 		}
+
+				// 	});
+				// })(count,options);
+				
+				
+
+				// (function(num,op){
+				// 	rp(op)
+				// 	.then(function(body){
+				// 		success++;
+				// 		console.log('成功获取' + success + '条');
+				// 		if(body){
+				// 			console.log(body.data.error);
+				// 			for(var j = 0; j < body.data.rows.length; j++){
+				// 				// var wechat = new WeChat(body.data.rows[j]);
+				// 				// wechat.save(function(err){
+				// 				// 	if(err){
+				// 				// 		return next(err);
+				// 				// 	}
+									
+				// 				// 	return j;
+				// 				// });
+
+				// 			}
+				// 		}
+						
+				// 	},function(error){
+				// 		errorNum++;
+				// 		console.log(error);
+				// 		console.log('一共错误' + errorNum + '条');
+				// 		console.log('第' + num + '条');
+				// 	});
+				// })(count,options);
 				
 
 				count++;
@@ -99,25 +161,38 @@ router.get('/', function(req, res, next) {
 		}
 
 		
-		httpRequest(Json,0,50,noXlsx,res);
+		httpRequest(Json,0,50,noXlsx,res,key_index);
 	}
 
 	console.log(count);
 	console.log('end spider');
 
 
+	// WeChat.remove(function(err){
+	//     if(!err){
+	//         console.log('删除数据');
+	//     }
+	// });
 
 });
 
 
 
-function httpRequest(Json,str,end,noXlsx,res){
+function httpRequest(Json,str,end,noXlsx,res,key_index){
 	var arr = Json.slice(str,end);
 	async.forEachLimit(arr, 50, function(item, callback){
 		request(item,function(error, response,body){
 			if(!error && response.statusCode ==200){
 				if(body && body.data && body.data.rows){
 					for(var j = 0; j < body.data.rows.length; j++){
+						// var wechat = new WeChat(body.data.rows[j]);
+						// wechat.save(function(err){
+						// 	if(err){
+						// 		return next(err);
+						// 	}
+							
+						// 	return j;
+						// });
 						
 						var rows = body.data.rows[j];
 						
@@ -127,8 +202,8 @@ function httpRequest(Json,str,end,noXlsx,res){
 							// console.log(j);
 						}
 						else{
-							rows.key = key[item.qs.key_index];
-							rows.tag = item.qs.key_index;
+							rows.key = key[key_index];
+							rows.tag = key_index;
 							rows.account = rows.wx_name;
 							rows.name = rows.wx_nickname;
 							rows.getTime = item.qs.date;
@@ -156,7 +231,7 @@ function httpRequest(Json,str,end,noXlsx,res){
 
 			if(arr[arr.length-1]==item && end <= Json.length){
 				console.log(end);
-				httpRequest(Json,end,(end+50),noXlsx,res);
+				httpRequest(Json,end,(end+50),noXlsx,res,key_index);
 			}
 			if(Json[Json.length-1]==item){
 				console.log('结束');
