@@ -35,7 +35,6 @@ router.get('/', function(req, res, next) {
 	for(var i = 0; i< obj[0].data.length; i++){
 		noXlsx[obj[0].data[i][0]] = obj[0].data[i];
 	}
-	// res.send(noXlsx);
 
 	console.log('start spider');
 
@@ -74,6 +73,7 @@ router.get('/', function(req, res, next) {
 						cp:'all',
 						t:Math.random(),
 						action:'',
+						key_index:key_index
 				    },
 				    headers: {
 				    	'Host': 'www.gsdata.cn',
@@ -86,114 +86,39 @@ router.get('/', function(req, res, next) {
 						'Cookie': 'PHPSESSID=sk9he9uvqb7i7vfd08no2q2ho2; bdshare_firstime=1465889026970; Hm_lvt_293b2731d4897253b117bb45d9bb7023=1465887653; Hm_lpvt_293b2731d4897253b117bb45d9bb7023=1465889858',
 						'Connection': 'keep-alive'
 				    },
-				    json: true // Automatically parses the JSON string in the response 
+				    json: true
 				};
 				
 
 				Json.push(options);
 
-				// (function(num,op){
-				// 	request(op,function(error, response,body){
-				// 		if(!error && response.statusCode ==200){
-				// 			success++;
-				// 			console.log('成功获取' + success + '条');
-				// 			if(body){
-				// 				for(var j = 0; j < body.data.rows.length; j++){
-				// 					// var wechat = new WeChat(body.data.rows[j]);
-				// 					// wechat.save(function(err){
-				// 					// 	if(err){
-				// 					// 		return next(err);
-				// 					// 	}
-										
-				// 					// 	return j;
-				// 					// });
-
-				// 				}
-				// 			}
-				// 			else{
-				// 				console.log(response.request.path);
-				// 			}
-				// 		}
-				// 		else{
-				// 			errorNum++;
-				// 			console.log(error);
-				// 			console.log('一共错误' + errorNum + '条');
-				// 			console.log('第' + num + '条');
-
-				// 		}
-
-				// 	});
-				// })(count,options);
-				
-				
-
-				// (function(num,op){
-				// 	rp(op)
-				// 	.then(function(body){
-				// 		success++;
-				// 		console.log('成功获取' + success + '条');
-				// 		if(body){
-				// 			console.log(body.data.error);
-				// 			for(var j = 0; j < body.data.rows.length; j++){
-				// 				// var wechat = new WeChat(body.data.rows[j]);
-				// 				// wechat.save(function(err){
-				// 				// 	if(err){
-				// 				// 		return next(err);
-				// 				// 	}
-									
-				// 				// 	return j;
-				// 				// });
-
-				// 			}
-				// 		}
-						
-				// 	},function(error){
-				// 		errorNum++;
-				// 		console.log(error);
-				// 		console.log('一共错误' + errorNum + '条');
-				// 		console.log('第' + num + '条');
-				// 	});
-				// })(count,options);
-				
 
 				count++;
 			}
 		}
 
 		
-		httpRequest(Json,0,50,noXlsx,res,key_index);
+		httpRequest(Json,0,50,noXlsx,res);
 	}
 
 	console.log(count);
 	console.log('end spider');
 
 
-	// WeChat.remove(function(err){
-	//     if(!err){
-	//         console.log('删除数据');
-	//     }
-	// });
 
 });
 
 
 
-function httpRequest(Json,str,end,noXlsx,res,key_index){
+function httpRequest(Json,str,end,noXlsx,res){
 	var arr = Json.slice(str,end);
 	async.forEachLimit(arr, 50, function(item, callback){
 		request(item,function(error, response,body){
 			if(!error && response.statusCode ==200){
+				// res.send(response.request);
+				// return false;
 				if(body && body.data && body.data.rows){
 					for(var j = 0; j < body.data.rows.length; j++){
-						// var wechat = new WeChat(body.data.rows[j]);
-						// wechat.save(function(err){
-						// 	if(err){
-						// 		return next(err);
-						// 	}
-							
-						// 	return j;
-						// });
-						
 						var rows = body.data.rows[j];
 						
 						if(noXlsx[rows.wx_name]){
@@ -202,8 +127,8 @@ function httpRequest(Json,str,end,noXlsx,res,key_index){
 							// console.log(j);
 						}
 						else{
-							rows.key = key[key_index];
-							rows.tag = key_index;
+							rows.key = key[item.qs.key_index];
+							rows.tag = item.qs.key_index;
 							rows.account = rows.wx_name;
 							rows.name = rows.wx_nickname;
 							rows.getTime = item.qs.date;
@@ -231,7 +156,7 @@ function httpRequest(Json,str,end,noXlsx,res,key_index){
 
 			if(arr[arr.length-1]==item && end <= Json.length){
 				console.log(end);
-				httpRequest(Json,end,(end+50),noXlsx,res,key_index);
+				httpRequest(Json,end,(end+50),noXlsx,res);
 			}
 			if(Json[Json.length-1]==item){
 				console.log('结束');
