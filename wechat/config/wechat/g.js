@@ -45,27 +45,11 @@ module.exports = function(opts){
 
 		    var message = util.formatMessage(content.xml);
 
-		    console.log(message);
+		    this.weixin = message;
 
+		    yield handler.call(this, next);
 
-		    if(message.MsgType === 'event'){
-		    	if(message.Event === 'subscribe'){
-		    		var now = new Date().getTime();
-
-		    		_this.status = 200;
-		    		_this.type = 'application/xml';
-		    		_this.body = '<xml>' +
-									'<ToUserName><![CDATA[' + message.FromUserName+ ']]></ToUserName>' +
-									'<FromUserName><![CDATA[' + message.ToUserName+ ']]></FromUserName>' +
-									'<CreateTime>' + now+ '</CreateTime>' +
-									'<MsgType><![CDATA[text]]></MsgType>' +
-									'<Content><![CDATA[你好]]></Content>' +
-									'</xml>';
-					return;
-
-		    	}
-		    }
-
+		    wechat.reply.call(this);
 
 	    }
 

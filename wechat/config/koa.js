@@ -20,27 +20,12 @@ var bodyParser = require('koa-body-parser');
 var staticServer = require('koa-static');
 
 var wechat = require('./wechat/g.js');
-var util = require('../libs/util.js');
+var config = require('./config.js');
+var weixin = require('./weixin.js');
 
 
 var app = koa();
 
-var wechat_file = path.join(__dirname, '/wechat.txt');
-
-var config = {
-	    wechat:{
-	        appID: 'wx6cf67cf776e6aae4',
-	        appSecret: '2ccb2200e737bbe5f75a086e780e0822',
-	        token: 'loveyoubaby5120',
-	        getAccessToken: function(){
-	        	return util.readFileAsync(wechat_file,'utf-8');
-	        },
-	        saveAccessToken: function(data){
-	        	data = JSON.stringify(data);
-	        	return util.writeFileAsync(wechat_file, data);
-	        }
-	    }
-	};
 
 
 var locals = {
@@ -92,7 +77,7 @@ module.exports = function(){
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 	
-	app.use(wechat(config.wechat));
+	app.use(wechat(config.wechat, weixin.reply));
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
