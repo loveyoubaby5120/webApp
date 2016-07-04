@@ -25,12 +25,14 @@
     "koa-views": "^4.1.0",
     "mongoose": "^4.4.16",
     "path": "^0.12.7",
+    "raw-body": "^2.1.7",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-router": "^2.4.0",
     "request": "^2.72.0",
     "webpack": "^1.13.0",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "xml2js": "^0.4.16"
   },
   "devDependencies": {
     "babel-core": "^6.8.0",

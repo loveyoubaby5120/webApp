@@ -1,3 +1,5 @@
+'use strict'
+
 var koa = require('koa');
 var path = require('path');
 
@@ -17,7 +19,7 @@ var bodyParser = require('koa-body-parser');
 
 var staticServer = require('koa-static');
 
-var wechat = require('./g.js');
+var wechat = require('./wechat/g.js');
 var util = require('../libs/util.js');
 
 
