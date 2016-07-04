@@ -11,7 +11,7 @@
     <style>
     .line{
         fill: none;    
-        stroke: steelblue;
+        /* stroke: steelblue; */
         stroke-width: 2;
     }
     .axis path, .axis line {
@@ -85,10 +85,10 @@
         <div class="date_info">
             <div class="select_data1">
 
-                <a class='ok' href="javascript:;">最近30天</a><span class='down'>ˇ</span>
+                <a class='ok' href="javascript:;" value="30">最近30天</a><span class='down'>ˇ</span>
                 <ul class="select">
-                    <li class="option">最近30天</li>
-                    <li class="option">最近60天</li>
+                    <li class="option" value="7" onclick="transition()">最近7天</li>
+                    <li class="option" value="30" onclick="transition()">最近30天</li>
                 </ul>
                 <!-- 
                 <select>
@@ -132,11 +132,11 @@
                     <div class="select_new">
                     <div class="formOptions">
                     <div class="options">
-                        <div class="query long" style="width:100%;" onclick="transition()" ng-click="article('data/article_data.json')">
-                            <input class='ok' type='checkbox' name="keyall" id="keyall" style="box-shadow:none; border-radius:none; background-color:none;width:auto;" placeholder='微信号'/><label style="margin-left: 20px;" for="keyall">公车改革</label>
-                            <input class='ok' type='checkbox' name="keyall" id="key1"  style="box-shadow:none; border-radius:none; background-color:none;width:auto;" placeholder='微信号'/><label style="margin-left: 20px;" for="key1">召回</label>
-                            <input class='ok' type='checkbox' name="keyall" id="key2" style="box-shadow:none; border-radius:none; background-color:none;width:auto;" placeholder='微信号'/><label style="margin-left: 20px;" for="key2">销量领跑</label>
-                            <input class='ok' type='checkbox' name="keyall" id="key3" style="box-shadow:none; border-radius:none; background-color:none;width:auto;" placeholder='微信号'/><label style="margin-left: 20px;" for="key3">新能源</label>
+                        <div class="query long" style="width:100%;" ng-click="article('data/article_data.json')">
+                            <input class='ok' type='checkbox' name="keyall" id="keyall" style="box-shadow:none; border-radius:none; background-color:none;width:auto;" placeholder='微信号' onclick="transition()" checked/><label style="margin-left: 20px;" for="keyall">公车改革</label>
+                            <input class='ok' type='checkbox' name="keyall" id="key1"  style="box-shadow:none; border-radius:none; background-color:none;width:auto;" placeholder='微信号' onclick="transition()" checked/><label style="margin-left: 20px;" for="key1">召回</label>
+                            <input class='ok' type='checkbox' name="keyall" id="key2" style="box-shadow:none; border-radius:none; background-color:none;width:auto;" placeholder='微信号' onclick="transition()" checked/><label style="margin-left: 20px;" for="key2">销量领跑</label>
+                            <input class='ok' type='checkbox' name="keyall" id="key3" style="box-shadow:none; border-radius:none; background-color:none;width:auto;" placeholder='微信号' onclick="transition()" checked/><label style="margin-left: 20px;" for="key3">新能源</label>
                            <!-- <input class='ok' type='checkbox' name="keyall" id="key4" style="box-shadow:none; border-radius:none; background-color:none;width:auto;" placeholder='微信号'/><label style="margin-left: 20px;" for="key4">全部热词</label>
                             <input class='ok' type='checkbox' name="keyall" id="key5" style="box-shadow:none; border-radius:none; background-color:none;width:auto;" placeholder='微信号'/><label style="margin-left: 20px;" for="key5">全部热词</label> -->
                         </div>
@@ -151,7 +151,7 @@
                             </div>
 
                             <div class="step2">
-                                关键词文章
+                                文章影响力排名
                             </div>
 
                             <ul class="step2_info">
@@ -279,6 +279,8 @@
             $(this).find('.select').on('click','.option',function(){
                 _this.find('.ok').text($(this).text());
                 _this.find('.select').hide();
+                _this.find('.ok').attr('value', $(this).attr('value'));
+                // transition();
             });
         }).mouseout(function(){
             $(this).find('.select').hide();
@@ -294,89 +296,53 @@
 <script src="js/d3.v3.min.js"></script>
 <script>
 
-var array = [
-                [
-                    {"date":"06\/01\/16","key":"\u53ec","value":0.83494987191397},
-                    {"date":"06\/02\/16","key":"\u53ec","value":0.17030591153088},
-                    {"date":"06\/03\/16","key":"\u53ec","value":0.068500320459018},
-                ],
-                [
-                    {"date":"06\/06\/16","key":"\u53ec\u56de","value":0.24733967392116},
-                    {"date":"06\/07\/16","key":"\u53ec\u56de","value":0.53958752357382},
-                    {"date":"06\/08\/16","key":"\u53ec\u56de","value":0.23840524779558},
-                ],
-                [
-                    {"date":"06\/16\/16","key":"\u65b0\u80fd\u6e90","value":0.31758262650929},
-                    {"date":"06\/17\/16","key":"\u65b0\u80fd\u6e90","value":0.41975699896913},
-                    {"date":"06\/18\/16","key":"\u65b0\u80fd\u6e90","value":0.022393722097573},
-                ],
-            ];
-
-
-var array2 = [
-                [
-                    {"date":"06\/01\/16","key":"\u53ec","value":0.83494987191397},
-                    {"date":"06\/02\/16","key":"\u53ec","value":0.17030591153088},
-                    {"date":"06\/03\/16","key":"\u53ec","value":0.068500320459018},
-                ],
-                [
-                    {"date":"06\/16\/16","key":"\u65b0\u80fd\u6e90","value":0.31758262650929},
-                    {"date":"06\/17\/16","key":"\u65b0\u80fd\u6e90","value":0.41975699896913},
-                    {"date":"06\/18\/16","key":"\u65b0\u80fd\u6e90","value":0.022393722097573},
-                ],
-            ];
-
-
-
 var datearray = [];
 var colorrange = [];
 
-var color = 'orange';
+function renderLegend(color, data, s){  
 
-if (color == "blue") {
-  colorrange = ["#045A8D", "#2B8CBE", "#74A9CF", "#A6BDDB", "#D0D1E6", "#F1EEF6"];
-}
-else if (color == "pink") {
-  colorrange = ["#980043", "#DD1C77", "#DF65B0", "#C994C7", "#D4B9DA", "#F1EEF6"];
-}
-else if (color == "orange") {
-  // colorrange = ["#B30000", "#E34A33", "#FC8D59", "#FDBB84", "#FDD49E", "#FEF0D9"];
-  colorrange = ["#B30000", "#E34A33", "#FC8D59", "#FDBB84"];
-}
-var strokecolor = colorrange[0];
+        var len = data.length;
+        color = color.slice(0, len);
+
+        var legend = s.selectAll(".legend")  
+            // .data(_colors.domain())  
+            .data(color)
+            .enter()  
+            .append("g")  
+            .attr("class", "legend")
+            .attr("transform", function(d, i) {  
+                var legendX = i * 120 + margin.left;   //set position for each legend element  
+                var legendY = height - _legendbottom;  
+                return "translate(" + legendX + ", " + legendY + ")";  
+            });  
+
+          
+        legend.append("rect")  
+            .attr("x", 0)  
+            .attr("y", 1)  
+            .attr("width", 16)  
+            .attr("height", 8)  
+            .style("fill", function(d){
+                return d;
+            });  
+          
+        legend.append("text")
+            .data(data)
+            .attr("x", 20)  
+            .attr("y", 9)  
+            .classed("legendtext", true)  
+            .text(function(d) {  
+                return d.key;  
+            });  
+        }  
+
 
 var format = d3.time.format("%m/%d/%y");
-
-array.forEach(function(obj){
-    obj.forEach(function(d){
-                d.dateStr = d.date;
-                d.date = format.parse(d.date);
-                // d.value = +d.value;
-                d.value = parseFloat(d.value.toFixed(2));
-    });
-});
-array2.forEach(function(obj){
-    obj.forEach(function(d){
-                d.dateStr = d.date;
-                d.date = format.parse(d.date);
-                // d.value = +d.value;
-                d.value = parseFloat(d.value.toFixed(2));
-    });
-});
-
-
-var n = 4, // number of layers
-    m = 30, // number of samples per layer
-    stack = d3.layout.stack().offset("wiggle")
-    .x(function(d) { return d.date; })
-    .y(function(d) { return d.value; }),
-    layers0 = stack(array),
-    layers1 = stack(array2);
 
 var margin = {top: 20, right: 40, bottom: 80, left: 30};
 var width = 640 - margin.left - margin.right;
 var height = 450 - margin.top - margin.bottom;
-var _legendbottom = -30;
+_legendbottom = -30;
 
 var tooltip = d3.select("#main")
     .append("div")
@@ -393,13 +359,10 @@ var x = d3.time.scale()
 var y = d3.scale.linear()
     .range([height-10, 0]);
 
-var z = d3.scale.ordinal()
-    .range(colorrange);
-
 var xAxis = d3.svg.axis()
     .scale(x)
-    .orient("bottom")
-    .ticks(d3.time.weeks);
+    .orient("bottom");
+    // .ticks(d3.time.weeks);
 
 var yAxis = d3.svg.axis()
     .scale(y);
@@ -416,162 +379,368 @@ var stack = d3.layout.stack()
 var nest = d3.nest()
     .key(function(d) { return d.key; });
 
-
-
-
 var area = d3.svg.area()
     .interpolate("cardinal")
-    .x(function(d) {return x(d.date); })
+    .x(function(d) { return x(d.date); })
     .y0(function(d) { return y(d.y0); })
     .y1(function(d) { return y(d.y0 + d.y); });
 
 var svg = d3.select("#main").append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-// x.domain(d3.extent(array, function(d) { return d.date; }));
-// y.domain([0, d3.max(array, function(d) { return d.y0 + d.y; })]);
+function chart(csvpath, color) {
 
-console.log(layers0.concat(layers1));
-console.log(d3.extent(layers0.concat(layers1), function(layer) { return d3.extent(layer, function(d) {return d.date; }); }))
 
-var dataTime = d3.extent(layers0.concat(layers1), function(layer) { return d3.extent(layer, function(d) {return d.date; }); });
-console.log(dataTime[0].concat(dataTime[1]));
-x.domain(dataTime[0].concat(dataTime[1]));
-y.domain([0, d3.max(layers0.concat(layers1), function(layer) { return d3.max(layer, function(d) { return d.y0 + d.y; }); })])
+//   
+    if (color == "blue") {
+        colorrange = ["#045A8D", "#2B8CBE", "#74A9CF", "#A6BDDB", "#D0D1E6", "#F1EEF6"];
+    }
+    else if (color == "pink") {
+      colorrange = ["#980043", "#DD1C77", "#DF65B0", "#C994C7", "#D4B9DA", "#F1EEF6"];
+    }
+    else if (color == "orange") {
+      // colorrange = ["#B30000", "#E34A33", "#FC8D59", "#FDBB84", "#FDD49E", "#FEF0D9"];
+      colorrange = ["#B30000", "#E34A33", "#FC8D59", "#FDBB84"];
+    }
+strokecolor = colorrange[0];
 
-svg.selectAll(".layer")
-    .data(layers0)
-  .enter().append("path")
-          .attr("class", "layer")
-          .attr("d", function(d) {  return area(d); })
-          .style("fill", function(d, i) { return z(i); });
+var z = d3.scale.ordinal()
+    .range(colorrange);
 
+    var graph = d3.json(csvpath, function(data){
+
+        var dayV = $(".select_data1 .ok").attr('value')
+        var a = [];
+        var box = $(".ok[type='checkbox']");
+
+        for(var i = 0; i < box.length; i++){
+            if(box.eq(i).is(':checked')){
+                a[i] = i;
+            }
+        }
+
+        var ds = [];
+         data.forEach(function(d, i){
+            if(a[i] == i){
+                ds = ds.concat(d.slice(d.length-dayV, d.length));
+            }
+        });
+         data = ds;
+         if(!data.length){
+            return true;
+         }
+        data.forEach(function(d){
+            d.dateStr = d.date;
+            d.date = format.parse(d.date);
+            // d.value = +d.value;
+            d.value = parseFloat(d.value.toFixed(2));
+        });
+
+        // legend
+
+ var layers = stack(nest.entries(data));
+
+  x.domain(d3.extent(data, function(d) { return d.date; }));
+  y.domain([0, d3.max(data, function(d) { return d.y0 + d.y; })]);
+
+  svg.selectAll(".layer")
+      .data(layers)
+    .enter().append("path")
+      .attr("class", "layer")
+      .attr("d", function(d) { return area(d.values); })
+      .style("fill", function(d, i) { return z(i); });
+
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  // svg.append("g")
+  //     .attr("class", "y axis")
+  //     .attr("transform", "translate(" + width + ", 0)")
+  //     .call(yAxis.orient("right"));
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis.orient("left"));
+
+  svg.selectAll(".layer")
+    .attr("opacity", 1)
+    .on("mouseover", function(d, i) {
+      svg.selectAll(".layer").transition()
+      .duration(250)
+      .attr("opacity", function(d, j) {
+        return j != i ? 0.6 : 1;
+    })})
+
+    .on("mousemove", function(d, i) {
+      mousex = d3.mouse(this);
+      mousex = mousex[0];
+      var invertedx = x.invert(mousex);
+      invertedx = invertedx.getMonth() + invertedx.getDate();
+      var selected = (d.values);
+      for (var k = 0; k < selected.length; k++) {
+        datearray[k] = selected[k].date
+        datearray[k] = datearray[k].getMonth() + datearray[k].getDate();
+      }
+
+      mousedate = datearray.indexOf(invertedx);
+      pro = d.values[mousedate].value;
+
+      d3.select(this)
+      .classed("hover", true)
+      .attr("stroke", strokecolor)
+      .attr("stroke-width", "0.5px"), 
+      tooltip.html( "<p>" + d.key + "<br>" + pro + "<br>" + d.values[mousedate].dateStr + "</p>" ).style("visibility", "visible");
+      
+    })
+    .on("mouseout", function(d, i) {
+     svg.selectAll(".layer")
+      .transition()
+      .duration(250)
+      .attr("opacity", "1");
+      d3.select(this)
+      .classed("hover", false)
+      .attr("stroke-width", "0px"), tooltip.html( "<p>" + d.key + "<br>" + pro + "<br>" + d.values[mousedate].dateStr +  "</p>" ).style("visibility", "hidden");
+  })
+    
+  var vertical = d3.select("#main")
+        .append("div")
+        .attr("class", "remove")
+        .style("position", "absolute")
+        .style("z-index", "19")
+        .style("width", "1px")
+        .style("height", "380px")
+        .style("top", "10px")
+        .style("bottom", "30px")
+        .style("left", "0px")
+        .style("background", "#fff");
+
+  d3.select("#main")
+      .on("mousemove", function(){  
+         mousex = d3.mouse(this);
+         mousex = mousex[0] + 5;
+         vertical.style("left", mousex + "px" )})
+      .on("mouseover", function(){  
+         mousex = d3.mouse(this);
+         mousex = mousex[0] + 5;
+         vertical.style("left", mousex + "px")});
+
+      renderLegend(colorrange, layers, svg);
+});
+}
 function transition() {
-  d3.selectAll("path")
-      .data(function() {
-        var d = layers1;
-        layers1 = layers0;
-        return layers0 = d;
-      })
-    .transition()
-      .duration(2500)
-      .attr("d", area);
+    d3.selectAll('#main2 *').remove();
+    d3.selectAll('#main g *').remove();
+
+    d3.selectAll('#main .remove').remove();
+    chart('data/d4.json', "orange");
+
+    
+
+    zhexian('data/d4.json');
 }
 
+chart('data/d4.json', "orange");
+zhexian('data/d4.json');
 
 
+   
 
- // legend
-function renderLegend(){  
-    var legend = svg.selectAll(".legend")  
-        // .data(_colors.domain())  
-        .data(colorrange)
-        .enter()  
-        .append("g")  
-        .attr("class", "legend")  
-        .attr("transform", function(d, i) {  
-            var legendX = i * 120 + margin.left;   //set position for each legend element  
-            var legendY = height - _legendbottom;  
-            return "translate(" + legendX + ", " + legendY + ")";  
-        });  
-
-      
-    legend.append("rect")  
-        .attr("x", 0)  
-        .attr("y", 1)  
-        .attr("width", 16)  
-        .attr("height", 8)  
-        .style("fill", function(d){
-            return d;
-        });  
-      
-    legend.append("text")
-        .data(["公车改革", "召回", "销售领跑", "新能源"])
-        .attr("x", 20)  
-        .attr("y", 9)  
-        .classed("legendtext", true)  
-        .text(function(d) {  
-            return d;  
-        });  
-}  
+function zhexian(file){      
 
 
-      svg.append("g")
-          .attr("class", "x axis")
-          .attr("transform", "translate(0," + height + ")")
-          .call(xAxis);
+    var svg1 = d3.select("#main2").append("svg");
+     svg1.attr("height", 450)
+        .attr("width", 640);
+
+    x1 = d3.time.scale() // <-A
+            .range([margin.left, width - margin.left]),
+        y1 = d3.scale.linear() // <-B
+            .range([height - margin.left, margin.left]);
 
 
-      svg.append("g")
-          .attr("class", "y axis")
-          .call(yAxis.orient("left"));
+    var line = d3.svg.line() // <-D
+            .x(function(d){return x1(d.date);})
+            .y(function(d){return y1(d.y);})
 
-      svg.selectAll(".layer")
-        .attr("opacity", 1)
-        .on("mouseover", function(d, i) {
-          svg.selectAll(".layer").transition()
-          .duration(250)
-          .attr("opacity", function(d, j) {
-            return j != i ? 0.6 : 1;
-        })})
+    var dataStr = d3.json(file,function(data){
+         var dayV = $(".select_data1 .ok").attr('value')
+        var a = [];
+        var box = $(".ok[type='checkbox']");
 
-        .on("mousemove", function(d, i) {
-          mousex = d3.mouse(this);
-          mousex = mousex[0];
-          var invertedx = x.invert(mousex);
-          invertedx = invertedx.getMonth() + invertedx.getDate();
-          var selected = (d);
-          for (var k = 0; k < selected.length; k++) {
-            datearray[k] = selected[k].date
-            datearray[k] = datearray[k].getMonth() + datearray[k].getDate();
-          }
+        for(var i = 0; i < box.length; i++){
+            if(box.eq(i).is(':checked')){
+                a[i] = i;
+            }
+        }
 
-          mousedate = datearray.indexOf(invertedx);
-          pro = d[mousedate].value;
+        var ds = [];
+         data.forEach(function(d, i){
+            if(a[i] == i){
+                ds = ds.concat(d.slice(d.length-dayV, d.length));
+            }
+        });
+         data = ds;
+         if(!data.length){
+            return true;
+         }
+       
+        data.forEach(function(d, i){
+               d.date = format.parse(d.date);
+                d.y = parseFloat(d.value).toFixed(2); 
+               
+            });
 
-          d3.select(this)
-          .classed("hover", true)
-          .attr("stroke", strokecolor)
-          .attr("stroke-width", "0.5px"), 
-          tooltip.html( "<p>" + d.key + "<br>" + pro + "<br>" + d[mousedate].dateStr + "</p>" ).style("visibility", "visible");
-          
-        })
-        .on("mouseout", function(d, i) {
-         svg.selectAll(".layer")
-          .transition()
-          .duration(250)
-          .attr("opacity", "1");
-          d3.select(this)
-          .classed("hover", false)
-          .attr("stroke-width", "0px"), tooltip.html( "<p>" + d.key + "<br>" + pro + "<br>" + d[mousedate].dateStr +  "</p>" ).style("visibility", "hidden");
-      })
+        x1.domain(d3.extent(data, function(d) { return d.date; }));        // <-B
+        y1.domain([0, d3.max(data, function(d) { return d.y; })])
+            
+        var layers0 = nest.entries(data);
+        layers0.forEach(function(dataS, i){
+            
+          svg1.append('path')
+                .attr('class', 'line')
+                .attr('d', line(dataS.values))
+                .style('stroke', colorrange[i])
+                  .on("mousemove", function(d, i,c) {console.log(d);});
+        });
+
+        // <-A     
+    var tooltip2 = d3.select("#main2")
+    .append("div")
+    .attr("class", "remove")
+    .style("position", "absolute")
+    .style("z-index", "20")
+    .style("visibility", "auto")
+    .style("top", "30px")
+    .style("left", "55px");
         
-      var vertical = d3.select("#main")
-            .append("div")
-            .attr("class", "remove")
-            .style("position", "absolute")
-            .style("z-index", "19")
-            .style("width", "1px")
-            .style("height", "380px")
-            .style("top", "10px")
-            .style("bottom", "30px")
-            .style("left", "0px")
-            .style("background", "#fff");
+  //   svg1.selectAll(".line")
+  //   .attr("opacity", 1)
+  //   .on("mouseover", function(d, i) {
+  //     svg1.selectAll(".line").transition()
+  //     .duration(250)
+  //     .attr("opacity", function(d, j) {
+  //       return j != i ? 0.6 : 1;
+  //       })
+  //     })
+  //   .on("mousemove", function(d, i) {
+  //       console.log(d);
 
-      d3.select("#main")
-          .on("mousemove", function(){  
-             mousex = d3.mouse(this);
-             mousex = mousex[0] + 5;
-             vertical.style("left", mousex + "px" )})
-          .on("mouseover", function(){  
-             mousex = d3.mouse(this);
-             mousex = mousex[0] + 5;
-             vertical.style("left", mousex + "px")});
+  //     // mousex = d3.mouse(this);
+  //     // mousex = mousex[0];
+  //     // var invertedx = x.invert(mousex);
+  //     // invertedx = invertedx.getMonth() + invertedx.getDate();
+  //     // var selected = (d.values);
+  //     // for (var k = 0; k < selected.length; k++) {
+  //     //   datearray[k] = selected[k].date
+  //     //   datearray[k] = datearray[k].getMonth() + datearray[k].getDate();
+  //     // }
 
-          renderLegend();
+  //     // mousedate = datearray.indexOf(invertedx);
+  //     // pro = d.values[mousedate].value;
+
+  //     // d3.select(this)
+  //     // .classed("hover", true)
+  //     // .attr("stroke", strokecolor)
+  //     // .attr("stroke-width", "0.5px"), 
+  //     // tooltip2.html( "<p>" + d.event + "<br>" + d.date + "</p>" ).style("visibility", "visible");
+      
+  //   })
+  //   .on("mouseout", function(d, i) {
+  //    svg1.selectAll(".line")
+  //     .transition()
+  //     .duration(250)
+  //     .attr("opacity", "1");
+  //     d3.select(this)
+  //     .classed("hover", false)
+  //     // .attr("stroke-width", "0px"), tooltip2.html( "<p>" + d.event + "<br>" + d.date + "</p>" ).style("visibility", "hidden");
+  // })    
+
+    renderLegend(colorrange, layers0, svg1);
+
+    renderAxes(svg1);
+
+    var vertical = d3.select("#main2")
+        .append("div")
+        .attr("class", "remove")
+        .style("position", "absolute")
+        .style("z-index", "19")
+        .style("width", "1px")
+        .style("height", "380px")
+        .style("top", "22px")
+        .style("bottom", "-10px")
+        .style("left", "0px")
+        .style("background", "#000");
+
+    d3.select("#main2")
+      .on("mousemove", function(){  
+         mousex = d3.mouse(this);
+         mousex = mousex[0] + 5;
+         vertical.style("left", mousex + "px" )})
+      .on("mouseover", function(){  
+         mousex = d3.mouse(this);
+         mousex = mousex[0] + 5;
+         vertical.style("left", mousex + "px")});
+        
+    function renderAxes(svgr){ // <-G
+        var xAxis1 = d3.svg.axis()
+                .scale(x1.range([0, quadrantWidth()]))
+                .ticks(d3.time.weeks)
+                .orient("bottom");            
+                
+        var yAxis1 = d3.svg.axis()
+                .scale(y1.range([quadrantHeight(), 0]))
+                .orient("left");
+        
+        svgr.append("g")        
+            .attr("class", "x axis")
+            .attr("transform", function(){
+                return "translate(" + xStart() 
+                    + "," + yStart() + ")";
+            })
+            .call(xAxis1);
+            
+        svgr.append("g")        
+            .attr("class", "axis")
+            .attr("transform", function(){
+                return "translate(" + xStart() 
+                    + "," + yEnd() + ")";
+            })
+            .call(yAxis1);
+    }
+        
+    function xStart(){
+        return margin.left;
+    }        
+    
+    function yStart(){
+        return height - margin.left;
+    }
+    
+    function xEnd(){
+        return width - margin.left;
+    }
+    
+    function yEnd(){
+        return margin.left;
+    }
+    
+    function quadrantWidth(){
+        return width - 2 * margin.left;
+    }
+    
+    function quadrantHeight(){
+        return height - 2 * margin.left;
+    }    
+        });
+
+   
+ }  
 
 </script>
 </body>
