@@ -35,7 +35,6 @@ router.get('/', function(req, res, next) {
 	for(var i = 0; i< obj[0].data.length; i++){
 		noXlsx[obj[0].data[i][0]] = obj[0].data[i];
 	}
-	// res.send(noXlsx);
 
 	console.log('start spider');
 
@@ -87,12 +86,11 @@ router.get('/', function(req, res, next) {
 						'Cookie': 'PHPSESSID=sk9he9uvqb7i7vfd08no2q2ho2; bdshare_firstime=1465889026970; Hm_lvt_293b2731d4897253b117bb45d9bb7023=1465887653; Hm_lpvt_293b2731d4897253b117bb45d9bb7023=1465889858',
 						'Connection': 'keep-alive'
 				    },
-				    json: true // Automatically parses the JSON string in the response 
+				    json: true
 				};
 				
 
 				Json.push(options);
-				
 
 				count++;
 			}
@@ -116,9 +114,10 @@ function httpRequest(Json,str,end,noXlsx,res){
 	async.forEachLimit(arr, 50, function(item, callback){
 		request(item,function(error, response,body){
 			if(!error && response.statusCode ==200){
+				// res.send(response.request);
+				// return false;
 				if(body && body.data && body.data.rows){
 					for(var j = 0; j < body.data.rows.length; j++){
-						
 						var rows = body.data.rows[j];
 						
 						if(noXlsx[rows.wx_name]){
