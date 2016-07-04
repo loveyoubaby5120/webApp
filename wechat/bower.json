@@ -1,0 +1,24 @@
+{
+  "name": "wechat",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "pankai <loveyoubaby5120@sina.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~15.0.2",
+    "bootstrap": "~3.3.6",
+    "angular": "~1.5.5",
+    "react-router": "~2.4.0"
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html manifest='index.appcache'>
+<head>
+	<meta charset="utf-8">
+	<title><%= title %></title>
+
+    <script type="text/javascript">
+
+    if(window.applicationCache){
+        console.log("支持离线缓存");
+    }
+    else{
+        console.log("不支持离线缓存");
+    }
+
+
+    var appCache = window.applicationCache;
+    switch (appCache.status) { 
+    case appCache.UNCACHED: // UNCACHED == 0 
+        console.log('0 === 未缓存');
+        break; 
+    case appCache.IDLE: // IDLE == 1 
+        console.log('1 === 空闲（缓存为最新状态）');
+        break; 
+    case appCache.CHECKING: // CHECKING == 2 
+        console.log('2 === 检查中');
+        break; 
+    case appCache.DOWNLOADING: // DOWNLOADING == 3 
+        console.log('3 === 下载中');
+        break; 
+    case appCache.UPDATEREADY: // UPDATEREADY == 4 
+        console.log('4 === 更新就绪');
+        break; 
+    case appCache.OBSOLETE: // OBSOLETE == 5 
+        console.log('5 === 缓存过期');
+        break; 
+    default: 
+        console.log('不识别的缓存状态');
+        break; 
+    };
+
+    // appCache.update(); // Attempt to update the user's cache.  
+
+    if (appCache.status == window.applicationCache.UPDATEREADY) {  
+        appCache.swapCache(); // The fetch was successful, swap in the new cache.  
+    }
+
+    if (typeof document.addEventListener != "undefined") { 
+         window.applicationCache.addEventListener('updateready',function(e){
+            if(window.applicationCache.status == window.applicationCache.UPDATEREADY){
+                window.applicationCache.swapCache();
+                
+                if(confirm("loding new?")){
+                    window.location.reload()
+                }
+            }
+        },false);
+    } else { 
+         window.applicationCache.attachEvent('onupdateready',function(e){
+            if(window.applicationCache.status == window.applicationCache.UPDATEREADY){
+                window.applicationCache.swapCache();
+                
+                if(confirm("loding new?")){
+                    window.location.reload()
+                }
+            }
+        });
+    } 
+   
+    	console.log('<%= url%>');
+    </script>
+</head>
+<body>
+	<div id="app"></div>
+</body>
+</html>
