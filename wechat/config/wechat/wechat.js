@@ -34,8 +34,8 @@ function Wechat(opts){
 			}
 
 			if(_this.isValidAccessToken(data)){
-				// Promise.resolve(data);
-				return data;
+				return Promise.resolve(data);
+				// return data;
 			}
 			else{
 				return _this.updateAccessToken();
@@ -93,6 +93,8 @@ Wechat.prototype.updateAccessToken = function(){
 Wechat.prototype.reply = function(){
 	var content = this.body;
 	var message = this.weixin;
+	console.log(content);
+	console.log(message);
 	var xml = util.tpl(content, message);
 
 	this.status = 200;

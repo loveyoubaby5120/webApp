@@ -5,9 +5,9 @@ var getRawBoby = require('raw-body');
 var Wechat = require('./wechat.js');
 var util = require('./util.js');
 
-module.exports = function(opts){
+module.exports = function(opts, handler){
 
-	// var wechat = new Wechat(opts);
+	var wechat = new Wechat(opts);
 
 
 	return function *(next){
