@@ -2,7 +2,6 @@ var Router = require('koa-router');
 var router = new Router();
 
 router.get('/', function *(next) {
-	console.log(1);
 	this.redirect('/index');
 });
 

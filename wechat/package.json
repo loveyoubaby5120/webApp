@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.4.1",
     "co": "^4.6.0",
+    "fs": "0.0.2",
     "koa": "^1.2.0",
     "koa-body-parser": "^1.1.2",
     "koa-bodyparser": "^3.1.0",
@@ -26,6 +28,7 @@
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-router": "^2.4.0",
+    "request": "^2.72.0",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
   },
@@ -41,6 +44,7 @@
     "jsx-loader": "^0.13.2",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
+    "sha1": "^1.1.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7"
   }

@@ -1,7 +1,7 @@
 var koa = require('koa');
 var path = require('path');
 
-// var onerror = require('Koa-onerror');
+var onerror = require('Koa-onerror');
 
 var route = require('koa-route');
 var Router = require('koa-router');
@@ -17,7 +17,40 @@ var bodyParser = require('koa-body-parser');
 
 var staticServer = require('koa-static');
 
+var wechat = require('./g.js');
+var util = require('../libs/util.js');
+
+
 var app = koa();
+
+var wechat_file = path.join(__dirname, '/wechat.txt');
+
+var config = {
+	    wechat:{
+	        appID: 'wx6cf67cf776e6aae4',
+	        appSecret: '2ccb2200e737bbe5f75a086e780e0822',
+	        token: 'loveyoubaby5120',
+	        getAccessToken: function(){
+	        	return util.readFileAsync(wechat_file,'utf-8');
+	        },
+	        saveAccessToken: function(data){
+	        	data = JSON.stringify(data);
+	        	return util.writeFileAsync(wechat_file, data);
+	        }
+	    }
+	};
+
+
+var locals = {
+	version: '0.0.1',
+	now: function () {
+		return new Date();
+	},
+	ip: function *() {  // generatorFunction
+		yield wait(10);
+		return this.ip; // use this like in koa middleware
+	}
+};
 
 module.exports = function(){
 	console.log('init koa...');
@@ -25,16 +58,7 @@ module.exports = function(){
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
-	var locals = {
-		version: '0.0.1',
-		now: function () {
-			return new Date();
-		},
-		ip: function *() {  // generatorFunction
-			yield wait(10);
-			return this.ip; // use this like in koa middleware
-		}
-	};
+	
 
 
 
@@ -65,34 +89,8 @@ module.exports = function(){
 
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
-
-	var config = {
-	    wechat:{
-	        appID: 'wx6cf67cf776e6aae4',
-	        appSecret: '2ccb2200e737bbe5f75a086e780e0822',
-	        token: 'loveyoubaby5120'
-	    }
-	};
-
-
-	app.use(function *(next){
-	    console.log(this.query);
-	    
-	    var token = config.wechat.token;
-	    var signature = this.query.signature;
-	    var nonce = this.query.nonce;
-	    var timestamp = this.query.timestamp;
-	    var echostr = this.query.echostr;
-	    var str = [token, timestamp, nonce].sort().join('');
-	    var sha = sha1(str);
-	    
-	    if(sha === signature){
-	        this.body = echostr + '';
-	    }
-	    else{
-	        this.body = 'wrong';
-	    }
-	});
+	
+	app.use(wechat(config.wechat));
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -105,17 +103,17 @@ module.exports = function(){
 
 
 
-	app.on('error', function(err){
-		log.error('server error', err);
-	});
+	// app.on('error', function(err){
+	// 	log.error('server error', err);
+	// });
 
-	app.on('error', function(err, ctx){
-		log.error('server error', err, ctx);
-	});
+	// app.on('error', function(err, ctx){
+	// 	log.error('server error', err, ctx);
+	// });
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
-	// onerror(app);
+	onerror(app);
 
 
 	return app;
