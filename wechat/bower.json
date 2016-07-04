@@ -13,7 +13,8 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "public/lib"
   ],
   "dependencies": {
     "react": "~15.0.2",
