@@ -1,6 +1,6 @@
 var path = require('path');
-var util = require('../libs/util.js');
-var wechat_file = path.join(__dirname, '/wechat.txt');
+var util = require('../../libs/util.js');
+var wechat_file = path.join(__dirname, '../wechat.txt');
 
 var config = {
 	nodePort: 3000,
