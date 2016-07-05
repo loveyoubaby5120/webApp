@@ -12,7 +12,7 @@ for(obj in json2){
 	array.push(obj)
 }
 
-var str = array.join(',');
+var str = array.join("','");
 
 // console.log(array);
 
