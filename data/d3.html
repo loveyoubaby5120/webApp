@@ -365,6 +365,18 @@ var area = d3.svg.area()
     .y1(function(d) { return y(d.y0 + d.y); });
 
 
+var area2 = d3.svg.area()
+    .interpolate("cardinal")
+    .x(function(d) { return x(d.date); })
+    .y0(function(d) { return height; })
+    .y1(function(d) { return y(d.y0 + d.y); });
+
+
+var a = d3.rgb(255,0,0);    //红色  
+var b = d3.rgb(0,255,0);    //绿色  
+   
+var compute = d3.interpolate(a,b);
+
 // legend
 function renderLegend(){  
     var legend = svg.selectAll(".legend")  
@@ -409,11 +421,60 @@ var svg = d3.select("#main").append("svg")
 
 function chart(csvpath_url){
     d3.json(csvpath_url, function(data){
-        data.forEach(function(d){
+
+        var LinearGradientArray = [];
+
+        data.forEach(function(d,i){
             d.dateStr = d.date;
             d.date = format.parse(d.date);
             // d.value = +d.value;
             d.value = parseFloat(d.value.toFixed(2));
+
+
+            var defs = svg.append("defs");
+
+            var linearGradient = defs.append("linearGradient")
+                                .attr("id","linearColor"+i)  
+                                .attr("x1","0%")  
+                                .attr("y1","0%")  
+                                .attr("x2","100%")  
+                                .attr("y2","0%");  
+          
+            var start_color = a.toString();
+            var end_color = a.toString();
+            var item_color = a.toString();
+
+            if(data[0].zf==-1){
+                start_color = b.toString();
+            }
+            if(data[data.length].zf==-1){
+                end_color = b.toString();
+            }
+
+            var start = linearGradient.append("stop")  
+                            .attr("offset","0%")  
+                            .style("stop-color",start_color);
+
+            var offset = 100/data.length;
+
+            data.forEach(function(val,index){
+                if(data[0].zf==-1){
+                    item_color = a.toString();
+                }
+                else{
+                    item_color = b.toString();
+                }
+                var item = linearGradient.append("stop")  
+                                .attr("offset", offset+"%")  
+                                .style("stop-color",item_color);          
+            });
+      
+            var stop = linearGradient.append("stop")  
+                            .attr("offset","100%")  
+                            .style("stop-color",end_color);
+
+            LinearGradientArray.push(LinearGradient);
+
         });
 
 
@@ -422,13 +483,44 @@ function chart(csvpath_url){
       x.domain(d3.extent(data, function(d) { return d.date; }));
       y.domain([0, d3.max(data, function(d) { return d.y0 + d.y; })]);
 
+
+        // var defs = svg.append("defs");
+          
+        // var linearGradient = defs.append("linearGradient")  
+        //                         .attr("id","linearColor")  
+        //                         .attr("x1","0%")  
+        //                         .attr("y1","0%")  
+        //                         .attr("x2","100%")  
+        //                         .attr("y2","0%");  
+          
+        // var stop1 = linearGradient.append("stop")  
+        //                 .attr("offset","0%")  
+        //                 .style("stop-color",a.toString());
+        // var stop3 = linearGradient.append("stop")  
+        //                 .attr("offset","50%")  
+        //                 .style("stop-color",b.toString());
+  
+        // var stop2 = linearGradient.append("stop")  
+        //                 .attr("offset","100%")  
+        //                 .style("stop-color",a.toString());
+
+
+
       svg.selectAll(".layer")
           .data(layers)
         .enter()
         .append("path")
           .attr("class", "layer")
-          .attr("d", function(d) { return area(d.values); })
-          .style("fill", function(d, i) { return z(i); });
+          .attr('data_index', function(d, i){return i;})
+          .attr("d", function(d,i) {return area(d.values);  })
+          .style("fill", function(d, i) { return z(i); })
+          // .attr("d", function(d,i) { if(i==0){return area2(d.values);} return area(d.values);  })
+          .style("fill",function(d,i){
+            return "url(#" + LinearGradientArray[i].attr("id") + ")";
+          });
+
+        
+          
 
 
       svg.append("g")
