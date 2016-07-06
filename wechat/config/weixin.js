@@ -127,6 +127,42 @@ exports.reply = function *(next){
 				mediaId: data.media_id
 			}
 		}
+		//自动回复永久素材
+		else if(content === '10'){
+			var picData = yield wechatApi.uploadMaterial('image', __dirname + '/../public/images/1.jpg', {});
+
+			var media = {
+				articles: [{
+					title: '标题',
+					thumb_media_id: picData.media_id,
+					author: '作者',
+					digest: '摘要',
+					show_cover_pic: 1,
+					content: '内容',
+					content_source_url: 'https://github.com',
+				}]
+			}
+
+			data = yield wechatApi.uploadMaterial('news', media, {});
+			data = yield wechatApi.fetchMaterial(data.media_id, 'news', {});
+
+			console.log(data);
+
+			var items = data.news_item;
+			var news = [];
+
+			
+			items.forEach(function(obj){
+				news.push({
+					title: obj.title,
+					decription: obj.digest,
+					picUrl: picData.url,
+					url: obj.url
+				});
+			});
+
+			reply = news;
+		}
 
 		this.body = reply;
 	}
