@@ -77,7 +77,7 @@ export default class Header extends React.Component {
                             </ul>
                         </div>
                         <div className="code">
-                            <img src="images/code.png" alt=""/>
+                            <img src={this.state.datas[0].biz!="--" ? "http://mp.weixin.qq.com/mp/qrcode?scene=10000004&size=102&__biz="+this.state.datas[0].biz : "/images/code.png"} alt=""/>
                         </div>
                     </div>
                 </div>

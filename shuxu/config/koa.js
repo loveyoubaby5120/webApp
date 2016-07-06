@@ -1,7 +1,7 @@
 var koa = require('koa');
 var path = require('path');
 
-// var onerror = require('Koa-onerror');
+var onerror = require('Koa-onerror');
 
 var route = require('koa-route');
 var Router = require('koa-router');
@@ -128,17 +128,17 @@ module.exports = function(){
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
-	app.on('error', function(err){
-		log.error('server error', err);
-	});
+	// app.on('error', function(err){
+	// 	log.error('server error', err);
+	// });
 
-	app.on('error', function(err, ctx){
-		log.error('server error', err, ctx);
-	});
+	// app.on('error', function(err, ctx){
+	// 	log.error('server error', err, ctx);
+	// });
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
-	// onerror(app);
+	onerror(app);
 
 
 
