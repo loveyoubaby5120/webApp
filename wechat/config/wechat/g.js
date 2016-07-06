@@ -7,6 +7,7 @@ var util = require('./util.js');
 
 module.exports = function(opts, handler){
 
+	//校验token
 	var wechat = new Wechat(opts);
 
 
@@ -21,6 +22,7 @@ module.exports = function(opts, handler){
 	    var str = [token, timestamp, nonce].sort().join('');
 	    var sha = sha1(str);
 	    
+	    //验证微信通信
 	    if(this.method === 'GET'){
 		    if(sha === signature){
 		        this.body = echostr + '';
@@ -41,14 +43,18 @@ module.exports = function(opts, handler){
 		    	encoding: this.charset
 		    });
 
+		    //得到消息内容
 		    var content = yield util.parseXMLAsync(data);
 
+		    //格式化消息内容
 		    var message = util.formatMessage(content.xml);
 
 		    this.weixin = message;
 
+		    //设置被动回复内容
 		    yield handler.call(this, next);
 
+		    //回复消息
 		    wechat.reply.call(this);
 
 	    }

@@ -3,7 +3,7 @@
 var ejs = require('ejs');
 var heredoc = require('heredoc');
 
-
+//消息模板
 var tpl = heredoc(function(){ /*
 	<xml>
 		<ToUserName><![CDATA[<%= toUserName %>]]></ToUserName>
@@ -14,15 +14,15 @@ var tpl = heredoc(function(){ /*
 			<Content><![CDATA[<%= content %>]]></Content>
 		<% } else if(msgType === 'image'){ %>
 			<Image>
-				<MediaId><![CDATA[<%= content.media_id %>]]></MediaId>
+				<MediaId><![CDATA[<%= content.mediaId %>]]></MediaId>
 			</Image>
 		<% } else if(msgType === 'voice'){ %>
 			<Voice>
-				<MediaId><![CDATA[<%= content.media_id %>]]></MediaId>
+				<MediaId><![CDATA[<%= content.mediaId %>]]></MediaId>
 			</Voice>
 		<% } else if(msgType === 'video'){ %>
 			<Video>
-				<MediaId><![CDATA[<%= content.media_id %>]]></MediaId>
+				<MediaId><![CDATA[<%= content.mediaId %>]]></MediaId>
 				<Title><![CDATA[<%= content.title %>]]></Title>
 				<Description><![CDATA[<%= content.description %>]]></Description>
 			</Video> 

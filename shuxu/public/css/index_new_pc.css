@@ -386,9 +386,12 @@
 
 .number{
     border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    line-height: 26px;
+    // width: 25px;
+    // height: 25px;
+    // line-height: 26px;
+    width: 30px;
+    height: 30px;
+    line-height: 32px;
     color: #f6501e;
     border: 1px #f6501e solid;
     background-color: #fff;

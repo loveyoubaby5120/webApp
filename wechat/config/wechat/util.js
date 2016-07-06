@@ -4,6 +4,7 @@ var xml2js = require('xml2js');
 var promise = require('bluebird');
 var tpl = require('./tpl.js');
 
+//xml 转换
 exports.parseXMLAsync = function(xml){
 
 	return new Promise(function(resolve, reject){
@@ -14,7 +15,7 @@ exports.parseXMLAsync = function(xml){
 	});
 };
 
-
+//格式化获取的消息
 function formatMessage(result){
 	var message = {};
 	if(typeof result === 'object'){
@@ -54,6 +55,7 @@ function formatMessage(result){
 
 exports.formatMessage = formatMessage;
 
+//设置发送给用户的消息
 exports.tpl = function(content, message){
 	var info = {};
 	var type = 'text';
