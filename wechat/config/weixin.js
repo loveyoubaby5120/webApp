@@ -204,7 +204,7 @@ exports.reply = function *(next){
 
 			reply = '[ text=>11 ] count: ' + JSON.stringify(counts);
 		}
-		//自动回复 分组 创建分组  查看分组 删除分组
+		//自动回复 分组 创建分组  查看分组 移动分组/批量移动 修改分组 删除分组
 		else if(content === '12'){
 			var group = yield wechatApi.createGroup('wechat');
 
@@ -264,6 +264,27 @@ exports.reply = function *(next){
 
 			reply = 'Group done!';
 		}
+		else if(content === '13'){
+			var user = yield wechatApi.fetchUsers(message.FromUserName,'en');
+
+			console.log(user);
+
+			var openIds = [
+				{
+					openid: message.FromUserName,
+					lang: 'en'
+				}
+			];
+
+			var users = yield wechatApi.fetchUsers(openIds);
+
+			console.log(users);
+
+			reply = JSON.stringify(user);
+
+		}
+
+
 
 		this.body = reply;
 	}

@@ -81,6 +81,20 @@ var api = {
 		//删除分组
 		//https://api.weixin.qq.com/cgi-bin/groups/delete?access_token=ACCESS_TOKEN
 		del: prefix + 'groups/delete?',
+	},
+	user:{//用户管理
+
+		//设置备注名
+		//https://api.weixin.qq.com/cgi-bin/user/info/updateremark?access_token=ACCESS_TOKEN
+		remark: prefix + 'user/info/updateremark?',
+
+		//获取用户信息
+		//https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN
+		fetch: prefix + 'user/info?',
+
+		//批量获取用户信息
+		//https://api.weixin.qq.com/cgi-bin/user/info/batchget?access_token=ACCESS_TOKEN
+		batchFetch: prefix + 'user/info/batchget?',
 	}
 	
 }
@@ -769,6 +783,114 @@ Wechat.prototype.deleteGroup = function(id){
 }
 
 
+
+
+//设置备注名
+Wechat.prototype.remarkUser = function(openId, remark){
+	var _this = this;
+
+	var fetchUrl = api.user.remark;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'POST',
+					url: url,
+					json: true
+				};
+
+				var form = {
+					group: {
+						openid: openId,
+						remark: remark
+					}
+				};
+
+				_options.body = form;
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('remark user fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
+
+//获取用户信息/批量获取
+Wechat.prototype.fetchUsers = function(openIds, lang){
+	var _this = this;
+
+	lang = lang || 'zh_CN';
+
+	var url = '';
+	var fetchUrl = api.user.fetch;
+	var method = 'GET';
+
+	var form = {};
+
+	if(_.isArray(openIds)){
+
+		fetchUrl = api.user.batchFetch;
+		url = fetchUrl + '&access_token=' + data.access_token;
+
+		form.user_list = openIds;
+
+		method = 'POST';
+	}
+	else{
+		
+		url = fetchUrl + '&access_token=' + data.access_token + '&openid=' + openIds + '&lang=' + lang;
+	}
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				
+
+				var _options = {
+					method: method,
+					url: url,
+					json: true
+				};
+
+				_options.body = form;
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('batchFetch user fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
 
 
 //发送消息
