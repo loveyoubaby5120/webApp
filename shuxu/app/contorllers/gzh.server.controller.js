@@ -173,11 +173,14 @@ module.exports = {
 		this.body = rows[0];
 	},
 	article_profile_list: function *(next){
-		var sql = 'select *,from_unixtime(pub_time,"%Y-%m-%d") as dateTime from article_profile limit 10';
+		var limit = '10';
+		var where = ' and date_sub(curdate(), INTERVAL 7 DAY) <= date(f.dateTime)';
+
+		var sql = 'call art_info("","'+where+'","'+limit+'","pub_time","desc")';
 
 
 		var rows = yield querySql(sql);
-		this.body = rows;
+		this.body = rows[0];
 
 		// pool.getConnection(function(err, connection) {
 	 //        if (err) throw err;
@@ -192,22 +195,10 @@ module.exports = {
 
 		
 	},
-	chart_days: function *(next){
+	topic_hot: function *(next){
 		var array = [];
 		var zd = ``;
 		var tj = ``;
-		if(this.query.type==1){
-
-			
-		}
-
-		else if(this.query.type==2){
-
-		}
-
-		else if(this.query.type==3){
-
-		}
 
 		var ztj = tj + ` and type=${this.query.gzh_type}`;
 		var sql = `call doSql("${zd}","${tj}","","type","desc",'(select 1 as type)')`;

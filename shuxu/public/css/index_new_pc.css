@@ -483,6 +483,26 @@
     padding-left: 20px;
 }
 
+.content .info .right .qs_more .qs_info .qs_right .input_box{
+    text-align: left;
+    line-height: 35px;
+}
+
+.content .info .right .qs_more .qs_info .qs_right .input_box div{
+    text-align: left;
+    margin-top: 20px;
+    font-size: 20px;
+    margin-bottom: -5px;
+}
+
+.content .info .right .qs_more .qs_info .qs_right .input_box span{
+    margin-right: 20px;
+}
+
+.content .info .right .qs_more .qs_info .qs_right .input_box span input{
+    margin-right: 5px;
+}
+
 .content .info .right .qs_more .qs_info .qs_right .step1{
     text-align: left;
     text-indent: 40px;
