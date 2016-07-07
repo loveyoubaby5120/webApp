@@ -74,7 +74,7 @@ function querySql(sql){
 
 router.get('/', function(req, res) {
 
-	var sql = `call gzh_info("*"," and type = 4 and time=maxTime group by id","","rank","")`;
+	var sql = `call gzh_info("*"," and type = 2 and time=maxTime group by id","","rank","")`;
 
 	querySql(sql).then(function(data){
 		var conf = {};
