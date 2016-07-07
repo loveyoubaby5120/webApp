@@ -1,7 +1,7 @@
 'use strict'
 
 var xml2js = require('xml2js');
-var promise = require('bluebird');
+var Promise = require('bluebird');
 var tpl = require('./tpl.js');
 
 //xml 转换
