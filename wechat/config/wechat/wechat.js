@@ -51,6 +51,36 @@ var api = {
 		//https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token=ACCESS_TOKEN
 		batch: prefix + 'material/batchget_material?',
 
+	},
+	group:{//分组
+
+		//创建分组
+		//https://api.weixin.qq.com/cgi-bin/groups/create?access_token=ACCESS_TOKEN
+		create: prefix + 'groups/create?',
+
+		//查询所有分组
+		//https://api.weixin.qq.com/cgi-bin/groups/get?access_token=ACCESS_TOKEN
+		fetch: prefix + 'groups/get?',
+
+		//查询用户所在分组
+		//https://api.weixin.qq.com/cgi-bin/groups/getid?access_token=ACCESS_TOKEN
+		check: prefix + 'groups/getid?',
+
+		//修改分组名
+		//https://api.weixin.qq.com/cgi-bin/groups/update?access_token=ACCESS_TOKEN
+		update: prefix + 'groups/update?',
+
+		//移动用户分组
+		//https://api.weixin.qq.com/cgi-bin/groups/members/update?access_token=ACCESS_TOKEN
+		move: prefix + 'groups/members/update?',
+
+		//批量移动用户分组
+		//https://api.weixin.qq.com/cgi-bin/groups/members/batchupdate?access_token=ACCESS_TOKEN
+		batchupdate: prefix + 'groups/members/batchupdate?',
+
+		//删除分组
+		//https://api.weixin.qq.com/cgi-bin/groups/delete?access_token=ACCESS_TOKEN
+		del: prefix + 'groups/delete?',
 	}
 	
 }
@@ -111,7 +141,6 @@ Wechat.prototype.fetchAccessToken = function(data){
 		});
 }
 
-
 //校验token有效性
 Wechat.prototype.isValidAccessToken = function(data){
 	if(!data || !data.access_token || !data.expires_in){
@@ -150,6 +179,8 @@ Wechat.prototype.updateAccessToken = function(){
 	})
 
 }
+
+
 
 //新增素材
 Wechat.prototype.uploadMaterial = function(type, material, permanent){
@@ -222,7 +253,6 @@ Wechat.prototype.uploadMaterial = function(type, material, permanent){
 	})
 }
 
-
 //获取素材
 Wechat.prototype.fetchMaterial = function(mediaId, type, permanent){
 	var _this = this;
@@ -270,7 +300,7 @@ Wechat.prototype.fetchMaterial = function(mediaId, type, permanent){
 							resolve(_data);
 						}
 						else{
-							throw new Error('Upload material fails');
+							throw new Error('Fetch material fails');
 						}
 					})
 					.catch(function(err){
@@ -328,8 +358,7 @@ Wechat.prototype.deleteMaterial = function(mediaId){
 	})
 }
 
-
-//删除素材
+//修改素材
 Wechat.prototype.updateMaterial = function(mediaId, news){
 	var _this = this;
 	var form = {
@@ -456,6 +485,291 @@ Wechat.prototype.batchMaterial = function(options){
 		
 	})
 }
+
+
+
+
+//创建分组
+Wechat.prototype.createGroup = function(name){
+	var _this = this;
+
+	var fetchUrl = api.group.create;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'POST',
+					url: url,
+					json: true
+				};
+
+				var form = {
+					group: {
+						name: name
+					}
+				};
+
+
+				_options.body = form;
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('Create group fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
+
+//获取所有分组
+Wechat.prototype.fetchGroups = function(){
+	var _this = this;
+
+	var fetchUrl = api.group.fetch;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'GET',
+					url: url,
+					json: true
+				};
+
+				_options.body = {
+				};
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('Fetch group fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
+
+//查询用户所在分组
+Wechat.prototype.checkGroup = function(openId){
+	var _this = this;
+
+	var fetchUrl = api.group.check;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'POST',
+					url: url,
+					json: true
+				};
+
+				var form = {
+					openid: openId
+				};
+
+				_options.body = form;
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('Check group fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
+
+//修改分组名
+Wechat.prototype.updateGroup = function(id, name){
+	var _this = this;
+
+	var fetchUrl = api.group.update;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'POST',
+					url: url,
+					json: true
+				};
+
+				var form = {
+					group: {
+						id: id,
+						name: name
+					}
+				};
+
+				_options.body = form;
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('Update group fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
+
+//移动用户分组/批量移动用户分组
+Wechat.prototype.moveGroup = function(openIds,to){
+	var _this = this;
+
+	var fetchUrl = api.group.move;
+
+	var form = {
+		to_groupid: to
+	};
+
+	if(_.isArray(openIds)){
+		fetchUrl = api.group.batchupdate;
+		form.openid_list = openIds;
+	}
+	else{
+		form.openid = openIds;
+	}
+
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'POST',
+					url: url,
+					json: true
+				};
+
+
+				_options.body = form;
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('Batchupdate group fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
+
+//删除分组
+Wechat.prototype.deleteGroup = function(id){
+	var _this = this;
+
+	var fetchUrl = api.group.del;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'POST',
+					url: url,
+					json: true
+				};
+
+				var form = {
+					group: {
+						id: id
+					}
+				};
+
+				_options.body = form;
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('Delete group fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
+
+
+
 
 //发送消息
 Wechat.prototype.reply = function(){
