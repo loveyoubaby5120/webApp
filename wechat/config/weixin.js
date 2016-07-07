@@ -281,10 +281,17 @@ exports.reply = function *(next){
 			console.log(users);
 
 			reply = JSON.stringify(user);
+		}
+		else if(content === '14'){
+			var userList = yield wechatApi.listUsers();
+
+			console.log(userList);
+
+			reply = userList.total;
+		}
+		else if(content === '15'){
 
 		}
-
-
 
 		this.body = reply;
 	}

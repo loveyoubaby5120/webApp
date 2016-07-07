@@ -50,9 +50,8 @@ var api = {
 		//素材列表
 		//https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token=ACCESS_TOKEN
 		batch: prefix + 'material/batchget_material?',
-
 	},
-	group:{//分组
+	group: {//分组
 
 		//创建分组
 		//https://api.weixin.qq.com/cgi-bin/groups/create?access_token=ACCESS_TOKEN
@@ -82,7 +81,7 @@ var api = {
 		//https://api.weixin.qq.com/cgi-bin/groups/delete?access_token=ACCESS_TOKEN
 		del: prefix + 'groups/delete?',
 	},
-	user:{//用户管理
+	user: {//用户管理
 
 		//设置备注名
 		//https://api.weixin.qq.com/cgi-bin/user/info/updateremark?access_token=ACCESS_TOKEN
@@ -95,9 +94,21 @@ var api = {
 		//批量获取用户信息
 		//https://api.weixin.qq.com/cgi-bin/user/info/batchget?access_token=ACCESS_TOKEN
 		batchFetch: prefix + 'user/info/batchget?',
+
+		//获取用户列表
+		//https://api.weixin.qq.com/cgi-bin/user/get?access_token=ACCESS_TOKEN&next_openid=NEXT_OPENID
+		list: prefix + 'user/get?',
+	},
+	mess: {//群发
+
+		//根据分组进行群发
+		//https://api.weixin.qq.com/cgi-bin/message/mass/sendall?access_token=ACCESS_TOKEN
+		sendAll: prefix + 'message/mass/sendall?',
 	}
 	
 }
+
+
 
 //校验json类型
 var isJson = function(obj){
@@ -115,6 +126,10 @@ function Wechat(opts){
 	this.fetchAccessToken();
 	
 }
+
+
+/*token-------------------------------------------------------------------------------------------------------------------------------*/
+
 
 //获取token
 Wechat.prototype.fetchAccessToken = function(data){
@@ -195,6 +210,7 @@ Wechat.prototype.updateAccessToken = function(){
 }
 
 
+/*素材-------------------------------------------------------------------------------------------------------------------------------*/
 
 //新增素材
 Wechat.prototype.uploadMaterial = function(type, material, permanent){
@@ -501,7 +517,7 @@ Wechat.prototype.batchMaterial = function(options){
 }
 
 
-
+/*分组-------------------------------------------------------------------------------------------------------------------------------*/
 
 //创建分组
 Wechat.prototype.createGroup = function(name){
@@ -783,7 +799,7 @@ Wechat.prototype.deleteGroup = function(id){
 }
 
 
-
+/*用户-------------------------------------------------------------------------------------------------------------------------------*/
 
 //设置备注名
 Wechat.prototype.remarkUser = function(openId, remark){
@@ -820,7 +836,7 @@ Wechat.prototype.remarkUser = function(openId, remark){
 						resolve(_data);
 					}
 					else{
-						throw new Error('remark user fails');
+						throw new Error('Remark user fails');
 					}
 				})
 				.catch(function(err){
@@ -841,28 +857,28 @@ Wechat.prototype.fetchUsers = function(openIds, lang){
 	var url = '';
 	var fetchUrl = api.user.fetch;
 	var method = 'GET';
-
 	var form = {};
 
-	if(_.isArray(openIds)){
-
-		fetchUrl = api.user.batchFetch;
-		url = fetchUrl + '&access_token=' + data.access_token;
-
-		form.user_list = openIds;
-
-		method = 'POST';
-	}
-	else{
-		
-		url = fetchUrl + '&access_token=' + data.access_token + '&openid=' + openIds + '&lang=' + lang;
-	}
+	
 
 	return new Promise(function(resolve, reject){
 		_this
 			.fetchAccessToken()
 			.then(function(data){
 
+				if(_.isArray(openIds)){
+
+					fetchUrl = api.user.batchFetch;
+					url = fetchUrl + '&access_token=' + data.access_token;
+
+					form.user_list = openIds;
+
+					method = 'POST';
+				}
+				else{
+					
+					url = fetchUrl + '&access_token=' + data.access_token + '&openid=' + openIds + '&lang=' + lang;
+				}
 				
 
 				var _options = {
@@ -880,7 +896,7 @@ Wechat.prototype.fetchUsers = function(openIds, lang){
 						resolve(_data);
 					}
 					else{
-						throw new Error('batchFetch user fails');
+						throw new Error('Fetch user fails');
 					}
 				})
 				.catch(function(err){
@@ -892,6 +908,53 @@ Wechat.prototype.fetchUsers = function(openIds, lang){
 	})
 }
 
+//获取用户列表
+Wechat.prototype.listUsers = function(openId){
+	var _this = this;
+
+	var fetchUrl = api.user.list;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				if(openId){
+					url += '&next_openid' + openId;
+				}
+
+				console.log(url);
+				var _options = {
+					method: 'GET',
+					url: url,
+					json: true
+				};
+
+				var form = {
+				};
+
+				_options.body = form;
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('List user fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
 
 //发送消息
 Wechat.prototype.reply = function(){
