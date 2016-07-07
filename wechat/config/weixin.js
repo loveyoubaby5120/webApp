@@ -127,7 +127,7 @@ exports.reply = function *(next){
 				mediaId: data.media_id
 			}
 		}
-		//自动回复永久素材
+		//自动回复永久素材 获取素材回复素材
 		else if(content === '10'){
 			var picData = yield wechatApi.uploadMaterial('image', __dirname + '/../public/images/1.jpg', {});
 
@@ -140,7 +140,17 @@ exports.reply = function *(next){
 					show_cover_pic: 1,
 					content: '内容',
 					content_source_url: 'https://github.com',
-				}]
+				},
+				{
+					title: '标题2',
+					thumb_media_id: picData.media_id,
+					author: '作者2',
+					digest: '摘要2',
+					show_cover_pic: 1,
+					content: '内容2',
+					content_source_url: 'https://github.com',
+				}
+				]
 			}
 
 			data = yield wechatApi.uploadMaterial('news', media, {});
@@ -162,6 +172,37 @@ exports.reply = function *(next){
 			});
 
 			reply = news;
+		}
+		//自动回复永久素材 获取所有索财
+		else if(content === '11'){
+			var counts = yield wechatApi.countMaterial()
+
+
+			var results = yield [
+				wechatApi.batchMaterial({
+					type: 'image',
+					offset: 0,
+					count: 10
+				}),
+				wechatApi.batchMaterial({
+					type: 'video',
+					offset: 0,
+					count: 10
+				}),
+				wechatApi.batchMaterial({
+					type: 'voice',
+					offset: 0,
+					count: 10
+				}),
+				wechatApi.batchMaterial({
+					type: 'news',
+					offset: 0,
+					count: 10
+				})
+			]
+
+
+			reply = '[ text=>11 ] count: ' + JSON.stringify(counts);
 		}
 
 		this.body = reply;

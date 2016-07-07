@@ -292,7 +292,7 @@ Wechat.prototype.deleteMaterial = function(mediaId){
 	var form = {
 		media_id: mediaId
 	};
-	var fetchUrl = api.temporary.del;
+	var fetchUrl = api.permanent.del;
 
 	return new Promise(function(resolve, reject){
 		_this
@@ -330,7 +330,7 @@ Wechat.prototype.deleteMaterial = function(mediaId){
 
 
 //删除素材
-Wechat.prototype.updagteMaterial = function(mediaId, news){
+Wechat.prototype.updateMaterial = function(mediaId, news){
 	var _this = this;
 	var form = {
 		media_id: mediaId
@@ -338,7 +338,7 @@ Wechat.prototype.updagteMaterial = function(mediaId, news){
 
 	_.extend(form, news)
 
-	var fetchUrl = api.temporary.update;
+	var fetchUrl = api.permanent.update;
 
 	return new Promise(function(resolve, reject){
 		_this
@@ -379,7 +379,7 @@ Wechat.prototype.countMaterial = function(){
 	var _this = this;
 
 
-	var fetchUrl = api.temporary.count;
+	var fetchUrl = api.permanent.count;
 
 	return new Promise(function(resolve, reject){
 		_this
@@ -401,7 +401,7 @@ Wechat.prototype.countMaterial = function(){
 						resolve(_data);
 					}
 					else{
-						throw new Error('Update material fails');
+						throw new Error('Count material fails');
 					}
 				})
 				.catch(function(err){
@@ -418,10 +418,10 @@ Wechat.prototype.batchMaterial = function(options){
 	var _this = this;
 
 	options.type = options.type || 'image';
-	options.offset = options.type || 0;
-	options.count = options.type || 1;
+	options.offset = options.offset || 0;
+	options.count = options.count || 1;
 
-	var fetchUrl = api.temporary.batch;
+	var fetchUrl = api.permanent.batch;
 
 	return new Promise(function(resolve, reject){
 		_this
@@ -445,7 +445,7 @@ Wechat.prototype.batchMaterial = function(options){
 						resolve(_data);
 					}
 					else{
-						throw new Error('Update material fails');
+						throw new Error('Batch material fails');
 					}
 				})
 				.catch(function(err){
