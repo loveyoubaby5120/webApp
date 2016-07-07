@@ -79,9 +79,9 @@ router.get('/', function(req, res) {
 	querySql(sql).then(function(data){
 		var conf = {};
 		conf.cols = [
-			{caption: '微信号', type: 'string', width:80},
-			{caption: 'ID', type: 'string', width:80},
-			{caption: '影响力', type: 'string', width:80}
+			{caption: '微信号', type: 'string', width:200},
+			{caption: 'ID', type: 'string', width:200},
+			{caption: '影响力', type: 'string', width:200}
 		];
 
 		conf.rows = [];
