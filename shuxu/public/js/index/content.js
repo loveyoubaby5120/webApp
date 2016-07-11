@@ -8,7 +8,7 @@ export default class Content extends React.Component {
     return (
         <div className="content">
         	<Info></Info>
-        	<div className="go_top" id="go_top" onclick="myScroll()"></div>
+        	<div className="go_top" id="go_top"></div>
         </div>
     )
   }

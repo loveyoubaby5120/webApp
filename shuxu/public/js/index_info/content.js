@@ -11,7 +11,7 @@ export default class Content extends React.Component {
     return (
         <div className="content">
         	<Info gzh_id={this.props.gzh_id}></Info>
-        	<div className="go_top" id="go_top" onclick="myScroll()"></div>
+        	<div className="go_top" id="go_top"></div>
         </div>
     )
   }

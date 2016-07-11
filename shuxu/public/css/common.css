@@ -3,6 +3,7 @@
 }
 body{
     min-width: 1000px;
+    background: #eaecee;
 }
 
 a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
@@ -70,7 +71,7 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
 
 .header .header_info,.date .date_info,.content .info,.logo .search
 {
-    width: 800px;
+    width: 1000px;
     margin: 0 auto;
     padding: 15px 0;
 }
@@ -80,7 +81,7 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
 }
 
 .logo .search{
-    // height: 50px;
+    /*height: 50px;*/
     overflow: hidden;
 }
 
@@ -100,16 +101,16 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
 }
 
 .logo .search div span{
-    // font-size: 2.5rem;
+    /*font-size: 2.5rem;*/
     height: 50%;
     line-height: 25px;
-    display: block;
+    display: inline-block;
     text-align: left;
 }
 
 .logo .search div .left{
-    width: 100%;
-    height: 75%;
+    width: 145px;
+    height: 40px;
     background-image: url('../images/sominer-logo_2.png');
     background-repeat: no-repeat;
     background-position: left;
@@ -117,9 +118,9 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
 }
 
 .logo .search div .right{
-    width: 100%;
-    height: 25%;
     font-weight: bold;
+    margin-left: 20px;
+    vertical-align: text-bottom;
 }
 
 .logo .search div input{
@@ -145,91 +146,23 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
     top: 16px;
 }
 
+.logo .search div .introducing{
+    padding:5px 15px;
+    color: #00cfad;
+    cursor: pointer;
+}
 
 .header{
-    background-color: #eaecee;
+    background-color: #000;
 }
 
 .header .header_info{
     overflow:hidden;
 }
 
-.date{
-    padding: 10px 0px;
-    background-color: #f3f4f6;
-}
-
-.date .date_info{
-    padding: 0;
-    height:25px;
-}
-
-.date .select_data1{
-    position: absolute;
-    left:0px;
-    line-height:23px;
-    z-index: 2;
-    cursor: pointer;
-    border: 1px #00CFB0 solid;
-}
-
-.date .select_data1 .ok{
-    color: #00CFB0;
-    font-size: 15px;
-    padding-left: 5px;
-}
-
-.date .select_data1 .down{
-    overflow: hidden;
-    height: 10px;
-    display: inline-block;
-    font-size:25px;
-    padding-left: 10px;
-    padding-right: 5px;
-}
-
-.date .select_data1 .select{
-    background: #F3F4F8;
-    display: none;
-}
-
-.date .select_data1 .select .option{
-    text-align: left;
-    color: #9fa0a0;
-    padding-left: 5px;
-    border-top: 1px #00CFB0 solid;
-}
-
-.date .select_data1 .select .option:hover{
-    color: #00CFB0;
-    background: #eaecee;
-}
-
-.date .select_data1 select{
-    // font-size:50px;
-}
-
-.date div{
-    line-height: 25px;
-    z-index: 1;
-}
-
-.date div .date_num{
-    background-color: #00cfad;
-    color:#fff;
-    padding:5px 3px;
-}
-
-.date div .down{
-    overflow: hidden;
-    height: 10px;
-    display: inline-block;
-    font-size:25px;
-}
-
 .content{
-    padding-bottom: 70px;
-    background-color: #ffffff;
+    padding-top: 10px;
+    padding-bottom: 50px;
 }
 
 @media (max-width:900px){
@@ -239,7 +172,6 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
     }
     
 }
-
 
 .content .go_top,#go_top{
     background: #fff url('../images/top.png') center no-repeat;
@@ -257,7 +189,6 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
 }
 
 .content .info{
-    background-color: #fff;
     padding: 0px;
     overflow:hidden;
     margin-bottom: 100px;
@@ -288,11 +219,10 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
 }
 
 .blur .number{
-    // background-color: #f6501e;
+    /*background-color: #f6501e;*/
 }
 
 .blur thead tr th div{
-    color: #00cfad;
     /*text-overflow: ellipsis;*/
     /*white-space: nowrap;*/
     /*word-break: break-all;*/
@@ -359,7 +289,7 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
 }
 
 .chart .date_check .select_data1 select{
-    // font-size:50px;
+    /*font-size:50px;*/
 }
 
 .chart .date_check div{

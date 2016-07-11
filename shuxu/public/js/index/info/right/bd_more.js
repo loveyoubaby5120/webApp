@@ -102,18 +102,20 @@ export default class Bd_more extends React.Component {
                     // var div8 = React.createElement('div',null,'--');
                     // var td8 = React.createElement('td',{className:'text'},div8);
                     
-                    var a9 = React.createElement('a',{href:"/index_info?gzh_id="+data.id},'进入 >');
+                    var a9 = React.createElement('a',{href:"/index_info?gzh_id="+data.id},'查看');
                     var td9 = React.createElement('td',{className:'text goto_info'},a9);
                     
-                    var td10 = React.createElement('td');
+                    var div10 = React.createElement('div',null,'100%');
+                    var td10 = React.createElement('td',{className:'text'},div10);
 
 
                     if((index+num)%2==0){
-                        var tr = React.createElement('tr',{className:'even',key:index},td,td2,td3,td4,td5,td6,td7,td9,td10);
+                        var tr = React.createElement('tr',{className:'even',key:index},td2,td3,td4,td5,td6,td7,td10,td9);
                     }
                     else{
-                        var tr = React.createElement('tr',{className:'',key:index},td,td2,td3,td4,td5,td6,td7,td9,td10);
+                        var tr = React.createElement('tr',{className:'',key:index},td2,td3,td4,td5,td6,td7,td10,td9);
                     }
+
 
                     options.push(tr);
 
@@ -140,7 +142,7 @@ export default class Bd_more extends React.Component {
 
     render() {
         return (
-            <div className={this.props.show=='bd_more' ? "auto" : "none"}>
+            <div className={this.props.show=='bd_more' ? "table blur auto" : "table blur none"}>
                 <div className="formOptions">
                     <div className="options">
                         <div className="query">
@@ -167,35 +169,40 @@ export default class Bd_more extends React.Component {
                                 <li className="option">上海</li>
                             </ul>
                         </div>
-                    </div>
-                    <div className="options">
-                        <div className="query long"><input className='ok' type='text' placeholder='微信号'/></div>
-                        <div className="query submit"><a className='ok' href="javascript:;">提交</a></div>
+                        <div className="query submit">
+                            <a className='ok' href="javascript:;">提交</a>
+                        </div>
+                        <div className="date">
+                            <span className="time">2016年7月8日</span>
+                            <div className="query">
+                                <a className='ok' href="javascript:;">最近30天</a><span className='down'>ˇ</span>
+                                <ul className="select">
+                                    <li className="option">最近7天</li>
+                                    <li className="option">最近30天</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className={this.props.show=='bd_more' ? "table blur auto" : "table blur none"}>
-                    <div className="bc title"><p className="type ng-binding">排名</p></div>
-                    <table className="bc">
-                        <thead>
-                            <tr>
-                                <th className="w_2"></th>
-                                <th className="w_10"></th>
-                                <th className="w_15"><div><p className="">微信名称</p></div></th>
-                                <th className="w_15"><div><p className="">微信账号</p></div></th>
-                                <th className="w_15"><div><p className="">粉丝黏性</p></div></th>
-                                <th className="w_15"><div><p className="">增长潜力</p></div></th>
-                                <th className="w_20"><div><p className="">影响指数</p></div></th>
-                                <th className="w_15"><div><p className="">查看详细</p></div></th>
-                                <th className="w_2"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.state.nodes}
-                        </tbody>
-                    </table>
-                    <div className={isNaN(this.state.limitNum) || this.state.datas.length<this.state.limitNum ? 'showMore none' : 'showMore'} onClick={this.showAll.bind(this)} ><div className="last jtb"></div><span>查看更多</span></div>
-                </div>    
-            </div>
+                <table className="bc">
+                    <thead>
+                        <tr>
+                            <th className="w_10"><div><p className="">排名</p></div></th>
+                            <th className="w_15"><div><p className="">微信名称</p></div></th>
+                            <th className="w_15"><div><p className="">微信账号</p></div></th>
+                            <th className="w_15"><div><p className="">粉丝黏性</p></div></th>
+                            <th className="w_15"><div><p className="">增长潜力</p></div></th>
+                            <th className="w_20"><div><p className="">影响指数</p></div></th>
+                            <th className="w_10"><div><p className="">相关性<span>?</span></p></div></th>
+                            <th className="w_15"><div><p className="">查看详细</p></div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.nodes}
+                    </tbody>
+                </table>
+                <div className={isNaN(this.state.limitNum) || this.state.datas.length<this.state.limitNum ? 'showMore none' : 'showMore'} onClick={this.showAll.bind(this)} ><div className="last jtb"></div><span>查看更多</span></div>
+            </div>    
         )
     }
 }

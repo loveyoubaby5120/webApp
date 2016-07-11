@@ -292,7 +292,7 @@
     width:160px;
     margin: 10px 2px;
     overflow: hidden;
-    // border-right: 1px #e6e6e6 solid;
+    /*border-right: 1px #e6e6e6 solid;*/
 }
 
 .content .info .statistics .type .item.last{

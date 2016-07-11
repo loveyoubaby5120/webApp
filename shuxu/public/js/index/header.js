@@ -6,8 +6,7 @@ export default class Header extends React.Component {
     constructor(props) {
         super(props);
          this.state = {
-            datas: [{"time":"--","gzhCount":'--',"artCount":'--',"readSum":'--'}],
-            show: this.props.show
+            datas: [{"time":"--","gzhCount":'--',"artCount":'--',"readSum":'--'}]
         };
     }
 
@@ -25,14 +24,6 @@ export default class Header extends React.Component {
 
             }
         })
-    }
-
-    onChangeShow(val,event){
-        var newState = val;
-        this.setState({
-            show: newState
-        });
-        this.props.callbackParent(newState);
     }
 
     render() {
@@ -66,9 +57,6 @@ export default class Header extends React.Component {
                         </div>
                     </li>
                 </ul>
-                <div className="introducing" onClick={this.onChangeShow.bind(this,true)}>
-                    数据说明
-                </div>
             </div>
         </div>
         )

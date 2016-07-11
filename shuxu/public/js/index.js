@@ -6,7 +6,6 @@ import Footer from 'footer.js'
 
 //index
 import Header from './index/header.js'
-import Date from './index/date.js'
 import Content from './index/content.js'
 
 //index_info
@@ -33,8 +32,8 @@ export class App extends React.Component {
     return (
       <div>
         <Mask show={this.state.show} callbackParent={this.onShow.bind(this)}></Mask>
-        <Top></Top>
-        <Header show={this.state.show} callbackParent={this.onShow.bind(this)}></Header>
+        <Top show={this.state.show} callbackParent={this.onShow.bind(this)}></Top>
+        <Header></Header>
         <Content></Content>
         <Footer></Footer>
       </div>
