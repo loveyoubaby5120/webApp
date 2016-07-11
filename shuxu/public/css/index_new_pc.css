@@ -591,31 +591,43 @@
 .content .info .right .qs_more .qs_info .qs_right .step2_info .item{
     margin: 10px 0;
     padding: 5px 0;
-    border-bottom: 1px #e6e6e6 solid;
-    color: #9fa0a0;
+    /*border-bottom: 1px #e6e6e6 solid;*/
+    color: #c2c3c3;
+    overflow: hidden;
 }
 
 .content .info .right .qs_more .qs_info .qs_right .step2_info .item div{
     text-align: left;
 }
 
-.content .info .right .qs_more .qs_info .qs_right .step2_info .item .topic{
+.content .info .right .qs_more .qs_info .qs_right .step2_info .item .item_content{
+    float:right;
+    width:630px;
+    padding: 0 0 20px;
+}
+
+.content .info .right .qs_more .qs_info .qs_right .step2_info .item .item_content .topic{
     font-weight:bold;
     line-height: 30px;
     font-size: 20px;
     color:#000;
+    cursor: pointer;
 }
 
-.content .info .right .qs_more .qs_info .qs_right .step2_info .item .writer{
+.content .info .right .qs_more .qs_info .qs_right .step2_info .item .item_content .writer{
     line-height: 25px;
 }
 
-.content .info .right .qs_more .qs_info .qs_right .step2_info .item .introduce{
+.content .info .right .qs_more .qs_info .qs_right .step2_info .item  .item_content.introduce{
     line-height: 16px;
 }
 
 .content .info .right .qs_more .qs_info .qs_right .step2_info .item .other{
+    float:left;
+    width:128px;
+    padding: 10px;
     overflow: hidden;
+    border-right: 1px #e6e6e6 solid;
 }
 
 .content .info .right .qs_more .qs_info .qs_right .step2_info .item div p{
@@ -624,19 +636,21 @@
 
 .content .info .right .qs_more .qs_info .qs_right .step2_info .item div .other_left{
     line-height: 25px;
-    float: left;
 }
 
 .content .info .right .qs_more .qs_info .qs_right .step2_info .item div .other_right1{
     line-height: 25px;
-    float: right;
+    background: url('../images/yds2.png') 0px 7px no-repeat;
+    padding-left: 25px;
 }
 
 .content .info .right .qs_more .qs_info .qs_right .step2_info .item div .other_right2{
     line-height: 25px;
-    float: right;
-    background: url('../images/dzs2.png') 8px 3px no-repeat;
-    padding-left: 30px;
+    background: url('../images/dzs2.png') 0px 3px no-repeat;
+    padding-left: 20px;
+}
+.content .info .right .qs_more .qs_info .qs_right .step2_info .item div .other_right3{
+
 }
 
 /*--------------------------------------------------------------------------------------------------------------------*/

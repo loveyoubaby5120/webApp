@@ -33,7 +33,6 @@ export default class Right extends React.Component {
 	            文章影响力排名
 	        </div>
 	        <Step2_info type={this.props.type} topicArray = {this.state.topicArray}></Step2_info>
-	        <div className="showMore"><div className="last jtb"></div><span>显示更多信息</span></div>
         </div>
     )
   }
