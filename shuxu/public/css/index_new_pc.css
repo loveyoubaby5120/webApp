@@ -178,6 +178,8 @@
     color: #9e9e9f;
     position: absolute;
     z-index: 3;
+    border-radius: 3px;
+    border: 1px solid #9e9e9f;
     /*font-size: 15px;*/
 }
 
@@ -242,12 +244,12 @@
 
 .table{
     margin:0 auto;
-    padding:15px 20px 10px;
+    padding:15px 20px 50px;
     position: relative;
 }
 
 .table .showMore{
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 .table .showMore div{
@@ -258,7 +260,9 @@
 .table .showMore span{
     padding-left:5px;
     cursor: pointer;
-    color: #F3511E;
+    /*color: #F3511E;*/
+    background: #eaecee;
+    padding: 5px 30px;
 }
 
 .table table{
@@ -266,6 +270,8 @@
     table-layout: fixed;
     width: 100%;
     margin-top: 15px;
+    border-collapse: separate;
+    border-spacing: 0 10px;
 }
 
 .table table tr{
@@ -288,6 +294,18 @@
     word-break: break-all;
     white-speace: normal;
     color: #5a5b5c;
+    border-top: 1px solid #bfc0c1;
+    border-bottom: 1px solid #bfc0c1;
+}
+
+.table table tr td.first{
+    border-left: 1px solid #bfc0c1;
+    border-radius: 5px 0 0 5px;
+}
+
+.table table tr td.last{
+    border-right: 1px solid #bfc0c1;
+    border-radius: 0 5px 5px 0;
 }
 
 .table thead{
@@ -298,6 +316,18 @@
     text-align: center;
     font-weight: bold;
     background: #eaecee;
+    /*border-top: 1px solid #bfc0c1;
+    border-bottom: 1px solid #bfc0c1;*/
+}
+
+.table table tr th.first{
+    /*border-left: 1px solid #bfc0c1;*/
+    border-radius: 5px 0 0 5px;
+}
+
+.table table tr th.last{
+    /*border-right: 1px solid #bfc0c1;*/
+    border-radius: 0 5px 5px 0;
 }
 
 .table thead tr th div{
@@ -314,7 +344,7 @@
 
 .table thead tr th div p span{
     margin-left: 2px;
-    background: #9fa0a0;
+    background: #00CFAE;
     color: #fff;
     border-radius: 50px;
     text-align: center;
@@ -324,7 +354,7 @@
 }
 
 .table tbody .even{
-    background-color: #F5FAFE;
+    /*background-color: #F5FAFE;*/
 }
 
 .table tbody tr .text div{
@@ -380,7 +410,7 @@
 /*--------------------------------------------------------------------------------------------------------------------*/
 
 .content .info .right .qs_more{
-    padding:0 0 0 10px;
+    padding: 15px 20px 50px;
 }
 
 .content .info .right .qs_more .title{
@@ -396,77 +426,21 @@
     
 }
 
-.content .info .right .qs_more .qs_info .qs_left{
-    width: 108px;
-    float: left;
-    background: #fff;
-    border: 1px #f6501e solid;
-}
-
-.content .info .right .qs_more .qs_info .qs_left .title{
-    font-size: 15px;
-    text-align: center;
-    text-indent:-15px;
-    color: #fff;
-    border: none;
-}
-
-.content .info .right .qs_more .qs_info .qs_left .jtb{
-    margin: 0 auto;
-}
-
-.content .info .right .qs_more .qs_info .qs_left .bzrc{
-    background: #f6501e url('../images/bzrc.png') 83px center no-repeat;
-}
-
-.content .info .right .qs_more .qs_info .qs_left .dzbq{
-    background: #f6501e url('../images/dzbq.png') 83px center no-repeat;   
-}
-
-.content .info .right .qs_more .qs_info .qs_left .item.top a{
-    border: none;
-}
-
-.content .info .right .qs_more .qs_info .qs_left .item a{
-    border-top: 1px #c2c3c3 solid;
-    line-height: 35px;
-    height:35px;
-    width: 90%;
-    margin-left: 5%;
-    display: block;
-    color: #9fa0a0;
-}
-
-.content .info .right .qs_more .qs_info .qs_left .item.active a{
-    color:#f6501e;
-}
-
-.content .info .right .qs_more .qs_info .qs_left .item a:hover{
-    color:#f6501e;
-}
-
 /*--------------------------------------------------------------------------------------------------------------------*/
 
 .content .info .right .qs_more .qs_info .qs_right{
-    width: 530px;
-    float: left;
-    padding-left: 20px;
 }
 
 .content .info .right .qs_more .qs_info .qs_right .step1{
     text-align: left;
-    text-indent: 40px;
     line-height: 35px;
-    color: #00CFAE;
-    background:#eaebed url('../images/zhyxl.png') 15px center no-repeat;
+    font-weight: bold;
 }
 
 .content .info .right .qs_more .qs_info .qs_right .step2{
     text-align: left;
-    text-indent: 40px;
     line-height: 35px;
-    color: #00CFAE;
-    background:#eaebed url('../images/wzyxl.png') 15px center no-repeat;
+    font-weight: bold;
 }
 
 .content .info .right .qs_more .qs_info .qs_right .step1_info{

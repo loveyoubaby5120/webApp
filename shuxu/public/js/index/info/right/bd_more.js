@@ -8,7 +8,9 @@ export default class Bd_more extends React.Component {
             datas: [],
             nodes: [],
             limitNum: 30,
-            type: this.props.type
+            type: this.props.type,
+            clickText: '点击加载更多',
+            changeClick: false
         }
     }
 
@@ -82,7 +84,7 @@ export default class Bd_more extends React.Component {
                         div2 = React.createElement('div',{className:'number number2'},index+num+1);   
                     }
                     
-                    var td2 = React.createElement('td',null,div2);
+                    var td2 = React.createElement('td',{className:'first'},div2);
 
                     var div3 = React.createElement('div',null,data.nick_name);
                     var td3 = React.createElement('td',{className:'text'},div3);
@@ -103,7 +105,7 @@ export default class Bd_more extends React.Component {
                     // var td8 = React.createElement('td',{className:'text'},div8);
                     
                     var a9 = React.createElement('a',{href:"/index_info?gzh_id="+data.id},'查看');
-                    var td9 = React.createElement('td',{className:'text goto_info'},a9);
+                    var td9 = React.createElement('td',{className:'text goto_info last'},a9);
                     
                     var div10 = React.createElement('div',null,'100%');
                     var td10 = React.createElement('td',{className:'text'},div10);
@@ -125,9 +127,14 @@ export default class Bd_more extends React.Component {
                 
 
                 _this.setState({
-                    nodes: _this.state.nodes.concat(options)
+                    nodes: _this.state.nodes.concat(options),
                 });
 
+                if(isNaN(_this.state.limitNum)){
+                    _this.setState({
+                        changeClick:true
+                    })
+                }
 
             }
         });
@@ -135,6 +142,7 @@ export default class Bd_more extends React.Component {
     }
 
     showAll(event){
+        this.state.clickText = '加载中……';
         this.state.limitNum = '*';
         this.setNodes();
     }
@@ -187,21 +195,21 @@ export default class Bd_more extends React.Component {
                 <table className="bc">
                     <thead>
                         <tr>
-                            <th className="w_10"><div><p className="">排名</p></div></th>
+                            <th className="w_10 first"><div><p className="">排名</p></div></th>
                             <th className="w_15"><div><p className="">微信名称</p></div></th>
                             <th className="w_15"><div><p className="">微信账号</p></div></th>
                             <th className="w_15"><div><p className="">粉丝黏性</p></div></th>
                             <th className="w_15"><div><p className="">增长潜力</p></div></th>
                             <th className="w_20"><div><p className="">影响指数</p></div></th>
                             <th className="w_10"><div><p className="">相关性<span>?</span></p></div></th>
-                            <th className="w_15"><div><p className="">查看详细</p></div></th>
+                            <th className="w_15 last"><div><p className="">查看详细</p></div></th>
                         </tr>
                     </thead>
                     <tbody>
                         {this.state.nodes}
                     </tbody>
                 </table>
-                <div className={isNaN(this.state.limitNum) || this.state.datas.length<this.state.limitNum ? 'showMore none' : 'showMore'} onClick={this.showAll.bind(this)} ><div className="last jtb"></div><span>查看更多</span></div>
+                <div className={this.state.changeClick || this.state.datas.length<this.state.limitNum ? 'showMore none' : 'showMore'} onClick={this.showAll.bind(this)} ><span>{this.state.clickText}{this.state.datas.length<this.state.limitNum}</span></div>
             </div>    
         )
     }

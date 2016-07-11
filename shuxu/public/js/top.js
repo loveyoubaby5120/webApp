@@ -35,7 +35,7 @@ export default class Top extends React.Component {
                   <span className="left"></span><span className="right">微信公众号排行榜</span>
               </div>
               <div className="right_div">
-                <span class="end_time">数据截止 2016年7月10日</span>
+                <span className="end_time">数据截止 2016年7月10日</span>
                 <span className="introducing" onClick={this.onChangeShow.bind(this,true)}>
                     数据说明
                 </span>

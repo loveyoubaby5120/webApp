@@ -10,15 +10,10 @@ export default class Right extends React.Component {
     return (
         <div className="qs_right">
 	        <Chart type={this.props.type}></Chart>
-	        <div className="step1">
-	            帐户影响力排名
-	        </div>
-	        <Step1_info></Step1_info>
 	        <div className="step2">
 	            文章影响力排名
 	        </div>
 	        <Step2_info></Step2_info>
-	        <div className="showMore"><div className="last jtb"></div><span>显示更多信息</span></div>
         </div>
     )
   }
