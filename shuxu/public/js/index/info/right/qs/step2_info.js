@@ -7,15 +7,28 @@ export default class Step2_info extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            option:[]
+            option:[],
+            type: this.props.type,
+            topicArray: this.props.topicArray.join(',')
         }
 
     }
 
-    componentDidMount(){
+    componentWillMount(){
+        this.getArticle()
+    }
+
+    componentWillReceiveProps(newProps){
+        this.state.type = newProps.type;
+        this.state.topicArray = newProps.topicArray.join(',')
+        this.getArticle()
+    }
+
+
+    getArticle(){
         var _this = this;
         $.ajax({
-            url: '/article_profile_info?gzh_id='+this.props.gzh_id+'&type='+this.props.type,
+            url: '/article_profile_list?topicArray='+this.state.topicArray+'&type='+this.state.type,
             async:true,
             success: function(datas){
                 
@@ -40,6 +53,7 @@ export default class Step2_info extends React.Component {
                                     <div className="other_left">{data.dateTime}</div>
                                     <div className="other_right1">{data.read_num}</div>
                                     <div className="other_right2">{data.zan_num}</div>
+                                    <div className="other_right1">阅读 {data.read_num}</div>
                                 </div>
                             </li>
 

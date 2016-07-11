@@ -47,19 +47,19 @@ exports.reply = function *(next){
 		var content = message.Content;
 		var reply = '您说的 ' + message.Content + '太复杂了';
 
-		//自动回复文本
+		//自动回复 文本
 		if(content === '1'){
 			reply = '出门左转';
 		}
-		//自动回复文本
+		//自动回复 文本
 		else if(content === '2'){
 			reply = '找个凉快的地方待着';
 		}
-		//自动回复文本
+		//自动回复 文本
 		else if(content === '3'){
 			reply = '画个圈圈诅咒你';
 		}
-		//自动回复图文信息
+		//自动回复 图文信息
 		else if(content === '4'){
 			reply = [{
 				title: '技术改变世界',
@@ -74,7 +74,7 @@ exports.reply = function *(next){
 			}
 			];
 		}
-		//自动回复临时素材   图片消息
+		//自动回复 临时素材   图片消息
 		else if(content === '5'){
 			var data = yield wechatApi.uploadMaterial('image', __dirname + '/../public/images/1.jpg');
 
@@ -83,7 +83,7 @@ exports.reply = function *(next){
 				mediaId: data.media_id
 			}
 		}
-		//自动回复临时素材   视频消息
+		//自动回复 临时素材   视频消息
 		else if(content === '6'){
 			var data = yield wechatApi.uploadMaterial('video', __dirname + '/../public/video/1.mp4');
 
@@ -94,7 +94,7 @@ exports.reply = function *(next){
 				mediaId: data.media_id
 			}
 		}
-		//自动回复临时素材   音乐消息
+		//自动回复 临时素材   音乐消息
 		else if(content === '7'){
 			var data = yield wechatApi.uploadMaterial('image', __dirname + '/../public/images/1.jpg');
 
@@ -107,7 +107,7 @@ exports.reply = function *(next){
 				mediaId: data.media_id
 			}
 		}
-		//自动回复永久素材   图片消息
+		//自动回复 永久素材   图片消息
 		else if(content === '8'){
 			var data = yield wechatApi.uploadMaterial('image', __dirname + '/../public/images/1.jpg', {type: 'image'});
 
@@ -116,7 +116,7 @@ exports.reply = function *(next){
 				mediaId: data.media_id
 			}
 		}
-		//自动回复永久素材   视频消息
+		//自动回复 永久素材   视频消息
 		else if(content === '9'){
 			var data = yield wechatApi.uploadMaterial('video', __dirname + '/../public/video/1.mp4', {type: 'video',description: '{"title": "Really a nice place", "introduction": "Never think it so easy"}'});
 
@@ -127,7 +127,7 @@ exports.reply = function *(next){
 				mediaId: data.media_id
 			}
 		}
-		//自动回复永久素材
+		//自动回复 永久素材 获取素材回复素材
 		else if(content === '10'){
 			var picData = yield wechatApi.uploadMaterial('image', __dirname + '/../public/images/1.jpg', {});
 
@@ -140,7 +140,17 @@ exports.reply = function *(next){
 					show_cover_pic: 1,
 					content: '内容',
 					content_source_url: 'https://github.com',
-				}]
+				},
+				{
+					title: '标题2',
+					thumb_media_id: picData.media_id,
+					author: '作者2',
+					digest: '摘要2',
+					show_cover_pic: 1,
+					content: '内容2',
+					content_source_url: 'https://github.com',
+				}
+				]
 			}
 
 			data = yield wechatApi.uploadMaterial('news', media, {});
@@ -162,6 +172,125 @@ exports.reply = function *(next){
 			});
 
 			reply = news;
+		}
+		//自动回复 永久素材 获取所有索财
+		else if(content === '11'){
+			var counts = yield wechatApi.countMaterial()
+
+
+			var results = yield [
+				wechatApi.batchMaterial({
+					type: 'image',
+					offset: 0,
+					count: 10
+				}),
+				wechatApi.batchMaterial({
+					type: 'video',
+					offset: 0,
+					count: 10
+				}),
+				wechatApi.batchMaterial({
+					type: 'voice',
+					offset: 0,
+					count: 10
+				}),
+				wechatApi.batchMaterial({
+					type: 'news',
+					offset: 0,
+					count: 10
+				})
+			]
+
+
+			reply = '[ text=>11 ] count: ' + JSON.stringify(counts);
+		}
+		//自动回复 分组 创建分组  查看分组 移动分组/批量移动 修改分组 删除分组
+		else if(content === '12'){
+			var group = yield wechatApi.createGroup('wechat');
+
+			console.log('新分组 wechat');
+			console.log(group);
+
+			var groups = yield wechatApi.fetchGroups();
+
+			console.log('加了 wechat 后的分组列表');
+			console.log(groups);
+
+			var group2 = yield wechatApi.checkGroup(message.FromUserName);
+
+			console.log('查看自己的分组');
+			console.log(group2);
+
+			var result = yield wechatApi.moveGroup(message.FromUserName,100);
+
+			console.log('单个移动到 100');
+			console.log(result);
+
+			var groups3 = yield wechatApi.fetchGroups();
+
+			console.log('单个移动后的分组列表');
+			console.log(groups3);
+
+			var result2 = yield wechatApi.moveGroup([message.FromUserName],101);
+
+			console.log('批量移动到 101');
+			console.log(result2);
+
+			var groups4 = yield wechatApi.fetchGroups();
+
+			console.log('批量移动后的分组列表');
+			console.log(groups4);
+
+			var result3 = yield wechatApi.updateGroup(101,'weichat2');
+
+			console.log('101 wechat 改名 wechat2');
+			console.log(result3);
+
+			var groups5 = yield wechatApi.fetchGroups();
+
+			console.log('改名后的分组列表');
+			console.log(groups5);
+
+			var result4 = yield wechatApi.deleteGroup(102);
+
+			console.log('删除 102 wechat 分组');
+			console.log(result4);
+
+			var groups6 = yield wechatApi.fetchGroups();
+
+			console.log('删除后的分组列表');
+			console.log(groups6);
+
+
+			reply = 'Group done!';
+		}
+		else if(content === '13'){
+			var user = yield wechatApi.fetchUsers(message.FromUserName,'en');
+
+			console.log(user);
+
+			var openIds = [
+				{
+					openid: message.FromUserName,
+					lang: 'en'
+				}
+			];
+
+			var users = yield wechatApi.fetchUsers(openIds);
+
+			console.log(users);
+
+			reply = JSON.stringify(user);
+		}
+		else if(content === '14'){
+			var userList = yield wechatApi.listUsers();
+
+			console.log(userList);
+
+			reply = userList.total;
+		}
+		else if(content === '15'){
+
 		}
 
 		this.body = reply;
