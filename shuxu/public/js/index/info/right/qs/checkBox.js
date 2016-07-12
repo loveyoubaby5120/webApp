@@ -24,6 +24,9 @@ export default class CheckBox extends React.Component {
 
     getTopic(){
         var _this = this;
+        if(this.state.type==0){
+            return false;
+        }
         $.ajax({
             url: '/topic_hot?gzh_type='+this.state.type,
             async: true,
@@ -58,17 +61,35 @@ export default class CheckBox extends React.Component {
 
 	    return (
 	    	<div ref='input_box' className='input_box'>
-                <div>热度话题</div>
-                {
-					(function(obj){
-						var a = [];
-						obj.state.topic.forEach(function(data,index){
-                            a.push(<span key={index}><input type='checkbox' name="keyall" value={data.artcle_topic_id} id={index} onClick={obj.onChangeTopic.bind(obj)} /><label htmlFor={index}>{data.topic_name}</label></span>);
-				        });
-				        return a;
-					})(this)
-					 
-				}
+                <div className="formOptions">
+                    <div className="options">
+                        <div className="date">
+                            <span className="time">2016年7月8日</span>
+                            <div className="query">
+                                <a className='ok' href="javascript:;">最近30天</a><span className='down'>ˇ</span>
+                                <ul className="select">
+                                    <li className="option">最近7天</li>
+                                    <li className="option">最近30天</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="options">
+                    <div>热度话题</div>
+                    <div className="query">
+                            {
+                                (function(obj){
+                                    var a = [];
+                                    obj.state.topic.forEach(function(data,index){
+                                        a.push(<span key={index}><input type='checkbox' name="keyall" value={data.artcle_topic_id} id={index} onClick={obj.onChangeTopic.bind(obj)} /><label htmlFor={index}>{data.topic_name}</label></span>);
+                                    });
+                                    return a;
+                                })(this)
+                                 
+                            }
+                    </div>
+                </div>
+                </div>
             </div>
 	    )
   	}

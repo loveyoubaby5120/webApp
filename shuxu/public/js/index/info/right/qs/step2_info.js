@@ -53,7 +53,8 @@ export default class Step2_info extends React.Component {
                                     <div className="other_left">{data.dateTime}</div>
                                     <div className="other_right1">{data.read_num}</div>
                                     <div className="other_right2">{data.zan_num}</div>
-                                    <div className="other_right3">原创撰文</div>
+                                    <div className="other_right3">{data.zan_num}</div>
+                                    <div className="other_right4">原创撰文</div>
                                 </div>
                             </li>
 

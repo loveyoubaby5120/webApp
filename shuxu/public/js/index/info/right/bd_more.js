@@ -10,7 +10,8 @@ export default class Bd_more extends React.Component {
             limitNum: 30,
             type: this.props.type,
             clickText: '点击加载更多',
-            changeClick: false
+            changeClick: false,
+            showClick: true
         }
     }
 
@@ -40,9 +41,13 @@ export default class Bd_more extends React.Component {
 
     setNodes(){
         var _this = this;
+        this.state.clickText = '加载中……';
         _this.setState({
             // nodes: []
         });
+        if(this.state.type==0){
+            return false;
+        }
         $.ajax({
             url: '/gzh_profile_list?limitNum='+this.state.limitNum+'&type='+this.state.type,
             async:true,
@@ -126,15 +131,27 @@ export default class Bd_more extends React.Component {
 
                 
 
-                _this.setState({
-                    nodes: _this.state.nodes.concat(options),
-                });
+                var changeClick = false;
+                var clickText = '暂无数据';
+                var showClick = true;
 
                 if(isNaN(_this.state.limitNum)){
-                    _this.setState({
-                        changeClick:true
-                    })
+                    showClick = false                    
                 }
+                
+                if(datas.length>0){
+                    clickText = '点击加载更多';
+                    changeClick = true;
+                }
+
+
+                _this.setState({
+                    nodes: _this.state.nodes.concat(options),
+                    changeClick: changeClick,
+                    clickText: clickText,
+                    showClick: showClick
+                });
+                
 
             }
         });
@@ -142,7 +159,10 @@ export default class Bd_more extends React.Component {
     }
 
     showAll(event){
-        this.state.clickText = '加载中……';
+        if(!this.state.changeClick){
+            return false;
+        }
+        this.state.changeClick = false;
         this.state.limitNum = '*';
         this.setNodes();
     }
@@ -209,7 +229,7 @@ export default class Bd_more extends React.Component {
                         {this.state.nodes}
                     </tbody>
                 </table>
-                <div className={this.state.changeClick || this.state.datas.length<this.state.limitNum ? 'showMore none' : 'showMore'} onClick={this.showAll.bind(this)} ><span>{this.state.clickText}{this.state.datas.length<this.state.limitNum}</span></div>
+                <div className={!this.state.showClick ? 'showMore none' : 'showMore'} onClick={this.showAll.bind(this)} ><span>{this.state.clickText}</span></div>
             </div>    
         )
     }

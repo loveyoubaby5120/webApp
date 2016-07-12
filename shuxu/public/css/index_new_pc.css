@@ -448,7 +448,7 @@
 
 .content .info .right .qs_more .qs_info .qs_right .input_box div{
     text-align: left;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
     font-size: 20px;
     margin-bottom: -5px;
 }
@@ -650,17 +650,20 @@
 
 .content .info .right .qs_more .qs_info .qs_right .step2_info .item div .other_right1{
     line-height: 25px;
-    background: url('../images/yds2.png') 0px 7px no-repeat;
+    background: url('../images/yd.png') 0px 0px no-repeat;
     padding-left: 25px;
 }
 
 .content .info .right .qs_more .qs_info .qs_right .step2_info .item div .other_right2{
     line-height: 25px;
-    background: url('../images/dzs2.png') 0px 3px no-repeat;
-    padding-left: 20px;
+    background: url('../images/dz.png') 0px 0px no-repeat;
+    padding-left: 26px;
 }
-.content .info .right .qs_more .qs_info .qs_right .step2_info .item div .other_right3{
 
+.content .info .right .qs_more .qs_info .qs_right .step2_info .item div .other_right3{
+    line-height: 25px;
+    background: url('../images/topic.png') 0px 0px no-repeat;
+    padding-left: 26px;
 }
 
 /*--------------------------------------------------------------------------------------------------------------------*/
