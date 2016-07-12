@@ -3,7 +3,7 @@
 }
 body{
     min-width: 1000px;
-    background: #eaecee;
+    background: #f4f7fa;
 }
 
 a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
@@ -77,7 +77,7 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
 }
 
 .logo{
-    background-color: #f6501e;
+    background-color: #313541;
 }
 
 .logo .search{
@@ -111,7 +111,7 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
 .logo .search div .left{
     width: 145px;
     height: 40px;
-    background-image: url('../images/sominer-logo_2.png');
+    background-image: url('../images/sominer-logo.png');
     background-repeat: no-repeat;
     background-position: left;
     background-size: contain;
@@ -120,7 +120,13 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
 .logo .search div .right{
     font-weight: bold;
     margin-left: 20px;
+    margin-bottom: 2px;
     vertical-align: text-bottom;
+    padding-right: 20px;
+    background-image: url('../images/sominer-logo_2.png');
+    background-repeat: no-repeat;
+    background-position: right 4px;
+    background-size: 15px;
 }
 
 .logo .search div input{
@@ -153,7 +159,7 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
 }
 
 .header{
-    background-color: #000;
+    background-color: #282c37;
 }
 
 .header .header_info{
@@ -203,7 +209,7 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
     margin: 0 auto;
     width: 100%;
     padding: 15px 0;
-    background-color: #f6501e;
+    background-color: #282c37;
     color: #fff;
     z-index:99;
 }
@@ -214,18 +220,14 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 .blur .title{
-    /*background-color: #85275D;*/
-    background-image: url(../images/qp.png);
+
 }
 
 .blur .number{
-    /*background-color: #f6501e;*/
+    /*background-color: #5093e1;*/
 }
 
 .blur thead tr th div{
-    /*text-overflow: ellipsis;*/
-    /*white-space: nowrap;*/
-    /*word-break: break-all;*/
 }
 
 /*--------------------------------------------------------------------------------------------------------------------*/

@@ -8,7 +8,7 @@ export default class Info_Right extends React.Component {
 	constructor(props) {
         super(props);
 		this.state = {
-			show: 'qs_more'
+			show: 'bd_more'
 		};
     }
 
