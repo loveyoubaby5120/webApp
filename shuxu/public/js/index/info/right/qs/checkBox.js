@@ -77,16 +77,16 @@ export default class CheckBox extends React.Component {
                     <div className="options">
                     <div>热度话题</div>
                     <div className="query">
-                            {
-                                (function(obj){
-                                    var a = [];
-                                    obj.state.topic.forEach(function(data,index){
-                                        a.push(<span key={index}><input type='checkbox' name="keyall" value={data.artcle_topic_id} id={index} onClick={obj.onChangeTopic.bind(obj)} /><label htmlFor={index}>{data.topic_name}</label></span>);
-                                    });
-                                    return a;
-                                })(this)
-                                 
-                            }
+                        {
+                            (function(obj){
+                                var a = [];
+                                obj.state.topic.forEach(function(data,index){
+                                    a.push(<span key={index}><input type='checkbox' name="keyall" value={data.artcle_topic_id} id={index} onClick={obj.onChangeTopic.bind(obj)} /><label htmlFor={index}>{data.topic_name}</label></span>);
+                                });
+                                return a;
+                            })(this)
+                             
+                        }
                     </div>
                 </div>
                 </div>

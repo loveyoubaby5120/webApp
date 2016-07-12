@@ -34,8 +34,6 @@ export default class Info_Left extends React.Component {
             }
         })
 
-        
-
     }
 
 
