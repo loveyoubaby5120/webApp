@@ -24,8 +24,7 @@ export default class Step2_info extends React.Component {
                     var node;
                     node = <li key={index} className="item">
                                 <div className="item_content">
-                                <div className="topic" onClick={_this.onClick.bind(_this,data.url)} dangerouslySetInnerHTML={{__html: _this.props.type==2 ? data.title+"<span class='new'>NEW</span>" : data.title+"<span class='hot'></span>"}}>
-
+                                    <div className="topic" onClick={_this.onClick.bind(_this,data.url)} dangerouslySetInnerHTML={{__html: data.title}}>
                                     </div>
                                     <div className="writer">
                                         <span>原创</span>
@@ -41,7 +40,6 @@ export default class Step2_info extends React.Component {
                                     <div className="other_left">{data.dateTime}</div>
                                     <div className="other_right1">{data.read_num}</div>
                                     <div className="other_right2">{data.zan_num}</div>
-                                    <div className="other_right4">原创撰文</div>
                                 </div>
                             </li>
 

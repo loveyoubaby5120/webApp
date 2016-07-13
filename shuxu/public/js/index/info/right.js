@@ -25,7 +25,7 @@ export default class Info_Right extends React.Component {
 	    return (
 	        <div className="right">
 	        	<Option initChildShow={this.state.show} callbackParent={this.onChildChanged.bind(this)}></Option>
-	        	<Bd_more show={this.state.show} type={this.props.type} show_2={this.props.show} callbackParent={this.props.callbackParent}></Bd_more>
+	        	<Bd_more show={this.state.show} type={this.props.type}></Bd_more>
 	        	<Qs_more show={this.state.show} type={this.props.type}></Qs_more>
 	        </div>
 	    )

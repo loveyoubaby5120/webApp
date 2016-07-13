@@ -1,0 +1,24 @@
+CACHE MANIFEST
+#上面一句必须
+#v2.0.0
+#2016-07-06T09:50:02+11:00
+#需要缓存的文件
+CACHE:
+/css/base.css
+/css/common.css
+/css/index_new_pc_info.css
+/css/mmnt.css
+
+/lib/other/jquery.min.js
+/lib/other/echarts-all.js
+/lib/other/mmnt-info.js
+/dest/common.js
+/dest/router.js
+
+#不需要缓存的文件
+NETWORK:
+*
+
+#无法访问页面
+FALLBACK:
+#404.html

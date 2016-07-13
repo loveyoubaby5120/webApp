@@ -6,7 +6,8 @@ export default class Header extends React.Component {
     constructor(props) {
         super(props);
          this.state = {
-            datas: [{"time":"--","gzhCount":'--',"artCount":'--',"readSum":'--'}]
+            datas: [{"time":"--","gzhCount":'--',"artCount":'--',"readSum":'--'}],
+            show: this.props.show
         };
     }
 
@@ -26,6 +27,14 @@ export default class Header extends React.Component {
         })
     }
 
+    onChangeShow(val,event){
+        var newState = val;
+        this.setState({
+            show: newState
+        });
+        this.props.callbackParent(newState);
+    }
+
     render() {
 
     return (
@@ -33,24 +42,33 @@ export default class Header extends React.Component {
             <div className="header_info">
                 <ul>
                     <li>
-                        <div style={{'backgroundImage': 'url("../images/ybsl.png")'}}>
+                        <div>
+                            <p className="top">统计截止</p>
+                            <p className="bottom transform_scale">{this.state.datas[0].time}</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
                             <p className="top">样本数量</p>
-                            <p className="bottom">{this.state.datas[0].gzhCount}</p>
+                            <p className="bottom transform_scale">{this.state.datas[0].gzhCount}</p>
                         </div>
                     </li>
                     <li>
-                        <div style={{'backgroundImage': 'url("../images/rwsl.png")'}}>
+                        <div>
                             <p className="top">热文数量</p>
-                            <p className="bottom">{this.state.datas[0].artCount}</p>
+                            <p className="bottom transform_scale">{this.state.datas[0].artCount}</p>
                         </div>
                     </li>
                     <li>
-                        <div style={{'backgroundImage': 'url("../images/ydsl.png")'}}>
+                        <div>
                             <p className="top">阅读数量</p>
-                            <p className="bottom">{this.state.datas[0].readSum}</p>
+                            <p className="bottom transform_scale">{this.state.datas[0].readSum}</p>
                         </div>
                     </li>
                 </ul>
+                <div className="introducing" onClick={this.onChangeShow.bind(this,true)}>
+                    数据说明
+                </div>
             </div>
         </div>
         )

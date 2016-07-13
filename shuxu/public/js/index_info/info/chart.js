@@ -204,22 +204,17 @@ export default class Chart extends React.Component {
                         <span>
                         </span>
                     </div>
-                    <div className="title">
-                        数据统计
-                    </div>
                 </div>
-                <div className='change_chart'>
-                    <ul>
-                        <li className={this.state.type==1 ? "item first active" : "item first"} onClick={this.onClick.bind(this,1,'总阅读数')}><a href="javascript:;">总阅读数</a></li>
-                        <li className={this.state.type==2 ? "item active" : "item"} onClick={this.onClick.bind(this,2,'头条阅读数')}><a href="javascript:;">头条阅读数</a></li>
-                        <li className={this.state.type==3 ? "item active" : "item"} onClick={this.onClick.bind(this,3,'平均阅读数')}><a href="javascript:;">平均阅读数</a></li>
-                        <li className={this.state.type==4 ? "item active" : "item"} onClick={this.onClick.bind(this,4,'发文数')}><a href="javascript:;">发文数</a></li>
-                        <li className={this.state.type==5 ? "item active" : "item"} onClick={this.onClick.bind(this,5,'预测粉丝数')}><a href="javascript:;">预测粉丝数</a></li>
-                        <li className={this.state.type==6 ? "item active" : "item"} onClick={this.onClick.bind(this,6,'预测转发数')}><a href="javascript:;">预测转发数</a></li>
-                        <li className={this.state.type==7 ? "item active" : "item"} onClick={this.onClick.bind(this,7,'点赞数')}><a href="javascript:;">点赞数</a></li>
-                    </ul>
-                    <div id="main2" className="echart" style={{width: '600px',height:'400px',border: '1px #e6e6e6 solid'}}></div>
-                </div>
+                <ul>
+                    <li className={this.state.type==1 ? "item first active" : "item first"} onClick={this.onClick.bind(this,1,'总阅读数')}><a href="javascript:;">总阅读数</a></li>
+                    <li className={this.state.type==2 ? "item active" : "item"} onClick={this.onClick.bind(this,2,'头条阅读数')}><a href="javascript:;">头条阅读数</a></li>
+                    <li className={this.state.type==3 ? "item active" : "item"} onClick={this.onClick.bind(this,3,'平均阅读数')}><a href="javascript:;">平均阅读数</a></li>
+                    <li className={this.state.type==4 ? "item active" : "item"} onClick={this.onClick.bind(this,4,'发文数')}><a href="javascript:;">发文数</a></li>
+                    <li className={this.state.type==5 ? "item active" : "item"} onClick={this.onClick.bind(this,5,'预测粉丝数')}><a href="javascript:;">预测粉丝数</a></li>
+                    <li className={this.state.type==6 ? "item active" : "item"} onClick={this.onClick.bind(this,6,'预测转发数')}><a href="javascript:;">预测转发数</a></li>
+                    <li className={this.state.type==7 ? "item active" : "item"} onClick={this.onClick.bind(this,7,'点赞数')}><a href="javascript:;">点赞数</a></li>
+                </ul>
+                <div id="main2" className="echart" style={{width: '798px',height:'400px',border: '1px #e6e6e6 solid'}}></div>
             </div>
         )
     }

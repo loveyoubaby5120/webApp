@@ -24,7 +24,7 @@ export default class Info extends React.Component {
 	    return (
 	        <div className="info">
 		        <Left type={this.state.type} callbackParent={this.onChildChanged.bind(this)}></Left>
-		        <Right type={this.state.type}  show={this.props.show} callbackParent={this.props.callbackParent}></Right>
+		        <Right type={this.state.type} ></Right>
 	        </div>
 	    )
   	}
