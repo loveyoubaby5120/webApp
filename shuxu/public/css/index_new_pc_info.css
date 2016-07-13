@@ -1,3 +1,8 @@
+.new{
+    background-color: #db6348;
+    color: #fff;
+}
+
 .header{
     background-color: #f3f4f6;
 }
@@ -393,7 +398,7 @@
 
 .content .info .statistics .check li .map .yds .title{
     line-height: 25px;
-    background: url('../images/yds.png') 5px 5px no-repeat;
+    background: url('../images/yd2.png') 5px 5px no-repeat;
     padding-left: 5px;
 }
 
@@ -405,7 +410,7 @@
 
 .content .info .statistics .check li .map .dzs .title{
     line-height: 25px;
-    background: url('../images/dzs.png') 8px 2px no-repeat;
+    background: url('../images/dz2.png') 8px 2px no-repeat;
     padding-left: 3px;
 }
 
@@ -419,7 +424,6 @@
 .content .info .step2_info .item{
     margin: 10px 0;
     padding: 5px 0;
-    border-bottom: 1px #e6e6e6 solid;
     color: #c2c3c3;
     overflow: hidden;
 }
@@ -429,9 +433,9 @@
 }
 
 .content .info .step2_info .item .item_content{
-    float:left;
-    width:630px;
-    padding: 0 0 20px;
+    float:right;
+    width: 830px;
+    padding: 0 0 20px 20px;
 }
 
 .content .info .step2_info .item .item_content .topic{
@@ -451,11 +455,11 @@
 }
 
 .content .info .step2_info .item .other{
-    float:right;
+    float:left;
     width:128px;
     padding: 10px;
     overflow: hidden;
-    border: 1px #e6e6e6 solid;
+    border-right: 1px #e6e6e6 solid;
 }
 
 .content .info .step2_info .item div p{
@@ -468,14 +472,14 @@
 
 .content .info .step2_info .item div .other_right1{
     line-height: 25px;
-    background: url('../images/yds2.png') 0px 7px no-repeat;
+    background: url('../images/yd.png') 0px 0px no-repeat;
     padding-left: 25px;
 }
 
 .content .info .step2_info .item div .other_right2{
     line-height: 25px;
-    background: url('../images/dzs2.png') 0px 3px no-repeat;
-    padding-left: 20px;
+    background: url('../images/dz.png') 0px 0px no-repeat;
+    padding-left: 25px;
 }
 
 /*--------------------------------------------------------------------------------------------------------------------*/

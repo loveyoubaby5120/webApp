@@ -34,7 +34,7 @@ export class App extends React.Component {
         <Mask show={this.state.show} callbackParent={this.onShow.bind(this)}></Mask>
         <Top show={this.state.show} callbackParent={this.onShow.bind(this)}></Top>
         <Header></Header>
-        <Content></Content>
+        <Content show={this.state.show} callbackParent={this.onShow.bind(this)}></Content>
         <Footer></Footer>
       </div>
     )
@@ -47,13 +47,21 @@ export class App_info extends React.Component {
         super(props);
         let { query } = this.props.location;
         this.state = query
+        this.state.show = false;
   }
 
+  onShow(newState){
+      this.setState({
+      show: newState
+    });
+
+  }
 
   render() {
     return (
       <div>
-        <Top></Top>
+        <Mask show={this.state.show} callbackParent={this.onShow.bind(this)}></Mask>
+        <Top show={this.state.show} callbackParent={this.onShow.bind(this)}></Top>
         <Header_info gzh_id={this.state.gzh_id}></Header_info>
         <Content_info gzh_id={this.state.gzh_id}></Content_info>
         <Footer></Footer>

@@ -19,9 +19,11 @@ export default class Step2_info extends React.Component {
     }
 
     componentWillReceiveProps(newProps){
-        this.state.type = newProps.type;
-        this.state.topicArray = newProps.topicArray.join(',')
-        this.getArticle()
+        if(this.state.type != newProps.type || this.state.topicArray != newProps.topicArray.join(',')){
+            this.state.topicArray = newProps.topicArray.join(',');
+            this.state.type = newProps.type;
+            this.getArticle();
+        }
     }
 
 

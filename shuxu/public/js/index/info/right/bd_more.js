@@ -7,6 +7,7 @@ export default class Bd_more extends React.Component {
         this.state = {
             datas: [],
             nodes: [],
+            show: this.props.show_2,
             limitNum: 30,
             type: this.props.type,
             clickText: '点击加载更多',
@@ -34,8 +35,11 @@ export default class Bd_more extends React.Component {
     //组件接收到属性
     componentWillReceiveProps(newProps){
         this.state.limitNum = 30;
-        this.state.type = newProps.type;
-        this.setNodes();
+        if(this.state.type != newProps.type){
+            this.state.type = newProps.type;
+            this.state.nodes = [];
+            this.setNodes();
+        }
     }
 
 
@@ -167,6 +171,13 @@ export default class Bd_more extends React.Component {
         this.setNodes();
     }
 
+    onChangeShow(val,event){
+        var newState = val;
+        this.setState({
+            show: newState
+        });
+        this.props.callbackParent(newState);
+    }
 
     render() {
         return (
@@ -174,27 +185,27 @@ export default class Bd_more extends React.Component {
                 <div className="formOptions">
                     <div className="options">
                         <div className="query">
-                            <a className='ok' href="javascript:;">年龄</a><span className='down'>ˇ</span>
+                            <a className='ok' href="javascript:;" data-value='0'>年龄</a><span className='down'>ˇ</span>
                             <ul className="select">
-                                <li className="option">年龄</li>
-                                <li className="option">年轻</li>
-                                <li className="option">成熟</li>
+                                <li className="option" data-value='0'>年龄</li>
+                                <li className="option" data-value='1'>年轻</li>
+                                <li className="option" data-value='2'>成熟</li>
                             </ul>
                         </div>
                          <div className="query">
-                            <a className='ok' href="javascript:;">车价</a><span className='down'>ˇ</span>
+                            <a className='ok' href="javascript:;" data-value='0'>车价</a><span className='down'>ˇ</span>
                             <ul className="select">
-                                <li className="option">车价</li>
-                                <li className="option">高配</li>
-                                <li className="option">经济</li>
+                                <li className="option" data-value='0'>车价</li>
+                                <li className="option" data-value='1'>高配</li>
+                                <li className="option" data-value='2'>经济</li>
                             </ul>
                         </div>
                          <div className="query">
-                            <a className='ok' href="javascript:;">地域</a><span className='down'>ˇ</span>
+                            <a className='ok' href="javascript:;" data-value='0'>地域</a><span className='down'>ˇ</span>
                             <ul className="select">
-                                <li className="option">地域</li>
-                                <li className="option">北京</li>
-                                <li className="option">上海</li>
+                                <li className="option" data-value='0'>地域</li>
+                                <li className="option" data-value='1'>北京</li>
+                                <li className="option" data-value='2'>上海</li>
                             </ul>
                         </div>
                         <div className="query submit">
@@ -203,10 +214,10 @@ export default class Bd_more extends React.Component {
                         <div className="date">
                             <span className="time">2016年7月8日</span>
                             <div className="query">
-                                <a className='ok' href="javascript:;">最近30天</a><span className='down'>ˇ</span>
+                                <a className='ok' href="javascript:;" data-value='2'>最近30天</a><span className='down'>ˇ</span>
                                 <ul className="select">
-                                    <li className="option">最近7天</li>
-                                    <li className="option">最近30天</li>
+                                    <li className="option" data-value='1'>最近7天</li>
+                                    <li className="option" data-value='2'>最近30天</li>
                                 </ul>
                             </div>
                         </div>
@@ -221,7 +232,7 @@ export default class Bd_more extends React.Component {
                             <th className="w_15"><div><p className="">粉丝黏性</p></div></th>
                             <th className="w_15"><div><p className="">增长潜力</p></div></th>
                             <th className="w_20"><div><p className="">影响指数</p></div></th>
-                            <th className="w_10"><div><p className="">相关性<span>?</span></p></div></th>
+                            <th className="w_10"><div><p className="">相关性<span className='document' onClick={this.onChangeShow.bind(this,true)}>?</span></p></div></th>
                             <th className="w_15 last"><div><p className="">查看详细</p></div></th>
                         </tr>
                     </thead>

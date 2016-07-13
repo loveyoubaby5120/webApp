@@ -7,7 +7,7 @@ export default class Content extends React.Component {
 
     return (
         <div className="content">
-        	<Info></Info>
+        	<Info show={this.props.show} callbackParent={this.props.callbackParent}></Info>
         	<div className="go_top" id="go_top"></div>
         </div>
     )

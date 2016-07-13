@@ -69,6 +69,20 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
     font-weight: bold;
 }
 
+.document{
+    margin-left: 2px;
+    background: #00CFAE;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center !important;
+    display: inline-block !important;
+    width: 14px;
+    height: 14px !important;
+    line-height: 16px !important;
+    cursor: pointer;
+}
+
+
 .header .header_info,.date .date_info,.content .info,.logo .search
 {
     width: 1000px;

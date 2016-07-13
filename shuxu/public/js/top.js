@@ -37,7 +37,7 @@ export default class Top extends React.Component {
               <div className="right_div">
                 <span className="end_time">数据截止 2016年7月10日</span>
                 <span className="introducing" onClick={this.onChangeShow.bind(this,true)}>
-                    数据说明
+                    <span className='document'>?</span>&nbsp;数据说明
                 </span>
               </div>
           </div>

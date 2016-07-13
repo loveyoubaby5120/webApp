@@ -18,8 +18,10 @@ export default class CheckBox extends React.Component {
     }
 
     componentWillReceiveProps(newProps){
-    	this.state.type = newProps.type;
-    	this.getTopic()
+        if(this.state.type != newProps.type){
+            this.state.type = newProps.type;
+            this.getTopic();
+        }
     }
 
     getTopic(){
@@ -66,29 +68,27 @@ export default class CheckBox extends React.Component {
                         <div className="date">
                             <span className="time">2016年7月8日</span>
                             <div className="query">
-                                <a className='ok' href="javascript:;">最近30天</a><span className='down'>ˇ</span>
+                                <a className='ok' href="javascript:;" data-value='2'>最近30天</a><span className='down'>ˇ</span>
                                 <ul className="select">
-                                    <li className="option">最近7天</li>
-                                    <li className="option">最近30天</li>
+                                    <li className="option" data-value='1'>最近7天</li>
+                                    <li className="option" data-value='2'>最近30天</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div className="options">
-                    <div>热度话题</div>
-                    <div className="query">
-                        {
-                            (function(obj){
-                                var a = [];
-                                obj.state.topic.forEach(function(data,index){
-                                    a.push(<span key={index}><input type='checkbox' name="keyall" value={data.artcle_topic_id} id={index} onClick={obj.onChangeTopic.bind(obj)} /><label htmlFor={index}>{data.topic_name}</label></span>);
-                                });
-                                return a;
-                            })(this)
-                             
-                        }
+                        <div className="topic_title">热度话题</div>
+                            {
+                                (function(obj){
+                                    var a = [];
+                                    obj.state.topic.forEach(function(data,index){
+                                        a.push(<label className="query checkbox" key={index} htmlFor={index}><input type='checkbox' name="keyall" data-value={data.artcle_topic_id} id={index} onClick={obj.onChangeTopic.bind(obj)} /><div className="color"></div><label htmlFor={index}>{data.topic_name}公车召回</label></label>);
+                                    });
+                                    return a;
+                                })(this)
+                                 
+                            }
                     </div>
-                </div>
                 </div>
             </div>
 	    )
