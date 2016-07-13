@@ -9,7 +9,6 @@ export default class Info extends React.Component {
 
     return (
         <div className="qs_info">
-	        <Left type={this.props.type}></Left>
 	        <Right type={this.props.type}></Right>
         </div>
     )

@@ -11,10 +11,6 @@ export default class Qs_more extends React.Component {
 
         return (
         	<div className={this.props.show=='qs_more' ? "qs_more auto" : "qs_more none"}>
-
-            	<div className="title">
-                    新闻资讯
-                </div>
                 <Info type={this.props.type}></Info>
             </div>
         )

@@ -25,6 +25,12 @@ export default class Info_Left extends React.Component {
                     _this.onClick(data[0].id)
                 }
 
+                $('#app>div>.content>.info>.left>.item>a').hover(function(){
+                    $(this).css({"background-image" : $(this).attr('data-hover')});
+                },function(){
+                    $(this).css({"background-image" : $(this).attr('data-now')});
+                });
+
             }
         })
 
@@ -32,14 +38,28 @@ export default class Info_Left extends React.Component {
 
 
     onClick(val){
+        $('#app>div>.content>.info>.left>.item').removeClass('active');
+        $('#app>div>.content>.info>.left>.item>a').each(function(){
+            $(this).css({"background-image" : $(this).attr('data-background')})
+                .attr('data-now',$(this).attr('data-background'));
+        });
+        $('#app>div>.content>.info>.left>.item:eq('+(val-1)+')')
+            .addClass('active')
+            .find('a')
+            .css({"background-image" : function(){
+
+                return $(this).attr('data-hover')
+            }})
+            .attr('data-now',function(){
+                return $(this).attr('data-hover')
+            });
         var newState = val;
         this.setState({
             datas: this.state.datas,
             type: newState
         });
         this.props.callbackParent(newState);
-        $('#app>div>.content>.info>.left>.item').removeClass('active');
-        $('#app>div>.content>.info>.left>.item:eq('+(val-1)+')').addClass('active');
+
     }
 
 
@@ -48,7 +68,10 @@ export default class Info_Left extends React.Component {
         var options = [];
         var _this = this;
         this.state.datas.forEach(function(data,index){
-            options.push(<li key={index} className={_this.state.type==data.id ? "item active" : "item"}  onClick={_this.onClick.bind(_this,data.id)}><a href="javascript:;">{data.name}</a></li>);
+            var name = data.id;
+            var background = `url('../images/type_${name}.png')`;
+            var background_hover = `url('../images/type_${name}_2.png')`;
+            options.push(<li key={index} className={_this.state.type==data.id ? "item active" : "item"} onClick={_this.onClick.bind(_this,data.id)}><a href="javascript:;" style={{"backgroundImage": background}} data-background={background} data-hover={background_hover} data-now={background}>{data.name}</a></li>);
         });
         return (
             <ul className="left">

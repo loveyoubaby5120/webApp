@@ -47,31 +47,27 @@ export default class Statistics extends React.Component {
         return (
             <div className="statistics">
                     <ul className="type">
-                        <li className="item">
-                            <div className="num sjx1">{this.state.datas.cs}</div>
-                            <div className="title">发布次数</div>
+                        <li className="item sjx1">
+                            <div className="title">发布<br/>次数</div>
+                            <div className="num">{this.state.datas.cs}</div>
                         </li>
-                        <li className="xx"></li>
-                        <li className="item">
-                            <div className="num sjx2">{this.state.datas.ps}</div>
-                            <div className="title">发文篇数</div>
+                        <li className="item sjx2">
+                            <div className="title">发文<br/>篇数</div>
+                            <div className="num">{this.state.datas.ps}</div>
                         </li>
-                        <li className="xx"></li>
-                        <li className="item">
-                            <div className="num sjx3">{this.state.datas.sw}</div>
-                            <div className="title">10w+发布</div>
+                        <li className="item sjx3">
+                            <div className="title">10w+<br/>发布</div>
+                            <div className="num">{this.state.datas.sw}</div>
                         </li>
-                        <li className="xx"></li>
-                        <li className="item last">
-                            <div className="num sjx4">{this.state.datas.maxRead}</div>
-                            <div className="title">最高阅读数</div>
+                        <li className="item sjx4 last">
+                            <div className="title">最&nbsp;&nbsp;&nbsp;高<br/>阅读数</div>
+                            <div className="num">{this.state.datas.maxRead}</div>
                         </li>
                     </ul>
                     <ul className="check">
                         <li className="sum">
                             <ol className="map">
                                 <li className="item zj">
-                                    <p className="title"></p>
                                     <p className="introduce">总计</p>
                                 </li>
                                 <li className="item yds">
@@ -91,20 +87,19 @@ export default class Statistics extends React.Component {
                         <li className="average">
                             <ol className="map">
                                 <li className="item zj">
-                                    <p className="title"></p>
                                     <p className="introduce">平均</p>
                                 </li>
                                 <li className="item yds">
                                     <p className="title">阅读数</p>
-                                    <p className="introduce">{Math.floor(this.state.datas.sumRead/this.state.datas.count) ? Math.floor(this.state.datas.sumRead/this.state.datas.count) : 0}</p>
+                                    <p className="introduce">{Math.floor(this.state.datas.sumRead/this.state.datas.count) ? Math.floor(this.state.datas.sumRead/this.state.datas.count) : '--'}</p>
                                 </li>
                                 <li className="item ttyds">
                                     <p className="title">头条阅读数</p>
-                                    <p className="introduce">{Math.floor(this.state.datas.ttSumRead/this.state.datas.ttCount) ? Math.floor(this.state.datas.ttSumRead/this.state.datas.ttCount) : 0}</p>
+                                    <p className="introduce">{Math.floor(this.state.datas.ttSumRead/this.state.datas.ttCount) ? Math.floor(this.state.datas.ttSumRead/this.state.datas.ttCount) : '--' }</p>
                                 </li>
                                 <li className="item dzs">
                                     <p className="title">点赞数</p>
-                                    <p className="introduce">{Math.floor(this.state.datas.sumZan/this.state.datas.count) ? Math.floor(this.state.datas.sumZan/this.state.datas.count) : 0}</p>
+                                    <p className="introduce">{Math.floor(this.state.datas.sumZan/this.state.datas.count) ? Math.floor(this.state.datas.sumZan/this.state.datas.count) : '--' }</p>
                                 </li>
                             </ol>
                         </li>

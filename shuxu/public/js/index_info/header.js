@@ -52,11 +52,12 @@ export default class Header extends React.Component {
                             <div>
                                 <img src="" alt=""/>
                             </div>
-                            <p className="fs_num">--</p>
-                            <p className="fs">预测粉丝数<span>?</span></p>
+                            <p className="fs_num">{this.state.datas[0].nick_name}</p>
+                            <p className="fs">简介：</p>
+                            <p className="fs_content">{this.state.datas[0].descrip}</p>
                         </div>
                         <div className="header_left_content">
-                            <p className="title">{this.state.datas[0].nick_name}</p>
+                            <p className="title">预测粉丝数: --</p>
                             <p className="wechat">微信号：{this.state.datas[0].english_id}</p>
                             <p className="time">
                             </p>
@@ -74,11 +75,15 @@ export default class Header extends React.Component {
                         <div className="title">
                             <p className="explain">标签</p>
                             <ul className="map">
+                                <li className="item">adf</li>
+                                <li className="item">adf</li>
+                                <li className="item">adf</li>
                             </ul>
                         </div>
-                        <div className="code">
-                            <img src={this.state.datas[0].biz!="--" ? "http://mp.weixin.qq.com/mp/qrcode?scene=10000004&size=102&__biz="+this.state.datas[0].biz : "/images/code.png"} alt=""/>
-                        </div>
+                        
+                    </div>
+                    <div className="code">
+                        <img src={this.state.datas[0].biz!="--" ? "http://mp.weixin.qq.com/mp/qrcode?scene=10000004&size=102&__biz="+this.state.datas[0].biz : "/images/code.png"} alt=""/>
                     </div>
                 </div>
             </div>
