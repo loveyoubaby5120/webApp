@@ -92,6 +92,7 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
 
 .logo{
     background-color: #313541;
+    z-index: 9;
 }
 
 .logo .search{

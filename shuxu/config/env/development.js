@@ -1,5 +1,5 @@
 module.exports = {
-	nodePort: 7101,
+	nodePort: 7102,
 	mongodb: 'mongodb://localhost/scms',
 	mysql:{
 		host: '120.27.26.133',

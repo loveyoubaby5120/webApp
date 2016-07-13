@@ -30,10 +30,10 @@ export default class Ranking extends React.Component {
 
     componentDidMount(){
 
-        var myChart = echarts.init(document.getElementById('main1'));
+        // var myChart = echarts.init(document.getElementById('main1'));
 
         this.state = {
-            myChart: myChart,
+            // myChart: myChart,
             type: 1,
             legendNames:['影响力指数'],
             zpm: this.state.zpm,
@@ -45,9 +45,9 @@ export default class Ranking extends React.Component {
         }
 
 
-        this.onChart(myChart,false,this.state.XD);
-        this.state.myChart.clear();
-        this.accessChange(7);
+        // this.onChart(myChart,false,this.state.XD);
+        // this.state.myChart.clear();
+        // this.accessChange(7);
 
     }
 
@@ -130,15 +130,15 @@ export default class Ranking extends React.Component {
 
 
                 if(data[0].length==0){
-                    _this.onChart(_this.state.myChart,false,_this.state.XD);
+                    // _this.onChart(_this.state.myChart,false,_this.state.XD);
                 }
                 else{
-                    _this.onChart(_this.state.myChart,false,data);
+                    // _this.onChart(_this.state.myChart,false,data);
                 }
             },
             error: function(msg){
                 console.log(msg);
-                _this.onChart(_this.state.myChart,false,_this.state.XD);
+                // _this.onChart(_this.state.myChart,false,_this.state.XD);
             }
         });
 
@@ -152,6 +152,25 @@ export default class Ranking extends React.Component {
     }
 
     render() {
+        // <div className="chart">
+        //                 <div className="date_check">
+        //                     <div className="select_data1">
+        //                         <select onChange={this.onClickDays.bind(this)} ref='select'>
+        //                             <option value='7'>最近7天</option>
+        //                             <option value='30'>最近30天</option>
+        //                             <option value='60'>最近60天</option>
+        //                         </select>
+        //                     </div>
+        //                     <div className="dateTime">
+        //                         <span>
+        //                         </span>
+        //                     </div>
+        //                     <div className="title">
+        //                         影响力指数
+        //                     </div>
+        //                 </div>
+        //                 <div id="main1" className="echart" style={{width: '700px',height:'400px',border: '1px #e6e6e6 solid'}}></div>
+        //             </div>
 
         return (
             <div className="ranking">
@@ -177,25 +196,8 @@ export default class Ranking extends React.Component {
                             <p className="num">{this.state.lszghypm}</p>
                         </li>
                     </ul>
-                    <div className="chart">
-                        <div className="date_check">
-                            <div className="select_data1">
-                                <select onChange={this.onClickDays.bind(this)} ref='select'>
-                                    <option value='7'>最近7天</option>
-                                    <option value='30'>最近30天</option>
-                                    <option value='60'>最近60天</option>
-                                </select>
-                            </div>
-                            <div className="dateTime">
-                                <span>
-                                </span>
-                            </div>
-                            <div className="title">
-                                影响力指数
-                            </div>
-                        </div>
-                        <div id="main1" className="echart" style={{width: '700px',height:'400px',border: '1px #e6e6e6 solid'}}></div>
-                    </div>
+                    
+                    
                 </div>
         )
     }

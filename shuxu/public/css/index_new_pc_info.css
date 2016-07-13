@@ -21,32 +21,36 @@
 
 .header{
     background-color: #282c37;
+    background-image: url('../images/sominer-logo.png');
+    background-repeat: no-repeat;
+    background-position: center 20px;
+    background-size: 140px;
     float: left;
     width: 200px;
+    color: #fff;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    padding-top: 80px;
+}
+
+.header .header_info {
+    width: auto;
 }
 
 .header .header_info .header_left{
-    float:left;
-    width:649px;
-    border-right: 1px #e6e6e6 solid;
 }
 
 .header .header_info .header_right{
-    float:left;
-    width:130px;
     padding-left: 20px;
+    padding-bottom: 20px;
 }
 
 .header .header_info .header_left .header_left_img{
-    float:left;
-    width:150px;
-    text-align: left;
+    padding-bottom: 20px;
 }
 
 .header .header_info .header_left .header_left_img div{
-    width:120px;
-    height:120px;
-    background: #fff;
 }
 
 .header .header_info .header_left .header_left_img div img{
@@ -58,32 +62,32 @@
 
 .header .header_info .header_left .header_left_img .fs_num{
     margin-top: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    line-height: 25px;
     font-size: 20px;
-    color: #f6501e;
-    line-height: 30px;
-    text-align: left;
 }
 
 .header .header_info .header_left .header_left_img .fs{
-    color: #9fa0a0;
     text-align: left;
+    padding-left: 20px;
 }
 
 .header .header_info .header_left .header_left_img .fs span{
+    float: left;
     margin-left:2px;
-    background: #9fa0a0;
-    color: #fff;
-    border-radius: 50px;
-    text-align:center;
+    text-align: left;
     display: inline-block;
-    width: 14px;
-    height: 14px;
+    overflow: hidden;
+}
+
+.header .header_info .header_left .header_left_img .fs_content{
+    padding-left: 50px;
+    text-align: left;
 }
 
 .header .header_info .header_left .header_left_content{
-    float:left;
-    width:479px;
-    color: #9fa0a0;
+    padding-left: 20px;
 }
 
 .header .header_info .header_left .header_left_content p{
@@ -91,16 +95,12 @@
 }
 
 .header .header_info .header_left .header_left_content .title{
-    font-weight: bold;
-    line-height: 25px;
-    font-size: 20px;
-    color: #000;
+    padding-bottom: 20px;
 }
 
 .header .header_info .header_left .header_left_content .wechat{
     line-height: 15px;
     font-size: 15px;
-    color: #000;   
 }
 
 .header .header_info .header_left .header_left_content .time{
@@ -131,6 +131,7 @@
 .header .header_info .header_right .bd .fl{
     font-size: 15px;
     font-weight: bold;
+    padding-bottom: 5px;
 }
 
 .header .header_info .header_right .bd .item{
@@ -150,24 +151,22 @@
 }
 
 .header .header_info .header_right .title .map{
-    color: #9fa0a0;
     overflow: hidden;
     margin: 10px 0;
 }
 
 .header .header_info .header_right .title .map .item{
     margin-right: 5px;
-    padding: 0 7px;
+    padding: 1px 7px;
     float:left;
-    border-radius: 10px;
-    border: 1px #9fa0a0 solid;
+    background-color: #4280bd;
 }
 
-.header .header_info .header_right .code{
+.header .header_info .code{
 
 }
 
-.header .header_info .header_right .code img{
+.header .header_info .code img{
 
 }
 
@@ -177,6 +176,7 @@
     float: left;
     width: 800px;
     padding-top:10px;
+    padding-left: 200px;
 }
 
 
