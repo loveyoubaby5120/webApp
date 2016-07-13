@@ -215,7 +215,6 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
 }
 
 
-
 .footer{
     position: fixed;
     bottom: 0;
@@ -251,36 +250,28 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
 }
 
 .chart ul{
-    height: 30px;
-    margin: 0 auto 10px;
+    height: 402px;
+    background-color: #f4f7fa;
 }
 
 .chart ul li{
-    float:left;
-    padding:0 10px;
-    margin: 15px 0 0px;
-    border-left:1px #e6e6e6 solid;
 }
 
 .chart ul .first{
-    border:none;
-    padding:0 20px;
 }
 
 .chart ul li a{
-    color: #c2c3c3;
+    color: #000;
+    display: block;
+    padding: 15px 9px;
 }
 
 .chart ul .active a{
-    color:#f6501e;
-    border-bottom: 3px #f6501e solid;
-    padding-bottom: 3px;
+    background-color: #fff;
 }
 
 .chart ul li a:hover{
-    color:#f6501e;
-    border-bottom: 3px #f6501e solid;
-    padding-bottom: 3px;
+    background-color: #fff;
 }
 
 .chart .date_check{

@@ -9,7 +9,7 @@ import Header from './index/header.js'
 import Content from './index/content.js'
 
 //index_info
-import Header_info from './index_info/header.js'
+// import Header_info from './index_info/header.js'
 import Content_info from './index_info/content.js'
 
 
@@ -62,7 +62,6 @@ export class App_info extends React.Component {
       <div>
         <Mask show={this.state.show} callbackParent={this.onShow.bind(this)}></Mask>
         <Top show={this.state.show} callbackParent={this.onShow.bind(this)}></Top>
-        <Header_info gzh_id={this.state.gzh_id}></Header_info>
         <Content_info gzh_id={this.state.gzh_id}></Content_info>
         <Footer></Footer>
       </div>

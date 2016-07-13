@@ -194,7 +194,7 @@ export default class Ranking extends React.Component {
                                 影响力指数
                             </div>
                         </div>
-                        <div id="main1" className="echart" style={{width: '798px',height:'400px',border: '1px #e6e6e6 solid'}}></div>
+                        <div id="main1" className="echart" style={{width: '700px',height:'400px',border: '1px #e6e6e6 solid'}}></div>
                     </div>
                 </div>
         )

@@ -5,7 +5,6 @@ import Info from './info.js'
 export default class Content extends React.Component {
 
 
-
   render() {
 
     return (
