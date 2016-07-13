@@ -289,7 +289,8 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
 
 .chart .date_check{
     padding: 10px 0px;
-    background-color: #f3f4f6;
+    // background-color: #f3f4f6;
+    background-color: #fff;
 }
 
 .chart .date_check .date_info{
@@ -299,7 +300,7 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
 
 .chart .date_check .select_data1{
     position: absolute;
-    left:5px;
+    right:10px;
     line-height:25px;
     z-index: 2;
 }
@@ -330,9 +331,11 @@ a,a:hover,a:link,a:visited,a:active {text-decoration:none !important;}
 .chart .date_check .title{
     position: absolute;
     top: 10px;
-    right:10px;
-    line-height:25px;
+    left:5px;
     z-index: 2;
+    line-height: 40px;
+    font-size: 20px;
+    text-align: left;
 }
 
 /*--------------------------------------------------------------------------------------------------------------------*/

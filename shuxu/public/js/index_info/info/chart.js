@@ -204,6 +204,9 @@ export default class Chart extends React.Component {
                         <span>
                         </span>
                     </div>
+                    <div className="title">
+                        数据统计
+                    </div>
                 </div>
                 <ul>
                     <li className={this.state.type==1 ? "item first active" : "item first"} onClick={this.onClick.bind(this,1,'总阅读数')}><a href="javascript:;">总阅读数</a></li>

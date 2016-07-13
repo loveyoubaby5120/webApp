@@ -161,7 +161,7 @@ export default class Ranking extends React.Component {
                             <p className="num">{this.state.zpm}</p>
                         </li>
                         <li className="item yxlzs">
-                            <p className="title">影响力指数<span>?</span></p>
+                            <p className="title">影响力指数<span className='document'>?</span></p>
                             <p className="num">{this.state.yxlzs}</p>
                         </li>
                         <li className="item hypm">
@@ -191,7 +191,7 @@ export default class Ranking extends React.Component {
                                 </span>
                             </div>
                             <div className="title">
-                                影响力指数变化
+                                影响力指数
                             </div>
                         </div>
                         <div id="main1" className="echart" style={{width: '798px',height:'400px',border: '1px #e6e6e6 solid'}}></div>

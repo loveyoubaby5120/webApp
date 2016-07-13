@@ -1,6 +1,18 @@
 .new{
     background-color: #db6348;
     color: #fff;
+    padding: 1px 3px;
+    margin-left: 5px;
+}
+
+.hot{
+    background-image: url('../images/hot.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 24px;
+    height: 30px;
+    display: inline-block;
+    margin-left: 5px;
 }
 
 .header{
@@ -161,34 +173,27 @@
 
 .content .info .ranking .map{
     overflow: hidden;
-    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
 }
 
 .content .info .ranking .map .item{
     float: left;
     width: 158.5px;
     height: 72px;
-    border-right: 1px #e6e6e6 solid;
+    // border-right: 1px #e6e6e6 solid;
 }
 
 .content .info .ranking .map .zpm{
-    border-left: 1px #e6e6e6 solid;
+    // border-left: 1px #e6e6e6 solid;
 }
 
 .content .info .ranking .map .item .title{
-    color: #9fa0a0;
     font-size: 15px;
-}
-
-.content .info .ranking .map .item .title span{
-    margin-left: 2px;
-    background: #9fa0a0;
-    color: #fff;
-    border-radius: 50px;
-    text-align: center;
     display: inline-block;
-    width: 14px;
-    height: 14px;
+    padding-left: 20px;
+    background-position: left center;
+    background-repeat: no-repeat;
 }
 
 .content .info .ranking .map .item .num{
@@ -196,22 +201,40 @@
     font-size: 25px;
 }
 
+.content .info .ranking .map .zpm .title{
+    background-image: url('../images/zpm.png');
+}
+
 .content .info .ranking .map .zpm .num{
     font-size: 35px;
-    background: #f6501e;
-    color: #fff;
+}
+
+.content .info .ranking .map .yxlzs .title{
+    background-image: url('../images/yxlzs.png');
 }
 
 .content .info .ranking .map .yxlzs .num{
     font-size: 40px;
 }
 
+.content .info .ranking .map .hypm .title{
+    background-image: url('../images/hypm.png');
+}
+
 .content .info .ranking .map .hypm .num{
     line-height: 50px;
 }
 
+.content .info .ranking .map .lszgzpm .title{
+    background-image: url('../images/lszgzpm.png');
+}
+
 .content .info .ranking .map .lszgzpm .num{
     line-height: 50px;
+}
+
+.content .info .ranking .map .lszghypm .title{
+    background-image: url('../images/lszghypm.png');
 }
 
 .content .info .ranking .map .lszghypm .num{
@@ -220,8 +243,18 @@
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 
+.content .info .chart{
+    margin: 20px auto;
+    padding: 0 20px;
+    background-color: #fff;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
 .content .info .step{
-    margin: 20px auto;   
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #fff;
 }
 
 .content .info .step .left{
@@ -243,28 +276,25 @@
 }
 
 .content .info .step div{
-    margin: 0 auto;
-    width: 170px;
     line-height: 40px;
     font-size: 20px;
-    text-indent: 35px;
-    color: #00CFAE;
-    display: inline-block;
-    border: 1px #00CFAE solid;
+    text-align: left;
 }
 
 .content .info .step1 div{
-        background: url('../images/sjtj.png') 30px center no-repeat;
+    background-color: #fff;
 }
 
 .content .info .step2 div{
-    background: url('../images/qtrw.png') 30px center no-repeat;
+    background-color: #fff;
 }
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 
 .content .info .statistics{
      border: 1px #e6e6e6 solid;
+     padding: 0 20px;
+     background-color: #fff;
 }
 
 .content .info .statistics .type{
@@ -418,11 +448,13 @@
 
 
 .content .info .step2_info{
-
+    padding: 0 20px;
+    background-color: #fff;
+    min-height: 300px;
 }
 
 .content .info .step2_info .item{
-    margin: 10px 0;
+    margin: 0 0 20px;
     padding: 5px 0;
     color: #c2c3c3;
     overflow: hidden;
@@ -434,7 +466,7 @@
 
 .content .info .step2_info .item .item_content{
     float:right;
-    width: 830px;
+    width: 790px;
     padding: 0 0 20px 20px;
 }
 

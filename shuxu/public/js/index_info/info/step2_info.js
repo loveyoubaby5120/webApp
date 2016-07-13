@@ -24,7 +24,7 @@ export default class Step2_info extends React.Component {
                     var node;
                     node = <li key={index} className="item">
                                 <div className="item_content">
-                                <div className="topic" onClick={_this.onClick.bind(_this,data.url)} dangerouslySetInnerHTML={{__html: data.title+"<span className='new'>NEW</span>"}}>
+                                <div className="topic" onClick={_this.onClick.bind(_this,data.url)} dangerouslySetInnerHTML={{__html: _this.props.type==2 ? data.title+"<span class='new'>NEW</span>" : data.title+"<span class='hot'></span>"}}>
 
                                     </div>
                                     <div className="writer">
