@@ -10,6 +10,10 @@ export default class Info_Right extends React.Component {
 		this.state = {
 			show: 'bd_more'
 		};
+
+		window.addEventListener('message', function(e) {
+            console.log('bar say: '+e.data);
+        }, false);
     }
 
     onChildChanged(newState){
