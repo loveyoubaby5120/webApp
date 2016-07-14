@@ -146,16 +146,23 @@ export default class D3 extends React.Component {
         this.setState({
             legendNames:legendNames
         });
-        this.accessChange(type);    
+        this.accessChange(type);
         
     }
 
+    onClickIframe(){
+        console.log(1);
+        document.domain = "120.27.26.133:82"
+        document.getElementById("iframe").contentWindow.transition();
+    }
 
     render() {
 
         return (
     		<div className="chart">
+                <buttom onClick={this.onClickIframe.bind(this)}>切换</buttom>
 
+                <iframe src="http://120.27.26.133:82/data/index_new_pc.php" frameborder="0" name='iframe' id='iframe' scrolling="yes" style={{width: '810px',height:'900px'}}></iframe>
                 <div id="main" style={{width: '530px',height:'400px'}}></div>
             </div>
         )
