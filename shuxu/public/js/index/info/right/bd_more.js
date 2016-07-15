@@ -33,7 +33,8 @@ export default class Bd_more extends React.Component {
             $(this).find('.select').on('click','.option',function(){
                 _this.find('.ok').text($(this).text());
                 _this.find('.select').hide();
-                _this.find('.ok').data('value', $(this).data('value'));
+                // _this.find('.ok').data('value', $(this).data('value'));
+                _this.find('.ok').attr('data-value', $(this).attr('data-value'));
             });
         }).mouseout(function(){
             $(this).find('.select').hide();
@@ -66,8 +67,8 @@ export default class Bd_more extends React.Component {
         var option_value = '';
         var option_array = [];
         $(".query .check").each(function(index,item){
-            option_value += $(item).data('value');
-            option_array.push($(item).data('value'));
+            option_value += $(item).attr('data-value');
+            option_array.push($(item).attr('data-value'));
         })
 
         var arr = ["0000", "0001", "0010", "0011", "0020", "0021", "0100", "0101", "0110", "0111", "0120", "0121", "0200", "0201", "0210", "0211", "0220", "0221", "1000", "1001", "1010", "1011", "1020", "1021", "1100", "1101", "1110", "1111", "1120", "1121", "1200", "1201", "1210", "1211", "1220", "1221", "2000", "2001", "2010", "2011", "2020", "2021", "2100", "2101", "2110", "2111", "2120", "2121", "2200", "2201", "2210", "2211", "2220", "2221"];

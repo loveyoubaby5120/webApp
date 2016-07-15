@@ -7,31 +7,33 @@ export default class D3 extends React.Component {
         super(props);
         this.state = {
             type: this.props.type,
-            topicArray: this.props.topicArray.join(',')
+            topicArray: this.props.topicArray.join(','),
+            topicDateTime: this.props.topicDateTime,
         }
 
+        console.log('init');
+
+        window.addEventListener('message', function(e) {
+            // console.log('bar say: '+e.data);
+        }, false);
     }
 
     componentWillMount(){
-
-        // window.addEventListener('message', function(e) {
-        //     console.log('bar say: '+e.data);
-        // }, false);
-
-        // window.addEventListener('message', function(e){
-        //     console.log('foo say: ' + e.data.a);
-        //     e.source.postMessage('get', '*');
-        // }, false)
 
         this.accessChange();
     }
 
     componentWillReceiveProps(newProps){
-        if(this.state.type != newProps.type || this.state.topicArray != newProps.topicArray.join(',')){
+        if(this.state.type != newProps.type || this.state.topicArray != newProps.topicArray.join(',') || this.state.topicDateTime != newProps.topicDateTime){
             this.state.topicArray = newProps.topicArray.join(',');
+            this.state.topicDateTime = newProps.topicDateTime;
             this.state.type = newProps.type;
             this.accessChange();
         }
+
+
+        var ifr = document.querySelector('#iframe');
+        ifr.contentWindow.postMessage({topicArray: this.state.topicArray,dateTime: this.state.topicDateTime}, '*');
     }
 
     chart(data){
@@ -53,23 +55,11 @@ export default class D3 extends React.Component {
 
     }
 
-    onClickIframe(){
-        // document.getElementById("iframe").contentWindow.transition();
-
-        // var ifr = document.querySelector('#iframe');
-        //     ifr.contentWindow.postMessage({a: 1}, '*');
-
-        
-
-    }
-
     render() {
 
         return (
     		<div className="chart">
-                <buttom onClick={this.onClickIframe.bind(this)}>切换</buttom>
-
-                <iframe src="http://120.27.26.133:82/data/index_new_pc.php" frameborder="0" name='iframe' id='iframe' scrolling="yes" style={{width: '810px',height:'900px'}}></iframe>
+                <iframe src="http://120.27.26.133:82/data/svgMain.html" frameborder="0" name='iframe' id='iframe' scrolling="no" style={{width: '810px',height:'920px'}}></iframe>
                 <div id="main" style={{width: '530px',height:'400px'}}></div>
             </div>
         )
