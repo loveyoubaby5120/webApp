@@ -47,7 +47,7 @@ export default class Ranking extends React.Component {
 
         // this.onChart(myChart,false,this.state.XD);
         // this.state.myChart.clear();
-        // this.accessChange(7);
+        this.accessChange(7);
 
     }
 

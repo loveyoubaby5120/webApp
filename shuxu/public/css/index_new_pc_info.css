@@ -83,11 +83,13 @@
 
 .header .header_info .header_left .header_left_img .fs_content{
     padding-left: 50px;
+    padding-right: 10px;
     text-align: left;
 }
 
 .header .header_info .header_left .header_left_content{
     padding-left: 20px;
+    padding-right: 10px;
 }
 
 .header .header_info .header_left .header_left_content p{
@@ -176,7 +178,7 @@
     float: left;
     width: 800px;
     padding-top:10px;
-    padding-left: 200px;
+    margin-left: 200px;
 }
 
 

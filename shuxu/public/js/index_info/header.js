@@ -75,9 +75,6 @@ export default class Header extends React.Component {
                         <div className="title">
                             <p className="explain">标签</p>
                             <ul className="map">
-                                <li className="item">adf</li>
-                                <li className="item">adf</li>
-                                <li className="item">adf</li>
                             </ul>
                         </div>
                         
