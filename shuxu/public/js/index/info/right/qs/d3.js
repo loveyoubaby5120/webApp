@@ -19,7 +19,6 @@ export default class D3 extends React.Component {
     }
 
     componentWillMount(){
-
         this.accessChange();
     }
 
@@ -29,11 +28,13 @@ export default class D3 extends React.Component {
             this.state.topicDateTime = newProps.topicDateTime;
             this.state.type = newProps.type;
             this.accessChange();
+
+            
+            var ifr = document.querySelector('#iframe');
+            ifr.contentWindow.postMessage({topicArray: this.state.topicArray,dateTime: this.state.topicDateTime}, '*');
         }
 
 
-        var ifr = document.querySelector('#iframe');
-        ifr.contentWindow.postMessage({topicArray: this.state.topicArray,dateTime: this.state.topicDateTime}, '*');
     }
 
     chart(data){

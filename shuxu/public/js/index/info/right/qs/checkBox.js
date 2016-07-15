@@ -40,6 +40,7 @@ export default class CheckBox extends React.Component {
             ]
         });
 
+
         // $.ajax({
         //     url: '/topic_hot?gzh_type='+this.state.type,
         //     async: true,
@@ -55,7 +56,7 @@ export default class CheckBox extends React.Component {
 
     }
 
-    onChangeTopic(val,event){
+    onChangeTopic(){
     	var input = ReactDom.findDOMNode(this.refs.input_box).getElementsByTagName('input');
     	var newState = [];
     	for(var checkBox of input){
