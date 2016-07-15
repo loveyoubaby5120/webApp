@@ -30,7 +30,7 @@ module.exports = function(){
 	var demo = require('../routes/demo');
 	var yyzc = require('../routes/yyzc');
 
-	// app.use('/', routes);
+	app.use('/', routes);
 	app.use('/users', users);
 	app.use('/excel', excel);
 	app.use('/weixin', weixin);

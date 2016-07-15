@@ -26,6 +26,11 @@ router.post('/', function(req, res, next) {
         // console.log('write TEXT into TEXT');  
     });
 
+    fs.writeFile('./public/img_url.txt','',function(err){  
+        if(err) throw err;  
+        // console.log('write TEXT into TEXT');  
+    });
+
 
 	var searchs = req.body.url.split(',');
 	if(req.body.url){
@@ -41,17 +46,16 @@ router.post('/', function(req, res, next) {
 				.then(function(body){
 					$ = cheerio.load(body);
 					var list = $('#content .container .row .article-container .article-ul li');
+
 					if(list.length>0){
 						for(var i = 0; i<list.length; i++){
-							var aUrl = list.find('.number-img .img-bg').attr('href');
+							var aUrl = list.eq(i).find('.number-img .img-bg').attr('href');
 							var gotoUrl = 'http://www.gsdata.cn/' + aUrl;
 							url.push(gotoUrl);
-
-							var bizUrl = list.find('.number-txt .wx-sp .sp-txt').eq(1).find('a').attr('href');
-
+							var bizUrl = list.eq(i).find('.number-txt .wx-sp .sp-txt a').attr('href');
 							var arg = URL.parse(bizUrl,true).query
 
-							bizNum = arg['__biz'];
+							bizNum = arg['__biz']+'\n';
 
 							biz.push(bizNum);
 
@@ -64,6 +68,23 @@ router.post('/', function(req, res, next) {
 						        if(err) throw err;  
 						        // console.log('write TEXT into TEXT');  
 						    });
+
+						    var aImg = list.eq(i).find('.number-img .img-bg');
+
+						    var img_background = aImg.css('background');
+						    
+						    var img_url = img_background.substring(4,img_background.indexOf(')'));
+
+						    fs.appendFile('./public/img_url.txt',img_url,function(err){  
+						        if(err) throw err;  
+						        // console.log('write TEXT into TEXT');  
+						    });
+						      
+						    fs.appendFile('./public/img_url.txt','\n',function(err){  
+						        if(err) throw err;  
+						        // console.log('write TEXT into TEXT');  
+						    });
+
 
 						}
 					}
