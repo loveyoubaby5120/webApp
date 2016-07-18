@@ -60,11 +60,11 @@ export default class Header extends React.Component {
                             <p className="title">认证: 
                             {
                                 (function(obj){
-                                    if(obj.state.datas[0].attestation){
-                                        return <span>&nbsp;<i style={{'backgroundImage': 'url("../images/icon_verify_success.png")'}}></i>&nbsp;{obj.state.datas[0].nick_name}</span>;
+                                    if(obj.state.datas[0].isAttestation){
+                                        return <span>&nbsp;<i style={{'backgroundImage': 'url("../images/icon_verify_success.png")'}}></i>&nbsp;{obj.state.datas[0].attestation}</span>;
                                     }
                                     else{
-                                        return obj.state.datas[0].nick_name;
+                                        return obj.state.datas[0].attestation;
                                     }
                                 })(this)
                             }
