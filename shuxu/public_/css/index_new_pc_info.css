@@ -88,7 +88,8 @@
 .header .header_info .header_left .header_left_content .wechat{
     line-height: 15px;
     font-size: 15px;
-    color: #000;   
+    color: #000;
+    margin: 5px auto;
 }
 
 .header .header_info .header_left .header_left_content .time{

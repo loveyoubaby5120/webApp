@@ -57,11 +57,11 @@ export default class Header extends React.Component {
                             <p className="fs_content">{this.state.datas[0].descrip}</p>
                         </div>
                         <div className="header_left_content">
-                            <p className="title">认证: 
+                            <p className="title">认证: &nbsp;
                             {
                                 (function(obj){
                                     if(obj.state.datas[0].isAttestation){
-                                        return <span>&nbsp;<i style={{'backgroundImage': 'url("../images/icon_verify_success.png")'}}></i>&nbsp;{obj.state.datas[0].attestation}</span>;
+                                        return <span><i style={{'backgroundImage': 'url("../images/icon_verify_success.png")'}}></i>&nbsp;{obj.state.datas[0].attestation}</span>;
                                     }
                                     else{
                                         return obj.state.datas[0].attestation;

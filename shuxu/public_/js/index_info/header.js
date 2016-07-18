@@ -58,11 +58,11 @@ export default class Header extends React.Component {
                         <div className="header_left_content">
                             <p className="title">{this.state.datas[0].nick_name}</p>
                             <p className="wechat">微信号：{this.state.datas[0].english_id}</p>
-                            <p className="wechat">认证: 
+                            <p className="wechat">认证: &nbsp;
                                 {
                                     (function(obj){
                                         if(obj.state.datas[0].isAttestation){
-                                            return <span>&nbsp;<i style={{'backgroundImage': 'url("../images/icon_verify_success.png")'}}></i>&nbsp;{obj.state.datas[0].attestation}</span>;
+                                            return <span><i style={{'backgroundImage': 'url("../images/icon_verify_success.png")'}}></i>&nbsp;{obj.state.datas[0].attestation}</span>;
                                         }
                                         else{
                                             return obj.state.datas[0].attestation;
