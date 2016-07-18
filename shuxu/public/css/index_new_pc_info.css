@@ -56,8 +56,10 @@
 .header .header_info .header_left .header_left_img div img{
     vertical-align: middle;
     margin:10px;
-    width: 100px;
-    height: 100px;
+    // width: 100px;
+    // height: 100px;
+    width: 90px;
+    height: 90px;
 }
 
 .header .header_info .header_left .header_left_img .fs_num{

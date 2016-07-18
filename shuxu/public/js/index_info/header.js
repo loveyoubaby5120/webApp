@@ -50,7 +50,7 @@ export default class Header extends React.Component {
                     <div className="header_left">
                         <div className="header_left_img">
                             <div>
-                                <img src="" alt=""/>
+                                <img src="" alt="" style={{'background': 'url("http://open.weixin.qq.com/qr/code/?username=' + this.state.datas[0].english_id + '") -170px -170px no-repeat'}}/>
                             </div>
                             <p className="fs_num">{this.state.datas[0].nick_name}</p>
                             <p className="fs">简介：</p>
