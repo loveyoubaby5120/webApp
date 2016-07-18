@@ -15,7 +15,7 @@ var config = {
 	},
     wechat:{
         appID: 'wxfbabb65cb83c5220',
-        appSecret: '2ccb2200e737bbe5f75a086e780e0822',
+        appSecret: '1692d624e964b1d2fd71a3a60c6997f8',
         token: 'loveyoubaby5120',
         getAccessToken: function(){
         	return util.readFileAsync(wechat_file,'utf-8');
