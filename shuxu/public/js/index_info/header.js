@@ -57,7 +57,19 @@ export default class Header extends React.Component {
                             <p className="fs_content">{this.state.datas[0].descrip}</p>
                         </div>
                         <div className="header_left_content">
-                            <p className="title">认证: <i style={{'backgroundImage': 'url("../images/icon_verify_success.png")'}}></i></p>
+                            <p className="title">认证: 
+                            {
+                                (function(obj){
+                                    if(obj.state.datas[0].attestation){
+                                        return <span>&nbsp;<i style={{'backgroundImage': 'url("../images/icon_verify_success.png")'}}></i>&nbsp;{obj.state.datas[0].nick_name}</span>;
+                                    }
+                                    else{
+                                        return obj.state.datas[0].nick_name;
+                                    }
+                                })(this)
+                            }
+
+                            </p>
                             <p className="title">预测粉丝数: --</p>
                             <p className="wechat">微信号：{this.state.datas[0].english_id}</p>
                             <p className="time">
