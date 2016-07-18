@@ -50,7 +50,7 @@ export default class Header extends React.Component {
                     <div className="header_left">
                         <div className="header_left_img">
                             <div>
-                                <img src="" alt=""/>
+                                <img src="" alt="" style={{'background': 'url("http://open.weixin.qq.com/qr/code/?username=' + this.state.datas[0].english_id + '") -170px -170px no-repeat'}}/>
                             </div>
                             <p className="fs_num">--</p>
                             <p className="fs">预测粉丝数<span>?</span></p>
@@ -58,6 +58,7 @@ export default class Header extends React.Component {
                         <div className="header_left_content">
                             <p className="title">{this.state.datas[0].nick_name}</p>
                             <p className="wechat">微信号：{this.state.datas[0].english_id}</p>
+                            <p className="wechat">认证: <i style={{'backgroundImage': 'url("../images/icon_verify_success.png")'}}></i></p>
                             <p className="time">
                             </p>
                             <p className="introduce">

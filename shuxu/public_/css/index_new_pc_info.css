@@ -29,8 +29,8 @@
 .header .header_info .header_left .header_left_img div img{
     vertical-align: middle;
     margin:10px;
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
 }
 
 .header .header_info .header_left .header_left_img .fs_num{
@@ -72,6 +72,17 @@
     line-height: 25px;
     font-size: 20px;
     color: #000;
+}
+
+.header .header_info .header_left .header_left_content .wechat i{
+    background-image: url("../images/icon_verify_success.png");
+    background-size: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: bottom;
 }
 
 .header .header_info .header_left .header_left_content .wechat{
