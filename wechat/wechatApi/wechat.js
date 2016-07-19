@@ -164,8 +164,13 @@ var api = {
 		//创建
 		//https://api.weixin.qq.com/cgi-bin/shorturl?access_token=ACCESS_TOKEN
 		create: prefix + 'shorturl?',
+	},
+	ticket: {//获取ticket
+
+		//获取ticket
+		//https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&type=wx_card
+		create: prefix + 'ticket/getticket?',
 	}
-	
 }
 
 
@@ -183,13 +188,15 @@ function Wechat(opts){
 	this.getAccessToken = opts .getAccessToken;
 	this.saveAccessToken = opts.saveAccessToken;
 
+	this.getTicket = opts .getTicket;
+	this.saveTicket = opts.saveTicket;
+
 	this.fetchAccessToken();
 	
 }
 
 
 /*token-------------------------------------------------------------------------------------------------------------------------------*/
-
 
 //获取token
 Wechat.prototype.fetchAccessToken = function(data){
@@ -212,7 +219,6 @@ Wechat.prototype.fetchAccessToken = function(data){
 
 			if(_this.isValidAccessToken(data)){
 				return Promise.resolve(data);
-				// return data;
 			}
 			else{
 				return _this.updateAccessToken();
@@ -220,8 +226,8 @@ Wechat.prototype.fetchAccessToken = function(data){
 
 		})
 		.then(function(data){
-			_this.access_token = data.access_token;
-			_this.expires_in = data.expires_in;
+			// _this.access_token = data.access_token;
+			// _this.expires_in = data.expires_in;
 
 			_this.saveAccessToken(data);
 
@@ -269,6 +275,75 @@ Wechat.prototype.updateAccessToken = function(){
 
 }
 
+
+/*ticket-------------------------------------------------------------------------------------------------------------------------------*/
+
+//获取ticket
+Wechat.prototype.fetchTicket= function(access_token){
+	var _this = this;
+
+	return this.getTicket()
+		.then(function(data){
+			try{
+				data = JSON.parse(data);
+			}
+			catch(e){
+				return _this.updateTicket(access_token);
+			}
+
+			if(_this.isValidTicket(data)){
+				return Promise.resolve(data);
+			}
+			else{
+				return _this.updateTicket(access_token);
+			}
+
+		})
+		.then(function(data){
+
+			_this.saveTicket(data);
+
+			return Promise.resolve(data);
+
+		});
+}
+
+//校验ticket有效性
+Wechat.prototype.isValidTicket = function(data){
+	if(!data || !data.ticket || !data.expires_in){
+		return false;
+	}
+
+	var ticket = data.ticket;
+	var expires_in = data.expires_in;
+	var now = (new Date().getTime());
+
+	if(ticket && now < expires_in){
+		return true;
+	}
+	else{
+		return false;
+	}
+};
+
+
+//更新ticket
+Wechat.prototype.updateTicket = function(){
+	var url = api.ticket.get + '&access_token=' + access_token + '&type=jsapi';
+	return new Promise(function(resolve, reject){
+		request({url: url, json: true}).then(function(response){
+			var data = response.body;
+			var now = (new Date().getTime());
+			var expires_in = now + (data.expires_in - 20) * 1000;
+
+			data.expires_in = expires_in;
+			resolve(data);
+
+		});
+		
+	})
+
+}
 
 /*素材-------------------------------------------------------------------------------------------------------------------------------*/
 
