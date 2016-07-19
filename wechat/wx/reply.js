@@ -460,8 +460,14 @@ exports.reply = function *(next){
 				category: 'movie',
 				uid: message.FromUserName
 			}
-
-			var _semanticData = yield wechatApi.semantic(semanticData);
+			var semanticData2 = {
+				query: '查一下明天从北京到上海的南航机票',
+				city: '北京',
+				category: 'flight,hotel',
+				uid: message.FromUserName
+			}
+			
+			var _semanticData = yield wechatApi.semantic(semanticData2);
 
 			console.log(_semanticData);
 			

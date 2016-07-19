@@ -1537,7 +1537,9 @@ Wechat.prototype.semantic = function(semanticData){
 					json: true
 				};
 
-				semanticData.appid = semanticData.appID;
+				semanticData.appid = data.appID;
+
+				console.log(semanticData);
 
 				_options.body = semanticData;
 
