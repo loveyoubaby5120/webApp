@@ -453,6 +453,7 @@ exports.reply = function *(next){
 
 			reply = shortData.short_url;
 		}
+		//自动回复 智能接口
 		else if(content === '20'){
 			var semanticData = {
 				query: '玩具总动员',
@@ -466,14 +467,16 @@ exports.reply = function *(next){
 				category: 'flight,hotel',
 				uid: message.FromUserName
 			}
-			
+
 			var _semanticData = yield wechatApi.semantic(semanticData2);
 
 			console.log(_semanticData);
 			
 			reply = JSON.stringify(_semanticData);
 		}
+		else if(content === '21'){
 
+		}
 
 		this.body = reply;
 	}
