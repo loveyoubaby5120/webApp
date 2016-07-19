@@ -6,12 +6,16 @@ var Promise = require('bluebird');
 var request = Promise.promisify(require('request'));
 var util = require('./util.js');
 
-
+//普通
 var prefix = 'https://api.weixin.qq.com/cgi-bin/';
+//换取二维码
 var mpPrefix = 'https://mp.weixin.qq.com/cgi-bin/';
 
+//语义理解url
+var semanticUrl = 'https://api.weixin.qq.com/semantic/semproxy/search?';
 
 var api = {
+	semanticUrl: semanticUrl,
 	accessToken: prefix + 'token?grant_type=client_credential',
 	temporary: {//临时素材
 
@@ -1458,6 +1462,7 @@ Wechat.prototype.createQrcode = function(qr){
 
 //通过ticket换取二维码
 Wechat.prototype.showQrcode = function(ticket){
+
 	return api.qrcode.show + 'ticket=' + encodeURI(ticket);
 }
 
@@ -1477,7 +1482,7 @@ Wechat.prototype.createShorturl = function(action, url){
 			.fetchAccessToken()
 			.then(function(data){
 
-				var url = fetchUrl + '&access_token=' + data.access_token;
+				var url = fetchUrl + 'access_token=' + data.access_token;
 
 				var _options = {
 					method: 'POST',
@@ -1511,6 +1516,49 @@ Wechat.prototype.createShorturl = function(action, url){
 	})
 }
 
+/*语义理解----------------------------------------------------------------------------------------------------------------------------*/
+
+//语义理解
+Wechat.prototype.semantic = function(semanticData){
+	var _this = this;
+
+	var fetchUrl = api.semanticUrl;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'POST',
+					url: url,
+					json: true
+				};
+
+				semanticData.appid = semanticData.appID;
+
+				_options.body = semanticData;
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('Semantic fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
 
 /*发送消息----------------------------------------------------------------------------------------------------------------------------*/
 

@@ -448,9 +448,27 @@ exports.reply = function *(next){
 			var longURL= 'http://www.imooc.com';
 
 			var shortData = yield wechatApi.createShorturl(null, longURL);
+
 			console.log(shortData);
+
 			reply = shortData.short_url;
 		}
+		else if(content === '20'){
+			var semanticData = {
+				query: '玩具总动员',
+				city: '北京',
+				category: 'movie',
+				uid: message.FromUserName
+			}
+
+			var _semanticData = yield wechatApi.semantic(semanticData);
+
+			console.log(_semanticData);
+			
+			reply = JSON.stringify(_semanticData);
+		}
+
+
 		this.body = reply;
 	}
 	//接受的消息是图片类型
