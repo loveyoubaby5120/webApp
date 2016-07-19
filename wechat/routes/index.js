@@ -7,12 +7,12 @@ var router = new Router();
 
 
 router.get('/index(\/.*)*', function *(next) {
-	yield this.render('index', { title: '数絮科技', layout: false, url: this.request.url,css: 'index_new_pc.css' });
+	yield this.render('index', { title: '数絮科技', layout: false);
 });
 
 
 router.get('/index_info(\/.*)*', function *(next) {
-	yield this.render('index', { title: '数絮科技', layout: false, url: this.request.url,css: 'index_new_pc_info.css' });
+	yield this.render('index', { title: '数絮科技', layout: false);
 });
 
 module.exports = router;
