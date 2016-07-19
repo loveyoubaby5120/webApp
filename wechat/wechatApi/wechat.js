@@ -169,7 +169,7 @@ var api = {
 
 		//获取ticket
 		//https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&type=wx_card
-		create: prefix + 'ticket/getticket?',
+		get: prefix + 'ticket/getticket?',
 	}
 }
 
@@ -326,9 +326,8 @@ Wechat.prototype.isValidTicket = function(data){
 	}
 };
 
-
 //更新ticket
-Wechat.prototype.updateTicket = function(){
+Wechat.prototype.updateTicket = function(access_token){
 	var url = api.ticket.get + '&access_token=' + access_token + '&type=jsapi';
 	return new Promise(function(resolve, reject){
 		request({url: url, json: true}).then(function(response){

@@ -29,7 +29,7 @@ function _sign(noncestr, ticket, timestamp, url){
 	var str = params.sort().join('&');
 	var shasum = crypto.createHash('sha1');
 
-	shasum.updata(str);
+	shasum.update(str);
 
 	return shasum.digest('hex');
 }
@@ -44,7 +44,16 @@ function sign(ticket, url){
 }
 
 router.get('/index(\/.*)*', function *(next) {
-	yield this.render('index', { title: '数絮科技', layout: false});
+	var data = yield wechatApi.fetchAccessToken();
+	var access_token = data.access_token;
+
+	var ticketData = yield wechatApi.fetchTicket(access_token);
+	var ticket = ticketData.ticket;
+
+	var url = this.href;
+	var params = sign(ticket, url);
+
+	yield this.render('index', { title: '数絮科技', layout: false, params: params, appId: config.wechat.appID});
 });
 
 module.exports = router;
