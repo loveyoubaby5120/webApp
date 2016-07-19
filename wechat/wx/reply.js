@@ -1,13 +1,22 @@
 'use strict'
 
-var config = require('./config.js');
-var Wechat = require('./wechat/wechat.js');
+var config = require('../config/config.js');
+var Wechat = require('../wechatApi/wechat.js');
 var wechatApi = new Wechat(config.wechat);
+var menu = require('./menu.js');
+
+
+// wechatApi.deleteMenu().then(function(){
+// 	return wechatApi.createMenu(menu);
+// })
+// .then(function(msg){
+// 	console.log(msg);
+// });
 
 //微信被动回复
 exports.reply = function *(next){
 	var message = this.weixin;
-
+	console.log('weixin: ',message);
 	//判断消息类型
 	//接受到的消息是事件类型
 	if(message.MsgType === 'event'){
@@ -39,6 +48,57 @@ exports.reply = function *(next){
 		//点击菜单中链接
 		else if(message.Event === 'VIEW'){
 			this.body = '您点击了菜单中的链接： ' + message.EventKey;
+		}
+		//扫码推送事件
+		else if(message.Event === 'scancode_push'){
+			console.log(message.ScanCodeInfo.ScanType);
+			console.log(message.ScanCodeInfo.ScanResult);
+			this.body = '您点击了菜单中的链接： ' + message.EventKey;
+		}
+		//扫码推送中
+		else if(message.Event === 'scancode_waitmsg'){
+			console.log(message.ScanCodeInfo.ScanType);
+			console.log(message.ScanCodeInfo.ScanResult);
+			this.body = '您点击了菜单中的链接： ' + message.EventKey;
+		}
+		//弹出系统拍照
+		else if(message.Event === 'pic_sysphoto'){
+			console.log(message.SendPicsInfo.PicList);
+			console.log(message.SendPicsInfo.Count);
+			this.body = '您点击了菜单中的链接： ' + message.EventKey;
+		}
+		//弹出拍照或者相册
+		else if(message.Event === 'pic_photo_or_album'){
+			console.log(message.SendPicsInfo.PicList);
+			console.log(message.SendPicsInfo.Count);
+			this.body = '您点击了菜单中的链接： ' + message.EventKey;
+		}
+		//微信相册发图
+		else if(message.Event === 'pic_weixin'){
+			console.log(message.SendPicsInfo.PicList);
+			console.log(message.SendPicsInfo.Count);
+			this.body = '您点击了菜单中的链接： ' + message.EventKey;
+		}
+		//地理位置选择
+		else if(message.Event === 'location_select'){
+			console.log(message.SendLocationInfo.Location_X);
+			console.log(message.SendLocationInfo.Location_Y);
+			console.log(message.SendLocationInfo.Scale);
+			console.log(message.SendLocationInfo.Label);
+			console.log(message.SendLocationInfo.Poiname);
+			this.body = '您点击了菜单中的链接： ' + message.EventKey;
+		}
+		// //下发图片消息
+		// else if(message.Event === 'media_id'){
+		// 	this.body = '您点击了菜单中的链接： ' + message.EventKey;
+		// }
+		// //跳转图文消息的url
+		// else if(message.Event === 'view_limited'){
+		// 	this.body = '您点击了菜单中的链接： ' + message.EventKey;
+		// }
+		//群发消息
+		else if(message.Event === 'MASSSENDJOBFINISH'){
+			this.body = '群发消息推送信息';
 		}
 
 	}
@@ -173,10 +233,11 @@ exports.reply = function *(next){
 
 			reply = news;
 		}
-		//自动回复 永久素材 获取所有索财
+		//自动回复 永久素材 获取所有索引
 		else if(content === '11'){
 			var counts = yield wechatApi.countMaterial()
 
+			console.log(JSON.stringify(counts));
 
 			var results = yield [
 				wechatApi.batchMaterial({
@@ -201,8 +262,9 @@ exports.reply = function *(next){
 				})
 			]
 
+			console.log(JSON.stringify(results));
 
-			reply = '[ text=>11 ] count: ' + JSON.stringify(counts);
+			reply = '[ text=> 11 ] count: ' + JSON.stringify(counts);
 		}
 		//自动回复 分组 创建分组  查看分组 移动分组/批量移动 修改分组 删除分组
 		else if(content === '12'){
@@ -264,6 +326,7 @@ exports.reply = function *(next){
 
 			reply = 'Group done!';
 		}
+		//自动回复 用户详细信息
 		else if(content === '13'){
 			var user = yield wechatApi.fetchUsers(message.FromUserName,'en');
 
@@ -282,6 +345,7 @@ exports.reply = function *(next){
 
 			reply = JSON.stringify(user);
 		}
+		//自动回复 用户列表
 		else if(content === '14'){
 			var userList = yield wechatApi.listUsers();
 
@@ -289,13 +353,133 @@ exports.reply = function *(next){
 
 			reply = userList.total;
 		}
+		//自动回复 群发消息
 		else if(content === '15'){
 
-		}
+			var mpnews = {
+				media_id: '3DOoqZ5jB-jXu8DaoUFHlywGhkzn3dt4DoPggv1WUpo'
+			}
 
+			var text= {
+			  'content': 'Hello Wechat'
+			};
+
+			var msgData = yield wechatApi.sendByGroup('mpnews', mpnews, 100);
+
+			// var msgData = yield wechatApi.sendByGroup('text', text, 100);
+
+			console.log(msgData);
+
+			reply = 'Yeah!'
+		}
+		//自动回复 预览群发消息
+		else if(content === '16'){
+
+			var mpnews = {
+				media_id: '3DOoqZ5jB-jXu8DaoUFHlywGhkzn3dt4DoPggv1WUpo'
+			}
+
+			var text= {
+			  'content': 'Hello Wechat'
+			};
+
+			var msgData = yield wechatApi.previewMass('mpnews', mpnews, 'oSoRTwf-gKfinier-vPVQk3MHtqw');
+
+			// var msgData = yield wechatApi.previewMass('text', text, 'oSoRTwf-gKfinier-vPVQk3MHtqw');
+
+			console.log(msgData);
+
+			reply = 'Yeah!'
+		}
+		//自动回复 查询群发消息发送状态
+		else if(content === '17'){
+			var msgData = yield wechatApi.checkMass('3147483667');
+
+			console.log(msgData);
+
+			reply = 'Yeah!'
+		}
+		//自动回复 创建二维码
+		else if(content === '18'){
+			//临时
+			var tempQr = {
+				expire_seconds: 604800,
+				action_name: 'QR_SCENE',
+				action_info: {
+					"scene": {
+						"scene_id": 123
+					}
+				}
+			}
+
+
+			//永久
+			var permQr = {
+				action_name: 'QR_LIMIT_SCENE',
+				action_info: {
+					"scene": {
+						"scene_id": 123
+					}
+				}
+			}
+
+			var permStrQr = {
+				action_name: 'QR_LIMIT_STR_SCENE',
+				action_info: {
+					"scene": {
+						"scene_str": '123'
+					}
+				}
+			}
+
+
+			var qr1 = yield wechatApi.createQrcode(tempQr);
+
+			var qr2 = yield wechatApi.createQrcode(permQr);
+
+			var qr3 = yield wechatApi.createQrcode(permStrQr);
+
+			console.log(qr1);
+
+			reply = 'Yeah hah!';
+		}
+		//自动回复 长链接转短链接接口
+		else if(content === '19'){
+			var longURL= 'http://www.imooc.com';
+
+			var shortData = yield wechatApi.createShorturl(null, longURL);
+			console.log(shortData);
+			reply = shortData.short_url;
+		}
 		this.body = reply;
 	}
-
+	//接受的消息是图片类型
+	else if(message.MsgType === 'image'){
+		this.body = '图片消息';
+	}
+	//接受的消息是语音类型
+	else if(message.MsgType === 'voice'){
+		this.body = '语音消息';
+	}
+	//接受的消息是视频类型
+	else if(message.MsgType === 'video'){
+		this.body = '视频消息';
+	}
+	//接受的消息是小视频类型
+	else if(message.MsgType === 'shortvideo'){
+		this.body = '小视频消息';
+	}
+	//接受的消息是地理位置类型
+	else if(message.MsgType === 'location'){
+		this.body = '地理位置消息';
+	}
+	//接受的消息是链接类型
+	else if(message.MsgType === 'link'){
+		this.body = '链接消息';
+	}
+	else{
+		this.body = '无法识别的消息类型';	
+	}
 	yield next;
 
 }

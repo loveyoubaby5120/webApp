@@ -31,8 +31,8 @@ function formatMessage(result){
 
 			if(item.length === 1){
 				var val = item[0];
-
-				if(typeof val === 'objecty'){
+				
+				if(typeof val === 'object'){
 					message[key] = formatMessage(val);
 				}
 				else{

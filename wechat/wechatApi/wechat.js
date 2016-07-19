@@ -8,102 +8,158 @@ var util = require('./util.js');
 
 
 var prefix = 'https://api.weixin.qq.com/cgi-bin/';
+var mpPrefix = 'https://mp.weixin.qq.com/cgi-bin/';
+
 
 var api = {
 	accessToken: prefix + 'token?grant_type=client_credential',
 	temporary: {//临时素材
 
-		//新增
+		//新增 POST
 		//https://api.weixin.qq.com/cgi-bin/media/upload?access_token=ACCESS_TOKEN&type=TYPE
 		upload: prefix + 'media/upload?',
 
-		//获取
+		//获取 GET
 		//https://api.weixin.qq.com/cgi-bin/media/get?access_token=ACCESS_TOKEN&media_id=MEDIA_ID
 		fetch: prefix + 'media/get?'
 	},
 	permanent: {//永久素材
 
 		//新增
-		//其他素材  https://api.weixin.qq.com/cgi-bin/material/add_material?access_token=ACCESS_TOKEN
+		//其他素材 POST
+		//https://api.weixin.qq.com/cgi-bin/material/add_material?access_token=ACCESS_TOKEN
 		upload: prefix + 'material/add_material?',
-		//图文素材  https://api.weixin.qq.com/cgi-bin/material/add_news?access_token=ACCESS_TOKEN
+		//图文素材 POST
+		//https://api.weixin.qq.com/cgi-bin/material/add_news?access_token=ACCESS_TOKEN
 		uploadNews: prefix + 'material/add_news?',
-		//图文消息的图片 https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token=ACCESS_TOKEN
+		//图文消息的图片 POST
+		//https://api.weixin.qq.com/cgi-bin/media/uploadimg?access_token=ACCESS_TOKEN
 		uploadNewsPic: prefix + 'media/uploadimg?',
 		
-		//获取
+		//获取 POST
 		//https://api.weixin.qq.com/cgi-bin/material/get_material?access_token=ACCESS_TOKEN
 		fetch: prefix + 'material/get_material?',
 
-		//删除
+		//删除 POST
 		//https://api.weixin.qq.com/cgi-bin/material/del_material?access_token=ACCESS_TOKEN
 		del: prefix + 'material/del_material?',
 
-		//更新
+		//更新 POST
 		//https://api.weixin.qq.com/cgi-bin/material/update_news?access_token=ACCESS_TOKEN
 		update: prefix + 'material/update_news?',
 		
-		//素材总数
+		//素材总数 GET
 		//https://api.weixin.qq.com/cgi-bin/material/get_materialcount?access_token=ACCESS_TOKEN
 		count: prefix + 'material/get_materialcount?',
 
-		//素材列表
+		//素材列表 POST
 		//https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token=ACCESS_TOKEN
 		batch: prefix + 'material/batchget_material?',
 	},
 	group: {//分组
 
-		//创建分组
+		//创建分组 POST
 		//https://api.weixin.qq.com/cgi-bin/groups/create?access_token=ACCESS_TOKEN
 		create: prefix + 'groups/create?',
 
-		//查询所有分组
+		//查询所有分组 GET
 		//https://api.weixin.qq.com/cgi-bin/groups/get?access_token=ACCESS_TOKEN
 		fetch: prefix + 'groups/get?',
 
-		//查询用户所在分组
+		//查询用户所在分组 POST
 		//https://api.weixin.qq.com/cgi-bin/groups/getid?access_token=ACCESS_TOKEN
 		check: prefix + 'groups/getid?',
 
-		//修改分组名
+		//修改分组名 POST
 		//https://api.weixin.qq.com/cgi-bin/groups/update?access_token=ACCESS_TOKEN
 		update: prefix + 'groups/update?',
 
-		//移动用户分组
+		//移动用户分组 POST
 		//https://api.weixin.qq.com/cgi-bin/groups/members/update?access_token=ACCESS_TOKEN
 		move: prefix + 'groups/members/update?',
 
-		//批量移动用户分组
+		//批量移动用户分组 POST
 		//https://api.weixin.qq.com/cgi-bin/groups/members/batchupdate?access_token=ACCESS_TOKEN
 		batchupdate: prefix + 'groups/members/batchupdate?',
 
-		//删除分组
+		//删除分组 POST
 		//https://api.weixin.qq.com/cgi-bin/groups/delete?access_token=ACCESS_TOKEN
 		del: prefix + 'groups/delete?',
 	},
 	user: {//用户管理
 
-		//设置备注名
+		//设置备注名 POST
 		//https://api.weixin.qq.com/cgi-bin/user/info/updateremark?access_token=ACCESS_TOKEN
 		remark: prefix + 'user/info/updateremark?',
 
-		//获取用户信息
+		//获取用户信息 GET
 		//https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN
 		fetch: prefix + 'user/info?',
 
-		//批量获取用户信息
+		//批量获取用户信息 POST
 		//https://api.weixin.qq.com/cgi-bin/user/info/batchget?access_token=ACCESS_TOKEN
 		batchFetch: prefix + 'user/info/batchget?',
 
-		//获取用户列表
+		//获取用户列表 GET
 		//https://api.weixin.qq.com/cgi-bin/user/get?access_token=ACCESS_TOKEN&next_openid=NEXT_OPENID
 		list: prefix + 'user/get?',
 	},
-	mess: {//群发
+	mass: {//群发
 
-		//根据分组进行群发
+		//根据分组进行群发 POST
 		//https://api.weixin.qq.com/cgi-bin/message/mass/sendall?access_token=ACCESS_TOKEN
-		sendAll: prefix + 'message/mass/sendall?',
+		group: prefix + 'message/mass/sendall?',
+
+		//根据OpenID列表群发 POST
+		//https://api.weixin.qq.com/cgi-bin/message/mass/send?access_token=ACCESS_TOKEN
+		openId: prefix + 'message/mass/send?',
+
+		//删除群发 POST
+		//https://api.weixin.qq.com/cgi-bin/message/mass/delete?access_token=ACCESS_TOKEN
+		del: prefix + 'message/mass/delete?',
+
+		//预览接口 POST
+		//https://api.weixin.qq.com/cgi-bin/message/mass/preview?access_token=ACCESS_TOKEN
+		preview: prefix + 'message/mass/preview?',
+
+		//查询群发消息发送状态 POST
+		//https://api.weixin.qq.com/cgi-bin/message/mass/get?access_token=ACCESS_TOKEN
+		check: prefix + 'message/mass/get?',
+	},
+	menu: {//菜单
+
+		//创建菜单 POST
+		//https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN
+		create: prefix + 'menu/create?',
+
+		//查询菜单 GET
+		//https://api.weixin.qq.com/cgi-bin/menu/get?access_token=ACCESS_TOKEN
+		get: prefix + 'menu/get?',
+
+		//删除菜单 GET
+		//https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=ACCESS_TOKEN
+		del: prefix + 'menu/delete?',
+
+		//获取自定义菜单配置 GET
+		//https://api.weixin.qq.com/cgi-bin/get_current_selfmenu_info?access_token=ACCESS_TOKEN
+		current: prefix + 'get_current_selfmenu_info?',
+	},
+	qrcode: {//二维码管理
+
+		//创建 POST
+		//https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token=TOKEN
+		create: prefix + 'qrcode/create?',
+
+		//通过ticket换取二维码 GET
+		//https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=TICKET
+		show: mpPrefix + 'showqrcode?',
+
+	},
+	shortUrl: {//长链接转短链接接口
+
+		//创建
+		//https://api.weixin.qq.com/cgi-bin/shorturl?access_token=ACCESS_TOKEN
+		create: prefix + 'shorturl?',
 	}
 	
 }
@@ -141,7 +197,7 @@ Wechat.prototype.fetchAccessToken = function(data){
 		}
 	}
 
-	this.getAccessToken()
+	return this.getAccessToken()
 		.then(function(data){
 			try{
 				data = JSON.parse(data);
@@ -925,7 +981,6 @@ Wechat.prototype.listUsers = function(openId){
 					url += '&next_openid' + openId;
 				}
 
-				console.log(url);
 				var _options = {
 					method: 'GET',
 					url: url,
@@ -956,12 +1011,522 @@ Wechat.prototype.listUsers = function(openId){
 	})
 }
 
+
+/*群发消息----------------------------------------------------------------------------------------------------------------------------*/
+
+//根据分组进行群发
+Wechat.prototype.sendByGroup = function(type, message, groupId){
+	var _this = this;
+	var msg = {
+		filter: {},
+		msgtype: type
+	};
+
+	msg[type] = message;
+
+	if(!groupId){
+		msg.filter.is_to_all = true;
+	}
+	else{
+		msg.filter.is_to_all = false;	
+		msg.filter = {
+			is_to_all: false,
+			group_id: groupId
+		}
+	}
+
+
+	var fetchUrl = api.mass.group;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'POST',
+					url: url,
+					json: true
+				};
+
+				_options.body = msg;
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('Send by group fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
+
+//根据OpenID列表群发
+Wechat.prototype.sendByOpenId = function(type, message, openIds){
+	var _this = this;
+	var msg = {
+		msgtype: type,
+		touser: openIds
+	};
+
+	msg[type] = message;
+
+
+	var fetchUrl = api.mass.openId;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'POST',
+					url: url,
+					json: true
+				};
+
+				_options.body = msg;
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('Send by openId fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
+
+//删除群发
+Wechat.prototype.deleteMass = function(msgId){
+	var _this = this;
+
+
+	var fetchUrl = api.mass.del;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'POST',
+					url: url,
+					json: true
+				};
+
+				var form = {
+					msg_id: msgId
+				}
+
+				_options.body = form;
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('Delete mass fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
+
+//预览接口
+Wechat.prototype.previewMass = function(type, message, openId){
+	var _this = this;
+	var msg = {
+		msgtype: type,
+		touser: openId
+	};
+
+	msg[type] = message;
+
+
+	var fetchUrl = api.mass.preview;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'POST',
+					url: url,
+					json: true
+				};
+
+				_options.body = msg;
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('Preview mass fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
+
+//查询群发消息发送状态
+Wechat.prototype.checkMass = function(msgId){
+	var _this = this;
+
+
+	var fetchUrl = api.mass.check;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'POST',
+					url: url,
+					json: true
+				};
+
+				var form = {
+					msg_id: msgId
+				}
+
+				_options.body = form;
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('Check mass fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
+
+
+/*菜单-------------------------------------------------------------------------------------------------------------------------------*/
+
+//创建菜单
+Wechat.prototype.createMenu = function(menu){
+	var _this = this;
+
+	var fetchUrl = api.menu.create;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'POST',
+					url: url,
+					json: true
+				};
+
+				_options.body = menu;
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('Create menu fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
+
+//获取菜单
+Wechat.prototype.getMenu = function(){
+	var _this = this;
+
+	var fetchUrl = api.menu.get;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'GET',
+					url: url,
+					json: true
+				};
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('Get menu fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
+
+//删除菜单
+Wechat.prototype.deleteMenu = function(){
+	var _this = this;
+
+	var fetchUrl = api.menu.del;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'GET',
+					url: url,
+					json: true
+				};
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('Delete menu fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
+
+//获取自定义菜单配置
+Wechat.prototype.getCurrentMenu = function(){
+	var _this = this;
+
+	var fetchUrl = api.menu.current;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'GET',
+					url: url,
+					json: true
+				};
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('Get current menu fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
+
+
+/*二维码管理--------------------------------------------------------------------------------------------------------------------------*/
+
+//创建二维码
+Wechat.prototype.createQrcode = function(qr){
+	var _this = this;
+
+	var fetchUrl = api.qrcode.create;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'POST',
+					url: url,
+					json: true
+				};
+
+				_options.body = qr;
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('Create qrcode fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
+
+//通过ticket换取二维码
+Wechat.prototype.showQrcode = function(ticket){
+	return api.qrcode.show + 'ticket=' + encodeURI(ticket);
+}
+
+
+/*长链接转短链接接口-------------------------------------------------------------------------------------------------------------------*/
+
+//创建
+Wechat.prototype.createShorturl = function(action, url){
+	action = action || 'long2short';
+
+	var _this = this;
+
+	var fetchUrl = api.shortUrl.create;
+
+	return new Promise(function(resolve, reject){
+		_this
+			.fetchAccessToken()
+			.then(function(data){
+
+				var url = fetchUrl + '&access_token=' + data.access_token;
+
+				var _options = {
+					method: 'POST',
+					url: url,
+					json: true
+				};
+
+				var form = {
+					action: action,
+					long_url: url
+				}
+
+				_options.body = form;
+
+				request(_options).then(function(response){
+					var _data = response.body;
+
+					if(_data){
+						resolve(_data);
+					}
+					else{
+						throw new Error('Create shorturl fails');
+					}
+				})
+				.catch(function(err){
+					reject(err);
+				})
+
+			})
+		
+	})
+}
+
+
+/*发送消息----------------------------------------------------------------------------------------------------------------------------*/
+
 //发送消息
 Wechat.prototype.reply = function(){
 	var content = this.body;
 	var message = this.weixin;
+	console.log('\n');
+	console.log('发送消息   start----------------------------------------------------------------------');
+	console.log('\n');
 	console.log('content: ',content);
+	console.log('\n');
 	console.log('message: ',message);
+	console.log('\n');
+	console.log('发送消息   end----------------------------------------------------------------------');
+	console.log('\n');
 	var xml = util.tpl(content, message);
 
 	this.status = 200;

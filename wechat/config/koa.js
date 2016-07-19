@@ -19,9 +19,9 @@ var bodyParser = require('koa-body-parser');
 
 var staticServer = require('koa-static');
 
-var wechat = require('./wechat/g.js');
+var wechatApi = require('../wechatApi/g.js');
 var config = require('./config.js');
-var weixin = require('./weixin.js');
+var reply = require('../wx/reply.js');
 
 
 var app = koa();
@@ -77,7 +77,7 @@ module.exports = function(){
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 	
-	app.use(wechat(config.wechat, weixin.reply));
+	app.use(wechatApi(config.wechat, reply.reply));
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
