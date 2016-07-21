@@ -9,9 +9,16 @@
 	<link rel="stylesheet" href="/css/index.css"/>
 	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script src="/lib/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript">
+   
+</head>
+<body>
+	<button id='btn' type="button">点击录音</button>
+	<div id="app"></div>
+	 <script type="text/javascript">
     	console.log("<%=url%>");
-
+    	document.getElementById("btn").onclick = function(e){
+    		console.log(1);
+    	};
 	   	wx.config({
 		    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
 		    appId: '<%=appId%>', // 必填，公众号的唯一标识
@@ -41,8 +48,16 @@
 
 
 		   	var isRecording = false;
+		   	$('body').click(function(){
+		   		alert('body');
+		   		console.log('body');
+		   	})
 
-		   	$('button').on('tap', function(){
+		   	$('#btn').click(function(){
+		   		console.log('btn click');
+		   	})
+
+		   	$('#btn').bind('tap', function(){
 		   		console.log('点击录音');
 		   		if(!isRecording){
 		   			isRecording = true;
@@ -82,9 +97,5 @@
 
 
     </script>
-</head>
-<body>
-	<button type="button">点击录音</button>
-	<div id="app"></div>
 </body>
 </html>
