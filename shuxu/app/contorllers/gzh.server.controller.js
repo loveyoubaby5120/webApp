@@ -525,6 +525,7 @@ module.exports = {
 
 
 		sql3 = `call art_info('count(*) as sw',' and gzh_id=`+this.query.gzh_id+` and read_num>=100000${query}','','pub_time','desc')`;
+		console.log(sql3);
 		var rows3 = yield querySql(sql3);
 
 
@@ -533,6 +534,7 @@ module.exports = {
 
 		sql5 = `call art_info('count(*) ttCount,case when sum(read_num) then sum(read_num) else 0 end as ttSumRead',' and gzh_id=`+this.query.gzh_id+` and url like "%idx=1%"${query}','','pub_time','desc')`;
 		var rows5 = yield querySql(sql5);
+
 
 		var json = {};
 

@@ -52,7 +52,8 @@ export default class Chart extends React.Component {
     onChart(myChart,re,XD){
         if(re)
             myChart.restore();
-
+        var x_index = 0;
+        var x_date = [];
         var option = {
                 title : {
                     text: '',
@@ -76,6 +77,29 @@ export default class Chart extends React.Component {
                 xAxis : [
                     {
                         type : 'category',
+                        axisLabel:{
+                            interval:0,
+                            rotate:45,
+                            margin:2,
+                            clickable: true,
+                            textStyle:{
+                                color:"#222"
+                            },
+                            formatter:function(val){
+                                if(!x_date[val]){
+                                    x_date[val] = val;
+                                }
+                                else{
+                                    x_index++;
+
+                                    if(x_index%2 || XD[1].length < 30 ){
+                                        return val;
+                                    }
+
+                                    return '';
+                                }
+                            }
+                        },
                         data : XD[1]
                     }
                 ],
@@ -104,7 +128,7 @@ export default class Chart extends React.Component {
                 ]
             };
 
-            
+            x_index = 0;
             // 使用刚指定的配置项和数据显示图表。
             myChart.setOption(option);
     }

@@ -22,15 +22,16 @@
 
 .header .header_info .header_left .header_left_img div{
     width:120px;
-    height:120px;
-    background: #fff;
+    // height:120px;
+    // background: #fff;
 }
 
-.header .header_info .header_left .header_left_img div img{
+.header .header_info .header_left .header_left_img div a{
     vertical-align: middle;
-    margin:10px;
+    margin:10px auto;
     width: 90px;
     height: 90px;
+    display: block;
 }
 
 .header .header_info .header_left .header_left_img .fs_num{
