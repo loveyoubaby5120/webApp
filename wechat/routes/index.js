@@ -1,3 +1,4 @@
+'use strict'
 var crypto = require('crypto');
 var config = require('../config/config.js');
 var Wechat = require('../wechatApi/wechat.js');
@@ -57,7 +58,7 @@ router.get('/index(\/.*)*', function *(next) {
 	// console.log(params);
 	// console.log(ticket);
 
-	yield this.render('index', { title: '数絮科技', layout: false, params: params, appId: config.wechat.appID});
+	yield this.render('index', { title: '数絮科技', layout: false, url: this.request.url, params: params, appId: config.wechat.appID});
 });
 
 module.exports = router;

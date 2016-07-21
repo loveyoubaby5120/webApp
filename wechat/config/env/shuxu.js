@@ -1,3 +1,4 @@
+'use strict'
 var path = require('path');
 var util = require('../../libs/util.js');
 var wechat_file = path.join(__dirname, '../wechat.txt');

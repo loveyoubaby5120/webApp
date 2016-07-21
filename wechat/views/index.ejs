@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- <html manifest='index.appcache'> -->
+<html manifest='index.appcache'>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -10,6 +10,8 @@
 	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script src="/lib/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript">
+    	console.log("<%=url%>");
+
 	   	wx.config({
 		    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
 		    appId: '<%=appId%>', // 必填，公众号的唯一标识
@@ -41,11 +43,13 @@
 		   	var isRecording = false;
 
 		   	$('button').on('tap', function(){
+		   		console.log('点击录音');
 		   		if(!isRecording){
 		   			isRecording = true;
 
 		   			wx.startRecord({
 		   				cancel: function(){
+		   					alert('那就不能搜了');
 		   					console.log('那就不能搜了');
 		   				}
 		   			})
@@ -63,6 +67,7 @@
 						    isShowProgressTips: 1, // 默认为1，显示进度提示
 						    success: function (res) {
 						        console.log(res.translateResult); // 语音识别的结果
+						        alert(res.translateResult);
 						    }
 						});
 				    }
@@ -79,7 +84,7 @@
     </script>
 </head>
 <body>
-	<button type="">点击录音</button>
+	<button type="button">点击录音</button>
 	<div id="app"></div>
 </body>
 </html>

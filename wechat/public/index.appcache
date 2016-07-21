@@ -1,11 +1,14 @@
 CACHE MANIFEST
 #上面一句必须
 #v2.0.0
+#2016-07-06T09:50:02+29:04
 #需要缓存的文件
 CACHE:
-/css/*
+/css/base.css
 
 /dest/*.js
+
+/lib/jquery/dist/jquery.min.js
 
 #不需要缓存的文件
 NETWORK:
