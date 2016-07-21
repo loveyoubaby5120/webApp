@@ -98,6 +98,10 @@ export default class Bd_more extends React.Component {
                     // return 0.5 - Math.random();
                 })
 
+                 datas.sort(function(str,end){
+                    return end.w_index -str.w_index;
+                 })
+
 
                 datas.forEach(function(data,index){
                     var node;

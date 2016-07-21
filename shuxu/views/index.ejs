@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- <html manifest='index.appcache'> -->
-<html>
+<html manifest='index.appcache'>
+<!-- <html> -->
 <head>
 	<meta charset="utf-8">
     <meta name="renderer" content="webkit"> 
@@ -92,10 +92,11 @@
     <script>
          function myScroll() 
         { 
-            //前边是获取chrome等一般浏览器 如果获取不到就是ie了 就用ie的办法获取 
+
             var x=document.body.scrollTop||document.documentElement.scrollTop; 
+            var topNum = x/7;
             var timer=setInterval(function(){ 
-                x=x-200; 
+                x=x-topNum;
                 if(x<100) 
                 { 
                     x=0; 

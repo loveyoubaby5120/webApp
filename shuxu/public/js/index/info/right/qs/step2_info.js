@@ -28,6 +28,9 @@ export default class Step2_info extends React.Component {
 
 
     getArticle(){
+         if(this.state.type==0){
+            return false;
+        }
         var _this = this;
         $.ajax({
             url: '/article_profile_list?topicArray='+this.state.topicArray+'&type='+this.state.type,

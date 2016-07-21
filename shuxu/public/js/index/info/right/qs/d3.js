@@ -23,6 +23,9 @@ export default class D3 extends React.Component {
     }
 
     componentWillReceiveProps(newProps){
+         if(newProps.type==0){
+            return false;
+        }
         if(this.state.type != newProps.type || this.state.topicArray != newProps.topicArray.join(',') || this.state.topicDateTime != newProps.topicDateTime){
             this.state.topicArray = newProps.topicArray.join(',');
             this.state.topicDateTime = newProps.topicDateTime;
