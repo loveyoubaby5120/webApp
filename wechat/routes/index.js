@@ -50,8 +50,11 @@ router.get('/index(\/.*)*', function *(next) {
 	var ticketData = yield wechatApi.fetchTicket(access_token);
 	var ticket = ticketData.ticket;
 
-	var url = this.href;
+	var url = this.href.replace(':3000','');
 	var params = sign(ticket, url);
+	console.log(url);
+	console.log(params);
+	console.log(ticket);
 
 	yield this.render('index', { title: '数絮科技', layout: false, params: params, appId: config.wechat.appID});
 });
