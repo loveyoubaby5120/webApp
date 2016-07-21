@@ -52,9 +52,10 @@ router.get('/index(\/.*)*', function *(next) {
 
 	var url = this.href.replace(':3000','');
 	var params = sign(ticket, url);
-	console.log(url);
-	console.log(params);
-	console.log(ticket);
+	
+	// console.log(url);
+	// console.log(params);
+	// console.log(ticket);
 
 	yield this.render('index', { title: '数絮科技', layout: false, params: params, appId: config.wechat.appID});
 });
