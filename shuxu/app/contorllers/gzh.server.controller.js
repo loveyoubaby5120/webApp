@@ -223,79 +223,6 @@ module.exports = {
 
 		this.body = [array,dateArray,rows[0][0]];
 	},
-	chart_info: function *(next){
-		var array = [];
-		var zd = ``;
-		var tj = ``;
-		var index = '';
-		if(this.query.type==1){
-			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum`;
-			tj = ` and gzh_id=${this.query.gzh_id}`;
-			index = `sum`;
-		}
-
-		if(this.query.type==2){
-			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum`;
-			tj = ` and f.url like '%idx=1%' and gzh_id=${this.query.gzh_id}`;
-			index = `sum`;
-		}
-
-		if(this.query.type==3){
-			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(id) as count`;
-			tj = ` and gzh_id=${this.query.gzh_id}`;
-			index = `avg`;
-		}
-
-
-		if(this.query.type==4){
-			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(id) as count`;
-			tj = ` and gzh_id=${this.query.gzh_id}`;
-			index = `count`;
-		}
-
-		if(this.query.type==5){
-			zd = ``;
-			tj = ``;
-			index = `other`;
-		}
-
-		if(this.query.type==6){
-			zd = ``;
-			tj = ``;
-			index = `other`;
-		}
-
-		if(this.query.type==7){
-			zd = `case when sum(zan_num) then sum(zan_num) else 0 end as sum,count(id) as count`;
-			tj = `and gzh_id=${this.query.gzh_id}`;
-			index = `sum`;
-		}
-
-		var ztj = ``;
-		for(var i =1;i<13;i++){
-			if(index=='other'){
-				array.push(0);
-				continue;
-			}
-			ztj = tj +` and from_unixtime(pub_time,'%Y年%m月%d日') like '%${i}月%'`;
-			var sql = `call art_info("${zd}","${ztj}","","","desc")`;
-			var rows = yield querySql(sql);
-			if(index=='sum'){
-				array.push(rows[0][0].sum);
-			}
-			else if(index=='count'){
-				array.push(rows[0][0].count);
-			}
-			else if(index=='avg'){
-				array.push(rows[0][0].sum ? Math.floor(rows[0][0].sum/rows[0][0].count) : '0');
-			}
-			else if(index=='other'){
-				array.push(0);
-			}
-			
-		}
-		this.body = array;
-	},
 	chart_days_info: function *(next){
 		var array = [];
 		var dateArray = [];
@@ -351,11 +278,7 @@ module.exports = {
 
 
 		var daysNum = parseInt(this.query.days);
-		// ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(dateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(dateTime) group by year(dateTime),month(dateTime),day(dateTime)`;
 		ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(pDateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(pDateTime) group by year(pDateTime),month(pDateTime),day(pDateTime)`;
-		// if(this.query.type==2){
-		// 	ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(pDateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(pDateTime) group by year(pDateTime),month(pDateTime),day(pDateTime)`;
-		// }
 
 		zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
 
@@ -382,11 +305,9 @@ module.exports = {
 			dateArray.push(rows[0][i].date);
 
 			if(rows[0][i].sum){
-				// sumDay += rows[0][i].sum;
 				sumDay = rows[0][i].sum;
 			}
 			if(rows[0][i].count){
-				// countDay += rows[0][i].count;
 				countDay = rows[0][i].count;
 			}
 			if(index=='sum'){

@@ -21,7 +21,6 @@ router.get('/map_info', GzhController.map_info);
 
 router.get('/ranking_info', GzhController.ranking_info);
 
-router.get('/chart_info', GzhController.chart_info);
 router.get('/chart_days_info', GzhController.chart_days_info);
 
 router.get('/statistics_info', GzhController.statistics_info);
