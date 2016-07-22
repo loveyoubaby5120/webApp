@@ -19,14 +19,11 @@ export default class Ranking extends React.Component {
                 return x;
             })()
         this.state = {
-            map: {
-                total_rank: '--',
-                max_total_rank: '--',
-                rank: '--',
-                max_rank: '--',
-                w_index: '--',
-            },
-            index: 1,
+            zpm: '--',
+            yxlzs: '--',
+            hypm: '--',
+            lszgzpm: '--',
+            lszghypm: '--',
             XD: XD
         }
     }
@@ -34,11 +31,16 @@ export default class Ranking extends React.Component {
     componentDidMount(){
 
         // var myChart = echarts.init(document.getElementById('main1'));
+
         this.state = {
             // myChart: myChart,
             type: 1,
             legendNames:['影响力指数'],
-            map: this.state.map,
+            zpm: this.state.zpm,
+            yxlzs: this.state.yxlzs,
+            hypm: this.state.hypm,
+            lszgzpm: this.state.lszgzpm,
+            lszghypm: this.state.lszghypm,
             XD: this.state.XD
         }
 
@@ -117,9 +119,13 @@ export default class Ranking extends React.Component {
             url: '/ranking_info?gzh_id='+this.props.gzh_id+'&days='+days,
             async: true,
             success: function(data){
-                console.log(data);
+
                 _this.setState({
-                    map: data[2]
+                    zpm: data[2].zpm,
+                    yxlzs: data[2].yxlzs,
+                    hypm: data[2].hypm,
+                    lszgzpm: data[2].lszgzpm,
+                    lszghypm: data[2].lszghypm,
                 });
 
 
@@ -171,23 +177,23 @@ export default class Ranking extends React.Component {
                     <ul className="map">
                         <li className="item zpm">
                             <p className="title">总排名</p>
-                            <p className="num">{this.state.map.total_rank}</p>
+                            <p className="num">{this.state.zpm}</p>
                         </li>
                         <li className="item yxlzs">
                             <p className="title">影响力指数<span className='document'>?</span></p>
-                            <p className="num">{this.state.map.w_index}</p>
+                            <p className="num">{this.state.yxlzs}</p>
                         </li>
                         <li className="item hypm">
                             <p className="title">行业排名</p>
-                            <p className="num">{this.state.map.rank}</p>
+                            <p className="num">{this.state.hypm}</p>
                         </li>
                         <li className="item lszgzpm">
                             <p className="title">历史最高总排名</p>
-                            <p className="num">{this.state.map.max_total_rank}</p>
+                            <p className="num">{this.state.lszgzpm}</p>
                         </li>
                         <li className="item lszghypm">
                             <p className="title">历史最高行业排名</p>
-                            <p className="num">{this.state.map.max_rank}</p>
+                            <p className="num">{this.state.lszghypm}</p>
                         </li>
                     </ul>
                     

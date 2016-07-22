@@ -146,7 +146,7 @@ function querySql(sql){
 
 module.exports = {
 	map: function *(next){
-		var sql = 'select (select from_unixtime(max(pub_time),"%m月%d日 %H时整") from article_profile) as time,(select count(*) from gzh_profile) as gzhCount,(select count(*) from article_profile) as artCount,(select sum(read_num) from article_profile) as readSum';
+		var sql = 'select (select from_unixtime(max(pub_time),"%m月%d日 %H时整") from article_profile) as time,(select count(*) from gzh_profile) as gzhCount,(select count(*) from article_profile) as artCount,(select sum(read_num) from (select DISTINCT * from read_num as a,(select max(time) as RMaxtime from read_num group by article_id) as b where a.time=b.RMaxtime) e) as readSum';
 
 		var rows = yield querySql(sql);
 
@@ -162,10 +162,10 @@ module.exports = {
 	gzh_profile_list: function *(next){
 		var sql = ``;
 		if(this.query.limitNum && isNaN(this.query.limitNum)){
-			sql = `call doSql("*"," and type = ${this.query.type}","","rank","","gzh_profile")`;
+			sql = `call gzh_info("*"," and type = ${this.query.type} and time=maxTime group by id","","rank","")`;
 		}
 		else{
-			sql = `call doSql("*"," and type = ${this.query.type}","${this.query.limitNum}","rank","","gzh_profile")`;
+			sql = `call gzh_info(""," and type = ${this.query.type} and time=maxTime group by id","${this.query.limitNum}","rank","")`;
 		}
 
 		var rows = yield querySql(sql);
@@ -174,12 +174,24 @@ module.exports = {
 	},
 	article_profile_list: function *(next){
 		var limit = '10';
-		var where = ` and date_sub(curdate(), INTERVAL 7 DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i'))`;
+		var where = ' and date_sub(curdate(), INTERVAL 7 DAY) <= date(f.dateTime)';
 
-		var sql = `call doSql("*,from_unixtime(pub_time,'%Y-%m-%d %h:%i') as dateTime","${where}","${limit}","pub_time","desc","article_profile")`;
+		var sql = 'call art_info("","'+where+'","'+limit+'","pub_time","desc")';
+
 
 		var rows = yield querySql(sql);
 		this.body = rows[0];
+
+		// pool.getConnection(function(err, connection) {
+	 //        if (err) throw err;
+	 //        connection.query(sql, function(err, rows) {
+	 //            if (err) throw  err;
+	 //        });
+	 //        //回收pool
+	 //        connection.release();
+	 //    });
+
+
 
 		
 	},
@@ -195,7 +207,6 @@ module.exports = {
 	},
 	map_info: function *(next){
 		var sql = 'select * from info where id='+this.query.gzh_id;
-		console.log(sql);
 		var rows = yield querySql(sql);
 		this.body = rows;
 	},
@@ -203,14 +214,15 @@ module.exports = {
 		var array = [];
 		var dateArray = [];
 		var map = {};
-		var zd = `*,from_unixtime(time,'%Y-%m-%d %h:%i') dataTime`;
+		var zd = ``;
 		var tj = ` and gzh_id=${this.query.gzh_id}`;
 
 		var daysNum = this.query.days;
 
 
-		var ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(time,'%Y-%m-%d %h:%i')) and date_sub(curdate(), INTERVAL 1 DAY) >= date(from_unixtime(time,'%Y-%m-%d %h:%i')) group by year(from_unixtime(time,'%Y-%m-%d %h:%i')),month(from_unixtime(time,'%Y-%m-%d %h:%i')),day(from_unixtime(time,'%Y-%m-%d %h:%i'))`;
-		var sql = `call doSql("${zd}","${ztj}","","time","desc","gzh_influence_rank")`;
+		var ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(dateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(dateTime) group by year(dateTime),month(dateTime),day(dateTime)`;
+		var sql = `call doSql("${zd}","${ztj}","","time","desc","gzh_profile_rank_influence")`;
+		console.log(sql);
 		var rows = yield querySql(sql);
 		for(var i =rows[0].length-1; i>=0;i--){
 			dateArray.push(rows[0][i].dateTime);
@@ -218,10 +230,28 @@ module.exports = {
 			
 		}
 
-		sql = `call doSql(""," and id=${this.query.gzh_id}","","time","desc","gzh_profile")`;
+		sql = `call doSql("","${tj}","","time","desc","gzh_rank")`;
 		rows = yield querySql(sql);
+		map.zpm = rows[0][0].rank;
 
-		this.body = [array,dateArray,rows[0][0]];
+		sql = `call doSql("","${tj}","","time","desc","gzh_influence")`;
+		rows = yield querySql(sql);
+		map.yxlzs = rows[0][0].w_index.toFixed(2);
+
+		sql = `call doSql("","${tj}","","time","desc","gzh_type_rank")`;
+		rows = yield querySql(sql);
+		map.hypm = rows[0][0].rank;
+
+		sql = `call doSql("","${tj}","","rank","asc","gzh_rank")`;
+		rows = yield querySql(sql);
+		map.lszgzpm = rows[0][0].rank;
+
+		sql = `call doSql("","${tj}","","rank","asc","gzh_type_rank")`;
+		rows = yield querySql(sql);
+		map.lszghypm = rows[0][0].rank;
+
+
+		this.body = [array,dateArray,map];
 	},
 	chart_info: function *(next){
 		var array = [];
@@ -496,6 +526,7 @@ module.exports = {
 
 
 		sql3 = `call art_info('count(*) as sw',' and gzh_id=`+this.query.gzh_id+` and read_num>=100000${query}','','pub_time','desc')`;
+		console.log(sql3);
 		var rows3 = yield querySql(sql3);
 
 
@@ -525,18 +556,17 @@ module.exports = {
 	},
 	article_profile_info: function *(next){
 		
-		var where = ` and gzh_id=${this.query.gzh_id}`;
-		var limit = ``;
+		var where = ' and gzh_id='+this.query.gzh_id;
+		var limit = '';
 		if(this.query.type==1){
-			where += ` and date_sub(curdate(), INTERVAL 7 DAY) <= date(from_unixtime(time,'%Y-%m-%d %h:%i'))`;
+			where += ' and date_sub(curdate(), INTERVAL 7 DAY) <= date(f.dateTime)';
 		}
 		else{
-			limit = `10`;
+			limit = '10';
 		}
 
-		// var sql = 'call art_info("","'+where+'","'+limit+'","pub_time","desc")';
+		var sql = 'call art_info("","'+where+'","'+limit+'","pub_time","desc")';
 
-		var sql = `call doSql("*,from_unixtime(pub_time,'%Y-%m-%d %h:%i') as dateTime","${where}","${limit}","pub_time","desc","article_profile")`;
 
 		var rows = yield querySql(sql);
 		this.body = rows[0];

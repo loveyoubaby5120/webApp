@@ -6,7 +6,8 @@ module.exports = {
 		port: 3306,
 		user: 'root',
 		password: 'admin123',
-		database: 'weixin',
+		// database: 'weixin',
+		database: 'wechatData',
 		connectionLimit: 50
 	}
 }
