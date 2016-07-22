@@ -195,7 +195,6 @@ module.exports = {
 	},
 	map_info: function *(next){
 		var sql = 'select * from info where id='+this.query.gzh_id;
-		console.log(sql);
 		var rows = yield querySql(sql);
 		this.body = rows;
 	},
@@ -278,7 +277,7 @@ module.exports = {
 
 
 		var daysNum = parseInt(this.query.days);
-		ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(pDateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(pDateTime) group by year(pDateTime),month(pDateTime),day(pDateTime)`;
+		ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i')) and date_sub(curdate(), INTERVAL 1 DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i')) group by year(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),month(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),day(from_unixtime(pub_time,'%Y-%m-%d %h:%i'))`;
 
 		zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
 
@@ -286,8 +285,8 @@ module.exports = {
 		sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","art_read_zan")`;
 
 		if(this.query.type==1 || this.query.type==3 || this.query.type==7){
-			ztj = ` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(pDateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(pDateTime) group by year(pDateTime),month(pDateTime),day(pDateTime)`;
-			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","(select max(read_num) as read_num,max(zan_num) as zan_num,pDateTime,pub_time from art_read_zan where gzh_id=${this.query.gzh_id} group by year(pDateTime),month(pDateTime),day(pDateTime),id order by pub_time,id)")`;
+			ztj = ` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i')) and date_sub(curdate(), INTERVAL 1 DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i')) group by year(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),month(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),day(from_unixtime(pub_time,'%Y-%m-%d %h:%i'))`;
+			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","(select * from article_profile where gzh_id=${this.query.gzh_id} group by year(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),month(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),day(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),id order by pub_time,id)")`;
 		}
 
 
@@ -297,7 +296,6 @@ module.exports = {
 			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","article_profile")`;
 		}
 
-		// console.log(sql);
 
 		var rows = yield querySql(sql);
 		var countDay=0,sumDay=0;
@@ -407,6 +405,7 @@ module.exports = {
 		this.body = [array,dateArray];
 	},
 	statistics_info: function *(next){
+
 		var query = ' and date_sub(curdate(), INTERVAL '+this.query.day+' DAY) <= date(from_unixtime(pub_time,"%Y-%m-%d")) and date_sub(curdate(), INTERVAL 1 DAY) >= date(from_unixtime(pub_time,"%Y-%m-%d"))';
 		var sql = 'select count(*) cs from (select pub_time from article_profile where gzh_id='+this.query.gzh_id+query+' group by pub_time) a';
 		var rows = yield querySql(sql);
@@ -416,14 +415,14 @@ module.exports = {
 		var rows2 = yield querySql(sql2);
 
 
-		sql3 = `call art_info('count(*) as sw',' and gzh_id=`+this.query.gzh_id+` and read_num>=100000${query}','','pub_time','desc')`;
+		sql3 = `call doSql('count(*) as sw',' and gzh_id=`+this.query.gzh_id+` and read_num>=100000${query}','','pub_time','desc','art_read_zan_influence')`;
 		var rows3 = yield querySql(sql3);
 
 
-		sql4 = `call art_info('count(*) count,case when Max(read_num) then Max(read_num) else 0 end as maxRead,case when sum(read_num) then sum(read_num) else 0 end as sumRead,case when sum(zan_num) then sum(zan_num) else 0 end as sumZan',' and gzh_id=`+this.query.gzh_id+`${query}','','pub_time','desc')`;
+		sql4 = `call doSql('count(*) count,case when Max(read_num) then Max(read_num) else 0 end as maxRead,case when sum(read_num) then sum(read_num) else 0 end as sumRead,case when sum(zan_num) then sum(zan_num) else 0 end as sumZan',' and gzh_id=`+this.query.gzh_id+`${query}','','pub_time','desc','art_read_zan_influence')`;
 		var rows4 = yield querySql(sql4);
 
-		sql5 = `call art_info('count(*) ttCount,case when sum(read_num) then sum(read_num) else 0 end as ttSumRead',' and gzh_id=`+this.query.gzh_id+` and url like "%idx=1%"${query}','','pub_time','desc')`;
+		sql5 = `call doSql('count(*) ttCount,case when sum(read_num) then sum(read_num) else 0 end as ttSumRead',' and gzh_id=`+this.query.gzh_id+` and url like "%idx=1%"${query}','','pub_time','desc','art_read_zan_influence')`;
 		var rows5 = yield querySql(sql5);
 
 
@@ -454,8 +453,6 @@ module.exports = {
 		else{
 			limit = `10`;
 		}
-
-		// var sql = 'call art_info("","'+where+'","'+limit+'","pub_time","desc")';
 
 		var sql = `call doSql("*,from_unixtime(pub_time,'%Y-%m-%d %h:%i') as dateTime","${where}","${limit}","pub_time","desc","article_profile")`;
 
