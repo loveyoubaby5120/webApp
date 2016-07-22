@@ -282,11 +282,11 @@ module.exports = {
 		zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
 
 		var sql = ``;
-		sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","art_read_zan")`;
+		sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","art_read_zan_influence")`;
 
 		if(this.query.type==1 || this.query.type==3 || this.query.type==7){
 			ztj = ` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i')) and date_sub(curdate(), INTERVAL 1 DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i')) group by year(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),month(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),day(from_unixtime(pub_time,'%Y-%m-%d %h:%i'))`;
-			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","(select * from article_profile where gzh_id=${this.query.gzh_id} group by year(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),month(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),day(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),id order by pub_time,id)")`;
+			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","(select * from art_read_zan_influence where gzh_id=${this.query.gzh_id} group by year(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),month(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),day(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),id order by pub_time,id)")`;
 		}
 
 
