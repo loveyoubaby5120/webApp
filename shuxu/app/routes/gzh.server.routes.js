@@ -1,6 +1,7 @@
 var Router = require('koa-router');
 var router = new Router();
 var GzhController = require('../contorllers/gzh.server.controller.js');
+// var GzhController = require('../contorllers/gzh.server.controller_.js');
 
 
 router.get('/map', GzhController.map);
