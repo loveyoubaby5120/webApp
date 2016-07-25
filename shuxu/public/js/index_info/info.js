@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import Ranking from './info/ranking.js'
+// import Ranking from './info/ranking_.js'
 import Chart from './info/chart.js'
 import Statistics from './info/statistics.js'
 import Step2_info from './info/step2_info.js'

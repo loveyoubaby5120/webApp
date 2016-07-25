@@ -167,7 +167,6 @@ module.exports = {
 		else{
 			sql = `call gzh_info(""," and type = ${this.query.type} and time=maxTime group by id","${this.query.limitNum}","rank","")`;
 		}
-
 		var rows = yield querySql(sql);
 
 		this.body = rows[0];
@@ -222,7 +221,6 @@ module.exports = {
 
 		var ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(dateTime) and date_sub(curdate(), INTERVAL 1 DAY) >= date(dateTime) group by year(dateTime),month(dateTime),day(dateTime)`;
 		var sql = `call doSql("${zd}","${ztj}","","time","desc","gzh_profile_rank_influence")`;
-		console.log(sql);
 		var rows = yield querySql(sql);
 		for(var i =rows[0].length-1; i>=0;i--){
 			dateArray.push(rows[0][i].dateTime);
@@ -526,7 +524,6 @@ module.exports = {
 
 
 		sql3 = `call art_info('count(*) as sw',' and gzh_id=`+this.query.gzh_id+` and read_num>=100000${query}','','pub_time','desc')`;
-		console.log(sql3);
 		var rows3 = yield querySql(sql3);
 
 

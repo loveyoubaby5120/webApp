@@ -227,7 +227,7 @@ export default class Bd_more extends React.Component {
     render() {
         return (
             <div className={this.props.show=='bd_more' ? "table blur auto" : "table blur none"}>
-                <div className="formOptions">
+                <div className={this.state.type=='4' ? "formOptions" : "formOptions none"}>
                     <div className="options">
                         <div className="query">
                             <a className='ok check' href="javascript:;" data-value='0'>年龄</a><span className='down'>ˇ</span>
