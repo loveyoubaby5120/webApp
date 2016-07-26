@@ -282,11 +282,11 @@ module.exports = {
 		zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
 
 		var sql = ``;
-		sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","art_read_zan_influence")`;
+		sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","article_profile")`;
 
 		if(this.query.type==1 || this.query.type==3 || this.query.type==7){
 			ztj = ` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i')) and date_sub(curdate(), INTERVAL 1 DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i')) group by year(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),month(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),day(from_unixtime(pub_time,'%Y-%m-%d %h:%i'))`;
-			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","(select * from art_read_zan_influence where gzh_id=${this.query.gzh_id} group by year(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),month(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),day(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),id order by pub_time,id)")`;
+			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","(select * from article_profile where gzh_id=${this.query.gzh_id} group by year(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),month(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),day(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),id order by pub_time,id)")`;
 		}
 
 
@@ -415,14 +415,14 @@ module.exports = {
 		var rows2 = yield querySql(sql2);
 
 
-		sql3 = `call doSql('count(*) as sw',' and gzh_id=`+this.query.gzh_id+` and read_num>=100000${query}','','pub_time','desc','art_read_zan_influence')`;
+		sql3 = `call doSql('count(*) as sw',' and gzh_id=`+this.query.gzh_id+` and read_num>=100000${query}','','pub_time','desc','article_profile')`;
 		var rows3 = yield querySql(sql3);
 
 
-		sql4 = `call doSql('count(*) count,case when Max(read_num) then Max(read_num) else 0 end as maxRead,case when sum(read_num) then sum(read_num) else 0 end as sumRead,case when sum(zan_num) then sum(zan_num) else 0 end as sumZan',' and gzh_id=`+this.query.gzh_id+`${query}','','pub_time','desc','art_read_zan_influence')`;
+		sql4 = `call doSql('count(*) count,case when Max(read_num) then Max(read_num) else 0 end as maxRead,case when sum(read_num) then sum(read_num) else 0 end as sumRead,case when sum(zan_num) then sum(zan_num) else 0 end as sumZan',' and gzh_id=`+this.query.gzh_id+`${query}','','pub_time','desc','article_profile')`;
 		var rows4 = yield querySql(sql4);
 
-		sql5 = `call doSql('count(*) ttCount,case when sum(read_num) then sum(read_num) else 0 end as ttSumRead',' and gzh_id=`+this.query.gzh_id+` and url like "%idx=1%"${query}','','pub_time','desc','art_read_zan_influence')`;
+		sql5 = `call doSql('count(*) ttCount,case when sum(read_num) then sum(read_num) else 0 end as ttSumRead',' and gzh_id=`+this.query.gzh_id+` and url like "%idx=1%"${query}','','pub_time','desc','article_profile')`;
 		var rows5 = yield querySql(sql5);
 
 
@@ -448,7 +448,7 @@ module.exports = {
 		var where = ` and gzh_id=${this.query.gzh_id}`;
 		var limit = ``;
 		if(this.query.type==1){
-			where += ` and date_sub(curdate(), INTERVAL 7 DAY) <= date(from_unixtime(time,'%Y-%m-%d %h:%i'))`;
+			where += ` and date_sub(curdate(), INTERVAL 7 DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i'))`;
 		}
 		else{
 			limit = `10`;
