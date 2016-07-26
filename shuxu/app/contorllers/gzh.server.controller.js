@@ -254,13 +254,13 @@ module.exports = {
 		}
 
 		if(this.query.type==5){
-			zd = ``;
+			zd = `1`;
 			tj = ``;
 			index = `other`;
 		}
 
 		if(this.query.type==6){
-			zd = ``;
+			zd = `1`;
 			tj = ``;
 			index = `other`;
 		}
