@@ -90,13 +90,17 @@ export default class Bd_more extends React.Component {
                 var options = [];
                 var num = _this.state.nodes.length;
 
-                 datas.sort(function(str,end){
-                    var sum = option_array.sum();
-                    var index = (str.remark*10%sum).toFixed(0);
-                    str.w_index = (str.w_index * rand[index]).toFixed(4);
-                    return end.w_index -str.w_index;
-                    // return 0.5 - Math.random();
-                })
+                if(_this.state.type == 4){
+
+                     datas.sort(function(str,end){
+                        var sum = option_array.sum();
+                        var remark = str.remark || 1;
+                        var index = (remark*10%sum).toFixed(0);
+                        str.w_index = (str.w_index * rand[index]).toFixed(4);
+                        return end.w_index -str.w_index;
+                    })
+
+                 }
 
                  datas.sort(function(str,end){
                     return end.w_index -str.w_index;

@@ -162,11 +162,13 @@ module.exports = {
 	gzh_profile_list: function *(next){
 		var sql = ``;
 		if(this.query.limitNum && isNaN(this.query.limitNum)){
-			sql = `call gzh_info("*"," and type = ${this.query.type} and time=maxTime group by id","","rank","")`;
+			sql = `call gzh_info(""," and type = ${this.query.type} group by id","","rank","")`;
 		}
 		else{
-			sql = `call gzh_info(""," and type = ${this.query.type} and time=maxTime group by id","${this.query.limitNum}","rank","")`;
+			sql = `call gzh_info(""," and type = ${this.query.type} group by id","${this.query.limitNum}","rank","")`;
 		}
+
+		
 		var rows = yield querySql(sql);
 
 		this.body = rows[0];
