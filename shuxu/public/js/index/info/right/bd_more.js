@@ -101,10 +101,11 @@ export default class Bd_more extends React.Component {
                     })
 
                  }
-
-                 datas.sort(function(str,end){
-                    return end.w_index -str.w_index;
-                 })
+                 else{
+                     datas.sort(function(str,end){
+                        return str.rank -end.rank;
+                     })
+                 }
 
 
                 datas.forEach(function(data,index){
