@@ -162,10 +162,10 @@ module.exports = {
 	gzh_profile_list: function *(next){
 		var sql = ``;
 		if(this.query.limitNum && isNaN(this.query.limitNum)){
-			sql = `call doSql("*"," and type = ${this.query.type}","","rank","","gzh_profile")`;
+			sql = `call doSql("*"," and type = ${this.query.type}","","w_index","desc","gzh_profile")`;
 		}
 		else{
-			sql = `call doSql("*"," and type = ${this.query.type}","${this.query.limitNum}","rank","","gzh_profile")`;
+			sql = `call doSql("*"," and type = ${this.query.type}","${this.query.limitNum}","w_index","desc","gzh_profile")`;
 		}
 
 		var rows = yield querySql(sql);
