@@ -176,7 +176,7 @@ module.exports = {
 		var limit = '10';
 		var where = ` and date_sub(curdate(), INTERVAL 7 DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i'))`;
 
-		var sql = `call doSql("*,from_unixtime(pub_time,'%Y-%m-%d %h:%i') as dateTime","${where}","${limit}","pub_time","desc","article_profile")`;
+		var sql = `call doSql("*,from_unixtime(pub_time,'%Y-%m-%d %h:%i') as dateTime","${where}","${limit}","read_num,zan_num","desc","article_profile")`;
 
 		var rows = yield querySql(sql);
 		this.body = rows[0];
