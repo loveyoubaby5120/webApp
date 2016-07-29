@@ -103,7 +103,8 @@ export default class Bd_more extends React.Component {
                  }
                  else{
                      datas.sort(function(str,end){
-                        return str.rank -end.rank;
+                        return end.w_index -str.w_index;
+                        // return str.rank -end.rank;
                      })
                  }
 
@@ -162,12 +163,23 @@ export default class Bd_more extends React.Component {
                     var td10 = React.createElement('td',{className:'text'},div10);
 
 
-                    if((index+num)%2==0){
-                        var tr = React.createElement('tr',{className:'even',key:index},td2,td3,td4,td5,td6,td7,td10,td9);
+                    if(_this.state.type == 4){
+                        if((index+num)%2==0){
+                            var tr = React.createElement('tr',{className:'even',key:index},td2,td3,td4,td5,td6,td7,td10,td9);
+                        }
+                        else{
+                            var tr = React.createElement('tr',{className:'',key:index},td2,td3,td4,td5,td6,td7,td10,td9);
+                        }
                     }
                     else{
-                        var tr = React.createElement('tr',{className:'',key:index},td2,td3,td4,td5,td6,td7,td10,td9);
+                        if((index+num)%2==0){
+                            var tr = React.createElement('tr',{className:'even',key:index},td2,td3,td4,td5,td6,td7,td9);
+                        }
+                        else{
+                            var tr = React.createElement('tr',{className:'',key:index},td2,td3,td4,td5,td6,td7,td9);
+                        }
                     }
+                    
 
 
                     options.push(tr);
@@ -282,7 +294,16 @@ export default class Bd_more extends React.Component {
                             <th className="w_15"><div><p className="">粉丝黏性</p></div></th>
                             <th className="w_15"><div><p className="">增长潜力</p></div></th>
                             <th className="w_20"><div><p className="">影响指数</p></div></th>
-                            <th className="w_10"><div><p className="">相关性<span className='document' onClick={this.onChangeShow.bind(this,true)}>?</span></p></div></th>
+                            {
+                                (function(obj){
+                                    if(obj.state.type == 4){
+                                        return <th className="w_10"><div><p className="">相关性<span className="document" onClick={obj.onChangeShow.bind(this,true)}>?</span></p></div></th>
+                                    }
+                                })(this)
+                                
+                            }
+                            
+
                             <th className="w_15 last"><div><p className="">查看详细</p></div></th>
                         </tr>
                     </thead>
