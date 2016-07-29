@@ -206,9 +206,9 @@ module.exports = {
 		var tj = ` and gzh_id=${this.query.gzh_id}`;
 
 		var daysNum = this.query.days;
+		var strDaysNum = 1;
 
-
-		var ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(time,'%Y-%m-%d %h:%i')) and date_sub(curdate(), INTERVAL 1 DAY) >= date(from_unixtime(time,'%Y-%m-%d %h:%i')) group by year(from_unixtime(time,'%Y-%m-%d %h:%i')),month(from_unixtime(time,'%Y-%m-%d %h:%i')),day(from_unixtime(time,'%Y-%m-%d %h:%i'))`;
+		var ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(time,'%Y-%m-%d %h:%i')) and date_sub(curdate(), INTERVAL ${strDaysNum} DAY) >= date(from_unixtime(time,'%Y-%m-%d %h:%i')) group by year(from_unixtime(time,'%Y-%m-%d %h:%i')),month(from_unixtime(time,'%Y-%m-%d %h:%i')),day(from_unixtime(time,'%Y-%m-%d %h:%i'))`;
 		var sql = `call doSql("${zd}","${ztj}","","time","desc","gzh_influence_rank")`;
 		var rows = yield querySql(sql);
 		for(var i =rows[0].length-1; i>=0;i--){
@@ -273,11 +273,10 @@ module.exports = {
 
 		var ztj = ``;
 		var zzd = ``;
-		var daysNum = parseInt(this.query.days)+1;
+		var daysNum = parseInt(this.query.days)+4;
+		var strDaysNum = 4;
 
-
-		var daysNum = parseInt(this.query.days);
-		ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i')) and date_sub(curdate(), INTERVAL 1 DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i')) group by year(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),month(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),day(from_unixtime(pub_time,'%Y-%m-%d %h:%i'))`;
+		ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i')) and date_sub(curdate(), INTERVAL ${strDaysNum} DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i')) group by year(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),month(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),day(from_unixtime(pub_time,'%Y-%m-%d %h:%i'))`;
 
 		zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
 
@@ -285,18 +284,16 @@ module.exports = {
 		sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","article_profile")`;
 
 		if(this.query.type==1 || this.query.type==3 || this.query.type==7){
-			ztj = ` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i')) and date_sub(curdate(), INTERVAL 1 DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i')) group by year(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),month(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),day(from_unixtime(pub_time,'%Y-%m-%d %h:%i'))`;
+			ztj = ` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i')) and date_sub(curdate(), INTERVAL ${strDaysNum} DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i')) group by year(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),month(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),day(from_unixtime(pub_time,'%Y-%m-%d %h:%i'))`;
 			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","(select * from article_profile where gzh_id=${this.query.gzh_id} group by year(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),month(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),day(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),id order by pub_time,id)")`;
 		}
 
 
 		if(this.query.type==4){
-			ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d')) and date_sub(curdate(), INTERVAL 1 DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d')) group by year(from_unixtime(pub_time,'%Y-%m-%d')),month(from_unixtime(pub_time,'%Y-%m-%d')),day(from_unixtime(pub_time,'%Y-%m-%d'))`;
+			ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d')) and date_sub(curdate(), INTERVAL ${strDaysNum} DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d')) group by year(from_unixtime(pub_time,'%Y-%m-%d')),month(from_unixtime(pub_time,'%Y-%m-%d')),day(from_unixtime(pub_time,'%Y-%m-%d'))`;
 			zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
 			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","article_profile")`;
 		}
-
-
 		var rows = yield querySql(sql);
 		var countDay=0,sumDay=0;
 		for(var i =rows[0].length-1; i>=0;i--){
@@ -405,11 +402,12 @@ module.exports = {
 		this.body = [array,dateArray];
 	},
 	statistics_info: function *(next){
-
-		var query = ' and date_sub(curdate(), INTERVAL '+this.query.day+' DAY) <= date(from_unixtime(pub_time,"%Y-%m-%d")) and date_sub(curdate(), INTERVAL 1 DAY) >= date(from_unixtime(pub_time,"%Y-%m-%d"))';
-		var sql = 'select count(*) cs from (select pub_time from article_profile where gzh_id='+this.query.gzh_id+query+' group by pub_time) a';
+		var gzh_id = this.query.gzh_id;
+		var daysNum = parseInt(this.query.day)+4;
+		var strDaysNum = 4;
+		var query = ` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,"%Y-%m-%d")) and date_sub(curdate(), INTERVAL ${strDaysNum} DAY) >= date(from_unixtime(pub_time,"%Y-%m-%d"))`;
+		var sql = `select count(*) cs from (select pub_time from article_profile where gzh_id=${gzh_id} ${query} group by pub_time) a`;
 		var rows = yield querySql(sql);
-
 
 		var sql2 = 'select count(*) ps from article_profile where gzh_id='+this.query.gzh_id+query;
 		var rows2 = yield querySql(sql2);
