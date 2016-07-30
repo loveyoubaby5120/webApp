@@ -1,7 +1,7 @@
 CACHE MANIFEST
 #上面一句必须
 #v2.0.0
-#2016-07-06T09:50:02+29:29
+#2016-07-06T09:50:02+29:23
 #需要缓存的文件
 CACHE:
 /css/base.css
@@ -12,6 +12,7 @@ CACHE:
 /lib/other/jquery.min.js
 /lib/other/echarts-all.js
 /lib/other/mmnt-info.js
+/lib/d3/d3.v3.min.js
 /dest/common.js
 /dest/router.js
 
