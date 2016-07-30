@@ -226,15 +226,17 @@ module.exports = {
 	article_profile_list: function *(next){
 		var limit = '10';
 		var topicArray = this.query.topicArray ? this.query.topicArray : '0';
+		var topicDateTime = this.query.topicDateTime;
 
 		// var where = ` and date_sub(curdate(), INTERVAL 7 DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i'))`;
 
 		// var sql = `call doSql("*,from_unixtime(pub_time,'%Y-%m-%d %h:%i') as dateTime","${where}","${limit}","read_num,zan_num","desc","article_profile")`;
 
-		var where = ` and date_sub(curdate(), INTERVAL 7 DAY) <= date(from_unixtime(b.pub_time,'%Y-%m-%d %h:%i')) and a.topic_id in (${topicArray}) `;
+		// var where = ` and date_sub(curdate(), INTERVAL ${topicDateTime} DAY) <= date(from_unixtime(b.pub_time,'%Y-%m-%d %h:%i')) and a.topic_id in (${topicArray}) `;
+
+		var where = ` and a.topic_id in (${topicArray}) `;
 
 		var sql = `select *,from_unixtime(b.pub_time,'%Y-%m-%d %h:%i') as dateTime from topic_article a,article_profile b where a.article_id=b.id ${where} order by read_num,zan_num,pub_time desc limit ${limit}`;
-
 		var rows = yield querySql(sql);
 
 		this.body = rows;
