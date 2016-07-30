@@ -10,7 +10,7 @@ export default class Right extends React.Component {
    constructor(props) {
         super(props);
         this.state = {
-          topicArray: [],
+          topicArray: [1,2,3,4],
           topicDateTime: 30
         }
   }
@@ -34,7 +34,7 @@ export default class Right extends React.Component {
 	        <div className="step2">
 	            文章影响力排名
 	        </div>
-	        <Step2_info type={this.props.type} topicArray = {this.state.topicArray}></Step2_info>
+	        <Step2_info type={this.props.type} topicArray = {this.state.topicArray} topicDateTime = {this.state.topicDateTime}></Step2_info>
         </div>
     )
   }

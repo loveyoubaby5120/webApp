@@ -172,16 +172,15 @@ module.exports = {
 
 		this.body = rows[0];
 	},
-	article_profile_list: function *(next){
-		var limit = '10';
-		var where = ` and date_sub(curdate(), INTERVAL 7 DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i'))`;
+	topic: function *(next){
+		var array = [];
+		var zd = ``;
+		var tj = ``;
 
-		var sql = `call doSql("*,from_unixtime(pub_time,'%Y-%m-%d %h:%i') as dateTime","${where}","${limit}","read_num,zan_num","desc","article_profile")`;
-
+		var ztj = tj + ` and type=${this.query.gzh_type}`;
+		var sql = `call doSql("${zd}","${tj}","","type","desc",'(select 1 as type)')`;
 		var rows = yield querySql(sql);
-		this.body = rows[0];
-
-		
+		this.body = rows;
 	},
 	topic_hot: function *(next){
 		var array = [];
@@ -192,6 +191,17 @@ module.exports = {
 		var sql = `call doSql("${zd}","${tj}","","type","desc",'(select 1 as type)')`;
 		var rows = yield querySql(sql);
 		this.body = rows;
+	},
+	article_profile_list: function *(next){
+		var limit = '10';
+		var where = ` and date_sub(curdate(), INTERVAL 7 DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i'))`;
+
+		var sql = `call doSql("*,from_unixtime(pub_time,'%Y-%m-%d %h:%i') as dateTime","${where}","${limit}","read_num,zan_num","desc","article_profile")`;
+
+		var rows = yield querySql(sql);
+		this.body = rows[0];
+
+		
 	},
 	map_info: function *(next){
 		var sql = 'select * from info where id='+this.query.gzh_id;

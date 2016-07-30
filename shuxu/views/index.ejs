@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="/css/common.css"/>
     <link rel="stylesheet" href="/css/<%=css%>"/>
     <script src="/lib/other/jquery.min.js"></script>
+    
 
     <% if(css === 'index_new_pc_info.css'){ %>
-    <%}%>
         <script src="/lib/other/echarts-all.js"></script>
-
-    <!-- <link rel="stylesheet" href="/css/mmnt.css" />
-    <script src="../lib/other/mmnt-info.js"></script> -->
+    <%} else{%>
+        <script src="/lib/d3/d3.v3.min.js"></script>
+    <%}%>
 
     <script type="text/javascript">
 
@@ -83,6 +83,20 @@
    
     	console.log('<%= url%>');
     </script>
+
+    <style type="text/css">
+        .axis path,
+        .axis line {
+          fill: none;
+          stroke: #000;
+          shape-rendering: crispEdges;
+          stroke-width: 2;
+        }
+        #main, #main2 {
+          position: relative;
+        }
+    </style>
+
 </head>
 <body>
 	<div id="app"></div>

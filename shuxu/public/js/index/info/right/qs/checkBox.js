@@ -41,18 +41,18 @@ export default class CheckBox extends React.Component {
         });
 
 
-        // $.ajax({
-        //     url: '/topic_hot?gzh_type='+this.state.type,
-        //     async: true,
-        //     success: function(data){
-        //         _this.setState({
-        //             topic: data
-        //         });
-        //     },
-        //     error: function(msg){
-        //         console.log(msg);
-        //     }
-        // });
+        $.ajax({
+            url: '/topic?gzh_type='+this.state.type,
+            async: true,
+            success: function(data){
+                _this.setState({
+                    topic: data
+                });
+            },
+            error: function(msg){
+                console.log(msg);
+            }
+        });
 
     }
 
