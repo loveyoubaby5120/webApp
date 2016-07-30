@@ -64,6 +64,7 @@ export default class D3 extends React.Component {
         this.state = {
             type: this.props.type,
             topicArray: this.props.topicArray,
+            topicColor: this.props.topicColor,
             topicDateTime: this.props.topicDateTime
         }
 
@@ -100,13 +101,15 @@ export default class D3 extends React.Component {
         this.accessChange();
     }
 
-    componentWillReceiveProps(newProps)
+    componentWillReceiveProps(newProps) {
         if(newProps.type==0){
             return false;
         }
+
         // this.state.topicArray != newProps.topicArray.join(',')
         // if(this.state.type != newProps.type || this.state.topicDateTime != newProps.topicDateTime){
             this.state.topicArray = newProps.topicArray;
+            this.state.topicColor = newProps.topicColor;
             this.state.topicDateTime = newProps.topicDateTime;
             this.state.type = newProps.type;
             this.accessChange();
@@ -176,12 +179,22 @@ export default class D3 extends React.Component {
         var yAxis = this.yAxis;
         var datearray = [];
         // var svg = this.svg;
-
-        var svg = d3.select("#main").append("svg")
+        
+        var svg;
+        if(d3.select("#main svg")[0][0]){
+            svg = d3.select("#main svg g")
+        }
+        else{
+            svg = d3.select("#main").append("svg")
             .attr("width", this.width + this.margin.left + this.margin.right)
             .attr("height", this.height + this.margin.top + this.margin.bottom)
             .append("g")
-            .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
+            .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");    
+        }
+        
+
+
+        
 
         var area = d3.svg.area()
             .interpolate("cardinal")
@@ -419,11 +432,19 @@ export default class D3 extends React.Component {
         var yAxis = this.yAxis;
         var datearray = [];
 
-        var svg1 = d3.select("#main2").append("svg")
+        var svg1;
+
+        if(d3.select("#main2 svg")[0][0]){
+            svg = d3.select("#main svg g")
+        }
+        else{
+            svg1 = d3.select("#main2").append("svg")
             .attr("width", this.width + this.margin.left + this.margin.right)
             .attr("height", this.height + this.margin.top + this.margin.bottom)
             .append("g")
             .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
+        }
+
 
         var stack = d3.layout.stack()
                     .offset("zero")
@@ -654,16 +675,22 @@ export default class D3 extends React.Component {
         // })
     }
 
-    //切换 数据  暂时无用
+    //切换 数据
     accessChange(){
+
+        if(this.state.topicArray.length == 0){
+            d3.selectAll('#main *,#main2 *').remove();
+            $("#main *,#main2 *").remove();
+            return false;
+        }
         var _this = this;
         var topicDateTime = this.state.topicDateTime;
         var topicArray = this.state.topicArray;
         var format = this.format;
 
 
-        d3.selectAll('#main2 *').remove();
-        d3.selectAll('#main *').remove();
+        d3.selectAll('#main g *,#main2 *,#main .remove,#main2 .remove').remove();
+
 
         if(this.state.topicDateTime == 30){
           this.xAxis = this.xAxis_th;
@@ -671,36 +698,25 @@ export default class D3 extends React.Component {
           this.xAxis = this.xAxis_se;
         }
 
-
         $.ajax({
             url: '/topic_hot?topicArray='+topicArray+'&topicDateTime='+topicDateTime,
             // url: '/js/index/info/right/d3-demo/d4.json',
             async: true,
             success: function(data){
-                // var dayV = topicDateTime;
-                // var a = [];
 
 
-                // for(var i = 0; i < topicArray.length; i++){
-                //     a[topicArray[i]-1] = topicArray[i]-1;
-                // }
-
-                // var ds = [];
-                // data.forEach(function(d, i){
-                //     if((a[i]) == i){
-                //         ds = ds.concat(d.slice(d.length-dayV, d.length));
-                //     }
-                // });
-                // data = ds;
                 if(!data.length){
                     return true;
                 }
-
                 
                 data.forEach(function(d){
-                    d.dateStr = d.date;
-                    d.date = format.parse(d.date);
-                    d.value = parseFloat(d.value.toFixed(2));
+                    d.date = new Date(d.time);
+                    d.dateStr = d.date.getFullYear()+"-"+(d.date.getMonth()+1)+"-"+d.date.getDate();
+                    // d.date = format.parse(d.date);
+                    // d.value = parseFloat(d.hot.toFixed(2));
+                    d.value = d.hot;
+                    d.key = d.name;
+                    d.event = d.event ? d.event : '';
                 });
 
                 _this.chart(data);
@@ -720,7 +736,7 @@ export default class D3 extends React.Component {
     render() {
 
         return (
-             <div className="chart">
+             <div className={ this.state.topicArray.length == 0 ? 'chart none' : "chart"}>
                 <div id="main"></div>
                 <form id="changeInput">
                     <label><input type="radio" name="mode" value="grouped" /> Grouped</label>

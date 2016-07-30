@@ -10,16 +10,18 @@ export default class Right extends React.Component {
    constructor(props) {
         super(props);
         this.state = {
-          topicArray: [1,2,3,4],
-          topicDateTime: 30
+          topicArray: [],
+          topicColor: [],
+          topicDateTime: 7
         }
   }
 
 
 
-   onTopic(newState, topicDateTime){
+   onTopic(newState, topicColor, topicDateTime){
       this.setState({
         topicArray: newState,
+        topicColor: topicColor,
         topicDateTime: topicDateTime
       });
 
@@ -30,8 +32,8 @@ export default class Right extends React.Component {
     return (
         <div className="qs_right">
         	<CheckBox type={this.props.type} topicArray={this.state.topicArray} callbackParent={this.onTopic.bind(this)}></CheckBox>
-	        <D3 type={this.props.type} topicArray = {this.state.topicArray} topicDateTime = {this.state.topicDateTime} ></D3>
-	        <div className="step2">
+	        <D3 type={this.props.type} topicArray = {this.state.topicArray} topicColor = {this.state.topicColor} topicDateTime = {this.state.topicDateTime} ></D3>
+	        <div className={ this.state.topicArray.length == 0 ? 'step2 none' : "step2"}>
 	            文章影响力排名
 	        </div>
 	        <Step2_info type={this.props.type} topicArray = {this.state.topicArray} topicDateTime = {this.state.topicDateTime}></Step2_info>

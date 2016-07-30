@@ -25,8 +25,9 @@ export default class Step2_info extends React.Component {
         }
 
         // if(this.state.type != newProps.type || this.state.topicArray != newProps.topicArray.join(',')){
-            this.state.topicArray = newProps.topicArray.join(',');
+            this.state.topicArray = newProps.topicArray;
             this.state.type = newProps.type;
+            this.state.topicDateTime = newProps.topicDateTime;
             this.getArticle();
         // }
     }
@@ -38,7 +39,7 @@ export default class Step2_info extends React.Component {
         }
         var _this = this;
         $.ajax({
-            url: '/article_profile_list?topicArray='+this.state.topicArray+'&topicDateTime='+topicDateTime,
+            url: '/article_profile_list?topicArray='+this.state.topicArray+'&topicDateTime='+this.state.topicDateTime,
             async:true,
             success: function(datas){
                 
@@ -87,9 +88,9 @@ export default class Step2_info extends React.Component {
 
     render() {
         return (
-                <ul className="step2_info">
-                        {this.state.option}
-                    </ul>
+                <ul className={ this.state.topicArray.length == 0 ? 'step2_info none' : "step2_info"}>
+                    {this.state.option}
+                </ul>
             )
     }
 }

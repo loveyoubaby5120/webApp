@@ -10,6 +10,8 @@ router.get('/gzh_type_List', GzhController.gzh_type_List);
 
 router.get('/gzh_profile_list', GzhController.gzh_profile_list);
 
+router.get('/topic', GzhController.topic);
+
 router.get('/topic_hot', GzhController.topic_hot);
 
 router.get('/article_profile_list', GzhController.article_profile_list);

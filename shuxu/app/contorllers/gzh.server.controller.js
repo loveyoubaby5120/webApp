@@ -178,7 +178,7 @@ module.exports = {
 		var tj = ``;
 
 		var ztj = tj + ` and type=${this.query.gzh_type}`;
-		var sql = `call doSql("${zd}","${tj}","","type","desc",'(select 1 as type)')`;
+		var sql = `select a.* from topic a,topic_char b where a.id = b.topic_id ${ztj} group by topic_id`;
 		var rows = yield querySql(sql);
 		this.body = rows;
 	},
@@ -187,19 +187,57 @@ module.exports = {
 		var zd = ``;
 		var tj = ``;
 
-		var ztj = tj + ` and type=${this.query.gzh_type}`;
-		var sql = `call doSql("${zd}","${tj}","","type","desc",'(select 1 as type)')`;
+		// SELECT
+		// 	@rowNum:=CASE when @topic_id=a.topic_id then  @rowNum+1 else 1 end as rowNo,
+		//      @topic_id:=a.topic_id as topicID,a.*
+		// FROM
+		// 	topic_char a,
+		// 	(
+		// 		SELECT
+		// 			(@rowNum := 0) as rowNo,
+		// 			(@topic_id := 1) as topicID
+		// 	) AS b
+		// WHERE
+		// 	topic_id IN (1, 2)
+		// GROUP BY
+		// 	topic_id,
+		// 	time
+		// ORDER BY
+		// 	topic_id,
+		// 	time
+
+		// var topicArray = this.query.topicArray.split(',');
+		// var topicData = [];
+		// for(var d in topicArray){
+		// 	var ztj = tj + ` and topic_id = ${topicArray[d]} `;
+		// 	var sql = `call doSql("${zd}","${ztj}","","topic_id",",time",'topic_char')`;
+		// 	var rows = yield querySql(sql);
+		// 	topicData.push(rows[0]);
+		// }
+	
+		// this.body = topicData;		
+
+		var topicArray = this.query.topicArray;
+		var sql = `select * from topic_char as a,topic b where topic_id in (${topicArray}) and a.topic_id = b.id order by topic_id,time`;
 		var rows = yield querySql(sql);
+
 		this.body = rows;
 	},
 	article_profile_list: function *(next){
 		var limit = '10';
-		var where = ` and date_sub(curdate(), INTERVAL 7 DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i'))`;
+		var topicArray = this.query.topicArray ? this.query.topicArray : '0';
 
-		var sql = `call doSql("*,from_unixtime(pub_time,'%Y-%m-%d %h:%i') as dateTime","${where}","${limit}","read_num,zan_num","desc","article_profile")`;
+		// var where = ` and date_sub(curdate(), INTERVAL 7 DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i'))`;
+
+		// var sql = `call doSql("*,from_unixtime(pub_time,'%Y-%m-%d %h:%i') as dateTime","${where}","${limit}","read_num,zan_num","desc","article_profile")`;
+
+		var where = ` and date_sub(curdate(), INTERVAL 7 DAY) <= date(from_unixtime(b.pub_time,'%Y-%m-%d %h:%i')) and a.topic_id in (${topicArray}) `;
+
+		var sql = `select *,from_unixtime(b.pub_time,'%Y-%m-%d %h:%i') as dateTime from topic_article a,article_profile b where a.article_id=b.id ${where} order by read_num,zan_num,pub_time desc limit ${limit}`;
 
 		var rows = yield querySql(sql);
-		this.body = rows[0];
+
+		this.body = rows;
 
 		
 	},

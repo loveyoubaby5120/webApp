@@ -166,7 +166,7 @@ function chart(csvpath, color) {
       .range(colorrange);
 
   var graph = d3.json(csvpath, function(data){
-
+    console.log(data);
         var dayV = dateTime;
 
         var a = [];
@@ -185,6 +185,7 @@ function chart(csvpath, color) {
          if(!data.length){
             return true;
          }
+
         data.forEach(function(d){
             d.dateStr = d.date;
             d.date = format.parse(d.date);
