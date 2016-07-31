@@ -323,7 +323,11 @@ module.exports = {
 
 		var ztj = ``;
 		var zzd = ``;
-		var daysNum = parseInt(this.query.days)+4;
+
+		// var daysNum = parseInt(this.query.days)+4;
+		// var strDaysNum = 1;
+
+		var daysNum = parseInt(this.query.days)+1;
 		var strDaysNum = 1;
 
 		ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d')) and date_sub(curdate(), INTERVAL ${strDaysNum} DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d')) group by year(from_unixtime(pub_time,'%Y-%m-%d')),month(from_unixtime(pub_time,'%Y-%m-%d')),day(from_unixtime(pub_time,'%Y-%m-%d'))`;
@@ -450,12 +454,19 @@ module.exports = {
 
 		// this.body = [arrayA,dateA];
 		// this.body = [array,dateArray];
-		this.body = [array.slice(0,this.query.days),dateArray.slice(0,this.query.days)];
+		// this.body = [array.slice(0,this.query.days),dateArray.slice(0,this.query.days)];
+		this.body = [array.slice((array.length - this.query.days),array.length),dateArray.slice((dateArray.length-this.query.days),dateArray.length)];
 	},
 	statistics_info: function *(next){
 		var gzh_id = this.query.gzh_id;
-		var daysNum = parseInt(this.query.day)+4;
-		var strDaysNum = 5;
+
+		// var daysNum = parseInt(this.query.day)+4;
+		// var strDaysNum = 5;
+
+		var daysNum = parseInt(this.query.day);
+		var strDaysNum = 1;
+
+
 		var query = ` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,"%Y-%m-%d")) and date_sub(curdate(), INTERVAL ${strDaysNum} DAY) >= date(from_unixtime(pub_time,"%Y-%m-%d"))`;
 		var sql = `select count(*) cs from (select pub_time from article_profile where gzh_id=${gzh_id} ${query} group by pub_time) a`;
 		var rows = yield querySql(sql);
