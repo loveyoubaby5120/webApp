@@ -340,7 +340,7 @@ module.exports = {
 
 
 		if(this.query.type==4){
-			ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d')) and date_sub(curdate(), INTERVAL ${strDaysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d')) group by year(from_unixtime(pub_time,'%Y-%m-%d')),month(from_unixtime(pub_time,'%Y-%m-%d')),day(from_unixtime(pub_time,'%Y-%m-%d'))`;
+			ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d')) and date_sub(curdate(), INTERVAL ${strDaysNum} DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d')) group by year(from_unixtime(pub_time,'%Y-%m-%d')),month(from_unixtime(pub_time,'%Y-%m-%d')),day(from_unixtime(pub_time,'%Y-%m-%d'))`;
 			zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
 			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","article_profile")`;
 		}
@@ -455,7 +455,7 @@ module.exports = {
 	statistics_info: function *(next){
 		var gzh_id = this.query.gzh_id;
 		var daysNum = parseInt(this.query.day)+4;
-		var strDaysNum = 4;
+		var strDaysNum = 5;
 		var query = ` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,"%Y-%m-%d")) and date_sub(curdate(), INTERVAL ${strDaysNum} DAY) >= date(from_unixtime(pub_time,"%Y-%m-%d"))`;
 		var sql = `select count(*) cs from (select pub_time from article_profile where gzh_id=${gzh_id} ${query} group by pub_time) a`;
 		var rows = yield querySql(sql);
