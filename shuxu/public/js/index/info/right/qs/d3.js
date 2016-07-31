@@ -529,7 +529,7 @@ export default class D3 extends React.Component {
                 .attr("transform", "translate(0," + height + ")")
                 .call(xAxis);
 
-            d3.selectAll("#changeInput input").on("change", change);
+            d3.selectAll("#changeInput input").on("click", change);
 
             var tooltip2 = d3.select("#main2")
                             .append("div")
@@ -550,11 +550,13 @@ export default class D3 extends React.Component {
 
             function change() {
                 clearTimeout(timeout);
+                // console.log('事件');
                 if (this.value === "grouped") transitionGrouped();
                 else transitionStacked();
             }
 
             function transitionGrouped() {
+                // console.log('第一个');
                 y.domain([0, yGroupMax]);
 
                 rect.transition()
@@ -568,7 +570,7 @@ export default class D3 extends React.Component {
             }
 
             function transitionStacked() {
-
+                // console.log('第二个');
                 y.domain([0, yStackMax]);
 
                     rect.transition()
@@ -739,8 +741,8 @@ export default class D3 extends React.Component {
              <div className={ this.state.topicArray.length == 0 ? 'chart none' : "chart"}>
                 <div id="main"></div>
                 <form id="changeInput">
-                    <label><input type="radio" name="mode" value="grouped" /> Grouped</label>
-                    <label><input type="radio" name="mode" value="stacked" checked /> Stacked</label>
+                    <label><input type="radio" name="mode" value="grouped" /> Grouped&nbsp;&nbsp;</label>
+                    <label><input type="radio" name="mode" value="stacked" defaultChecked /> Stacked</label>
                 </form>
                 <div id="main2"></div>
              </div>
