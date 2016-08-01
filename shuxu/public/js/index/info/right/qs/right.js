@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router'
-// import Chart from './chart.js'
 import D3 from './d3.js'
 import CheckBox from './checkBox.js'
 import Step1_info from './step1_info.js'
