@@ -11,6 +11,7 @@ export default class Header extends React.Component {
                 {
                     "nick_name":"--",
                     "english_id":"--",
+                    "follow": "--",
                     "biz":"--",
                     "qrcode":null,
                     "avatar":null,
@@ -70,7 +71,27 @@ export default class Header extends React.Component {
                             }
 
                             </p>
-                            <p className="title">预测粉丝数: --</p>
+                            <p className="title">预测粉丝数: 
+                            {
+                                (function(obj){
+                                    if(obj.state.datas[0].follow){
+                                        obj.state.datas[0].follow = obj.state.datas[0].follow/100;
+                                        if(obj.state.datas[0].follow > 10000){
+                                            return ((obj.state.datas[0].follow)/10000).toFixed(2) + '万';
+                                        }
+                                        else if(obj.state.datas[0].follow <= 10000 && obj.state.datas[0].follow > 1000 ){
+                                            return Math.ceil((obj.state.datas[0].follow)/100)*100;
+                                        }
+                                        else{
+                                            return obj.state.datas[0].follow;
+                                        }
+                                    }
+                                    else{
+                                        return '--'
+                                    }
+                                })(this)
+                            }
+                            </p>
                             <p className="wechat">微信号：{this.state.datas[0].english_id}</p>
                             <p className="time">
                             </p>
