@@ -75,7 +75,7 @@ export default class Header extends React.Component {
                             {
                                 (function(obj){
                                     if(obj.state.datas[0].follow){
-                                        obj.state.datas[0].follow = obj.state.datas[0].follow/100;
+                                        obj.state.datas[0].follow = obj.state.datas[0].follow;
                                         if(obj.state.datas[0].follow > 10000){
                                             return ((obj.state.datas[0].follow)/10000).toFixed(2) + '万';
                                         }
