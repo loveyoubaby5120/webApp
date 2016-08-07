@@ -71,7 +71,7 @@ export default class Header extends React.Component {
                             }
 
                             </p>
-                            <p className="title">预测粉丝数: 
+                            <p className="title">预测粉丝数: &nbsp;
                             {
                                 (function(obj){
                                     if(obj.state.datas[0].follow){
