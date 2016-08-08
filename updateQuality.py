@@ -16,7 +16,7 @@ def main():
     cursor = conn.cursor()
     errorArr = []
     try:
-        sql = "SELECT id,url,zan_num from article_profile_copy where follow_index is null order by pub_time limit 1000"
+        sql = "SELECT id,url,zan_num from article_profile_copy where follow_index is null order by id desc limit 0,1000"
         cursor.execute(sql)
         row = cursor.fetchall()
         for r in row:
@@ -58,7 +58,7 @@ def main():
 
             sql2 = "UPDATE article_profile_copy SET follow_index=%f,follow_num=%f WHERE id=%d" % (follow_index, (follow_index*zan_num), id)
 
-            print(sql2)
+            print(id)
 
             try:
                 cursor.execute(sql2)
