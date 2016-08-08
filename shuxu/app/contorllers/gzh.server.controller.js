@@ -273,43 +273,50 @@ module.exports = {
 		var zd = ``;
 		var tj = ``;
 		var index = '';
+
+		//总阅读数
 		if(this.query.type==1){
 			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum`;
 			tj = ` and gzh_id=${this.query.gzh_id}`;
 			index = `sum`;
 		}
 
+		//头条阅读数
 		if(this.query.type==2){
 			zd = `case when max(read_num) then max(read_num) else 0 end as sum`;
 			tj = ` and url like '%idx=1%' and gzh_id=${this.query.gzh_id}`;
 			index = `sum`;
 		}
 
+		//平均阅读数
 		if(this.query.type==3){
 			zd = `case when sum(read_num) then sum(read_num) else 0 end as sum,count(*) as count`;
 			tj = ` and gzh_id=${this.query.gzh_id}`;
 			index = `avg`;
 		}
 
-
+		//发文数
 		if(this.query.type==4){
 			zd = `count(id) as count`;
 			tj = ` and gzh_id=${this.query.gzh_id}`;
 			index = `count`;
 		}
 
+		//预测粉丝数
 		if(this.query.type==5){
 			zd = `1`;
 			tj = ``;
 			index = `other`;
 		}
 
+		//预测转发数
 		if(this.query.type==6){
-			zd = `1`;
-			tj = ``;
-			index = `other`;
+			zd = `case when max(follow_num) then max(follow_num) else 0 end as sum`;
+			tj = ` and gzh_id=${this.query.gzh_id}`;
+			index = `sum`;
 		}
 
+		//点赞数
 		if(this.query.type==7){
 			zd = `case when sum(zan_num) then sum(zan_num) else 0 end as sum,count(*) as count`;
 			tj = `and gzh_id=${this.query.gzh_id}`;
@@ -328,18 +335,6 @@ module.exports = {
 
 		var sql = ``;
 		sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","article_profile")`;
-
-		if(this.query.type==1 || this.query.type==3 || this.query.type==7){
-			ztj = ` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i')) and date_sub(curdate(), INTERVAL ${strDaysNum} DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d')) group by year(from_unixtime(pub_time,'%Y-%m-%d')),month(from_unixtime(pub_time,'%Y-%m-%d')),day(from_unixtime(pub_time,'%Y-%m-%d'))`;
-			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","(select * from article_profile where gzh_id=${this.query.gzh_id} group by year(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),month(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),day(from_unixtime(pub_time,'%Y-%m-%d %h:%i')),id order by pub_time,id)")`;
-		}
-
-
-		if(this.query.type==4){
-			ztj = tj +` and date_sub(curdate(), INTERVAL ${daysNum} DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d')) and date_sub(curdate(), INTERVAL ${strDaysNum} DAY) >= date(from_unixtime(pub_time,'%Y-%m-%d')) group by year(from_unixtime(pub_time,'%Y-%m-%d')),month(from_unixtime(pub_time,'%Y-%m-%d')),day(from_unixtime(pub_time,'%Y-%m-%d'))`;
-			zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
-			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","article_profile")`;
-		}
 
 		console.log(sql);
 		var rows = yield querySql(sql);
