@@ -336,7 +336,6 @@ module.exports = {
 		var sql = ``;
 		sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","article_profile")`;
 
-		console.log(sql);
 		var rows = yield querySql(sql);
 		var countDay=0,sumDay=0;
 		for(var i =rows[0].length-1; i>=0;i--){
