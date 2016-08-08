@@ -128,22 +128,22 @@ router.get('/', function(req, res, next) {
         //     console.log(growth,biz);
         // }
 
-        // if(viscous>=10){
-        //     console.log(viscous,biz);
-        // }
+        if(viscous>=10){
+            console.log(viscous,biz);
+        }
 
 
         // if(receiver<=0){
         //     console.log(receiver,biz);
         // }
 
-        if(growth<=0){
-            console.log(growth,biz);
-        }
-
-        // if(viscous<=0){
-        //     console.log(viscous,biz);
+        // if(growth<=0){
+        //     console.log(growth,biz);
         // }
+
+        if(viscous<=0){
+            console.log(viscous,biz);
+        }
 
         // var sql = `update gzh_profile set viscous=${viscous},growth=${growth},receiver=${receiver} where english_id like '${biz}'`;
 
