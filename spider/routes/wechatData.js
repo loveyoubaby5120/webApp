@@ -64,7 +64,11 @@ router.get('/', function(req, res, next) {
 
 
 	var obj = nodeXlsx.parse("./result.xlsx");
-	var noXlsx = {};
+	var list = [];
+    var receiver_list = [];
+    var growth_list = [];
+    var viscous_list = [];
+
 	for(var i = 1; i< obj[0].data.length; i++){
 		// if(i>2){
 		// 	break;
@@ -74,18 +78,63 @@ router.get('/', function(req, res, next) {
 		var growth = obj[0].data[i][4];
 		var viscous = Math.exp(obj[0].data[i][5]);
 
-		var sql = `update gzh_profile set viscous=${viscous},growth=${growth},receiver=${receiver} where english_id like '${biz}'`;
+        receiver_list.push(receiver);
+        growth_list.push(growth);
+        viscous_list.push(viscous);
 
-		console.log(sql);
+        var map = {};
+        map.biz = biz;
+        map.receiver = receiver;
+        map.growth = growth;
+        map.viscous = viscous;
 
-		querySql(sql).then(function(data){
-		    console.log(i);
+        list.push(map);
 
-		});
+		// var sql = `update gzh_profile set viscous=${viscous},growth=${growth},receiver=${receiver} where english_id like '${biz}'`;
+
+		// querySql(sql).then(function(data){
+		//     console.log(i);
+
+		// });
 	}
 
 
+    var receiver_max = Math.max.apply(null, receiver_list);
+    var receiver_min = Math.min.apply(null, receiver_list)
 
+    var growth_max = Math.max.apply(null, growth_list);
+    var growth_min = Math.min.apply(null, growth_list)
+
+    var viscous_max = Math.max.apply(null, viscous_list);
+    var viscous_min = Math.min.apply(null, viscous_list)
+
+
+
+
+    // for(var i = 1; i< obj[0].data.length; i++){
+
+        var biz = obj[0].data[i][1];
+        var receiver = Math.floor((obj[0].data[i][3]-receiver_min)/(receiver_max-receiver_min)*10);
+        var growth = Math.floor((obj[0].data[i][4]-growth_min)/(growth_max-growth_min)*10);
+        var viscous = Math.exp(obj[0].data[i][5]);
+
+    //     viscous = Math.floor((viscous-viscous_min)/(viscous_max-viscous_min)*10);
+
+
+
+
+    //     // var sql = `update gzh_profile set viscous=${viscous},growth=${growth},receiver=${receiver} where english_id like '${biz}'`;
+
+
+    //     // querySql(sql).then(function(data){
+    //     //     console.log(i);
+
+    //     // });
+    // }
+
+
+
+    res.send(list);
 	
 
 
