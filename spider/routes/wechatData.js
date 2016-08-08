@@ -111,26 +111,48 @@ router.get('/', function(req, res, next) {
 
 
 
-    // for(var i = 1; i< obj[0].data.length; i++){
+    for(var i = 1; i< obj[0].data.length; i++){
 
         var biz = obj[0].data[i][1];
-        var receiver = Math.floor((obj[0].data[i][3]-receiver_min)/(receiver_max-receiver_min)*10);
-        var growth = Math.floor((obj[0].data[i][4]-growth_min)/(growth_max-growth_min)*10);
+        var receiver = (obj[0].data[i][3]-receiver_min)/(receiver_max-receiver_min)*10;
+        var growth = (obj[0].data[i][4]-growth_min)/(growth_max-growth_min)*10;
         var viscous = Math.exp(obj[0].data[i][5]);
 
-    //     viscous = Math.floor((viscous-viscous_min)/(viscous_max-viscous_min)*10);
+        viscous = (viscous-viscous_min)/(viscous_max-viscous_min)*10;
+
+        // if(receiver>=10){
+        //     console.log(receiver,biz);
+        // }
+
+        // if(growth>=10){
+        //     console.log(growth,biz);
+        // }
+
+        // if(viscous>=10){
+        //     console.log(viscous,biz);
+        // }
 
 
+        // if(receiver<=0){
+        //     console.log(receiver,biz);
+        // }
+
+        if(growth<=0){
+            console.log(growth,biz);
+        }
+
+        // if(viscous<=0){
+        //     console.log(viscous,biz);
+        // }
+
+        // var sql = `update gzh_profile set viscous=${viscous},growth=${growth},receiver=${receiver} where english_id like '${biz}'`;
 
 
-    //     // var sql = `update gzh_profile set viscous=${viscous},growth=${growth},receiver=${receiver} where english_id like '${biz}'`;
+        // querySql(sql).then(function(data){
+        //     console.log(i);
 
-
-    //     // querySql(sql).then(function(data){
-    //     //     console.log(i);
-
-    //     // });
-    // }
+        // });
+    }
 
 
 

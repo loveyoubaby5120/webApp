@@ -148,15 +148,15 @@ export default class Bd_more extends React.Component {
                     var td4 = React.createElement('td',{className:'text'},div4);
 
                     //粉丝黏性
-                    var div5 = React.createElement('div',null,(data.viscous).toFixed(0));
+                    var div5 = React.createElement('div',null,(data.viscous).toFixed(2));
                     var td5 = React.createElement('td',{className:'text'},div5);
                     
                     //粉丝活跃度
-                    var div6 = React.createElement('div',null,(data.receiver).toFixed(0));
+                    var div6 = React.createElement('div',null,(data.receiver).toFixed(2));
                     var td6 = React.createElement('td',{className:'text'},div6);
                     
                     //增长潜力
-                    var div7 = React.createElement('div',null,(data.growth).toFixed(0));
+                    var div7 = React.createElement('div',null,(data.growth).toFixed(2));
                     var td7 = React.createElement('td',{className:'text'},div7);
                     
                     //影响力
