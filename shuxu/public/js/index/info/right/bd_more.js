@@ -128,6 +128,7 @@ export default class Bd_more extends React.Component {
 
                     var td = React.createElement('td');
 
+                    //排名
                     var div2;
                     if((index+num) >4){
                         div2 = React.createElement('div',{className:'number'},index+num+1);
@@ -138,45 +139,53 @@ export default class Bd_more extends React.Component {
                     
                     var td2 = React.createElement('td',{className:'first'},div2);
 
+                    //微信名称
                     var div3 = React.createElement('div',null,data.nick_name);
                     var td3 = React.createElement('td',{className:'text'},div3);
 
+                    //微信账号
                     var div4 = React.createElement('div',null,data.english_id);
                     var td4 = React.createElement('td',{className:'text'},div4);
 
-                    var div5 = React.createElement('div',null,'--');
+                    //粉丝黏性
+                    var div5 = React.createElement('div',null,data.viscous);
                     var td5 = React.createElement('td',{className:'text'},div5);
                     
-                    var div6 = React.createElement('div',null,'--');
+                    //粉丝活跃度
+                    var div6 = React.createElement('div',null,data.receiver);
                     var td6 = React.createElement('td',{className:'text'},div6);
                     
-                    var div7 = React.createElement('div',null,data.w_index);
+                    //增长潜力
+                    var div7 = React.createElement('div',null,data.growth);
                     var td7 = React.createElement('td',{className:'text'},div7);
                     
-                    // var div8 = React.createElement('div',null,'--');
-                    // var td8 = React.createElement('td',{className:'text'},div8);
+                    //影响力
+                    var div8 = React.createElement('div',null,data.w_index);
+                    var td8 = React.createElement('td',{className:'text'},div8);
                     
+                    //查看详细
                     var a9 = React.createElement('a',{href:"/index_info?gzh_id="+data.id},'查看');
                     var td9 = React.createElement('td',{className:'text goto_info last'},a9);
                     
+                    //相关性
                     var div10 = React.createElement('div',null, (100*Math.random()).toFixed(2) +'%');
                     var td10 = React.createElement('td',{className:'text'},div10);
 
 
                     if(_this.state.type == 4){
                         if((index+num)%2==0){
-                            var tr = React.createElement('tr',{className:'even',key:index},td2,td3,td4,td5,td6,td7,td10,td9);
+                            var tr = React.createElement('tr',{className:'even',key:index},td2,td3,td4,td5,td6,td7,td8,td10,td9);
                         }
                         else{
-                            var tr = React.createElement('tr',{className:'',key:index},td2,td3,td4,td5,td6,td7,td10,td9);
+                            var tr = React.createElement('tr',{className:'',key:index},td2,td3,td4,td5,td6,td7,td8,td10,td9);
                         }
                     }
                     else{
                         if((index+num)%2==0){
-                            var tr = React.createElement('tr',{className:'even',key:index},td2,td3,td4,td5,td6,td7,td9);
+                            var tr = React.createElement('tr',{className:'even',key:index},td2,td3,td4,td5,td6,td7,td8,td9);
                         }
                         else{
-                            var tr = React.createElement('tr',{className:'',key:index},td2,td3,td4,td5,td6,td7,td9);
+                            var tr = React.createElement('tr',{className:'',key:index},td2,td3,td4,td5,td6,td7,td8,td9);
                         }
                     }
                     
@@ -292,6 +301,7 @@ export default class Bd_more extends React.Component {
                             <th className="w_15"><div><p className="">微信名称</p></div></th>
                             <th className="w_15"><div><p className="">微信账号</p></div></th>
                             <th className="w_15"><div><p className="">粉丝黏性</p></div></th>
+                            <th className="w_15"><div><p className="">粉丝活跃度</p></div></th>
                             <th className="w_15"><div><p className="">增长潜力</p></div></th>
                             <th className="w_20"><div><p className="">影响指数</p></div></th>
                             {

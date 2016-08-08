@@ -228,11 +228,6 @@ module.exports = {
 		var topicArray = this.query.topicArray ? this.query.topicArray : '0';
 		var topicDateTime = this.query.topicDateTime;
 
-		// var where = ` and date_sub(curdate(), INTERVAL 7 DAY) <= date(from_unixtime(pub_time,'%Y-%m-%d %h:%i'))`;
-
-		// var sql = `call doSql("*,from_unixtime(pub_time,'%Y-%m-%d %h:%i') as dateTime","${where}","${limit}","read_num,zan_num","desc","article_profile")`;
-
-		// var where = ` and date_sub(curdate(), INTERVAL ${topicDateTime} DAY) <= date(from_unixtime(b.pub_time,'%Y-%m-%d %h:%i')) and a.topic_id in (${topicArray}) `;
 
 		var where = ` and a.topic_id in (${topicArray}) `;
 
@@ -324,9 +319,6 @@ module.exports = {
 		var ztj = ``;
 		var zzd = ``;
 
-		// var daysNum = parseInt(this.query.days)+4;
-		// var strDaysNum = 1;
-
 		var daysNum = parseInt(this.query.days)+1;
 		var strDaysNum = 1;
 
@@ -348,7 +340,7 @@ module.exports = {
 			zzd = zd +`,from_unixtime(pub_time,'%Y-%m-%d') as date`;
 			sql = `call doSql("${zzd}","${ztj}","","pub_time","desc","article_profile")`;
 		}
-		// console.log(sql);
+
 		var rows = yield querySql(sql);
 		var countDay=0,sumDay=0;
 		for(var i =rows[0].length-1; i>=0;i--){
@@ -452,16 +444,10 @@ module.exports = {
 		}
 
 
-		// this.body = [arrayA,dateA];
-		// this.body = [array,dateArray];
-		// this.body = [array.slice(0,this.query.days),dateArray.slice(0,this.query.days)];
 		this.body = [array.slice((array.length - this.query.days),array.length),dateArray.slice((dateArray.length-this.query.days),dateArray.length)];
 	},
 	statistics_info: function *(next){
 		var gzh_id = this.query.gzh_id;
-
-		// var daysNum = parseInt(this.query.day)+4;
-		// var strDaysNum = 5;
 
 		var daysNum = parseInt(this.query.day);
 		var strDaysNum = 1;

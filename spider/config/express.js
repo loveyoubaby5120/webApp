@@ -29,6 +29,7 @@ module.exports = function(){
 	var newrank = require('../routes/newrank');
 	var demo = require('../routes/demo');
 	var yyzc = require('../routes/yyzc');
+	var wechatData = require('../routes/wechatData');
 
 	app.use('/', routes);
 	app.use('/users', users);
@@ -37,6 +38,7 @@ module.exports = function(){
 	app.use('/bd', bd);
 	app.use('/newrank', newrank);
 	app.use('/yyzc', yyzc);
+	app.use('/wechatData', wechatData);
 	// app.use('/', demo);
 
 	app.use(function(req, res, next){
