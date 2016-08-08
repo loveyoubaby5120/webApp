@@ -66,15 +66,15 @@ router.get('/', function(req, res, next) {
 	var obj = nodeXlsx.parse("./result.xlsx");
 	var noXlsx = {};
 	for(var i = 1; i< obj[0].data.length; i++){
-		if(i>2){
-			break;
-		}
+		// if(i>2){
+		// 	break;
+		// }
 		var biz = obj[0].data[i][1];
 		var receiver = obj[0].data[i][3];
 		var growth = obj[0].data[i][4];
 		var viscous = Math.exp(obj[0].data[i][5]);
 
-		var sql = `updata gzh_profile set viscous=${viscous},growth=${growth},receiver=${receiver} where english_id like '${biz}'`;
+		var sql = `update gzh_profile set viscous=${viscous},growth=${growth},receiver=${receiver} where english_id like '${biz}'`;
 
 		console.log(sql);
 
