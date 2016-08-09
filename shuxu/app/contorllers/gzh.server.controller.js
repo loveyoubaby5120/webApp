@@ -176,8 +176,7 @@ module.exports = {
 		var array = [];
 		var zd = ``;
 		var tj = ``;
-
-		var ztj = tj + ` and type=${this.query.gzh_type}`;
+		var ztj = tj + ` and type=${this.query.gzh_type} and date_sub(curdate(), INTERVAL ${this.query.topicDateTime} DAY) < date(time) and date_sub(curdate(), INTERVAL 0 DAY) >= date(time) `;
 		var sql = `select a.* from topic a,topic_char b where a.id = b.topic_id ${ztj} group by topic_id`;
 		var rows = yield querySql(sql);
 		this.body = rows;
@@ -216,9 +215,10 @@ module.exports = {
 		// }
 	
 		// this.body = topicData;		
-
+		var topicDateTime = this.query.topicDateTime;
 		var topicArray = this.query.topicArray;
-		var sql = `select * from topic_char as a,topic b where topic_id in (${topicArray}) and a.topic_id = b.id order by topic_id,time`;
+		var where = ` and topic_id in (${topicArray}) and a.topic_id = b.id and date_sub(curdate(), INTERVAL ${topicDateTime} DAY) < date(time) and date_sub(curdate(), INTERVAL 0 DAY) >= date(time) `;
+		var sql = `select * from topic_char as a,topic b where 1=1 ${where} order by topic_id,time`;
 		var rows = yield querySql(sql);
 
 		this.body = rows;
@@ -229,7 +229,7 @@ module.exports = {
 		var topicDateTime = this.query.topicDateTime;
 
 
-		var where = ` and a.topic_id in (${topicArray}) `;
+		var where = ` and a.topic_id in (${topicArray}) and date_sub(curdate(), INTERVAL ${topicDateTime} DAY) < date(from_unixtime(b.pub_time,'%Y-%m-%d')) and date_sub(curdate(), INTERVAL 0 DAY) >= date(from_unixtime(b.pub_time,'%Y-%m-%d')) `;
 
 		var sql = `select *,from_unixtime(b.pub_time,'%Y-%m-%d %h:%i') as dateTime from topic_article a,article_profile b where a.article_id=b.id ${where} order by read_num,zan_num,pub_time desc limit ${limit}`;
 		var rows = yield querySql(sql);

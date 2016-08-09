@@ -35,22 +35,13 @@ export default class CheckBox extends React.Component {
             return false;
         }
 
-        // _this.setState({
-        //     topic: [
-        //         {id: 1,name: '公车改革',topic_color: 'rgb(179, 0, 0)'},
-        //         {id: 2, name: '召回',topic_color: 'rgb(227, 74, 51)'},
-        //         {id: 3, name: '销量领跑',topic_color: 'rgb(252, 141, 89)'},
-        //         {id: 4, name: '新能源',topic_color: 'rgb(253, 187, 132)'}
-        //     ]
-        // });
-
+        var topicDateTime = ReactDom.findDOMNode(this.refs.input_box).getElementsByClassName('topicDateTime')[0].getAttribute('data-value');
 
         $.ajax({
-            url: '/topic?gzh_type='+this.state.type,
+            url: '/topic?gzh_type=' + this.state.type + '&topicDateTime=' + topicDateTime,
             async: true,
             success: function(data){
                 var topicColor = ['rgb(179, 0, 0)','rgb(227, 74, 51)','rgb(252, 141, 89)','rgb(253, 187, 132)'];
-                var topicDateTime = 7;
 
                 _this.setState({
                     topic: data,
@@ -69,7 +60,11 @@ export default class CheckBox extends React.Component {
 
     }
 
-    onChangeTopic(){
+    onChangeTopic(index){
+        if(index==1){
+            this.getTopic();
+            return false;
+        }
     	var input = ReactDom.findDOMNode(this.refs.input_box).getElementsByTagName('input');
     	var newState = [];
         var topicColor = [];
@@ -100,8 +95,8 @@ export default class CheckBox extends React.Component {
                             <div className="query">
                                 <a className='ok topicDateTime' href="javascript:;" data-value='7'>最近7天</a><span className='down'>ˇ</span>
                                 <ul className="select">
-                                    <li className="option" onClick={this.onChangeTopic.bind(this)} data-value='7'>最近7天</li>
-                                    <li className="option" onClick={this.onChangeTopic.bind(this)} data-value='30'>最近30天</li>
+                                    <li className="option" onClick={this.onChangeTopic.bind(this, 1)} data-value='7'>最近7天</li>
+                                    <li className="option" onClick={this.onChangeTopic.bind(this, 1)} data-value='30'>最近30天</li>
                                 </ul>
                             </div>
                         </div>
@@ -115,7 +110,7 @@ export default class CheckBox extends React.Component {
                                     var topicColor = obj.state.topicColor;
                                     obj.state.topic.forEach(function(data,index){
 
-                                        a.push(<label className="query checkbox" key={index} htmlFor={index}><input type='checkbox' name="keyall" defaultChecked value={data.id} id={index} onChange={obj.onChangeTopic.bind(obj)} /><div className="color" style={{'backgroundColor': topicColor[index]}}></div><label htmlFor={index}>{data.name}</label></label>);
+                                        a.push(<label className="query checkbox" key={index} htmlFor={index}><input type='checkbox' name="keyall" defaultChecked value={data.id} id={index} onChange={obj.onChangeTopic.bind(obj, 2)} /><div className="color" style={{'backgroundColor': topicColor[index]}}></div><label htmlFor={index}>{data.name}</label></label>);
                                     });
                                     return a;
                                 })(this)
