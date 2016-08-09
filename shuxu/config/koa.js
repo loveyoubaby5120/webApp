@@ -1,7 +1,7 @@
 var koa = require('koa');
 var path = require('path');
 
-var onerror = require('Koa-onerror');
+var onerror = require('koa-onerror');
 
 var route = require('koa-route');
 var Router = require('koa-router');
