@@ -238,7 +238,6 @@ export default class Chart extends React.Component {
                         <li className={this.state.type==2 ? "item active" : "item"} onClick={this.onClick.bind(this,2,'头条阅读数')}><a href="javascript:;">头条阅读数</a></li>
                         <li className={this.state.type==3 ? "item active" : "item"} onClick={this.onClick.bind(this,3,'平均阅读数')}><a href="javascript:;">平均阅读数</a></li>
                         <li className={this.state.type==4 ? "item active" : "item"} onClick={this.onClick.bind(this,4,'发文数')}><a href="javascript:;">发文数</a></li>
-                        <li className={this.state.type==5 ? "item active" : "item"} onClick={this.onClick.bind(this,5,'预测粉丝数')}><a href="javascript:;">预测粉丝数</a></li>
                         <li className={this.state.type==6 ? "item active" : "item"} onClick={this.onClick.bind(this,6,'预测转发数')}><a href="javascript:;">预测转发数</a></li>
                         <li className={this.state.type==7 ? "item active" : "item"} onClick={this.onClick.bind(this,7,'点赞数')}><a href="javascript:;">点赞数</a></li>
                     </ul>
