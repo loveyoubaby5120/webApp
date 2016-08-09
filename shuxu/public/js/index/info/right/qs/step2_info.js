@@ -39,7 +39,7 @@ export default class Step2_info extends React.Component {
         }
         var _this = this;
         $.ajax({
-            url: '/article_profile_list?topicArray='+this.state.topicArray+'&topicDateTime='+this.state.topicDateTime,
+            url: '/article_profile_list?gzh_type=' + this.state.type + '&topicArray='+this.state.topicArray+'&topicDateTime='+this.state.topicDateTime,
             async:true,
             success: function(datas){
                 

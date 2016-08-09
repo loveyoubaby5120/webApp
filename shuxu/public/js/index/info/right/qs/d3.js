@@ -701,7 +701,7 @@ export default class D3 extends React.Component {
         }
 
         $.ajax({
-            url: '/topic_hot?topicArray='+topicArray+'&topicDateTime='+topicDateTime,
+            url: '/topic_hot?gzh_type=' + this.state.type + '&topicArray='+topicArray+'&topicDateTime='+topicDateTime,
             // url: '/js/index/info/right/d3-demo/d4.json',
             async: true,
             success: function(data){

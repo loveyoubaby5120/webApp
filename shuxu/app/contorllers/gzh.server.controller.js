@@ -173,16 +173,26 @@ module.exports = {
 		this.body = rows[0];
 	},
 	topic: function *(next){
-		var array = [];
+
+		var sql = `select MAX(time) as maxDate from topic_char where type=${this.query.gzh_type}`;
+
+		var rows = yield querySql(sql);
+
+		var maxDate = `curdate()`;
+
+		if(rows[0].maxDate){
+			maxDate = `'${new Date(rows[0].maxDate).format('yyyy-MM-dd')}'`;
+		}
+
 		var zd = ``;
 		var tj = ``;
-		var ztj = tj + ` and type=${this.query.gzh_type} and date_sub(curdate(), INTERVAL ${this.query.topicDateTime} DAY) < date(time) and date_sub(curdate(), INTERVAL 0 DAY) >= date(time) `;
-		var sql = `select a.* from topic a,topic_char b where a.id = b.topic_id ${ztj} group by topic_id`;
-		var rows = yield querySql(sql);
-		this.body = rows;
+		var ztj = tj + ` and type=${this.query.gzh_type} and date_sub(${maxDate}, INTERVAL ${this.query.topicDateTime} DAY) < date(time) and date_sub(${maxDate}, INTERVAL 0 DAY) >= date(time) `;
+		var sql2 = `select a.* from topic a,topic_char b where a.id = b.topic_id ${ztj} group by topic_id`;
+		var rows2 = yield querySql(sql2);
+
+		this.body = rows2;
 	},
 	topic_hot: function *(next){
-		var array = [];
 		var zd = ``;
 		var tj = ``;
 
@@ -217,24 +227,47 @@ module.exports = {
 		// this.body = topicData;		
 		var topicDateTime = this.query.topicDateTime;
 		var topicArray = this.query.topicArray;
-		var where = ` and topic_id in (${topicArray}) and a.topic_id = b.id and date_sub(curdate(), INTERVAL ${topicDateTime} DAY) < date(time) and date_sub(curdate(), INTERVAL 0 DAY) >= date(time) `;
-		var sql = `select * from topic_char as a,topic b where 1=1 ${where} order by topic_id,time`;
+
+
+		var sql = `select MAX(time) as maxDate from topic_char where type=${this.query.gzh_type}`;
+
 		var rows = yield querySql(sql);
 
-		this.body = rows;
+		var maxDate = `curdate()`;
+
+		if(rows[0].maxDate){
+			maxDate = `'${new Date(rows[0].maxDate).format('yyyy-MM-dd')}'`;
+		}
+
+
+		var where = ` and topic_id in (${topicArray}) and a.topic_id = b.id and date_sub(${maxDate}, INTERVAL ${topicDateTime} DAY) < date(time) and date_sub(${maxDate}, INTERVAL 0 DAY) >= date(time) `;
+		var sql2 = `select * from topic_char as a,topic b where 1=1 ${where} order by topic_id,time`;
+		var rows2 = yield querySql(sql2);
+
+		this.body = rows2;
 	},
 	article_profile_list: function *(next){
 		var limit = '10';
 		var topicArray = this.query.topicArray ? this.query.topicArray : '0';
 		var topicDateTime = this.query.topicDateTime;
 
+		var sql = `select MAX(time) as maxDate from topic_char where type=${this.query.gzh_type}`;
 
-		var where = ` and a.topic_id in (${topicArray}) and date_sub(curdate(), INTERVAL ${topicDateTime} DAY) < date(from_unixtime(b.pub_time,'%Y-%m-%d')) and date_sub(curdate(), INTERVAL 0 DAY) >= date(from_unixtime(b.pub_time,'%Y-%m-%d')) `;
-
-		var sql = `select *,from_unixtime(b.pub_time,'%Y-%m-%d %h:%i') as dateTime from topic_article a,article_profile b where a.article_id=b.id ${where} order by read_num,zan_num,pub_time desc limit ${limit}`;
 		var rows = yield querySql(sql);
 
-		this.body = rows;
+		var maxDate = `curdate()`;
+
+		if(rows[0].maxDate){
+			maxDate = `'${new Date(rows[0].maxDate).format('yyyy-MM-dd')}'`;
+		}
+
+
+		var where = ` and a.topic_id in (${topicArray}) and date_sub(${maxDate}, INTERVAL ${topicDateTime} DAY) < date(a.time) and date_sub(${maxDate}, INTERVAL 0 DAY) >= date(a.time) `;
+
+		var sql2 = `select *,from_unixtime(b.pub_time,'%Y-%m-%d %h:%i') as dateTime from topic_article a,article_profile b where a.article_id=b.id ${where} order by read_num,zan_num,pub_time desc limit ${limit}`;
+		var rows2 = yield querySql(sql2);
+
+		this.body = rows2;
 
 		
 	},
