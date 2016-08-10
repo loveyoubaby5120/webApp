@@ -4,7 +4,7 @@
 
 body {
      padding-top: 70px;
-     padding-bottom: 200px;
+     padding-bottom: 50px;
 }
 
 .title{
@@ -311,7 +311,59 @@ body {
 }
 
 
+.code .carousel-caption {
+    left: 0;
+    overflow: hidden;
+    border: none;
+}
 
+.code .carousel-caption img {
+    float: left;
+    margin-left: 30px;
+    margin-right: 50px;
+}
+
+.code .carousel-caption .caption {
+    float: left;
+}
+
+/*关于信息******************************************************************************************************************************/
+
+
+.featurette-divider {
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+footer {
+    text-align: center;
+    color: #a0a0a0;
+}
+
+footer ul {
+    margin: 30px auto;
+    overflow: hidden;
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+}
+
+
+footer ul li {
+    float: left;
+}
+
+footer ul li a {
+    position: relative;
+    display: block;
+    color: #a0a0a0;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: none;    
+}
 
 
 
