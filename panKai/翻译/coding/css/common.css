@@ -222,20 +222,37 @@ body {
     height: 320px;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
+    display: none;
 }
 
-.mxyy .toShadeAll .caption {
+.mxyy .thumbnail:hover .caption {
     width: 230px;
     height: 320px;
     text-align: center;
 }
 
-.mxyy .toShadeAll .caption p {
+.mxyy .thumbnail:hover .caption p {
     line-height: 30px
 }
 
-.mxyy .toShadeAll .caption .job {
-    margin-bottom: 50px;
+.mxyy .thumbnail:hover .caption h4 {
+    margin-top: 30px;
+}
+    
+.mxyy .thumbnail:hover .caption .job {
+    margin-bottom: 40px;
+}
+
+.mxyy .thumbnail:hover .caption .show_ {
+    display: block;
+}
+
+.mxyy .thumbnail:hover .shade {
+    display: none;
+}
+
+.mxyy .thumbnail:hover .shadeAll {
+    display: block;
 }
 
 .mxyy .thumbnail {
@@ -244,6 +261,11 @@ body {
     width: 230px;
     position: relative;
     margin: 0 auto 20px;
+    cursor: pointer;
+}
+
+.mxyy .thumbnail .caption .show_ {
+    display: none;
 }
 
 .mxyy .thumbnail img {
