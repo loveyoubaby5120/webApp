@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content=" width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/common.css" rel="stylesheet">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<!-- 头部菜单 -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">
+				<img alt="Brand" src="images/logo.png">
+			</a>
+        </div>
+	
+        <div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right"">
+				<li><a href="index.html">首页</a></li>
+				<li><a href="user.html">用户端</a></li>
+				<li><a href="interpreter.html">译员端</a></li>
+				<li><a href="help.html">问题帮助</a></li>
+				<li class="dropdown active">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="mix.html">加入我们</a></li>
+						<li><a href="news.html">新闻中心</a></li>
+						<li><a href="agree.html">用户协议</a></li>
+						<li><a href="intimate.html">隐私条款</a></li>
+						<li><a href="about.html">关于我们</a></li>
+						<li><a href="contact.html">联系我们</a></li>
+					</ul>
+				</li>
+				<li class="lang"><a class="active" href="#contact">中文</a>|<a href="#contact">English</a></li>
+			</ul>
+        </div>
+      </div>
+    </nav>
+	
+	<!-- banner图 第一个div  可加的calss  container   加入后container 限定了宽度   否则 没有限定宽度   显示效果拭图片大小决定 -->
+	<div class="banner">
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<img src="images/banner.jpg" alt="banner">
+				</div>
+				<div class="item">
+					<img src="images/banner.jpg" alt="banner">
+				</div>
+			</div>
+
+		</div>
+		
+		<div class="form">
+			<input type="text" placeholder="请输入服务目的地" />
+			<button class="btn btn-default" type="submit">成为译员</button>
+		</div>
+	</div>
+
+
+	
+	<hr class="featurette-divider"/>
+
+	<!-- 关于信息 -->
+	<footer class="container footer">
+		<ul>
+			<li>
+				<a href="">关于GlobZip</a>
+			</li>
+			<li>
+				<a href="">用户协议</a>
+			</li>
+			<li>
+				<a href="">招聘信息</a>
+			</li>
+			<li>
+				<a href="">联系我们</a>
+			</li>
+			<li>
+				<a href="">English</a>
+			</li>
+			<li>
+				<a href="">下载App应用</a>
+			</li>
+		</ul>
+		<p>违法和不良信息举报电话: 028-62836666</p>
+		<p>中国互联网举报中心: 12377</p>
+		<p>www.immomo.com 2011-1026 © All Rights Reserved.</p>
+		<p>京公网安备: 11010502015324 京ICP备11036675号-2 经营许可证编号: 京ICP证120107号</p>
+	</footer>
+
+
+</body>
+</html>
