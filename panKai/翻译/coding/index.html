@@ -11,6 +11,7 @@
 </head>
 <body>
 
+	<!-- 头部菜单 -->
 	<nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -42,11 +43,113 @@
 						<li><a href="#">联系我们</a></li>
 					</ul>
 				</li>
-				<li class="lang"><a href="#contact">中文</a>|<a href="#contact">English</a></li>
+				<li class="lang"><a class="active" href="#contact">中文</a>|<a href="#contact">English</a></li>
 			</ul>
         </div>
       </div>
     </nav>
+	
+	<!-- banner图 第一个div  可加的calss  container   加入后container 限定了宽度   否则 没有限定宽度   显示效果拭图片大小决定 -->
+	<div class="banner">
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<img src="images/banner.jpg" alt="banner">
+				</div>
+				<div class="item">
+					<img src="images/banner.jpg" alt="banner">
+				</div>
+			</div>
+
+		</div>
+		
+		<div class="form">
+			<input type="text" placeholder="请输入服务目的地" />
+			<button class="btn btn-default" type="submit">成为译员</button>
+		</div>
+
+	</div>
+
+	<!-- 介绍 -->
+	<div class="container js">
+		<div class="row">
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<img src="images/chjy.png" alt="撮合交易">
+					<div class="caption">
+						<h3>撮合交易</h3>
+						<p>通过平台匹配合适译员</p>
+						<p>身日沟通保证服务质量</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<img src="images/xybz.png" alt="信誉保障">
+					<div class="caption">
+						<h3>信誉保障</h3>
+						<p>交易提供信誉保障</p>
+						<p>降低交易风险</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<img src="images/zffb.png" alt="支付方便">
+					<div class="caption">
+						<h3>支付方便</h3>
+						<p>多重支付手段</p>
+						<p>货币的自由兑换</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 明星译员 -->
+	<div class="container mxyy">
+		<div class="row">
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<img src="images/chjy.png" alt="撮合交易">
+					<div class="caption">
+						<h3>撮合交易</h3>
+						<p>通过平台匹配合适译员</p>
+						<p>身日沟通保证服务质量</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<img src="images/xybz.png" alt="信誉保障">
+					<div class="caption">
+						<h3>信誉保障</h3>
+						<p>交易提供信誉保障</p>
+						<p>降低交易风险</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail">
+					<img src="images/zffb.png" alt="支付方便">
+					<div class="caption">
+						<h3>支付方便</h3>
+						<p>多重支付手段</p>
+						<p>货币的自由兑换</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 
 </body>
 </html>
