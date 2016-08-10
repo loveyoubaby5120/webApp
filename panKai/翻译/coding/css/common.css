@@ -4,12 +4,28 @@
 
 body {
      padding-top: 70px;
+     padding-bottom: 200px;
+}
+
+.title{
+    color: #787878;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.title i{
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin: 0 10px 4px;
+    background-color: #787878;
+    display: inline-block;
 }
 
 
 /*头部菜单******************************************************************************************************************************/
 .navbar {
-    margin-top: 30px;
+    padding-top: 30px;
     margin-bottom: 0;
 }
 
@@ -103,6 +119,7 @@ body {
 
 .banner .carousel-inner .item > img {
     margin: auto;
+    width: 100%;
 }
 
 .banner .form {
@@ -159,17 +176,151 @@ body {
     float: left;
 }
 
+.js .thumbnail .caption p{
+    color: #787878;
+}
+
 /*明星译员******************************************************************************************************************************/
+
 .mxyy {
+    margin-top: 100px;
+}
+
+.mxyy .shade{
+    width: 230px;
+    height: 320px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.mxyy .shade div{
+    position: absolute;
+    // bottom: -5px;
+    // left: 45px;
+    bottom: -25px;
+    left: 26px;
+    width: 180px;
+     -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+
+    border-top: none;
+    border-bottom: 230px rgba(0, 0, 0, 0.5)solid;
+    border-left: transparent 80px solid;
+    border-right: none;
+
+    // border-bottom-right-radius: 10px;
+    // border-top-right-radius: 10px;
+}
+
+.mxyy .shadeAll {
+    position: absolute;
+    bottom: 65px;
+    left: -25px;
+    width: 320px;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    border-top: none;
+    border-bottom: 230px rgba(0, 0, 0, 0.5)solid;
+    border-radius: 10px;
+}
+
+.mxyy .toShadeAll .caption {
+    width: 230px;
+    text-align: center;
+}
+
+.mxyy .toShadeAll .caption p {
+    line-height: 30px
+}
+
+.mxyy .toShadeAll .caption .job {
+    margin-bottom: 50px;
+}
+
+.mxyy .thumbnail {
+    border: none;
+    height: 320px;
+}
+
+.mxyy .thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    border-radius: 10px;
+    width: 230px;
+    height: 320px;
+    overflow: hidden;
+}
+
+.mxyy .thumbnail .caption {
+    position: absolute;
+    bottom: 25px;
+    left: 20px;
+    z-index: 1;
+}
+
+.mxyy .thumbnail .caption * {
+    color: #fff;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.mxyy .thumbnail .caption p span {
+    padding-right: 20px;
+}
+
+.mxyy .thumbnail .caption .money{
+    color: #f9bb40;    
+}
+
+/*热门地区******************************************************************************************************************************/
+
+.rmdq {
+    margin-top: 100px;
+}
+
+
+.rmdq .carousel-inner .item > img {
+    margin: auto;
+    width: 100%;
 
 }
 
 
-.tx{
-    width: 0;
-    height: 0;
-    border-top: 70px solid transparent;
-    border-left: 140px solid #ff5a00;
-    border-bottom: 70px solid transparent;
+
+/*二维码******************************************************************************************************************************/
+
+.code {
+    margin-top: 100px;
 }
+
+
+.code .carousel-inner .item > img {
+    margin: auto;
+    width: 100%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
