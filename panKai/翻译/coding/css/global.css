@@ -412,6 +412,7 @@
 }
 
 .user_html .carousel-caption span {
+    letter-spacing: 3px;
     background-color: #f9bb40;
     padding: 5px 15px;
     color: #fff;
@@ -459,7 +460,7 @@
 
 .fbxq .contentList h1 {
     color: #f9bb40;
-    margin: 100px auto 20px;
+    margin: 100px auto 40px;
     font-size: 5rem;
 }
 
@@ -544,10 +545,114 @@
 
 
 /*译员端*/
-/*需求发布******************************************************************************************************************************/
+/*banner******************************************************************************************************************************/
 
 .interpreter_html {
 
+}
+
+.interpreter_html .carousel-caption {
+    position: absolute;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+    left: 20%;
+    top: 30%;
+    color: #000;
+    text-align: left;
+}
+
+.interpreter_html .carousel-caption h2 {
+    letter-spacing: 7px;
+    margin-bottom: 15px;
+}
+
+.interpreter_html .carousel-caption span {
+    letter-spacing: 3px;
+    background-color: #005bac;
+    padding: 5px 15px;
+    color: #fff;
+}
+
+.interpreter_html .carousel-caption img {
+    display: block;
+    margin-top: 40px;
+}
+
+
+.interpreter_html .carousel-caption .codeSpan {
+    letter-spacing: 1px;
+    width: 120px;
+    display: inline-block;
+}
+
+/*认证流程******************************************************************************************************************************/
+
+.rzlc {
+        text-align: center;
+    background-color: #f8f8f8;
+    padding: 20px 0 100px;
+}
+
+.rzlc .title{
+    color: #005bac;
+}
+
+.rzlc .title i {
+    background-color: #005bac;
+}
+
+.rzlc .thumbnail {
+    height: 260px;
+    border: none;
+    background: none;
+}
+
+.rzlc .thumbnail .img {
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 1px 1px #f5f5f5;
+    background-color: #fff;
+    padding: 50px;
+    margin: auto;
+}
+
+.rzlc .thumbnail .glyphicon {
+    top: 50px;
+    font-size: 3rem;
+}
+
+.rzlc .thumbnail .caption {
+    margin-top: 20px;
+}
+
+.rzlc .thumbnail .caption p {
+    margin: auto;
+    line-height: 20px;
+    color: #005bac;
+}
+
+.rzlc button {
+    margin: 30px auto;
+    padding: 15px 30px;
+    letter-spacing: 5px;
+}
+
+/*多种货币******************************************************************************************************************************/
+
+.interpreter_html .fbxq .contentList h1 {
+    color: #005bac;
+}
+
+.interpreter_html .downloads p,
+.interpreter_html .downloads h1 {
+    color: #005bac;
+}
+
+/*下载******************************************************************************************************************************/
+
+.interpreter_html .downloads button {
+    background-color: #005bac;
 }
 
 
