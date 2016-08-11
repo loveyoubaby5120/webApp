@@ -1,5 +1,8 @@
 /*首页*/
 /*搜索******************************************************************************************************************************/
+.index_html{
+
+}
 
 .search {
     width: 450px;
@@ -238,6 +241,9 @@
 
 /*人物信息*/
 /*userInfo******************************************************************************************************************************/
+.user_html {
+
+}
 
 .userInfo {
     position: relative;
@@ -384,8 +390,8 @@
     line-height: 20px;
 }
 
-
-/*用户端******************************************************************************************************************************/
+/*用户端*/
+/*banner******************************************************************************************************************************/
 
 .user_html {
 
@@ -410,5 +416,195 @@
     padding: 5px 15px;
     color: #fff;
 }
+
+/*发布需求******************************************************************************************************************************/
+
+.fbxq {
+    position: relative;
+    padding-top: 110px;
+    padding-bottom: 150px;
+}
+
+.fbxq .remark {
+    margin: -110px auto 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.fbxq .remark h1 {
+    color: #f9bb40;
+    letter-spacing: 5px;
+    text-align: center;
+    font-weight: normal;
+    margin: 0;
+    font-size: 5rem;
+}
+
+.fbxq .carousel-control.left,
+.fbxq .carousel-control.right {
+    background-image: none;
+}
+
+.fbxq .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    margin: auto;    
+}
+
+.fbxq .contentList {
+    padding-left: 50px;
+}
+
+.fbxq .contentList h1 {
+    color: #f9bb40;
+    margin: 100px auto 20px;
+    font-size: 5rem;
+}
+
+.fbxq .contentList p {
+    line-height: 25px;
+    margin: 20px auto 50px;
+}
+
+.fbxq .contentList img {
+    margin: 0 40px 0 0;
+}
+
+/*需求类型******************************************************************************************************************************/
+
+.xqnx {
+
+}
+
+.xqnx .row > div {
+    margin-bottom: 100px;
+}
+
+.xqnx .thumbnail {
+    text-align: center;
+    border: none;
+}
+
+.xqnx .thumbnail .caption *{
+    color: #dfb994;
+}
+
+.xqnx .thumbnail .caption p{
+    margin: auto;
+    width: 80%;
+}
+
+/*下载******************************************************************************************************************************/
+
+.downloads {
+    text-align: center;
+    margin: 70px auto 200px;
+}
+
+.downloads p {
+    color: #dfb994;    
+}
+
+.downloads h1 {
+    font-weight: normal;
+    font-size: 5rem;
+    color: #f9bb40;
+    margin: 30px auto 50px;
+}
+
+
+.downloads button {
+    background-color: #f08200;
+    background-image: url(../images/ios.png);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding-left: 40px;
+    margin-right: 20px;
+    padding: 10px 12px 10px 40px;
+}
+
+.downloads button.android {
+    background-image: url(../images/android.png);
+}
+
+
+.downloads button i{
+    width: 20px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: top;
+    background-image: url(../images/right.png);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 8px;
+}
+
+
+/*译员端*/
+/*需求发布******************************************************************************************************************************/
+
+.interpreter_html {
+
+}
+
+
+/*问题帮助*/
+
+.help_html {
+
+}
+
+
+/*加入我们*/
+
+.mix_html {
+
+}
+
+/*新闻中心*/
+
+.news_html {
+    
+}
+
+/*用户协议*/
+
+.agree_html {
+    
+}
+
+/*隐私条款*/
+
+.intimate_html {
+    
+}
+
+/*关于我们*/
+
+.about_html {
+    
+}
+
+/*联系我们*/
+
+.contact_html {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -11,7 +11,7 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/bootstrap-hover-dropdown.min.js"></script>
 </head>
-<body>
+<body class="interpreter_html">
 
 	<!-- 头部菜单 -->
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -51,18 +51,71 @@
       </div>
     </nav>
 	
-	<!-- banner图 第一个div  可加的calss  container   加入后container 限定了宽度   否则 没有限定宽度   显示效果拭图片大小决定 -->
-	<div class="banner">
+		<!-- banner图 第一个div  可加的calss  container   加入后container 限定了宽度   否则 没有限定宽度   显示效果拭图片大小决定 -->
+	<div class="banner user_html">
 		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
-			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="images/banner.jpg" alt="banner">
+					<img src="images/user_banner.jpg" alt="banner">
+					<div class="carousel-caption">
+						<h2>GlobZip</h2>
+						<span>让您的商务会谈更融洽，合作更完美</span>
+					</div>
 				</div>
 			</div>
 
 		</div>
+	</div>
+
+	<!-- 发布需求 -->
+	<div class="container fbxq">
+
+		<div id="carousel-example-generic2" class="carousel slide col-sm-5" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<img src="images/iphone.png" alt="where">
+				</div>
+			</div>
+
+
+			<!-- Controls -->
+			<a class="left carousel-control" href="#carousel-example-generic2" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#carousel-example-generic2" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+
+		<div class="contentList col-sm-7">
+			<h1>发布需求</h1>
+			<p>通过globzip平台发布你的需求要到哪儿，做什么事情，对语言有什么样的要求</p>
+			<p>
+				<img src="images/xq_01.png">
+			</p>
+		</div>
+
+	</div>
+
+
+	<!-- 下载 -->
+	<div class="container downloads">
+		<img src="images/2code.jpg">
+		<p>少买扫描下载客户端</p>
+
+		<h1>GlobAip - 您的 “译” 中人</h1>
+
+		<button type="button" class="btn btn-warning ios">APP STORE<i></i></button>
+		<button type="button" class="btn btn-warning android">ANDROID<i></i></button>
 	</div>
 
 
