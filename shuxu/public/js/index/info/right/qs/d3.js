@@ -217,33 +217,6 @@ export default class D3 extends React.Component {
         var z = d3.scale.ordinal()
                 .range(colorrange);
 
-        // var graph = d3.json(url, function(data){
-            // var dayV = topicDateTime;
-            // var a = [];
-
-
-            // for(var i = 0; i < topicArray.length; i++){
-            //     a[topicArray[i]-1] = topicArray[i]-1;
-            // }
-
-            // var ds = [];
-            // data.forEach(function(d, i){
-            //     if((a[i]) == i){
-            //         ds = ds.concat(d.slice(d.length-dayV, d.length));
-            //     }
-            // });
-            // data = ds;
-            // if(!data.length){
-            //     return true;
-            // }
-
-            
-            // data.forEach(function(d){
-            //     d.dateStr = d.date;
-            //     d.date = format.parse(d.date);
-            //     d.value = parseFloat(d.value.toFixed(2));
-            // });
-
 
             var layers = stack(nest.entries(data));
             var colorArr = [];
@@ -411,11 +384,10 @@ export default class D3 extends React.Component {
 
                 _this.renderLegend(colorrange, layers, svg);
 
-        // })
     }
 
 
-    zx(data){
+    zx(data, event_num){
         var _this = this;
         var topicDateTime = this.state.topicDateTime;
         var topicArray = this.state.topicArray;
@@ -460,34 +432,6 @@ export default class D3 extends React.Component {
         var z = d3.scale.ordinal()
                 .range(colorrange);
 
-        // var graph = d3.json(url, function(data){
-            // var dayV = topicDateTime;
-            // var a = [];
-
-
-            // for(var i = 0; i < topicArray.length; i++){
-            //     a[topicArray[i]-1] = topicArray[i]-1;
-            // }
-
-            // var ds = [];
-            // data.forEach(function(d, i){
-            //     if((a[i]) == i){
-            //         ds = ds.concat(d.slice(d.length-dayV, d.length));
-            //     }
-            // });
-            // data = ds;
-            // if(!data.length){
-            //     return true;
-            // }
-
-            
-            // data.forEach(function(d){
-            //     d.dateStr = d.date;
-            //     d.date = format.parse(d.date);
-            //     // d.date = new Date(d.date).Format("yyyy-MM-dd");
-            //     d.value = parseFloat(d.value.toFixed(2));
-            // });
-
 
             var layers = stack(nest.entries(data));
             var colorArr = [];
@@ -508,6 +452,41 @@ export default class D3 extends React.Component {
                             .style("fill", function(d, i) {
                                 return z(i); 
                              });
+
+            var toolArr = [];
+            for(var t=0; t<=event_num; t++){
+                toolArr[t] = d3.select('#main2')
+                    .append("div")
+                    .attr("class", "remove")
+                    .style("position", "absolute")
+                    .style('padding', '-10px')
+                    .style("z-index", "20")
+                    .style("box-sizing", "border-box")
+                    .style("width", "90px")
+                    .style("height", "90px")
+                    .style("background-color", "rgba(253, 187, 132,.5)")
+                    .style("border-bottom-left-radius", "50%")
+                    .style("border-bottom-right-radius", "50%")
+                    .style("border-top-right-radius", "50%")
+                    .style("border", '1px solid #ccc')
+                    .style("margin-left","-10px")
+                    .style("transform", "rotate(-135deg)")
+                    .style("visibility", "hidden");
+            }
+            var t_index = 0;
+            for(var m=0; m<layers.length; m++){
+                var values = layers[m].values;
+                for(var n=0; n<values.length; n++){
+                    if(values[n].event){
+                        var x_index = x(values[n].date);
+                        toolArr[t_index].style('left', (x_index + 120) + 'px');
+                        toolArr[t_index].style("top", (-y(values[n].y) + 290)+ 'px');
+                        toolArr[t_index].html( "<p style='transform:rotate(135deg);padding-right:5px'>" + layers[m].key + "<br>" + values[n].dateStr + "<br>" + values[n].event +"</p>" ).style("visibility", "visible");
+                        t_index++;
+                    }
+                }
+            } 
+
 
 
             var rect = layer.selectAll("rect")
@@ -674,7 +653,6 @@ export default class D3 extends React.Component {
             _this.renderLegend(colorrange, layers, svg1);
 
 
-        // })
     }
 
     //切换 数据
@@ -710,7 +688,7 @@ export default class D3 extends React.Component {
                 if(!data.length){
                     return true;
                 }
-                
+                var event_num = 0
                 data.forEach(function(d){
                     d.date = new Date(d.time);
                     d.dateStr = d.date.getFullYear()+"-"+(d.date.getMonth()+1)+"-"+d.date.getDate();
@@ -718,11 +696,14 @@ export default class D3 extends React.Component {
                     // d.value = parseFloat(d.hot.toFixed(2));
                     d.value = d.hot;
                     d.key = d.name;
+                    if(d.event){
+                      event_num++;
+                    }
                     d.event = d.event ? d.event : '';
                 });
 
                 _this.chart(data);
-                _this.zx(data);
+                _this.zx(data,event_num);
             },
             error: function(msg){
                 console.log(msg);
