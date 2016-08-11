@@ -287,6 +287,7 @@ ul.nav-tabs.nav > li > a:hover{
 
 .collapse-custom .collapse .panel-body {
     background-color: #f6f6f6;
+    padding: 40px;
 }
 
 /*头部菜单******************************************************************************************************************************/

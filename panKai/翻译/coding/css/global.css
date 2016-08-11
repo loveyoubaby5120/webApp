@@ -749,6 +749,9 @@
     text-decoration: none;
 }
 
+.about .section-1 .tab-content {
+    text-align: left;
+}    
 
 
 /*新闻中心  section-2*/
