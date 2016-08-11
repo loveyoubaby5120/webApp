@@ -715,11 +715,46 @@
     
 }
 
+.about h4 {
+    color: #000;
+    margin: 20px auto 50px;
+}
+
 /*加入我们  section-1*/
+.about .section-1 {
+    text-align: center;    
+}
+
+.about .section-1 .type {
+    padding: 0;
+}
+
+.about .section-1 .type li {
+    padding: 0;
+}
+
+.about .section-1 .type li.active {
+    background-color: #f8b62b;
+}
+
+.about .section-1 .type li.active a {
+    color: #fff;
+}
+
+.about .section-1 .type li a {
+    width: 100px;
+    padding: 6px 12px;
+    color: #a0a0a0;
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+
 /*新闻中心  section-2*/
 
 /*用户协议  section-3*/
-.about .section-3 h2{
+.about .section-3 h2 {
     text-align: center;
     color: #000;
 }

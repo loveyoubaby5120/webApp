@@ -174,9 +174,115 @@ ul.nav-tabs.nav > li > a:hover{
 }
 
 @media (max-width: 991px){
-ul.nav-tabs.nav {
-    display: none!important;
+    ul.nav-tabs.nav {
+        display: none!important;
+    }
 }
+
+
+/*下来表格*/
+.collapse-custom{
+    margin: 20px auto;
+}
+
+.collapse-custom *{
+    color: #000;
+}
+
+.collapse-custom .navbar-tool {
+    margin-top: 13px;
+}
+
+.collapse-custom .navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  cursor: pointer;
+  border-bottom: none;
+  padding: 0;
+  
+}
+
+.collapse-custom .navbar .navbar-collapse ul li a{
+    color: #000;
+}
+
+.collapse-custom .navbar .btn-xs {
+  font-size: inherit;
+  border: none;
+}
+
+.collapse-custom .navbar li ul {
+  list-style-type: none;
+  padding-left: 15px;
+}
+
+.collapse-custom .navbar.top {
+    border-top: none;
+}
+
+.collapse-custom .navbar {
+  border: 1px solid #e7e7e7;
+}
+
+.collapse-custom .navbar-heading {
+  cursor: default;
+  font-weight: bold;
+  font-size: 16px;
+  border-color: #e7e7e7;
+
+}
+
+.collapse-custom .navbar-heading li {
+  /*padding: 10px 0 10px 0;*/
+}
+
+.collapse-custom .navbar-heading li a {
+  color: #fff;
+}
+
+.collapse-custom .navbar-heading li a:hover {
+  color: #fff;
+}
+
+.collapse-custom .navbar-nav .one {
+  min-width: 300px;
+}
+
+.collapse-custom .navbar-nav .two {
+  min-width: 110px;
+}
+
+.collapse-custom .navbar-nav .three {
+  min-width: 110px;
+}
+
+.collapse-custom .navbar-nav .four {
+  min-width: 110px;
+}
+
+.collapse-custom .navbar-nav .five {
+  width: 20px;
+  height: 20px;
+}
+
+.collapse-custom .collapse {
+  background-color: #fff;
+}
+
+.collapse-custom .collapse .navbar-tool .glyphicon-chevron-down{
+    display: none;
+}
+
+.collapse-custom .collapse.collapsed .navbar-tool .glyphicon-chevron-down {
+    display: inline-block;
+}
+
+.collapse-custom .collapse.collapsed .navbar-tool .glyphicon-chevron-up {
+    display: none;
+}
+
+.collapse-custom .collapse .panel-body {
+    background-color: #f6f6f6;
 }
 
 /*头部菜单******************************************************************************************************************************/
