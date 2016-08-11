@@ -129,6 +129,7 @@ ul.nav-tabs{
     border-radius: 4px;
     border: 1px solid #ddd;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    background-color: #fffdf8;
 }
 ul.nav-tabs li{
     margin: 0;
@@ -141,11 +142,15 @@ ul.nav-tabs li a{
     margin: 0;
     padding: 8px 16px;
     border-radius: 0;
+    color: #a0a0a0;
 }
 ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
     color: #fff;
-    background: #0088cc;
-    border: 1px solid #0088cc;
+    /*background: #0088cc;
+    border: 1px solid #0088cc;*/
+
+    background: #f8b62b;
+    border: 1px solid #f8b62b;
 }
 ul.nav-tabs li:first-child a{
     border-radius: 4px 4px 0 0;
@@ -157,10 +162,19 @@ ul.nav-tabs.affix{
     top: 100px; /* Set the top position of pinned element */
 }
 
-ul.nav-tabs.nav > li > a:hover, .nav > li > a:focus{
+ul.nav-tabs.nav > li > a:hover{
     color: #fff;
-    background: #0088cc;
-    border: 1px solid #0088cc;
+    /*background: #0088cc;
+    border: 1px solid #0088cc;*/
+
+    background: #f8b62b;
+    border: 1px solid #f8b62b;
+}
+
+@media (max-width: 991px){
+ul.nav-tabs.nav {
+    display: none!important;
+}
 }
 
 /*头部菜单******************************************************************************************************************************/
