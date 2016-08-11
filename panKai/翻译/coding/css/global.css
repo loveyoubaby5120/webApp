@@ -715,6 +715,99 @@
     
 }
 
+/*加入我们  section-1*/
+/*新闻中心  section-2*/
+
+/*用户协议  section-3*/
+.about .section-3 h2{
+    text-align: center;
+    color: #000;
+}
+
+.about .section-3 dl dt {
+    color: #000;
+    line-height: 40px;
+}
+
+.about .section-3 dl dd {
+    line-height: 25px;
+}
+
+/*隐私条款  section-4*/
+/*关于我们  section-5*/
+.about .section-5 {
+
+}
+
+.about .section-5 dl {
+    margin-bottom: 100px;
+}
+
+.about .section-5 dl dt {
+    font-size: 3rem;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.about .section-5 dl dd ul {
+    padding-left: 20px;
+}
+
+.about .section-5 dl dd ul.list-unstyled {
+    padding-left: 0px;
+}
+
+.about .section-5 dl dd ul li {
+    line-height: 50px;
+ }
+ 
+.about .section-5 dl dd ul.list-unstyled li {
+    line-height: 35px;
+}
+
+.about .section-5 dl dd ul li span {
+    margin-right: 50px;
+}
+
+.about .section-5 dl dd ul li span.time {
+    color: #000;
+}
+
+/*联系我们  section-6*/
+
+.about .section-6 .row {
+    margin-top: 10px;
+}
+
+.about .section-6 .row > div {
+    margin-top: 40px;
+}
+
+.about .section-6 dl dt {
+    color: #000;
+    line-height: 50px;
+}
+
+.about .section-6 dl.dl-horizontal dt,
+.about .section-6 dl.dl-horizontal dd {
+    color: #a0a0a0;
+    line-height: 25px;
+    text-align: left;
+}
+
+.about .section-6 dl.dl-horizontal dt {
+    width: 80px;
+}
+
+.about .section-6 dl.dl-horizontal dd {
+    margin-left: 80px;
+}
+
+.about .section-6 dl dd {
+    line-height: 25px;
+}
+
+
 /*联系我们*/
 
 .contact_html {
