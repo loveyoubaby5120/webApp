@@ -269,7 +269,11 @@ ul.nav-tabs.nav > li > a:hover{
   background-color: #fff;
 }
 
-.collapse-custom .collapse .navbar-tool .glyphicon-chevron-down{
+.collapse-custom .collapse .navbar-tool .glyphicon-chevron-up {
+    display: inline-block;
+}
+
+.collapse-custom .collapse .navbar-tool .glyphicon-chevron-down {
     display: none;
 }
 
