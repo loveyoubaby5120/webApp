@@ -481,7 +481,7 @@ export default class D3 extends React.Component {
                         var x_index = x(values[n].date);
                         toolArr[t_index].style('left', (x_index + 120) + 'px');
                         toolArr[t_index].style("top", (-y(values[n].y) + 290)+ 'px');
-                        toolArr[t_index].html( "<p style='transform:rotate(135deg);padding-right:5px'>" + layers[m].key + "<br>" + values[n].dateStr + "<br>" + values[n].event +"</p>" ).style("visibility", "visible");
+                        toolArr[t_index].html( "<p style='transform:rotate(135deg);padding-right:5px;margin:15px 10px'>" + layers[m].key + "<br>" + values[n].dateStr + "<br>" + values[n].event +"</p>" ).style("visibility", "visible");
                         t_index++;
                     }
                 }
