@@ -154,7 +154,13 @@ ul.nav-tabs li:last-child a{
     border-radius: 0 0 4px 4px;
 }
 ul.nav-tabs.affix{
-    top: 30px; /* Set the top position of pinned element */
+    top: 100px; /* Set the top position of pinned element */
+}
+
+ul.nav-tabs.nav > li > a:hover, .nav > li > a:focus{
+    color: #fff;
+    background: #0088cc;
+    border: 1px solid #0088cc;
 }
 
 /*头部菜单******************************************************************************************************************************/
