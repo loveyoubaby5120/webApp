@@ -385,4 +385,30 @@
 }
 
 
+/*用户端******************************************************************************************************************************/
+
+.user_html {
+
+}
+
+.user_html .carousel-caption {
+    position: absolute;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+    left: 20%;
+    top: 30%;
+    color: #f9bb40;
+    text-align: left;
+}
+
+.user_html .carousel-caption h2 {
+    letter-spacing: 7px;
+    margin-bottom: 15px;
+}
+
+.user_html .carousel-caption span {
+    background-color: #f9bb40;
+    padding: 5px 15px;
+    color: #fff;
+}
+
 
