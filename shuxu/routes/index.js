@@ -2,7 +2,8 @@ var Router = require('koa-router');
 var router = new Router();
 
 router.get('/', function *(next) {
-	this.redirect('/index');
+	yield this.render('index', { title: '微信公众号排名', layout: false, url: this.request.url,css: 'index_new_pc.css' });
+	// this.redirect('/index');
 });
 
 
