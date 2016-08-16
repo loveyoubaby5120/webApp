@@ -4,7 +4,7 @@ import time
 cnx = connector.connect(user='root',password='',host='127.0.0.1',database='weixin')
 cursor = cnx.cursor()
 
-select = """select url,id from article_profile where file_name is null"""
+select = """select url,id from article_profile where file_name is null order by id desc"""
 
 update = """update article_profile
             set file_name = %s
