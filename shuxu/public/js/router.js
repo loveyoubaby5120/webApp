@@ -12,9 +12,6 @@ ReactDom.render((
       <Route path="user/:userID" component={index.User} />
     </Route>
 
-    <Route path="/index" component={index.App}>
-      <Route path="user/:userID" component={index.User} />
-    </Route>
 
     <Route path="/index_info" component={index.App_info}>
       <Route path="user/:userID" component={index.User} />
