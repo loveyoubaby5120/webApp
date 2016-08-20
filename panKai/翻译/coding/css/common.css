@@ -27,6 +27,10 @@ h3 {
     display: inline-block;
 }
 
+.carousel-inner > .item > a > img {
+    margin: auto;    
+}
+
 
 /*分享*/
 .share {
