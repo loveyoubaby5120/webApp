@@ -33,7 +33,7 @@
 }
 
 .search .btn {
-    background-color: #f8b62b;
+    background-color: #f08200;
     color: #fff;
     position: absolute;
     height: 50px;
@@ -197,7 +197,7 @@
 }
 
 .mxyy .thumbnail .caption .money{
-    color: #f9bb40;    
+    color: #f08200;    
 }
 
 /*热门地区******************************************************************************************************************************/
@@ -310,7 +310,7 @@
 }
 
 .userInfo .otherInfo .money {
-    color: #f9bb40;
+    color: #f08200;
     text-align: right;
     font-size: 2.5rem;
 }
@@ -354,9 +354,9 @@
 }
 
 .appraise h3 {
-    color: #f8b62b;
+    color: #f08200;
     padding-bottom: 3px;
-    border-bottom: 2px #f8b62b solid;
+    border-bottom: 2px #f08200 solid;
     display: inline-block;
 }
 
@@ -424,7 +424,7 @@
     text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
     left: 20%;
     top: 30%;
-    color: #f9bb40;
+    color: #f08200;
     text-align: left;
 }
 
@@ -435,7 +435,7 @@
 
 .user_html .carousel-caption span {
     letter-spacing: 3px;
-    background-color: #f9bb40;
+    background-color: #f08200;
     padding: 5px 15px;
     color: #fff;
 }
@@ -459,7 +459,7 @@
 }
 
 .fbxq .remark h1 {
-    color: #f9bb40;
+    color: #f08200;
     letter-spacing: 5px;
     text-align: center;
     font-weight: normal;
@@ -473,10 +473,25 @@
 }
 
 .fbxq .carousel-inner {
-    background-image: url('../images/iphone.png');
+    background-image: url('../images/iphone_default.png');
     background-repeat: no-repeat;
     background-position: center;
     height: 530px;
+}
+
+.fbxq .carousel-inner > .item {
+    height: 100%;
+}
+
+.fbxq .carousel-inner > .item {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.fbxq .carousel-inner > .item > img{
+    width: 213px;
+    height: 373px;
+    margin-top: 82px !important;
 }
 
 .fbxq .carousel-inner > .item > img, .carousel-inner > .item > a > img {
@@ -488,7 +503,7 @@
 }
 
 .fbxq .contentList h1 {
-    color: #f9bb40;
+    color: #f08200;
     margin: 100px auto 40px;
     font-size: 5rem;
 }
@@ -540,7 +555,7 @@
 .downloads h1 {
     font-weight: normal;
     font-size: 5rem;
-    color: #f9bb40;
+    color: #f08200;
     margin: 30px auto 50px;
 }
 
@@ -616,12 +631,13 @@
 /*认证流程******************************************************************************************************************************/
 
 .rzlc {
-        text-align: center;
+    text-align: center;
     background-color: #f8f8f8;
-    padding: 20px 0 100px;
+    padding: 20px 0 50px;
 }
 
 .rzlc .title{
+    margin-bottom: 80px;
     color: #005bac;
 }
 
@@ -699,12 +715,12 @@
 /*信息******************************************************************************************************************************/
 
 .issue h2 {
-    color: #f8b62b;
+    color: #f08200;
 }
 
 .issue .panel-group .panel .panel-heading .panel-title a {
     text-decoration: none;
-    color: #f8b62b;
+    color: #f08200;
 }
 
 .issue .panel-group .panel .panel-heading .panel-title a.collapsed {
@@ -763,7 +779,7 @@
 }
 
 .about .section-1 .type li.active {
-    background-color: #f8b62b;
+    background-color: #f08200;
 }
 
 .about .section-1 .type li.active a {
@@ -784,6 +800,19 @@
 
 
 /*新闻中心  section-2*/
+.about .section-2 h2 {
+    text-align: center;
+    color: #000;
+}
+
+.about .section-2 dl dt {
+    color: #000;
+    line-height: 40px;
+}
+
+.about .section-2 dl dd {
+    line-height: 25px;
+}
 
 /*用户协议  section-3*/
 .about .section-3 h2 {
@@ -801,6 +830,20 @@
 }
 
 /*隐私条款  section-4*/
+.about .section-4 h2 {
+    text-align: center;
+    color: #000;
+}
+
+.about .section-4 dl dt {
+    color: #000;
+    line-height: 40px;
+}
+
+.about .section-4 dl dd {
+    line-height: 25px;
+}
+
 /*关于我们  section-5*/
 .about .section-5 {
 

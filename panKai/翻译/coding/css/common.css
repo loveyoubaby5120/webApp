@@ -64,12 +64,12 @@ h3 {
     margin: 15px 0px;  
     position: relative;  
     display: block;  
-    color: #f8b62b;  
+    color: #f08200;  
     width: 0px;  
     height: 0px;  
     float: left;
     border-right: 20px solid transparent;
-    border-bottom: 14px solid #f8b62b;
+    border-bottom: 14px solid #f08200;
     border-left: 20px solid transparent;
     -moz-transform:    rotate(35deg) scale(0.5);  
     -webkit-transform: rotate(35deg) scale(0.5);  
@@ -79,7 +79,7 @@ h3 {
 }  
 
 .star-five:before {  
-    border-bottom: 16px solid #f8b62b;
+    border-bottom: 16px solid #f08200;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
     position: absolute;  
@@ -100,13 +100,13 @@ h3 {
 .star-five:after {  
     position: absolute;  
     display: block;  
-    color: #f8b62b;  
+    color: #f08200;  
     top: 3px;  
     left: -24px;  
     width: 0px;  
     height: 0px;  
     border-right: 20px solid transparent;  
-    border-bottom: 14px solid #f8b62b;  
+    border-bottom: 14px solid #f08200;  
     border-left: 20px solid transparent;  
     -webkit-transform: rotate(-71deg);  
     -moz-transform:    rotate(-71deg);  
@@ -151,8 +151,8 @@ ul.nav-tabs li.active a:focus {
     /*background: #0088cc;
     border: 1px solid #0088cc;*/
 
-    background: #f8b62b;
-    border: 1px solid #f8b62b;
+    background: #f08200;
+    border: 1px solid #f08200;
 }
 ul.nav-tabs li:first-child a{
     border-radius: 4px 4px 0 0;
@@ -169,8 +169,8 @@ ul.nav-tabs.nav > li > a:hover{
     /*background: #0088cc;
     border: 1px solid #0088cc;*/
 
-    background: #f8b62b;
-    border: 1px solid #f8b62b;
+    background: #f08200;
+    border: 1px solid #f08200;
 }
 
 @media (max-width: 991px){
@@ -307,7 +307,7 @@ ul.nav-tabs.nav > li > a:hover{
 
 .navbar-default{
     background-color: #ffffff;
-    border-color: #f8b62b;
+    border-color: #f08200;
 }
 
 .navbar-right{
@@ -321,28 +321,28 @@ ul.nav-tabs.nav > li > a:hover{
 
 .nav > li > a:hover,
 .nav > li > a:focus {
-    color: #f9bb40;
+    color: #f08200;
     text-decoration: none;
     background-color: #eee;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-    color: #f9bb40;
+    color: #f08200;
     background-color: transparent;
 }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-    color: #f9bb40;
+    color: #f08200;
     background-color: transparent;
 }
 
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-    color: #f9bb40;
+    color: #f08200;
     background-color: transparent;
 }
 
@@ -373,7 +373,7 @@ ul.nav-tabs.nav > li > a:hover{
 
 .navbar .dropdown-menu > li > a:hover,
 .navbar .dropdown-menu > li > a:focus {
-  color: #f9bb40;
+  color: #f08200;
 }
 
 
