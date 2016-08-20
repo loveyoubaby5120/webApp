@@ -4,6 +4,12 @@
 
 }
 
+.index_html .banner .carousel-inner {
+    background: -webkit-linear-gradient(left, #c5d2e3, #b3c0d3);
+    background: -o-linear-gradient(left, #c5d2e3, #b3c0d3);
+    background: linear-gradient(to right, #c5d2e3, #b3c0d3);
+}
+
 .search {
     width: 450px;
     height: 70px;
@@ -52,21 +58,26 @@
     float: left;
     margin-left: 30px;
     margin-right: 10px;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .js .thumbnail .caption {
     float: left;
 }
 
+.js .thumbnail .caption h3 {
+    margin-bottom: 20px;
+}
+
 .js .thumbnail .caption p{
     color: #787878;
+    margin: 0;
 }
 
 /*明星译员******************************************************************************************************************************/
 
 .mxyy {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .mxyy .shade{
@@ -111,10 +122,16 @@
     width: 230px;
     height: 320px;
     text-align: center;
+    text-decoration: none;
 }
 
 .mxyy .thumbnail:hover .caption p {
-    line-height: 30px
+    line-height: 20px
+}
+
+.mxyy .thumbnail:hover .caption button {
+    margin: 20px auto 0;
+    padding: 3px 20px;
 }
 
 .mxyy .thumbnail:hover .caption h4 {
@@ -225,12 +242,17 @@
 
 .code .code-caption img {
     float: left;
-    margin-left: 30px;
+    margin-left: 60px;
     margin-right: 50px;
 }
 
 .code .code-caption .caption {
+    text-align: left;
     float: left;
+}
+
+.code .code-caption .caption h3 {
+    margin-bottom: 30px;
 }
 
 .code .code-caption .caption * {
@@ -448,6 +470,13 @@
 .fbxq .carousel-control.left,
 .fbxq .carousel-control.right {
     background-image: none;
+}
+
+.fbxq .carousel-inner {
+    background-image: url('../images/iphone.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 530px;
 }
 
 .fbxq .carousel-inner > .item > img, .carousel-inner > .item > a > img {
