@@ -394,7 +394,7 @@ ul.nav-tabs.nav > li > a:hover{
     width: 100%;
     height: 360px;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
