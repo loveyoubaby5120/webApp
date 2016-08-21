@@ -13,7 +13,7 @@ var exportExcel=require('./do-ecxel.js');
 var requestPomise=require('./request-promise.js');
 
 var TITLE = 'formidable上传示例';
-var AVATAR_UPLOAD_FOLDER = '/avatar/';
+var AVATAR_UPLOAD_FOLDER = '/upload/';
 
 
 var mysqldb = require('../config/mysql');
@@ -66,56 +66,57 @@ function querySql(sql){
 }
 
 /* GET home page. */
-// router.get('/download', function(req, res) {
+router.get('/download', function(req, res) {
 
-// 	exportExcel.exportExcel(req,res);
-//   res.render('excel', { title: TITLE ,content:'上传文件'});
-// });
+	// exportExcel.exportExcel(req,res);
+  res.render('excel', { title: TITLE ,content:'上传文件'});
+});
 
-router.get('/', function(req, res) {
+router.post('/download', function(req, res) {
+// router.get('/', function(req, res) {
 
-	var sql = `call gzh_info("*"," and type = 2 and time=maxTime group by id","","rank","")`;
+	// var sql = `call gzh_info("*"," and type = 2 and time=maxTime group by id","","rank","")`;
 
-	querySql(sql).then(function(data){
-		var conf = {};
-		conf.cols = [
-			{caption: '微信号', type: 'string', width:200},
-			{caption: 'ID', type: 'string', width:200},
-			{caption: '影响力', type: 'string', width:200}
-		];
+	// querySql(sql).then(function(data){
+	// 	var conf = {};
+	// 	conf.cols = [
+	// 		{caption: '微信号', type: 'string', width:200},
+	// 		{caption: 'ID', type: 'string', width:200},
+	// 		{caption: '影响力', type: 'string', width:200}
+	// 	];
 
-		conf.rows = [];
+	// 	conf.rows = [];
 
-		data[0].forEach(function(item, index){
-			var array = [];
-			array.push(item.nick_name);
-			array.push(item.english_id);
-			array.push(item.w_index);
+	// 	data[0].forEach(function(item, index){
+	// 		var array = [];
+	// 		array.push(item.nick_name);
+	// 		array.push(item.english_id);
+	// 		array.push(item.w_index);
 
-			conf.rows.push(array);
-		});
+	// 		conf.rows.push(array);
+	// 	});
 
 	    
-	    var result = excelPort.execute(conf);
+	//     var result = excelPort.execute(conf);
 
-	    var random = Math.floor(Math.random()*10000+0);
-	    var filename = 'filename';  //只支持字母和数字命名
-	    var uploadDir = 'public/upload/';
-	    var filePath = uploadDir + filename + random + ".xlsx";
+	//     var random = Math.floor(Math.random()*10000+0);
+	//     var filename = 'filename';  //只支持字母和数字命名
+	//     var uploadDir = 'public/upload/';
+	//     var filePath = uploadDir + filename + random + ".xlsx";
 
-	    fs.writeFile(filePath, result, 'binary',function(err){
-	        if(err){
-	            console.log(err);
-	        }
-	    });
+	//     fs.writeFile(filePath, result, 'binary',function(err){
+	//         if(err){
+	//             console.log(err);
+	//         }
+	//     });
 
 
 
-	    res.setHeader('Content-Type', 'application/vnd.openxmlformats');
-	    res.setHeader("Content-Disposition", "attachment; filename=" + "Report.xlsx");
-	    res.end(result, 'binary');
+	//     res.setHeader('Content-Type', 'application/vnd.openxmlformats');
+	//     res.setHeader("Content-Disposition", "attachment; filename=" + "Report.xlsx");
+	//     res.end(result, 'binary');
 
-	});
+	// });
 
 
 	// var Json = {'biz':[],'url':[]};
@@ -241,56 +242,57 @@ router.get('/', function(req, res) {
 
 
 
-	// var form = new formidable.IncomingForm();   //创建上传表单
-	// form.encoding = 'utf-8';		//设置编辑
-	// form.uploadDir = 'public' + AVATAR_UPLOAD_FOLDER;	 //设置上传目录
-	// form.keepExtensions = true;	 //保留后缀
-	// form.maxFieldsSize = 2 * 1024 * 1024;   //文件大小
+	var form = new formidable.IncomingForm();   //创建上传表单
+	form.encoding = 'utf-8';		//设置编辑
+	form.uploadDir = 'public' + AVATAR_UPLOAD_FOLDER;	 //设置上传目录
+	form.keepExtensions = true;	 //保留后缀
+	form.maxFieldsSize = 2 * 1024 * 1024;   //文件大小
 
-	// form.parse(req, function(err, fields, files) {
+	form.parse(req, function(err, fields, files) {
 
-	// 	if (err) {
-	// 		res.locals.error = err;
-	// 		res.render('index', { title: TITLE });
-	// 		return;		
-	// 	}  
-		 
-	// 	var extName = '';  //后缀名
-	// 	switch (files.fulAvatar.type) {
-	// 		case 'image/pjpeg':
-	// 			extName = 'jpg';
-	// 			break;
-	// 		case 'image/jpeg':
-	// 			extName = 'jpg';
-	// 			break;		 
-	// 		case 'image/png':
-	// 			extName = 'png';
-	// 			break;
-	// 		case 'image/x-png':
-	// 			extName = 'png';
-	// 			break;
-	// 		default:
-	// 			extName = 'xlsx';
-	// 			break;		
-	// 	}
+		if (err) {
+			res.locals.error = err;
+			res.render('index', { title: TITLE });
+			return;		
+		}  
+		 console.log(files);
+		 console.log(files.fulAvatar.type);
+		var extName = '';  //后缀名
+		switch (files.fulAvatar.type) {
+			case 'image/pjpeg':
+				extName = 'jpg';
+				break;
+			case 'image/jpeg':
+				extName = 'jpg';
+				break;		 
+			case 'image/png':
+				extName = 'png';
+				break;
+			case 'image/x-png':
+				extName = 'png';
+				break;
+			default:
+				extName = 'xlsx';
+				break;		
+		}
 
-	// 	// if(extName.length == 0){
-	// 	//     res.locals.error = '后缀名有误';
-	// 	//     res.render('excel', { title: TITLE ,content:'上传文件'});
-	// 	//     return;				   
-	// 	// }
+		// if(extName.length == 0){
+		//     res.locals.error = '后缀名有误';
+		//     res.render('excel', { title: TITLE ,content:'上传文件'});
+		//     return;				   
+		// }
 
-	// 	var avatarName = Math.random() + '.' + extName;
-	// 	var newPath = form.uploadDir + avatarName;
+		var avatarName = Math.random() + '.' + extName;
+		var newPath = form.uploadDir + avatarName;
 
-	// 	console.log(newPath);
-	// 	fs.renameSync(files.fulAvatar.path, newPath);  //重命名
-	// });
+		console.log(newPath);
+		fs.renameSync(files.fulAvatar.path, newPath);  //重命名
+	});
 
 
 
-	// res.locals.success = '上传成功';
-	// res.render('excel', { title: TITLE ,content:'上传文件'});
+	res.locals.success = '上传成功';
+	res.render('excel', { title: TITLE ,content:'上传文件'});
 });
 
 module.exports = router;
