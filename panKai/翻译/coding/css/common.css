@@ -479,12 +479,17 @@ footer .row > div > .row .thumbnail .caption {
     padding: 0;
 }
 
+footer .row > div > .row .thumbnail .codeImg {
+    margin: 5px;
+}
+
 footer .row > div > .row .thumbnail .caption p {
     margin: 0;
     text-align: center;
 }
 
-footer p {
+footer > div > p {
+    padding-left: 50px;
     text-align: left;
 }
 
