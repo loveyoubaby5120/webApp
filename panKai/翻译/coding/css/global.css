@@ -142,8 +142,11 @@
 }
 
 .mxyy .thumbnail:hover .caption button {
-    margin: 20px auto 0;
+    margin: 20px 0 0 -50px;
     padding: 3px 20px;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
 }
 
 .mxyy .thumbnail:hover .caption h4 {
