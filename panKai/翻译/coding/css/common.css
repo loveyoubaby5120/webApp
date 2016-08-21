@@ -5,7 +5,6 @@
 
 body {
      padding-top: 70px;
-     padding-bottom: 50px;
 }
 
 h3 {
@@ -407,14 +406,16 @@ ul.nav-tabs.nav > li > a:hover{
 
 .featurette-divider {
     margin-top: 100px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
 }
 
 footer {
     text-align: center;
+    background-color: #636363;
+    padding-bottom: 30px;
 }
 
-footer ul {
+footer .row > ul {
     margin: 30px auto;
     overflow: hidden;
     list-style: none;
@@ -423,26 +424,69 @@ footer ul {
 }
 
 
-footer ul li {
-    float: left;
+footer .row > ul li {
+    /*float: left;*/
+    padding-left: 50px;
+    text-align: left;
 }
 
-footer ul li a {
+footer .row > ul li a {
     position: relative;
-    display: block;
+    display: inline-block;
     color: #a0a0a0;
     padding: 10px 15px;
     text-decoration: none;
 }
 
-footer ul li a:hover {
+footer .row > ul li a:hover {
     color: #000;
     text-decoration: none;    
 }
 
+footer .row > div {
+    text-align: left
+}
+
+footer .row > div h1 {
+    color: #fff;
+}
 
 
+footer .row > div dl.dl-horizontal dt,
+footer .row > div dl.dl-horizontal dd {
+    color: #a0a0a0;
+    line-height: 25px;
+    text-align: left;
+}
 
+footer .row > div dl.dl-horizontal dt {
+    width: 80px;
+}
+
+footer .row > div dl.dl-horizontal dd {
+    margin-left: 80px;
+}
+
+footer .row > div dl dd {
+    line-height: 25px;
+}
+
+footer .row > div > .row .thumbnail {
+    width: 100px;
+}
+
+footer .row > div > .row .thumbnail .caption {
+    padding: 0;
+}
+
+footer .row > div > .row .thumbnail .caption p {
+    margin: 0;
+    text-align: center;
+}
+
+footer p {
+    text-align: left;
+}
 
 
 
