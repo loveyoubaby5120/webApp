@@ -76,7 +76,7 @@ export class PageNotFound extends React.Component {
     return (
       <div>
         <h1>Page Not Found.</h1>
-        <p>Go to <Link to="/index">Home Page</Link></p>
+        <p>Go to <Link to="/">Home Page</Link></p>
       </div>
     )
   }

@@ -8,9 +8,10 @@ import * as index from 'index.js'
 ReactDom.render((
   <Router history={browserHistory}>
 
-    <Route path="/index" component={index.App}>
+  	<Route path="/" component={index.App}>
       <Route path="user/:userID" component={index.User} />
     </Route>
+
 
     <Route path="/index_info" component={index.App_info}>
       <Route path="user/:userID" component={index.User} />

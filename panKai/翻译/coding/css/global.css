@@ -4,6 +4,12 @@
 
 }
 
+.index_html .banner .carousel-inner {
+    background: -webkit-linear-gradient(left, #c5d2e3, #b3c0d3);
+    background: -o-linear-gradient(left, #c5d2e3, #b3c0d3);
+    background: linear-gradient(to right, #c5d2e3, #b3c0d3);
+}
+
 .search {
     width: 450px;
     height: 70px;
@@ -27,7 +33,7 @@
 }
 
 .search .btn {
-    background-color: #f8b62b;
+    background-color: #f08200;
     color: #fff;
     position: absolute;
     height: 50px;
@@ -52,26 +58,31 @@
     float: left;
     margin-left: 30px;
     margin-right: 10px;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .js .thumbnail .caption {
     float: left;
 }
 
+.js .thumbnail .caption h3 {
+    margin-bottom: 20px;
+}
+
 .js .thumbnail .caption p{
     color: #787878;
+    margin: 0;
 }
 
 /*明星译员******************************************************************************************************************************/
 
 .mxyy {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .mxyy .shade{
-    width: 230px;
-    height: 320px;
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
     overflow: hidden;
     position: absolute;
@@ -81,10 +92,10 @@
 
 .mxyy .shade div{
     position: absolute;
-    bottom: -25px;
-    left: 26px;
-    width: 180px;
-     -webkit-transform: rotate(90deg);
+    /*bottom: -25px;*/
+    /*left: 26px;*/
+    /*width: 180px;*/
+   /*  -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     transform: rotate(90deg);
@@ -92,7 +103,13 @@
     border-top: none;
     border-bottom: 230px rgba(0, 0, 0, 0.5)solid;
     border-left: transparent 80px solid;
-    border-right: none;
+    border-right: none;*/
+
+
+    height: 50%;
+    top: 50%;
+    border-left: 352px solid rgba(0,0,0,.3);
+    border-top: 81px solid transparent;
 
 }
 
@@ -100,29 +117,46 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 230px;
-    height: 320px;
+    width: 100%;
+    height: 100%;
+    /*width: 230px;
+    height: 320px;*/
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     display: none;
 }
 
+.mxyy > .row >div {
+    padding: 0 15px 0 0;
+}
+
 .mxyy .thumbnail:hover .caption {
-    width: 230px;
-    height: 320px;
+    width: 100%;
+    height: 100%;
     text-align: center;
+    text-decoration: none;
 }
 
 .mxyy .thumbnail:hover .caption p {
-    line-height: 30px
+    line-height: 20px
+}
+
+.mxyy .thumbnail:hover .caption button {
+    margin: 20px 0 0 -50px;
+    padding: 3px 20px;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
 }
 
 .mxyy .thumbnail:hover .caption h4 {
-    margin-top: 30px;
+    /*margin-top: 30px;*/
+    margin-top: 20%;
 }
     
 .mxyy .thumbnail:hover .caption .job {
-    margin-bottom: 40px;
+    /*margin-bottom: 40px;*/
+    margin-bottom: 15%;
 }
 
 .mxyy .thumbnail:hover .caption .show_ {
@@ -139,8 +173,10 @@
 
 .mxyy .thumbnail {
     border: none;
-    height: 320px;
-    width: 230px;
+    /*height: 320px;*/
+    /*width: 230px;*/
+    padding: 0;
+    /*margin: 0 !important;*/
     position: relative;
     margin: 0 auto 20px;
     cursor: pointer;
@@ -151,12 +187,13 @@
 }
 
 .mxyy .thumbnail img {
-    position: absolute;
-    top: 0;
-    left: 0;
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
     border-radius: 10px;
-    width: 230px;
-    height: 320px;
+    width: 100%;
+    /*width: 230px;*/
+    /*height: 320px;*/
     overflow: hidden;
 }
 
@@ -180,7 +217,7 @@
 }
 
 .mxyy .thumbnail .caption .money{
-    color: #f9bb40;    
+    color: #f08200;    
 }
 
 /*热门地区******************************************************************************************************************************/
@@ -225,12 +262,17 @@
 
 .code .code-caption img {
     float: left;
-    margin-left: 30px;
+    margin-left: 60px;
     margin-right: 50px;
 }
 
 .code .code-caption .caption {
+    text-align: left;
     float: left;
+}
+
+.code .code-caption .caption h3 {
+    margin-bottom: 30px;
 }
 
 .code .code-caption .caption * {
@@ -288,7 +330,7 @@
 }
 
 .userInfo .otherInfo .money {
-    color: #f9bb40;
+    color: #f08200;
     text-align: right;
     font-size: 2.5rem;
 }
@@ -332,9 +374,9 @@
 }
 
 .appraise h3 {
-    color: #f8b62b;
+    color: #f08200;
     padding-bottom: 3px;
-    border-bottom: 2px #f8b62b solid;
+    border-bottom: 2px #f08200 solid;
     display: inline-block;
 }
 
@@ -402,7 +444,7 @@
     text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
     left: 20%;
     top: 30%;
-    color: #f9bb40;
+    color: #f08200;
     text-align: left;
 }
 
@@ -413,7 +455,7 @@
 
 .user_html .carousel-caption span {
     letter-spacing: 3px;
-    background-color: #f9bb40;
+    background-color: #f08200;
     padding: 5px 15px;
     color: #fff;
 }
@@ -437,7 +479,7 @@
 }
 
 .fbxq .remark h1 {
-    color: #f9bb40;
+    color: #f08200;
     letter-spacing: 5px;
     text-align: center;
     font-weight: normal;
@@ -450,7 +492,63 @@
     background-image: none;
 }
 
-.fbxq .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+.fbxq .iphone .carousel-inner {
+    background-image: url('../images/iphone_default.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 530px;
+}
+
+.fbxq .iphone .carousel-inner > .item {
+    height: 100%;
+}
+
+.fbxq .iphone .carousel-inner > .item {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.fbxq .iphone .carousel-inner > .item > img{
+    width: 213px;
+    height: 373px;
+    margin-top: 82px !important;
+}
+
+.fbxq .contentList .carousel-inner > .item {
+    height: 300px;
+}
+
+.fbxq .contentList .carousel-inner > .item > img{
+    width: 100%;
+    height: 400px;
+    background-position: left top;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.fbxq .contentList .carousel-inner > .item > .carousel-caption{
+    left: 0;
+    top: 0;
+}
+
+.fbxq .contentList .carousel-indicators{
+    width: auto;
+    margin: 0;
+    left: 0;
+}
+
+.fbxq .contentList .carousel-indicators li{
+    width: 37px;
+    height: 28px;
+    margin: 0;
+}
+
+.fbxq .contentList .carousel-indicators li img{
+    position: absolute;
+}
+
+.fbxq .carousel-inner > .item > img {
+    background-size: contain;
     margin: auto;    
 }
 
@@ -459,12 +557,14 @@
 }
 
 .fbxq .contentList h1 {
-    color: #f9bb40;
-    margin: 100px auto 40px;
+    color: #f08200;
+    text-shadow: none;
+    /*margin: 100px auto 40px;*/
     font-size: 5rem;
 }
 
 .fbxq .contentList p {
+    text-shadow: none;
     line-height: 25px;
     margin: 20px auto 50px;
 }
@@ -511,7 +611,7 @@
 .downloads h1 {
     font-weight: normal;
     font-size: 5rem;
-    color: #f9bb40;
+    color: #f08200;
     margin: 30px auto 50px;
 }
 
@@ -587,12 +687,13 @@
 /*认证流程******************************************************************************************************************************/
 
 .rzlc {
-        text-align: center;
+    text-align: center;
     background-color: #f8f8f8;
-    padding: 20px 0 100px;
+    padding: 20px 0 50px;
 }
 
 .rzlc .title{
+    margin-bottom: 80px;
     color: #005bac;
 }
 
@@ -670,12 +771,12 @@
 /*信息******************************************************************************************************************************/
 
 .issue h2 {
-    color: #f8b62b;
+    color: #f08200;
 }
 
 .issue .panel-group .panel .panel-heading .panel-title a {
     text-decoration: none;
-    color: #f8b62b;
+    color: #f08200;
 }
 
 .issue .panel-group .panel .panel-heading .panel-title a.collapsed {
@@ -734,7 +835,7 @@
 }
 
 .about .section-1 .type li.active {
-    background-color: #f8b62b;
+    background-color: #f08200;
 }
 
 .about .section-1 .type li.active a {
@@ -755,6 +856,19 @@
 
 
 /*新闻中心  section-2*/
+.about .section-2 h2 {
+    text-align: center;
+    color: #000;
+}
+
+.about .section-2 dl dt {
+    color: #000;
+    line-height: 40px;
+}
+
+.about .section-2 dl dd {
+    line-height: 25px;
+}
 
 /*用户协议  section-3*/
 .about .section-3 h2 {
@@ -772,6 +886,20 @@
 }
 
 /*隐私条款  section-4*/
+.about .section-4 h2 {
+    text-align: center;
+    color: #000;
+}
+
+.about .section-4 dl dt {
+    color: #000;
+    line-height: 40px;
+}
+
+.about .section-4 dl dd {
+    line-height: 25px;
+}
+
 /*关于我们  section-5*/
 .about .section-5 {
 
