@@ -556,6 +556,19 @@
     position: absolute;
 }
 
+.fbxq .contentList .carousel-indicators li img.img_active{
+    display: none;
+    margin-left: 20px;
+}
+
+.fbxq .contentList .carousel-indicators li.active img{
+    display: none;
+}
+
+.fbxq .contentList .carousel-indicators li.active .img_active{
+    display: block !important;
+}
+
 .fbxq .carousel-inner > .item > img {
     background-size: contain;
     margin: auto;    
