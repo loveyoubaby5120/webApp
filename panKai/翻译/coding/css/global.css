@@ -471,8 +471,8 @@
 .fbxq .remark {
     margin: -110px auto 0;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: -150px;
+    top: -150px;
     z-index: 1;
     overflow: hidden;
     padding: 10px;
@@ -492,11 +492,16 @@
     background-image: none;
 }
 
-.fbxq .iphone .carousel-inner {
+.fbxq .iphone{
     background-image: url('../images/iphone_default.png');
     background-repeat: no-repeat;
     background-position: center;
     height: 530px;
+}
+
+.fbxq .iphone .carousel-inner {
+    width: 213px;
+    margin: auto;
 }
 
 .fbxq .iphone .carousel-inner > .item {
@@ -512,6 +517,10 @@
     width: 213px;
     height: 373px;
     margin-top: 82px !important;
+}
+
+.fbxq .contentList .carousel-inner {
+    overflow: visible;
 }
 
 .fbxq .contentList .carousel-inner > .item {
