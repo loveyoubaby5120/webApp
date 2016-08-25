@@ -91,7 +91,6 @@ export default class CheckBox extends React.Component {
                 <div className="formOptions">
                     <div className="options">
                         <div className="date">
-                            <span className="time">2016年7月8日</span>
                             <div className="query">
                                 <a className='ok topicDateTime' href="javascript:;" data-value='7'>最近7天</a><span className='down'>ˇ</span>
                                 <ul className="select">

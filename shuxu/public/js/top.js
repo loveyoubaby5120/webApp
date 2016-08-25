@@ -14,7 +14,7 @@ export default class Top extends React.Component {
     componentDidMount(){
       $('.logo .search .left').click(function(){
           // window.location.reload();
-          window.location.href = '/index'
+          window.location.href = '/'
       });
     }
 
