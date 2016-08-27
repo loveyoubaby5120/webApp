@@ -445,13 +445,10 @@ footer .row > ul {
     overflow: hidden;
     list-style: none;
     display: inline-block;
-    padding: 0;
 }
 
 
 footer .row > ul li {
-    /*float: left;*/
-    padding-left: 50px;
     text-align: left;
 }
 
@@ -468,8 +465,9 @@ footer .row > ul li a:hover {
     text-decoration: none;    
 }
 
-footer .row > div {
-    text-align: left
+footer .container > .row > div {
+    text-align: left;
+    margin-top: 10px;
 }
 
 footer .row > div h1 {
@@ -486,6 +484,7 @@ footer .row > div dl.dl-horizontal dd {
 
 footer .row > div dl.dl-horizontal dt {
     width: 80px;
+    float: left;
 }
 
 footer .row > div dl.dl-horizontal dd {
@@ -514,13 +513,84 @@ footer .row > div > .row .thumbnail .caption p {
 }
 
 footer > div > p {
-    padding-left: 50px;
     text-align: left;
+    padding-left: 15px;
 }
 
 
+@media screen and (max-width: 769px){
 
+    .js .thumbnail .caption h3 {
+        font-size: 15px;
+        margin: 0;
+    }
 
+    .mxyy {
+        margin-top: 20px !important;
+    }
+
+    .rmdq {
+        margin-top: 20px !important;   
+    }
+
+    .featurette-divider {
+        margin-top: 50px !important;   
+    }
+
+    .mxyy > .row{
+        padding-left: 15px;
+    }
+
+    .xqnx .row > div {
+        margin-bottom: 10px !important;
+    }
+
+    .xqnx .thumbnail .caption h3 {
+        font-size: 15px;
+    }
+
+    .fbxq {
+        padding-top: 50px;
+        padding-bottom: 80px !important;
+    }
+
+    .fbxq .contentList .carousel-inner > .item > .carousel-caption * {
+        text-align: center;
+    }
+
+    .fbxq .contentList .carousel-inner {
+         top: 30px !important;
+    }
+
+    .downloads {
+        margin: 50px auto !important;
+    }
+
+    .downloads h1 {
+        font-size: 3rem !important;
+    }
+
+    .collapse-custom .navbar.top {
+        border: 1px solid #e7e7e7 !important;
+    }
+
+    footer * {
+        text-align: center !important;
+    }
+
+    footer .row > ul {
+        margin: 30px auto 0;
+    }
+
+    footer .row > ul li {
+        display: inline;
+        font-size: 12px;
+    }
+
+    footer .row > div {
+        margin: 10px auto 20px;
+    }
+}
 
 
 

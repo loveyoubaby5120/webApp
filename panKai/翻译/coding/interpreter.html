@@ -33,9 +33,19 @@
 				<li><a href="index.html">首页</a></li>
 				<li><a href="user.html">用户端</a></li>
 				<li class="active"><a href="interpreter.html">译员端</a></li>
-				<li><a href="help.html">问题帮助</a></li>
+				<li class="hidden-xs"><a href="help.html">问题帮助</a></li>
+				<li class="visible-xs dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">问题帮助<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="help_1.html">译员类</a></li>
+						<li><a href="help_2.html">用户下单类</a></li>
+						<li><a href="help_3.html">支付类</a></li>
+						<li><a href="help_4.html">账号安全</a></li>
+					</ul>
+				</li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
+					<a href="#" class="dropdown-toggle visible-xs" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
+					<a href="mix.html" class="dropdown-toggle hidden-xs" data-toggle="false" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="mix.html">加入我们</a></li>
 						<li><a href="news.html">支付协议</a></li>
@@ -51,8 +61,10 @@
       </div>
     </nav>
 	
-		<!-- banner图 第一个div  可加的calss  container   加入后container 限定了宽度   否则 没有限定宽度   显示效果拭图片大小决定 -->
-	<div class="banner">
+	<img class="visible-xs" src="images/photo_01.jpg" alt="" style="width: 100%;">
+	
+	<!-- banner图 第一个div  可加的calss  container   加入后container 限定了宽度   否则 没有限定宽度   显示效果拭图片大小决定 -->
+	<div class="banner hidden-xs">
 		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
 			<div class="carousel-inner" role="listbox">
@@ -76,60 +88,60 @@
 		<div class="container">
 			<h3 class="title"><i></i>认证流程<i></i></h3>
 			<div class="row">
-				<div class="col-sm-4 col-md-2">
+				<div class="col-xs-6 col-sm-4 col-md-2">
 					<div class="thumbnail">
 						<div class="img"><img src="images/download.png"></div>
 						<div class="caption">
-							<p>下载软件</p>
-							<p>注册账号</p>
+							<p>1、下载软件</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注册账号</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-2 col-md-1">
+				<div class="col-sm-2 col-md-1 hidden-xs">
 					<div class="thumbnail">
 						<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
 					</div>
 				</div>
 
 
-				<div class="col-sm-4 col-md-2">
+				<div class="col-xs-6 col-sm-4 col-md-2">
 					<div class="thumbnail">
 						<div class="img"><img src="images/user.png"></div>
 						<div class="caption">
-							<p>填写个人</p>
-							<p>资料信息</p>
+							<p>2、填写个人</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;资料信息</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-2 col-md-1">
+				<div class="col-sm-2 col-md-1 hidden-xs">
 					<div class="thumbnail">
 						<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
 					</div>
 				</div>
 
 
-				<div class="col-sm-4 col-md-2">
+				<div class="col-xs-6 col-sm-4 col-md-2">
 					<div class="thumbnail">
 						<div class="img"><img src="images/book.png"></div>
 						<div class="caption">
-							<p>填写认证</p>
-							<p>资料信息</p>
+							<p>3、填写认证</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;资料信息</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-2 col-md-1">
+				<div class="col-sm-2 col-md-1 hidden-xs">
 					<div class="thumbnail">
 						<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
 					</div>
 				</div>
 
 
-				<div class="col-sm-4 col-md-2">
+				<div class="col-xs-6 col-sm-4 col-md-2">
 					<div class="thumbnail">
 						<div class="img"><img src="images/time.png"></div>
 						<div class="caption">
-							<p>等待审核</p>
-							<p>七天内通知</p>
+							<p>4、等待审核</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;七天内通知</p>
 						</div>
 					</div>
 				</div>
@@ -144,7 +156,7 @@
 	<div class="container fbxq">
 		<div id="carousel-example-generic2" class="iphone carousel slide col-sm-5" data-ride="carousel">
 			<!-- Indicators -->
-			<ol class="carousel-indicators">
+			<ol class="carousel-indicators hidden-xs">
 				<li data-target="#carousel-example-generic2" data-slide-to="0" class="active"></li>
 			</ol>
 
@@ -175,12 +187,12 @@
 
 			<div id="carousel-example-generic3" class="carousel slide carousel-fade" data-ride="carousel">
 				<!-- Indicators -->
-				<ol class="carousel-indicators">
+				<!-- <ol class="carousel-indicators">
 					<li data-target="#carousel-example-generic3" data-slide-to="0" class="active">
 						<img src="images/xq_02.png" data-target="#carousel-example-generic2" data-slide-to="0">
 						<img src="images/xq_01.png" class="img_active" data-target="#carousel-example-generic2" data-slide-to="0">
 					</li>
-				</ol>
+				</ol> -->
 
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner" role="listbox">
@@ -216,7 +228,7 @@
 	<footer class="footer">
 		<div class="container">
 			<div class="row">
-				<ul class="col-xs-6 col-sm-6 col-md-6">
+				<ul class="col-xs-12 col-sm-6 col-md-6">
 					<li>
 						<a href="mix.html">关于GlobZip</a>
 					</li>
@@ -229,18 +241,22 @@
 					<li>
 						<a href="contact.html">联系我们</a>
 					</li>
-					<li>
+					<li class="hidden-xs">
 						<a href="">English</a>
 					</li>
-					<li>
+					<li class="hidden-xs">
 						<a href="">下载App应用</a>
 					</li>
 				</ul>
 
-				<div class="col-xs-6 col-sm-6 col-md-6">
+				<div class="col-xs-12 col-sm-6 col-md-6">
 					<dl>
 						<dt><h1>400-000-0000</h1></dt>
-						<dd>
+						<dd class="visible-xs">
+							<p>工作日: &nbsp;10:00 - 19:00</p>
+							<p>官方邮箱: &nbsp;kefu@globzip.com</p>
+						</dd>
+						<dd class="hidden-xs">
 							<dl class="dl-horizontal">
 								<dt>工作日: </dt>
 								<dd>10:00 - 19:00</dd>
@@ -250,7 +266,7 @@
 							</dl>
 						</dd>
 					</dl>
-					<div class="row">
+					<div class="row hidden-xs">
 						<div class="col-xs-6 col-sm-3 col-md-3">
 							<div class="thumbnail">
 								<img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
