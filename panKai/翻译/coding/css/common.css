@@ -542,6 +542,10 @@ footer > div > p {
         margin: 0;
     }
 
+    .center img {
+        margin-top: 40px;
+    }
+
     .mxyy {
         margin-top: 20px !important;
     }

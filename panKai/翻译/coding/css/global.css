@@ -591,9 +591,9 @@
 .fbxq .contentList p {
     text-shadow: none;
     line-height: 25px;
-    margin: 20px auto 50px;
+    margin: 30px auto 50px;
     font-size: 17px;
-
+    letter-spacing: 1px;
 }
 
 .fbxq .contentList img {
