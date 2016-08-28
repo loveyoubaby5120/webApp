@@ -592,7 +592,7 @@
     text-shadow: none;
     line-height: 25px;
     margin: 20px auto 50px;
-    font-size: 15px;
+    font-size: 17px;
 
 }
 
@@ -797,6 +797,10 @@
 
 /*信息******************************************************************************************************************************/
 
+.issue {
+    margin-top: 40px;
+}
+
 .issue h2 {
     color: #f08200;
 }
@@ -888,6 +892,10 @@
     color: #000;
 }
 
+.about .section-2 ul {
+    list-style: none;
+}
+
 .about .section-2 dl dt {
     color: #000;
     line-height: 40px;
@@ -903,6 +911,10 @@
     color: #000;
 }
 
+.about .section-3 ul {
+    list-style: none;
+}
+
 .about .section-3 dl dt {
     color: #000;
     line-height: 40px;
@@ -916,6 +928,10 @@
 .about .section-4 h2 {
     text-align: center;
     color: #000;
+}
+
+.about .section-4 ul {
+    list-style: none;
 }
 
 .about .section-4 dl dt {

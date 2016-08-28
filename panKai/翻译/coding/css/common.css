@@ -23,6 +23,7 @@ h3 {
 
 .center img{
     margin-right: 40px; 
+    margin-bottom: 20px;
 }
 
 .title{
@@ -311,21 +312,23 @@ ul.nav-tabs.nav > li > a:hover{
   background-color: #fff;
 }
 
-.collapse-custom .collapse .navbar-tool .glyphicon-chevron-up {
-    display: inline-block;
-}
-
-.collapse-custom .collapse .navbar-tool .glyphicon-chevron-down {
+.collapse-custom > .collapse .navbar-tool .glyphicon-chevron-down {
     display: none;
 }
 
-.collapse-custom .collapse.collapsed .navbar-tool .glyphicon-chevron-down {
+.collapse-custom > .collapse .navbar-tool .glyphicon-chevron-up {
     display: inline-block;
 }
 
-.collapse-custom .collapse.collapsed .navbar-tool .glyphicon-chevron-up {
-    display: none;
+.collapse-custom > .navbar-default .navbar-tool .glyphicon-chevron-up {
+    display: none !important;
 }
+
+.collapse-custom > .navbar-default .navbar-tool .glyphicon-chevron-down {
+    display: inline-block !important;
+}
+
+
 
 .collapse-custom .collapse .panel-body {
     background-color: #f6f6f6;
