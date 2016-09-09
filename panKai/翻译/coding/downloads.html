@@ -10,12 +10,18 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/bootstrap-hover-dropdown.min.js"></script>
-
+	<style>
+	@media screen and (max-width: 769px){
+		body {
+			padding: 0;
+		}
+	}
+	</style>
 </head>
 <body class="user_html">
 
 	<!-- 头部菜单 -->
-	<nav class="navbar navbar-default navbar-fixed-top">
+	<nav class="hidden-xs navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -32,7 +38,7 @@
         <div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right"">
 				<li><a href="index.html">首页</a></li>
-				<li class="active"><a href="user.html">用户端</a></li>
+				<li><a href="user.html">用户端</a></li>
 				<li><a href="interpreter.html">译员端</a></li>
 				<li class="hidden-xs"><a href="help.html">问题帮助</a></li>
 				<li class="visible-xs dropdown">
@@ -61,7 +67,7 @@
       </div>
     </nav>
 	
-	<img class="visible-xs" src="images/photo_01.jpg" alt="" style="width: 100%;">
+	<div class="visible-xs" style="width: 100%;height: 100%;background-image: url('images/wap_down.jpg');background-size: cover;background-position: center;background-repeat: no-repeat;"></div>
 	
 	<!-- banner图 第一个div  可加的calss  container   加入后container 限定了宽度   否则 没有限定宽度   显示效果拭图片大小决定 -->
 	<div class="banner hidden-xs">
@@ -69,10 +75,17 @@
 
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="" alt="" style="background-image: url('images/banner_user.jpg')">
-					<div class="carousel-caption">
-						<h2>GlobZip</h2>
-						<span>让您的商务会谈更融洽，合作更完美</span>
+					<img class="codeImg" src="images/pc_down.jpg">
+					<div class="carousel-caption downloads_html">
+						<img class="txt" src="images/down_txt.png">
+						<div class="codeDiv">
+							<img class="codeImg" src="images/2code.jpg">
+							<p>扫描下载</p>
+						</div>
+						<div class="downloads">
+							<button type="button" class="btn btn-warning ios">APP STORE<i></i></button>
+							<button type="button" class="btn btn-warning android">ANDROID<i></i></button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -82,22 +95,11 @@
 
 
 
-	<!-- 下载 -->
-	<div class="container downloads" style="margin-top: 40px;">
-		<img class="codeImg" src="images/2code.jpg">
-		<p>扫描下载客户端</p>
-
-		<h1>GlobZip - 您的 “译” 中人</h1>
-
-		<button type="button" class="btn btn-warning ios">APP STORE<i></i></button>
-		<button type="button" class="btn btn-warning android">ANDROID<i></i></button>
-	</div>
 	
-	
-	<hr class="featurette-divider"/>
+	<hr class="featurette-divider hidden-xs"/>
 
 	<!-- 关于信息 -->
-	<footer class="footer">
+	<footer class="footer hidden-xs">
 		<div class="container">
 			<div class="row">
 				<ul class="col-xs-12 col-sm-6 col-md-6">
@@ -111,7 +113,7 @@
 						<a href="contact.html">联系我们</a>
 					</li>
 					<li>
-						<a href="user.html">下载APP</a>
+						<a href="downloads.html">下载APP</a>
 					</li>
 				</ul>
 
