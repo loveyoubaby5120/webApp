@@ -9,7 +9,7 @@ html,body {
 }
 
 body {
-     padding-top: 70px;
+     padding-top: 81px;
 }
 
 h3 {
@@ -369,6 +369,10 @@ ul.nav-tabs.nav > li > a:hover{
     color: #a0a0a0;
 }
 
+.navbar-header {
+    padding-bottom: 15px;
+}
+
 .nav > li > a:hover,
 .nav > li > a:focus {
     color: #f08200;
@@ -541,6 +545,10 @@ footer > div > p {
 
 
 @media screen and (max-width: 769px){
+
+    .navbar-header {
+        padding-bottom: 0px;
+    }
 
     .js .thumbnail .caption h3 {
         font-size: 15px;

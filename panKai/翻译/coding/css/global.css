@@ -1026,53 +1026,54 @@
 }
 
 
+/*下载页面******************************************************************************************************************************/
 
-/*下载页面*/
-.downloads_html .carousel-caption {
+.downloads_html .banner .item .carousel-caption {
     top: 10%;
 }
 
-.downloads_html .txt {
+.downloads_html .banner .item .txt {
     width: 400px;
     display: block;
     margin-bottom: 30px;
     margin-left: 30px;
 }
 
-.downloads_html div {
+.downloads_html .banner .item div {
     float: left;
     margin-right: 50px;
+    margin-top: 10px;
 }
 
-.downloads_html .codeDiv {
+.downloads_html .banner .item .codeDiv {
     padding: 10px;
     text-align: center;
     background: rgba(0,0,0,0.3);
 }
 
-.downloads_html .codeDiv img {
+.downloads_html .banner .item .codeDiv img {
     width: 110px;
     height: 110px;
 }
 
-.downloads_html .codeDiv p {
+.downloads_html .banner .item .codeDiv p {
     margin: 10px 0 0;
     color: #fff;
 }
 
-.downloads_html .downloads {
+.downloads_html .banner .item .downloads {
     height: 160px;
     position: relative;
 }
 
-.downloads_html .downloads button {
+.downloads_html .banner .item .downloads button {
 }
 
-.downloads_html .downloads button.ios {
+.downloads_html .banner .item .downloads button.ios {
     margin-top: 20px;
 }
 
-.downloads_html .downloads button.android {
+.downloads_html .banner .item .downloads button.android {
     position: absolute;
     left: 0;
     bottom: 20px;
@@ -1080,10 +1081,32 @@
 
 
 
+/*找回密码******************************************************************************************************************************/
+
+.retrieve_html {
+
+}
+
+.retrieve_html .retrieve {
+    margin-top: 50px;
+}
 
 
+.retrieve_html .retrieve hr{
+    width: 100%;
+    margin-top: 20px;
+}
 
 
+/*成功******************************************************************************************************************************/
+
+.success_html {
+
+}
+
+.success_html .success {
+    margin-top: 100px;
+}
 
 
 
