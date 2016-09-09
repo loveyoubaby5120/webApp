@@ -7,9 +7,12 @@
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/common.css" rel="stylesheet">
 	<link href="css/global.css" rel="stylesheet">
+	<link href="css/bootstrapValidator.min.css" rel="stylesheet">
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/bootstrap-hover-dropdown.min.js"></script>
+	<script src="js/bootstrapValidator.min.js"></script>
+
 </head>
 <body class="retrieve_html">
 
@@ -31,17 +34,17 @@
 			<h4 class="col-sm-12 col-sm-offset-0">您好，<span class="text-primary">XXXX</span>，请设置新密码</h4>
 			<hr class=""/>
 
-			<form class="form-horizontal" role="form">
+			<form id="defaultForm" class="form-horizontal" role="form">
 			  <div class="form-group">
-			    <label for="inputPassword" class="col-sm-2 control-label">新密码</label>
+			    <label for="password" class="col-sm-2 control-label">新密码</label>
 			    <div class="col-sm-4">
-			      <input type="email" class="form-control" id="inputPassword" placeholder="Password">
+			      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="inputPassword2" class="col-sm-2 control-label">确认密码</label>
+			    <label for="repassword" class="col-sm-2 control-label">确认密码</label>
 			    <div class="col-sm-4">
-			      <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+			      <input type="password" class="form-control" id="repassword" name="repassword" placeholder="Password">
 			    </div>
 			  </div>
 			  <div class="form-group">
@@ -136,6 +139,60 @@
 			<p>上海壹零捌信息技术有限公司</p>
 		</div>
 	</footer>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    /**
+     * 下面是进行插件初始化
+     * 你只需传入相应的键值对
+     * */
+    $('#defaultForm').bootstrapValidator({
+            message: 'This value is not valid',
+            feedbackIcons: {/*输入框不同状态，显示图片的样式*/
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {/*验证*/
+                password: {
+                    message:'密码无效',
+                    validators: {
+                        notEmpty: {
+                            message: '密码不能为空'
+                        },
+                        identical: {//相同
+	                         field: 'password', //需要进行比较的input name值
+	                         message: '两次密码不一致'
+	                     },
+                        stringLength: {
+                            min: 6,
+                            max: 30,
+                            message: '用户名长度必须在6到30之间'
+                        }
+                    }
+                },
+                repassword: {
+                    message:'密码无效',
+                    validators: {
+                        notEmpty: {
+                            message: '密码不能为空'
+                        },
+                        identical: {//相同
+	                         field: 'password', //需要进行比较的input name值
+	                         message: '两次密码不一致'
+	                     },
+                        stringLength: {
+                            min: 6,
+                            max: 30,
+                            message: '用户名长度必须在6到30之间'
+                        }
+                    }
+                }
+            }
+        });
+});
+</script>
 
 
 </body>
