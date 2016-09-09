@@ -1041,7 +1041,7 @@
 
 .downloads_html .banner .item div {
     float: left;
-    margin-right: 50px;
+    margin-right: 40px;
     margin-top: 10px;
 }
 
@@ -1061,24 +1061,36 @@
     color: #fff;
 }
 
-.downloads_html .banner .item .downloads {
+.downloads_html .banner .item .downloads,.downloads_html .wap_down .downloads {
     height: 160px;
     position: relative;
 }
 
-.downloads_html .banner .item .downloads button {
+.downloads_html .wap_down .downloads {
+    width: 170px;
+    position: absolute;
+    left: 50%;
+    margin-left:-85px !important;
+    bottom: 100px;
 }
 
-.downloads_html .banner .item .downloads button.ios {
+.downloads_html .banner .item .downloads button,.downloads_html .wap_down .downloads button {
+}
+
+.downloads_html .banner .item .downloads button.ios,.downloads_html .wap_down .downloads button.ios {
     margin-top: 20px;
 }
 
-.downloads_html .banner .item .downloads button.android {
+.downloads_html .banner .item .downloads button.android,.downloads_html .wap_down .downloads button.android {
     position: absolute;
     left: 0;
     bottom: 20px;
 }
 
+.downloads_html .wap_down .downloads button{
+    width: 170px;
+    font-size: 17px;
+}
 
 
 /*找回密码******************************************************************************************************************************/
