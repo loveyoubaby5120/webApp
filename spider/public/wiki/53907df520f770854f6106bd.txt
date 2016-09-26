@@ -1,0 +1,2 @@
+
+<p><b>Computational neuroscience</b> (also <b>theoretical neuroscience</b>) is the study of brain function in terms of the information processing properties of the structures that make up the nervous system. It is an interdisciplinary science that links the diverse fields of neuroscience, cognitive science, and psychology with electrical engineering, computer science, mathematics, and physics.</p>

@@ -1,0 +1,205 @@
+var express = require('express');
+var router = express.Router();
+var request = require('request');
+var rp = require('request-promise');
+var cheerio = require('cheerio');
+
+var URL = require('url');
+
+var fs = require('fs');
+var readLine = require('lei-stream').readLine;
+
+var list = require('../public/wiki_searchs.json');
+
+
+/* GET home page. */
+
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' , content:'不需要填写内容', action: '/wiki'});
+});
+
+
+router.post('/', function(req, res, next) {
+	console.log('start spider');
+
+	wiki(0)
+
+	// for(search of list){
+
+	// 	// fs.writeFile('./public/wiki/' + search.CID,'',function(err){  
+	//  //        if(err) throw err;  
+	//  //        // console.log('write TEXT into TEXT');  
+	//  //    });
+
+	// 	// wiki(index)
+		
+	// 	var gotoUrl = 'https://en.wikipedia.org/wiki/' + search.FULL_NAME;	
+
+	// 	rp(gotoUrl)
+	// 		.then(function(body){
+	// 			$ = cheerio.load(body);
+
+	// 			var div = $('#mw-content-text>p').first().filter(function(i, el){
+	// 				$(this).find('sup').remove()
+
+	// 				$(this).find('a').replaceWith(function(){
+						
+ //    					return $(this).html();
+	// 				});
+
+	// 				return $(this)
+	// 			})
+
+	// 			fs.writeFile('./public/wiki/' + list[index].CID + '.txt','',function(err){  
+	// 		        if(err) throw err;  
+	// 		        // console.log('write TEXT into TEXT');  
+	// 		    });
+
+	// 			fs.appendFile('./public/wiki/' + list[index].CID + '.txt',div,function(err){  
+	// 		        if(err) throw err;  
+	// 		        // console.log('write TEXT into TEXT');  
+	// 		    });
+					      
+	// 		    fs.appendFile('./public/wiki/' + list[index].CID + '.txt','\n',function(err){  
+	// 		        if(err) throw err;  
+	// 		        console.log(index + ' write TEXT into TEXT' + list[index].CID);  
+	// 		    });
+
+	// 		    index++ 
+
+	// 		    wiki(index)
+
+				
+	// 		})
+	// 		.catch(function(){
+	// 			// res.render('index', { title: 'Express' ,content:'读取失败', action: '/wiki'});
+	// 		});
+
+
+
+	// }
+
+	console.log('end spider');
+
+	res.render('index', { title: 'Express' ,content:'操作成功，请查看文件wiki.txt', action: '/wiki'});
+
+});
+
+
+function wiki(num){
+
+	if(num > 1000)
+		return;
+
+	(function(index){
+
+		var gotoUrl = 'https://en.wikipedia.org/wiki/' + list[index].FULL_NAME;	
+
+		var options = {
+			uri: gotoUrl,
+			method: 'get'
+		};
+
+		index++ 
+
+		request(options,function(error, response,body){
+			if(!error && response.statusCode ==200){
+
+				console.log(num);
+
+				$ = cheerio.load(body);
+
+				var div = $('#mw-content-text>p').first().filter(function(i, el){
+					$(this).find('sup').remove()
+
+					$(this).find('a').replaceWith(function(){
+						
+    					return $(this).html();
+					});
+
+					return $(this)
+				})
+
+
+				fs.writeFile('./public/wiki/' + list[index].CID + '.txt','',function(err){  
+			        if(err) throw err;  
+			        // console.log('write TEXT into TEXT');  
+			    });
+
+				fs.appendFile('./public/wiki/' + list[index].CID + '.txt',div,function(err){  
+			        if(err) throw err;  
+			        // console.log('write TEXT into TEXT');  
+			    });
+					      
+			    fs.appendFile('./public/wiki/' + list[index].CID + '.txt','\n',function(err){  
+			        if(err) throw err;  
+			        console.log(index + ' write TEXT into TEXT' + list[index].CID);  
+			    });
+
+			    wiki(index)
+
+			}else{
+				wiki(index)
+				console.log("'错误-链接异常-"+error+"-"+options.uri+"'");
+			}
+
+		},function(err, result){
+			if(err){
+				wiki(index)
+				console.log("'错误-链接未发送-"+err+"-"+options.uri+"'");
+			}else{
+				console.log('获取请求成功');
+			}
+			
+		});
+
+		// rp(gotoUrl)
+		// 		.then(function(body){
+		// 			$ = cheerio.load(body);
+
+		// 			var div = $('#mw-content-text>p').first().filter(function(i, el){
+		// 				$(this).find('sup').remove()
+
+		// 				$(this).find('a').replaceWith(function(){
+							
+	 //    					return $(this).html();
+		// 				});
+
+		// 				return $(this)
+		// 			})
+
+		// 			fs.writeFile('./public/wiki/' + list[index].CID + '.txt','',function(err){  
+		// 		        if(err) throw err;  
+		// 		        // console.log('write TEXT into TEXT');  
+		// 		    });
+
+		// 			fs.appendFile('./public/wiki/' + list[index].CID + '.txt',div,function(err){  
+		// 		        if(err) throw err;  
+		// 		        // console.log('write TEXT into TEXT');  
+		// 		    });
+						      
+		// 		    fs.appendFile('./public/wiki/' + list[index].CID + '.txt','\n',function(err){  
+		// 		        if(err) throw err;  
+		// 		        console.log(index + ' write TEXT into TEXT' + list[index].CID);  
+		// 		    });
+
+		// 		    index++ 
+
+		// 		    wiki(index)
+
+					
+		// 		})
+		// 		.catch(function(){
+		// 			// res.render('index', { title: 'Express' ,content:'读取失败', action: '/wiki'});
+		// 		});
+	})(num)
+
+	
+}
+
+function sleep(milliSeconds) { 
+    var startTime = new Date().getTime(); 
+    while (new Date().getTime() < startTime + milliSeconds);
+ };
+
+module.exports = router;

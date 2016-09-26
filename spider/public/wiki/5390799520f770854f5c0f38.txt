@@ -1,0 +1,2 @@
+
+<p><b>Signal processing</b> is an enabling technology that encompasses the fundamental theory, applications, algorithms, and implementations of processing or transferring information contained in many different physical, symbolic, or abstract formats broadly designated as <i>signals</i>. It uses mathematical, statistical, computational, heuristic, and linguistic representations, formalisms, and techniques for representation, modelling, analysis, synthesis, discovery, recovery, sensing, acquisition, extraction, learning, security, or forensics.</p>

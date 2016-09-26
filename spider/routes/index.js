@@ -14,7 +14,7 @@ var readLine = require('lei-stream').readLine;
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' ,content:'请输入公众号'});
+  res.render('index', { title: 'Express' ,content:'请输入公众号' ,action: '/'});
 });
 
 
@@ -91,14 +91,14 @@ router.post('/', function(req, res, next) {
 					
 				})
 				.catch(function(){
-					// res.render('index', { title: 'Express' ,content:'读取失败'});
+					// res.render('index', { title: 'Express' ,content:'读取失败' ,action: '/'});
 				});
 		}
 	}
 
 	console.log('end spider');
 
-	res.render('index', { title: 'Express' ,content:'操作成功，请查看文件url.txt'});
+	res.render('index', { title: 'Express' ,content:'操作成功，请查看文件url.txt' ,action: '/'});
 
 });
 

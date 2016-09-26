@@ -1,0 +1,1 @@
+<p>The <i><b>IEEE Transactions on Software Engineering</b></i> is a bimonthly peer-reviewed scientific journal published by the IEEE Computer Society. It was established in 1975 and covers the area of software engineering. It is considered the leading journal in this field. The editor-in-chief is Matthew B. Dwyer (University of Nebraska-Lincoln).</p>
