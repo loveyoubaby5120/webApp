@@ -1,0 +1,2 @@
+
+<p><b>PKC</b> or <b>Public-Key Cryptography</b> is the short name of the <b>International Workshop on Theory and Practice in Public Key Cryptography</b> (modified as <b>International Conference on Theory and Practice in Public Key Cryptography</b> since 2006), a cryptography conference sponsored by the International Association for Cryptologic Research (IACR).</p>

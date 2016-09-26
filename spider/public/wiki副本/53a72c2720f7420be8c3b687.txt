@@ -1,0 +1,2 @@
+
+<p><b>Rewriting Techniques and Applications</b> (<b>RTA</b>) is an annual international academic conference on the topic of rewriting. It covers all aspects of rewriting, including termination, equational reasoning, theorem proving, higher-order rewriting, unification and the lambda calculus. The conference consists of peer-reviewed papers with the proceedings published by Springer in the LNCS series until 2009, and since then in the LIPIcs series published by the Leibniz-Zentrum f&#xFC;r Informatik. Several rewriting-related workshops are also affiliated with RTA.</p>

@@ -1,0 +1,1 @@
+<p>The <b>International Conference on Parallel and Distributed Systems (ICPADS)</b> is an academic conference sponsored by the IEEE Computer Society that brings together researchers and practitioners from academia and industry around the world to advance the theories, technologies, and applications of parallel and distributed systems.</p>

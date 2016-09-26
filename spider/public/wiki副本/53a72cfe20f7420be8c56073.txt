@@ -1,0 +1,2 @@
+
+<p><b>STOC</b>, the <b>Annual ACM Symposium on Theory of Computing</b> is an academic conference in the field of theoretical computer science. STOC has been organized annually since 1969, typically in May or June; the conference is sponsored by the Association for Computing Machinery special interest group SIGACT. Acceptance rate of STOC, averaged from 1970 to 2012, is 31%, with the rate of 29% in 2012.</p>

@@ -1,0 +1,1 @@
+<p><b>SIGMOD</b> is the Association for Computing Machinery&apos;s Special Interest Group on Management of Data, which specializes in large-scale data management problems and databases.</p>

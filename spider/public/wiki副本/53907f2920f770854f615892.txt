@@ -1,0 +1,2 @@
+
+<p><i><b>Wireless Personal Communications</b></i> is a peer-reviewed scientific journal published by Springer Science+Business Media. It covers mobile communications and computing and investigates theoretical, engineering, and experimental aspects of radio communications, voice, data, images, and multimedia. This includes propagation, system models, speech and image coding, multiple access techniques, protocols performance evaluation, radio local area networks, and networking and architectures. The editor-in-chief is Ramjee Prasad (Aalborg University).</p>

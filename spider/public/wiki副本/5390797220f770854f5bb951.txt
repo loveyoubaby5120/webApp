@@ -1,0 +1,2 @@
+
+<p>The <i><b>Journal of Computational Chemistry</b></i> is a peer-reviewed scientific journal published since 1980 by John Wiley &amp; Sons. It covers research, contemporary developments in theory and methodology, and applications in all areas of computational chemistry, including ab initio quantum chemistry methods and semiempirical methods, density functional theory, molecular mechanics, molecular dynamics, statistical mechanics, cheminformatics, biomolecular structure prediction, molecular design, and bioinformatics.</p>

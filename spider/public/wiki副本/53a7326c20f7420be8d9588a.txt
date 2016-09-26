@@ -1,0 +1,1 @@
+<p>An <b>autonomous robot</b> is a robot that performs behaviors or tasks with a high degree of autonomy, which is particularly desirable in fields such as space exploration, household maintenance (such as cleaning), waste water treatment and delivering goods and services.</p>

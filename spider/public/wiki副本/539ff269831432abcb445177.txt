@@ -1,0 +1,1 @@
+<p><i><b>Briefings in Bioinformatics</b></i> is a peer-reviewed scientific journal covering bioinformatics, including reviews of databases and analytical tools for genetics and molecular biology. It is published by Oxford University Press. The EMBnet community was initially involved in the creation of the journal. BiB was also supported by an educational grant from EMBnet.</p>

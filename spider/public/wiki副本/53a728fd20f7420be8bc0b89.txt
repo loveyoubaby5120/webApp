@@ -1,0 +1,2 @@
+
+<p><b>PPoPP</b>, the <b>ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming</b>, is an academic conference in the field of parallel programming. PPoPP is sponsored by the Association for Computing Machinery special interest group SIGPLAN.</p>
