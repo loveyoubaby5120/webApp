@@ -1,0 +1,3123 @@
+[
+    {
+        "aff": {
+            "desc": "Department of Computer Science,University of Illinois at Urbana-Champaign,USA",
+            "id": ""
+        },
+        "name": "Jiawei Han",
+        "num_viewed": 35256,
+        "avatar": "//static.aminer.org/upload/avatar/1852/642/1365/53f42f36dabfaedce54dcd0c.jpeg",
+        "indices": {
+            "sociability": 6.849,
+            "h_index": 140,
+            "num_citation": 90609,
+            "as": 0,
+            "diversity": 4.4394,
+            "new_star": 268.6189,
+            "num_pubs": 880,
+            "activity": 494.5098,
+            "g_index": 287
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "5770b49976d91118547e80d1",
+            "mtime": "2016-08-10 06:18:27",
+            "cid": "",
+            "mname": "cheng wang",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 239
+            },
+            {
+                "t": "Data Cube",
+                "w": 40
+            },
+            {
+                "t": "Data Analysis",
+                "w": 40
+            },
+            {
+                "t": "Information Retrieval",
+                "w": 35
+            },
+            {
+                "t": "Relational Databases",
+                "w": 35
+            },
+            {
+                "t": "Association Rule",
+                "w": 33
+            },
+            {
+                "t": "Indexation",
+                "w": 32
+            },
+            {
+                "t": "Graph Theory",
+                "w": 30
+            },
+            {
+                "t": "Social Network",
+                "w": 29
+            },
+            {
+                "t": "Knowledge Discovery",
+                "w": 29
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Abel Bliss Professor"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "Department of Computer Science,University of Illinois at Urbana-Champaign,USA",
+            "has_email_cr": true,
+            "work": "鐜颁负缇庡浗浼婂埄璇轰紛澶у棣欐鍒嗘牎璁＄畻鏈虹郴鏁欐巿锛岀編鍥借绠楁満鍗忎細闄㈠＋鍜孖EEE闄㈠＋銆�",
+            "bio": "Born in Shanghai, China on 10 August 1949. Han received his PhD from the University of Wisconsin in Computer Science in 1985.<br />    He was a professor in the School of Computing Science at Simon Fraser University. Currently he is a professor, at the Department of Computer Science in the University of Illinois at Urbana-Champaign. He is also the Director of Information Network Academic Research Center (INARC) supported by Network Science Collaborative Technology Alliance (NSCTA) program of U.S. Army Research Lab (ARL).<br />    Han has chaired or served on over 100 program committees of international conferences and workshops, including PC co-chair of 2005 (IEEE), International Conference on Data Mining (ICDM), Americas Coordinator of 2006 International Conference on Very Large Data Bases (VLDB). He also served as the founding Editor-In-Chief of ACM Transactions on Knowledge Discovery from Data.<br />    He is an ACM fellow and an IEEE Fellow. He received the 2004 ACM SIGKDD Innovations Award, and the 2005 IEEE Computer Society Technical Achievement Award. The book: Han, Kamber and Pei, \"Data Mining: Concepts and Techniques\" (3rd ed., Morgan Kaufmann, 2011) has been popularly used as a textbook worldwide. He was the 2009 winner of the McDowell Award, the highest technical award made by IEEE.",
+            "edu": "1979骞存瘯涓氫簬涓浗绉戝鎶€鏈ぇ瀛︼紝1985骞村湪濞佹柉搴锋槦楹﹁开閫婂ぇ瀛﹁幏寰楀崥澹浣嶃€�",
+            "fax": "(217) 265-6494",
+            "homepage": "http://hanj.cs.illinois.edu/",
+            "address": "201 N. Goodwin Avenue, Urbana, IL 61801, USA.",
+            "has_email": true,
+            "phone": "(217) 333-6903"
+        },
+        "work": [
+            {
+                "aff": {
+                    "id": ""
+                },
+                "pos": {
+                    "i": ""
+                },
+                "id": "575e29e176d91164e3eb1342"
+            },
+            {
+                "aff": {
+                    "id": ""
+                },
+                "pos": {
+                    "i": ""
+                },
+                "id": "575e29e376d91164e3eb1343"
+            },
+            {
+                "aff": {
+                    "dept": {
+                        "i": "552e5380dabfae7de908978e",
+                        "n": "Department of Computer Science"
+                    },
+                    "id": "",
+                    "inst": {
+                        "i": "552e0b97dabfae7de9f56836",
+                        "n": "University of Illinois"
+                    }
+                },
+                "field": {
+                    "i": "",
+                    "n": ""
+                },
+                "pos": {
+                    "i": "",
+                    "n": ""
+                },
+                "id": "577c5f979ed5db971c9dfb03",
+                "date": {
+                    "s": "2001-07",
+                    "e": "1970-01"
+                }
+            },
+            {
+                "aff": {
+                    "id": ""
+                },
+                "pos": {
+                    "i": ""
+                },
+                "id": "57894fb09ed5dbf28ed0f725"
+            },
+            {
+                "aff": {
+                    "id": ""
+                },
+                "pos": {
+                    "i": ""
+                },
+                "id": "57b531e69ed5db1bd996decb"
+            }
+        ],
+        "links": [
+            {
+                "type": "gs",
+                "url": "http://scholar.google.com/citations?user=Kv9AbjMAAAAJ&hl=en",
+                "id": "Kv9AbjMAAAAJ"
+            },
+            {
+                "type": "vl",
+                "url": "http://videolectures.net/jiawei_han",
+                "id": "jiawei_han"
+            },
+            {
+                "type": "oid",
+                "url": "",
+                "id": "745329"
+            }
+        ],
+        "edu": [],
+        "id": "53f42f36dabfaedce54dcd0c",
+        "name_zh": "闊╁鐐�",
+        "num_upvoted": 16,
+        "attr": {
+            "gender": "male",
+            "nation": "USA",
+            "ethnic": "Chinese",
+            "lang": "Chinese"
+        },
+        "tags_zh": [
+            {
+                "t": "Data Mining",
+                "w": 239
+            },
+            {
+                "t": "Data Cube",
+                "w": 40
+            },
+            {
+                "t": "Data Analysis",
+                "w": 40
+            },
+            {
+                "t": "Information Retrieval",
+                "w": 35
+            },
+            {
+                "t": "Relational Databases",
+                "w": 35
+            },
+            {
+                "t": "Association Rule",
+                "w": 33
+            },
+            {
+                "t": "Indexation",
+                "w": 32
+            },
+            {
+                "t": "Graph Theory",
+                "w": 30
+            },
+            {
+                "t": "Social Network",
+                "w": 29
+            },
+            {
+                "t": "Knowledge Discovery",
+                "w": 29
+            }
+        ],
+        "intr": [],
+        "num_followed": 113,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "Department of Computer Science, University of Illinouis Chicago",
+            "id": ""
+        },
+        "name": "Philip S. Yu",
+        "num_viewed": 2092,
+        "avatar": "//static.aminer.org/upload/avatar/486/1677/1417/53f47977dabfae8a6845b643.jpeg",
+        "indices": {
+            "sociability": 6.4692,
+            "h_index": 135,
+            "num_citation": 79804,
+            "as": 0,
+            "diversity": 4.3979,
+            "new_star": 209.3034,
+            "num_pubs": 894,
+            "activity": 466.5406,
+            "g_index": 260
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "5770b49976d91118547e80d1",
+            "mtime": "2016-08-10 06:44:27",
+            "cid": "",
+            "mname": "cheng wang",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 185
+            },
+            {
+                "t": "Indexation",
+                "w": 54
+            },
+            {
+                "t": "Social Network",
+                "w": 39
+            },
+            {
+                "t": "Internet",
+                "w": 38
+            },
+            {
+                "t": "Data Analysis",
+                "w": 35
+            },
+            {
+                "t": "Distributed Databases",
+                "w": 33
+            },
+            {
+                "t": "Transaction Processing",
+                "w": 31
+            },
+            {
+                "t": "Mobile Computing",
+                "w": 30
+            },
+            {
+                "t": "Data Stream",
+                "w": 26
+            },
+            {
+                "t": "Indexing",
+                "w": 25
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Professor and Wexler Chair"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "Department of Computer Science, University of Illinouis Chicago",
+            "has_email_cr": true,
+            "work": "He is a Professor in the Department of Computer Science at UIC and also holds the Wexler Chair in Information and Technology. He spent most of his career at IBM Thomas J. Watson Research Center, where he was manager of the Software Tools and Techniques group. Dr. Yu has published more than 650 papers in refereed journals and conferences. He holds or has applied for more than 300 US patents.\nDr. Yu is a Fellow of the ACM and the IEEE. He is the Editor-in-Chief of ACM Transactions on Knowledge Discovery from Data. He is on the steering committee of the IEEE Conference on Data Mining and ACM Conference on Information and Knowledge Management and was a member of the IEEE Data Engineering steering committee. He was the Editor-in-Chief of IEEE Transactions on Knowledge and Data Engineering (2001-2004). He had also served as an associate editor of ACM Transactions on the Internet Technology (2000-2010) and Knowledge and Information Systems (1998-2004). In addition to serving as program committee member on various conferences, he was the program chair or co-chairs of the 2009 IEEE Intl. Conf. on Service-Oriented Computing and Applications, the IEEE Workshop of Scalable Stream Processing Systems (SSPS鈥�07), the IEEE Workshop on Mining Evolving and Streaming Data (2006), the 2006 joint conferences of the 8th IEEE Conference on E-Commerce Technology (CEC' 06) and the 3rd IEEE Conference on Enterprise Computing, E-Commerce and E-Services (EEE' 06), the 11th IEEE Intl. Conference on Data Engineering, the 6th Pacific Area Conference on Knowledge Discovery and Data Mining, the 9th ACM SIGMOD Workshop on Research Issues in Data Mining and Knowledge Discovery, the 2nd IEEE Intl. Workshop on Research Issues on Data Engineering: Transaction and Query Processing, the PAKDD Workshop on Knowledge Discovery from Advanced Databases, and the 2nd IEEE Intl. Workshop on Advanced Issues of E-Commerce and Web-based Information Systems. He served as the general chair or co-chairs of the 2009 IEEE Intl. Conf. on Data Mining, the 2009 IEEE Intl. Conf. on Data Engineering, the 2006 ACM Conference on Information and Knowledge Management, the 1998 IEEE Intl. Conference on Data Engineering, and the 2nd IEEE Intl. Conference on Data Mining.",
+            "bio": "Philip S. Yu's main research interests include data mining (especially on graph/network mining), social network, privacy preserving data publishing, data stream, database systems, and Internet applications and technologies. He is a Professor in the Department of Computer Science at UIC and also holds the Wexler Chair in Information and Technology. He spent most of his career at IBM Thomas J. Watson Research Center, where he was manager of the Software Tools and Techniques group. Dr. Yu has published more than 650 papers in refereed journals and conferences. He holds or has applied for more than 300 US patents.\n\nDr. Yu is a Fellow of the ACM and the IEEE. He is the Editor-in-Chief of ACM Transactions on Knowledge Discovery from Data. He is on the steering committee of the IEEE Conference on Data Mining and ACM Conference on Information and Knowledge Management and was a member of the IEEE Data Engineering steering committee. He was the Editor-in-Chief of IEEE Transactions on Knowledge and Data Engineering (2001-2004). He had also served as an associate editor of ACM Transactions on the Internet Technology (2000-2010) and Knowledge and Information Systems (1998-2004). In addition to serving as program committee member on various conferences, he was the program chair or co-chairs of the 2009 IEEE Intl. Conf. on Service-Oriented Computing and Applications, the IEEE Workshop of Scalable Stream Processing Systems (SSPS鈥�07), the IEEE Workshop on Mining Evolving and Streaming Data (2006), the 2006 joint conferences of the 8th IEEE Conference on E-Commerce Technology (CEC' 06) and the 3rd IEEE Conference on Enterprise Computing, E-Commerce and E-Services (EEE' 06), the 11th IEEE Intl. Conference on Data Engineering, the 6th Pacific Area Conference on Knowledge Discovery and Data Mining, the 9th ACM SIGMOD Workshop on Research Issues in Data Mining and Knowledge Discovery, the 2nd IEEE Intl. Workshop on Research Issues on Data Engineering: Transaction and Query Processing, the PAKDD Workshop on Knowledge Discovery from Advanced Databases, and the 2nd IEEE Intl. Workshop on Advanced Issues of E-Commerce and Web-based Information Systems. He served as the general chair or co-chairs of the 2009 IEEE Intl. Conf. on Data Mining, the 2009 IEEE Intl. Conf. on Data Engineering, the 2006 ACM Conference on Information and Knowledge Management, the 1998 IEEE Intl. Conference on Data Engineering, and the 2nd IEEE Intl. Conference on Data Mining. He had received several IBM honors including 2 IBM Outstanding Innovation Awards, an Outstanding Technical Achievement Award, 2 Research Division Awards and the 94th plateau of Invention Achievement Awards. He was an IBM Master Inventor. Dr. Yu received a Research Contributions Award from IEEE Intl. Conference on Data Mining in 2003 and also an IEEE Region 1 Award for \"promoting and perpetuating numerous new electrical engineering concepts\" in 1999.\n\nDr. Yu received the B.S. Degree in E.E. from National Taiwan University, the M.S. and Ph.D. degrees in E.E. from Stanford University, and M.B.A. degree from New York University.",
+            "edu": "Dr. Yu received the B.S. Degree in E.E. from National Taiwan University, the M.S. and Ph.D. degrees in E.E. from Stanford University, and M.B.A. degree from New York University.",
+            "fax": "(312) 413-0024",
+            "homepage": "http://www.cs.uic.edu/~psyu",
+            "address": "851 S. Morgan St., Rm 1138 SEO, Chicago, IL 60607 \n",
+            "has_email": true,
+            "phone": "(312) 996-0498"
+        },
+        "work": [
+            {
+                "aff": {
+                    "id": ""
+                },
+                "pos": {
+                    "i": ""
+                },
+                "id": "575e29d976d91164e3eb1334"
+            },
+            {
+                "aff": {
+                    "id": ""
+                },
+                "pos": {
+                    "i": ""
+                },
+                "id": "575e29db76d91164e3eb1337"
+            },
+            {
+                "aff": {
+                    "id": ""
+                },
+                "pos": {
+                    "i": ""
+                },
+                "id": "575e32a376d91164e3eb1c81"
+            },
+            {
+                "aff": {
+                    "id": ""
+                },
+                "pos": {
+                    "i": ""
+                },
+                "id": "575e358876d91164e3eb1f12"
+            }
+        ],
+        "links": [],
+        "edu": [],
+        "id": "53f47977dabfae8a6845b643",
+        "name_zh": "",
+        "num_upvoted": 5,
+        "attr": {
+            "gender": "male",
+            "nation": "USA",
+            "ethnic": "Chinese",
+            "lang": "Chinese"
+        },
+        "tags_zh": [
+            {
+                "t": "Data Mining",
+                "w": 185
+            },
+            {
+                "t": "Indexation",
+                "w": 54
+            },
+            {
+                "t": "Social Network",
+                "w": 39
+            },
+            {
+                "t": "Internet",
+                "w": 38
+            },
+            {
+                "t": "Data Analysis",
+                "w": 35
+            },
+            {
+                "t": "Distributed Databases",
+                "w": 33
+            },
+            {
+                "t": "Transaction Processing",
+                "w": 31
+            },
+            {
+                "t": "Mobile Computing",
+                "w": 30
+            },
+            {
+                "t": "Data Stream",
+                "w": 26
+            },
+            {
+                "t": "Indexing",
+                "w": 25
+            }
+        ],
+        "intr": [],
+        "num_followed": 60,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "Department of Computer Science, Rensselaer Polytechnic Institute",
+            "id": ""
+        },
+        "name": "Mohammed J. Zaki",
+        "num_viewed": 311,
+        "avatar": "//static.aminer.org/picture/01770/Mohammed_Javeed_Zaki_1297509299161.jpeg",
+        "indices": {
+            "sociability": 5.5451,
+            "h_index": 60,
+            "num_citation": 19529,
+            "as": 0,
+            "diversity": 3.964,
+            "new_star": 1.5625,
+            "num_pubs": 258,
+            "activity": 33.1807,
+            "g_index": 138
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "5770b49976d91118547e80d1",
+            "mtime": "2016-08-10 07:54:09",
+            "cid": "",
+            "mname": "cheng wang",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 97
+            },
+            {
+                "t": "Association Rule",
+                "w": 17
+            },
+            {
+                "t": "Sequence Mining",
+                "w": 16
+            },
+            {
+                "t": "Knowledge Discovery",
+                "w": 13
+            },
+            {
+                "t": "Association Rules",
+                "w": 12
+            },
+            {
+                "t": "Computer Science",
+                "w": 11
+            },
+            {
+                "t": "Association Rule Mining",
+                "w": 10
+            },
+            {
+                "t": "Gene Expression",
+                "w": 9
+            },
+            {
+                "t": "Bioinformatics",
+                "w": 9
+            },
+            {
+                "t": "Indexation",
+                "w": 9
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Professor"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "Department of Computer Science, Rensselaer Polytechnic Institute",
+            "has_email_cr": true,
+            "work": "Full Professor: Computer Science Department, Rensselaer Polytechnic Institute, Troy, New York, December 2008 - Present.\n Science Without Frontiers Fellow:  Government of Brazil  -- Ministry of Science, Technology and Innovation and the Ministry of Education, Brazil, December 25, 2012 - December 24, 2015.\nAssociate Professor: Computer Science Department, Rensselaer Polytechnic Institute, Troy, New York, December 2003 - December 2008.\nAssistant Professor: Computer Science Department, Rensselaer Polytechnic Institute, Troy, New York, September 1998 - December 2003.",
+            "bio": "Mohammed J. Zaki is a Professor of Computer Science at RPI. He received his Ph.D. degree in computer science from the University of Rochester in 1998. His research interests focus on developing novel data mining techniques, especially for applications in bioinformatics and social networks. He has published over 225 papers and book-chapters on data mining and bioinformatics, including the Data Mining and Analysis textbook published by Cambridge University Press, 2014. He is the founding co-chair for the BIOKDD series of workshops. He is currently Area Editor for Statistical Analysis and Data Mining, and an Associate Editor for Data Mining and Knowledge Discovery, ACM Transactions on Knowledge Discovery from Data, and Social Networks and Mining. He was the program co-chair for SDM'08, SIGKDD'09, PAKDD'10, BIBM'11,CIKM'12, and ICDM'12. He is currently the program co-chair for IEEE BigData'15. He is currently serving on the Board of Directors for ACM SIGKDD. He received the National Science Foundation CAREER Award in 2001 and the Department of Energy Early Career Principal Investigator Award in 2002. He received an HP Innovation Research Award in 2010, 2011, and 2012, and a Google Faculty Research Award in 2011. He is a senior member of the IEEE, and an ACM Distinguished Scientist. His research is supported in part by NSF, NIH, DOE, Google, HP, and Nvidia.",
+            "edu": "Ph.D., Computer Science, July 1998, University of Rochester, Rochester, New York\nM.S., Computer Science, May 1995, University of Rochester, Rochester, New York\nB.S., Computer Science and Mathematics (dual), May 1993, Angelo State University, San Angelo, Texas",
+            "fax": "(518) 276-4033",
+            "homepage": "http://www.cs.rpi.edu/~zaki/index.php",
+            "address": "Department of Computer Science\nRensselaer Polytechnic Institute\nTroy, New York 12180-3590",
+            "has_email": true,
+            "phone": "(518) 276-6340"
+        },
+        "work": [],
+        "links": [
+            {
+                "type": "oid",
+                "url": "",
+                "id": "63202"
+            }
+        ],
+        "edu": [],
+        "id": "53f4ab9cdabfaecc2877b55a",
+        "name_zh": "",
+        "num_upvoted": 3,
+        "attr": {
+            "gender": "male",
+            "nation": "USA"
+        },
+        "tags_zh": [
+            {
+                "t": "Data Mining",
+                "w": 97
+            },
+            {
+                "t": "Association Rule",
+                "w": 17
+            },
+            {
+                "t": "Sequence Mining",
+                "w": 16
+            },
+            {
+                "t": "Knowledge Discovery",
+                "w": 13
+            },
+            {
+                "t": "Association Rules",
+                "w": 12
+            },
+            {
+                "t": "Computer Science",
+                "w": 11
+            },
+            {
+                "t": "Association Rule Mining",
+                "w": 10
+            },
+            {
+                "t": "Gene Expression",
+                "w": 9
+            },
+            {
+                "t": "Bioinformatics",
+                "w": 9
+            },
+            {
+                "t": "Indexation",
+                "w": 9
+            }
+        ],
+        "intr": [],
+        "num_followed": 5,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "Big Data Science and School of Computing Science,Simon Fraser University",
+            "id": ""
+        },
+        "name": "Jian Pei",
+        "num_viewed": 968,
+        "avatar": "//static.aminer.org/picture/01121/Jian_Pei_1307377712369.png",
+        "indices": {
+            "sociability": 5.8749,
+            "h_index": 70,
+            "num_citation": 30336,
+            "as": 0,
+            "diversity": 3.8217,
+            "new_star": 6.6508,
+            "num_pubs": 293,
+            "activity": 66.5198,
+            "g_index": 172
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "5770b49976d91118547e80d1",
+            "mtime": "2016-08-10 07:59:54",
+            "cid": "",
+            "mname": "cheng wang",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 75
+            },
+            {
+                "t": "Synthetic Data",
+                "w": 30
+            },
+            {
+                "t": "Empirical Study",
+                "w": 22
+            },
+            {
+                "t": "Data Analysis",
+                "w": 22
+            },
+            {
+                "t": "Synthetic Data Set",
+                "w": 16
+            },
+            {
+                "t": "Time Series",
+                "w": 15
+            },
+            {
+                "t": "Uncertain Data",
+                "w": 15
+            },
+            {
+                "t": "Data Structure",
+                "w": 14
+            },
+            {
+                "t": "Clustering",
+                "w": 13
+            },
+            {
+                "t": "Data Cube",
+                "w": 13
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Canada Research Chair and Professor"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "Big Data Science and School of Computing Science,Simon Fraser University",
+            "has_email_cr": true,
+            "work": "Jian Pei is currently a Canada Research Chair (Tier 1) in Big Data Science and a Professor in the School of Computing Science at Simon Fraser University. He is also an associate member of the Department of Statistics and Actuarial Science. He is a well known leading researcher in the general areas of data science, big data, data mining, and database systems. His expertise is on developing effective and efficient data analysis techniques for novel data intensive applications. He is recognized as a Fellow of the Association of Computing Machinery (ACM) for his 鈥渃ontributions to the foundation, methodology and applications of data mining鈥� and as a Fellow of the Institute of Electrical and Electronics Engineers (IEEE) for his 鈥渃ontributions to data mining and knowledge discovery鈥�. At the same time, he is also renowned for his professional leadership.\n\nJian Pei is one of the most cited authors in data mining, database systems, and information retrieval. Since 2000, he has published one textbook, two monographs and over 200 research papers in refereed journals and conferences, which have been cited by more than 59,000 in literature. His H-index is 66 according to Google Scholar. His research has generated remarkable impact substantially beyond academia. For example, his algorithms have been adopted by industry in production and popular open source software suites.\n\nHe maintains a wide spectrum of industry relations with both global and local industry partners. He founded the Pacific Blue Cross Health Informatics Laboratory, and is an active consultant for the healthcare informatics, network security intelligence, and computational finance industries. \n\nHe received many prestigious awards, including the 2015 ACM SIGKDD Service Award (鈥渢he highest service award in the field of knowledge discovery and data mining (KDD)鈥�) and the 2014 IEEE ICDM Research Contributions Award (鈥渢he highest recognition for research achievements in Data Mining鈥�).",
+            "bio": "Jian Pei is currently a Canada Research Chair (Tier 1) in Big Data Science and a Professor in the School of Computing Science at Simon Fraser University.  He is also an associate member of the Department of Statistics and Actuarial Science, Faculty of Science, and Faculty of Health Sciences. He is a well known leading researcher in the general areas of data science, big data, data mining, and database systems. His expertise is on developing effective and efficient data analysis techniques for novel data intensive applications. He is recognized as a Fellow of the Association of Computing Machinery (ACM) for his 鈥渃ontributions to the foundation, methodology and applications of data mining鈥� and as a Fellow of the Institute of Electrical and Electronics Engineers (IEEE) for his 鈥渃ontributions to data mining and knowledge discovery鈥�. At the same time, he is also renowned for his professional leadership.\n\nJian Pei is one of the most cited authors in data mining, database systems, and information retrieval. Since 2000, he has published one textbook, two monographs and over 200 research papers in refereed journals and conferences, which have been cited by more than 60,000 in literature. His H-index is 69 according to Google Scholar as of June 6, 2016. His research has generated remarkable impact substantially beyond academia. For example, his algorithms have been adopted by industry in production and popular open source software suites.\n\nJian Pei鈥檚 professional leadership is also demonstrated by his leader roles in many academic organizations and activities. He is the editor-in-chief of the IEEE Transactions of Knowledge and Data Engineering (TKDE), a director of the Special Interest Group on Knowledge Discovery in Data (SIGKDD) of the Association for Computing Machinery (ACM), and a general co-chair or program committee co-chair of many premier conferences.\n\nHe maintains a wide spectrum of industry relations with both global and local industry partners. He founded the Pacific Blue Cross Health Informatics Laboratory, and is an active consultant for the healthcare informatics, network security intelligence, and computational finance industries. In 2009- 2011, he served as the Associate Director, Research and Industry Relation, for the School of Computing Science, Simon Fraser University.\n\nHe received many prestigious awards, including the 2015 ACM SIGKDD Service Award (鈥渢he highest service award in the field of knowledge discovery and data mining (KDD)鈥�), the 2014 IEEE ICDM Research Contributions Award (鈥渢he highest recognition for research achievements in Data Mining鈥�), the British Columbia Innovation Council 2005 Young Innovator Award, an NSERC 2008 Discovery Accelerator Supplements Award (100 awards cross the whole country), an IBM Faculty Award (2006), a KDD Best Application Paper Award (2008), a PAKDD Best Paper Award (2014), a PAKDD Most Influential Paper Award (2009), and an IEEE Outstanding Paper Award (2007).\n\nHe also holds some adjunct professorships, such as a Distinguished Visiting Professor of Tsinghua University and a Chao Kuang-Piu Chair Professor of Zhejiang University.<br />\n<br />He received a Ph.D. degree in Computing Science from Simon Fraser University, Canada, in 2002, under Dr. Jiawei Han's supervision.  He also received a B. Eng. degree and a M. Eng. degree, both in Computer Science, from Shanghai Jiao Tong University, China, in 1991 and 1993, respectively.  He was a Ph.D. candidate in Peking University, China, in 1997-1999. \n<br />\n<br />His research interests can be summarized as developing effective and efficient data analysis techniques for novel data intensive applications. Particularly, he is currently interested in various techniques of data mining, Web search, information retrieval, data warehousing, online analytical processing, and database systems, as well as their applications in social networks, health-informatics, business and bioinformatics. His research has been supported in part by the Natural Sciences and Engineering Research Council of Canada (NSERC), the National Science Foundation (NSF) of the United States, Microsoft, Hewlett-Packard Company (HP), IBM Corporation, SAP Business Objects, and the Canadian Imperial Bank of Commerce (CIBC).\n<br />\n<br />Currently, his priority in research is on developing industry relations and collaboration, and transferring technologies developed in his group to industry applications.  He has been spending a lot of time and effort on creating collaborative industry projects and developing proof-of-concept prototypes.\n<br />\n<br />Since 2000, he has published one monograph and over 140 research papers in refereed journals and conferences, has served in the organization committees and the program committees of over 130 international conferences and workshops, and has been a reviewer for the leading academic journals in his fields. He is an associate editor-in-chief of IEEE Transactions of Knowledge and Data Engineering (TKDE), and an associate editor or editorial board member of ACM Transactions on Knowledge Discovery from Data (TKDD), Data Mining and Knowledge Discovery, Statistical Analysis and Data Mining, Intelligent Data Analysis, and Journal of Computer Science and Technology. He is a senior member of the Association for Computing Machinery (ACM) and the Institute of Electrical and Electronics Engineers (IEEE). He is an ACM Distinguished Speaker.\n<br />\n<br />He is the recipient of the British Columbia Innovation Council 2005 Young Innovator Award, an NSERC 2008 Discovery Accelerator Supplements Award (100 awards cross the whole country, 10 in computer science), an IBM Faculty Award (2006), a KDD Best Application Paper Award (2008), and an IEEE Outstanding Paper Award (2007).",
+            "edu": "Ph.D., Computing Science, Simon Fraser University, Canada, 2002\nM. Eng., Computer Science Jiao Tong University, China, 1993\nB.Eng., Computer Science Shanghai Jiao Tong University, China, 1991",
+            "fax": "1-778-782-3045",
+            "homepage": "http://www.cs.sfu.ca/~jpei/",
+            "address": "Department of Statistics and Actuarial Science Faculty of Health Sciences Simon Fraser University 8888 University Drive Burnaby, BC Canada V5A 1S6",
+            "has_email": true,
+            "phone": "1-778-782-6851"
+        },
+        "work": [],
+        "links": [
+            {
+                "type": "vl",
+                "url": "http://videolectures.net/jian_pei",
+                "id": "jian_pei"
+            },
+            {
+                "type": "oid",
+                "url": "",
+                "id": "1358732"
+            }
+        ],
+        "edu": [],
+        "id": "53f47b80dabfae8a6845cd1d",
+        "name_zh": "",
+        "num_upvoted": 4,
+        "attr": {
+            "gender": "male",
+            "nation": "Canada",
+            "ethnic": "Chinese",
+            "lang": "Chinese"
+        },
+        "tags_zh": [
+            {
+                "t": "Data Mining",
+                "w": 75
+            },
+            {
+                "t": "Synthetic Data",
+                "w": 30
+            },
+            {
+                "t": "Empirical Study",
+                "w": 22
+            },
+            {
+                "t": "Data Analysis",
+                "w": 22
+            },
+            {
+                "t": "Synthetic Data Set",
+                "w": 16
+            },
+            {
+                "t": "Time Series",
+                "w": 15
+            },
+            {
+                "t": "Uncertain Data",
+                "w": 15
+            },
+            {
+                "t": "Data Structure",
+                "w": 14
+            },
+            {
+                "t": "Clustering",
+                "w": 13
+            },
+            {
+                "t": "Data Cube",
+                "w": 13
+            }
+        ],
+        "intr": [],
+        "num_followed": 18,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "Department of Computer Science,Carnegie Mellon University",
+            "id": ""
+        },
+        "name": "Christos Faloutsos",
+        "num_viewed": 1392,
+        "avatar": "//static.aminer.org/picture/02244/Christos_Faloutsos_1330010247329.jpg",
+        "indices": {
+            "sociability": 6.5206,
+            "h_index": 106,
+            "num_citation": 59971,
+            "as": 0,
+            "diversity": 4.3717,
+            "new_star": 105.3451,
+            "num_pubs": 554,
+            "activity": 231.4015,
+            "g_index": 238
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "555026fd45ce5a6daab9bcb9",
+            "mtime": "2016-09-07 09:38:02",
+            "cid": "",
+            "mname": "鎴� 灏忔埓",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 103
+            },
+            {
+                "t": "Social Network",
+                "w": 45
+            },
+            {
+                "t": "Large Graph",
+                "w": 32
+            },
+            {
+                "t": "Power Law",
+                "w": 28
+            },
+            {
+                "t": "Graph Theory",
+                "w": 27
+            },
+            {
+                "t": "Information Retrieval",
+                "w": 25
+            },
+            {
+                "t": "Anomaly Detection",
+                "w": 22
+            },
+            {
+                "t": "Computer Science",
+                "w": 22
+            },
+            {
+                "t": "Technical Report",
+                "w": 22
+            },
+            {
+                "t": "Indexation",
+                "w": 22
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Professor"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "Department of Computer Science,Carnegie Mellon University",
+            "has_email_cr": true,
+            "work": "1981-1985 Tutor and instructor in several introductory and data base courses at Univ. of Toronto.\n1985-1991 Assistant Professor, Department of Computer Science, University of Maryland at College\nPark. Date of initial appointment: 8/16/1985.\n1991-1998 Associate Professor, Department of Computer Science, University of Maryland at College\nPark. Date of appointment: August 1991.\n1997-1998 Visiting Associate Professor, Department of Computer Science, Carnegie Mellon University.\n1998-2000 Associate Professor, Department of Computer Science, Carnegie Mellon University.\n2000- Full Professor, Department of Computer Science, Carnegie Mellon University",
+            "bio": "Dr. Christos Faloutsos (Greek: 围蟻萎蟽蟿慰蟼 桅伪位慰蠉蟿蟽慰蟼) is a Greek computer scientist and a professor at   Carnegie Mellon University. He has received the Presidential Young Investigator Award by the National Science Foundation (1989), seven best paper awards, and several teaching awards. He has served as a member of the executive committee of SIGKDD. He has published over 140 refereed articles, one monograph, and holds five patents. His research interests include data mining for streams and networks, fractals, indexing for multimedia and bio-informatics data bases, and performance.<br /><br />He also received the ACM 2010 SIGKDD Innovation Award and he was also named a Fellow of the ACM in 2010.",
+            "edu": "Ph.D. (1987), Univ. of Toronto, in Computer Science.\nM.Sc. (1982), Univ. of Toronto, in Computer Science.\nB.Sc. (1981), National Technical Univ. of Athens, in Electrical Engineering.",
+            "fax": "(412)-268.55.76",
+            "homepage": "http://www.cs.cmu.edu/~christos/",
+            "address": "Dept. of Computer Science \nCarnegie Mellon University\nWean Hall \n5000 Forbes Avenue \nChristos Faloutsos \nPittsburgh, PA 15213-3891",
+            "has_email": true,
+            "phone": "(412)-268.14.57"
+        },
+        "work": [],
+        "links": [
+            {
+                "type": "gs",
+                "url": "https://scholar.google.com/citations?user=nd8lQQIAAAAJ",
+                "id": "nd8lQQIAAAAJ"
+            },
+            {
+                "type": "vl",
+                "url": "http://videolectures.net/christos_faloutsos",
+                "id": "christos_faloutsos"
+            },
+            {
+                "type": "oid",
+                "url": "",
+                "id": "354153"
+            }
+        ],
+        "edu": [],
+        "id": "53f4718edabfaeb22f559444",
+        "name_zh": "",
+        "num_upvoted": 5,
+        "attr": {
+            "gender": "male",
+            "nation": "USA",
+            "ethnic": "English",
+            "lang": "English"
+        },
+        "tags_zh": [
+            {
+                "t": "Data Mining",
+                "w": 103
+            },
+            {
+                "t": "Social Network",
+                "w": 45
+            },
+            {
+                "t": "Large Graph",
+                "w": 32
+            },
+            {
+                "t": "Power Law",
+                "w": 28
+            },
+            {
+                "t": "Graph Theory",
+                "w": 27
+            },
+            {
+                "t": "Information Retrieval",
+                "w": 25
+            },
+            {
+                "t": "Anomaly Detection",
+                "w": 22
+            },
+            {
+                "t": "Computer Science",
+                "w": 22
+            },
+            {
+                "t": "Technical Report",
+                "w": 22
+            },
+            {
+                "t": "Indexation",
+                "w": 22
+            }
+        ],
+        "intr": [],
+        "num_followed": 33,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "University of Louisiana at Lafayette",
+            "id": ""
+        },
+        "name": "Xindong Wu",
+        "num_viewed": 1532,
+        "avatar": "//static.aminer.org/0ba4/0009/0000/53b03a52dabfae456e328b51.jpg",
+        "indices": {
+            "sociability": 5.8861,
+            "h_index": 49,
+            "num_citation": 13446,
+            "as": 0,
+            "diversity": 4.6248,
+            "new_star": 15.2986,
+            "num_pubs": 347,
+            "activity": 81.2189,
+            "g_index": 110
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "5779f3b39ed5db2cefd11588",
+            "mtime": "2016-09-21 02:36:11",
+            "cid": "",
+            "mname": "cjr rjc",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 118
+            },
+            {
+                "t": "Machine Learning",
+                "w": 27
+            },
+            {
+                "t": "Learning Artificial Intelligence",
+                "w": 25
+            },
+            {
+                "t": "Computer Science",
+                "w": 23
+            },
+            {
+                "t": "Pattern Matching",
+                "w": 22
+            },
+            {
+                "t": "Classification",
+                "w": 19
+            },
+            {
+                "t": "Learning (artificial Intelligence)",
+                "w": 19
+            },
+            {
+                "t": "Algorithm Design And Analysis",
+                "w": 19
+            },
+            {
+                "t": "Feature Selection",
+                "w": 18
+            },
+            {
+                "t": "Feature Extraction",
+                "w": 18
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Professo"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "University of Louisiana at Lafayette",
+            "has_email_cr": true,
+            "work": "1987骞�7鏈堣嚦1991骞�3鏈堝湪鍚堣偉宸ヤ笟澶у浠诲姪鏁欍€�1993骞�7鏈堣嚦2001骞�8鏈堬紝鏇惧厛鍚庡湪婢冲ぇ鍒╀簹鍜岀編鍥界宸炵殑3鎵€澶у澶у宸ヤ綔浜�8骞淬€� 2001骞�9鏈堣嚦浠婏紝鍦ㄧ編鍥戒經钂欑壒(Vermont)宸炵殑浣涜挋鐗瑰ぇ瀛﹁绠楁満绉戝绯讳换姝ｆ暀鎺堬紝骞朵簬2001骞�9鏈堬綖2010骞�6鏈�(杩炵画9骞达級鎷呬换璇ョ郴鐨勭郴涓讳换銆俓n        2006骞磋鏁欒偛閮ㄦ帴鍙椾负闀挎睙瀛﹁€呰搴ф暀鎺堛€�2009骞磋幏鍥藉鑷劧绉戝鍩洪噾娴峰鍙婃腐婢冲鑰呭悎浣滅爺绌跺熀閲戯紙娴峰鏉伴潚锛夎祫鍔╋紝2013骞磋祫鍔╁欢缁€�2010骞村叆閫夊浗瀹跺崈浜鸿鍒掋€�2011骞村叆閫塈EEE Fellow锛�2012骞村綋閫堿AAS Fellow銆�",
+            "bio": "鍚翠俊涓滐紙Xindong Wu锛夛紝鐢凤紝1963骞�9鏈堢敓浜庡畨寰界渷瀹夊簡甯傛灋闃冲幙椤归摵闀囥€傛浘浠荤編鍥戒經钂欑壒澶у锛圲niversity of Vermont锛夎绠楁満绉戝绯荤郴涓讳换鍜屾鏁欐巿锛岀幇浠诲悎鑲ュ伐涓氬ぇ瀛﹁绠楁満搴旂敤宀椾綅闀挎睙瀛﹁€呰搴ф暀鎺堬紙2006骞�3鏈堟暀鑲查儴鎵瑰噯鎺ュ彈锛夛紝鍗冧汉璁″垝鍏ラ€夎€咃紝2010骞�11鏈堝綋閫変负IEEE Fellow锛�2012骞村綋閫堿AAS Fellow[2]  銆俓n浠栨槸鍥介檯钁楀悕鐨勬暟鎹寲鎺樼爺绌朵笌搴旂敤瀛﹁€咃紝鍙楃編鍥藉浗闃查儴銆佽兘婧愰儴鍜屽浗瀹剁瀛﹀熀閲戝璧勫姪锛屽湪鏁版嵁鎸栨帢鍙婂叾搴旂敤鐨勭爺绌舵柟闈㈠彇寰椾簡涓板瘜鐨勬垚鏋滐紝瀵瑰鏁版嵁婧愮殑鐭ヨ瘑鍙戠幇銆佷笉鍚岀绫荤殑鍣煶瀵圭煡璇嗗彂鐜扮簿搴︾殑褰卞搷浠ュ強鏁版嵁鎸栨帢鍦ㄧ敓鐗┿€佸奖鍍忔暟鎹簱涓殑搴旂敤绛夋柟闈㈡湁鑷繁鐨勭獊鍑鸿础鐚€俓n鍑虹増杩囩爺绌朵笓钁楋紝骞跺彂琛ㄦ湡鍒婂拰浼氳璁烘枃300澶氱瘒[4]  銆傚悓鏃讹紝浣滀负鏁版嵁鎸栨帢棰嗗煙鏈€鏉冨▉鐨勫浗闄呮湡鍒娿€奍EEE Transactions on Knowledge and Data Engineering銆�(TKDE)鐨勭幇浠讳富缂栵紝鍜屼袱澶у浗闄呴《绾т細璁箣涓€IEEE International Conference on Data Mining (ICDM)鐨勫垱鍔炰汉鍜岀幇浠绘寚瀵煎鍛樹細涓诲腑锛屾垚涓烘暟鎹寲鎺橀鍩熶腑棰嗗瀛︾鍙戝睍銆佹帹鍔ㄦ妧鏈繘姝ョ殑鍥介檯瀛︽湳甯﹀ご浜轰箣涓€锛�2004骞磋幏寰椾簡ACM SIGKDD濂夌尞濂栥€俓n褰撳墠鐮旂┒鍏磋叮鍖呮嫭鏁版嵁鎸栨帢锛圖ata Mining锛夈€佸熀浜庣煡璇嗙殑绯荤粺锛圞nowledge-Based Systems锛夈€佸拰涓囩淮缃戜俊鎭帰绱紙Web Information Exploration锛夈€俓n\n瀛︽湳鍏艰亴缂栬緫\n飦� IEEE璁＄畻鏈哄浼氾紙IEEE Computer Society锛夋櫤鑳戒俊鎭鐞嗗鍛樹細锛圛EEE Computer Society Technical Committee on Intelligent Informatics锛夌殑涓讳换锛�2002.4鑷充粖锛夛紱\n飦� 鍥介檯椤剁骇瀛︽姤銆奍EEE Transactions on Knowledge and Data Engineering銆嬬殑涓荤紪锛�2005.1锝�2008.12锛夛紱浠ュ強8涓《绾у鏈湡鍒婄殑缂栧浼氾紱[5] \n飦� Springer鍑虹増鐨勫浗闄呭鎶ャ€婄煡璇嗕笌淇℃伅绯荤粺銆嬶紙Knowledge and Information Systems锛夌殑鍒涘姙浜恒€佷富缂栵紙1999.1锝�2004.12锛夊拰鍚嶈獕涓荤紪锛�2005.1鑷充粖锛夛紱\n飦� 鍥介檯鐢垫皵鍜岀數瀛愬伐绋嬪笀鍗忎細锛圛EEE锛夆€滃浗闄呮暟鎹寲鎺樺ぇ浼氣€濓紙IEEE International Conference on Data Mining锛夌殑鍒涘姙浜哄拰鎸囧濮斿憳浼氫富甯紙2001骞磋嚦浠婏級锛沑n飦� Springer鍑虹増绀俱€婇珮绾т俊鎭笌鐭ヨ瘑澶勭悊銆嬶紙Advanced Information and Knowledge Processing锛夌郴鍒椾笡涔︾殑涓ゅ悕涓荤紪涔嬩竴锛�2001.1鑷充粖锛夛紱\n飦� 鏇惧彈閭€銆佸彈鑱樺湪9涓浗闄呬細璁笂浣滅壒閭€鎴栦富棰樻姤鍛婏紝100澶氫釜涓撲笟浼氳鐨勭▼搴忓鍛樹細涓婃媴浠诲悇绉嶈亴鍔★紝鍖呮嫭鍥介檯椤剁骇浼氳ICDM-03銆並DD-07鐨勭▼搴忓鍛樹細涓诲腑锛圕hair锛夋垨鑱斿悎涓诲腑锛圕o-Chairs锛夈€俓n2012骞�11鏈�29鏃ワ紝缇庡浗绉戝淇冭繘浼氾紙AAAS锛孴he American Association for the Advancement of Science锛夊叕甯冧簡2012骞存柊褰撻€夌殑Fellows锛屸€滃崈浜鸿鍒掆€濆叆閫夎€呭惔淇′笢鏁欐巿姒滀笂鏈夊悕锛岃繖鍏呭垎琛ㄦ槑鍥介檯瀛︽湳鐣屽鍏跺湪鏁版嵁鎸栨帢棰嗗煙鎴愬氨鐨勯珮搴﹁鍙拰鏀寔銆傛柊绉慉AAS Fellows鎺堜簣浠紡浜�2013骞�2鏈�16鏃ュ湪缇庡浗娉㈠＋椤跨殑AAAS骞翠細涓婁妇琛屻€傚惔淇′笢鎴愪负瀹夊窘鐪佺涓€浣嶈幏姝ゆ畩鑽ｇ殑绉戝瀹躲€俓n缇庡浗绉戝淇冭繘浼氭垚绔嬩簬1848骞达紝鏄叏鐞冩渶澶х殑绉戝瀛︿細锛岃嚧鍔涗簬绉戝浜ゆ祦銆佺瀛︿笌绀句細璁鐨勮璁猴紝骞朵富鍔炲拰鍑虹増鍥介檯钁楀悕鏈熷垔銆奡cience銆嬶紙鍏ㄧ悆鍙戣閲忔渶澶х殑鏈熷垔锛夈€傝嚜1874骞村紑濮嬶紝璇ヤ細姣忓勾浠ヤ弗璋ㄧ殑绋嬪簭锛屼粠1000涓囨垚鍛樹腑璇勯€夆€滃湪淇冭繘绉戝鍙戝睍锛屾垨瀵圭瀛﹀強绀句細搴旂敤锛屽叿鏈夊崜瓒婃垚灏辫€呪€濓紝鎺堜簣AAAS Fellow涔嬫畩鑽ｃ€俓n鍒扮洰鍓嶄负姝紝浠庝腑鍥藉ぇ闄嗗湴鍖鸿幏寰桝AAS Fellows鐨勭瀛﹀浠呮湁4浣嶏紝鍖呮嫭鍖栧銆佹捣娲嬪湴璐ㄣ€佽嚜鍔ㄥ寲鍜屽煄甯傜幆澧冪瓑瀛︾锛屽垎鍒潵鑷竻鍗庡ぇ瀛︼紙1浣嶏級銆佸悓娴庡ぇ瀛︼紙1浣嶏級銆佷腑绉戦櫌鑷姩鍖栨墍锛�1浣嶏級鍜屼腑绉戦櫌鍩庡競鐜鐮旂┒鎵€锛�1浣嶏級銆�",
+            "edu": "1984骞磋幏鍚堣偉宸ヤ笟澶у璁＄畻鏈哄簲鐢ㄥ澹浣嶏紝 1987骞磋幏鍚堣偉宸ヤ笟澶у璁＄畻鏈哄簲鐢ㄧ澹浣嶏紝1993骞磋幏鑻卞浗鐖变竵鍫�(Edinburgh) 澶у浜哄伐鏅鸿兘鍗氬＋瀛︿綅銆�",
+            "fax": "",
+            "homepage": "http://www.ucs.louisiana.edu/~xxw8007/",
+            "address": "222 James R. Oliver Hall,  301 East Lewis Street, Lafayette, Louisiana 70503, USA",
+            "has_email": true,
+            "phone": "+1-337-482-6768"
+        },
+        "work": [],
+        "links": [
+            {
+                "type": "oid",
+                "url": "",
+                "id": "43908"
+            },
+            {
+                "type": "nsfc_id",
+                "url": "",
+                "id": "683317"
+            }
+        ],
+        "edu": [],
+        "id": "53f4aae6dabfaecc1b77b3f5",
+        "name_zh": "",
+        "num_upvoted": 3,
+        "attr": {
+            "gender": "male",
+            "nation": "USA",
+            "ethnic": "Chinese",
+            "lang": "Chinese"
+        },
+        "tags_zh": [
+            {
+                "t": "Data Mining",
+                "w": 118
+            },
+            {
+                "t": "Machine Learning",
+                "w": 27
+            },
+            {
+                "t": "Learning Artificial Intelligence",
+                "w": 25
+            },
+            {
+                "t": "Computer Science",
+                "w": 23
+            },
+            {
+                "t": "Pattern Matching",
+                "w": 22
+            },
+            {
+                "t": "Classification",
+                "w": 19
+            },
+            {
+                "t": "Learning (artificial Intelligence)",
+                "w": 19
+            },
+            {
+                "t": "Algorithm Design And Analysis",
+                "w": 19
+            },
+            {
+                "t": "Feature Selection",
+                "w": 18
+            },
+            {
+                "t": "Feature Extraction",
+                "w": 18
+            }
+        ],
+        "intr": [],
+        "num_followed": 11,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "Department of Computer Science and Engineering ,University of Minnesota",
+            "id": ""
+        },
+        "name": "Vipin Kumar",
+        "num_viewed": 1450,
+        "avatar": "//static.aminer.org/upload/avatar/1944/828/62/53f47eb6dabfae9126cc40d7.jpeg",
+        "indices": {
+            "sociability": 6.0844,
+            "h_index": 96,
+            "num_citation": 65756,
+            "as": 0,
+            "diversity": 4.3605,
+            "new_star": 15.6908,
+            "num_pubs": 432,
+            "activity": 62.9711,
+            "g_index": 255
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "555026fd45ce5a6daab9bcb9",
+            "mtime": "2016-08-11 06:10:19",
+            "cid": "",
+            "mname": "鎴� 灏忔埓",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 81
+            },
+            {
+                "t": "Parallel Algorithm",
+                "w": 32
+            },
+            {
+                "t": "Graph Partitioning",
+                "w": 28
+            },
+            {
+                "t": "Parallel Algorithms",
+                "w": 25
+            },
+            {
+                "t": "Parallel Computer",
+                "w": 25
+            },
+            {
+                "t": "Association Analysis",
+                "w": 23
+            },
+            {
+                "t": "Computer Science",
+                "w": 21
+            },
+            {
+                "t": "Time Series",
+                "w": 19
+            },
+            {
+                "t": "Parallel Processing",
+                "w": 18
+            },
+            {
+                "t": "Concurrent Computing",
+                "w": 17
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Professor"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "Department of Computer Science and Engineering ,University of Minnesota",
+            "has_email_cr": true,
+            "work": "7/2015 - current: Regents Professor and William Norris Chair in Large Scale Computing, Department of\nComputer Science and Engineering, University of Minnesota\n7/2005 - 6/2015: William Norris Professor and Head, Department of Computer Science and Engineering,\nUniversity of Minnesota\n11/98- 8/2005: Director, Army High Performance Computing Research Center,\n6/98 - 5/99: Director, Graduate Program in Scientific Computation\n8/95- current: Professor, Department of Computer Sciences, University of Minnesota\n8/89-7/95: Associate Professor, Department of Computer Sciences, University of Minnesota\n1/83-7/89: Assistant Professor, Department of Computer Sciences, University of Texas at Austin",
+            "bio": "Vipin Kumar is a Regents Professor and holds William Norris Chair in the department of Computer\nScience and Engineering at the University of Minnesota. Kumar鈥檚 current research interests include data\nmining, high-performance computing, and their applications in Climate/Ecosystems and health care.\nKumar is the Lead PI of a 5-year, $10 Million project, \"Understanding Climate Change - A Data Driven\nApproach\", funded by the NSF鈥檚 Expeditions in Computing program that is aimed at pushing the boundaries\nof computer science research. He also served as the Director of Army High Performance Computing\nResearch Center (AHPCRC) from 1998 to 2005. His research has resulted in the development of the concept\nof isoefficiency metric for evaluating the scalability of parallel algorithms, as well as highly efficient\nparallel algorithms and software for sparse matrix factorization (PSPASES) and graph partitioning\n(METIS, ParMetis, hMetis). He has authored over 300 research articles, and has coedited or coauthored\n11 books including widely used text books 鈥樷€業ntroduction to Parallel Computing鈥欌€� and 鈥樷€業ntroduction to\nData Mining鈥欌€�, that have been translated into many languages, and have multiple international editions.\nat the university of minnesota. kumar鈥檚 current research interests include data mining, high-performance\ncomputing, and their applications in climate/ecosystems and biomedical domains. kumar is the lead pi of\na 5-year, $10 million project, \"understanding climate change - a data driven approach\", funded by the\nnsf 鈥檚 expeditions in computing program that is aimed at pushing the boundaries of computer science\nresearch. he also served as the director of army high performance computing research center (ahpcrc)\nfrom 1998 to 2005. his research has resulted in the development of the concept of isoefficiency metric for\nevaluating the scalability of parallel algorithms, as well as highly efficient parallel algorithms and software\nfor sparse matrix factorization (pspases) and graph partitioning (metis, parmetis, hmetis). he has\nauthored over 300 research articles, and has coedited or coauthored 11 books including widely used text\nbooks 鈥樷€榠ntroduction to parallel computing鈥欌€� and 鈥樷€榠ntroduction to data mining鈥欌€�, that have been translated\ninto many languages, and have multiple international editions.\nKumar has delivered over 50 keynotes, plenary, or distinguished/endowed lectures at major conferences/workshops\nand academic institutions. He is routinely asked to serve on review panels by federal\nagencies such as DOE, DHS, DOD, and NSF. Kumar has served as Honorary Chair, General Chair, and\nProgram Chair for many international conferences and workshops in the area of data mining and parallel\ncomputing, including 2015 IEEE International Conference on Big Data, IEEE International Conference\non Data Mining (2002) and International Parallel and Distributed Processing Symposium (2001). Kumar\nco-founded SIAM International Conference on Data Mining and served as a founding co-editor-in-chief\nof Journal of Statistical Analysis and Data Mining (Data Science Journal of the American Statistical\nAssociation). Currently, Kumar serves on the steering committees of the SIAM International Conference\non Data Mining and the IEEE International Conference on Data Mining, on Board of Directors of ACM\nSIGBio (Special Group on Bioinformatics, Computation Biology, and Biomedical Medicine), and is\nseries editor for the Data Mining and Knowledge Discovery Book Series published by CRC Press/Chapman\nHall.",
+            "edu": "Kumar received the B.E. degree in Electronics & Communication Engineering from Indian Institute of Technology Roorkee (formerly, University of Roorkee), India, in 1977, the M.E. degree in Electronics Engineering from Philips International Institute, Eindhoven, Netherlands, in 1979, and the Ph.D. degree in Computer Science from University of Maryland, College Park, in 1982. Kumar's current research interests include data mining, high-performance computing, and their applications in Climate/Ecosystems and Biomedical domains.",
+            "fax": "612-625-0572",
+            "homepage": "http://www-users.cs.umn.edu/~kumar/",
+            "address": "Department of Computer Science and Engineering 4-192, EE/CSci Building University of Minnesota Minneapolis, MN 55455",
+            "has_email": true,
+            "phone": "612-624-8023"
+        },
+        "work": [],
+        "links": [
+            {
+                "type": "oid",
+                "url": "",
+                "id": "551990"
+            }
+        ],
+        "edu": [],
+        "id": "53f47eb6dabfae9126cc40d7",
+        "name_zh": "",
+        "num_upvoted": 1,
+        "attr": {
+            "gender": "male",
+            "nation": "USA",
+            "ethnic": "Indian",
+            "lang": "Indian"
+        },
+        "tags_zh": [
+            {
+                "t": "Data Mining",
+                "w": 81
+            },
+            {
+                "t": "Parallel Algorithm",
+                "w": 32
+            },
+            {
+                "t": "Graph Partitioning",
+                "w": 28
+            },
+            {
+                "t": "Parallel Algorithms",
+                "w": 25
+            },
+            {
+                "t": "Parallel Computer",
+                "w": 25
+            },
+            {
+                "t": "Association Analysis",
+                "w": 23
+            },
+            {
+                "t": "Computer Science",
+                "w": 21
+            },
+            {
+                "t": "Time Series",
+                "w": 19
+            },
+            {
+                "t": "Parallel Processing",
+                "w": 18
+            },
+            {
+                "t": "Concurrent Computing",
+                "w": 17
+            }
+        ],
+        "intr": [],
+        "num_followed": 10,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "Data Insights Laboratories",
+            "id": ""
+        },
+        "name": "Rakesh Agrawal",
+        "num_viewed": 420,
+        "avatar": "//static.aminer.org/0a47/0001/0000/53af8978dabfae456e85d07e.jpg",
+        "indices": {
+            "sociability": 5.8861,
+            "h_index": 84,
+            "num_citation": 91700,
+            "as": 0,
+            "diversity": 3.6976,
+            "new_star": 21.2663,
+            "num_pubs": 286,
+            "activity": 41.9502,
+            "g_index": 0
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "5770b49976d91118547e80d1",
+            "mtime": "2016-08-10 07:41:01",
+            "cid": "",
+            "mname": "cheng wang",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 43
+            },
+            {
+                "t": "Database System",
+                "w": 14
+            },
+            {
+                "t": "Energy Conservation",
+                "w": 13
+            },
+            {
+                "t": "Information Retrieval",
+                "w": 12
+            },
+            {
+                "t": "Relational Databases",
+                "w": 12
+            },
+            {
+                "t": "Transitive Closure",
+                "w": 11
+            },
+            {
+                "t": "Association Rule",
+                "w": 11
+            },
+            {
+                "t": "Thermodynamics",
+                "w": 9
+            },
+            {
+                "t": "E Commerce",
+                "w": 7
+            },
+            {
+                "t": "Design",
+                "w": 7
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "President and Founder"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "Data Insights Laboratories",
+            "has_email_cr": true,
+            "work": "Rakesh Agrawal is a Microsoft Technical Fellow and heads the Search Labs in Microsoft Research. He is the recipient of the ACM-SIGKDD First Innovation Award, ACM-SIGMOD Edgar F. Codd Innovations Award, ACM-SIGMOD Test of Time Award, VLDB 10-Yr Most Influential Paper Award, ICDE Most Influential Paper Award, and Computerworld First Horizon Award. He is a Member of the National Academy of Engineering, a Fellow of ACM, and a Fellow of IEEE. Scientific American named him to the list of 50 top scientists and technologists in 2003. Prior to joining Microsoft in March 2006, Rakesh was an IBM Fellow and led the Quest group at the IBM Almaden Research Center. Earlier, he was with the Bell Laboratories, Murray Hill from 1983 to 1989. He also worked for 3 years at India's premier company, the Bharat Heavy Electricals Ltd.",
+            "bio": "Rakesh Agrawal is the President and Founder of the Data Insights Laboratories. He is also the President of the Professor Ram Kumar Memorial Foundation.\n\nRakesh is an innovator and thought leader who is driven by the desire to make the world better through scientific breakthroughs and by building practical working systems. He is the recipient of the ACM-SIGKDD Inaugural Innovation Award, ACM-SIGMOD Edgar F. Codd Innovations Award, ACM-SIGMOD Test of Time Award (twice), VLDB 10-Yr Most Influential Paper Award, ICDE Most Influential Paper Award, and the Computerworld First Horizon Award. Scientific American named him to its first list of 50 top scientists and technologists. He is a Member of the National Academy of Engineering, a Fellow of ACM, and a Fellow of IEEE.\n\nUntil recently, Rakesh was a Microsoft Technical Fellow and headed the Search Labs in Microsoft Research. Prior to joining Microsoft in March 2006, Rakesh was an IBM Fellow and led the Quest group at the IBM Almaden Research Center. Earlier, he was with the Bell Laboratories, Murray Hill from 1983 to 1989. He also worked for three years at India鈥檚 premier company, the Bharat Heavy Electricals Ltd. He received the M.S. and Ph.D. degrees in Computer Science from the University of Wisconsin-Madison in 1983. He also holds a B.E. degree in Electronics and Communication Engineering from IIT-Roorkee, and a two-year Post Graduate Diploma in Industrial Engineering from the National Institute of Industrial Engineering (NITIE), Bombay. Both IIT-Roorkee and NITIE have decorated him with their distinguished alum award.\n\nRakesh has been granted 83 patents. He has published more than 200 research papers, many of them considered seminal. He has written the 1st as well as 2nd highest cited of all papers in the fields of databases and data mining (18th and 26th most cited across all computer science). Wikipedia lists one of his papers as one of the most influential database papers. His papers have been cited more than 80,0000 times, with more than 25 of them receiving more than 500 citations each and three of them receiving 5000 citations each (Google Scholar). He is the most cited author in the field of database systems and the 26th most cited author across all of Computer Science (Citeseer). His research has been featured in N.B.C. , New York Times, and several other venues.\nIt is rare that a researcher鈥檚 work creates not only a product, but a whole new industry. IBM鈥檚 data mining product, Intelligent Miner, grew straight out of Rakesh鈥檚 research. IBM鈥檚 introduction of Intelligent Miner and associated services created a new category of software and services. His research has been incorporated into many other commercial products, including DB2 Mining Extender, DB2 OLAP Server, WebSphere Commerce Server, and Microsoft Bing Search engine, as well as many research prototypes and applications.\n\nRakesh is being increasingly sought to help with studies on topics of national and international interest. He played a key role in 2005 IBM鈥檚 study for President of India on Improving India鈥檚 Education System through Information Technology. In 2008, he was a key member of the National Academy of Sciences study on Voter Registration Databases. Then, he was the only Computer Scientist in the 2010 National Research Council study on Science and Technology strategies of key countries world-wide. Recently, Rakesh is in dialog with Govt. of India to use his technology for enriching textbooks used by millions of students.",
+            "edu": "University of Wisconsin-Madison\nComputer Science, Doctor of Philosophy (Ph.D.)\n1979 鈥� 1983\nNational Institute of Industrial Engineering\nNational Institute of Industrial Engineering\nIndustrial Engineering, Master of Technology (M.Tech.)\n1974 鈥� 1978\nIndian Institute of Technology, Roorkee\nIndian Institute of Technology, Roorkee\nElectrical, Electronics and Communications Engineering, Bachelor of Engineering (B.E.)\n1970 鈥� 1975",
+            "fax": "",
+            "homepage": "http://rakesh.agrawal-family.com/",
+            "address": "",
+            "has_email": true,
+            "phone": "+1 650.693.4000"
+        },
+        "work": [],
+        "links": [
+            {
+                "type": "oid",
+                "url": "",
+                "id": "1378539"
+            }
+        ],
+        "edu": [],
+        "id": "53f47eafdabfae9126cc3e3d",
+        "name_zh": "",
+        "num_upvoted": 1,
+        "attr": {
+            "gender": "male",
+            "nation": "USA",
+            "ethnic": "Indian",
+            "lang": "Indian"
+        },
+        "tags_zh": [
+            {
+                "t": "Data Mining",
+                "w": 43
+            },
+            {
+                "t": "Database System",
+                "w": 14
+            },
+            {
+                "t": "Energy Conservation",
+                "w": 13
+            },
+            {
+                "t": "Information Retrieval",
+                "w": 12
+            },
+            {
+                "t": "Relational Databases",
+                "w": 12
+            },
+            {
+                "t": "Transitive Closure",
+                "w": 11
+            },
+            {
+                "t": "Association Rule",
+                "w": 11
+            },
+            {
+                "t": "Thermodynamics",
+                "w": 9
+            },
+            {
+                "t": "E Commerce",
+                "w": 7
+            },
+            {
+                "t": "Design",
+                "w": 7
+            }
+        ],
+        "intr": [],
+        "num_followed": 3,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "Department of Computer Science,University of Illinois at Chicago (UIC)",
+            "id": ""
+        },
+        "name": "Bing Liu",
+        "num_viewed": 498,
+        "avatar": "//static.aminer.org/04db/0001/0000/53b032eadabfae456e2b5276.jpg",
+        "indices": {
+            "sociability": 5.8289,
+            "h_index": 70,
+            "num_citation": 33243,
+            "as": 0,
+            "diversity": 4.2084,
+            "new_star": 2.2176,
+            "num_pubs": 261,
+            "activity": 29.4289,
+            "g_index": 182
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "5770b49976d91118547e80d1",
+            "mtime": "2016-08-23 09:19:41",
+            "cid": "",
+            "mname": "cheng wang",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 50
+            },
+            {
+                "t": "Opinion Mining",
+                "w": 19
+            },
+            {
+                "t": "Web Pages",
+                "w": 19
+            },
+            {
+                "t": "Web Mining",
+                "w": 19
+            },
+            {
+                "t": "Association Rule",
+                "w": 18
+            },
+            {
+                "t": "Proposed Technique",
+                "w": 13
+            },
+            {
+                "t": "Knowledge Discovery",
+                "w": 12
+            },
+            {
+                "t": "Web Page",
+                "w": 12
+            },
+            {
+                "t": "Machine Learning",
+                "w": 11
+            },
+            {
+                "t": "Sentiment Analysis",
+                "w": 10
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Professor"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "Department of Computer Science,University of Illinois at Chicago (UIC)",
+            "has_email_cr": true,
+            "work": "Bing Liu is a full professor of Computer Science at the University of Illinois at Chicago (UIC).  Before joining UIC, he was a faculty member at the National University of Singapore.",
+            "bio": "Bing Liu is a professor of Computer Science at the University of Illinois at Chicago. He received his PhD in Artificial Intelligence from the University of Edinburgh. His research interests include sentiment analysis and opinion mining, lifelong machine learning, fake/deceptive opinion detection, data mining, and natural language processing (NLP). He has published extensively in top conferences and journals in these areas. Two of his papers have received l0-year Test-of-Time awards from KDD, the premier conference of data mining and data science. He also authored three books锛� two on sentiment analysis and one on Web data mining. Some of his work has been widely reported in the press, including a front-page article in The New York Times. On professional services, he serves as the current Chair of ACM SIGKDD. He has served as program chairs of many leading data mining conferences including KDD, ICDM, CIKM, WSDM, SDM and PAKDD, as associate editors ofleading journals such as TKDE, TWEB, DMKD, and as area chairs of numerous NLP, Web research, and data raining conferences. He is an ACM Fellow, an AAAI fellow, and an IEEE Fellow.<br /><br />Awards and Honors (Selected): <br />Professional Recognitions: ACM Fellow, IEEE Fellow, and AAAI Fellow.<br />2015 KDD Test-of-Time Paper Award: M. Hu and B. Liu. 鈥淢ining and Summarizing Customer Reviews.鈥� Proceedings of the Tenth ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD-2004), 2004.<br />2014 KDD Test-of-Time Paper Award: B. Liu, W. Hsu and Y. Ma. 鈥淚ntegrating Classification and Association Rule Mining.鈥� Proceedings of the Fourth International Conference on Knowledge Discovery and Data Mining (KDD-1998), 1998.<br /><br />",
+            "edu": "He received his PhD in Artificial Intelligence from the University of Edinburgh.",
+            "fax": "1 (312) 413 0024",
+            "homepage": "http://www.cs.uic.edu/~liub/",
+            "address": "851 S. Morgan Street (M/C 152) Chicago, IL 60607-7053",
+            "has_email": true,
+            "phone": "1 (312) 685-2570"
+        },
+        "work": [],
+        "links": [
+            {
+                "type": "vl",
+                "url": "http://videolectures.net/bing_liu",
+                "id": "bing_liu"
+            },
+            {
+                "type": "oid",
+                "url": "",
+                "id": "64027"
+            }
+        ],
+        "edu": [],
+        "id": "53f47ebcdabfae9126cc432c",
+        "name_zh": "",
+        "num_upvoted": 2,
+        "attr": {
+            "gender": "male",
+            "nation": "USA",
+            "ethnic": "Chinese",
+            "lang": "Chinese"
+        },
+        "tags_zh": [
+            {
+                "t": "Data Mining",
+                "w": 50
+            },
+            {
+                "t": "Opinion Mining",
+                "w": 19
+            },
+            {
+                "t": "Web Pages",
+                "w": 19
+            },
+            {
+                "t": "Web Mining",
+                "w": 19
+            },
+            {
+                "t": "Association Rule",
+                "w": 18
+            },
+            {
+                "t": "Proposed Technique",
+                "w": 13
+            },
+            {
+                "t": "Knowledge Discovery",
+                "w": 12
+            },
+            {
+                "t": "Web Page",
+                "w": 12
+            },
+            {
+                "t": "Machine Learning",
+                "w": 11
+            },
+            {
+                "t": "Sentiment Analysis",
+                "w": 10
+            }
+        ],
+        "intr": [],
+        "num_followed": 10,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "Department of Computing Science\r\nUniversity of Alberta",
+            "id": ""
+        },
+        "name": "Osmar R. Za茂ane",
+        "num_viewed": 133,
+        "avatar": "//static.aminer.org/picture/01496/Osmar_R_Zaiane_1299153872700.png",
+        "indices": {
+            "sociability": 5.3278,
+            "h_index": 42,
+            "num_citation": 7220,
+            "as": 0,
+            "diversity": 4.1511,
+            "new_star": 2.3709,
+            "num_pubs": 192,
+            "activity": 22.9446,
+            "g_index": 83
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "54f678c145ce8875677ae52c",
+            "mtime": "2015-11-29 06:23:08",
+            "cid": "",
+            "mname": "Y. Jing",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 1
+            },
+            {
+                "t": "Data Analysis",
+                "w": 1
+            },
+            {
+                "t": "Knowledge Discovery",
+                "w": 1
+            },
+            {
+                "t": "Information Extraction",
+                "w": 1
+            },
+            {
+                "t": "Social Network Analysis",
+                "w": 1
+            },
+            {
+                "t": "Recommender Systems",
+                "w": 1
+            },
+            {
+                "t": "Data Warehousing",
+                "w": 1
+            },
+            {
+                "t": "Web Mining",
+                "w": 1
+            },
+            {
+                "t": "Relational Databases",
+                "w": 1
+            },
+            {
+                "t": "Data Transformation",
+                "w": 1
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Professor"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "Department of Computing Science\r\nUniversity of Alberta",
+            "has_email_cr": false,
+            "work": "Osmar R. Za茂ane is a Professor in Computing Science at the University of Alberta, Canada, and Scientific Director of the Alberta Innovates Centre for Machinre Learning (AICML). Dr. Zaiane joined the University of Alberta in July of 1999.",
+            "bio": "Osmar R. Za茂ane is a Professor in Computing Science at the University of Alberta, Canada, and Scientific Director of the Alberta Innovates Centre for Machinre Learning (AICML). Dr. Zaiane joined the University of Alberta in July of 1999. He obtained a Master's degree in Electronics at the University of Paris, France, in 1989 and a Master's degree in Computer Science at Laval University, Canada, in 1992. He obtained his Ph.D. from Simon Fraser University, Canada, in 1999 under the supervision of Dr. Jiawei Han. His Ph.D. thesis work focused on web mining and multimedia data mining. He has research interests in data analytics, namely novel data mining algorithms, web mining, text mining, image mining, social network analysis, data visualization and information retrieval with applications in Health Informatics, e-Learning and e-Business. He has published more than 200 papers in refereed international conferences and journals, and taught on all six continents. Osmar Zaiane was from 2009 to 2012 the Secretary-Treasurer of the ACM SIGKDD (ACM Special Interest Group on Data Mining) which runs the world鈥檚 premier data science, big data, and data mining association and conference. He is also on the steering committee of many data mining conferences such as IEEE International Conference on Data Mining, Advanced Data Mining and Applications, Data Science and Advanced Analytics. He was the Associate Editor then Editor-inChief of the ACM SIGKDD Explorations from 2003 to 2010. He is also Associate Editor of the Knowledge and Information Systems, An International Journal, by Springer, and of the journal Data Mining and Knowledge Discovery by Springer, as well as the International Journal of Internet Technology and Secured Transactions He was the General co-Chair of the IEEE International Conference on Data Mining ICDM 2011. Osmar Zaiane received the ICDM Outstanding Service Award in 2009 and the 2010 ACM SIGKDD Service Award.",
+            "edu": "Ph.D. (Computer Science), Simon Fraser University, 1999\nLaval\tM.Sc. (Computer Science), Laval University, 1992\nParis\tM.Sc. (Electronic Systems and Data Management), Paris XI University and Institut National des Sciences et Techniques Nucl茅aires, 1989\n ISG\tB.Sc. Honours (Computer Science and Management), University of Tunis, 1988",
+            "fax": "1-780-492 1071",
+            "homepage": "http://www.cs.ualberta.ca/~zaiane/",
+            "address": "352 Athabasca Hall\r\nEdmonton, Alberta, Canada T6G 2E8",
+            "has_email": true,
+            "phone": "1-780-492 2860"
+        },
+        "work": [],
+        "links": [
+            {
+                "type": "oid",
+                "url": "",
+                "id": "656430"
+            }
+        ],
+        "edu": [],
+        "id": "53f4a0d0dabfaedd74eb71a6",
+        "name_zh": "",
+        "num_upvoted": 1,
+        "attr": {
+            "gender": "male",
+            "ethnic": "English",
+            "lang": "English"
+        },
+        "tags_zh": [],
+        "intr": [],
+        "num_followed": 1,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "Aalto University, Department of Information and Computer Science",
+            "id": ""
+        },
+        "name": "Heikki Mannila",
+        "num_viewed": 249,
+        "avatar": "//static.aminer.org/05fb/0000/0000/53f47eb0dabfae9126cc3eef.jpg",
+        "indices": {
+            "sociability": 5.5909,
+            "h_index": 66,
+            "num_citation": 27765,
+            "as": 0,
+            "diversity": 4.2107,
+            "new_star": 0,
+            "num_pubs": 245,
+            "activity": 0,
+            "g_index": 166
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "5770b49976d91118547e80d1",
+            "mtime": "2016-08-10 08:21:09",
+            "cid": "",
+            "mname": "cheng wang",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 59
+            },
+            {
+                "t": "Association Rule",
+                "w": 14
+            },
+            {
+                "t": "Machine Learning",
+                "w": 11
+            },
+            {
+                "t": "Knowledge Discovery",
+                "w": 11
+            },
+            {
+                "t": "Algorithms",
+                "w": 9
+            },
+            {
+                "t": "Probabilistic Model",
+                "w": 9
+            },
+            {
+                "t": "Query Language",
+                "w": 9
+            },
+            {
+                "t": "Relational Database",
+                "w": 8
+            },
+            {
+                "t": "Mixture Model",
+                "w": 8
+            },
+            {
+                "t": "Polynomial Time",
+                "w": 8
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Professor"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "Aalto University, Department of Information and Computer Science",
+            "has_email_cr": true,
+            "work": "After some time at the University of Tampere and various researcher positions, in 1989 he was appointed a professor of computer science at the University of Helsinki. He was a visiting professor in the Technical University of Vienna in 1993 and a visiting researcher at Max Planck Institute for Computer Science in Saarbruecken in 1995-96. He moved to Microsoft Research in Redmond in 1998, came back to Finland to Nokia Research in 1999, where he stayed until the end of 2001. After that, Heikki Mannila was the research director of the basic research unit of Helsinki Institute for Information Technology in 2002-2004. Since 1999 he is a professor of computer science at Helsinki University of Technology. In 2004-2008 he was an academy professor. In 2009 he was the director of Helsinki Institute for Information Technology HIIT, a joint research institute of University of Helsinki and Helsinki University of Technology. In 2009-2012 he was vice president for academic affairs at Aalto University, a new university formed by the merger of Helsinki University of Technology, Helsinki School of Economics, and University of Art and Design Helsinki. Currently, he is president of the Academy of Finland.",
+            "bio": "Heikki Mannila received his Ph.D. in computer science in 1985 from the University of Helsinki. After some time at the University of Tampere and various researcher positions, in 1989 he was appointed a professor of computer science at the University of Helsinki. He was a visiting professor in the Technical University of Vienna in 1993 and a visiting researcher at Max Planck Institute for Computer Science in Saarbruecken in 1995-96. He moved to Microsoft Research in Redmond in 1998, came back to Finland to Nokia Research in 1999, where he stayed until the end of 2001. After that, Heikki Mannila was the research director of the basic research unit of Helsinki Institute for Information Technology in 2002-2004. Since 1999 he is a professor of computer science at Helsinki University of Technology. In 2004-2008 he was an academy professor. In 2009 he was the director of Helsinki Institute for Information Technology HIIT, a joint research institute of University of Helsinki and Helsinki University of Technology. In 2009-2012 he was vice president for academic affairs at Aalto University, a new university formed by the merger of Helsinki University of Technology, Helsinki School of Economics, and University of Art and Design Helsinki. Currently, he is president of the Academy of Finland.\nHeikki Mannila is the author of two books and over 190 refereed articles in computer science and related areas. His specific area of interest is in algorithms for data analysis, and applications in science and in industry. The book Principles of Data Mining, with David Hand and Padhraic Smyth, is available also in Chinese and in Polish. He received the ACM SIGKDD Innovation award in 2003 and the IEEE ICDM research contributions award in 2009.",
+            "edu": "Heikki Mannila received his Ph.D. in computer science in 1985 from the University of Helsinki.",
+            "fax": "",
+            "homepage": "http://users.ics.aalto.fi/mannila/",
+            "address": "Department Information and Computer Science\nKonemiehentie 2, Room A334 (3rd floor)",
+            "has_email": true,
+            "phone": ""
+        },
+        "work": [],
+        "links": [
+            {
+                "type": "oid",
+                "url": "",
+                "id": "637822"
+            }
+        ],
+        "edu": [],
+        "id": "53f47eb0dabfae9126cc3eef",
+        "name_zh": "",
+        "num_upvoted": 5,
+        "attr": {
+            "gender": "male",
+            "nation": "Finland",
+            "ethnic": "English",
+            "lang": "English"
+        },
+        "tags_zh": [
+            {
+                "t": "Data Mining",
+                "w": 58
+            },
+            {
+                "t": "Association Rule",
+                "w": 14
+            },
+            {
+                "t": "Machine Learning",
+                "w": 11
+            },
+            {
+                "t": "Knowledge Discovery",
+                "w": 11
+            },
+            {
+                "t": "Algorithms",
+                "w": 9
+            },
+            {
+                "t": "Probabilistic Model",
+                "w": 9
+            },
+            {
+                "t": "Query Language",
+                "w": 9
+            },
+            {
+                "t": "Relational Database",
+                "w": 8
+            },
+            {
+                "t": "Mixture Model",
+                "w": 8
+            },
+            {
+                "t": "Polynomial Time",
+                "w": 8
+            }
+        ],
+        "intr": [],
+        "num_followed": 5,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "YAHOO! INC., SunnyVale, CA",
+            "id": ""
+        },
+        "name": "Usama M. Fayyad",
+        "num_viewed": 118,
+        "avatar": "//static.aminer.org/upload/avatar/1096/261/509/53f46f9ddabfaee2a1dd331a.jpeg",
+        "indices": {
+            "sociability": 4.6051,
+            "h_index": 42,
+            "num_citation": 14879,
+            "as": 0,
+            "diversity": 3.3459,
+            "new_star": 0,
+            "num_pubs": 109,
+            "activity": 1.5473,
+            "g_index": 0
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "5770b49976d91118547e80d1",
+            "mtime": "2016-08-10 09:47:53",
+            "cid": "",
+            "mname": "cheng wang",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 41
+            },
+            {
+                "t": "Machine Learning",
+                "w": 15
+            },
+            {
+                "t": "Knowledge Discovery",
+                "w": 15
+            },
+            {
+                "t": "Data Analysis",
+                "w": 9
+            },
+            {
+                "t": "Decision Tree",
+                "w": 9
+            },
+            {
+                "t": "Pattern Recognition",
+                "w": 7
+            },
+            {
+                "t": "Classification",
+                "w": 5
+            },
+            {
+                "t": "Science Data Analysis",
+                "w": 5
+            },
+            {
+                "t": "Clustering",
+                "w": 5
+            },
+            {
+                "t": "Large Image Databases",
+                "w": 5
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Chief Data Officer and Executive Vice President of Research and Strategic Data Solutions"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "YAHOO! INC., SunnyVale, CA",
+            "has_email_cr": false,
+            "work": "",
+            "bio": "Dr. Usama Fayyad is Yahoo!'s chief data officer and executive vice president of Research & Strategic Data Solutions. Fayyad is responsible for Yahoo!'s overall data strategy, architecting Yahoo!'s data policies and systems, prioritizing data investments, and managing the Company's data analytics and data processing infrastructure.  He also founded and currently oversees the Yahoo! Research organization globally. Fayyad founded Yahoo! Research and hired its key management with the aim of building the premier scientific research organization to develop the new sciences of the Internet, on-line marketing, and innovative interactive applications.\n\nPrior to joining Yahoo!, Fayyad co-founded and led the DMX Group, a data mining and data strategy and technology company. DMX Group addressed large-scale challenging data mining problems and projects for some of the world鈥檚 largest companies in automotive, financial services, telecommunications, and technology companies. Fayyad joined Yahoo!鈥檚 senior executive team as part of an acquisition of DMX Group by Yahoo! Inc. in 2004.\n\nIn early 2000, he co-founded and served as CEO of digiMine Inc. (now Revenue Science, Inc.), a data analysis and data mining company that built, operated and hosted data warehouses and analytics for some of the world's largest enterprises in online publishing, retail, manufacturing, telecommunications and financial services. As CEO, Fayyad raised over $45 million in venture capital from top VC firms (Mayfield and Mohr Davidow Ventures) and led the growth of the company from 3 employees to over 120 employees. He became Chairman of Revenue Science in June 2003 in order to start the DMX Group business.\n\nFayyad's professional experience also includes five years spent leading the data mining and exploration group at Microsoft Research and building the data mining products for Microsoft's server division. Fayyad鈥檚 work at Microsoft Research including development of innovative data mining algorithms that scaled to very large databases and building up a new research program as well as a new product line for Microsoft.\n\n From 1989 to 1996 Fayyad held a leadership role at NASA's Jet Propulsion Laboratory (JPL) where his work in the analysis and exploration of scientific databases gathered from observatories, remote-sensing platforms and spacecraft garnered him the top research excellence award that Caltech awards to JPL scientists, as well as a U.S. Government medal from NASA.\n\nFayyad earned his Ph.D. in engineering from the University of Michigan, Ann Arbor (1991), and also holds BSE's in both electrical and computer engineering (1984); MSE in computer science and engineering (1986); and M.Sc. in mathematics (1989). He has published over 100 technical articles in the fields of data mining, Artificial Intelligence and Database Systems, and holds over 20 patents. He is a Fellow of the American Association of Artificial Intelligence (AAAI), a Fellow of the ACM (Association for Computing Machinery), has edited two influential books on the data mining and launched and served as editor-in-chief of both the primary scientific journal in the field and the primary newsletter in the technical community published by the ACM. He is active in the academic community and holds adjunct professor positions in Australia and Hong Kong. He regularly delivers keynotes and talks at government, industry and academic conferences around the world.",
+            "edu": "",
+            "fax": "+1 (734) 314-6892",
+            "homepage": "http://www.fayyad.com/",
+            "address": "Yahoo! Inc.  P.O. Box 60097 Sunnyvale, CA  94088 USA",
+            "has_email": true,
+            "phone": ""
+        },
+        "work": [],
+        "links": [
+            {
+                "type": "oid",
+                "url": "",
+                "id": "157717"
+            }
+        ],
+        "edu": [],
+        "id": "53f46f9ddabfaee2a1dd331a",
+        "name_zh": "",
+        "num_upvoted": 2,
+        "attr": {
+            "gender": "male",
+            "nation": "USA"
+        },
+        "tags_zh": [
+            {
+                "t": "Data Mining",
+                "w": 41
+            },
+            {
+                "t": "Machine Learning",
+                "w": 15
+            },
+            {
+                "t": "Knowledge Discovery",
+                "w": 15
+            },
+            {
+                "t": "Data Analysis",
+                "w": 9
+            },
+            {
+                "t": "Decision Tree",
+                "w": 9
+            },
+            {
+                "t": "Pattern Recognition",
+                "w": 7
+            },
+            {
+                "t": "Classification",
+                "w": 5
+            },
+            {
+                "t": "Science Data Analysis",
+                "w": 5
+            },
+            {
+                "t": "Clustering",
+                "w": 5
+            },
+            {
+                "t": "Large Image Databases",
+                "w": 5
+            }
+        ],
+        "intr": [],
+        "num_followed": 8,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "Ludwig-Maximilians-Universit盲t M眉nchen",
+            "id": ""
+        },
+        "name": "Hans-Peter Kriegel",
+        "num_viewed": 667,
+        "avatar": "//static.aminer.org/037b/0009/0000/53b0264edabfae456e200482.jpg",
+        "indices": {
+            "sociability": 5.7557,
+            "h_index": 79,
+            "num_citation": 39265,
+            "as": 0,
+            "diversity": 4.2681,
+            "new_star": 30.1958,
+            "num_pubs": 459,
+            "activity": 120.1882,
+            "g_index": 193
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "5770b49976d91118547e80d1",
+            "mtime": "2016-08-11 02:09:15",
+            "cid": "",
+            "mname": "cheng wang",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 69
+            },
+            {
+                "t": "Similarity Search",
+                "w": 55
+            },
+            {
+                "t": "Spatial Database",
+                "w": 45
+            },
+            {
+                "t": "Indexation",
+                "w": 43
+            },
+            {
+                "t": "Database System",
+                "w": 30
+            },
+            {
+                "t": "High Dimensional Data",
+                "w": 25
+            },
+            {
+                "t": "Distance Function",
+                "w": 24
+            },
+            {
+                "t": "Spatial Data",
+                "w": 23
+            },
+            {
+                "t": "Molecular Biology",
+                "w": 22
+            },
+            {
+                "t": "Time Series",
+                "w": 19
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Professor"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "Ludwig-Maximilians-Universit盲t M眉nchen",
+            "has_email_cr": true,
+            "work": "Hans-Peter Kriegel has been a Professor of Informatics at Ludwig-Maximilians-Universitaet Muenchen, Germany, since 1991.",
+            "bio": "Hans-Peter Kriegel has been a Professor of Informatics at Ludwig-Maximilians-Universitaet Muenchen, Germany, since 1991. He has published over a wide range of data mining topics including clustering, outlier detection and high-dimensional data analysis. From the beginning of his research he was and still is working on spatial data management and similarity search, now in particular on searching and mining uncertain data, including uncertain spatio-temporal data. In 2009 the Association for Computing Machinery (ACM) elected Professor Kriegel an ACM Fellow for his contributions to knowledge discovery and data mining, similarity search, spatial data management, and access-methods for high-dimensional data. So far, his more than 450 publications have been cited more than 30,000 times according to Google Scholar. Microsoft Academic Search currently ranks him Number 5 for field rating in the field of data mining.",
+            "edu": "",
+            "fax": "+49-89-2180-9192",
+            "homepage": "http://www.dbs.informatik.uni-muenchen.de/Mitarbeiter/kriegel.html",
+            "address": "Ludwig-Maximilians-Universit盲t M眉nchen\nLehr- und Forschungseinheit f眉r Datenbanksysteme\nOettingenstra脽e 67\n80538 M眉nchen\nGermany",
+            "has_email": true,
+            "phone": "+49-89-2180-9302 (-9190)"
+        },
+        "work": [],
+        "links": [
+            {
+                "type": "oid",
+                "url": "",
+                "id": "228306"
+            }
+        ],
+        "edu": [],
+        "id": "53f47eaadabfaeb22f56f92d",
+        "name_zh": "",
+        "num_upvoted": 2,
+        "attr": {
+            "gender": "male",
+            "nation": "Germany",
+            "ethnic": "English",
+            "lang": "English"
+        },
+        "tags_zh": [
+            {
+                "t": "Data Mining",
+                "w": 69
+            },
+            {
+                "t": "Similarity Search",
+                "w": 55
+            },
+            {
+                "t": "Spatial Database",
+                "w": 45
+            },
+            {
+                "t": "Indexation",
+                "w": 43
+            },
+            {
+                "t": "Database System",
+                "w": 30
+            },
+            {
+                "t": "High Dimensional Data",
+                "w": 25
+            },
+            {
+                "t": "Distance Function",
+                "w": 24
+            },
+            {
+                "t": "Spatial Data",
+                "w": 23
+            },
+            {
+                "t": "Molecular Biology",
+                "w": 22
+            },
+            {
+                "t": "Time Series",
+                "w": 19
+            }
+        ],
+        "intr": [],
+        "num_followed": 10,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "Computer Science Department, University of California Santa Barbara",
+            "id": ""
+        },
+        "name": "Xifeng Yan",
+        "num_viewed": 554,
+        "avatar": "//static.aminer.org/picture/00480/Xifeng_Yan_1289395449692.jpg",
+        "indices": {
+            "sociability": 5.204,
+            "h_index": 49,
+            "num_citation": 13208,
+            "as": 0,
+            "diversity": 3.3832,
+            "new_star": 46.7444,
+            "num_pubs": 142,
+            "activity": 117.7945,
+            "g_index": 114
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "5760e4bc76d911410cf9a93f",
+            "mtime": "2016-08-10 09:07:09",
+            "cid": "",
+            "mname": "tao ye",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Graph Databases",
+                "w": 1
+            },
+            {
+                "t": "Data Mining",
+                "w": 1
+            },
+            {
+                "t": "Data Analysis",
+                "w": 1
+            },
+            {
+                "t": "Similarity Search",
+                "w": 1
+            },
+            {
+                "t": "Social Network Analysis",
+                "w": 1
+            },
+            {
+                "t": "Linked Data",
+                "w": 1
+            },
+            {
+                "t": "Sensor Networks",
+                "w": 1
+            },
+            {
+                "t": "Online Analytical Processing",
+                "w": 1
+            },
+            {
+                "t": "Big Data",
+                "w": 1
+            },
+            {
+                "t": "Feature Selection",
+                "w": 1
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Professor"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "Computer Science Department, University of California Santa Barbara",
+            "has_email_cr": true,
+            "work": "",
+            "bio": "Xifeng Yan is an associate professor at the University of California at Santa Barbara. He holds the Venkatesh Narayanamurti Chair of Computer Science. He received his Ph.D. degree in Computer Science from the University of Illinois at Urbana-Champaign in 2006. He was a research staff member at the IBM T. J. Watson Research Center between 2006 and 2008. He has been working on modeling, managing, and mining graphs in information networks, computer systems, social media and bioinformatics. His works were extensively referenced, with over 9,000 citations per Google Scholar and thousands of software downloads. He received NSF CAREER Award, IBM Invention Achievement Award, ACM-SIGMOD Dissertation Runner-Up Award, and IEEE ICDM 10-year Highest Impact Paper Award.",
+            "edu": "",
+            "fax": "(805)893-8553",
+            "homepage": "http://www.cs.ucsb.edu/~xyan/",
+            "address": "Computer Science Department \nRm 1111, Harold Frank Hall \nUniversity of California \nSanta Barbara, CA 93106-5110",
+            "has_email": true,
+            "phone": "(805)699-6018"
+        },
+        "work": [],
+        "links": [
+            {
+                "type": "oid",
+                "url": "",
+                "id": "324907"
+            }
+        ],
+        "edu": [],
+        "id": "53f43a14dabfaeee229cd0f1",
+        "name_zh": "",
+        "num_upvoted": 2,
+        "attr": {
+            "gender": "male",
+            "nation": "USA",
+            "ethnic": "Chinese",
+            "lang": "Chinese"
+        },
+        "tags_zh": [],
+        "intr": [],
+        "num_followed": 2,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "Department of Computer Science and Electrical Engineering University of Maryland Baltimore County",
+            "id": ""
+        },
+        "name": "Hillol Kargupta",
+        "num_viewed": 1104,
+        "avatar": "//static.aminer.org/upload/avatar/1621/516/491/53f42b92dabfaedd74d1aa54.gif",
+        "indices": {
+            "sociability": 4.8283,
+            "h_index": 41,
+            "num_citation": 6968,
+            "as": 0,
+            "diversity": 3.4698,
+            "new_star": 0,
+            "num_pubs": 141,
+            "activity": 2.9473,
+            "g_index": 82
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "54f5112e45ce1bc6d563b8d9",
+            "mtime": "2015-11-06 09:51:50",
+            "cid": "",
+            "mname": "ymyang",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 1
+            },
+            {
+                "t": "Machine Learning",
+                "w": 1
+            },
+            {
+                "t": "Data Analysis",
+                "w": 1
+            },
+            {
+                "t": "Knowledge Discovery",
+                "w": 1
+            },
+            {
+                "t": "Genetic Algorithms",
+                "w": 1
+            },
+            {
+                "t": "Evolutionary Computation",
+                "w": 1
+            },
+            {
+                "t": "Genetic Algorithm",
+                "w": 1
+            },
+            {
+                "t": "Agent Based",
+                "w": 1
+            },
+            {
+                "t": "Bayesian Networks",
+                "w": 1
+            },
+            {
+                "t": "Distributed Systems",
+                "w": 1
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Professor"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "Department of Computer Science and Electrical Engineering University of Maryland Baltimore County",
+            "has_email_cr": true,
+            "work": "Hillol Kargupta is a Professor of Computer Science at the University of Maryland, Baltimore County. He is also a co-founder of AGNIK LLC, a data analytics company for mobile, distributed, and embedded environments.Dr. Kargupta is an IEEE Fellow. His work received the 2010 Frost & Sullivan Enabling Technology of Year Award. He won the IBM Innovation Award in 2008 and a National Science Foundation CAREER award in 2001 for his research on ubiquitous and distributed data mining. He and his team received the 2010 Frost and Sullivan Enabling Technology of the Year Award for the MineFleet vehicle performance data mining product. His other awards include the 2010 IEEE Top-10 Data Mining Case Studies Award for his work at Agnik, the best paper award for the 2003 IEEE International Conference on Data Mining for a paper on privacy-preserving data mining, the 2000 TRW Foundation Award, and the 1997 Los Alamos Award for Outstanding Technical Achievement. His dissertation earned him the 1996 Society for Industrial and Applied Mathematics annual best student paper prize.",
+            "bio": "Hillol Kargupta is a Professor of Computer Science at the University of Maryland, Baltimore County. He is also a co-founder of AGNIK LLC, a data analytics company for mobile, distributed, and embedded environments. He received his Ph.D. in Computer Science from University of Illinois at Urbana-Champaign in 1996. His research interests include mobile and distributed data mining.  \n\nDr. Kargupta is an IEEE Fellow. His work received the 2010 Frost & Sullivan Enabling Technology of Year Award. He won the IBM Innovation Award in 2008 and a National Science Foundation CAREER award in 2001 for his research on ubiquitous and distributed data mining. He and his team received the 2010 Frost and Sullivan Enabling Technology of the Year Award for the MineFleet vehicle performance data mining product. His other awards include the 2010 IEEE Top-10 Data Mining Case Studies Award for his work at Agnik, the best paper award for the 2003 IEEE International Conference on Data Mining for a paper on privacy-preserving data mining, the 2000 TRW Foundation Award, and the 1997 Los Alamos Award for Outstanding Technical Achievement. His dissertation earned him the 1996 Society for Industrial and Applied Mathematics annual best student paper prize.\n\nHe has published more than one hundred peer-reviewed articles. His research has been funded by the US National Science Foundation, US Air Force, Department of Homeland Security, NASA and various other organizations. He has co-edited several books. He serve(s/d) as an associate editor of the IEEE Transactions on Knowledge and Data Engineering, IEEE Transactions on Systems, Man, and Cybernetics, Part B and Statistical Analysis and Data Mining Journal. He is/was the Program Co-Chair of 2009 IEEE International Data Mining Conference, General Chair of 2007 NSF Next Generation Data Mining Symposium, Program Co-Chair of 2005 SIAM Data Mining Conference and Associate General Chair of the 2003 ACM SIGKDD Conference, among others.",
+            "edu": "He received his Ph.D. in Computer Science from University of Illinois at Urbana-Champaign in 1996.",
+            "fax": "(410) 455-3969",
+            "homepage": "http://www.csee.umbc.edu/~hillol/",
+            "address": "Department of Computer Science and Electrical Engineering \r\n1000 Hilltop Circle, University of Maryland Baltimore County \r\nBaltimore, MD 21250 ",
+            "has_email": true,
+            "phone": "(410) 455-3972 "
+        },
+        "work": [],
+        "links": [
+            {
+                "type": "oid",
+                "url": "",
+                "id": "269921"
+            }
+        ],
+        "edu": [],
+        "id": "53f42b92dabfaedd74d1aa54",
+        "name_zh": "",
+        "num_upvoted": 1,
+        "attr": {
+            "gender": "male",
+            "nation": "USA",
+            "ethnic": "English",
+            "lang": "English"
+        },
+        "tags_zh": [],
+        "intr": [],
+        "num_followed": 10,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "Computer Science & Engineering , Arizona State University",
+            "id": ""
+        },
+        "name": "Huan Liu",
+        "num_viewed": 344,
+        "avatar": "//static.aminer.org/picture/00323/Huan_Liu_1297510196198.jpg",
+        "indices": {
+            "sociability": 5.4249,
+            "h_index": 70,
+            "num_citation": 24459,
+            "as": 0,
+            "diversity": 4.2985,
+            "new_star": 98.3623,
+            "num_pubs": 297,
+            "activity": 263.5795,
+            "g_index": 154
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "5760e4bc76d911410cf9a93f",
+            "mtime": "2016-08-10 09:30:51",
+            "cid": "",
+            "mname": "tao ye",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 59
+            },
+            {
+                "t": "Feature Selection",
+                "w": 51
+            },
+            {
+                "t": "Social Media",
+                "w": 48
+            },
+            {
+                "t": "Machine Learning",
+                "w": 23
+            },
+            {
+                "t": "Social Network",
+                "w": 20
+            },
+            {
+                "t": "Empirical Study",
+                "w": 19
+            },
+            {
+                "t": "Feature Extraction",
+                "w": 16
+            },
+            {
+                "t": "High Dimensional Data",
+                "w": 14
+            },
+            {
+                "t": "Clustering",
+                "w": 13
+            },
+            {
+                "t": "Social Computing",
+                "w": 11
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Professor"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "Computer Science & Engineering , Arizona State University",
+            "has_email_cr": true,
+            "work": "Professor/Associate Professor, 1/00 to Present\nComputer Science & Engineering, SCIDSE/SCI, Arizona State University, Tempe, AZ 85287.\nASEE AFFP Fellow, 6/07 to 8/07 AFRL, Rome, NY 13441.\nConsultant, 6/05 to 8/05 AOL, Dulles, VA 20166.\nFaculty Fellow, 7/00 to 8/00 Human Interface Lab, Motorola Labs, Tempe, AZ 85284.\nAssociate Professor/Senior/Lecturer, 1/99, 1/96, 1/94 to 10/00, tenured\nSchool of Computing, National University of Singapore, Singapore 119260.\nProject Leader, 6/92 to 1/94 and Senior/Scientist, 11/89 to 1/94\nArtificial Intelligence Systems Section, Customer Services and Systems Branch\nTelstra Research Laboratories, 770 Blackburn Road, Clayton, Vic 3168, Australia.",
+            "bio": "Huan Liu is a professor of Computer Science and Engineering at Arizona State University. He obtained his Ph.D. in Computer Science at University of Southern California and B.Eng. in Computer Science and Electrical Engineering at Shanghai JiaoTong University. Before he joined ASU, he worked at Telecom Australia Research Labs and was on the faculty at National University of Singapore. He was recognized for excellence in teaching and research in Computer Science and Engineering at Arizona State University. His research interests are in data mining, machine learning, social computing, and artificial intelligence, investigating problems that arise in many real-world, data-intensive applications with high-dimensional data of disparate forms such as social media. His well-cited publications include books, book chapters, encyclopedia entries as well as conference and journal papers. He serves on journal editorial boards and numerous conference program committees, and is a founding organizer of the International Conference Series on Social Computing, Behavioral-Cultural Modeling, and Prediction (http://sbp.asu.edu/). He is an IEEE Fellow. All presenters are active researchers in social network analysis, social media mining, and data mining in recent years. They will present or presented tutorials on relevant topics in WWW14, ICDM13, WWW'13, WSDM'13, and KDD08. Their years鈥� research and extensive experience in recommendation and social media mining make them uniquely qualified to deliver this timely tutorial of recommendation in social media.",
+            "edu": "Ph.D. (Computer Science) University of Southern California (1989)\nM.Sc. (Computer Science) University of Southern California (1985)\nB.Eng. (Computer Science and Engineering) Shanghai JiaoTong University, China (1983)",
+            "fax": "480-965-2751",
+            "homepage": "http://www.public.asu.edu/~huanliu/",
+            "address": "Computer Science & Engineering Arizona State University   Tempe, AZ 85287-8809",
+            "has_email": true,
+            "phone": "480-727-7349"
+        },
+        "work": [],
+        "links": [
+            {
+                "type": "oid",
+                "url": "",
+                "id": "517599"
+            }
+        ],
+        "edu": [],
+        "id": "53f47ec7dabfae9126cc4799",
+        "name_zh": "",
+        "num_upvoted": 2,
+        "attr": {
+            "gender": "male",
+            "nation": "USA",
+            "ethnic": "Chinese",
+            "lang": "Chinese"
+        },
+        "tags_zh": [
+            {
+                "t": "Data Mining",
+                "w": 59
+            },
+            {
+                "t": "Feature Selection",
+                "w": 51
+            },
+            {
+                "t": "Social Media",
+                "w": 48
+            },
+            {
+                "t": "Machine Learning",
+                "w": 23
+            },
+            {
+                "t": "Social Network",
+                "w": 20
+            },
+            {
+                "t": "Empirical Study",
+                "w": 19
+            },
+            {
+                "t": "Feature Extraction",
+                "w": 16
+            },
+            {
+                "t": "High Dimensional Data",
+                "w": 14
+            },
+            {
+                "t": "Clustering",
+                "w": 13
+            },
+            {
+                "t": "Social Computing",
+                "w": 11
+            }
+        ],
+        "intr": [],
+        "num_followed": 13,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "Google Research",
+            "id": ""
+        },
+        "name": "Haixun Wang",
+        "num_viewed": 237,
+        "avatar": "//static.aminer.org/upload/avatar/1163/812/1270/53f4a122dabfaec3f6f8045b.jpeg",
+        "indices": {
+            "sociability": 6.8221,
+            "h_index": 64,
+            "num_citation": 19012,
+            "as": 0,
+            "diversity": 4.4856,
+            "new_star": 16.4875,
+            "num_pubs": 444,
+            "activity": 110.493,
+            "g_index": 128
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "5779f3b39ed5db2cefd11588",
+            "mtime": "2016-08-26 05:39:07",
+            "cid": "",
+            "mname": "cjr rjc",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 52
+            },
+            {
+                "t": "Gallium Arsenide",
+                "w": 24
+            },
+            {
+                "t": "Indexation",
+                "w": 22
+            },
+            {
+                "t": "Mmic",
+                "w": 17
+            },
+            {
+                "t": "Information Retrieval",
+                "w": 16
+            },
+            {
+                "t": "Ehf",
+                "w": 14
+            },
+            {
+                "t": "Indexing Terms",
+                "w": 13
+            },
+            {
+                "t": "Noise Figure",
+                "w": 12
+            },
+            {
+                "t": "Signal Processing",
+                "w": 12
+            },
+            {
+                "t": "Query Processing",
+                "w": 12
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Research Scientist"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "Google Research",
+            "has_email_cr": true,
+            "work": "Associate Editor Knowledge and Information Systems (KAIS), 2010 -\nAssociate Editor IEEE Transaction on Data Engineering (TKDE), 2009 - 2014\nAssociate Editor Journal of Computer Science and Engineering (JCST), 2009 -\nAssociate Editor Journal of Distributed and Parallel Databases (DAPD), 2012 -\nIndustry track PC co-chair, WWW 2013\nPC co-chair, CIKM 2012\nPC co-chair, ICMLA 2011\nPC co-chair, WAIM 2011\nPC co-chair, ICDE 2009 demo track\nPC co-chair, ICDM 2008 demo track\nSDM 2011 Senior PC, ICDE 2011 PC\nSIGMOD 2010 PC, VLDB 2010 Industrial track PC, ICDE 2010 PC, SIGKDD 2009 Senior PC\nICDE 2009 PC, ICDM 2009 Senior PC, SDM 2008 Senior PC, VLDB 2008 PC, ICDE 2008 PC\nWorkshop Chair, Cloud DB (Associated with CIKM 2009)\nWorkshop Chair, Mining Multi-source Data (Associated with ICDM 2009, 2010)",
+            "bio": "I joined Google Research (Mountain View) in 2013. From 2009-2013, I was with Microsoft Research (Asia) where I led the database team. From 2000-2009, I was with IBM Research (Watson). I received the B.S. and M.S. degrees in Computer Science from Shanghai Jiao Tong University in 1994 and 1996, the Ph.D. degree in Computer Science from University of California, Los Angeles in June, 2000. \nResearch Interest:\nText Analytics, Natural Language Processing锛孿nKnowledge Base, Semantic Network, Artificial Intelligence锛孿nDatabase Language and System, Graph Data Management銆俓nAwards:\nBest Paper Award, Short Text Understanding Through Lexical-Semantic Analysis, in the 31st International Conference on Data Engineering (ICDE), 2015銆俓nICDM 10 Year Highest Impact Paper Award, Moment: Maintaining closed frequent itemsets over a stream sliding window (published in ICDM 2004).\nBest Student Paper Runner-Up Award, Inverse Time Dependency in Convex Regularized Learning, in the 9th International Conference on Data Mining (ICDM), 2009銆俓nBest Paper Award, Modeling and Querying E-Commerce Data in Hybrid Relational-XML DBMSs, in the 27th International Conference on Conceptual Modeling (ER), 2008銆�",
+            "edu": "I received the B.S. and M.S. degrees in Computer Science from Shanghai Jiao Tong University in 1994 and 1996, the Ph.D. degree in Computer Science from University of California, Los Angeles in June, 2000.",
+            "fax": "(914)784-7455",
+            "homepage": "http://haixun.olidu.com/",
+            "address": "IBM T. J. Watson Research Center19 Skyline Dr. Hawthorne, New York 10533",
+            "has_email": true,
+            "phone": "+1-914-486-2451"
+        },
+        "work": [],
+        "links": [
+            {
+                "type": "oid",
+                "url": "",
+                "id": "880847"
+            }
+        ],
+        "edu": [],
+        "id": "53f4a122dabfaec3f6f8045b",
+        "name_zh": "鐜嬫捣鍕�",
+        "num_upvoted": 2,
+        "attr": {
+            "gender": "male",
+            "nation": "China",
+            "ethnic": "Chinese",
+            "lang": "Chinese"
+        },
+        "tags_zh": [
+            {
+                "t": "Data Mining",
+                "w": 52
+            },
+            {
+                "t": "Gallium Arsenide",
+                "w": 24
+            },
+            {
+                "t": "Indexation",
+                "w": 22
+            },
+            {
+                "t": "Information Retrieval",
+                "w": 16
+            },
+            {
+                "t": "Mmic",
+                "w": 14
+            },
+            {
+                "t": "Indexing Terms",
+                "w": 13
+            },
+            {
+                "t": "Noise Figure",
+                "w": 12
+            },
+            {
+                "t": "Signal Processing",
+                "w": 12
+            },
+            {
+                "t": "Query Processing",
+                "w": 12
+            },
+            {
+                "t": "Time Series",
+                "w": 11
+            }
+        ],
+        "intr": [],
+        "num_followed": 3,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "IBM T. J. Watson Research Center",
+            "id": ""
+        },
+        "name": "Charu C. Aggarwal",
+        "num_viewed": 371,
+        "avatar": "//static.aminer.org/picture/02220/Charu_C_Aggarwal_1352372489947.jpg",
+        "indices": {
+            "sociability": 5.4971,
+            "h_index": 73,
+            "num_citation": 25506,
+            "as": 0,
+            "diversity": 3.9437,
+            "new_star": 343.7366,
+            "num_pubs": 313,
+            "activity": 497.8549,
+            "g_index": 156
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "5779f3b39ed5db2cefd11588",
+            "mtime": "2016-08-18 06:01:40",
+            "cid": "",
+            "mname": "cjr rjc",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 69
+            },
+            {
+                "t": "High Dimensional Data",
+                "w": 20
+            },
+            {
+                "t": "Association Rule",
+                "w": 18
+            },
+            {
+                "t": "Data Stream",
+                "w": 16
+            },
+            {
+                "t": "Indexation",
+                "w": 16
+            },
+            {
+                "t": "Social Network",
+                "w": 15
+            },
+            {
+                "t": "Synthetic Data",
+                "w": 13
+            },
+            {
+                "t": "Classification",
+                "w": 11
+            },
+            {
+                "t": "Clustering",
+                "w": 11
+            },
+            {
+                "t": "Data Streams",
+                "w": 10
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Research Scientist"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "IBM T. J. Watson Research Center",
+            "has_email_cr": true,
+            "work": "He has worked extensively in the field of data mining, with particular interests in data streams, privacy, uncertain data and social network analysis.He is a recipient of an IBM Corporate Award (2003) for his work on bio-terrorist threat detection in data streams, a recipient of the IBM Outstanding Innovation Award (2008) for his scientific contributions to privacy technology, and a recipient of an IBM Research Division Award (2008) for his scientific contributions to data stream research. He has received two best paper awards and an EDBT Test-of-Time Award (2014). He has served as the general or program co-chair of the IEEE Big Data Conference (2014), the ICDM Conference (2015), the ACM CIKM Conference (2015), and the KDD Conference (2016). He also co-chaired the data mining track at the WWW Conference 2009.",
+            "bio": "Charu Aggarwal is a Research Scientist at the IBM T. J. Watson Research Center in Yorktown Heights, New York. He completed his B.S. from IIT Kanpur in 1993 and his Ph.D. from Massachusetts Institute of Technology in 1996. He has since worked in the field of performance analysis, databases, and data mining. He has published over 135 papers in refereed conferences and journals, and has been granted over 50 patents. Because of the commercial value of the above-mentioned patents, he has received several invention achievement awards and has thrice been designated a Master Inventor at IBM. He is a recipient of an IBM Corporate Award (2003) for his work on bio-terrorist threat detection in data streams, a recipient of the IBM Outstanding Innovation Award (2008) for his scientific contributions to privacy technology, and a recipient of an IBM Research Division Award (2008) for his scientific contributions to data stream research. He has served on the program committees of most major database/data mining conferences, and served as program vice-chairs of the SIAM Conference on Data Mining , 2007, the IEEE ICDM Conference, 2007, the WWW Conference 2009, and the IEEE ICDM Conference, 2009. He served as an associate editor of the IEEE Transactions on Knowledge and Data Engineering Journal from 2004 to 2008. He is an action editor of the Data Mining and Knowledge Discovery Journal , an associate editor of the ACM SIGKDD Explorations, and an associate editor of the Knowledge and Information Systems Journal. He is a fellow of the IEEE for \"contributions to knowledge discovery and data mining techniques\", and a life-member of the ACM.",
+            "edu": "He completed his B.S. from IIT Kanpur in 1993 and his Ph.D. from Massachusetts Institute of Technology in 1996.",
+            "fax": "",
+            "homepage": "http://www.charuaggarwal.net",
+            "address": "IBM T. J. Watson Research Center, 1101 Kitchawan Rd, Yorktown, NY 10598",
+            "has_email": true,
+            "phone": "(914) 602 8152"
+        },
+        "work": [],
+        "links": [
+            {
+                "type": "oid",
+                "url": "",
+                "id": "36958"
+            }
+        ],
+        "edu": [],
+        "id": "53f47ebbdabfae9126cc42a9",
+        "name_zh": "",
+        "num_upvoted": 0,
+        "attr": {
+            "gender": "male",
+            "nation": "USA",
+            "ethnic": "Indian",
+            "lang": "Indian"
+        },
+        "tags_zh": [
+            {
+                "t": "Data Mining",
+                "w": 69
+            },
+            {
+                "t": "High Dimensional Data",
+                "w": 20
+            },
+            {
+                "t": "Association Rule",
+                "w": 18
+            },
+            {
+                "t": "Data Stream",
+                "w": 16
+            },
+            {
+                "t": "Indexation",
+                "w": 16
+            },
+            {
+                "t": "Social Network",
+                "w": 15
+            },
+            {
+                "t": "Synthetic Data",
+                "w": 13
+            },
+            {
+                "t": "Classification",
+                "w": 11
+            },
+            {
+                "t": "Clustering",
+                "w": 11
+            },
+            {
+                "t": "Data Streams",
+                "w": 10
+            }
+        ],
+        "intr": [],
+        "num_followed": 7,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "Department of Computer Science and Information Engineering and at the Department of Electrical Engineering",
+            "id": ""
+        },
+        "name": "Tzung-Pei Hong",
+        "num_viewed": 450,
+        "avatar": "//static.aminer.org/upload/avatar/1341/51/2019/53f48bbfdabfaea7cd1ccc83.jpeg",
+        "indices": {
+            "sociability": 5.8081,
+            "h_index": 32,
+            "num_citation": 3890,
+            "as": 0,
+            "diversity": 4.5625,
+            "new_star": 0,
+            "num_pubs": 442,
+            "activity": 230.027,
+            "g_index": 51
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "54ddb20c45ce6200dd437aa2",
+            "mtime": "2016-05-05 10:11:28",
+            "cid": "",
+            "mname": "neozhangthe1",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 220
+            },
+            {
+                "t": "Association Rule",
+                "w": 80
+            },
+            {
+                "t": "Fuzzy Set",
+                "w": 69
+            },
+            {
+                "t": "Membership Function",
+                "w": 55
+            },
+            {
+                "t": "Association Rules",
+                "w": 53
+            },
+            {
+                "t": "Genetic Algorithm",
+                "w": 53
+            },
+            {
+                "t": "Genetic Algorithms",
+                "w": 52
+            },
+            {
+                "t": "Fuzzy Set Theory",
+                "w": 50
+            },
+            {
+                "t": "Machine Learning",
+                "w": 44
+            },
+            {
+                "t": "Algorithm Design And Analysis",
+                "w": 40
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Professor"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": false,
+        "contact": {
+            "affiliation": "Department of Computer Science and Information Engineering and at the Department of Electrical Engineering",
+            "has_email_cr": true,
+            "work": "From 1987 to 1994, he was with the Laboratory of Knowledge Engineering, National Chiao-Tung University, where he was involved in applying techniques of parallel processing to artificial intelligence. \n\nHe was an associate professor at the Department of Computer Science in Chung-Hua Polytechnic Institute from 1992 to 1994, and at the Department of Information Management in I-Shou University (originally Kaohsiung Polytechnic Institute) from 1994 to 1999. He was a professor in I-Shou University from 1999 to 2001. He was in charge of the whole computerization and library planning for National University of Kaohsiung in Preparation from 1997 to 2000 and served as the first director of the library and computer center in National University of Kaohsiung from 2000 to 2001, as the Dean of Academic Affairs from 2003 to 2006, as the Administrative Vice President from 2007 to 2008, and as the Academic Vice President in 2010. \n\nHe is currently a distinguished professor at the Department of Computer Science and Information Engineering and at the Department of Electrical Engineering.",
+            "bio": "Tzung-Pei Hong received his B.S. degree in chemical engineering from National Taiwan University in 1985, and his Ph.D. degree in computer science and information engineering from National Chiao-Tung University in 1992. From 1987 to 1994, he was with the Laboratory of Knowledge Engineering, National Chiao-Tung University, where he was involved in applying techniques of parallel processing to artificial intelligence. \n\nHe was an associate professor at the Department of Computer Science in Chung-Hua Polytechnic Institute from 1992 to 1994, and at the Department of Information Management in I-Shou University (originally Kaohsiung Polytechnic Institute) from 1994 to 1999. He was a professor in I-Shou University from 1999 to 2001. He was in charge of the whole computerization and library planning for National University of Kaohsiung in Preparation from 1997 to 2000 and served as the first director of the library and computer center in National University of Kaohsiung from 2000 to 2001, as the Dean of Academic Affairs from 2003 to 2006, as the Administrative Vice President from 2007 to 2008, and as the Academic Vice President in 2010. \n\nHe is currently a distinguished professor at the Department of Computer Science and Information Engineering and at the Department of Electrical Engineering. He has published more than 400 research papers in international/national journals and conferences and has planned more than fifty information systems. He is also the board member of more than forty journals and the program committee member of more than three hundred conferences. \n\nHis current research interests include knowledge engineering, data mining, soft computing, management information systems, and www applications. Dr. Hong is a member of the Association for Computing Machinery, the IEEE, the Chinese Fuzzy Systems Association, the Taiwanese Association for Artificial Intelligence, and the Institute of Information and Computing Machinery.",
+            "edu": "Tzung-Pei Hong received his B.S. degree in chemical engineering from National Taiwan University in 1985, and his Ph.D. degree in computer science and information engineering from National Chiao-Tung University in 1992.",
+            "fax": "",
+            "homepage": "http://fostect.tdt.edu.vn/index.php/en/about-us/experts/80-about-us/experts/556-dr-tzung-pei-hong",
+            "address": "",
+            "has_email": false,
+            "phone": ""
+        },
+        "work": [],
+        "links": [
+            {
+                "type": "oid",
+                "url": "",
+                "id": "185240"
+            }
+        ],
+        "edu": [],
+        "id": "53f48bbfdabfaea7cd1ccc83",
+        "name_zh": "",
+        "num_upvoted": 0,
+        "attr": {
+            "gender": "male",
+            "nation": "Taiwan",
+            "ethnic": "Chinese",
+            "lang": "Chinese"
+        },
+        "tags_zh": [
+            {
+                "t": "Data Mining",
+                "w": 220
+            },
+            {
+                "t": "Association Rule",
+                "w": 80
+            },
+            {
+                "t": "Fuzzy Set",
+                "w": 69
+            },
+            {
+                "t": "Membership Function",
+                "w": 55
+            },
+            {
+                "t": "Association Rules",
+                "w": 53
+            },
+            {
+                "t": "Genetic Algorithm",
+                "w": 53
+            },
+            {
+                "t": "Genetic Algorithms",
+                "w": 52
+            },
+            {
+                "t": "Fuzzy Set Theory",
+                "w": 50
+            },
+            {
+                "t": "Machine Learning",
+                "w": 44
+            },
+            {
+                "t": "Algorithm Design And Analysis",
+                "w": 40
+            }
+        ],
+        "intr": [],
+        "num_followed": 5,
+        "honor": []
+    },
+    {
+        "aff": {
+            "desc": "Computer Science, University of Manitoba, Canada",
+            "id": ""
+        },
+        "name": "Carson Kai-Sang Leung",
+        "num_viewed": 92,
+        "avatar": "//static.aminer.org/picture/02331/C_K_Leung_1326008034453.jpg",
+        "indices": {
+            "sociability": 4.1896,
+            "h_index": 20,
+            "num_citation": 1787,
+            "as": 0,
+            "diversity": 3.8185,
+            "new_star": 24.8815,
+            "num_pubs": 111,
+            "activity": 35.9509,
+            "g_index": 37
+        },
+        "is_following": false,
+        "revised": {
+            "cname": "",
+            "mid": "54f678c145ce8875677ae52c",
+            "mtime": "2016-05-16 08:54:09",
+            "cid": "",
+            "mname": "Yu Jing",
+            "ctime": "1970-01-01 00:00:00"
+        },
+        "locks": {},
+        "tags": [
+            {
+                "t": "Data Mining",
+                "w": 60
+            },
+            {
+                "t": "Frequent Pattern",
+                "w": 18
+            },
+            {
+                "t": "Uncertain Data",
+                "w": 17
+            },
+            {
+                "t": "Frequent Itemsets",
+                "w": 13
+            },
+            {
+                "t": "Social Network",
+                "w": 9
+            },
+            {
+                "t": "Frequent Pattern Mining",
+                "w": 9
+            },
+            {
+                "t": "Precise Data",
+                "w": 8
+            },
+            {
+                "t": "Databases",
+                "w": 8
+            },
+            {
+                "t": "Tree Structure",
+                "w": 7
+            },
+            {
+                "t": "Real-life Situation",
+                "w": 7
+            }
+        ],
+        "pos": [
+            {
+                "i": "",
+                "n": "Professor"
+            }
+        ],
+        "hidden": false,
+        "award": [],
+        "bind": true,
+        "contact": {
+            "affiliation": "Computer Science, University of Manitoba, Canada",
+            "has_email_cr": true,
+            "work": "",
+            "bio": "B.Sc. (Honours), University of British Columbia; M.Sc., University of British Columbia; Ph.D., University of British Columbia. \n\nResearch Interests \n\nData mining and analysis (including Big data analytics)\nDatabases (including image databases), data management, and data warehousing \nData visualization and visual analytics \nHealth informatics and electronic health \nWeb technology and services, as well as social computing",
+            "edu": "B.Sc. (Honours), M.Sc., Ph.D., University of British Columbia, Canada",
+            "fax": "+1 (204) 474-7609  ",
+            "homepage": "http://www.cs.umanitoba.ca/~kleung/\r\n",
+            "address": "Office: E2-403 EITC, \nLab: E2-520 EITC",
+            "has_email": true,
+            "phone": "+1 (204) 474-8677  "
+        },
+        "work": [],
+        "links": [
+            {
+                "type": "oid",
+                "url": "",
+                "id": "350855"
+            }
+        ],
+        "edu": [],
+        "id": "53f479b1dabfae8a6845b7e5",
+        "name_zh": "",
+        "num_upvoted": 1,
+        "attr": {
+            "gender": "male",
+            "nation": "Canada",
+            "ethnic": "English",
+            "lang": "English"
+        },
+        "tags_zh": [
+            {
+                "t": "Data Mining",
+                "w": 60
+            },
+            {
+                "t": "Frequent Pattern",
+                "w": 18
+            },
+            {
+                "t": "Uncertain Data",
+                "w": 17
+            },
+            {
+                "t": "Frequent Itemsets",
+                "w": 13
+            },
+            {
+                "t": "Social Network",
+                "w": 9
+            },
+            {
+                "t": "Frequent Pattern Mining",
+                "w": 9
+            },
+            {
+                "t": "Precise Data",
+                "w": 8
+            },
+            {
+                "t": "Databases",
+                "w": 8
+            },
+            {
+                "t": "Tree Structure",
+                "w": 7
+            },
+            {
+                "t": "Real-life Situation",
+                "w": 7
+            }
+        ],
+        "intr": [],
+        "num_followed": 5,
+        "honor": []
+    }
+]
