@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title><%= title %></title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<!-- <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.min.css"> -->
+	<script src="/lib/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8" async defer></script>
+	<!-- <script src="/lib/bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8" async defer></script> -->
+	<script src="http://api.map.baidu.com/api?v=2.0&ak=tCTITpyi8ue3n7KHoGoMmkVt" type="text/javascript"></script>
+	<style type="text/css">
+		body, html {width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+		#allmap{width:100%;height:500px;}
+		p{margin-left:5px; font-size:14px;}
+	</style>
+</head>
+<body>
+	<div id="map" style="width:800px;height:620px"></div>  
+	<button type="button" class="btn btn-default" onclick="showOver()">显示</button>
+	<button type="button" class="btn btn-danger" onclick="hideOver()">隐藏</button>
+
+	<script>
+
+		// 百度地图API功能
+	  	var map = new BMap.Map("map");   //创建地图实例
+	  	var point = new BMap.Point(116.404, 39.915);   //创建一个定位位置
+	  	map.centerAndZoom('北京',1);   //显示地图并设置缩放比例与定位位置
+	  	// map.enableScrollWheelZoom();   //鼠标允许缩放
+	  	
+	  	map.addEventListener("zoomend", function(){    
+		 console.log("地图缩放至：" + this.getZoom() + "级");    
+		});
+
+	  	var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+		var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+		var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL}); //右上角，仅包含平移和缩放按钮
+		/*缩放控件type有四种类型:
+		BMAP_NAVIGATION_CONTROL_SMALL：仅包含平移和缩放按钮；BMAP_NAVIGATION_CONTROL_PAN:仅包含平移按钮；BMAP_NAVIGATION_CONTROL_ZOOM：仅包含缩放按钮*/
+		
+		//添加控件和比例尺
+		function add_control(){
+			map.addControl(top_left_control);        
+			map.addControl(top_left_navigation);     
+			map.addControl(top_right_navigation);    
+		}
+		//移除控件和比例尺
+		function delete_control(){
+			map.removeControl(top_left_control);     
+			map.removeControl(top_left_navigation);  
+			map.removeControl(top_right_navigation); 
+		}
+		add_control();
+
+	</script>
+
+	<script>
+	  	
+
+	  	// 普通任务覆盖物
+	    function Person(point, imgUrl, mouseoverText){
+	      this._point = point;
+	      this._imgUrl = imgUrl;
+	      this._overText = mouseoverText;
+	    }
+	    Person.prototype = new BMap.Overlay();
+	    Person.prototype.initialize = function(map){
+	      this._map = map;
+	      // var div = this._div = document.createElement("div");
+	      // div.style.position = "absolute";
+	      // div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
+	      // div.style.backgroundColor = "rgb(255, 255, 255)";
+	      // div.style.border = "1px solid rgb(204, 204, 204)";
+	      // div.style.borderRadius = '50%';
+	      // div.style.color = "white";
+	      // div.style.height = "50px";
+	      // div.style.width = "50px";
+	      // div.style.padding = "2px";
+	      // div.style.lineHeight = "18px";
+	      // div.style.whiteSpace = "nowrap";
+	      // div.style.MozUserSelect = "none";
+	      // div.style.fontSize = "12px";
+	      // div.style.overflow = "hidden";
+
+
+	      var div = this._div = $('<div></div>',{
+	      	css: {
+	      		'position': 'absolute',
+	      		'z-index': BMap.Overlay.getZIndex(this._point.lat),
+	      		'background-color': 'rgb(255, 255, 255)',
+	      		'border': '1px solid rgb(204, 204, 204)',
+	      		'border-radius': '50%',
+	      		'color': 'white',
+	      		'height': '50px',
+	      		'width': '50px',
+	      		'padding': '2px',
+	      		'line-Height': '28px',
+	      		'whte-space': 'nowrap',
+	      		// 'webkit-user-select': 'none',
+	      		'overflow': 'hidden'
+	      	}
+	      })
+
+	      var img = $('<img/>',{
+	      	src: this._imgUrl,
+	      	css: {
+	      		'height': '50px',
+	      		'width': '50px',
+	      		'border-radius': '50%'
+	      	}
+	      })
+
+	      img.appendTo(div);
+
+	      var div_shade = $('<div></div>',{
+	      	css: {
+	      		'position': 'absolute',
+	      		'width': '100%',
+	      		'height': '100%',
+	      		'top': 0,
+	      		'left': 0,
+	      		'background-color': 'rgba(0, 0, 0, 0.1)'
+	      	}
+	      })
+
+	      div_shade.appendTo(div);
+
+
+	      // var img = document.createElement("img");
+	      // img.src = this._imgUrl;
+	      // img.style.height = "50px";
+	      // img.style.width = "50px";
+	      // img.style.borderRadius = '50%';
+	      // div.appendChild(img);
+
+
+	      // var div_shade = document.createElement('div');
+	      // div_shade.style.position = "absolute";
+	      // div_shade.style.width = '100%';
+	      // div_shade.style.height = '100%';
+	      // div_shade.style.top = "0";
+	      // div_shade.style.left = "0";
+	      // div_shade.style.backgroundColor = "rgba(0, 0, 0, 0.1)";
+	      // div.appendChild(div_shade);
+
+	      var that = this;
+	     
+	      div.mouseover(function(){
+	        // this.style.backgroundColor = "rgb(255, 255, 255)";
+	        // this.style.borderColor = "rgb(175, 172, 172)";
+	        // this.getElementsByTagName("div")[0].style.display = 'none';
+
+	        $(this).css({
+	        	'background-color': 'rgb(255, 255, 255)',
+	        	'border-color': 'rgb(175, 172, 172)'
+	        });
+
+	        $(this).find('div').hide();
+
+	      })
+
+	      div.mouseout(function(){
+	        // this.style.backgroundColor = "rgb(255, 255, 255)";
+	        // this.style.borderColor = "rgb(204, 204, 204)";
+	        // this.getElementsByTagName("div")[0].style.display = 'block';
+	        
+	        $(this).css({
+	        	'background-color': 'rgb(255, 255, 255)',
+	        	'border-color': 'rgb(204, 204, 204)'
+	        });
+
+	        $(this).find('div').show();
+
+	      })
+
+
+	      map.getPanes().labelPane.appendChild(div.get(0));
+	      
+	      return div.get(0);
+	    }
+	    Person.prototype.draw = function(){
+	      var map = this._map;
+	      var pixel = map.pointToOverlayPixel(this._point);
+	      // this._div.style.left = pixel.x + "px";
+	      // this._div.style.top  = pixel.y + "px";
+
+	      this._div.css({
+	      	'left': pixel.x + "px",
+	      	'top': pixel.y + "px"
+	      })
+	    }
+
+	    //聚合遮盖物
+	    function Aggregation(point, array, show){
+	      this._point = point;
+	      this._array = array;
+	      this._overShow = show;
+	    }
+	    Aggregation.prototype = new BMap.Overlay();
+	    Aggregation.prototype.initialize = function(map){
+
+	      this._map = map;
+	      var that = this;
+
+	      var div = this._div = document.createElement("div");
+	      div.style.position = "absolute";
+	      div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
+	      div.style.MozUserSelect = "none";
+
+	      var sumDiv = document.createElement("div");
+	      sumDiv.style.position = "absolute";
+	      sumDiv.style.height = "50px";
+	      sumDiv.style.width = "50px";
+	      sumDiv.style.backgroundColor = "rgb(49, 176, 213)";
+	      sumDiv.style.border = "1px solid rgb(38, 154, 188)";
+	      sumDiv.style.borderRadius = '50%';
+	      sumDiv.style.color = "rgb(255, 255, 255)";
+	      sumDiv.style.padding = "2px";
+	      sumDiv.style.lineHeight = "50px";
+	      sumDiv.style.whiteSpace = "nowrap";
+	      sumDiv.style.fontSize = "20px"
+	      sumDiv.style.textAlign = "center"
+          sumDiv.style.boxShadow = '1px 1px 1px rgb(49, 176, 213)';
+
+          sumDiv.typeDiv = 'sumDiv';
+
+          div.appendChild(sumDiv);
+
+	      var span = this._span = document.createElement("span");
+	      span.appendChild(document.createTextNode(this._array.length));      
+	      sumDiv.appendChild(span);
+	      
+
+
+
+	      this._array.slice(0, 8).forEach(function(item, index){
+
+
+	      	var itemPoing = new BMap.Point(item.lat,item.lng);
+
+	      	var personDiv = document.createElement("div");
+			personDiv.style.position = "absolute";
+			personDiv.style.zIndex = BMap.Overlay.getZIndex(itemPoing.lat);
+			personDiv.style.backgroundColor = "rgb(255, 255, 255)";
+			personDiv.style.border = "1px solid rgb(204, 204, 204)";
+			personDiv.style.borderRadius = '50%';
+			personDiv.style.color = "white";
+			personDiv.style.height = "50px";
+			personDiv.style.width = "50px";
+			personDiv.style.padding = "2px";
+			personDiv.style.lineHeight = "18px";
+			personDiv.style.whiteSpace = "nowrap";
+			personDiv.style.MozUserSelect = "none";
+			personDiv.style.fontSize = "12px";
+			personDiv.style.overflow = "hidden";
+
+			var left = '0px';
+			var top = '0px';
+
+			switch(index){
+				case 0:
+					left = '-65px';
+					top = '-65px';
+					break;
+				case 1:
+					left = '0px';
+					top = '-65px';
+					break;
+				case 2:
+					left = '65px';
+					top = '-65px';
+					break;
+				case 3:
+					left = '-65px';
+					top = '0px';
+					break;
+				case 4:
+					left = '65px';
+					top = '0px';
+					break;
+				case 5:
+					left = '-65px';
+					top = '65px';
+					break;
+				case 6:
+					left = '0px';
+					top = '65px';
+					break;
+				case 7:
+					left = '65px';
+					top = '65px';
+					break;
+			}
+
+			personDiv.style.display = 'none';
+
+			personDiv.style.transform = 'translate(' + left + ', ' + top + ')';
+
+			if(index<8){
+
+				personDiv.index = true;
+				personDiv.typeDiv = 'personDiv';
+				div.appendChild(personDiv);
+
+			}
+
+
+			var img = document.createElement("img");
+			img.src = '//am-cdn-s0.b0.upaiyun.com/picture/489/1225201610804.jpeg!90';
+			img.style.height = "50px";
+			img.style.width = "50px";
+			img.style.borderRadius = '50%';
+			personDiv.appendChild(img);
+
+
+			var div_shade = document.createElement('div');
+			div_shade.style.position = "absolute";
+			div_shade.style.width = '100%';
+			div_shade.style.height = '100%';
+			div_shade.style.top = "0";
+			div_shade.style.left = "0";
+			div_shade.style.backgroundColor = "rgba(0, 0, 0, 0.1)";
+			personDiv.appendChild(div_shade);
+
+			personDiv.onmouseover = function(){
+				this.style.backgroundColor = "rgb(255, 255, 255)";
+				this.style.borderColor = "rgb(175, 172, 172)";
+				this.getElementsByTagName("div")[0].style.display = 'none';
+			}
+
+			personDiv.onmouseout = function(){
+				this.style.backgroundColor = "rgb(255, 255, 255)";
+				this.style.borderColor = "rgb(204, 204, 204)";
+				this.getElementsByTagName("div")[0].style.display = 'block';
+			}
+
+
+	      });
+
+	     
+	      div.onmouseover = function(){
+	        // this.style.backgroundColor = "#6BADCA";
+	        // this.style.borderColor = "#0000ff";
+	        this.getElementsByTagName('div')[0]
+	      }
+
+	      div.onmouseout = function(){
+	        // this.style.backgroundColor = "#EE5D5B";
+	        // this.style.borderColor = "#BC3B3A";
+	      }
+
+	      map.getPanes().labelPane.appendChild(div);
+	      
+	      return div;
+	    }
+	    Aggregation.prototype.draw = function(){
+	      var map = this._map;
+	      var pixel = map.pointToOverlayPixel(this._point);
+	      this._div.style.left = pixel.x + "px";
+	      this._div.style.top  = pixel.y + "px";
+	    }
+
+
+		function address(){
+
+			var address = [
+				"201 N. Goodwin Avenue, Urbana, IL 61801, USA.","851 S. Morgan St., Rm 1138 SEO, Chicago, IL 60607 \n","Department of Computer Science\nRensselaer Polytechnic Institute\nTroy, New York 12180-3590","Department of Statistics and Actuarial Science Faculty of Health Sciences Simon Fraser University 8888 University Drive Burnaby, BC Canada V5A 1S6","Dept. of Computer Science \nCarnegie Mellon University\nWean Hall \n5000 Forbes Avenue \nChristos Faloutsos \nPittsburgh, PA 15213-3891","222 James R. Oliver Hall,  301 East Lewis Street, Lafayette, Louisiana 70503, USA","Department of Computer Science and Engineering 4-192, EE/CSci Building University of Minnesota Minneapolis, MN 55455","851 S. Morgan Street (M/C 152) Chicago, IL 60607-7053","352 Athabasca Hall\r\nEdmonton, Alberta, Canada T6G 2E8","Department Information and Computer Science\nKonemiehentie 2, Room A334 (3rd floor)","Yahoo! Inc.  P.O. Box 60097 Sunnyvale, CA  94088 USA","Ludwig-Maximilians-Universit鐩瞭 M鐪塶chen\nLehr- und Forschungseinheit f鐪塺 Datenbanksysteme\nOettingenstra鑴絜 67\n80538 M鐪塶chen\nGermany","Computer Science Department \nRm 1111, Harold Frank Hall \nUniversity of California \nSanta Barbara, CA 93106-5110","Department of Computer Science and Electrical Engineering \r\n1000 Hilltop Circle, University of Maryland Baltimore County \r\nBaltimore, MD 21250 ","Computer Science & Engineering Arizona State University   Tempe, AZ 85287-8809","IBM T. J. Watson Research Center19 Skyline Dr. Hawthorne, New York 10533","IBM T. J. Watson Research Center, 1101 Kitchawan Rd, Yorktown, NY 10598","Office: E2-403 EITC, \nLab: E2-520 EITC"
+			]
+
+
+			var localtions = [
+					{"lat":40.1140258,"lng":-88.22480730000001},
+					{"lat":41.8708245,"lng":-87.65017180000001},
+					{"lat":49.2488091,"lng":-122.9805104},
+					{"lat":40.44062479999999,"lng":-79.9958864},
+					{"lat":30.2106656,"lng":-92.0206231},
+					{"lat":34.9803767,"lng":-101.9149752},
+					{"lat":41.8708245,"lng":-87.65017180000001},
+					{"lat":53.5267002,"lng":-113.5266363},
+					{"lat":37.36883,"lng":-122.0363496},
+					{"lat":40.6007792,"lng":-74.1477084},
+					{"lat":40.6007792,"lng":-74.1477084},
+					{"lat":49.8085424,"lng":-97.13396399999999}
+				];
+
+
+			var lat = 49.8085424;
+			var lng = 97.13396399999999;
+
+			var aggregation = new Aggregation(new BMap.Point(lat,lng), localtions, false);
+
+			// map.addOverlay(aggregation);
+
+			address.forEach(function(item, index){
+
+				getLocation(item);
+
+			})
+
+		}
+
+		var array = [];
+		var personArray = []
+
+		function getLocation(item){
+
+			(function(el){
+	  			$.ajax({  
+		            type: "get",  
+		            async: true,  
+		            url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + el.split(',')[0] + '&key=AIzaSyAnlGl1bMu19QXpr2BDnqx2FmHp6WIlFbI',
+		            success: function (data) {  
+
+		            		if(data.status === "OK"){
+
+
+		            			var location = data.results[0].geometry.location;
+
+		            			var lat = location.lat;
+		            			var lng = location.lng;
+
+		            			array.push(location);
+
+		            			var person = new Person(new BMap.Point(lat,lng), '//am-cdn-s0.b0.upaiyun.com/picture/489/1225201610804.jpeg!90','Name');
+
+		            			map.addOverlay(person);
+
+		            			personArray.push(person);
+		            			// hideOver();
+		            		}
+		            }
+		        })
+	  		})(item)
+
+		}
+
+		address()
+
+
+		function showOver(){
+			personArray.forEach(function(item, index){
+				item.show();
+			})
+		}
+		function hideOver(){
+			personArray.forEach(function(item, index){
+				item.hide();
+			})
+		}
+
+
+
+
+	</script>
+</body>
+</html>

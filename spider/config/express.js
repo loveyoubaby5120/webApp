@@ -31,7 +31,7 @@ module.exports = function(){
 	var yyzc = require('../routes/yyzc');
 	var wechatData = require('../routes/wechatData');
 	var wiki = require('../routes/wiki');
-	var MAP = require('../routes/data_mining_map.js');
+	var map = require('../routes/data_mining_map.js');
 
 	app.use('/', routes);
 	app.use('/users', users);
