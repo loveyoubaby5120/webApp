@@ -5,20 +5,21 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title><%= title %></title>
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-	<!-- <link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.min.css"> -->
-	<script src="/lib/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8" async defer></script>
-	<!-- <script src="/lib/bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8" async defer></script> -->
+	<link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+	<script src="/lib/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8" ></script>
+	<script src="/lib/bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="http://api.map.baidu.com/api?v=2.0&ak=tCTITpyi8ue3n7KHoGoMmkVt" type="text/javascript"></script>
 	<style type="text/css">
 		body, html {width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
 		#allmap{width:100%;height:500px;}
 		p{margin-left:5px; font-size:14px;}
+		.popover{z-index: 99999999999999999}
 	</style>
 </head>
 <body>
-	<div id="map" style="width:700px;height:620px"></div>  
-	<button type="button" class="btn btn-default" onclick="showPerson()">显示</button>
-	<button type="button" class="btn btn-danger" onclick="hidePerson()">隐藏</button>
+	<div id="map" style="width:700px;height:600px"></div>  
+	<button type="button" class="btn btn-default" onclick="showPerson();hideAggregation()">显示</button>
+	<button type="button" class="btn btn-danger" onclick="hidePerson();showAggregation()">隐藏</button>
 
 	<script>
 
@@ -41,7 +42,7 @@
 	  			showAggregation();
 	  		}
 
-	 		console.log("地图缩放至：" + this.getZoom() + "级");    
+	 		// console.log("地图缩放至：" + this.getZoom() + "级");    
 		});
 
 	  	var clickLng = 0;
@@ -87,7 +88,7 @@
 		var personArray = []
 		var aggregationArray = []
 
-	  	// 普通任务覆盖物
+	  	// 普通人物覆盖物
 	    function Person(point, imgUrl, mouseoverText){
 	      this._point = point;
 	      this._imgUrl = imgUrl;
@@ -95,77 +96,90 @@
 	    }
 	    Person.prototype = new BMap.Overlay();
 	    Person.prototype.initialize = function(map){
-	      this._map = map;
+			this._map = map;
 
-	      var div = this._div = $('<div></div>',{
-	      	css: {
-	      		'position': 'absolute',
-	      		'z-index': BMap.Overlay.getZIndex(this._point.lat),
-	      		'background-color': 'rgb(255, 255, 255)',
-	      		'border': '1px solid rgb(204, 204, 204)',
-	      		'border-radius': '50%',
-	      		'color': 'white',
-	      		'height': '50px',
-	      		'width': '50px',
-	      		'padding': '2px',
-	      		'line-Height': '28px',
-	      		'whte-space': 'nowrap',
-	      		'webkit-user-select': 'none',
-	      		'overflow': 'hidden'
-	      	}
-	      })
+			var div = this._div = $('<div></div>',{
+	      		'data-toggle': "popover",
+	      		'data-title': "title",
+	      		'data-content': "description",
+	      		'data-trigger': 'hover',
+				css: {
+					'position': 'absolute',
+					'height': '50px',
+					'width': '50px',
+					'-webkit-box-sizing': 'content-box',
+					'-moz-box-sizing': 'content-box',
+					'box-sizing': 'content-box',
+					'z-index': BMap.Overlay.getZIndex(this._point.lat),
+					'background-color': 'rgb(255, 255, 255)',
+					'border': '1px solid rgb(204, 204, 204)',
+					'border-radius': '50%',
+					'color': 'white',
+					'padding': '2px',
+					'line-Height': '28px',
+					'whte-space': 'nowrap',
+					'webkit-user-select': 'none',
+					'overflow': 'hidden'
+				}
+			})
 
-	      var img = $('<img/>',{
-	      	src: this._imgUrl,
-	      	css: {
-	      		'height': '50px',
-	      		'width': '50px',
-	      		'border-radius': '50%'
-	      	}
-	      })
-
-	      
-
-	      var div_shade = $('<div></div>',{
-	      	css: {
-	      		'position': 'absolute',
-	      		'width': '100%',
-	      		'height': '100%',
-	      		'top': 0,
-	      		'left': 0,
-	      		'background-color': 'rgba(0, 0, 0, 0.1)'
-	      	}
-	      })
-
-	      img.appendTo(div);
-	      div_shade.appendTo(div);
-
-	      div.mouseover(function(){
-
-	        $(this).css({
-	        	'background-color': 'rgb(255, 255, 255)',
-	        	'border-color': 'rgb(175, 172, 172)'
-	        });
-
-	        $(this).find('div').hide();
-
-	      })
-
-	      div.mouseout(function(){
-	        
-	        $(this).css({
-	        	'background-color': 'rgb(255, 255, 255)',
-	        	'border-color': 'rgb(204, 204, 204)'
-	        });
-
-	        $(this).find('div').show();
-
-	      })
+			var img = $('<img/>',{
+				src: this._imgUrl,
+				css: {
+					'height': '50px',
+					'width': '50px',
+					'border-radius': '50%'
+				}
+			})
 
 
-	      map.getPanes().labelPane.appendChild(div.get(0));
-	      
-	      return div.get(0);
+
+			var div_shade = $('<div></div>',{
+				css: {
+					'position': 'absolute',
+					'width': '100%',
+					'height': '100%',
+					'top': 0,
+					'left': 0,
+					'background-color': 'rgba(0, 0, 0, 0.1)'
+				}
+			})
+
+			img.appendTo(div);
+			div_shade.appendTo(div);
+
+			div
+				.popover()
+				.click(function(e) {
+				e.preventDefault()
+				})
+
+			div.mouseover(function(){
+
+			$(this).css({
+				'background-color': 'rgb(255, 255, 255)',
+				'border-color': 'rgb(175, 172, 172)'
+			});
+
+			$(this).find('div').hide();
+
+			})
+
+			div.mouseout(function(){
+
+			$(this).css({
+				'background-color': 'rgb(255, 255, 255)',
+				'border-color': 'rgb(204, 204, 204)'
+			});
+
+			$(this).find('div').show();
+
+			})
+
+
+			map.getPanes().labelPane.appendChild(div.get(0));
+
+			return div.get(0);
 	    }
 	    Person.prototype.draw = function(){
 	      var map = this._map;
@@ -193,10 +207,9 @@
 			var div = this._div = $('<div></div>',{
 				css: {
 					'position': 'absolute',
-					// 'width': '200px',
-					// 'height': '200px',
 					'z-index': BMap.Overlay.getZIndex(this._point.lat),
 					'webkit-user-select': 'none',
+					'overflow': 'visible'
 				}
 			})
 
@@ -205,6 +218,9 @@
 				typeDiv: 'sumDiv',
 				css: {
 					'position': 'absolute',
+					'-webkit-box-sizing': 'content-box',
+		      		'-moz-box-sizing': 'content-box',
+		      		'box-sizing': 'content-box',
 					'top': '72px',
 					'left': '72px',
 					'height': '50px',
@@ -231,7 +247,7 @@
 
 			sumDiv.click(function(){
 
-				that._map.centerAndZoom(new BMap.Point(clickLng, clickLat),7);
+				that._map.centerAndZoom(new BMap.Point(that._point.lng, that._point.lat),7);
 				// that._map.setZoom(7)
 			})
 	      
@@ -278,11 +294,20 @@
 						break;
 				}
 
+				  
+
 		      	var personDiv = $('<div></div>',{
+		      		'data-toggle': "popover",
+		      		'data-title': "title",
+		      		'data-content': "description",
+		      		'data-trigger': 'hover',
 		      		index: true,
 		      		typeDiv: 'peraonDiv',
 					css: {
 						'position': 'absolute',
+						'-webkit-box-sizing': 'content-box',
+			      		'-moz-box-sizing': 'content-box',
+			      		'box-sizing': 'content-box',
 						'top': '72px',
 						'left': '72px',
 						'height': '50px',
@@ -299,7 +324,7 @@
 						'overflow': 'hidden',
 						'transform': 'translate(' + left + ', ' + top + ')',
 						'display': that._overShow ? 'block' : 'none',
-						'opacity':'0'
+						'opacity':that._overShow ? '1' : '0'
 					}
 				})
 
@@ -354,48 +379,58 @@
 				})
 
 
+				personDiv
+				  .popover()
+				  .click(function(e) {
+				    e.preventDefault()
+				  })
+
+
 			});
 
+
+			if(!that._overShow){
 	     
-			div.mouseenter(function(){
+				div.mouseenter(function(){
 
-				$(this).css({
-					'width': '200px',
-					'height': '200px'
-				});
+					$(this).css({
+						'width': '200px',
+						'height': '200px'
+					});
 
-				$(this).find('div[typediv="sumDiv"]').css({
-					'background-color': 'rgb(38, 154, 188)',
-					'border-color': 'rgb(29, 118, 144)',
-					'box-shadow': 'rgb(38, 154, 188)'
-				});
+					$(this).find('div[typediv="sumDiv"]').css({
+						'background-color': 'rgb(38, 154, 188)',
+						'border-color': 'rgb(29, 118, 144)',
+						'box-shadow': 'rgb(38, 154, 188)'
+					});
 
-				$(this).find('div[typediv="peraonDiv"]').show();
+					$(this).find('div[typediv="peraonDiv"]').show();
 
-			 	$(this).find('div[typediv="peraonDiv"]').animate({
-					opacity:'1'
-				});
-			})
+				 	$(this).find('div[typediv="peraonDiv"]').animate({
+						opacity:'1'
+					});
+				})
 
-			div.mouseleave(function(){
+				div.mouseleave(function(){
 
-				$(this).css({
-					'width': '0',
-					'height': '0'
-				});
+					$(this).css({
+						'width': '0',
+						'height': '0'
+					});
 
-				$(this).find('div[typediv="sumDiv"]').css({
-					'background-color': 'rgb(49, 176, 213)',
-					'border-color': 'rgb(38, 154, 188)',
-					'box-shadow': 'rgb(49, 176, 213)'
-				});
+					$(this).find('div[typediv="sumDiv"]').css({
+						'background-color': 'rgb(49, 176, 213)',
+						'border-color': 'rgb(38, 154, 188)',
+						'box-shadow': 'rgb(49, 176, 213)'
+					});
 
-				$(this).find('div[typediv="peraonDiv"]').hide();
+					$(this).find('div[typediv="peraonDiv"]').hide();
 
-				$(this).find('div[typediv="peraonDiv"]').animate({
-					opacity:'0'
-				});
-			})
+					$(this).find('div[typediv="peraonDiv"]').animate({
+						opacity:'0'
+					});
+				})
+			}
 
 			map.getPanes().labelPane.appendChild(div.get(0));
 
@@ -432,6 +467,8 @@
 
 			var ul = $('<ul></ul>',{
 				css: {
+					'height': '300px',
+					'overflow': 'auto',
 				    'list-style': 'none',
 					'background-color': 'white',
 					'padding': '10px',
@@ -439,7 +476,7 @@
 				}
 			});
 
-			this._array.slice(0, 8).forEach(function(item, index){
+			this._array.forEach(function(item, index){
 
 				var li = $('<li></li>',{
 				    css: {
@@ -486,9 +523,9 @@
 
 
 			var lat = 49.8085424;
-			var lng = 97.13396399999999;
+			var lng = -97.13396399999999;
 
-			var aggregation = new Aggregation(new BMap.Point(lat,lng), localtions, false);
+			var aggregation = new Aggregation(new BMap.Point(lng,lat), localtions, false);
 
 			map.addOverlay(aggregation);
 
@@ -499,9 +536,20 @@
 			// 添加到地图当中
 			map.addControl(mypersonCtr);
 
+			localtions.forEach(function(item, index){
+
+				var person = new Person(new BMap.Point(item.lng,item.lat), '//am-cdn-s0.b0.upaiyun.com/picture/489/1225201610804.jpeg!90','Name');
+
+    			map.addOverlay(person);
+
+    			personArray.push(person);
+    			hidePerson();
+
+			})
+
 			address.forEach(function(item, index){
 
-				getLocation(item);
+				// getLocation(item);
 
 			})
 
