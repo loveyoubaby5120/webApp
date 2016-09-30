@@ -58,13 +58,23 @@ function addr(addr){
 
 		var gotoUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + obj.split(',')[0] + '&key=AIzaSyAnlGl1bMu19QXpr2BDnqx2FmHp6WIlFbI';
 
-		// gotoUrl = 'http://www.baidu.com'
-
+			gotoUrl = 'https://developers.google.com';
 
 		var options = {
 			uri: gotoUrl,
 			method: 'get',
-			timeout: 5000
+			timeout: 5000,
+			headers: {
+				'Host': "maps.googleapis.com",
+				'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+				'Accept-Encoding': 'gzip, deflate, sdch, br',
+				'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6,ja;q=0.4',
+				'Cache-Control': 'max-age=0',
+				'Upgrade-Insecure-Requests': '1',
+				'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36',
+				'X-Client-Data': 'CJe2yQEIprbJAQjBtskB'
+
+			}
 		};
 
 
