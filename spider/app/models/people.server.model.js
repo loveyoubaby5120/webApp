@@ -9,6 +9,10 @@ var PopleSchema = new mongoose.Schema({
 		type: String,
 		default: ''
 	},
+	org: {
+		type: String,
+		default: ''
+	},
 	name: {
 		type: String,
 		default: ''

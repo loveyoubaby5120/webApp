@@ -13,13 +13,36 @@ var readLine = require('lei-stream').readLine;
 
 var list = require('../public/data_mining_map.json');
 
+var mongoose = require('mongoose');
+var People = mongoose.model('People');
 
 
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
-  res.render('data_mining_map', { title: 'BaiduMap' });
+	var pagesize = parseInt(req.query.pagesize,10) || 10;
+	var pagestart = parseInt(req.query.pagestart,10) || 10;
+
+	People
+	.find()
+	.sort({'_id':-1})
+	.skip((pagestart - 1) * pagesize)
+	.limit(pagesize)
+	.exec(function(err, docs){
+		if(err){
+			return next(err);
+		}
+
+		return res.render('data_mining_map', { title: 'BaiduMap', array: docs });
+	});
+
+  	
 });
+
+function isJson(obj){
+	var isjson = typeof(obj) == "object" && Object.prototype.toString.call(obj).toLowerCase() == "[object object]" && !obj.length;    
+	return isjson;
+}
 
 
 router.get('/google', function(req, res, next) {
@@ -32,17 +55,9 @@ router.get('/address', function(req, res, next) {
 
 	var address = []
 
-	fs.writeFile('./public/obj.txt','',function(err){  
-        if(err) throw err;  
-        // console.log('write TEXT into TEXT');  
-    });
-
 
 	list.forEach(function(el, index) {
-		if(el.contact.address && index == 0 ){
-			address.push(el.contact.address)
-			addr(el.contact.address)
-		}
+		addr(el.contact.address)
 	});
 
 
@@ -52,11 +67,12 @@ router.get('/address', function(req, res, next) {
 
 });
 
+
 function addr(addr){
 
 	(function(obj){
 
-		var gotoUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + obj.split(',')[0] + '&key=AIzaSyAnlGl1bMu19QXpr2BDnqx2FmHp6WIlFbI';
+		var gotoUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + obj.org + '&key=AIzaSyAnlGl1bMu19QXpr2BDnqx2FmHp6WIlFbI';
 
 			gotoUrl = 'https://developers.google.com';
 
@@ -86,15 +102,14 @@ function addr(addr){
 
 					var location = body.results[0].geometry.location;
 
-					fs.appendFile('./public/obj.txt',JSON.stringify(location),function(err){  
-				        if(err) throw err;  
-				        // console.log('write TEXT into TEXT');  
-				    });
-						      
-				    fs.appendFile('./public/obj.txt','\n',function(err){  
-				        if(err) throw err;  
-				        console.log(obj);  
-				    });
+					if(location){
+						var people = {};
+
+						people.lng = location.lng;
+						people.lat = location.lng;
+
+						// People.update({_id: req.query.id },people,function(err){});
+					}
 				    
 				}
 
@@ -145,6 +160,7 @@ function addr(addr){
 
 	
 }
+
 
 
 function sleep(milliSeconds) { 

@@ -23,6 +23,58 @@
 
 	<script>
 
+		var addr = []
+
+		<% for(var i=0; i<array.length; i++) {
+			if(array[i].org){
+			%>
+
+			addr.push({org: '<%= array[i].org %>', _id: '<%= array[i]._id %>'})
+		<% }} %>
+
+		addr.forEach(function(item, index){
+			update(item);			
+		})
+
+		function update(item){
+
+			(function(el){
+	  			$.ajax({  
+		            type: "get",  
+		            async: true,  
+		            url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + el.org + '&key=AIzaSyAnlGl1bMu19QXpr2BDnqx2FmHp6WIlFbI',
+		            success: function (data) {  
+
+		            		if(data.status === "OK"){
+
+		            			var location = data.results[0].geometry.location;
+
+		            			if(location){
+			            			var lat = location.lat;
+			            			var lng = location.lng;
+
+			            			$.ajax({  
+							            type: "get",  
+							            async: true,  
+							            url: '/people',
+							            data: {lat: lat, lng: lng, _id: el._id},
+							            success: function (data) {  
+							            	console.log(data.message);
+
+							            }
+							        })
+
+		            			}
+
+
+		            		}
+		            }
+		        })
+	  		})(item)
+
+		}
+
+
 		// 百度地图API功能
 	  	var map = new BMap.Map("map");   //创建地图实例
 	  	var point = new BMap.Point(116.404, 39.915);   //创建一个定位位置

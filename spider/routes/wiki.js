@@ -10,7 +10,7 @@ var fs = require('fs');
 var readLine = require('lei-stream').readLine;
 
 var list = require('../public/wiki_searchs.json');
-// var errorWiki = require('../public/errorWiki.json');
+var errorWiki = require('../public/errorWiki.json');
 
 
 /* GET home page. */
@@ -47,9 +47,9 @@ router.post('/', function(req, res, next) {
 
 	// console.log(errorWiki.length)
 
-	// list = errorWiki
+	list = errorWiki
 
-	wiki(595)
+	wiki(0)
 
 
 	// for(searchs of list){
