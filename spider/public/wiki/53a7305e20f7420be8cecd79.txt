@@ -1,2 +1,1 @@
-
 <p><i><b>IEEE Transactions on Fuzzy Systems</b></i> is a bimonthly peer-reviewed scientific journal published by the IEEE Computational Intelligence Society. It covers the theory, design or applications of fuzzy systems ranging from hardware to software, including significant technical achievements, exploratory developments, or performance studies of fielded systems based on fuzzy models. The editor-in-chief is Chin-Teng Lin (National Chiao Tung University). According to the <i>Journal Citation Reports</i>, the journal has a 2013 impact factor of 6.306.</p>

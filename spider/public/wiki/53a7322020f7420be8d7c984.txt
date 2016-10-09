@@ -1,2 +1,1 @@
-
 <p><i><b>Communications of the ACM</b></i> is the monthly Journal of the Association for Computing Machinery (ACM). It was established in 1957, with Saul Rosen its first managing editor. It is sent to all ACM members. Articles are intended for readers with backgrounds in all areas of computer science and information systems. The focus is on the practical implications of advances in information technology and associated management issues; ACM also publishes a variety of more theoretical journals.</p>

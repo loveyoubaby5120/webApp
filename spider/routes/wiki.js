@@ -10,7 +10,7 @@ var fs = require('fs');
 var readLine = require('lei-stream').readLine;
 
 var list = require('../public/wiki_searchs.json');
-var errorWiki = require('../public/errorWiki.json');
+// var errorWiki = require('../public/errorWiki.json');
 
 
 /* GET home page. */
@@ -47,17 +47,17 @@ router.post('/', function(req, res, next) {
 
 	// console.log(errorWiki.length)
 
-	list = errorWiki
+	// list = errorWiki
 
-	// wiki(0)
+	wiki(593)
 
 
-	for(searchs of list){
-		(function(search){
-			wiki2(search)
+	// for(searchs of list){
+	// 	(function(search){
+	// 		wiki2(search)
 
-		})(searchs)
-	}
+	// 	})(searchs)
+	// }
 
 
 	console.log('end spider');
@@ -73,7 +73,7 @@ function wiki(num){
 
 		var gotoUrl = 'https://en.wikipedia.org/wiki/' + list[index].FULL_NAME;	
 
-		// if(!list[index].FULL_NAME)
+		if(!list[index].FULL_NAME)
 			gotoUrl = 'https://en.wikipedia.org/wiki/' + list[index].SHORT_NAME;	
 
 		var options = {
@@ -86,7 +86,7 @@ function wiki(num){
 		request(options,function(error, response,body){
 			if(!error && response.statusCode ==200){
 
-				console.log(num);
+				// console.log(num);
 
 				$ = cheerio.load(body);
 
@@ -114,22 +114,28 @@ function wiki(num){
 					      
 			    fs.appendFile('./public/wiki/' + list[index].CID + '.txt','\n',function(err){  
 			        if(err) throw err;  
-			        console.log(index + ' write TEXT into TEXT' + list[index].CID);  
+			        console.log(num + ' write TEXT into TEXT' + list[index].CID);  
 			    });
 
 			    wiki(index)
 
 			}else{
 				wiki(index)
-				console.log("'错误-链接异常-"+error+"-"+options.uri+"'");
+		  		var json = {'CID': list[index-1].CID, 'FULL_NAME': list[index-1].FULL_NAME, 'SHORT_NAME': list[index-1].SHORT_NAME }
+
+
+		  		fs.appendFile('./public/errorWiki.txt',JSON.stringify(json) + ',',function(err){  
+			        if(err) throw err;  
+			    });
+				console.log(num + "'错误-链接异常-"+error+"-"+options.uri+"'");
 			}
 
 		},function(err, result){
 			if(err){
 				wiki(index)
-				console.log("'错误-链接未发送-"+err+"-"+options.uri+"'");
+				console.log(num + "'错误-链接未发送-"+err+"-"+options.uri+"'");
 			}else{
-				console.log('获取请求成功');
+				console.log(num + '获取请求成功');
 			}
 			
 		});
@@ -184,7 +190,7 @@ function wiki2(searchs){
 
 		var gotoUrl = 'https://en.wikipedia.org/wiki/' + search.FULL_NAME;	
 
-		// if(!search.FULL_NAME)
+		if(!search.FULL_NAME)
 			gotoUrl = 'https://en.wikipedia.org/wiki/' + search.SHORT_NAME;	
 
 		var options = {
@@ -226,12 +232,12 @@ function wiki2(searchs){
 
 
 			}else{
-				console.log("'错误-链接异常-"+error+"-"+options.uri+"'");
+				console.log("错误-链接异常-"+error+"-"+options.uri+"  " + search.CID);
 			}
 
 		},function(err, result){
 			if(err){
-				console.log("'错误-链接未发送-"+err+"-"+options.uri+"'");
+				console.log("错误-链接未发送-"+err+"-"+options.uri+"  " + search.CID);
 			}else{
 				console.log('获取请求成功');
 			}

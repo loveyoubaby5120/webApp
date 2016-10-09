@@ -33,6 +33,13 @@ var form_rank_name = form_Date[form_Date_index].name;
 router.get('/', function(req, res, next) {
 
 
+	// var newrank = {};
+
+	// newrank.key = '其他';
+
+	// NewRank.update({_id: req.query.id },newrank,function(err){});
+
+
 	form_Date_index = req.query.index;
 
 	index = form_Date[form_Date_index].key_index;

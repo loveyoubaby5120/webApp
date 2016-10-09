@@ -1,2 +1,1 @@
-
 <p><i><b>The International Journal of Robotics Research</b></i> is a peer-reviewed scientific journal that covers the field of robotics on topics from sensors and sensory interpretations to kinematics in motion planning. Its editor-in-chief is John M. Hollerbach (University of Utah). The journal was established in 1982 and is published by Sage Publications.</p>

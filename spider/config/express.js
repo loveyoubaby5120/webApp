@@ -19,6 +19,7 @@ module.exports = function(){
 	// require('../app/routes/news.server.routes')(app);
 	// require('../app/routes/wechat.server.routes')(app);
 	// require('../app/routes/newrank.server.routes')(app);
+	require('../app/routes/people.server.routes')(app);
 
 	//加载路由方法二
 	var routes = require('../routes/index');
@@ -32,6 +33,7 @@ module.exports = function(){
 	var wechatData = require('../routes/wechatData');
 	var wiki = require('../routes/wiki');
 	var map = require('../routes/data_mining_map.js');
+	var people = require('../routes/people');
 
 	app.use('/', routes);
 	app.use('/users', users);
@@ -43,6 +45,7 @@ module.exports = function(){
 	app.use('/wechatData', wechatData);
 	app.use('/wiki', wiki);
 	app.use('/map', map);
+	app.use('/people', people);
 	// app.use('/', demo);
 
 	app.use(function(req, res, next){

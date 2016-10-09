@@ -1,1 +1,2 @@
+
 <p><b>ICCV</b>, the <b>International Conference on Computer Vision</b>, is a research conference sponsored by the Institute of Electrical and Electronics Engineers (IEEE) held every other year. It is considered, together with CVPR, the top level conference in computer vision, with a &apos;A*&apos; rating from the Australian Ranking of ICT Conferences obtained in 2008. The acceptance rate for ICCV has been around 25%-30%, with about 4% being accepted for oral presentations.</p>

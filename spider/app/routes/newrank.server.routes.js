@@ -1,15 +1,16 @@
-var WechatController = require('../contorllers/newrank.server.controller.js');
+var NewrankController = require('../contorllers/newrank.server.controller.js');
 
 module.exports = function(app){
 	app.route('/newrankInfo')
-		.get(WechatController.list)
-		.post(WechatController.create);
+		.get(NewrankController.list)
+		.post(NewrankController.create);
 
 	app.route('/newrankInfo/:nid')
-		.get(WechatController.get);
+		.get(NewrankController.get)
+		.post(NewrankController.update);
 
 
-	app.param('nid', WechatController.getById);
+	app.param('nid', NewrankController.getById);
 
 
 }
