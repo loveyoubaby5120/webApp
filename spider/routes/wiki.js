@@ -49,7 +49,7 @@ router.post('/', function(req, res, next) {
 
 	// list = errorWiki
 
-	wiki(593)
+	wiki(595)
 
 
 	// for(searchs of list){
