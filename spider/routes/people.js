@@ -22,12 +22,12 @@ router.get('/', function(req, res, next) {
 		people.lat = req.query.lat;
 
 
-		// People.update({_id: req.query._id },people,function(err){
-		// 	if(err)
-		// 		res.json({message: false})
-		// 	else
-		// 		res.json({message: true})
-		// });
+		People.update({_id: req.query._id },people,function(err){
+			if(err)
+				res.json({message: false})
+			else
+				res.json({message: true})
+		});
 	}
 
 

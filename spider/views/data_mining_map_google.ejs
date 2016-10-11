@@ -19,6 +19,78 @@
 	<button type="button" class="btn btn-default" onclick="showOver()">显示</button>
 	<button type="button" class="btn btn-danger" onclick="hideOver()">隐藏</button>
 
+
+	<script>
+
+
+		function GetQueryString(name)
+		{
+		     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		     var r = window.location.search.substr(1).match(reg);
+		     if(r!=null)return  unescape(r[2]); return null;
+		}
+		
+		getAddr(GetQueryString('startNum'),GetQueryString('size'));
+
+		function getAddr(startNum,size){
+
+			$.ajax({  
+	            type: "get",  
+	            async: true,  
+	            url: 'https://api.aminer.org/api/search/person?as_nationality=Taiwan&offset='+startNum+'&query=Data+Mining&size='+size+'&sort=relevance',
+	            success: function (data) {  
+
+	            	data.result.forEach(function(item, index){
+	            		update(item);
+	            	});
+
+
+	            }
+	        })
+		}
+
+
+		function update(item){
+
+			(function(el){
+	  			$.ajax({  
+		            type: "get",  
+		            async: true,  
+		            url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + el.aff.desc + '&key=AIzaSyAnlGl1bMu19QXpr2BDnqx2FmHp6WIlFbI',
+		            success: function (data) {  
+
+		            		if(data.status === "OK"){
+
+		            			var location = data.results[0].geometry.location;
+
+		            			if(location){
+			            			var lat = location.lat;
+			            			var lng = location.lng;
+
+			            			$.ajax({  
+							            type: "get",  
+							            async: true,  
+							            url: '/people',
+							            data: {lat: lat, lng: lng, _id: el.id},
+							            success: function (data) {  
+							            	console.log(data.message);
+
+							            }
+							        })
+
+		            			}
+
+
+		            		}
+		            }
+		        })
+	  		})(item)
+
+		}
+	</script>
+
+<!-- 
+
     <script>
     	// [START region_initialization]
 		// This example creates a custom overlay called USGSOverlay, containing
@@ -139,7 +211,7 @@
 
 
     </script>
-
+-->
 	<!-- <script>
 		function initMap() {
 			// Create a map object and specify the DOM element for display.
