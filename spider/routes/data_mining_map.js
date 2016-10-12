@@ -23,8 +23,9 @@ router.get('/', function(req, res, next) {
 	var pagesize = parseInt(req.query.pagesize,10) || 10;
 	var pagestart = parseInt(req.query.pagestart,10) || 10;
 
+
 	People
-	.find()
+	.find({"org": {"$not": {"$in":[null,""]}}})
 	.sort({'_id':-1})
 	.skip((pagestart - 1) * pagesize)
 	.limit(pagesize)
@@ -32,6 +33,7 @@ router.get('/', function(req, res, next) {
 		if(err){
 			return next(err);
 		}
+
 
 		return res.render('data_mining_map', { title: 'BaiduMap', array: docs });
 	});
