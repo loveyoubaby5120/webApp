@@ -1,0 +1,2 @@
+
+<p><b>Machine translation</b>, sometimes referred to by the abbreviation <b>MT</b> (not to be confused with <b>computer-aided translation</b>, <b>machine-aided human translation</b> (<b>MAHT</b>) or <b>interactive translation</b>) is a sub-field of computational linguistics that investigates the use of software to translate text or speech from one language to another.</p>

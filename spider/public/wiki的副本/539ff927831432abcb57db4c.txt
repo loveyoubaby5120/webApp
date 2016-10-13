@@ -1,0 +1,2 @@
+
+<p><b>Applied ontology</b> involves the practical application of ontological resources to specific domains, such as biomedicine or geography. Much work in applied ontology is carried out within the framework of the semantic web. See foundation ontology and ontology (computer science).</p>

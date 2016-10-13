@@ -1,0 +1,1 @@
+<p><i><b>ACM Transactions on Mathematical Software</b></i> (TOMS) is a quarterly scientific journal that aims to disseminate the latest findings of note in the field of numeric, symbolic, algebraic, and geometric computing applications. It has been published since March 1975 by the Association for Computing Machinery (ACM).</p>

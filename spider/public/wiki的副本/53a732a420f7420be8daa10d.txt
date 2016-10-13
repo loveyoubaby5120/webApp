@@ -1,0 +1,1 @@
+<p><b>Empirical Methods in Natural Language Processing</b> or <b>EMNLP</b> is a leading conference in the area of Natural Language Processing. EMNLP is organized by the ACM special interest group on linguistic data (SIGDAT).</p>

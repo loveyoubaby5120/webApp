@@ -1,0 +1,2 @@
+
+<p>The <b>European Joint Conferences on Theory and Practice of Software</b> (ETAPS) is a confederation of six computer science conferences taking place annually at one conference site, usually end of March or early April. Three of the six conferences (FoSSaCS, FASE, TACAS) are top ranked in software engineering and two (ESOP, CC) are top ranked conferences on programming languages.</p>

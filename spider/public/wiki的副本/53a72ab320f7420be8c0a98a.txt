@@ -1,0 +1,1 @@
+<p>The <b>IEEE Congress on Evolutionary Computation</b> (CEC) is one of the largest and most important conferences within Evolutionary computation (EC), the other conferences of similar importance being Genetic and Evolutionary Computation Conference (GECCO), Parallel Problem Solving from Nature (PPSN) and European Conference on Genetic Programming (EuroGP).</p>

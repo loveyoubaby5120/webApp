@@ -1,0 +1,1 @@
+<p>The <i><b>Journal of Machine Learning Research</b></i> (usually abbreviated <i><b>JMLR</b></i>), is a scientific journal focusing on machine learning, a subfield of artificial intelligence. It was founded in 2000.</p>

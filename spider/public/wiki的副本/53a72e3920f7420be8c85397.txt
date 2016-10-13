@@ -1,0 +1,2 @@
+
+<p><b>Asiacrypt</b> (also <b>ASIACRYPT</b>) is an important international conference for cryptography research. The full name of the conference is currently <b>International Conference on the Theory and Application of Cryptology and Information Security</b>, though this has varied over time. Asiacrypt is a conference sponsored by the International Association for Cryptologic Research (IACR) since 2000, and is one of its three flagship conferences. Asiacrypt is now held annually in November or December at various locations throughout Asia and Australia.</p>
