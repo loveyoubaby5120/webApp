@@ -25,7 +25,8 @@ router.get('/', function(req, res, next) {
 
 
 	People
-	.find({"org": {"$not": {"$in":[null,""]}}})
+	// .find({"org": {"$not": {"$in":[null,""]}}})
+	.find({"org": {"$not": {"$in":[null,""]}},"lat":{"$exists":false}})
 	.sort({'_id':-1})
 	.skip((pagestart - 1) * pagesize)
 	.limit(pagesize)

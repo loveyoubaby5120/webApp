@@ -108,9 +108,9 @@ router.post('/', function(req, res, next) {
 
 	// console.log(errorWiki.length)
 
-	// list = errorWiki
+	list = errorWiki
 
-	// wiki(0)
+	wiki(0)
 
 
 	// for(searchs of list){
@@ -132,20 +132,26 @@ function wiki(num){
 
 	(function(index){
 
-		var gotoUrl = 'https://en.wikipedia.org/wiki/' + list[index].FULL_NAME;	
+		// var gotoUrl = 'https://en.wikipedia.org/wiki/' + list[index].FULL_NAME;	
+
+		// if(!list[index].FULL_NAME)
+		// 	gotoUrl = 'https://en.wikipedia.org/wiki/' + list[index].SHORT_NAME;	
+
+		var gotoUrl = 'https://en.wikipedia.org/wiki/' + list[index].SHORT_NAME;	
 
 		if(!list[index].FULL_NAME)
-			gotoUrl = 'https://en.wikipedia.org/wiki/' + list[index].SHORT_NAME;	
+			gotoUrl = 'https://en.wikipedia.org/wiki/' + list[index].FULL_NAME;	
 
 		var options = {
-			uri: gotoUrl,
-			method: 'get'
+			uri: gotoUrl
 		};
 
 		index++ 
 
 		request(options,function(error, response,body){
+			// console.log(body)
 			if(!error && response.statusCode ==200){
+			// if(!error && body){
 
 				// console.log(num);
 
@@ -188,7 +194,7 @@ function wiki(num){
 		  		fs.appendFile('./public/errorWiki.txt',JSON.stringify(json) + ',',function(err){  
 			        if(err) throw err;  
 			    });
-				console.log(num + "'错误-链接异常-"+error+"-"+options.uri+"'");
+				console.log(num + "'错误-链接异常-"+response.statusCode+"-"+error+"- "+list[index-1].CID+" -"+options.uri+"'");
 			}
 
 		},function(err, result){
