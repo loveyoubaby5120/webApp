@@ -24,25 +24,25 @@ module.exports = function(){
 	//加载路由方法二
 	var routes = require('../routes/index');
 	var users = require('../routes/users');
-	var excel = require('../routes/excel');
+	// var excel = require('../routes/excel');
 	var weixin = require('../routes/weixin');
 	// var bd = require('../routes/bd');
 	// var newrank = require('../routes/newrank');
 	var demo = require('../routes/demo');
 	var yyzc = require('../routes/yyzc');
-	var wechatData = require('../routes/wechatData');
+	// var wechatData = require('../routes/wechatData');
 	var wiki = require('../routes/wiki');
 	var map = require('../routes/data_mining_map.js');
 	var people = require('../routes/people');
 
 	app.use('/', routes);
 	app.use('/users', users);
-	app.use('/excel', excel);
+	// app.use('/excel', excel);
 	app.use('/weixin', weixin);
 	// app.use('/bd', bd);
 	// app.use('/newrank', newrank);
 	app.use('/yyzc', yyzc);
-	app.use('/wechatData', wechatData);
+	// app.use('/wechatData', wechatData);
 	app.use('/wiki', wiki);
 	app.use('/map', map);
 	app.use('/people', people);

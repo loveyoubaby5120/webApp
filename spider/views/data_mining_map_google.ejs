@@ -30,7 +30,7 @@
 		     if(r!=null)return  unescape(r[2]); return null;
 		}
 		
-		// getAddr(GetQueryString('startNum'),GetQueryString('size'));
+		getAddr(GetQueryString('startNum'),GetQueryString('size'));
 
 		function getAddr(startNum,size){
 
@@ -88,59 +88,7 @@
 
 		}
 
-		send();
 
-		function send(){
-
-			var v_body = { 'lat': 54.0101034, 'lng': -2.7850105 }
-
-			$.ajax({  
-		            type: "PUT",  
-		            async: true,  
-		            url: 'https://api.aminer.org/api/person/geo/548effd5dabfaef989f09725',
-		            data: JSON.stringify(v_body),
-		    //         beforeSend: function (xhr) {
-				  //       xhr.setRequestHeader('Cookie', 'Hm_lvt_a078371cf6f8aa1aa9a206dbc1a43015=1474876036,1474876079,1474876161,1476756628; Hm_lpvt_a078371cf6f8aa1aa9a206dbc1a43015=1476758013; Hm_lvt_dc703135c31ddfba7bcda2d15caab04e=1474876036,1474876079,1474876161,1476756628; Hm_lpvt_dc703135c31ddfba7bcda2d15caab04e=1476758013; _ga=GA1.2.1966471376.1473664822; _gat=1; advancedSearch=false')
-
-						// xhr.setRequestHeader('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8')
-						// xhr.setRequestHeader('Accept-Encoding', 'gzip, deflate, sdch, br')
-						// xhr.setRequestHeader('Accept-Language', 'zh-CN,zh;q=0.8,en;q=0.6,ja;q=0.4')
-						// xhr.setRequestHeader('Cache-Control', 'max-age=0')
-						// xhr.setRequestHeader('Connection', 'keep-alive')
-						// xhr.setRequestHeader('Origin', 'https://cn.aminer.org')
-						// xhr.setRequestHeader('Host', 'api.aminer.org')
-						// xhr.setRequestHeader('Upgrade-Insecure-Requests', 1)
-						// xhr.setRequestHeader('User-Agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36')
-				        
-				  //   },
-
-				    headers: {
-				        'Cookie': 'Hm_lvt_a078371cf6f8aa1aa9a206dbc1a43015=1474876036,1474876079,1474876161,1476756628; Hm_lpvt_a078371cf6f8aa1aa9a206dbc1a43015=1476758013; Hm_lvt_dc703135c31ddfba7bcda2d15caab04e=1474876036,1474876079,1474876161,1476756628; Hm_lpvt_dc703135c31ddfba7bcda2d15caab04e=1476758013; _ga=GA1.2.1966471376.1473664822; _gat=1; advancedSearch=false',
-
-						'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-						'Accept-Encoding': 'gzip, deflate, sdch, br',
-						'Accept-Language': 'zh-CN,zh;q=0.8,en;q=0.6,ja;q=0.4',
-						'Cache-Control': 'max-age=0',
-						'Connection': 'keep-alive',
-						'Host': 'api.aminer.org',
-						'Origin': 'https://cn.aminer.org',
-						'Upgrade-Insecure-Requests': 1,
-						'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36',
-				    },
-				    xhrFields: {
-				        withCredentials: true
-				    },
-		            success: function (data) {  
-
-		            	console.log(data)
-
-
-		            },
-		            error: function(data){
-		            	console.log(data);
-		            }
-		        })
-		}
 			
 
 	</script>
