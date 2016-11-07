@@ -6,6 +6,7 @@ export class User extends React.Component {
   render() {
     let { userID } = this.props.params
     let { query } = this.props.location
+    console.log(this.props.location.state.onAbc());
     let age = query && query.showAge ? '33' : ''
 
     return (
@@ -18,12 +19,17 @@ export class User extends React.Component {
 }
 
 export class App extends React.Component {
+
+  abc() {
+    console.log(1)
+  }
+
   render() {
     return (
       <div>
         <ul>
           <li><Link to="/other/user/bob" activeClassName="active">Bob</Link></li>
-          <li><Link to={{ pathname: '/other/user/bob', query: { showAge: true } }} activeClassName="active">Bob With Query Params</Link></li>
+          <li><Link to={{ pathname: '/other/user/bob', query: { showAge: true }, state: { onAbc: this.abc.bind(this) } }}  activeClassName="active">Bob With Query Params</Link></li>
           <li><Link to="/other/user/sally" activeClassName="active">Sally</Link></li>
         </ul>
         {this.props.children}

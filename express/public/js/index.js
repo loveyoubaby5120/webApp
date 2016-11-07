@@ -59,6 +59,9 @@ class HelloWord extends React.Component{
 
 	tick(){
 		this.setState({count: this.state.count + 1});
+
+		console.log(this.props.onAbc)
+		this.props.onAbc();
 	}
 
 	//加载组件
@@ -172,6 +175,10 @@ class HelloUniverse extends React.Component{
 		this.setState({name: event.target.value});
 	}
 
+	abc(){
+		console.log(1)
+	}
+
 	//加载组件
 	render(){
 		console.log('HelloUniverse to render');
@@ -183,7 +190,7 @@ class HelloUniverse extends React.Component{
 		return <div>
 
 
-			        <HelloWord name={this.state.name} />
+			        <HelloWord name={this.state.name} onAbc = {this.abc.bind(this)} />
 
 			        <input type="text" onChange = {this.handleChange.bind(this)}/>
 				</div>;
