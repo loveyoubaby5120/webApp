@@ -5,14 +5,14 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	// var Hello = React.randerToString(Hell({}));
-  res.render('index', { title: 'index' });
+    // var Hello = React.randerToString(Hell({}));
+    res.render('index', { title: 'index' });
 });
 
 // /other(/*)?
-router.get('/other', function(req, res, next) {
-	// var Hello = React.randerToString(Hell({}));
-  res.render('other', { title: 'other' });
+router.get('/other(/*)?', function(req, res, next) {
+    // var Hello = React.randerToString(Hell({}));
+    res.render('other', { title: 'other' });
 });
 
 module.exports = router;
