@@ -7,6 +7,7 @@
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 	<link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.min.css">
 	<script src="/lib/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8" ></script>
+	<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 	<script src="/lib/bootstrap/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="http://api.map.baidu.com/api?v=2.0&ak=tCTITpyi8ue3n7KHoGoMmkVt" type="text/javascript"></script>
 	<style type="text/css">
@@ -53,14 +54,18 @@
 			            			var lat = location.lat;
 			            			var lng = location.lng;
 
+			            			var d = {lat: lat, lng: lng, id: el._id};
+
+			            			save(d);
+
 			            			$.ajax({  
 							            type: "get",  
 							            async: true,  
 							            url: '/people',
 							            data: {lat: lat, lng: lng, _id: el._id},
 							            success: function (data) {  
-							            	console.log(data.message);
-
+							            	// console.log(data.message);
+							            	
 							            }
 							        })
 
@@ -74,6 +79,37 @@
 
 		}
 
+
+		function save(item){
+
+
+			(function(el){
+	  			var API_BASE = "https://api.aminer.org/api/";
+			
+				var ajaxCallUrl = API_BASE + 'person/geo/'+ el.id;
+
+
+				$.ajax({
+					cache: true,
+					type: "PUT",
+					url:ajaxCallUrl,
+					contentType:'application/json; charset=UTF-8',
+					headers: {
+						Authorization: $.cookie('Authorization')
+					},
+					data: JSON.stringify(el),
+					dataType: 'json',
+					async: false,
+				    error: function(request) {
+				        console.log("Connection error");
+				    },
+				    success: function(data) {
+					    console.log('OK')
+				    }
+				});
+	  		})(item)
+
+		}
 
 		// 百度地图API功能
 	  	var map = new BMap.Map("map");   //创建地图实例

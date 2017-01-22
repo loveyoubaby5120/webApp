@@ -1,1 +1,2 @@
-<p>The <i><b>Journal of Computational Physics</b></i> is a bimonthly scientific journal covering computational physics that was established in 1966 and is published by Elsevier. As of 2015, its editor-in-chief is Remi Abgrall (University of Zurich). According to the <i>Journal Citation Reports</i>, the journal has a 2014 impact factor of 2.434.</p>
+
+<p><i><b>Computers in Human Behavior</b></i> is a bimonthly peer-reviewed academic journal covering human-computer interaction and cyberpsychology. It was established in 1985 and is published by Elsevier. The editor-in-chief is Robert Tennyson (University of Minnesota). According to the <i>Journal Citation Reports</i>, the journal has a 2014 impact factor of 2.694.</p>

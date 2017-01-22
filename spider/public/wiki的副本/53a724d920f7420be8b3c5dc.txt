@@ -1,0 +1,1 @@
+<p>In computing, <b>aspect-oriented software development</b> (AOSD) is a software development technology that seeks new modularizations of software systems in order to isolate secondary or supporting functions from the main program&apos;s business logic. AOSD allows multiple concerns to be expressed separately and automatically unified into working systems.</p>

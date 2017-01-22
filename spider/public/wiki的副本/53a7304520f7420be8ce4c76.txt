@@ -1,0 +1,1 @@
+<p><b>Information retrieval</b> (<b>IR</b>) is the activity of obtaining information resources relevant to an information need from a collection of information resources. Searches can be based on full-text or other content-based indexing.</p>

@@ -1,0 +1,1 @@
+<p>The <b>Mining Software Repositories</b> (MSR) field analyzes the rich data available in software repositories, such as version control repositories, mailing list archives, bug tracking systems, issue tracking systems, etc. to uncover interesting and actionable information about software systems, projects and software engineering.</p>

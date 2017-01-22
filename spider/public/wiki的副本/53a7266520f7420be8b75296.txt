@@ -1,0 +1,2 @@
+
+<p>A <b>pact</b> is a formal agreement.</p>

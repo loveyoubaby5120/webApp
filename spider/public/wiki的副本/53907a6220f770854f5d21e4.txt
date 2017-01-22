@@ -1,0 +1,1 @@
+<p>The expression <b>computational intelligence</b> usually refers to the ability of a computer to learn a specific task from data or experimental observation. Even though it&apos;s commonly considered a synonym of soft computing, there is still no commonly accepted definition of computational intelligence.</p>

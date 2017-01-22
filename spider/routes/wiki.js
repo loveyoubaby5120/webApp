@@ -23,7 +23,68 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
 	console.log('start spider');
 
-	var index = 0,num = 0,array = [];
+
+
+	// for(searchs of errorWiki){
+	// 	(function(search){
+
+
+	// 		fs.unlink('./public/wiki/' + search.CID+ '.txt', function(err){
+	// 			if(err){
+	// 				// throw err;
+	// 			}
+	// 			console.log('文件:'+'./public/wiki/' + search.CID+ '.txt'+'删除成功！');
+	// 		})
+	// 	})(searchs)
+
+	// }
+
+
+	// var count = 0;
+
+	// for(num in list){
+	// 	(function(index){
+	// 		fs.exists('./public/wiki/' + list[index].CID+ '.txt', function(exists) {
+
+
+	// 		  	if (exists) {
+	// 	  			// count ++
+	// 		  		// console.log('count: ',count);
+	// 		  		// console.log('index: ',index);
+	// 		  		if(index != 0)
+	// 		  			index--
+	// 		  		fs.readFile('./public/wiki/' + list[index].CID+ '.txt', function(err,data){ 
+	// 				 	if(err){ 
+	// 				  		console.log(err); 
+	// 				 	}else{ 
+	// 				  		// console.log(data); 
+
+	// 				  		fs.writeFile('./public/wiki2/' + list[index].CID + '.txt','',function(err){  
+	// 					        if(err) throw err;  
+	// 					        // console.log('write TEXT into TEXT');  
+	// 					    });
+
+	// 						fs.appendFile('./public/wiki2/' + list[index].CID + '.txt',data,function(err){  
+	// 					        if(err) throw err;  
+	// 					        // console.log('write TEXT into TEXT');  
+	// 					    });
+								      
+	// 					    fs.appendFile('./public/wiki2/' + list[index].CID + '.txt','\n',function(err){  
+	// 					        if(err) throw err;  
+	// 					        console.log(index + ' write TEXT into TEXT ' + list[index].CID);  
+	// 					    });
+	// 				 	} 
+	// 				})
+
+	// 		  	}
+
+	// 	  		// console.log('index: ',index);
+	// 		});
+	// 	})(num)
+		
+	// }
+
+	// var index = 0,num = 0,array = [];
 	
 
 	// for(searchs of list){
@@ -71,20 +132,26 @@ function wiki(num){
 
 	(function(index){
 
-		var gotoUrl = 'https://en.wikipedia.org/wiki/' + list[index].FULL_NAME;	
+		// var gotoUrl = 'https://en.wikipedia.org/wiki/' + list[index].FULL_NAME;	
+
+		// if(!list[index].FULL_NAME)
+		// 	gotoUrl = 'https://en.wikipedia.org/wiki/' + list[index].SHORT_NAME;	
+
+		var gotoUrl = 'https://en.wikipedia.org/wiki/' + list[index].SHORT_NAME;	
 
 		if(!list[index].FULL_NAME)
-			gotoUrl = 'https://en.wikipedia.org/wiki/' + list[index].SHORT_NAME;	
+			gotoUrl = 'https://en.wikipedia.org/wiki/' + list[index].FULL_NAME;	
 
 		var options = {
-			uri: gotoUrl,
-			method: 'get'
+			uri: gotoUrl
 		};
 
 		index++ 
 
 		request(options,function(error, response,body){
+			// console.log(body)
 			if(!error && response.statusCode ==200){
+			// if(!error && body){
 
 				// console.log(num);
 
@@ -102,19 +169,19 @@ function wiki(num){
 				})
 
 
-				fs.writeFile('./public/wiki/' + list[index].CID + '.txt','',function(err){  
+				fs.writeFile('./public/wiki/' + list[index-1].CID + '.txt','',function(err){  
 			        if(err) throw err;  
 			        // console.log('write TEXT into TEXT');  
 			    });
 
-				fs.appendFile('./public/wiki/' + list[index].CID + '.txt',div,function(err){  
+				fs.appendFile('./public/wiki/' + list[index-1].CID + '.txt',div,function(err){  
 			        if(err) throw err;  
 			        // console.log('write TEXT into TEXT');  
 			    });
 					      
-			    fs.appendFile('./public/wiki/' + list[index].CID + '.txt','\n',function(err){  
+			    fs.appendFile('./public/wiki/' + list[index-1].CID + '.txt','\n',function(err){  
 			        if(err) throw err;  
-			        console.log(num + ' write TEXT into TEXT' + list[index].CID);  
+			        console.log(num + ' write TEXT into TEXT ' + list[index].CID);  
 			    });
 
 			    wiki(index)
@@ -127,7 +194,7 @@ function wiki(num){
 		  		fs.appendFile('./public/errorWiki.txt',JSON.stringify(json) + ',',function(err){  
 			        if(err) throw err;  
 			    });
-				console.log(num + "'错误-链接异常-"+error+"-"+options.uri+"'");
+				console.log(num + "'错误-链接异常-"+response.statusCode+"-"+error+"- "+list[index-1].CID+" -"+options.uri+"'");
 			}
 
 		},function(err, result){

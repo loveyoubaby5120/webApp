@@ -23,8 +23,11 @@ router.get('/', function(req, res, next) {
 	var pagesize = parseInt(req.query.pagesize,10) || 10;
 	var pagestart = parseInt(req.query.pagestart,10) || 10;
 
+
 	People
-	.find()
+	// .find({"org": {"$not": {"$in":[null,""]}}})
+	.find({"org": {"$not": {"$in":[null,""]}},"lat":{"$exists":false}})
+	// .find({"org": {"$not": {"$in":[null,""]}}})
 	.sort({'_id':-1})
 	.skip((pagestart - 1) * pagesize)
 	.limit(pagesize)
@@ -32,6 +35,7 @@ router.get('/', function(req, res, next) {
 		if(err){
 			return next(err);
 		}
+		console.log(pagestart,' ---map--- ',docs.length)
 
 		return res.render('data_mining_map', { title: 'BaiduMap', array: docs });
 	});
@@ -50,6 +54,33 @@ router.get('/google', function(req, res, next) {
 	res.render('data_mining_map_google', { title: 'googleMap' });
 
 });
+
+router.get('/login', function(req, res, next) {
+	res.render('login', { title: 'login' });
+})
+
+router.get('/save', function(req, res, next) {
+	var pagesize = parseInt(req.query.pagesize,10) || 10;
+	var pagestart = parseInt(req.query.pagestart,10) || 10;
+
+	
+	People
+	// .find({"org": {"$not": {"$in":[null,""]}},"lat":{"$exists":true}})
+	.find({"lat": {"$exists":true}},{'lat': true,'lng': true})
+	.sort({'_id':-1})
+	.skip((pagestart - 1) * pagesize)
+	.limit(pagesize)
+	.exec(function(err, docs){
+		console.log(pagestart,' ---save--- ',docs.length)
+		if(err){
+			return next(err);
+		}
+
+		return res.render('save', { title: 'BaiduMap', array: docs });
+		// return res.render('save', { title: 'BaiduMap', array: [] });
+	});
+
+})
 
 router.get('/address', function(req, res, next) {
 

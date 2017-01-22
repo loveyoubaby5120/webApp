@@ -1,0 +1,1 @@
+<p>The <b>International Symposium on Memory Management</b> (<b>ISMM</b>) is an ACM SIGPLAN symposium on memory management. Before becoming a conference it was known as the <b>International Workshop on Memory Management</b> (<b>IWMM</b>).</p>

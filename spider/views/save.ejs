@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title><%= title %></title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+	<script src="/lib/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8" ></script>
+	<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	<style type="text/css">
+		body, html {width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+		#allmap{width:100%;height:500px;}
+		p{margin-left:5px; font-size:14px;}
+		.popover{z-index: 99999999999999999}
+	</style>
+</head>
+<body>
+
+	<script>
+
+		var addr = []
+
+		<% for(var i=0; i<array.length; i++) {%>
+			addr.push({ id: '<%= array[i]._id %>', lat: '<%= array[i].lat %>', lng: '<%= array[i].lng %>'})
+		<% } %>
+		console.log(addr.length)
+		addr.forEach(function(item, index){
+			update(item);			
+		})
+
+		function update(item){
+
+
+			(function(el){
+	  			var API_BASE = "https://api.aminer.org/api/";
+			
+				var ajaxCallUrl = API_BASE + 'person/geo/'+ el.id;
+
+
+				$.ajax({
+					cache: true,
+					type: "PUT",
+					url:ajaxCallUrl,
+					contentType:'application/json; charset=UTF-8',
+					headers: {
+						Authorization: $.cookie('Authorization')
+					},
+					data: JSON.stringify(el),
+					dataType: 'json',
+					async: false,
+				    error: function(request) {
+				        console.log("Connection error");
+				    },
+				    success: function(data) {
+					    console.log('OK')
+				    }
+				});
+	  		})(item)
+
+		}
+
+
+
+	</script>
+
+</body>
+</html>

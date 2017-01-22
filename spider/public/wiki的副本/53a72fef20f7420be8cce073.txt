@@ -1,0 +1,1 @@
+<p><b>Requirements engineering</b> (RE) refers to the process of defining, documenting and maintaining requirements to the sub-fields of systems engineering and software engineering concerned with this process.</p>
