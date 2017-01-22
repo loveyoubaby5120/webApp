@@ -1,2 +1,0 @@
-
-<p><i><b>IEEE Software</b></i> is a peer-reviewed scientific journal published by the IEEE Computer Society covering software processes and practices, software project management, development tools and infrastructure, requirements engineering, software design and architecture, empirical evaluations of software technologies and techniques, human and social aspects of software development, programming languages and paradigms, development of distributed and enterprise software, software testing, and software quality.</p>

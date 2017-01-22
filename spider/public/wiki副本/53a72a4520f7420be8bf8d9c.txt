@@ -1,2 +1,0 @@
-
-<p><b>ICALP</b>, the <b>International Colloquium on Automata, Languages and Programming</b> is an academic conference organized annually by the European Association for Theoretical Computer Science and held in different locations around Europe. Like most theoretical computer science conferences its contributions are strongly peer-reviewed. The articles have appeared in proceedings published by Springer in their Lecture Notes in Computer Science, but beginning in 2016 they will instead be published by the Leibniz International Proceedings in Informatics.</p>

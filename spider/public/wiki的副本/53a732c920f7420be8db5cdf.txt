@@ -1,2 +1,0 @@
-
-<p>The <i><b>International Journal of High Performance Computing Applications</b></i> is a quarterly peer-reviewed scientific journal covering the field of computer science. Its editors-in-chief are Jack J. Dongarra (University of Tennessee) and Bronis R. De Supinski (Lawrence Livermore National Laboratory). It was established in 1987 and is published by Sage Publications.</p>

@@ -1,1 +1,0 @@
-<p><b>Description logics</b> (DL) is a family of formal knowledge representation languages. Many DLs are more expressive than propositional logic but less expressive than first-order predicate logic. In contrast to the latter, the core reasoning problems for DLs are (usually) decidable, and efficient decision procedures have been designed and implemented for these problems.</p>

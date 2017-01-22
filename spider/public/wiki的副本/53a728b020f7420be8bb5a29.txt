@@ -1,1 +1,0 @@
-<p>The <b>USENIX Annual Technical Conference</b> is a conference of computing professions sponsored by the USENIX association. The conference includes computing tutorials, and a single track technical session for presenting refereed research papers, SIG meetings, and BoFs.</p>

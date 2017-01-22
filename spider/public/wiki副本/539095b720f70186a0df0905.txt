@@ -1,1 +1,0 @@
-<p><b>Microsoft Cluster Server</b> (MSCS) is computer program that allows server computers to work together as a computer cluster, to provide failover and increased availability of applications, or parallel calculating power in case of high-performance computing (HPC) clusters (as in supercomputing).</p>

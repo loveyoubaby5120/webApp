@@ -1,2 +1,0 @@
-
-<p><i><b>The Computer Journal</b></i> is a peer-reviewed scientific journal covering computer science and information systems. It is published by Oxford University Press on behalf of the British Computer Society. It was established in 1958. Several breakthroughs in computer science were first reported in the journal, including the Quicksort algorithm proposed by C. A. R. Hoare. The authors of the best paper in each volume receive the Wilkes Award and Medal granted by the British Computer Society.</p>

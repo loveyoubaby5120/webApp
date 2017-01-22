@@ -1,2 +1,0 @@
-
-<p>The <i><b>ACM Transactions on Database Systems</b></i> (<i>TODS</i>) is one of the journals produced by the Association for Computing Machinery. <i>TODS</i> publishes one volume yearly. Each volume has four issues, which appear in March, June, September and December.</p>

@@ -1,2 +1,0 @@
-
-<p><i><b>Logical Methods in Computer Science</b></i> (<b>LMCS</b>) is a peer-reviewed journal in theoretical computer science and applied logic conceived in 2004. The first volume appeared in 2005.</p>

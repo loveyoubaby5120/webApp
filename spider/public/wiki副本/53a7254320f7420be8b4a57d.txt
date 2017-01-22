@@ -1,1 +1,0 @@
-<p>The <b>Design Automation Conference</b>, or <b>DAC</b>, is an annual event, a combination of a technical conference and a trade show, both specializing in electronic design automation (EDA).</p>

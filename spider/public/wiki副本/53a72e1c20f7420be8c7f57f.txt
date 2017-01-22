@@ -1,2 +1,0 @@
-
-<p>The <b>International Conference on Web Services</b> or <b>ICWS</b> is an international forum for researchers and industry practitioners focused on Web services. ICWS is sponsored by the IEEE Computer Society Technical Committee on Services Computing.</p>

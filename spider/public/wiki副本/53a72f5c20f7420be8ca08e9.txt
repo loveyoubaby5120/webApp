@@ -1,1 +1,0 @@
-<p>The <b>Theory of Cryptography Conference</b>, often abbreviated <b>TCC</b>, is an annual conference for theoretical cryptography research. It was first held in 2004 at MIT, and was also held at MIT in 2005, both times in February. TCC became an IACR-sponsored workshop in 2006.</p>

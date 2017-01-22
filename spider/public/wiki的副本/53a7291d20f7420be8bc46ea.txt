@@ -1,1 +1,0 @@
-<p><b>TRUST</b> (<b>Train Running Under System TOPS</b>) is a Network Rail computer system used for monitoring the progress of trains and tracking delays on Great Britain&apos;s rail network.</p>

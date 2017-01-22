@@ -1,1 +1,0 @@
-<p><i><b>ACM Computing Surveys</b></i> (CSUR) is a peer reviewed scientific journal published by the Association for Computing Machinery. The journal publishes survey articles and tutorials related to computer science and computing. It was founded in 1969; the first editor-in-chief was William S. Dorn.</p>

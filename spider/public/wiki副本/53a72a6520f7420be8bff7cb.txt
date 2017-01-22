@@ -1,1 +1,0 @@
-<p><b>RAID</b> (originally <b>redundant array of inexpensive disks</b>, now commonly <b>redundant array of independent disks</b>) is a data storage virtualization technology that combines multiple physical disk drive components into a single logical unit for the purposes of data redundancy, performance improvement, or both.</p>

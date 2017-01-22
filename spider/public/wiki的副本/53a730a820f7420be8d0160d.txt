@@ -1,1 +1,0 @@
-<p>The <i><b>Journal of Logical and Algebraic Methods in Programming</b></i> (ISSN&#xA0;2352-2208) is a peer-reviewed scientific journal established in 1984. It was originally titled <i>The Journal of Logic Programming</i>; in 2001 it was renamed <i>The Journal of Logic and Algebraic Programming</i> (ISSN&#xA0;1567-8326), and in 2014 it obtained its current title.</p>

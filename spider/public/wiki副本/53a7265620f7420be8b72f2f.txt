@@ -1,2 +1,0 @@
-
-<p><b>RoboCup</b> is an annual international robotics competition proposed and founded in 1997. The aim is to promote robotics and AI research, by offering a publicly appealing, but formidable challenge. The name <i>RoboCup</i> is a contraction of the competition&apos;s full name, &quot;Robot Soccer World Cup&quot;, but there are many other stages of the competition such as &quot;RoboCupRescue&quot;, &quot;RoboCup@Home&quot; and &quot;RoboCupJunior&quot;. In 2016 the world&apos;s competition was held in Leipzig, Germany. RoboCup 2017 will be held in Nagoya, Japan.</p>

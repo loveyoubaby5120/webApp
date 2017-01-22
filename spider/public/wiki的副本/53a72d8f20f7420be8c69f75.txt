@@ -1,2 +1,0 @@
-
-<p>The International Conference on <b>Distributed Event-Based Systems</b> is a conference in computer science.</p>

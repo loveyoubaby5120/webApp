@@ -1,1 +1,0 @@
-<p>The <b>European Conference on Object-Oriented Programming</b>, commonly known as <b>ECOOP</b>, is an annual conference covering topics on object-oriented programming systems, languages and applications. Like other conferences, ECOOP offers various tracks and many simultaneous sessions, and thus has different meaning to different people.</p>

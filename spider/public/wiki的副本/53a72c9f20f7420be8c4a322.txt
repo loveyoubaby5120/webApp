@@ -1,2 +1,0 @@
-
-<p>The <b>International Conference on Software Engineering</b> (<b>ICSE</b>), is one of the largest annual software engineering conferences. It has an &apos;A*&apos; rating in the Rankings of the Computing Research and Education Association of Australasia (CORE) and an &apos;A1&apos; rating from the Brazilian ministry of education. Furthermore, it is the software engineering conference with the highest Microsoft Academic field rating. The first ICSE conference was in 1975 in Washington DC.</p>

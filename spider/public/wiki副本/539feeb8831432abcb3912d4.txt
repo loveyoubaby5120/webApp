@@ -1,2 +1,0 @@
-
-<p>The <b>Semantic Web</b> is an extension of the Web through standards by the World Wide Web Consortium (W3C). The standards promote common data formats and exchange protocols on the Web, most fundamentally the Resource Description Framework (RDF).</p>

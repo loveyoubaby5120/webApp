@@ -1,2 +1,0 @@
-
-<p>The <b>ER - International Conference on Conceptual Modeling</b> is an annual research conference computer science dedicated to information and conceptual modeling. Since the first event in 1979 in Los Angeles, California, USA, the conference has evolved into one of the major forums for research on conceptual modeling and information retrieval.</p>

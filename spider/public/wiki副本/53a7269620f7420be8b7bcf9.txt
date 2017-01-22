@@ -1,2 +1,0 @@
-
-<p>The <b>Symposium on Principles of Distributed Computing</b> (<b>PODC</b>) is an academic conference in the field of distributed computing organised annually by the Association for Computing Machinery (special interest groups SIGACT and SIGOPS).</p>

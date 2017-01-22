@@ -1,1 +1,0 @@
-<p><b>ACNS</b> is an annual conference concentrating on current developments that advance the areas of applied cryptography and its application to systems and network security.</p>

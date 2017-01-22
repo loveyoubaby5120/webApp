@@ -1,1 +1,0 @@
-<p>The <i><b>Journal of Automated Reasoning</b></i> was established in 1983 by Larry Wos who was its editor in chief until 1992. It covers research and advances in automated reasoning &#x2014; mechanical verification of theorems and other deductions in classical and non-classical logic.</p>

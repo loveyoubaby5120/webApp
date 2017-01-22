@@ -1,1 +1,0 @@
-<p>The <i><b>Journal of the ACM</b></i> is a peer-reviewed scientific journal covering computer science in general, especially theoretical aspects. It is an official journal of the Association for Computing Machinery. Its current editor-in-chief is Victor Vianu (University of California, San Diego).</p>

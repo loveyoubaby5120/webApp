@@ -1,2 +1,0 @@
-
-<p><i><b>Autonomous Agents and Multi-Agent Systems</b></i> is a peer-reviewed scientific journal covering the study of autonomous agents and multi-agent systems.</p>
