@@ -1,308 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title></title>
-	<meta name="viewport" content=" width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/common.css" rel="stylesheet">
-	<link href="css/global.css" rel="stylesheet">
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/bootstrap-hover-dropdown.min.js"></script>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content=" width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-hover-dropdown.min.js"></script>
 </head>
+
 <body class="interpreter_html">
 
-	<!-- 头部菜单 -->
-	<nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <!-- 头部菜单 -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">
-				<img alt="Brand" src="images/logo.png">
-			</a>
-        </div>
-	
-        <div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav navbar-right"">
-				<li><a href="index.html">首页</a></li>
-				<li><a href="user.html">用户端</a></li>
-				<li class="active"><a href="interpreter.html">译员端</a></li>
-				<li class="hidden-xs"><a href="help.html">问题帮助</a></li>
-				<li class="visible-xs dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">问题帮助<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="help_1.html">关于globzip</a></li>
-						<li><a href="help_2.html">我是译员</a></li>
-						<li><a href="help_3.html">我是用户</a></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle visible-xs" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
-					<a href="mix.html" class="dropdown-toggle hidden-xs" data-toggle="false" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="mix.html">加入我们</a></li>
-						<li><a href="news.html">支付协议</a></li>
-						<li><a href="agree.html">服务协议</a></li>
-						<li><a href="intimate.html">隐私条款</a></li>
-						<li><a href="about.html">关于我们</a></li>
-						<li><a href="contact.html">联系我们</a></li>
-					</ul>
-				</li>
-				<li class="lang"><a class="active" href="#contact">中文</a>|<a href="#contact">English</a></li>
-			</ul>
-        </div>
-      </div>
-    </nav>
-	
-	<img class="visible-xs" src="images/photo_01.jpg" alt="" style="width: 100%;">
-	
-	<!-- banner图 第一个div  可加的calss  container   加入后container 限定了宽度   否则 没有限定宽度   显示效果拭图片大小决定 -->
-	<div class="banner hidden-xs">
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <a class="navbar-brand" href="#">
+                    <img alt="Brand" src="images/logo.png">
+                </a>
+            </div>
 
-			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<img src="" alt="" style="background-image: url('images/banner_interpreter.jpg')">
-					<!-- <div class="carousel-caption">
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="user.html">用户端</a></li>
+                    <li class="active"><a href="interpreter.html">译员端</a></li>
+                    <li class="hidden-xs"><a href="help.html">问题帮助</a></li>
+                    <li class="visible-xs dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">问题帮助<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="help_1.html">关于globzip</a></li>
+                            <li><a href="help_2.html">我是译员</a></li>
+                            <li><a href="help_3.html">我是用户</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle visible-xs" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
+                        <a href="mix.html" class="dropdown-toggle hidden-xs" data-toggle="false" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="mix.html">加入我们</a></li>
+                            <li><a href="news.html">支付协议</a></li>
+                            <li><a href="agree.html">服务协议</a></li>
+                            <li><a href="intimate.html">隐私条款</a></li>
+                            <li><a href="about.html">关于我们</a></li>
+                            <li><a href="contact.html">联系我们</a></li>
+                        </ul>
+                    </li>
+                    <li class="lang"><a class="active" href="#contact">中文</a>|<a href="#contact">English</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <img class="visible-xs" src="images/photo_01.jpg" alt="" style="width: 100%;">
+
+    <!-- banner图 第一个div  可加的calss  container   加入后container 限定了宽度   否则 没有限定宽度   显示效果拭图片大小决定 -->
+    <div class="banner hidden-xs">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="" alt="" style="background-image: url('images/banner_interpreter.jpg')">
+                    <!-- <div class="carousel-caption">
 						<h2>GlobZip</h2>
 						<span>全球50000名译员招募中</span>
 						<img class="codeImg" src="images/2code.jpg" alt="code" />
 						<span class="codeSpan">扫码认证加盟</span>
 					</div> -->
-				</div>
-			</div>
+                </div>
+            </div>
 
-		</div>
-	</div>
-
-
-	<!-- rzlc -->
-	<div class="rzlc">
-		<div class="container">
-			<h3 class="title"><i></i>认证流程<i></i></h3>
-			<div class="row">
-				<div class="col-xs-6 col-sm-4 col-md-2">
-					<div class="thumbnail">
-						<div class="img"><img src="images/download.png"></div>
-						<div class="caption">
-							<p>1、下载软件</p>
-							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注册账号</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-2 col-md-1 hidden-xs">
-					<div class="thumbnail">
-						<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-					</div>
-				</div>
+        </div>
+    </div>
 
 
-				<div class="col-xs-6 col-sm-4 col-md-2">
-					<div class="thumbnail">
-						<div class="img"><img src="images/user.png"></div>
-						<div class="caption">
-							<p>2、填写个人</p>
-							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;资料信息</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-2 col-md-1 hidden-xs">
-					<div class="thumbnail">
-						<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-					</div>
-				</div>
+    <!-- rzlc -->
+    <div class="rzlc">
+        <div class="container">
+            <h3 class="title"><i></i>认证流程<i></i></h3>
+            <div class="row">
+                <div class="col-xs-6 col-sm-4 col-md-2">
+                    <div class="thumbnail">
+                        <div class="img"><img src="images/download.png"></div>
+                        <div class="caption">
+                            <p>1、下载软件</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注册账号</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-md-1 hidden-xs">
+                    <div class="thumbnail">
+                        <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    </div>
+                </div>
 
 
-				<div class="col-xs-6 col-sm-4 col-md-2">
-					<div class="thumbnail">
-						<div class="img"><img src="images/book.png"></div>
-						<div class="caption">
-							<p>3、填写认证</p>
-							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;资料信息</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-2 col-md-1 hidden-xs">
-					<div class="thumbnail">
-						<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-					</div>
-				</div>
+                <div class="col-xs-6 col-sm-4 col-md-2">
+                    <div class="thumbnail">
+                        <div class="img"><img src="images/user.png"></div>
+                        <div class="caption">
+                            <p>2、填写个人</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;资料信息</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-md-1 hidden-xs">
+                    <div class="thumbnail">
+                        <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    </div>
+                </div>
 
 
-				<div class="col-xs-6 col-sm-4 col-md-2">
-					<div class="thumbnail">
-						<div class="img"><img src="images/time.png"></div>
-						<div class="caption">
-							<p>4、等待审核</p>
-							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;七天内通知</p>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- <button type="button" class="btn btn-primary">立即认证</button> -->
-
-		</div>
-	</div>
-
-	<!-- 发布需求 -->
-	<div class="container fbxq">
-		<div id="carousel-example-generic2" class="iphone carousel slide col-sm-5" data-ride="carousel">
-			<!-- Indicators -->
-			<ol class="carousel-indicators hidden-xs">
-				<li data-target="#carousel-example-generic2" data-slide-to="0" class="active"></li>
-			</ol>
-
-			<!-- Wrapper for slides -->
-			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<img src="" alt="" style="background-image: url('images/iphone.png')">
-				</div>
-			</div>
+                <div class="col-xs-6 col-sm-4 col-md-2">
+                    <div class="thumbnail">
+                        <div class="img"><img src="images/book.png"></div>
+                        <div class="caption">
+                            <p>3、填写认证</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;资料信息</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-md-1 hidden-xs">
+                    <div class="thumbnail">
+                        <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                    </div>
+                </div>
 
 
-			<!-- Controls -->
-			<a class="left carousel-control" href="#carousel-example-generic2" role="button" data-slide="prev">
-				<p class="left carousel-control" href="#carousel-example-generic3" role="button" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</p>
-			</a>
-			<a class="right carousel-control" href="#carousel-example-generic2" role="button" data-slide="next">
-				<p class="right carousel-control" href="#carousel-example-generic3" role="button" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</p>
-			</a>
-		</div>
+                <div class="col-xs-6 col-sm-4 col-md-2">
+                    <div class="thumbnail">
+                        <div class="img"><img src="images/time.png"></div>
+                        <div class="caption">
+                            <p>4、等待审核</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;七天内通知</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-		<div class="contentList col-sm-7">
+            <!-- <button type="button" class="btn btn-primary">立即认证</button> -->
 
-			<div id="carousel-example-generic3" class="carousel slide carousel-fade" data-ride="carousel">
-				<!-- Indicators -->
-				<!-- <ol class="carousel-indicators">
+        </div>
+    </div>
+
+    <!-- 发布需求 -->
+    <div class="container fbxq">
+        <div id="carousel-example-generic2" class="iphone carousel slide col-sm-5" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators hidden-xs">
+                <li data-target="#carousel-example-generic2" data-slide-to="0" class="active"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="" alt="" style="background-image: url('images/iphone.png')">
+                </div>
+            </div>
+
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic2" role="button" data-slide="prev">
+                <p class="left carousel-control" href="#carousel-example-generic3" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </p>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic2" role="button" data-slide="next">
+                <p class="right carousel-control" href="#carousel-example-generic3" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </p>
+            </a>
+        </div>
+
+        <div class="contentList col-sm-7">
+
+            <div id="carousel-example-generic3" class="carousel slide carousel-fade" data-ride="carousel">
+                <!-- Indicators -->
+                <!-- <ol class="carousel-indicators">
 					<li data-target="#carousel-example-generic3" data-slide-to="0" class="active">
 						<img src="images/xq_02.png" data-target="#carousel-example-generic2" data-slide-to="0">
 						<img src="images/xq_01.png" class="img_active" data-target="#carousel-example-generic2" data-slide-to="0">
 					</li>
 				</ol> -->
 
-				<!-- Wrapper for slides -->
-				<div class="carousel-inner" role="listbox">
-					<div class="item active">
-						<div class="carousel-caption">
-							<h1>多种货币</h1>
-							<p>通过globzip平台发布你的需求要到哪儿，做什么事情，对语言有什么样的要求</p>
-						</div>
-					</div>
-				</div>
-			</div>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <div class="carousel-caption">
+                            <h1>多种货币</h1>
+                            <p>通过globzip平台发布你的需求要到哪儿，做什么事情，对语言有什么样的要求</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-		</div>
+        </div>
 
-	</div>
+    </div>
 
-	<!-- 下载 -->
-	<div class="container downloads">
-		<img class="codeImg" src="images/2code.jpg">
-		<p>扫描下载客户端</p>
+    <!-- 下载 -->
+    <div class="container downloads">
+        <img class="codeImg" src="images/2code.jpg">
+        <p>扫描下载客户端</p>
 
-		<h1>GlobZip - 您的 “译” 中人</h1>
+        <h1>GlobZip - 您的 “译” 中人</h1>
 
-		<button type="button" class="btn btn-primary ios">APP STORE<i></i></button>
-		<button type="button" class="btn btn-primary android">ANDROID<i></i></button>
-	</div>
+        <button type="button" class="btn btn-primary ios">APP STORE<i></i></button>
+        <button type="button" class="btn btn-primary android">ANDROID<i></i></button>
+    </div>
 
 
-	
-	<hr class="featurette-divider"/>
 
-	<!-- 关于信息 -->
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<ul class="col-xs-12 col-sm-6 col-md-6">
-					<li>
-						<a href="agree.html">用户协议</a>
-					</li>
-					<li>
-						<a href="help.html">问题帮助</a>
-					</li>
-					<li>
-						<a href="contact.html">联系我们</a>
-					</li>
-					<li>
-						<a href="downloads.html">下载APP</a>
-					</li>
-				</ul>
+    <hr class="featurette-divider" />
 
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<dl>
-						<dt><h1>400-000-0000</h1></dt>
-						<dd class="visible-xs">
-							<p>工作日: &nbsp;10:00 - 19:00</p>
-							<p>官方邮箱: &nbsp;kefu@globzip.com</p>
-						</dd>
-						<dd class="hidden-xs">
-							<dl class="dl-horizontal">
-								<dt>工作日: </dt>
-								<dd>10:00 - 19:00</dd>
+    <!-- 关于信息 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <ul class="col-xs-12 col-sm-6 col-md-6">
+                    <li>
+                        <a href="agree.html">用户协议</a>
+                    </li>
+                    <li>
+                        <a href="help.html">问题帮助</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">联系我们</a>
+                    </li>
+                    <li>
+                        <a href="downloads.html">下载APP</a>
+                    </li>
+                </ul>
 
-								<dt>官方邮箱: </dt>
-								<dd>kefu@globzip.com</dd>
-							</dl>
-						</dd>
-					</dl>
-					<div class="row hidden-xs">
-						<div class="col-xs-6 col-sm-3 col-md-3">
-							<div class="thumbnail">
-								<img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
-								<div class="caption">
-									<p>官方微信</p>
-								</div>
-							</div>
-						</div>
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <dl>
+                        <dt><h1>400-000-0000</h1></dt>
+                        <dd class="visible-xs">
+                            <p>工作日: &nbsp;10:00 - 19:00</p>
+                            <p>官方邮箱: &nbsp;kefu@globzip.com</p>
+                        </dd>
+                        <dd class="hidden-xs">
+                            <dl class="dl-horizontal">
+                                <dt>工作日: </dt>
+                                <dd>10:00 - 19:00</dd>
 
-						<div class="col-xs-6 col-sm-3 col-md-3">
-							<div class="thumbnail">
-								<img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
-								<div class="caption">
-									<p>官方微博</p>
-								</div>
-							</div>
-						</div>
+                                <dt>官方邮箱: </dt>
+                                <dd>kefu@globzip.com</dd>
+                            </dl>
+                        </dd>
+                    </dl>
+                    <div class="row hidden-xs">
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            <div class="thumbnail">
+                                <img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
+                                <div class="caption">
+                                    <p>官方微信</p>
+                                </div>
+                            </div>
+                        </div>
 
-						<div class="col-xs-6 col-sm-3 col-md-3">
-							<div class="thumbnail">
-								<img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
-								<div class="caption">
-									<p>Facebook</p>
-								</div>
-							</div>
-						</div>
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            <div class="thumbnail">
+                                <img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
+                                <div class="caption">
+                                    <p>官方微博</p>
+                                </div>
+                            </div>
+                        </div>
 
-						<div class="col-xs-6 col-sm-3 col-md-3">
-							<div class="thumbnail">
-								<img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
-								<div class="caption">
-									<p>推特</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<p>GUOKR © 2015 LOVINGLY MADE IN SHANGHAI   沪ICP备16011529号-1 </p>
-			<p>上海壹零捌信息技术有限公司</p>
-		</div>
-	</footer>
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            <div class="thumbnail">
+                                <img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
+                                <div class="caption">
+                                    <p>Facebook</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            <div class="thumbnail">
+                                <img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
+                                <div class="caption">
+                                    <p>推特</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>GUOKR © 2015 LOVINGLY MADE IN SHANGHAI 沪ICP备16011529号-1 </p>
+            <p>上海壹零捌信息技术有限公司</p>
+        </div>
+    </footer>
 
 
 </body>
+
 </html>

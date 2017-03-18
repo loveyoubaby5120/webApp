@@ -1,217 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title></title>
-	<meta name="viewport" content=" width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/common.css" rel="stylesheet">
-	<link href="css/global.css" rel="stylesheet">
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/bootstrap-hover-dropdown.min.js"></script>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content=" width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-hover-dropdown.min.js"></script>
 </head>
+
 <body class="user_interpreter_html">
 
-	<!-- 头部菜单 -->
-	<nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <!-- 头部菜单 -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">
-				<img alt="Brand" src="images/logo.png">
-			</a>
+                <a class="navbar-brand" href="#">
+                    <img alt="Brand" src="images/logo.png">
+                </a>
+            </div>
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="user.html">用户端</a></li>
+                    <li><a href="interpreter.html">译员端</a></li>
+                    <li class="hidden-xs"><a href="help.html">问题帮助</a></li>
+                    <li class="visible-xs dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">问题帮助<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="help_1.html">关于globzip</a></li>
+                            <li><a href="help_2.html">我是译员</a></li>
+                            <li><a href="help_3.html">我是用户</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle visible-xs" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
+                        <a href="mix.html" class="dropdown-toggle hidden-xs" data-toggle="false" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="mix.html">加入我们</a></li>
+                            <li><a href="news.html">支付协议</a></li>
+                            <li><a href="agree.html">服务协议</a></li>
+                            <li><a href="intimate.html">隐私条款</a></li>
+                            <li><a href="about.html">关于我们</a></li>
+                            <li><a href="contact.html">联系我们</a></li>
+                        </ul>
+                    </li>
+                    <li class="lang"><a class="active" href="#contact">中文</a>|<a href="#contact">English</a></li>
+                </ul>
+            </div>
         </div>
-	
-        <div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav navbar-right"">
-				<li><a href="index.html">首页</a></li>
-				<li><a href="user.html">用户端</a></li>
-				<li><a href="interpreter.html">译员端</a></li>
-				<li class="hidden-xs"><a href="help.html">问题帮助</a></li>
-				<li class="visible-xs dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">问题帮助<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="help_1.html">关于globzip</a></li>
-						<li><a href="help_2.html">我是译员</a></li>
-						<li><a href="help_3.html">我是用户</a></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle visible-xs" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
-					<a href="mix.html" class="dropdown-toggle hidden-xs" data-toggle="false" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="mix.html">加入我们</a></li>
-						<li><a href="news.html">支付协议</a></li>
-						<li><a href="agree.html">服务协议</a></li>
-						<li><a href="intimate.html">隐私条款</a></li>
-						<li><a href="about.html">关于我们</a></li>
-						<li><a href="contact.html">联系我们</a></li>
-					</ul>
-				</li>
-				<li class="lang"><a class="active" href="#contact">中文</a>|<a href="#contact">English</a></li>
-			</ul>
-        </div>
-      </div>
     </nav>
-	
-	<img class="visible-xs" src="images/photo_01.jpg" alt="" style="width: 100%;">
-	
-	<!-- banner图 第一个div  可加的calss  container   加入后container 限定了宽度   否则 没有限定宽度   显示效果拭图片大小决定 -->
-	<div class="banner hidden-xs">
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
-			<!-- Wrapper for slides -->
-			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<img src="" alt="" style="background-image: url('images/banner_user_interpreter.jpg')">
-				</div>
-			</div>
-		</div>
-	</div>
+    <img class="visible-xs" src="images/photo_01.jpg" alt="" style="width: 100%;">
 
-	<!-- 人物信息 -->
-	<div class="container userInfo">
-		<img class="userImage" src="images/photo_01.jpg" alt="">
-		<div class="share">
-			<span>分享</span>
-			<a class="xl"></a>
-			<a class="wechat"></a>
-		</div>
-		<div class="info">
-			<h3>Martin Van Buren</h3>
-			<p>摩根前翻译官</p>
-			<p class="star-five-all">
-				<i class="star-five"></i>
-				<i class="star-five"></i>
-				<i class="star-five"></i>
-				<i class="star-five"></i>
-				<i class="star-five"></i>
-			</p>
-		</div>
-		<div class="otherInfo">
-			<p class="money">￥ 1080/天</p>
-			<p>服务类型: 商务陪同</p>
-			<p>服务地点: 意大利 - 罗马</p>
-			<p>翻译语言: 中文   意大利语</p>
-			<p>时间要求: 周一 ~ 周日  工作八小时，多于工作时间价格另议</p>
-		</div>
-	</div>
-	
+    <!-- banner图 第一个div  可加的calss  container   加入后container 限定了宽度   否则 没有限定宽度   显示效果拭图片大小决定 -->
+    <div class="banner hidden-xs">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
-	<!-- 关于译员 -->
-	<div class="container aboutInfo">
-		<h3>关于译员</h3>
-		<p>本人从2001年以来开始从事翻译工作, 主要包括：企业有关方面的管理规则，如风险准备金等、董事会报告、技术标、论文摘要、招股说明书、公司章程、公司简介、简历、审计报告、财务报表、增资扩股说明书，招股档、职能手册，等等；买卖合同、离婚协议书、保密协议、有限合伙人协议、购买选择权协议、某某计算机福利彩票设备投资协议和代理协议、抵／质押贷款合同，等等；普通类稿件，包括物流类稿件和新闻类稿件，等等.<img src="images/aaa.jpg" />本人从2001年以来开始从事翻译工作, 主要包括：企业有关方面的管理规则，如风险准备金等、董事会报告、技术标、论文摘要、招股说明书、公司章程、公司简介、简历、审计报告、财务报表、增资扩股说明书，招股档、职能手册，等等；买卖合同、离婚协议书、保密协议、有限合伙人协议、购买选择权协议、某某计算机福利彩票设备投资协议和代理协议、抵／质押贷款合同，等等；普通类稿件，包括物流类稿件和新闻类稿件，等等.
-		</p>
-	</div>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="" alt="" style="background-image: url('images/banner_user_interpreter.jpg')">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 人物信息 -->
+    <div class="container userInfo">
+        <img class="userImage" src="images/photo_01.jpg" alt="">
+        <div class="share">
+            <span>分享</span>
+            <a class="xl"></a>
+            <a class="wechat"></a>
+        </div>
+        <div class="info">
+            <h3>Martin Van Buren</h3>
+            <p>摩根前翻译官</p>
+            <p class="star-five-all">
+                <i class="star-five"></i>
+                <i class="star-five"></i>
+                <i class="star-five"></i>
+                <i class="star-five"></i>
+                <i class="star-five"></i>
+            </p>
+        </div>
+        <div class="otherInfo">
+            <p class="money">￥ 1080/天</p>
+            <p>服务类型: 商务陪同</p>
+            <p>服务地点: 意大利 - 罗马</p>
+            <p>翻译语言: 中文 意大利语</p>
+            <p>时间要求: 周一 ~ 周日 工作八小时，多于工作时间价格另议</p>
+        </div>
+    </div>
 
 
-	<!-- 用户评价 -->
-	<div class="appraise">
-		<div class="container">
-			<h3>用户点评</h3>
-			<ul>
-				<li>
-					<img class="userImage" src="images/photo_01.jpg" alt="">
-					<div>
-						<p class="name">赵小雪</p>
-						<p class="date">2016-04-24</p>
-						<p>真的和老师和Lorraine 老师约完，很快就安排了见面，是个美女老师哦~约在繁华的芳草地，和老师边吃边聊的，很放松。在内容方面，我之前非常希望老师能分享一些活动的经验，老师其实没有讲很多活动的具体策划和实施。但是，绝对不能说这次约见没有收获。在我看来至少三个重要的收获，首先，老师分享了她在香港念书期间，英语的提高的经验，是我教学中非常棒的案例，第二老师答应加入我们的志愿者队伍，我又多了一名高水平的英语志愿者参与活动，这其实比任何的活动建议都要来得好呀。第三，老师从心态上帮我分析了，我当下的状态需要调整一下，才能更好地策划出好的活动。正的很感谢老师。</p>
-					</div>
-				</li>
-			</ul>
-			<button>查看全部</button>
-		</div>
-	</div>
+    <!-- 关于译员 -->
+    <div class="container aboutInfo">
+        <h3>关于译员</h3>
+        <p>本人从2001年以来开始从事翻译工作, 主要包括：企业有关方面的管理规则，如风险准备金等、董事会报告、技术标、论文摘要、招股说明书、公司章程、公司简介、简历、审计报告、财务报表、增资扩股说明书，招股档、职能手册，等等；买卖合同、离婚协议书、保密协议、有限合伙人协议、购买选择权协议、某某计算机福利彩票设备投资协议和代理协议、抵／质押贷款合同，等等；普通类稿件，包括物流类稿件和新闻类稿件，等等.<img src="images/aaa.jpg" />本人从2001年以来开始从事翻译工作,
+            主要包括：企业有关方面的管理规则，如风险准备金等、董事会报告、技术标、论文摘要、招股说明书、公司章程、公司简介、简历、审计报告、财务报表、增资扩股说明书，招股档、职能手册，等等；买卖合同、离婚协议书、保密协议、有限合伙人协议、购买选择权协议、某某计算机福利彩票设备投资协议和代理协议、抵／质押贷款合同，等等；普通类稿件，包括物流类稿件和新闻类稿件，等等.
+        </p>
+    </div>
 
-	<hr class="featurette-divider"/>
 
-	<!-- 关于信息 -->
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<ul class="col-xs-12 col-sm-6 col-md-6">
-					<li>
-						<a href="agree.html">用户协议</a>
-					</li>
-					<li>
-						<a href="help.html">问题帮助</a>
-					</li>
-					<li>
-						<a href="contact.html">联系我们</a>
-					</li>
-					<li>
-						<a href="downloads.html">下载APP</a>
-					</li>
-				</ul>
+    <!-- 用户评价 -->
+    <div class="appraise">
+        <div class="container">
+            <h3>用户点评</h3>
+            <ul>
+                <li>
+                    <img class="userImage" src="images/photo_01.jpg" alt="">
+                    <div>
+                        <p class="name">赵小雪</p>
+                        <p class="date">2016-04-24</p>
+                        <p>真的和老师和Lorraine 老师约完，很快就安排了见面，是个美女老师哦~约在繁华的芳草地，和老师边吃边聊的，很放松。在内容方面，我之前非常希望老师能分享一些活动的经验，老师其实没有讲很多活动的具体策划和实施。但是，绝对不能说这次约见没有收获。在我看来至少三个重要的收获，首先，老师分享了她在香港念书期间，英语的提高的经验，是我教学中非常棒的案例，第二老师答应加入我们的志愿者队伍，我又多了一名高水平的英语志愿者参与活动，这其实比任何的活动建议都要来得好呀。第三，老师从心态上帮我分析了，我当下的状态需要调整一下，才能更好地策划出好的活动。正的很感谢老师。</p>
+                    </div>
+                </li>
+            </ul>
+            <button>查看全部</button>
+        </div>
+    </div>
 
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<dl>
-						<dt><h1>400-000-0000</h1></dt>
-						<dd class="visible-xs">
-							<p>工作日: &nbsp;10:00 - 19:00</p>
-							<p>官方邮箱: &nbsp;kefu@globzip.com</p>
-						</dd>
-						<dd class="hidden-xs">
-							<dl class="dl-horizontal">
-								<dt>工作日: </dt>
-								<dd>10:00 - 19:00</dd>
+    <hr class="featurette-divider" />
 
-								<dt>官方邮箱: </dt>
-								<dd>kefu@globzip.com</dd>
-							</dl>
-						</dd>
-					</dl>
-					<div class="row hidden-xs">
-						<div class="col-xs-6 col-sm-3 col-md-3">
-							<div class="thumbnail">
-								<img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
-								<div class="caption">
-									<p>官方微信</p>
-								</div>
-							</div>
-						</div>
+    <!-- 关于信息 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <ul class="col-xs-12 col-sm-6 col-md-6">
+                    <li>
+                        <a href="agree.html">用户协议</a>
+                    </li>
+                    <li>
+                        <a href="help.html">问题帮助</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">联系我们</a>
+                    </li>
+                    <li>
+                        <a href="downloads.html">下载APP</a>
+                    </li>
+                </ul>
 
-						<div class="col-xs-6 col-sm-3 col-md-3">
-							<div class="thumbnail">
-								<img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
-								<div class="caption">
-									<p>官方微博</p>
-								</div>
-							</div>
-						</div>
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <dl>
+                        <dt><h1>400-000-0000</h1></dt>
+                        <dd class="visible-xs">
+                            <p>工作日: &nbsp;10:00 - 19:00</p>
+                            <p>官方邮箱: &nbsp;kefu@globzip.com</p>
+                        </dd>
+                        <dd class="hidden-xs">
+                            <dl class="dl-horizontal">
+                                <dt>工作日: </dt>
+                                <dd>10:00 - 19:00</dd>
 
-						<div class="col-xs-6 col-sm-3 col-md-3">
-							<div class="thumbnail">
-								<img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
-								<div class="caption">
-									<p>Facebook</p>
-								</div>
-							</div>
-						</div>
+                                <dt>官方邮箱: </dt>
+                                <dd>kefu@globzip.com</dd>
+                            </dl>
+                        </dd>
+                    </dl>
+                    <div class="row hidden-xs">
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            <div class="thumbnail">
+                                <img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
+                                <div class="caption">
+                                    <p>官方微信</p>
+                                </div>
+                            </div>
+                        </div>
 
-						<div class="col-xs-6 col-sm-3 col-md-3">
-							<div class="thumbnail">
-								<img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
-								<div class="caption">
-									<p>推特</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<p>GUOKR © 2015 LOVINGLY MADE IN SHANGHAI   沪ICP备16011529号-1 </p>
-			<p>上海壹零捌信息技术有限公司</p>
-		</div>
-	</footer>
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            <div class="thumbnail">
+                                <img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
+                                <div class="caption">
+                                    <p>官方微博</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            <div class="thumbnail">
+                                <img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
+                                <div class="caption">
+                                    <p>Facebook</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            <div class="thumbnail">
+                                <img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
+                                <div class="caption">
+                                    <p>推特</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>GUOKR © 2015 LOVINGLY MADE IN SHANGHAI 沪ICP备16011529号-1 </p>
+            <p>上海壹零捌信息技术有限公司</p>
+        </div>
+    </footer>
 
 
 </body>
+
 </html>

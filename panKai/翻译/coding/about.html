@@ -1,1644 +1,1647 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title></title>
-	<meta name="viewport" content=" width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/common.css" rel="stylesheet">
-	<link href="css/global.css" rel="stylesheet">
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/bootstrap-hover-dropdown.min.js"></script>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content=" width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-hover-dropdown.min.js"></script>
 </head>
+
 <body class="about_html">
 
-	<!-- 头部菜单 -->
-	<nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <!-- 头部菜单 -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">
-				<img alt="Brand" src="images/logo.png">
-			</a>
+                <a class="navbar-brand" href="#">
+                    <img alt="Brand" src="images/logo.png">
+                </a>
+            </div>
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="user.html">用户端</a></li>
+                    <li><a href="interpreter.html">译员端</a></li>
+                    <li class="hidden-xs"><a href="help.html">问题帮助</a></li>
+                    <li class="visible-xs dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">问题帮助<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="help_1.html">关于globzip</a></li>
+                            <li><a href="help_2.html">我是译员</a></li>
+                            <li><a href="help_3.html">我是用户</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle visible-xs" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
+                        <a href="mix.html" class="dropdown-toggle hidden-xs" data-toggle="false" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="mix.html">加入我们</a></li>
+                            <li><a href="news.html">支付协议</a></li>
+                            <li><a href="agree.html">服务协议</a></li>
+                            <li><a href="intimate.html">隐私条款</a></li>
+                            <li><a href="about.html">关于我们</a></li>
+                            <li><a href="contact.html">联系我们</a></li>
+                        </ul>
+                    </li>
+                    <li class="lang"><a class="active" href="#contact">中文</a>|<a href="#contact">English</a></li>
+                </ul>
+            </div>
         </div>
-	
-        <div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav navbar-right"">
-				<li><a href="index.html">首页</a></li>
-				<li><a href="user.html">用户端</a></li>
-				<li><a href="interpreter.html">译员端</a></li>
-				<li class="hidden-xs"><a href="help.html">问题帮助</a></li>
-				<li class="visible-xs dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">问题帮助<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="help_1.html">关于globzip</a></li>
-						<li><a href="help_2.html">我是译员</a></li>
-						<li><a href="help_3.html">我是用户</a></li>
-					</ul>
-				</li>
-				<li class="dropdown active">
-					<a href="#" class="dropdown-toggle visible-xs" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
-					<a href="mix.html" class="dropdown-toggle hidden-xs" data-toggle="false" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="mix.html">加入我们</a></li>
-						<li><a href="news.html">支付协议</a></li>
-						<li><a href="agree.html">服务协议</a></li>
-						<li><a href="intimate.html">隐私条款</a></li>
-						<li><a href="about.html">关于我们</a></li>
-						<li><a href="contact.html">联系我们</a></li>
-					</ul>
-				</li>
-				<li class="lang"><a class="active" href="#contact">中文</a>|<a href="#contact">English</a></li>
-			</ul>
-        </div>
-      </div>
     </nav>
-	
-	<img class="visible-xs" src="images/photo_01.jpg" alt="" style="width: 100%;">
-	
-	<!-- banner图 第一个div  可加的calss  container   加入后container 限定了宽度   否则 没有限定宽度   显示效果拭图片大小决定 -->
-	<div class="banner hidden-xs">
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
-			<!-- Wrapper for slides -->
-			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<img src="" alt="" style="background-image: url('images/banner_mix.jpg')">
-				</div>
-			</div>
+    <img class="visible-xs" src="images/photo_01.jpg" alt="" style="width: 100%;">
 
-		</div>
-	</div>
+    <!-- banner图 第一个div  可加的calss  container   加入后container 限定了宽度   否则 没有限定宽度   显示效果拭图片大小决定 -->
+    <div class="banner hidden-xs">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="" alt="" style="background-image: url('images/banner_mix.jpg')">
+                </div>
+            </div>
 
-	<!-- 当前位置 -->
-	<div class="container gps hidden-xs">
-		<span>当前位置: </span>
-		<span>首页</span>
-		<span>&nbsp;&nbsp;>&nbsp;</span>
-		<span>关于我们</span>
-	</div>
-
-	<!-- 关于我们 -->
-	<div class="container about">
-		 <div class="row">
-		 	<div class="col-md-3" id="myScrollspy">
-	            <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="600">
-	                <li class=""><a href="#section-1" data-toggle="tab">加入我们</a></li>
-	                <li class=""><a href="#section-2" data-toggle="tab">支付协议</a></li>
-	                <li class=""><a href="#section-3" data-toggle="tab">服务协议</a></li>
-	                <li class=""><a href="#section-4" data-toggle="tab">隐私条款</a></li>
-	                <li class="active"><a href="#section-5" data-toggle="tab">关于我们</a></li>
-	                <li class=""><a href="#section-6" data-toggle="tab">联系我们</a></li>
-	            </ul>
-	        </div>
-
-	        <div class="col-md-9">
-
-	        	<div id="myTabContent" class="tab-content">
-	        		<!-- 加入我们 mix -->
-					<div class="tab-pane fade section-1" id="section-1">
-						<h4>
-							在这里，你将拥有宽松、愉悦、平等的工作环境，你将收获友爱、尊重、温暖的创业伙伴更重要的是，你有可能实现自己最大的价值 ！
-						</h4>
-						
-						<ul class="btn-group type" role="group" aria-label="...">
-							<li type="button" class="btn btn-default active" role="presentation"><a href="#js" aria-controls="js" role="tab" data-toggle="tab">技术类</a></li>
-							<li type="button" class="btn btn-default" role="presentation"><a href="#sj" aria-controls="sj" role="tab" data-toggle="tab">设计类</a></li>
-							<li type="button" class="btn btn-default" role="presentation"><a href="#yy" aria-controls="yy" role="tab" data-toggle="tab">运营类</a></li>
-						</ul>
+        </div>
+    </div>
 
 
-						  <!-- Tab panes -->
-						  <div class="tab-content">
-						    <div role="tabpanel" class="tab-pane fade js in active" id="js">
-						    	<div class="collapse-custom">
-									<nav class="navbar navbar-default navbar-heading hidden-xs" role="navigation">
-										<div class="navbar-collapse">
-											<ul class="nav navbar-nav">
-												<li class="one"><a>职务</a></li>
-												<li class="two"><a>类型</a></li>
-												<li class="three"><a>工作地点</a></li>
-												<li class="fore"><a>时间</a></li>
-											</ul>
-										</div>
-									</nav>
+    <!-- 当前位置 -->
+    <div class="container gps hidden-xs">
+        <span>当前位置: </span>
+        <span>首页</span>
+        <span>&nbsp;&nbsp;>&nbsp;</span>
+        <span>关于我们</span>
+    </div>
 
-									<nav class="navbar navbar-default top" role="navigation" id="bs-example-navbar-collapse-1" data-toggle="collapse" href="#collapseOne_1">
-										<p class="visible-xs" style="padding-top: 15px;padding-left: 15px;font-weight: bold;">JAVA开发工程师(1人)</p>
-										<div class="collapse navbar-collapse">
-											<ul class="nav navbar-nav">
-												<li class="one"><a>JAVA开发工程师(1人)</a></li>
-												<li class="two"><a>技术类</a></li>
-												<li class="three"><a>北京</a></li>
-												<li class="four"><a>2016-08-28</a></li>
-												<li class="five">
-													<div class="navbar-tool">
-														<button type="button" class="btn btn-default btn-xs">
+    <!-- 关于我们 -->
+    <div class="container about">
+        <div class="row">
+            <div class="col-md-3" id="myScrollspy">
+                <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="600">
+                    <li class=""><a href="#section-1" data-toggle="tab">加入我们</a></li>
+                    <li class=""><a href="#section-2" data-toggle="tab">支付协议</a></li>
+                    <li class=""><a href="#section-3" data-toggle="tab">服务协议</a></li>
+                    <li class=""><a href="#section-4" data-toggle="tab">隐私条款</a></li>
+                    <li class="active"><a href="#section-5" data-toggle="tab">关于我们</a></li>
+                    <li class=""><a href="#section-6" data-toggle="tab">联系我们</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-9">
+
+                <div id="myTabContent" class="tab-content">
+                    <!-- 加入我们 mix -->
+                    <div class="tab-pane fade section-1" id="section-1">
+                        <h4>
+                            在这里，你将拥有宽松、愉悦、平等的工作环境，你将收获友爱、尊重、温暖的创业伙伴更重要的是，你有可能实现自己最大的价值 ！
+                        </h4>
+
+                        <ul class="btn-group type" role="group" aria-label="...">
+                            <li type="button" class="btn btn-default active" role="presentation"><a href="#js" aria-controls="js" role="tab" data-toggle="tab">技术类</a></li>
+                            <li type="button" class="btn btn-default" role="presentation"><a href="#sj" aria-controls="sj" role="tab" data-toggle="tab">设计类</a></li>
+                            <li type="button" class="btn btn-default" role="presentation"><a href="#yy" aria-controls="yy" role="tab" data-toggle="tab">运营类</a></li>
+                        </ul>
+
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade js in active" id="js">
+                                <div class="collapse-custom">
+                                    <nav class="navbar navbar-default navbar-heading hidden-xs" role="navigation">
+                                        <div class="navbar-collapse">
+                                            <ul class="nav navbar-nav">
+                                                <li class="one"><a>职务</a></li>
+                                                <li class="two"><a>类型</a></li>
+                                                <li class="three"><a>工作地点</a></li>
+                                                <li class="fore"><a>时间</a></li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+
+                                    <nav class="navbar navbar-default top" role="navigation" id="bs-example-navbar-collapse-1" data-toggle="collapse" href="#collapseOne_1">
+                                        <p class="visible-xs" style="padding-top: 15px;padding-left: 15px;font-weight: bold;">JAVA开发工程师(1人)</p>
+                                        <div class="collapse navbar-collapse">
+                                            <ul class="nav navbar-nav">
+                                                <li class="one"><a>JAVA开发工程师(1人)</a></li>
+                                                <li class="two"><a>技术类</a></li>
+                                                <li class="three"><a>北京</a></li>
+                                                <li class="four"><a>2016-08-28</a></li>
+                                                <li class="five">
+                                                    <div class="navbar-tool">
+                                                        <button type="button" class="btn btn-default btn-xs">
 															<span class="glyphicon glyphicon-chevron-down"></span> 
 															<span class="glyphicon glyphicon-chevron-up"></span> 
 														</button>
-														
-
-													</div>
-												</li>
-											</ul>
-										</div>
-									</nav>
-
-									<div id="collapseOne_1" class="collapse in" data-parent="bs-example-navbar-collapse-1">
-										<div class="panel-body">
-											<dl>
-												<dt>岗位职责:</dt>
-												<dd>
-													<ol>
-														<li>
-															1,负责服务器端(BS结构)的设计、编码和调试。
-														</li>
-
-														<li>
-															2,负责服务器端软件的优化和维护。
-														</li>
-													</ol>
-												</dd>
-											</dl>
-											
-											<dl>
-												<dt>岗位要求:</dt>
-												<dd>
-													<ol>
-														<li>
-															1,软件,计算机等相关专业,本科及以上学历;
-														</li>
-
-														<li>
-															2、Java/JSP的开发经验,精通Java,熟练使用Eclipse及相关软件;
-														</li>
-
-														<li>
-															3、熟悉TCP/IP协议及编码,具有TCP/IP层的开发经验优先;
-														</li>
-
-														<li>
-															 4、熟练配置和使用流行的JAVA开发架构并具有相关经验;
-														</li>
-
-														<li>
-															 5、英语能力,能够熟练阅读,使用英文资料;
-														</li>
-
-														<li>
-															 6,良好的团队协作和沟通能力;
-														</li>
-
-														<li>
-															 7,强的领悟能力和创新能力,有独特的想法;
-														</li>
-
-														<li>
-															 8,较强的学习能力;
-														</li>
-													</ol>
-												</dd>
-											</dl>
-
-										</div>
-									</div>
 
 
-									<nav class="navbar navbar-default collapsed" role="navigation" id="bs-example-navbar-collapse-2" data-toggle="collapse" href="#collapseOne_2">
-										<p class="visible-xs" style="padding-top: 15px;padding-left: 15px;font-weight: bold;">WEB前端开发工程师(1人)</p>
-										<div class="collapse navbar-collapse collapsed">
-											<ul class="nav navbar-nav">
-												<li class="one"><a>WEB前端开发工程师(1人)</a></li>
-												<li class="two"><a>技术类</a></li>
-												<li class="three"><a>北京</a></li>
-												<li class="four"><a>2016-08-28</a></li>
-												<li class="five">
-													<div class="navbar-tool">
-														<button type="button" class="btn btn-default btn-xs">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+
+                                    <div id="collapseOne_1" class="collapse in" data-parent="bs-example-navbar-collapse-1">
+                                        <div class="panel-body">
+                                            <dl>
+                                                <dt>岗位职责:</dt>
+                                                <dd>
+                                                    <ol>
+                                                        <li>
+                                                            1,负责服务器端(BS结构)的设计、编码和调试。
+                                                        </li>
+
+                                                        <li>
+                                                            2,负责服务器端软件的优化和维护。
+                                                        </li>
+                                                    </ol>
+                                                </dd>
+                                            </dl>
+
+                                            <dl>
+                                                <dt>岗位要求:</dt>
+                                                <dd>
+                                                    <ol>
+                                                        <li>
+                                                            1,软件,计算机等相关专业,本科及以上学历;
+                                                        </li>
+
+                                                        <li>
+                                                            2、Java/JSP的开发经验,精通Java,熟练使用Eclipse及相关软件;
+                                                        </li>
+
+                                                        <li>
+                                                            3、熟悉TCP/IP协议及编码,具有TCP/IP层的开发经验优先;
+                                                        </li>
+
+                                                        <li>
+                                                            4、熟练配置和使用流行的JAVA开发架构并具有相关经验;
+                                                        </li>
+
+                                                        <li>
+                                                            5、英语能力,能够熟练阅读,使用英文资料;
+                                                        </li>
+
+                                                        <li>
+                                                            6,良好的团队协作和沟通能力;
+                                                        </li>
+
+                                                        <li>
+                                                            7,强的领悟能力和创新能力,有独特的想法;
+                                                        </li>
+
+                                                        <li>
+                                                            8,较强的学习能力;
+                                                        </li>
+                                                    </ol>
+                                                </dd>
+                                            </dl>
+
+                                        </div>
+                                    </div>
+
+
+                                    <nav class="navbar navbar-default collapsed" role="navigation" id="bs-example-navbar-collapse-2" data-toggle="collapse" href="#collapseOne_2">
+                                        <p class="visible-xs" style="padding-top: 15px;padding-left: 15px;font-weight: bold;">WEB前端开发工程师(1人)</p>
+                                        <div class="collapse navbar-collapse collapsed">
+                                            <ul class="nav navbar-nav">
+                                                <li class="one"><a>WEB前端开发工程师(1人)</a></li>
+                                                <li class="two"><a>技术类</a></li>
+                                                <li class="three"><a>北京</a></li>
+                                                <li class="four"><a>2016-08-28</a></li>
+                                                <li class="five">
+                                                    <div class="navbar-tool">
+                                                        <button type="button" class="btn btn-default btn-xs">
 															<span class="glyphicon glyphicon-chevron-down"></span> 
 															<span class="glyphicon glyphicon-chevron-up"></span> 
 														</button>
-														
-
-													</div>
-												</li>
-											</ul>
-										</div>
-									</nav>
-
-									<div id="collapseOne_2" class="collapse" data-parent="bs-example-navbar-collapse-2">
-										<div class="panel-body">
-											<dl>
-												<dt>岗位职责:</dt>
-												<dd>
-													<ol>
-														<li>
-															1,负责WEB前端开发,包括程序设计,编码和调试。
-														</li>
-
-														<li>
-															2,负责WEB前端软件的易用性和可操作的优化和维护。
-														</li>
-
-														<li>
-															3,WEB前端新技术的调研和应用。
-														</li>
-													</ol>
-												</dd>
-											</dl>
-											
-											<dl>
-												<dt>岗位要求:</dt>
-												<dd>
-													<ol>
-														<li>
-															1,软件,计算机等相关专业,本科及以上学历;
-														</li>
-
-														<li>
-															2、精通JavaScript,Ajax等WEB开发技术;
-														</li>
-
-														<li>
-															3,精通HTML、XHTML、CSS等网页制作技术,熟悉页面的架构和布局。
-														</li>
-
-														<li>
-															 4,熟悉H5标准,对使用新技术,创新用户体验具有强烈兴趣;
-														</li>
-
-														<li>
-															 5、英语能力,能够熟练阅读,使用英文资料;
-														</li>
-
-														<li>
-															 6,良好的团队协作和沟通能力;
-														</li>
-
-														<li>
-															 7,强的领悟能力和创新能力,有独特的想法;
-														</li>
-
-														<li>
-															 8,较强的学习能力;
-														</li>
-													</ol>
-												</dd>
-											</dl>
-
-										</div>
-									</div>
 
 
-									<nav class="navbar navbar-default collapsed" role="navigation" id="bs-example-navbar-collapse-3" data-toggle="collapse" href="#collapseOne_3">
-										<p class="visible-xs" style="padding-top: 15px;padding-left: 15px;font-weight: bold;">IOS开发工程师 (1人)</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
 
-										<div class="collapse navbar-collapse collapsed">
-											<ul class="nav navbar-nav">
-												<li class="one"><a>IOS开发工程师 (1人)</a></li>
-												<li class="two"><a>技术类</a></li>
-												<li class="three"><a>北京</a></li>
-												<li class="four"><a>2016-08-28</a></li>
-												<li class="five">
-													<div class="navbar-tool">
-														<button type="button" class="btn btn-default btn-xs">
+                                    <div id="collapseOne_2" class="collapse" data-parent="bs-example-navbar-collapse-2">
+                                        <div class="panel-body">
+                                            <dl>
+                                                <dt>岗位职责:</dt>
+                                                <dd>
+                                                    <ol>
+                                                        <li>
+                                                            1,负责WEB前端开发,包括程序设计,编码和调试。
+                                                        </li>
+
+                                                        <li>
+                                                            2,负责WEB前端软件的易用性和可操作的优化和维护。
+                                                        </li>
+
+                                                        <li>
+                                                            3,WEB前端新技术的调研和应用。
+                                                        </li>
+                                                    </ol>
+                                                </dd>
+                                            </dl>
+
+                                            <dl>
+                                                <dt>岗位要求:</dt>
+                                                <dd>
+                                                    <ol>
+                                                        <li>
+                                                            1,软件,计算机等相关专业,本科及以上学历;
+                                                        </li>
+
+                                                        <li>
+                                                            2、精通JavaScript,Ajax等WEB开发技术;
+                                                        </li>
+
+                                                        <li>
+                                                            3,精通HTML、XHTML、CSS等网页制作技术,熟悉页面的架构和布局。
+                                                        </li>
+
+                                                        <li>
+                                                            4,熟悉H5标准,对使用新技术,创新用户体验具有强烈兴趣;
+                                                        </li>
+
+                                                        <li>
+                                                            5、英语能力,能够熟练阅读,使用英文资料;
+                                                        </li>
+
+                                                        <li>
+                                                            6,良好的团队协作和沟通能力;
+                                                        </li>
+
+                                                        <li>
+                                                            7,强的领悟能力和创新能力,有独特的想法;
+                                                        </li>
+
+                                                        <li>
+                                                            8,较强的学习能力;
+                                                        </li>
+                                                    </ol>
+                                                </dd>
+                                            </dl>
+
+                                        </div>
+                                    </div>
+
+
+                                    <nav class="navbar navbar-default collapsed" role="navigation" id="bs-example-navbar-collapse-3" data-toggle="collapse" href="#collapseOne_3">
+                                        <p class="visible-xs" style="padding-top: 15px;padding-left: 15px;font-weight: bold;">IOS开发工程师 (1人)</p>
+
+                                        <div class="collapse navbar-collapse collapsed">
+                                            <ul class="nav navbar-nav">
+                                                <li class="one"><a>IOS开发工程师 (1人)</a></li>
+                                                <li class="two"><a>技术类</a></li>
+                                                <li class="three"><a>北京</a></li>
+                                                <li class="four"><a>2016-08-28</a></li>
+                                                <li class="five">
+                                                    <div class="navbar-tool">
+                                                        <button type="button" class="btn btn-default btn-xs">
 															<span class="glyphicon glyphicon-chevron-down"></span> 
 															<span class="glyphicon glyphicon-chevron-up"></span> 
 														</button>
-														
-
-													</div>
-												</li>
-											</ul>
-										</div>
-									</nav>
-
-									<div id="collapseOne_3" class="collapse" data-parent="bs-example-navbar-collapse-3">
-										<div class="panel-body">
-											<dl>
-												<dt>岗位职责:</dt>
-												<dd>
-													<ol>
-														<li>
-															1,IOS手机客户端软件的编码和调试。
-														</li>
-
-														<li>
-															2,IOS手机客户端软件的开发和测试文档的编写。
-														</li>
-
-														<li>
-															3,软件维护。
-														</li>
-													</ol>
-												</dd>
-											</dl>
-											
-											<dl>
-												<dt>岗位要求:</dt>
-												<dd>
-													<ol>
-														<li>
-															1,软件,计算机等相关专业,本科及以上学历;
-														</li>
-
-														<li>
-															2、C/C++开发经验,精通C语言;
-														</li>
-
-														<li>
-															3、熟悉Xcode, 具有IOS开发经验者优先;
-														</li>
-
-														<li>
-															 4,具有苹果SWIFT开发经验优先;
-														</li>
-
-														<li>
-															 5,英语能力,能够熟练阅读,使用英文资料;
-														</li>
-
-														<li>
-															 6,良好的团队协作和沟通能力;
-														</li>
-
-														<li>
-															 7,强的领悟能力和创新能力,有独特的想法;
-														</li>
-
-														<li>
-															 8,较强的学习能力;
-														</li>
-													</ol>
-												</dd>
-											</dl>
-
-										</div>
-									</div>
 
 
-									<nav class="navbar navbar-default collapsed" role="navigation" id="bs-example-navbar-collapse-4" data-toggle="collapse" href="#collapseOne_4">
-										<p class="visible-xs" style="padding-top: 15px;padding-left: 15px;font-weight: bold;">Android开发工程师 (2人)</p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
 
-										<div class="collapse navbar-collapse collapsed">
-											<ul class="nav navbar-nav">
-												<li class="one"><a>Android开发工程师 (2人)</a></li>
-												<li class="two"><a>技术类</a></li>
-												<li class="three"><a>北京</a></li>
-												<li class="four"><a>2016-08-28</a></li>
-												<li class="five">
-													<div class="navbar-tool">
-														<button type="button" class="btn btn-default btn-xs">
+                                    <div id="collapseOne_3" class="collapse" data-parent="bs-example-navbar-collapse-3">
+                                        <div class="panel-body">
+                                            <dl>
+                                                <dt>岗位职责:</dt>
+                                                <dd>
+                                                    <ol>
+                                                        <li>
+                                                            1,IOS手机客户端软件的编码和调试。
+                                                        </li>
+
+                                                        <li>
+                                                            2,IOS手机客户端软件的开发和测试文档的编写。
+                                                        </li>
+
+                                                        <li>
+                                                            3,软件维护。
+                                                        </li>
+                                                    </ol>
+                                                </dd>
+                                            </dl>
+
+                                            <dl>
+                                                <dt>岗位要求:</dt>
+                                                <dd>
+                                                    <ol>
+                                                        <li>
+                                                            1,软件,计算机等相关专业,本科及以上学历;
+                                                        </li>
+
+                                                        <li>
+                                                            2、C/C++开发经验,精通C语言;
+                                                        </li>
+
+                                                        <li>
+                                                            3、熟悉Xcode, 具有IOS开发经验者优先;
+                                                        </li>
+
+                                                        <li>
+                                                            4,具有苹果SWIFT开发经验优先;
+                                                        </li>
+
+                                                        <li>
+                                                            5,英语能力,能够熟练阅读,使用英文资料;
+                                                        </li>
+
+                                                        <li>
+                                                            6,良好的团队协作和沟通能力;
+                                                        </li>
+
+                                                        <li>
+                                                            7,强的领悟能力和创新能力,有独特的想法;
+                                                        </li>
+
+                                                        <li>
+                                                            8,较强的学习能力;
+                                                        </li>
+                                                    </ol>
+                                                </dd>
+                                            </dl>
+
+                                        </div>
+                                    </div>
+
+
+                                    <nav class="navbar navbar-default collapsed" role="navigation" id="bs-example-navbar-collapse-4" data-toggle="collapse" href="#collapseOne_4">
+                                        <p class="visible-xs" style="padding-top: 15px;padding-left: 15px;font-weight: bold;">Android开发工程师 (2人)</p>
+
+                                        <div class="collapse navbar-collapse collapsed">
+                                            <ul class="nav navbar-nav">
+                                                <li class="one"><a>Android开发工程师 (2人)</a></li>
+                                                <li class="two"><a>技术类</a></li>
+                                                <li class="three"><a>北京</a></li>
+                                                <li class="four"><a>2016-08-28</a></li>
+                                                <li class="five">
+                                                    <div class="navbar-tool">
+                                                        <button type="button" class="btn btn-default btn-xs">
 															<span class="glyphicon glyphicon-chevron-down"></span> 
 															<span class="glyphicon glyphicon-chevron-up"></span> 
 														</button>
-														
 
-													</div>
-												</li>
-											</ul>
-										</div>
-									</nav>
 
-									<div id="collapseOne_4" class="collapse" data-parent="bs-example-navbar-collapse-4">
-										<div class="panel-body">
-											<dl>
-												<dt>岗位职责:</dt>
-												<dd>
-													<ol>
-														<li>
-															1,安卓手机客户端软件的编码和调试。
-														</li>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
 
-														<li>
-															2,安卓手机客户端软件的开发和测试文档的编写。
-														</li>
+                                    <div id="collapseOne_4" class="collapse" data-parent="bs-example-navbar-collapse-4">
+                                        <div class="panel-body">
+                                            <dl>
+                                                <dt>岗位职责:</dt>
+                                                <dd>
+                                                    <ol>
+                                                        <li>
+                                                            1,安卓手机客户端软件的编码和调试。
+                                                        </li>
 
-														<li>
-															3,软件维护。
-														</li>
-													</ol>
-												</dd>
-											</dl>
-											
-											<dl>
-												<dt>岗位要求:</dt>
-												<dd>
-													<ol>
-														<li>
-															1,软件,计算机等相关专业,本科及以上学历;
-														</li>
+                                                        <li>
+                                                            2,安卓手机客户端软件的开发和测试文档的编写。
+                                                        </li>
 
-														<li>
-															2、Java平台的开发经验,精通Java,熟练使用Eclipse及相关软件;
-														</li>
+                                                        <li>
+                                                            3,软件维护。
+                                                        </li>
+                                                    </ol>
+                                                </dd>
+                                            </dl>
 
-														<li>
-															3、熟悉Android SDK,具有Android开发经验者优先;
-														</li>
+                                            <dl>
+                                                <dt>岗位要求:</dt>
+                                                <dd>
+                                                    <ol>
+                                                        <li>
+                                                            1,软件,计算机等相关专业,本科及以上学历;
+                                                        </li>
 
-														<li>
-															 5,英语能力,能够熟练阅读,使用英文资料;
-														</li>
+                                                        <li>
+                                                            2、Java平台的开发经验,精通Java,熟练使用Eclipse及相关软件;
+                                                        </li>
 
-														<li>
-															 6,良好的团队协作和沟通能力;
-														</li>
+                                                        <li>
+                                                            3、熟悉Android SDK,具有Android开发经验者优先;
+                                                        </li>
 
-														<li>
-															 7,强的领悟能力和创新能力,有独特的想法;
-														</li>
+                                                        <li>
+                                                            5,英语能力,能够熟练阅读,使用英文资料;
+                                                        </li>
 
-														<li>
-															 8,较强的学习能力;
-														</li>
-													</ol>
-												</dd>
-											</dl>
+                                                        <li>
+                                                            6,良好的团队协作和沟通能力;
+                                                        </li>
 
-										</div>
-									</div>
-								</div>
-						    </div>
+                                                        <li>
+                                                            7,强的领悟能力和创新能力,有独特的想法;
+                                                        </li>
 
-						    <div role="tabpanel" class="tab-pane fade sj" id="sj">
-						    	<div class="collapse-custom">
-									<nav class="navbar navbar-default navbar-heading hidden-xs" role="navigation">
-										<div class="navbar-collapse">
-											<ul class="nav navbar-nav">
-												<li class="one"><a>职务</a></li>
-												<li class="two"><a>类型</a></li>
-												<li class="three"><a>工作地点</a></li>
-												<li class="fore"><a>时间</a></li>
-											</ul>
-										</div>
-									</nav>
+                                                        <li>
+                                                            8,较强的学习能力;
+                                                        </li>
+                                                    </ol>
+                                                </dd>
+                                            </dl>
 
-									<nav class="navbar navbar-default top" role="navigation" id="bs-example-navbar-collapse-11" data-toggle="collapse" href="#collapseOne_5">
-										<p class="visible-xs" style="padding-top: 15px;padding-left: 15px;font-weight: bold;">UI/UE设计师</p>
-										<div class="collapse navbar-collapse">
-											<ul class="nav navbar-nav">
-												<li class="one"><a>UI/UE设计师</a></li>
-												<li class="two"><a>设计类</a></li>
-												<li class="three"><a>北京</a></li>
-												<li class="four"><a>2016-08-28</a></li>
-												<li class="five">
-													<div class="navbar-tool">
-														<button type="button" class="btn btn-default btn-xs">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane fade sj" id="sj">
+                                <div class="collapse-custom">
+                                    <nav class="navbar navbar-default navbar-heading hidden-xs" role="navigation">
+                                        <div class="navbar-collapse">
+                                            <ul class="nav navbar-nav">
+                                                <li class="one"><a>职务</a></li>
+                                                <li class="two"><a>类型</a></li>
+                                                <li class="three"><a>工作地点</a></li>
+                                                <li class="fore"><a>时间</a></li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+
+                                    <nav class="navbar navbar-default top" role="navigation" id="bs-example-navbar-collapse-11" data-toggle="collapse" href="#collapseOne_5">
+                                        <p class="visible-xs" style="padding-top: 15px;padding-left: 15px;font-weight: bold;">UI/UE设计师</p>
+                                        <div class="collapse navbar-collapse">
+                                            <ul class="nav navbar-nav">
+                                                <li class="one"><a>UI/UE设计师</a></li>
+                                                <li class="two"><a>设计类</a></li>
+                                                <li class="three"><a>北京</a></li>
+                                                <li class="four"><a>2016-08-28</a></li>
+                                                <li class="five">
+                                                    <div class="navbar-tool">
+                                                        <button type="button" class="btn btn-default btn-xs">
 															<span class="glyphicon glyphicon-chevron-down"></span> 
 															<span class="glyphicon glyphicon-chevron-up"></span> 
 														</button>
-														
 
-													</div>
-												</li>
-											</ul>
-										</div>
-									</nav>
 
-									<div id="collapseOne_5" class="collapse in" data-parent="bs-example-navbar-collapse-11">
-										<div class="panel-body">
-											<dl>
-												<dt>岗位职责:</dt>
-												<dd>
-													<ol>
-														<li>
-															负责产品的界面设计
-														</li>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
 
-														<li>
-															2,负责服务器端软件的优化和维护。
-														</li>
-													</ol>
-												</dd>
-											</dl>
-											
-											<dl>
-												<dt>岗位要求:</dt>
-												<dd>
-													<ol>
-														<li>
-															美术基础;
-														</li>
+                                    <div id="collapseOne_5" class="collapse in" data-parent="bs-example-navbar-collapse-11">
+                                        <div class="panel-body">
+                                            <dl>
+                                                <dt>岗位职责:</dt>
+                                                <dd>
+                                                    <ol>
+                                                        <li>
+                                                            负责产品的界面设计
+                                                        </li>
 
-														<li>
-															设计经验;
-														</li>
+                                                        <li>
+                                                            2,负责服务器端软件的优化和维护。
+                                                        </li>
+                                                    </ol>
+                                                </dd>
+                                            </dl>
 
-														<li>
-															WEB及APP经验;
-														</li>
+                                            <dl>
+                                                <dt>岗位要求:</dt>
+                                                <dd>
+                                                    <ol>
+                                                        <li>
+                                                            美术基础;
+                                                        </li>
 
-													</ol>
-												</dd>
-											</dl>
+                                                        <li>
+                                                            设计经验;
+                                                        </li>
 
-										</div>
-									</div>
+                                                        <li>
+                                                            WEB及APP经验;
+                                                        </li>
 
-								</div>
-						    </div>
+                                                    </ol>
+                                                </dd>
+                                            </dl>
 
-						    <div role="tabpanel" class="tab-pane fade yy" id="yy">
-						    	<div class="collapse-custom">
-									<nav class="navbar navbar-default navbar-heading hidden-xs" role="navigation">
-										<div class="navbar-collapse">
-											<ul class="nav navbar-nav">
-												<li class="one"><a>职务</a></li>
-												<li class="two"><a>类型</a></li>
-												<li class="three"><a>工作地点</a></li>
-												<li class="fore"><a>时间</a></li>
-											</ul>
-										</div>
-									</nav>
+                                        </div>
+                                    </div>
 
-									<nav class="navbar navbar-default top" role="navigation" id="bs-example-navbar-collapse-12" data-toggle="collapse" href="#collapseOne_6">
-										<p class="visible-xs" style="padding-top: 15px;padding-left: 15px;font-weight: bold;">新媒体运营</p>
-										<div class="collapse navbar-collapse">
-											<ul class="nav navbar-nav">
-												<li class="one"><a>新媒体运营</a></li>
-												<li class="two"><a>运营类</a></li>
-												<li class="three"><a>北京</a></li>
-												<li class="four"><a>2016-08-28</a></li>
-												<li class="five">
-													<div class="navbar-tool">
-														<button type="button" class="btn btn-default btn-xs">
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane fade yy" id="yy">
+                                <div class="collapse-custom">
+                                    <nav class="navbar navbar-default navbar-heading hidden-xs" role="navigation">
+                                        <div class="navbar-collapse">
+                                            <ul class="nav navbar-nav">
+                                                <li class="one"><a>职务</a></li>
+                                                <li class="two"><a>类型</a></li>
+                                                <li class="three"><a>工作地点</a></li>
+                                                <li class="fore"><a>时间</a></li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+
+                                    <nav class="navbar navbar-default top" role="navigation" id="bs-example-navbar-collapse-12" data-toggle="collapse" href="#collapseOne_6">
+                                        <p class="visible-xs" style="padding-top: 15px;padding-left: 15px;font-weight: bold;">新媒体运营</p>
+                                        <div class="collapse navbar-collapse">
+                                            <ul class="nav navbar-nav">
+                                                <li class="one"><a>新媒体运营</a></li>
+                                                <li class="two"><a>运营类</a></li>
+                                                <li class="three"><a>北京</a></li>
+                                                <li class="four"><a>2016-08-28</a></li>
+                                                <li class="five">
+                                                    <div class="navbar-tool">
+                                                        <button type="button" class="btn btn-default btn-xs">
 															<span class="glyphicon glyphicon-chevron-down"></span> 
 															<span class="glyphicon glyphicon-chevron-up"></span> 
 														</button>
-														
 
-													</div>
-												</li>
-											</ul>
-										</div>
-									</nav>
 
-									<div id="collapseOne_6" class="collapse in" data-parent="bs-example-navbar-collapse-12">
-										<div class="panel-body">
-											<dl>
-												<dt>岗位职责:</dt>
-												<dd>
-													<ol>
-														<li>
-															1、能够配合公司的一系列活动、根据行业资讯撰写相应的文案和宣传图片，并且具有一定的话题敏感度。
-														</li>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
 
-														<li>
-															2、负责公司微信、微博、论坛等相关新媒体的运营，增加粉丝数、粉丝互动、制造话题、捕捉热点、提高关注度（综合文字、图片等资料），要求能够独立策划内容主题。
-														</li>
-													</ol>
-												</dd>
-											</dl>
-											
-											<dl>
-												<dt>岗位要求:</dt>
-												<dd>
-													<ol>
-														<li>
-															1、熟悉微博、微信的传播、运营、推广及策划；
-														</li>
+                                    <div id="collapseOne_6" class="collapse in" data-parent="bs-example-navbar-collapse-12">
+                                        <div class="panel-body">
+                                            <dl>
+                                                <dt>岗位职责:</dt>
+                                                <dd>
+                                                    <ol>
+                                                        <li>
+                                                            1、能够配合公司的一系列活动、根据行业资讯撰写相应的文案和宣传图片，并且具有一定的话题敏感度。
+                                                        </li>
 
-														<li>
-															2、有一定的文字功底、图片处理能力和良好的沟通能力；
-														</li>
+                                                        <li>
+                                                            2、负责公司微信、微博、论坛等相关新媒体的运营，增加粉丝数、粉丝互动、制造话题、捕捉热点、提高关注度（综合文字、图片等资料），要求能够独立策划内容主题。
+                                                        </li>
+                                                    </ol>
+                                                </dd>
+                                            </dl>
 
-														<li>
-															3、熟悉互联网，了解网络新媒体内容，具备敏税的市场前瞻能力，善于发掘新媒体内容，具有一定的艺术修养，热爱教育培训行业；
-														</li>
+                                            <dl>
+                                                <dt>岗位要求:</dt>
+                                                <dd>
+                                                    <ol>
+                                                        <li>
+                                                            1、熟悉微博、微信的传播、运营、推广及策划；
+                                                        </li>
 
-														<li>
-															4、热爱微博等社会化媒体,微博、微信控、各类网站社区的活跃用户优先。
-														</li>
+                                                        <li>
+                                                            2、有一定的文字功底、图片处理能力和良好的沟通能力；
+                                                        </li>
 
-													</ol>
-												</dd>
-											</dl>
+                                                        <li>
+                                                            3、熟悉互联网，了解网络新媒体内容，具备敏税的市场前瞻能力，善于发掘新媒体内容，具有一定的艺术修养，热爱教育培训行业；
+                                                        </li>
 
-										</div>
-									</div>
+                                                        <li>
+                                                            4、热爱微博等社会化媒体,微博、微信控、各类网站社区的活跃用户优先。
+                                                        </li>
 
-									<nav class="navbar navbar-default top" role="navigation" id="bs-example-navbar-collapse-13" data-toggle="collapse" href="#collapseOne_7">
-										<p class="visible-xs" style="padding-top: 15px;padding-left: 15px;font-weight: bold;">APP运营经理</p>
-										<div class="collapse navbar-collapse">
-											<ul class="nav navbar-nav">
-												<li class="one"><a>APP运营经理</a></li>
-												<li class="two"><a>运营类</a></li>
-												<li class="three"><a>北京</a></li>
-												<li class="four"><a>2016-08-28</a></li>
-												<li class="five">
-													<div class="navbar-tool">
-														<button type="button" class="btn btn-default btn-xs">
+                                                    </ol>
+                                                </dd>
+                                            </dl>
+
+                                        </div>
+                                    </div>
+
+                                    <nav class="navbar navbar-default top" role="navigation" id="bs-example-navbar-collapse-13" data-toggle="collapse" href="#collapseOne_7">
+                                        <p class="visible-xs" style="padding-top: 15px;padding-left: 15px;font-weight: bold;">APP运营经理</p>
+                                        <div class="collapse navbar-collapse">
+                                            <ul class="nav navbar-nav">
+                                                <li class="one"><a>APP运营经理</a></li>
+                                                <li class="two"><a>运营类</a></li>
+                                                <li class="three"><a>北京</a></li>
+                                                <li class="four"><a>2016-08-28</a></li>
+                                                <li class="five">
+                                                    <div class="navbar-tool">
+                                                        <button type="button" class="btn btn-default btn-xs">
 															<span class="glyphicon glyphicon-chevron-down"></span> 
 															<span class="glyphicon glyphicon-chevron-up"></span> 
 														</button>
-														
-
-													</div>
-												</li>
-											</ul>
-										</div>
-									</nav>
-
-									<div id="collapseOne_7" class="collapse" data-parent="bs-example-navbar-collapse-13">
-										<div class="panel-body">
-											<dl>
-												<dt>岗位职责:</dt>
-												<dd>
-													<ol>
-														<li>
-															1、熟悉线上线下等多种推广方式和推广渠道，推广产品，扩大用户群，提高注册用户量；
-														</li>
-
-														<li>
-															2、结合APP策划、组织、实施及跟踪各种线上、线下活动,提高活跃用户量；
-														</li>
-
-														<li>
-															3、引导、鼓励产品用户线上、线下进行活动宣传和回顾,扩大活动影响；
-														</li>
-
-														<li>
-															4、熟悉事件炒作、话题营销、病毒视频的运作方法，能够完整执行。
-														</li>
-													</ol>
-												</dd>
-											</dl>
-											
-											<dl>
-												<dt>岗位要求:</dt>
-												<dd>
-													<ol>
-														<li>
-															1、3年及以上大专或本科学历,热爱互联网；
-														</li>
-
-														<li>
-															2、对于社会生活的热点话题、事件、需求,具有敏锐的嗅觉和洞察力；
-														</li>
-
-														<li>
-															3、了解互联网用户群体心态，擅长线上线下沟通、互动激发、帖子处理和传播；
-														</li>
-
-														<li>
-															4、具备较强的信息处理和传播、活动策划的意识和技能；
-														</li>
-
-														<li>
-															5、具备市场推广或营销方面的知识,有实际从业经验者优先；
-														</li>
-
-													</ol>
-												</dd>
-											</dl>
-
-										</div>
-									</div>
-
-								</div>
-						    </div>
-						  </div>
-
-					</div>
-					
-					<!-- 支付协议 news -->
-					<div class="tab-pane fade section-2" id="section-2">
-						<h2>支付协议</h2>
-						
-						<dl>
-							<dt>生效日期：2016 年9 月 1 日</dt>
-							<dd>
-								本“商业条款”适用于GlobZip平台、译员、用户三者之间的商业交易，您应当仔细阅读本商业条款，以了解您的权利和责任，因为本商业条款构成您GlobZip平台之间的合同。您在使用GlobZip平台达成交易表示您同意接受本商业条款的法律约束。我们可不定期更新本商业条款。在您完成任何商业交易之前，请务必阅读本商业条款。如果您不同意本商业条款，您可以选择不进行商业交易。一旦您完成任何商业交易，您将受到最新版商业条款的法律约束。
-
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>1、GlobZip平台交易主体</dt>
-							<dd>
-								<ul>
-									<li>
-										译员和用户通过GlobZip平台达成订单交易，交易包括服务的时间、地点、费用、货币等。订单达成译员和用户具有法律效益，双方履行自己的义务。
-									</li>
-								</ul>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>2、订单达成，用户的支付方式和时间</dt>
-							<dd>
-								<ul>
-									<li>
-										订单达成后用户要把订单的费用24小时之内支付给GlobZip平台。支付所使用的货币以订单所决定的货币为交易的唯一货币。
-									</li>
-								</ul>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>3、GlobZip平台向译员支付的费用和税款计算</dt>
-							<dd>
-								<ul>
-									<li>
-										（1）GlobZip平台收取交易费的15%以用于网络费用，服务费用；
-									</li>
-
-									<li>
-										（2）不同币种交易因涉及汇率风险，因此需缴纳交易费用的3%作为汇率风险；
-									</li>
-
-									<li>
-										（3）按照发生交易国家的税率GlobZip平台代扣税金；
-									</li>
-
-									<li>
-										（4）除非同种货币除外译员和用户发生交易时要确定汇率使用的比率，要确定使用达成交易的汇率还是约定使用服务完成后的汇率。
-									</li>
-
-								</ul>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>4、GlobZip平台支付给译员的时间与费用</dt>
-							<dd>
-								<ul>
-									<li>
-										译员为用户的服务完成后，用户给GlobZip平台确认服务完成， GlobZip平台本次服务的费用。费用是在扣除了第3条所规定的条款之后的费用。支付的货币形式以译员初次申请所定的货币为唯一形式，用户和译员交易的是同种货币，第3条之第2款3%的汇率风险金将不再扣除。
-									</li>
-								</ul>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>5、GlobZip平台使用的第三方支付平台</dt>
-							<dd>
-								<ol>
-									<li>
-										paypal  多种国际货币（人民币除外）  
-									</li>
-
-									<li>
-										支付宝  仅支持人民币
-									</li>
-
-								</ol>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>6、译员提现</dt>
-							<dd>
-								<ul>
-									<li>
-										译员把在GlobZip平台提供服务所赚取的现金转移到个人账户，由于不同的金融主体所产生的交易费用由译员承担。
-									</li>
-								</ul>
-							</dd>
-						</dl>
-
-
-						<dl>
-							<dt>7、退款处理</dt>
-							<dd>
-								<ul>
-									<li>
-										译员由于某种原因不能在订单规定之时间履行服务，在用户和译员确认后，该订单在GlobZip平台上无法执行，用户在订单生成之日所支付在GlobZip平台的费用，GlobZip平台将按照用户订单的支付方式原路退还给用户。由于不同的金融主体所产生的交易费用，本费用有GlobZip平台承担。
-									</li>
-								</ul>
-							</dd>
-						</dl>
-
-
-						<dl>
-							<dt>8、您选择使用GlobZip平台支付方式即表示您同意：</dt>
-							<dd>
-								<ul>
-									<li>
-										（1）您提供的任何支付信息均真实、准确；
-									</li>
-
-									<li>
-										（2）您有权使用您提供的支付方式；
-									</li>
-
-									<li>
-										（3）我们有权保留支付信息和支付方式，包括由您和您的发卡行或适用的支付网络提交的所有借记卡和信用卡信息；
-									</li>
-
-									<li>
-										（4） 我们有权使用您提交的电子邮件地址为您提供与支付相关的通知和信息披露；
-									</li>
-								</ul>
-							</dd>
-						</dl>
-					</div>
-					
-					<!-- 服务协议 agree -->
-					<div class="tab-pane fade section-3" id="section-3">
-						<h2>服务协议</h2>
-						<dl>
-							<dt>声明</dt>
-							<dd>
-								本协议由您与上海壹零捌度科技有限公司共同缔结，具有合同效力。在使用“GlobZip平台”各项服务前，请您务必仔细阅读并透彻理解本协议。如果您使用”GlobZip平台”服务，您的使用行为将被视为对本协议全部内容的认可。若本协议内任何一则条款由于国家或地方政策变更而不再具有约束力，该条款的失效不对协议内其他条款的继续履行造成任何影响。
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>一、协议的效力</dt>
-							<dd>
-								<ol>
-									<li>
-										本协议中的”GlobZip平台”（www.globzip.com）隶属上海壹零捌度科技有限公司，根据相关法律、法规为拥有多语言能力的译员及需要翻译的用户提供在线交易的技术服务平台。
-									</li>
-
-									<li>
-										协议中“您”、“用户”，指进入、访问、使用”GlobZip平台”网站（www.globzip.com），或通过其它可实现”GlobZip平台”服务的网址和移动设备应用获取”GlobZip平台”服务的用户。
-									</li>
-
-									<li>
-										本协议内容包括协议正文及所有”GlobZip平台”已经发布的或将来可能发布的各类规则。所有规则为本协议不可分割的组成部分，与协议正文具有同等法律效力。除另行明确声明外，任何”GlobZip平台”及其关联公司提供的服务（以下称为““GlobZip平台”服务”）均受本协议约束。/或自动提取您的手机号码及自动提取您的手机设备识别码等信息用于注册。
-									</li>
-
-									<li>
-										使用”GlobZip平台”服务前，您承诺接受并遵守本协议的约定。如您不同意本协议的约定，您应立即停止注册程序或停止使用”GlobZip平台”服务。无论您事实上是否在使用”GlobZip平台”服务之前认真阅读了本协议内容，只要您使用”GlobZip平台”服务，即视为您与”GlobZip平台”缔结本协议，本协议即对您产生约束，届时您不应以未阅读本协议的内容或者未获得”GlobZip平台”对您问询的解答等理由，主张本协议无效，或要求撤销本协议。
-									</li>
-
-									<li>
-										”GlobZip平台”保留随时修改服务协议的权利。”GlobZip平台”有权根据国家法律法规的更新、产品和服务规则的调整需要，在任何时间不时地制订、变更或修改本协议及/或其相关各项条款、各类规则。一旦条款内容发生变动，”GlobZip平台”将会在相关的页面提示修改内容，不再单独通知您。在使用”GlobZip平台”平台服务时，您有必要对最新的”GlobZip平台”服务协议条款进行仔细阅读和重新确认。如您继续使用”GlobZip平台”服务，即表示您接受已经修订的协议。如您不同意相关变更，应当立即停止使用”GlobZip平台”服务。当发生有关争议时，以最新的服务协议为准。
-									</li>
-
-									<li>
-										对于您提供的”GlobZip平台”资料及数据信息，您授予”GlobZip平台”独家的、全球通用的、永久的、免费的许可使用权利。您同意，”GlobZip平台”有权（全部或部分地）使用、复制、修订、改写、发布、翻译、分发、执行和展示您的资料数据（包括但不限于注册资料、行为数据及全部展示于”GlobZip平台”平台的各类信息）或制作其派生作品，并以现在已知或日后开发的任何形式、媒体或技术，将上述信息纳入其它作品内。
-									</li>
-
-									<li>
-										您接受并使用”GlobZip平台”各项服务时，除遵守本协议外，仍需遵守此服务其它各类相关规则，且您的使用行为受其约束。
-									</li>
-
-									<li>
-										本协议及其未来变更后的协议和规则一经在网站公布后，立即自动生效。
-									</li>
-
-								</ol>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>二、注册会员</dt>
-							
-							<dd>
-								依照本协议要求，于”GlobZip平台”登记注册的会员（亦称 “注册用户”），需同意以下服务条款，方有资格享受”GlobZip平台”提供的相应服务，并受本协议条款的约束。
-							</dd>
-
-							<dd>
-								<ul>
-									<li>
-										<dl>
-											<dt>1、注册账户</dt>
-											<dd>
-												为使用”GlobZip平台”向您的提供的服务，您必须：
-											</dd>
-											<dd>
-												<ul>
-													<li>（1）自行配备上网所必需设备，包括计算机、调制解调器或其他必备上网装置；</li>
-													<li>（2）自行承担电话费用、网络费用，以及在使用服务过程中形成的其他一切费用。</li>
-												</ul>
-											</dd>
-											<dd>
-												<ul>
-													<li>
-														您确认，在您完成注册程序或以其他”GlobZip平台”允许的方式实际使用”GlobZip平台”服务时，您应当是具备完全民事权利能力和完全民事行为能力的自然人、法人或其他组织。若您不具备前述主体资格，则您及您的监护人应承担因此而导致的一切后果，且”GlobZip平台”有权注销（永久冻结）您的”GlobZip平台”账户，并向您及您的监护人索偿。”GlobZip平台”建议，任何未满18周岁的未成年人参加网上活动应事先取得其监护人（以下简称“监护人”）的同意并遵守《青少年网络文明公约》。 
-													</li>
-
-													<li>
-														“GlobZip平台”提供的服务将完全按照其发布的章程、服务条款和操作规则严格执行。在确认并接受”GlobZip平台”服务协议，用户完全完成注册程序或以其他”GlobZip平台”允许的方式实际使用”GlobZip平台”服务时，便成为”GlobZip平台”的注册用户，将得到唯一的”GlobZip平台”账户，（以下亦称“账户”）。
-													</li>
-
-													<li>
-														您需对您的”GlobZip平台”账户设置用户名和密码，通过该用户名密码或与该用户名密码关联的其它用户名密码登陆”GlobZip平台”网站（www.globzip.com）。您设置的用户名不得侵犯或涉嫌侵犯他人合法权益。
-													</li>
-
-													<li>
-														为保障您的合法权益，避免在服务时因用户注册资料与真实情况不符而发生纠纷，注册时，您应当按照法律法规要求，或注册页面的提示，准确填写并及时更新您提供的电子邮件地址、联系电话、联系地址等联系方式及其它注册资料，以便”GlobZip平台”或其他会员与您进行有效联系。因通过这些联系方式无法与您取得联系，导致您在使用”GlobZip平台”下服务过程中产生任何损失或增加费用的，应由您完全独自承担。如您的资料发生变更，您应及时更新您的资料，以使之真实、及时、完整和准确。若您提供的资料存在任何错误、不实、过时、不完整的情况，或者”GlobZip平台”有任何合理理由认为您的资料存在上述问题，造成难以提供服务的，”GlobZip平台”有权向您发出询问及/或要求改正的通知，并有权直接做出删除相应资料的处理，直至中止、终止对您提供部分或全部”GlobZip平台”服务。”GlobZip平台”对此不承担任何责任，您将承担因此产生的任何直接或间接支出。
-													</li>
-												</ul>
-											</dd>
-										</dl>
-
-										<dl>
-											<dt>2、会员</dt>
-											<dd>
-												<ul>
-													<li>
-														在您按照注册页面提示填写信息、阅读并同意本协议并完成全部注册程序后或以其他”GlobZip平台”允许的方式实际使用”GlobZip平台”服务时，您即成为”GlobZip平台”会员（亦称“会员”、“注册用户”）。
-													</li>
-
-													<li>
-														您有权随时对自己的个人资料进行查询、修改和删除。为客户服务安全考虑，用户名不能随意更改。
-													</li>
-
-													<li>
-														“GlobZip平台”的登陆用户名及密码只供会员使用，会员有责任维护其用户名和密码的保密性和安全性。您应对您的用户名和密码的安全，以及对通过您的用户名和密码实施的行为承担全部责任。除非有法律规定或司法裁定，且征得”GlobZip平台”的同意，否则，用户名和密码不得以任何方式转让、赠与或继承（与账户相关的财产权益除外）。若您发现用户名和密码丢失、被盗，或任何人未经取得同意不当使用您的账户或有任何其他可能危及您账户安全的情形时，您应当立即以有效方式通知”GlobZip平台”，要求”GlobZip平台”暂停相关服务。因会员方造成的账户失密，应由会员承担直接或间接的责任，”GlobZip平台”对其产生的后果（包括但不限于您的任何损失）不承担任何责任。如”GlobZip平台”监测到非授权用户使用会员用户名及密码登录本站，”GlobZip平台”有权暂停或取消此帐号登录权限，并对失密原因进行调查。
-													</li>
-
-													<li>
-														使用”GlobZip平台”服务时，您必须遵守《中华人民共和国保密法》、《中华人民共和国版权法》、《计算机信息系统国际联网保密管理规定》、《中华人民共和国计算机信息系统安全保护条例》、《计算机信息网络国际联网安全保护管理办法》、《中华人民共和国计算机信息网络国际联网管理暂行规定》及其实施办法等相关法律法规的任何及所有的规定。如”GlobZip平台”有任何合理理由认为您的行为可能违反相关法律、法规、规章及条例，”GlobZip平台”有权在任何时间，不经事先通知终止向您提供服务。
-													</li>
-
-													<li>
-														您了解并同意，”GlobZip平台”有权应政府部门（包括司法及行政部门）的要求，向其提供您在”GlobZip平台”填写的注册信息和发布记录等必要信息。
-													</li>
-
-												</ul>
-											</dd>
-										</dl>
-									</li>
-
-									<li>
-									</li>
-
-								</ul>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt> 三、”GlobZip平台”服务说明</dt>
-							<dd>
-								<ol>
-									<li>
-										”GlobZip平台”专注于为拥有多语言能力的译员及需要翻译的用户提供一个在线交易电子商务平台，供免费信息发布和在线沟通交流。”GlobZip平台”出行语言网络交易服务，包括发布用户需求信息、在线信息交流工具、及第三方支付服务（以下简称"本服务"）。
-
-									</li>
-
-									<li>
-										本网站各项服务的所有权和运作权归”GlobZip平台”拥有。除非本服务条款另有其他明示规定，增加或强化目前本服务的任何新功能，包括所推出的新产品，均受到本服务协议之规范。
-									</li>
-
-									<li>
-										”GlobZip平台”仅为拥有多语言能力的译员的免费信息平台。用户了解且明白，”GlobZip平台”上所有信息均为译员或需要译员者自由发布。尽管”GlobZip平台”在该等信息发布之前已对信息的准确性、真实性和合法性作了必要核查，但用户务必自行核查发布信息的准确性、真实性以及合法性。”GlobZip平台”并不对所发布信息的准确性、真实性和合法性承担保证责任。如用户发现该等发布的信息为虚假、违法信息，请立即向”GlobZip平台”举报，”GlobZip平台”将采取删除与屏蔽，以及其他相应的技术和法律手段阻止此类信息的发布。”GlobZip平台”不对用户所发布的信息的删除或储存失败负责。
-									</li>
-
-									<li>
-										用户通过”GlobZip平台”获取译员信息后，在线下与翻译服务需求者达成交易时，请务必遵守中国相关法律法规。查验译员的身份证明等相关文件，并签订书面协议以保护自身利益。”GlobZip平台”不对用户在线下的交易行为引起的任何性质的纠纷负有任何性质的协助义务或承担任何形式的责任。译员应当通过法律途径自行解决其与翻译服务需求者因此而产生的任何纠纷。
-									</li>
-								</ol>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>四、用户管理</dt>
-							<dd>
-								<ol>
-									<li>
-										在”GlobZip平台”上使用”GlobZip平台”服务过程中，您承诺遵守以下约定：
-										<p>
-											（1）在使用”GlobZip平台”服务过程中实施的所有行为均遵守国家法律、法规等规范文件及”GlobZip平台”各项规则的规定和要求，不违背社会公共利益或公共道德，不损害他人的合法权益，不违反本协议及相关规则。您如果违反前述承诺，产生任何法律后果的，您应以自己的名义独立承担所有的法律责任，并确保”GlobZip平台”免于因此产生任何损失。
-										</p>
-										<p>
-											（2）不发布国家禁止发布的信息（除非取得合法且足够的许可），不发布涉嫌侵犯他人知识产权或其它合法权益的信息，不发布违背社会公共利益或公共道德、公序良俗的信息，不发布其它涉嫌违法或违反本协议及各类规则的信息。 
-										</p>
-										<p>
-											（3）不对”GlobZip平台”网站上的任何数据作商业性利用，包括但不限于在未经”GlobZip平台”事先书面同意的情况下，以复制、传播等任何方式使用”GlobZip平台”上展示的资料。
-										</p>
-										<p>
-											（4）不使用任何装置、软件或例行程序干预或试图干预”GlobZip平台”的正常运作或正在”GlobZip平台”上进行的任何活动。您不得采取任何将导致不合理的庞大数据负载加诸”GlobZip平台”网络设备的行动。
-										</p>
-										<p>（5）不使用网络服务作非法用途；</p>
-										<p>（6）不干扰或混乱网络服务；</p>
-										<p>（7）遵守所有使用网络服务的网络协议、规定、程序和惯例。</p>
-									</li>
-
-									<li>
-										2、您了解并同意：
-										<p>
-											（1）您违反上述承诺时，”GlobZip平台”有权依据本协议的约定，做出相应处理或终止向您提供服务，且无须征得您的同意或提前通知予您。 
-										</p>
-										<p>
-											（2）根据相关法令的指定或者”GlobZip平台”服务规则的判断，您的行为涉嫌违反法律法规的规定或违反本协议和/或规则的条款的，”GlobZip平台”有权采取相应措施，包括但不限于直接屏蔽、删除侵权信息、降低您的信用值或直接停止提供服务。 
-										</p>
-										<p>
-											（3）对于您在”GlobZip平台”实施的行为，包括您未在”GlobZip平台”上实施但已经对”GlobZip平台”及其用户产生影响的行为，”GlobZip平台”有权单方认定您行为的性质及是否构成对本协议和/或规则的违反，并据此采取相应的处理措施。您应自行保存与您行为有关的全部证据，并应对无法提供充要证据而承担其不利后果。
-										</p>
-										<p>
-											（4）对于您涉嫌违反承诺的行为对任意第三方造成损害的，您均应当以自己的名义独立承担所有的法律责任，并应确保”GlobZip平台”免于承担因此产生的损失或增加的费用。
-										</p>
-										<p>
-											（5）如您涉嫌违反有关法律或者本协议之规定，使”GlobZip平台”遭受任何损失，或受到任何第三方的索赔，或受到任何行政管理部门的处罚，您应当赔偿”GlobZip平台”因此造成的损失及（或）发生的费用，包括合理的律师费用。
-										</p>
-									</li>
-
-									<li>
-										五、”GlobZip平台”使用规范
-										<ul>
-											<li>
-												1、您不得利用”GlobZip平台”危害国家安全、泄露国家秘密，不得侵犯国家社会集体的和公民的合法权益，不得利用”GlobZip平台”制作、复制和传播下列信息：
-												<p>（1）煽动抗拒、破坏宪法和法律、行政法规实施的；</p>
-												<p>（2）煽动颠覆国家政权，推翻社会主义制度的；</p>
-												<p>（3）煽动分裂国家、破坏国家统一的；</p>
-												<p>（4）煽动民族仇恨、民族歧视，破坏民族团结的；</p>
-												<p>（5）捏造或者歪曲事实，散布谣言，扰乱社会秩序的；</p>
-												<p>（6）宣扬封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪的；</p>
-												<p>（7）公然侮辱他人或者捏造事实诽谤他人的，或者进行其他恶意攻击的；</p>
-												<p>（8）损害国家机关信誉的；</p>
-												<p>（9）其他违反宪法和法律法规的；</p>
-												<p>（10）未经”GlobZip平台”同意许可进行商业广告行为的。</p>
-											</li>
-
-											<li>
-												2、在接受”GlobZip平台”服务的过程中，您不得从事下列行为：
-												<p>（1）发表、传送、传播、储存侵害他人知识产权、商业秘密权等合法权利的内容。包含但不仅限于病毒、木马、定时炸弹等可能对”GlobZip平台”系统造成伤害或影响其稳定性的内容；</p>
-												<p>（2）传送、散布或以其他方式实现传播含有受到知识产权法律保护的图像、相片、软件或其他资料的文件；</p>
-												<p>（3）上载、张贴、发送或传送任何非法、反动、淫秽、粗俗、猥亵的，胁迫、骚扰、中伤他人、诽谤、侵害他人隐私或诋毁他人名誉或商誉的，种族歧视、危害未成年人或其他不适当的信息或电子邮件，包括但不限于资讯、资料、文字、软件、音乐、照片、图形、信息或其他资料；</p>
-												<p>（4）上载、张贴、发送电子邮件或以其它方式传送无权传送的内容（例如内部资料、机密资料）；</p>
-												<p>（5）使用任何包含有通过侵犯商标、版权、专利、商业机密或任何一方的其他专有权利的方式，利用本“软件”获得图像或相片的资料或信息；</p>
-												<p>（6）进行危害计算机网络安全的行为，包括但不限于：使用未经许可的数据或进入未经许可的服务器/帐号；未经允许进入公众计算机网络或者他人计算机系统并删除、修改、增加存储信息；未经许可，企图探查、扫描、测试本平台系统或网络的弱点或其它实施破坏网络安全的行为；企图干涉、破坏本平台系统或网站的正常运行，故意传播恶意程序或病毒以及其他破坏干扰正常网络信息服务的行为；</p>
-												<p>（7）修改或伪造软件作品运行中的指令、数据、数据包，增加、删减、变动软件的功能或运行效果，不得将用于上述用途的软件通过信息网络向公众传播或者运营；</p>
-												<p>（8）在未经”GlobZip平台”书面明确授权前提下，出售、出租、出借、散布、转移或转授权软件和服务或相关的链接或从使用软件和服务或软件和服务的条款中获利，无论以上使用是否为直接经济或金钱收益；</p>
-												<p>（9）违背”GlobZip平台”页面公布之活动规则，包括但不限于发布虚假信息、作弊或通过其他手段进行虚假交易；</p>
-												<p>（10）冒充任何人或机构，或以虚伪不实的方式谎称或使人误认为与任何人或任何机构有关；</p>
-												<p>（11）伪造标题或以其他方式操控识别资料，使人误认为该内容为”GlobZip平台”所传送；</p>
-												<p>（12）跟踪或以其他方式骚扰他人；</p>
-												<p>（13）其它被”GlobZip平台”视为不适当的行为。</p>
-											</li>
-
-											<li>
-												3、”GlobZip平台”声明用户的的系统记录有可能作为用户违反法律及/或本协议的有效法律证据。”GlobZip平台”有权在下述情况下，对内容进行保存或披露：
-												<p>（1）法律程序所规定；</p>
-												<p>（2）本服务条款规定；</p>
-												<p>（3）被侵害的第三人提出权利主张；</p>
-												<p>（4）为保护”GlobZip平台”、其使用者及社会公众的权利、财产或人身安全；</p>
-												<p>（5）其他”GlobZip平台”认为有必要的情况。</p>
-											</li>
-										</ul>
-									</li>
-								</ol>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>六、知识产权保护</dt>
-							<dd>
-								<ol>
-									<li>
-										网站和服务中的所有知识产权（包括著作权、专利、商标、服务标识、商号、设计，不论是否已登记注册）、网站中的信息内容或作为服务内容的信息、运营的数据库、所有网站设计、文字和图表、软件、照片、录像、音乐、声音及其前述组合，以及所有软件编译、相关源代码和软件（包括小应用程序和脚本）均为”GlobZip平台”（或”GlobZip平台”的许可方）的财产。
-									</li>
-
-									<li>
-										未经”GlobZip平台”许可，任何人不得擅自（包括但不限于：以非法的方式复制、传播、展示、镜像、上载、下载）使用，亦不得以任何方式出售、出租或转租，用于制作改编作品、或以任何方式开发利用。否则，”GlobZip平台”将依法追究其法律责任。
-									</li>
-
-									<li>
-										网站页面上的文学和艺术作品的作者已主张其为该等作品的作者，从而享有相关的精神权利。
-									</li>
-								</ol>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>七、隐私权政策</dt>
-							<dd>
-								<ul>
-									<li>
-										“GlobZip平台”绝对尊重用户的个人隐私权，绝不会公开、编辑、透漏用户的非公开资料给第三方具体细则请见——隐私保护声明。
-									</li>
-
-								</ul>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>八、协议终止</dt>
-							<dd>
-								<ul>
-									<li>
-										1、您同意，”GlobZip平台”基于平台服务的安全性、合法性，有权不经事先通知而中止、终止向您提供部分或全部”GlobZip平台”服务，暂时冻结或永久冻结（注销）您的账户，且无须为此向您或任何第三方承担任何责任。如发生下列任何一种情形，”GlobZip平台”有权单方面中断或终止向用户提供服务而无需通知用户：
-										<p>（1）用户违反《中华人民共和国保守国家秘密法》、《中华人民共和国计算机信息系统安全保护条例》、《计算机软件保护条例》、信息产业部2000年10月8日第4次部务会议通过的《互联网电子公告服务管理规定》，以及《互联网新闻信息服务管理规定》等有关计算机及互联网规定的法律和法规、实施办法；</p>
-										<p>（2）用户违反本服务协议中规定的使用规则；</p>
-										<p>（3）注册信息中的主要内容不真实或不准确或不及时或不完整；</p>
-										<p>（4）未经”GlobZip平台”同意，将”GlobZip平台”平台用于商业目的；</p>
-										<p>（5）”GlobZip平台”终止向您提供服务后，您涉嫌再一次直接或间接或以他人名义注册为”GlobZip平台”会员</p>
-										<p>（6）本协议（含规则）变更时，您明示并通知”GlobZip平台”不愿接受新的服务协议的；</p>
-										<p>（7）其它”GlobZip平台”认为应当终止服务的情况。</p>
-									</li>
-
-									<li>
-										2、您有权向”GlobZip平台”要求注销您的账户，经”GlobZip平台”审核同意的，”GlobZip平台”注销您的账户，届时，您与”GlobZip平台”基于本协议的合同关系即终止。您的账户被注销后，”GlobZip平台”没有义务为您保留或向您披露您账户中的任何信息，也没有义务向您或第三方转发任何您未曾阅读或发送过的信息。
-									</li>
-
-									<li>
-										3、您同意，您与”GlobZip平台”的协议关系终止后，”GlobZip平台”仍享有下列权利；
-										<p>（1）继续保存您的注册信息及您使用”GlobZip平台”服务期间发布的所有信息；</p>
-										<p>（2）您在使用”GlobZip平台”服务期间存在违法行为或违反本协议和/或规则的行为的，”GlobZip平台”仍可依据本协议向您主张权利。</p>
-									</li>
-
-									<li>
-										4、”GlobZip平台”中止或终止向您提供”GlobZip平台”服务后，对于您在服务中止或终止之前的交易行为依下列原则处理，您应独力处理并完全承担进行以下处理所产生的任何争议、损失或增加的任何费用，并应确保”GlobZip平台”免于因此产生任何损失或承担任何责任、费用：
-										<p>（1）您在服务中止或终止之前已经上传至”GlobZip平台”的翻译服务需求尚未交易的，”GlobZip平台”有权在中止或终止服务的同时删除此翻译服务需求的相关信息；</p>
-										<p>（2）您在服务中止或终止之前已经与其他会员达成翻译服务合同，但合同尚未实际履行的，”GlobZip平台”有权删除此房间的相关信息，同时将相关情形通知您的交易对方；</p>
-										<p>（3）您在服务中止或终止之前已经与其他会员达成翻译服务合同且已部分履行的，”GlobZip平台”有权在中止或终止服务、删除此翻译服务需求的相关信息，同时将相关情形通知您的交易对方。</p>
-									</li>
-								</ul>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>九、法律适用、管辖与其它</dt>
-							<dd>
-								<ul>
-									<li>
-										1、本网站信息服务条款要与中华人民共和国的法律解释一致。本协议之效力、解释、变更、执行与争议解决均适用中华人民共和国法律。如无相关法律规定的，则应参照通用国际商业惯例和（或）行业惯例。
-									</li>
-
-									<li>
-										2、因本协议产生之争议，应依照中华人民共和国法律予以处理。如发生本网站服务条款与中华人民共和国法律相抵触时，则这些条款将完全按法律规定重新解释，而其它条款则依旧保持其对用户的约束力。
-									</li>
-
-									<li>
-										3、了解到互联网的无国界性，用户同意遵守当地所有适用的法规，包括但不限于关于网上行为及内容发布之法律法规。用户特别同意遵守有关从中国或用户所在国家或地区输出技术数据之传输的所有适用法律法规。
-									</li>
-
-								</ul>
-							</dd>
-						</dl>
-					</div>
-
-					<!-- 隐私条款 intimate -->
-					<div class="tab-pane fade section-4" id="section-4">
-						<h2>隐私条款</h2>
-						<dl>
-							<dd>
-								隐私权是您的重要权利，向我们提供您的个人信息是基于对我们的信任，我们非常重视译员的隐私，承诺保护译员的个人隐私。我们认为您提供的信息只能用于帮助我们为您提供更好的服务，有时候我们需要某些信息才能为您提供您请求的服务，本隐私声明解释了这些情况下的数据收集和使用情况。
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>一、本隐私权声明依据及适用范围</dt>
-							<dd>
-								<ul>
-									<li>
-										1、GlobZip平台（globzip.com）（以下称“本网站”）由上海壹零捌度信息科技有限公司所有并运营。本网站根据《中华人民共和国身份证法》、《中华人民共和国侵权责任法》、《中华人民共和国电信管理条例》、《规范互联网信息服务市场秩序若干规定》等相关法律法规及参照国家标准《信息安全技术个人信息保护指南》的规定及在遵守这些法律的前提下，制定隐私权政策（以下称“本政策”）。本网站将尽所能保护您的合法权利免受侵害。
-									</li>
-
-									<li>
-										2、本政策适用于本网站提供的所有产品和服务。随着“GlobZip平台”服务范围的扩大，隐私保护声明的内容可由“GlobZip平台”随时更新，且毋须另行通知。更新后的隐私保护声明一旦在网页上公布即有效代替原来的隐私保护声明。您在同意“GlobZip平台”服务协议之时，即视为您已经同意本隐私保护政策全部内容。本隐私保护政策属于“GlobZip平台”服务协议不可分割的一部分。
-									</li>
-
-									<li>
-										3、用户使用本网站应遵守本政策和网站公布的服务协议的规定。
-									</li>
-
-									<li>
-										4、本政策仅适用于通过网站收集的信息，而不适用于通过其他方法或信息源获取的信息。
-									</li>
-
-								</ul>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>二、个人信息收集</dt>
-							<dd>
-								“GlobZip平台”在征得用户同意并确认的情况下，收集的个人标识信息是用户在注册时或回复某项信息请求时自愿提供的信息。我们有两种信息收集方式：
-								<ul>
-									<li>
-										1、您向我们提供的信息。在您注册”GlobZip平台”账户或申请开通新的功能时，您根据”GlobZip平台”要求提供的个人信息，包含但不限于：姓名，Email地址，住址和电话号码等。
-									</li>
-
-									<li>
-										2、我们在您使用服务的过程中获取的信息。我们会收集关于您使用的服务以及使用方式的信息，此类信息包括：
-										<p>（1）在您使用”GlobZip平台”服务，或访问”GlobZip平台”平台网页时，”GlobZip平台”自动接收并记录的您的浏览器和计算机上的信息，包括但不限于您的IP地址、浏览器的类型、使用的语言、访问日期和时间、软硬件特征信息及您需求的网页记录等数据。通过收集上述信息，我们将优化在您计算机屏幕上显示的页面，同时进行客流量统计、访问者阅读习惯整理等，从而改进本网站的管理和服务。</p>
-										<p>（2）”GlobZip平台”可能会使用浏览器网络存储等机制和应用程序数据缓存，在您的设备上收集信息（包括个人信息）并进行本地存储。</p>
-										<p>（3）当您使用”GlobZip平台”服务时，我们会使用各种技术来收集和存储信息，在此过程中可能会向您的设备发送一个或多个Cookie或匿名标识符。当您与我们提供给合作伙伴的服务进行互动时，我们也会使用Cookie和匿名标识符。</p>
-									</li>
-
-								</ul>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>三、译员保护</dt>
-							<dd>
-								<ul>
-									<li>
-										1、为了给您提供更准确、更有个性化的服务，”GlobZip平台”会按照本隐私权政策的规定使用和披露您的个人信息。除本隐私权政策另有规定外，在未征得您事先许可的情况下，”GlobZip平台”不会将这些信息对外披露或向第三方提供。
-									</li>
-
-									<li>
-										2、本政策保证用户提供给”GlobZip平台”任何信息均处于私密状态并受到保护。为达到这一目的，本网站将对您所提供的信息采取严密的管理及保护措施。我们将采用相应的安全技术和程序来防止您的个人信息丢失、被盗用或遭篡改，并且保护您的个人信息不被未经授权者访问、使用或泄漏。
-									</li>
-
-									<li>
-										3、未经用户的明确同意，”GlobZip平台”绝不收集有关用户的任何敏感信息。”GlobZip平台”将尽力确保本网站所掌握的信息准确无误并根据用户所提供的信息使其保持最新的状态。如用户告知”GlobZip平台”信息不准确，本网站将立即删除或纠正。
-									</li>
-
-									<li>
-										4、本网站用户对于自己的个人信息享有以下权利：
-										<p>（1）随时查询及请求阅览；</p>
-										<p>（2）随时请求补充或更正；</p>
-										<p>（3）随时请求删除。</p>
-									</li>
-
-									<li>
-										5、本网站为用户提供各种配套服务，我们通常要求参与者填写相关资料登记表格，以便活动更好的开展。此类信息也将成为本网站用户数据的一部分，并将被后续记录、保存、保护和合理使用。是否提供所要求的信息和或是否参加此类活动，这完全取决于用户自身。
-									</li>
-
-									<li>
-										6、”GlobZip平台”为您在线交流等服务，并善意提醒所有用户，在交易前与其他用户的交流中，您公布的任何信息都有可能成为公开的信息，且”GlobZip平台”不对此类信息公开负责。因此，本网提醒您，在交流中公开您的个人信息之前请慎重考虑。"监护人"）的书面同意。除根据法律法规的规定及有权机关的指示披露外，陌陌科技不会使用或向任何第三方透露未成年人的聊天记录及其他个人隐私信息。除本协议约定的例外情形外，未经监护人事先同意，陌陌科技不会使用或向任何第三方透露未成年人的个人隐私信息。任何18岁以下的用户不得下载和使用陌陌科技通过陌陌软件提供的网络游戏。
-									</li>
-
-								</ul>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>四、未成年人隐私保护</dt>
-							<dd>
-								<ul>
-									<li>
-										1、本网站将建立相应合理程序，以保护未成年人个人信息的安全。本网站郑重声明：任何十六岁以下的未成年人参加网上活动应事先得到家长或其法定监护人（以下统称为“监护人”）的明确同意。
-									</li>
-
-									<li>
-										2、未经监护人同意，未成年人私自上网或者冒用成人名义上网的行为将可能缺乏与未成年人相应的信息安全保护措施。
-									</li>
-
-									<li>
-										3、监护人应承担保护未成年人相关网络隐私的首要责任。
-									</li>
-
-									<li>
-										4、本网站收集未成年人的个人信息，仅为更好服务于未成年人特定要求的目的，相关资料仅作为保护未成年人参与网络活动时的安全之用，而不会保留这些信息做进一步或其他商业目的的使用。
-									</li>
-
-									<li>
-										5、未经监护人同意，本网站将不会使用未成年人的个人信息，亦不会向任何第三方披露或传送可识别该未成人的个人信息。
-									</li>
-
-									<li>
-										6、若经未成年人的监护人同意，本网站可对未成年人的个人信息进行收集，本网站将向监护人提供：
-										<p>（1）审视其子女或被监护人相关信息的机会；</p>
-										<p>（2）拒绝其子女或被监护人相关个人信息被进一步收集或使用的可能；</p>
-										<p>（3）变更或删除其子女或被监护人个人信息。</p>
-									</li>
-
-									<li>
-										7、监护人有权拒绝本网站与其子女或被监护人做进一步的联络。
-									</li>
-
-								</ul>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>五、个人信息的使用与披露</dt>
-							<dd>
-								<ul>
-									<li>
-										所有个人标识信息均应根据2000年《互联网信息服务管理办法》及其他有关数据保护的法规予以保存。”GlobZip平台”使用用户的个人信息是为了向用户提供”GlobZip平台”的相关信息、更好地向用户提供服务并对”GlobZip平台”网站本身进行广告宣传。
-
-									</li>
-
-									<li>
-										“GlobZip平台”有权为以下目的披露个人的专有信息，且本网站不对此承担任何责任：
-										<p>1、回复政府部门或准政府部门的质询；或依法保护”GlobZip平台”的权利或财产、本网站和/或本网站的其他用户；</p>
-										<p>2、为免除您在生命、身体或财产方面的紧急危险；</p>
-										<p>3、为防止他人权益的重大危害；</p>
-										<p>4、为增进公共利益，且无害于您的重大利益；</p>
-										<p>5、遵守适用法律的规定；</p>
-										<p>6、根据”GlobZip平台”服务协议或”GlobZip平台”其他相关声明所列的条款，有必要进行相关信息公开的；</p>
-										<p>7、已取得您的同意；</p>
-										<p>8、为体现公平公正原则，需要对用户的部分信息进行公示的；</p>
-										<p>9、与”GlobZip平台”的关联公司和战略合作伙伴分享客户资料，以及其他需要公开、编辑或透露个人信息的情况。
-										请用户注意，除上述关于个人标识信息共享的规定外，”GlobZip平台”可能将用户的信息发送至其他国家，包括发送至中国以外的国家，以满足”GlobZip平台”业务和管理的需要。”GlobZip平台”将按照中国网络和信息安全的规定进行上述信息的境外传送。中国以外的部分地区可能没有相关的信息保护法律，或对个人标识的保护程度低于中国提供的保护程度。用户向”GlobZip平台”提交个人标识信息即表示用户确认：尽管”GlobZip平台”按照本政策规定的方式使用用户的信息，但”GlobZip平台”将不对收取和处理用户的数据的第三方使用用户的数据承担任何责任。</p>
-									</li>
-
-								</ul>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>六、Cookies</dt>
-							<dd>
-								<ul>
-									<li>
-										1、Cookies是指一种技术，当使用者访问设有Cookies装置的本网站时，本网站的服务器会自动发送Cookies至用户浏览器内，并储存到其电脑硬盘内。此Cookies负责记录日后您到访本网站的种种活动、网络个人资料、浏览习惯等。
-									</li>
-
-									<li>
-										2、”GlobZip平台”使用Cookies仅为为所有用户提供更加周到的个性化服务之目的。运用Cookies技术，本网站能够知道哪些网页或内容受欢迎。此外，本网站将会运用Cookies追访您的喜好，使您在访问我们的网站时能够得到更周密更细致的良好服务。
-									</li>
-
-									<li>
-										3、Cookies不会跟踪个人信息。当您注册成为本网站会员时，”GlobZip平台”会使用Cookies。在这种情况下，会存储有用信息，使您再次访问我们的网站时可辨认您的身份，从而向您提供感兴趣的信息资料或储存账号密码等，以便您造访本网站时不必每次重复登录。
-									</li>
-
-									<li>
-										4、来自”GlobZip平台”的Cookies只能被”GlobZip平台”读取。您可以选择接受或拒绝Cookie。大多数网络浏览器会自动接受Cookie，但您通常可根据自己的需要来修改浏览器的设置以拒绝Cookie。如果您的浏览器被设置为拒绝Cookies，您仍然能够访问我们的大多数网页，但是您可能无法完全体验”GlobZip平台”全部的网络服务或本网站的特色互动功能。
-									</li>
-								</ul>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>七、电子邮件</dt>
-							<dd>
-								<ul>
-									<li>
-										请注意，”GlobZip平台”可能为以下目的向用户发送电子邮件和/或短消息：
-										<ul>
-											<li>
-												1、作为服务的一部分向用户发送电子邮件和/或短消息。例如，”GlobZip平台”可能会在以下情况下向用户发送邮件：
-												<p>（1）注册完成后向用户发送电子邮件和/或短消息，告知用户的帐号详细信息；</p>
-												<p>（2）就”GlobZip平台”提供的服务向用户发送提示性邮件和/或短消息（特别是在用户尚未使用或使用时间较短的情况下）；</p>
-												<p>（3）向用户发送用户要求提供的信息或购物券；</p>
-												<p>（4）发送新闻；</p>
-												<p>（5）发送促销邮件和/或短消息；</p>
-												<p>（6）向用户提供相关服务。</p>
-											</li>
-											<li>
-												2、针对”GlobZip平台”可能发送的新闻、营销或促销邮件和/或短消息，”GlobZip平台”用户可选择取消订阅，只需点击邮件下方取消订阅链接，”GlobZip平台”将不再为取消订阅用户发送促销邮件，但关于订单相关邮件将会继续发送。
-											</li>
-										</ul>
-									</li>
-
-								</ul>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>八、免责</dt>
-							<dd>
-								就下列相关事宜的发生，”GlobZip平台”不承担任何法律责任：
-								<ul>
-									<li>
-										1、由于您将登录账号及密码告知他人或与他人共享注册帐户，由此导致的任何个人信息泄露，或其他非因”GlobZip平台”原因导致的个人信息泄漏；
-									</li>
-
-									<li>
-										2、任何由于黑客政击、计算机病毒侵入或发作、因政府管制而造成的暂时性关闭等影响网络正常经营之非”GlobZip平台”原因而造成的个人信息泄露、丢失、被盗用或被篡改等；
-									</li>
-
-									<li>
-										3、任何第三方根据”GlobZip平台”的各服务声明及服务协议中所列明的情况使用您的个人信息，由此所产生的纠纷；
-									</li>
-
-									<li>
-										4、”GlobZip平台”在服务协议及各类规则中列明的所有免责情形；
-									</li>
-
-									<li>
-										5、”GlobZip平台”的网页上有与其他网站网页的链接。”GlobZip平台”对其他任何网站的内容、隐私政策、运营情况或经营这些网站的公司的行为概不负责。在向这些与”GlobZip平台”链接的网站提供个人信息之前，请查阅它们的隐私政策。由于与本网站链接的其它网站所造成的个人信息泄露及由此而导致的任何法律争议和后果，”GlobZip平台”概不负责；
-									</li>
-
-									<li>
-										6、任何因不可抗力所导致的后果。
-									</li>
-
-								</ul>
-							</dd>
-						</dl>
-
-					</div>
-					
-					<!-- 关于我们 about -->
-					<div class="tab-pane fade section-5 in active" id="section-5">
-						<dl>
-							<dt>愿景</dt>
-							<dd>成为全球最大线上撮合，线下服务的的翻译平台</dd>
-						</dl>
-
-						<dl>
-							<dt>使命</dt>
-							<dd>让拥有多语言能力的人，实现自己的价值；让需要翻译的，更方便快捷找到所需要的翻译</dd>
-						</dl>
-
-						<dl>
-						  <dt>服务理念</dt>
-							<dd>
-								<ul class="list-unstyled">
-									<li>为译员和翻译需求者提供安全，便捷，可靠的的服务平台。</li>
-									<li>我们的团队不墨守成规，敢于接受挑战；尊重个性；</li>
-									<li>鼓励差异化，以推动我们更好地前进。</li>
-								</ul>
-							</dd>
-						</dl>
-
-						<dl>
-							<dt>发展历程</dt>
-							<dd>
-								<ul>
-									<li>
-										<span class="time">2015年11月</span>
-										<span>公司成立</span>
-							      	</li>
-									<li>
-										<span class="time">2015年12月</span>
-										<span>创立GlobZip品牌，并在欧美注册商标</span>
-								     </li>
-									<li>
-										<span class="time">2016年3月</span>
-										<span>成立北京分公司</span>
-							      	</li>
-									<li>
-										<span class="time">2016年4月</span>
-										<span>北美推广团队组建，欧洲推广团队组建</span>
-							      	</li>
-									<li>
-										<span class="time">2016年7月</span>
-										<span>产品上线运营</span>
-							      	</li>
-								</ul>
-							</dd>
-						</dl>
-					</div>
-
-					<!-- 联系我们 contact -->
-					<div class="tab-pane fade section-6" id="section-6">
-
-						<div id="carousel-example-generic3" class="carousel slide" data-ride="carousel">
-							<!-- Wrapper for slides -->
-							<div class="carousel-inner" role="listbox">
-								<div class="item active">
-									<img src="images/map.jpg" alt="code-bg">
-									<div class="code-caption">
-									</div>
-								</div>
-							</div>
-
-						</div>
-
-						<div class="row">
-							<div class="col-md-6">
-								<dl>
-									<dt>商务洽谈</dt>
-									<dd>
-										<dl class="dl-horizontal">
-											<dt>联系人: </dt>
-											<dd>李狄皓</dd>
-
-											<dt>邮箱: </dt>
-											<dd>li.dihao(at)immomo.com</dd>
-										</dl>
-									</dd>
-								</dl>
-							</div>
-
-							<div class="col-md-6">
-								<dl>
-									<dt>表情合作</dt>
-									<dd>
-										<dl class="dl-horizontal">
-											<dt>联系人: </dt>
-											<dd>李狄皓</dd>
-
-											<dt>邮箱: </dt>
-											<dd>li.dihao(at)immomo.com</dd>
-										</dl>
-									</dd>
-								</dl>
-							</div>
-
-							<div class="col-md-6">
-								<dl>
-									<dt>媒体采访</dt>
-									<dd>
-										<dl class="dl-horizontal">
-											<dt>联系人: </dt>
-											<dd>李狄皓</dd>
-
-											<dt>邮箱: </dt>
-											<dd>li.dihao(at)immomo.com</dd>
-										</dl>
-									</dd>
-								</dl>
-							</div>
-
-							<div class="col-md-6">
-								<dl>
-									<dt>游戏合作</dt>
-									<dd>
-										<dl class="dl-horizontal">
-											<dt>联系人: </dt>
-											<dd>李狄皓</dd>
-
-											<dt>邮箱: </dt>
-											<dd>li.dihao(at)immomo.com</dd>
-										</dl>
-									</dd>
-								</dl>
-							</div>
-
-							<div class="col-md-12">
-								<dl>
-									<dt>客服帮助</dt>
-									<dd>
-										<p>为及时解决您的问题，建议您通过客户端提交意见反馈，我们会尽快在24小时内受理您的问题</p>
-										<p>1. 客服热线：028-62836666（服务时间8:30 - 22:00）</p>
-										<p>2. 在陌陌科技官方微博留言 @GlobZip（http://weibo.com/globzip）</p>
-									</dd>
-								</dl>
-							</div>
-						</div>
-					</div>
-				</div>
-	        </div>
-
-		</div>
-	</div>
-
-	
-	<hr class="featurette-divider"/>
-
-	<!-- 关于信息 -->
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<ul class="col-xs-12 col-sm-6 col-md-6">
-					<li>
-						<a href="agree.html">用户协议</a>
-					</li>
-					<li>
-						<a href="help.html">问题帮助</a>
-					</li>
-					<li>
-						<a href="contact.html">联系我们</a>
-					</li>
-					<li>
-						<a href="downloads.html">下载APP</a>
-					</li>
-				</ul>
-
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<dl>
-						<dt><h1>400-000-0000</h1></dt>
-						<dd class="visible-xs">
-							<p>工作日: &nbsp;10:00 - 19:00</p>
-							<p>官方邮箱: &nbsp;kefu@globzip.com</p>
-						</dd>
-						<dd class="hidden-xs">
-							<dl class="dl-horizontal">
-								<dt>工作日: </dt>
-								<dd>10:00 - 19:00</dd>
-
-								<dt>官方邮箱: </dt>
-								<dd>kefu@globzip.com</dd>
-							</dl>
-						</dd>
-					</dl>
-					<div class="row hidden-xs">
-						<div class="col-xs-6 col-sm-3 col-md-3">
-							<div class="thumbnail">
-								<img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
-								<div class="caption">
-									<p>官方微信</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-xs-6 col-sm-3 col-md-3">
-							<div class="thumbnail">
-								<img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
-								<div class="caption">
-									<p>官方微博</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-xs-6 col-sm-3 col-md-3">
-							<div class="thumbnail">
-								<img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
-								<div class="caption">
-									<p>Facebook</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-xs-6 col-sm-3 col-md-3">
-							<div class="thumbnail">
-								<img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
-								<div class="caption">
-									<p>推特</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<p>GUOKR © 2015 LOVINGLY MADE IN SHANGHAI   沪ICP备16011529号-1 </p>
-			<p>上海壹零捌信息技术有限公司</p>
-		</div>
-	</footer>
+
+
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+
+                                    <div id="collapseOne_7" class="collapse" data-parent="bs-example-navbar-collapse-13">
+                                        <div class="panel-body">
+                                            <dl>
+                                                <dt>岗位职责:</dt>
+                                                <dd>
+                                                    <ol>
+                                                        <li>
+                                                            1、熟悉线上线下等多种推广方式和推广渠道，推广产品，扩大用户群，提高注册用户量；
+                                                        </li>
+
+                                                        <li>
+                                                            2、结合APP策划、组织、实施及跟踪各种线上、线下活动,提高活跃用户量；
+                                                        </li>
+
+                                                        <li>
+                                                            3、引导、鼓励产品用户线上、线下进行活动宣传和回顾,扩大活动影响；
+                                                        </li>
+
+                                                        <li>
+                                                            4、熟悉事件炒作、话题营销、病毒视频的运作方法，能够完整执行。
+                                                        </li>
+                                                    </ol>
+                                                </dd>
+                                            </dl>
+
+                                            <dl>
+                                                <dt>岗位要求:</dt>
+                                                <dd>
+                                                    <ol>
+                                                        <li>
+                                                            1、3年及以上大专或本科学历,热爱互联网；
+                                                        </li>
+
+                                                        <li>
+                                                            2、对于社会生活的热点话题、事件、需求,具有敏锐的嗅觉和洞察力；
+                                                        </li>
+
+                                                        <li>
+                                                            3、了解互联网用户群体心态，擅长线上线下沟通、互动激发、帖子处理和传播；
+                                                        </li>
+
+                                                        <li>
+                                                            4、具备较强的信息处理和传播、活动策划的意识和技能；
+                                                        </li>
+
+                                                        <li>
+                                                            5、具备市场推广或营销方面的知识,有实际从业经验者优先；
+                                                        </li>
+
+                                                    </ol>
+                                                </dd>
+                                            </dl>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- 支付协议 news -->
+                    <div class="tab-pane fade section-2" id="section-2">
+                        <h2>支付协议</h2>
+
+                        <dl>
+                            <dt>生效日期：2016 年9 月 1 日</dt>
+                            <dd>
+                                本“商业条款”适用于GlobZip平台、译员、用户三者之间的商业交易，您应当仔细阅读本商业条款，以了解您的权利和责任，因为本商业条款构成您GlobZip平台之间的合同。您在使用GlobZip平台达成交易表示您同意接受本商业条款的法律约束。我们可不定期更新本商业条款。在您完成任何商业交易之前，请务必阅读本商业条款。如果您不同意本商业条款，您可以选择不进行商业交易。一旦您完成任何商业交易，您将受到最新版商业条款的法律约束。
+
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>1、GlobZip平台交易主体</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        译员和用户通过GlobZip平台达成订单交易，交易包括服务的时间、地点、费用、货币等。订单达成译员和用户具有法律效益，双方履行自己的义务。
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>2、订单达成，用户的支付方式和时间</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        订单达成后用户要把订单的费用24小时之内支付给GlobZip平台。支付所使用的货币以订单所决定的货币为交易的唯一货币。
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>3、GlobZip平台向译员支付的费用和税款计算</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        （1）GlobZip平台收取交易费的15%以用于网络费用，服务费用；
+                                    </li>
+
+                                    <li>
+                                        （2）不同币种交易因涉及汇率风险，因此需缴纳交易费用的3%作为汇率风险；
+                                    </li>
+
+                                    <li>
+                                        （3）按照发生交易国家的税率GlobZip平台代扣税金；
+                                    </li>
+
+                                    <li>
+                                        （4）除非同种货币除外译员和用户发生交易时要确定汇率使用的比率，要确定使用达成交易的汇率还是约定使用服务完成后的汇率。
+                                    </li>
+
+                                </ul>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>4、GlobZip平台支付给译员的时间与费用</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        译员为用户的服务完成后，用户给GlobZip平台确认服务完成， GlobZip平台本次服务的费用。费用是在扣除了第3条所规定的条款之后的费用。支付的货币形式以译员初次申请所定的货币为唯一形式，用户和译员交易的是同种货币，第3条之第2款3%的汇率风险金将不再扣除。
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>5、GlobZip平台使用的第三方支付平台</dt>
+                            <dd>
+                                <ol>
+                                    <li>
+                                        paypal 多种国际货币（人民币除外）
+                                    </li>
+
+                                    <li>
+                                        支付宝 仅支持人民币
+                                    </li>
+
+                                </ol>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>6、译员提现</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        译员把在GlobZip平台提供服务所赚取的现金转移到个人账户，由于不同的金融主体所产生的交易费用由译员承担。
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+
+
+                        <dl>
+                            <dt>7、退款处理</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        译员由于某种原因不能在订单规定之时间履行服务，在用户和译员确认后，该订单在GlobZip平台上无法执行，用户在订单生成之日所支付在GlobZip平台的费用，GlobZip平台将按照用户订单的支付方式原路退还给用户。由于不同的金融主体所产生的交易费用，本费用有GlobZip平台承担。
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+
+
+                        <dl>
+                            <dt>8、您选择使用GlobZip平台支付方式即表示您同意：</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        （1）您提供的任何支付信息均真实、准确；
+                                    </li>
+
+                                    <li>
+                                        （2）您有权使用您提供的支付方式；
+                                    </li>
+
+                                    <li>
+                                        （3）我们有权保留支付信息和支付方式，包括由您和您的发卡行或适用的支付网络提交的所有借记卡和信用卡信息；
+                                    </li>
+
+                                    <li>
+                                        （4） 我们有权使用您提交的电子邮件地址为您提供与支付相关的通知和信息披露；
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <!-- 服务协议 agree -->
+                    <div class="tab-pane fade section-3" id="section-3">
+                        <h2>服务协议</h2>
+                        <dl>
+                            <dt>声明</dt>
+                            <dd>
+                                本协议由您与上海壹零捌度科技有限公司共同缔结，具有合同效力。在使用“GlobZip平台”各项服务前，请您务必仔细阅读并透彻理解本协议。如果您使用”GlobZip平台”服务，您的使用行为将被视为对本协议全部内容的认可。若本协议内任何一则条款由于国家或地方政策变更而不再具有约束力，该条款的失效不对协议内其他条款的继续履行造成任何影响。
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>一、协议的效力</dt>
+                            <dd>
+                                <ol>
+                                    <li>
+                                        本协议中的”GlobZip平台”（www.globzip.com）隶属上海壹零捌度科技有限公司，根据相关法律、法规为拥有多语言能力的译员及需要翻译的用户提供在线交易的技术服务平台。
+                                    </li>
+
+                                    <li>
+                                        协议中“您”、“用户”，指进入、访问、使用”GlobZip平台”网站（www.globzip.com），或通过其它可实现”GlobZip平台”服务的网址和移动设备应用获取”GlobZip平台”服务的用户。
+                                    </li>
+
+                                    <li>
+                                        本协议内容包括协议正文及所有”GlobZip平台”已经发布的或将来可能发布的各类规则。所有规则为本协议不可分割的组成部分，与协议正文具有同等法律效力。除另行明确声明外，任何”GlobZip平台”及其关联公司提供的服务（以下称为““GlobZip平台”服务”）均受本协议约束。/或自动提取您的手机号码及自动提取您的手机设备识别码等信息用于注册。
+                                    </li>
+
+                                    <li>
+                                        使用”GlobZip平台”服务前，您承诺接受并遵守本协议的约定。如您不同意本协议的约定，您应立即停止注册程序或停止使用”GlobZip平台”服务。无论您事实上是否在使用”GlobZip平台”服务之前认真阅读了本协议内容，只要您使用”GlobZip平台”服务，即视为您与”GlobZip平台”缔结本协议，本协议即对您产生约束，届时您不应以未阅读本协议的内容或者未获得”GlobZip平台”对您问询的解答等理由，主张本协议无效，或要求撤销本协议。
+                                    </li>
+
+                                    <li>
+                                        ”GlobZip平台”保留随时修改服务协议的权利。”GlobZip平台”有权根据国家法律法规的更新、产品和服务规则的调整需要，在任何时间不时地制订、变更或修改本协议及/或其相关各项条款、各类规则。一旦条款内容发生变动，”GlobZip平台”将会在相关的页面提示修改内容，不再单独通知您。在使用”GlobZip平台”平台服务时，您有必要对最新的”GlobZip平台”服务协议条款进行仔细阅读和重新确认。如您继续使用”GlobZip平台”服务，即表示您接受已经修订的协议。如您不同意相关变更，应当立即停止使用”GlobZip平台”服务。当发生有关争议时，以最新的服务协议为准。
+                                    </li>
+
+                                    <li>
+                                        对于您提供的”GlobZip平台”资料及数据信息，您授予”GlobZip平台”独家的、全球通用的、永久的、免费的许可使用权利。您同意，”GlobZip平台”有权（全部或部分地）使用、复制、修订、改写、发布、翻译、分发、执行和展示您的资料数据（包括但不限于注册资料、行为数据及全部展示于”GlobZip平台”平台的各类信息）或制作其派生作品，并以现在已知或日后开发的任何形式、媒体或技术，将上述信息纳入其它作品内。
+                                    </li>
+
+                                    <li>
+                                        您接受并使用”GlobZip平台”各项服务时，除遵守本协议外，仍需遵守此服务其它各类相关规则，且您的使用行为受其约束。
+                                    </li>
+
+                                    <li>
+                                        本协议及其未来变更后的协议和规则一经在网站公布后，立即自动生效。
+                                    </li>
+
+                                </ol>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>二、注册会员</dt>
+
+                            <dd>
+                                依照本协议要求，于”GlobZip平台”登记注册的会员（亦称 “注册用户”），需同意以下服务条款，方有资格享受”GlobZip平台”提供的相应服务，并受本协议条款的约束。
+                            </dd>
+
+                            <dd>
+                                <ul>
+                                    <li>
+                                        <dl>
+                                            <dt>1、注册账户</dt>
+                                            <dd>
+                                                为使用”GlobZip平台”向您的提供的服务，您必须：
+                                            </dd>
+                                            <dd>
+                                                <ul>
+                                                    <li>（1）自行配备上网所必需设备，包括计算机、调制解调器或其他必备上网装置；</li>
+                                                    <li>（2）自行承担电话费用、网络费用，以及在使用服务过程中形成的其他一切费用。</li>
+                                                </ul>
+                                            </dd>
+                                            <dd>
+                                                <ul>
+                                                    <li>
+                                                        您确认，在您完成注册程序或以其他”GlobZip平台”允许的方式实际使用”GlobZip平台”服务时，您应当是具备完全民事权利能力和完全民事行为能力的自然人、法人或其他组织。若您不具备前述主体资格，则您及您的监护人应承担因此而导致的一切后果，且”GlobZip平台”有权注销（永久冻结）您的”GlobZip平台”账户，并向您及您的监护人索偿。”GlobZip平台”建议，任何未满18周岁的未成年人参加网上活动应事先取得其监护人（以下简称“监护人”）的同意并遵守《青少年网络文明公约》。
+                                                    </li>
+
+                                                    <li>
+                                                        “GlobZip平台”提供的服务将完全按照其发布的章程、服务条款和操作规则严格执行。在确认并接受”GlobZip平台”服务协议，用户完全完成注册程序或以其他”GlobZip平台”允许的方式实际使用”GlobZip平台”服务时，便成为”GlobZip平台”的注册用户，将得到唯一的”GlobZip平台”账户，（以下亦称“账户”）。
+                                                    </li>
+
+                                                    <li>
+                                                        您需对您的”GlobZip平台”账户设置用户名和密码，通过该用户名密码或与该用户名密码关联的其它用户名密码登陆”GlobZip平台”网站（www.globzip.com）。您设置的用户名不得侵犯或涉嫌侵犯他人合法权益。
+                                                    </li>
+
+                                                    <li>
+                                                        为保障您的合法权益，避免在服务时因用户注册资料与真实情况不符而发生纠纷，注册时，您应当按照法律法规要求，或注册页面的提示，准确填写并及时更新您提供的电子邮件地址、联系电话、联系地址等联系方式及其它注册资料，以便”GlobZip平台”或其他会员与您进行有效联系。因通过这些联系方式无法与您取得联系，导致您在使用”GlobZip平台”下服务过程中产生任何损失或增加费用的，应由您完全独自承担。如您的资料发生变更，您应及时更新您的资料，以使之真实、及时、完整和准确。若您提供的资料存在任何错误、不实、过时、不完整的情况，或者”GlobZip平台”有任何合理理由认为您的资料存在上述问题，造成难以提供服务的，”GlobZip平台”有权向您发出询问及/或要求改正的通知，并有权直接做出删除相应资料的处理，直至中止、终止对您提供部分或全部”GlobZip平台”服务。”GlobZip平台”对此不承担任何责任，您将承担因此产生的任何直接或间接支出。
+                                                    </li>
+                                                </ul>
+                                            </dd>
+                                        </dl>
+
+                                        <dl>
+                                            <dt>2、会员</dt>
+                                            <dd>
+                                                <ul>
+                                                    <li>
+                                                        在您按照注册页面提示填写信息、阅读并同意本协议并完成全部注册程序后或以其他”GlobZip平台”允许的方式实际使用”GlobZip平台”服务时，您即成为”GlobZip平台”会员（亦称“会员”、“注册用户”）。
+                                                    </li>
+
+                                                    <li>
+                                                        您有权随时对自己的个人资料进行查询、修改和删除。为客户服务安全考虑，用户名不能随意更改。
+                                                    </li>
+
+                                                    <li>
+                                                        “GlobZip平台”的登陆用户名及密码只供会员使用，会员有责任维护其用户名和密码的保密性和安全性。您应对您的用户名和密码的安全，以及对通过您的用户名和密码实施的行为承担全部责任。除非有法律规定或司法裁定，且征得”GlobZip平台”的同意，否则，用户名和密码不得以任何方式转让、赠与或继承（与账户相关的财产权益除外）。若您发现用户名和密码丢失、被盗，或任何人未经取得同意不当使用您的账户或有任何其他可能危及您账户安全的情形时，您应当立即以有效方式通知”GlobZip平台”，要求”GlobZip平台”暂停相关服务。因会员方造成的账户失密，应由会员承担直接或间接的责任，”GlobZip平台”对其产生的后果（包括但不限于您的任何损失）不承担任何责任。如”GlobZip平台”监测到非授权用户使用会员用户名及密码登录本站，”GlobZip平台”有权暂停或取消此帐号登录权限，并对失密原因进行调查。
+                                                    </li>
+
+                                                    <li>
+                                                        使用”GlobZip平台”服务时，您必须遵守《中华人民共和国保密法》、《中华人民共和国版权法》、《计算机信息系统国际联网保密管理规定》、《中华人民共和国计算机信息系统安全保护条例》、《计算机信息网络国际联网安全保护管理办法》、《中华人民共和国计算机信息网络国际联网管理暂行规定》及其实施办法等相关法律法规的任何及所有的规定。如”GlobZip平台”有任何合理理由认为您的行为可能违反相关法律、法规、规章及条例，”GlobZip平台”有权在任何时间，不经事先通知终止向您提供服务。
+                                                    </li>
+
+                                                    <li>
+                                                        您了解并同意，”GlobZip平台”有权应政府部门（包括司法及行政部门）的要求，向其提供您在”GlobZip平台”填写的注册信息和发布记录等必要信息。
+                                                    </li>
+
+                                                </ul>
+                                            </dd>
+                                        </dl>
+                                    </li>
+
+                                    <li>
+                                    </li>
+
+                                </ul>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt> 三、”GlobZip平台”服务说明</dt>
+                            <dd>
+                                <ol>
+                                    <li>
+                                        ”GlobZip平台”专注于为拥有多语言能力的译员及需要翻译的用户提供一个在线交易电子商务平台，供免费信息发布和在线沟通交流。”GlobZip平台”出行语言网络交易服务，包括发布用户需求信息、在线信息交流工具、及第三方支付服务（以下简称"本服务"）。
+
+                                    </li>
+
+                                    <li>
+                                        本网站各项服务的所有权和运作权归”GlobZip平台”拥有。除非本服务条款另有其他明示规定，增加或强化目前本服务的任何新功能，包括所推出的新产品，均受到本服务协议之规范。
+                                    </li>
+
+                                    <li>
+                                        ”GlobZip平台”仅为拥有多语言能力的译员的免费信息平台。用户了解且明白，”GlobZip平台”上所有信息均为译员或需要译员者自由发布。尽管”GlobZip平台”在该等信息发布之前已对信息的准确性、真实性和合法性作了必要核查，但用户务必自行核查发布信息的准确性、真实性以及合法性。”GlobZip平台”并不对所发布信息的准确性、真实性和合法性承担保证责任。如用户发现该等发布的信息为虚假、违法信息，请立即向”GlobZip平台”举报，”GlobZip平台”将采取删除与屏蔽，以及其他相应的技术和法律手段阻止此类信息的发布。”GlobZip平台”不对用户所发布的信息的删除或储存失败负责。
+                                    </li>
+
+                                    <li>
+                                        用户通过”GlobZip平台”获取译员信息后，在线下与翻译服务需求者达成交易时，请务必遵守中国相关法律法规。查验译员的身份证明等相关文件，并签订书面协议以保护自身利益。”GlobZip平台”不对用户在线下的交易行为引起的任何性质的纠纷负有任何性质的协助义务或承担任何形式的责任。译员应当通过法律途径自行解决其与翻译服务需求者因此而产生的任何纠纷。
+                                    </li>
+                                </ol>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>四、用户管理</dt>
+                            <dd>
+                                <ol>
+                                    <li>
+                                        在”GlobZip平台”上使用”GlobZip平台”服务过程中，您承诺遵守以下约定：
+                                        <p>
+                                            （1）在使用”GlobZip平台”服务过程中实施的所有行为均遵守国家法律、法规等规范文件及”GlobZip平台”各项规则的规定和要求，不违背社会公共利益或公共道德，不损害他人的合法权益，不违反本协议及相关规则。您如果违反前述承诺，产生任何法律后果的，您应以自己的名义独立承担所有的法律责任，并确保”GlobZip平台”免于因此产生任何损失。
+                                        </p>
+                                        <p>
+                                            （2）不发布国家禁止发布的信息（除非取得合法且足够的许可），不发布涉嫌侵犯他人知识产权或其它合法权益的信息，不发布违背社会公共利益或公共道德、公序良俗的信息，不发布其它涉嫌违法或违反本协议及各类规则的信息。
+                                        </p>
+                                        <p>
+                                            （3）不对”GlobZip平台”网站上的任何数据作商业性利用，包括但不限于在未经”GlobZip平台”事先书面同意的情况下，以复制、传播等任何方式使用”GlobZip平台”上展示的资料。
+                                        </p>
+                                        <p>
+                                            （4）不使用任何装置、软件或例行程序干预或试图干预”GlobZip平台”的正常运作或正在”GlobZip平台”上进行的任何活动。您不得采取任何将导致不合理的庞大数据负载加诸”GlobZip平台”网络设备的行动。
+                                        </p>
+                                        <p>（5）不使用网络服务作非法用途；</p>
+                                        <p>（6）不干扰或混乱网络服务；</p>
+                                        <p>（7）遵守所有使用网络服务的网络协议、规定、程序和惯例。</p>
+                                    </li>
+
+                                    <li>
+                                        2、您了解并同意：
+                                        <p>
+                                            （1）您违反上述承诺时，”GlobZip平台”有权依据本协议的约定，做出相应处理或终止向您提供服务，且无须征得您的同意或提前通知予您。
+                                        </p>
+                                        <p>
+                                            （2）根据相关法令的指定或者”GlobZip平台”服务规则的判断，您的行为涉嫌违反法律法规的规定或违反本协议和/或规则的条款的，”GlobZip平台”有权采取相应措施，包括但不限于直接屏蔽、删除侵权信息、降低您的信用值或直接停止提供服务。
+                                        </p>
+                                        <p>
+                                            （3）对于您在”GlobZip平台”实施的行为，包括您未在”GlobZip平台”上实施但已经对”GlobZip平台”及其用户产生影响的行为，”GlobZip平台”有权单方认定您行为的性质及是否构成对本协议和/或规则的违反，并据此采取相应的处理措施。您应自行保存与您行为有关的全部证据，并应对无法提供充要证据而承担其不利后果。
+                                        </p>
+                                        <p>
+                                            （4）对于您涉嫌违反承诺的行为对任意第三方造成损害的，您均应当以自己的名义独立承担所有的法律责任，并应确保”GlobZip平台”免于承担因此产生的损失或增加的费用。
+                                        </p>
+                                        <p>
+                                            （5）如您涉嫌违反有关法律或者本协议之规定，使”GlobZip平台”遭受任何损失，或受到任何第三方的索赔，或受到任何行政管理部门的处罚，您应当赔偿”GlobZip平台”因此造成的损失及（或）发生的费用，包括合理的律师费用。
+                                        </p>
+                                    </li>
+
+                                    <li>
+                                        五、”GlobZip平台”使用规范
+                                        <ul>
+                                            <li>
+                                                1、您不得利用”GlobZip平台”危害国家安全、泄露国家秘密，不得侵犯国家社会集体的和公民的合法权益，不得利用”GlobZip平台”制作、复制和传播下列信息：
+                                                <p>（1）煽动抗拒、破坏宪法和法律、行政法规实施的；</p>
+                                                <p>（2）煽动颠覆国家政权，推翻社会主义制度的；</p>
+                                                <p>（3）煽动分裂国家、破坏国家统一的；</p>
+                                                <p>（4）煽动民族仇恨、民族歧视，破坏民族团结的；</p>
+                                                <p>（5）捏造或者歪曲事实，散布谣言，扰乱社会秩序的；</p>
+                                                <p>（6）宣扬封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪的；</p>
+                                                <p>（7）公然侮辱他人或者捏造事实诽谤他人的，或者进行其他恶意攻击的；</p>
+                                                <p>（8）损害国家机关信誉的；</p>
+                                                <p>（9）其他违反宪法和法律法规的；</p>
+                                                <p>（10）未经”GlobZip平台”同意许可进行商业广告行为的。</p>
+                                            </li>
+
+                                            <li>
+                                                2、在接受”GlobZip平台”服务的过程中，您不得从事下列行为：
+                                                <p>（1）发表、传送、传播、储存侵害他人知识产权、商业秘密权等合法权利的内容。包含但不仅限于病毒、木马、定时炸弹等可能对”GlobZip平台”系统造成伤害或影响其稳定性的内容；</p>
+                                                <p>（2）传送、散布或以其他方式实现传播含有受到知识产权法律保护的图像、相片、软件或其他资料的文件；</p>
+                                                <p>（3）上载、张贴、发送或传送任何非法、反动、淫秽、粗俗、猥亵的，胁迫、骚扰、中伤他人、诽谤、侵害他人隐私或诋毁他人名誉或商誉的，种族歧视、危害未成年人或其他不适当的信息或电子邮件，包括但不限于资讯、资料、文字、软件、音乐、照片、图形、信息或其他资料；</p>
+                                                <p>（4）上载、张贴、发送电子邮件或以其它方式传送无权传送的内容（例如内部资料、机密资料）；</p>
+                                                <p>（5）使用任何包含有通过侵犯商标、版权、专利、商业机密或任何一方的其他专有权利的方式，利用本“软件”获得图像或相片的资料或信息；</p>
+                                                <p>（6）进行危害计算机网络安全的行为，包括但不限于：使用未经许可的数据或进入未经许可的服务器/帐号；未经允许进入公众计算机网络或者他人计算机系统并删除、修改、增加存储信息；未经许可，企图探查、扫描、测试本平台系统或网络的弱点或其它实施破坏网络安全的行为；企图干涉、破坏本平台系统或网站的正常运行，故意传播恶意程序或病毒以及其他破坏干扰正常网络信息服务的行为；</p>
+                                                <p>（7）修改或伪造软件作品运行中的指令、数据、数据包，增加、删减、变动软件的功能或运行效果，不得将用于上述用途的软件通过信息网络向公众传播或者运营；</p>
+                                                <p>（8）在未经”GlobZip平台”书面明确授权前提下，出售、出租、出借、散布、转移或转授权软件和服务或相关的链接或从使用软件和服务或软件和服务的条款中获利，无论以上使用是否为直接经济或金钱收益；</p>
+                                                <p>（9）违背”GlobZip平台”页面公布之活动规则，包括但不限于发布虚假信息、作弊或通过其他手段进行虚假交易；</p>
+                                                <p>（10）冒充任何人或机构，或以虚伪不实的方式谎称或使人误认为与任何人或任何机构有关；</p>
+                                                <p>（11）伪造标题或以其他方式操控识别资料，使人误认为该内容为”GlobZip平台”所传送；</p>
+                                                <p>（12）跟踪或以其他方式骚扰他人；</p>
+                                                <p>（13）其它被”GlobZip平台”视为不适当的行为。</p>
+                                            </li>
+
+                                            <li>
+                                                3、”GlobZip平台”声明用户的的系统记录有可能作为用户违反法律及/或本协议的有效法律证据。”GlobZip平台”有权在下述情况下，对内容进行保存或披露：
+                                                <p>（1）法律程序所规定；</p>
+                                                <p>（2）本服务条款规定；</p>
+                                                <p>（3）被侵害的第三人提出权利主张；</p>
+                                                <p>（4）为保护”GlobZip平台”、其使用者及社会公众的权利、财产或人身安全；</p>
+                                                <p>（5）其他”GlobZip平台”认为有必要的情况。</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>六、知识产权保护</dt>
+                            <dd>
+                                <ol>
+                                    <li>
+                                        网站和服务中的所有知识产权（包括著作权、专利、商标、服务标识、商号、设计，不论是否已登记注册）、网站中的信息内容或作为服务内容的信息、运营的数据库、所有网站设计、文字和图表、软件、照片、录像、音乐、声音及其前述组合，以及所有软件编译、相关源代码和软件（包括小应用程序和脚本）均为”GlobZip平台”（或”GlobZip平台”的许可方）的财产。
+                                    </li>
+
+                                    <li>
+                                        未经”GlobZip平台”许可，任何人不得擅自（包括但不限于：以非法的方式复制、传播、展示、镜像、上载、下载）使用，亦不得以任何方式出售、出租或转租，用于制作改编作品、或以任何方式开发利用。否则，”GlobZip平台”将依法追究其法律责任。
+                                    </li>
+
+                                    <li>
+                                        网站页面上的文学和艺术作品的作者已主张其为该等作品的作者，从而享有相关的精神权利。
+                                    </li>
+                                </ol>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>七、隐私权政策</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        “GlobZip平台”绝对尊重用户的个人隐私权，绝不会公开、编辑、透漏用户的非公开资料给第三方具体细则请见——隐私保护声明。
+                                    </li>
+
+                                </ul>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>八、协议终止</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        1、您同意，”GlobZip平台”基于平台服务的安全性、合法性，有权不经事先通知而中止、终止向您提供部分或全部”GlobZip平台”服务，暂时冻结或永久冻结（注销）您的账户，且无须为此向您或任何第三方承担任何责任。如发生下列任何一种情形，”GlobZip平台”有权单方面中断或终止向用户提供服务而无需通知用户：
+                                        <p>（1）用户违反《中华人民共和国保守国家秘密法》、《中华人民共和国计算机信息系统安全保护条例》、《计算机软件保护条例》、信息产业部2000年10月8日第4次部务会议通过的《互联网电子公告服务管理规定》，以及《互联网新闻信息服务管理规定》等有关计算机及互联网规定的法律和法规、实施办法；</p>
+                                        <p>（2）用户违反本服务协议中规定的使用规则；</p>
+                                        <p>（3）注册信息中的主要内容不真实或不准确或不及时或不完整；</p>
+                                        <p>（4）未经”GlobZip平台”同意，将”GlobZip平台”平台用于商业目的；</p>
+                                        <p>（5）”GlobZip平台”终止向您提供服务后，您涉嫌再一次直接或间接或以他人名义注册为”GlobZip平台”会员</p>
+                                        <p>（6）本协议（含规则）变更时，您明示并通知”GlobZip平台”不愿接受新的服务协议的；</p>
+                                        <p>（7）其它”GlobZip平台”认为应当终止服务的情况。</p>
+                                    </li>
+
+                                    <li>
+                                        2、您有权向”GlobZip平台”要求注销您的账户，经”GlobZip平台”审核同意的，”GlobZip平台”注销您的账户，届时，您与”GlobZip平台”基于本协议的合同关系即终止。您的账户被注销后，”GlobZip平台”没有义务为您保留或向您披露您账户中的任何信息，也没有义务向您或第三方转发任何您未曾阅读或发送过的信息。
+                                    </li>
+
+                                    <li>
+                                        3、您同意，您与”GlobZip平台”的协议关系终止后，”GlobZip平台”仍享有下列权利；
+                                        <p>（1）继续保存您的注册信息及您使用”GlobZip平台”服务期间发布的所有信息；</p>
+                                        <p>（2）您在使用”GlobZip平台”服务期间存在违法行为或违反本协议和/或规则的行为的，”GlobZip平台”仍可依据本协议向您主张权利。</p>
+                                    </li>
+
+                                    <li>
+                                        4、”GlobZip平台”中止或终止向您提供”GlobZip平台”服务后，对于您在服务中止或终止之前的交易行为依下列原则处理，您应独力处理并完全承担进行以下处理所产生的任何争议、损失或增加的任何费用，并应确保”GlobZip平台”免于因此产生任何损失或承担任何责任、费用：
+                                        <p>（1）您在服务中止或终止之前已经上传至”GlobZip平台”的翻译服务需求尚未交易的，”GlobZip平台”有权在中止或终止服务的同时删除此翻译服务需求的相关信息；</p>
+                                        <p>（2）您在服务中止或终止之前已经与其他会员达成翻译服务合同，但合同尚未实际履行的，”GlobZip平台”有权删除此房间的相关信息，同时将相关情形通知您的交易对方；</p>
+                                        <p>（3）您在服务中止或终止之前已经与其他会员达成翻译服务合同且已部分履行的，”GlobZip平台”有权在中止或终止服务、删除此翻译服务需求的相关信息，同时将相关情形通知您的交易对方。</p>
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>九、法律适用、管辖与其它</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        1、本网站信息服务条款要与中华人民共和国的法律解释一致。本协议之效力、解释、变更、执行与争议解决均适用中华人民共和国法律。如无相关法律规定的，则应参照通用国际商业惯例和（或）行业惯例。
+                                    </li>
+
+                                    <li>
+                                        2、因本协议产生之争议，应依照中华人民共和国法律予以处理。如发生本网站服务条款与中华人民共和国法律相抵触时，则这些条款将完全按法律规定重新解释，而其它条款则依旧保持其对用户的约束力。
+                                    </li>
+
+                                    <li>
+                                        3、了解到互联网的无国界性，用户同意遵守当地所有适用的法规，包括但不限于关于网上行为及内容发布之法律法规。用户特别同意遵守有关从中国或用户所在国家或地区输出技术数据之传输的所有适用法律法规。
+                                    </li>
+
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <!-- 隐私条款 intimate -->
+                    <div class="tab-pane fade section-4" id="section-4">
+                        <h2>隐私条款</h2>
+                        <dl>
+                            <dd>
+                                隐私权是您的重要权利，向我们提供您的个人信息是基于对我们的信任，我们非常重视译员的隐私，承诺保护译员的个人隐私。我们认为您提供的信息只能用于帮助我们为您提供更好的服务，有时候我们需要某些信息才能为您提供您请求的服务，本隐私声明解释了这些情况下的数据收集和使用情况。
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>一、本隐私权声明依据及适用范围</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        1、GlobZip平台（globzip.com）（以下称“本网站”）由上海壹零捌度信息科技有限公司所有并运营。本网站根据《中华人民共和国身份证法》、《中华人民共和国侵权责任法》、《中华人民共和国电信管理条例》、《规范互联网信息服务市场秩序若干规定》等相关法律法规及参照国家标准《信息安全技术个人信息保护指南》的规定及在遵守这些法律的前提下，制定隐私权政策（以下称“本政策”）。本网站将尽所能保护您的合法权利免受侵害。
+                                    </li>
+
+                                    <li>
+                                        2、本政策适用于本网站提供的所有产品和服务。随着“GlobZip平台”服务范围的扩大，隐私保护声明的内容可由“GlobZip平台”随时更新，且毋须另行通知。更新后的隐私保护声明一旦在网页上公布即有效代替原来的隐私保护声明。您在同意“GlobZip平台”服务协议之时，即视为您已经同意本隐私保护政策全部内容。本隐私保护政策属于“GlobZip平台”服务协议不可分割的一部分。
+                                    </li>
+
+                                    <li>
+                                        3、用户使用本网站应遵守本政策和网站公布的服务协议的规定。
+                                    </li>
+
+                                    <li>
+                                        4、本政策仅适用于通过网站收集的信息，而不适用于通过其他方法或信息源获取的信息。
+                                    </li>
+
+                                </ul>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>二、个人信息收集</dt>
+                            <dd>
+                                “GlobZip平台”在征得用户同意并确认的情况下，收集的个人标识信息是用户在注册时或回复某项信息请求时自愿提供的信息。我们有两种信息收集方式：
+                                <ul>
+                                    <li>
+                                        1、您向我们提供的信息。在您注册”GlobZip平台”账户或申请开通新的功能时，您根据”GlobZip平台”要求提供的个人信息，包含但不限于：姓名，Email地址，住址和电话号码等。
+                                    </li>
+
+                                    <li>
+                                        2、我们在您使用服务的过程中获取的信息。我们会收集关于您使用的服务以及使用方式的信息，此类信息包括：
+                                        <p>（1）在您使用”GlobZip平台”服务，或访问”GlobZip平台”平台网页时，”GlobZip平台”自动接收并记录的您的浏览器和计算机上的信息，包括但不限于您的IP地址、浏览器的类型、使用的语言、访问日期和时间、软硬件特征信息及您需求的网页记录等数据。通过收集上述信息，我们将优化在您计算机屏幕上显示的页面，同时进行客流量统计、访问者阅读习惯整理等，从而改进本网站的管理和服务。</p>
+                                        <p>（2）”GlobZip平台”可能会使用浏览器网络存储等机制和应用程序数据缓存，在您的设备上收集信息（包括个人信息）并进行本地存储。</p>
+                                        <p>（3）当您使用”GlobZip平台”服务时，我们会使用各种技术来收集和存储信息，在此过程中可能会向您的设备发送一个或多个Cookie或匿名标识符。当您与我们提供给合作伙伴的服务进行互动时，我们也会使用Cookie和匿名标识符。</p>
+                                    </li>
+
+                                </ul>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>三、译员保护</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        1、为了给您提供更准确、更有个性化的服务，”GlobZip平台”会按照本隐私权政策的规定使用和披露您的个人信息。除本隐私权政策另有规定外，在未征得您事先许可的情况下，”GlobZip平台”不会将这些信息对外披露或向第三方提供。
+                                    </li>
+
+                                    <li>
+                                        2、本政策保证用户提供给”GlobZip平台”任何信息均处于私密状态并受到保护。为达到这一目的，本网站将对您所提供的信息采取严密的管理及保护措施。我们将采用相应的安全技术和程序来防止您的个人信息丢失、被盗用或遭篡改，并且保护您的个人信息不被未经授权者访问、使用或泄漏。
+                                    </li>
+
+                                    <li>
+                                        3、未经用户的明确同意，”GlobZip平台”绝不收集有关用户的任何敏感信息。”GlobZip平台”将尽力确保本网站所掌握的信息准确无误并根据用户所提供的信息使其保持最新的状态。如用户告知”GlobZip平台”信息不准确，本网站将立即删除或纠正。
+                                    </li>
+
+                                    <li>
+                                        4、本网站用户对于自己的个人信息享有以下权利：
+                                        <p>（1）随时查询及请求阅览；</p>
+                                        <p>（2）随时请求补充或更正；</p>
+                                        <p>（3）随时请求删除。</p>
+                                    </li>
+
+                                    <li>
+                                        5、本网站为用户提供各种配套服务，我们通常要求参与者填写相关资料登记表格，以便活动更好的开展。此类信息也将成为本网站用户数据的一部分，并将被后续记录、保存、保护和合理使用。是否提供所要求的信息和或是否参加此类活动，这完全取决于用户自身。
+                                    </li>
+
+                                    <li>
+                                        6、”GlobZip平台”为您在线交流等服务，并善意提醒所有用户，在交易前与其他用户的交流中，您公布的任何信息都有可能成为公开的信息，且”GlobZip平台”不对此类信息公开负责。因此，本网提醒您，在交流中公开您的个人信息之前请慎重考虑。"监护人"）的书面同意。除根据法律法规的规定及有权机关的指示披露外，陌陌科技不会使用或向任何第三方透露未成年人的聊天记录及其他个人隐私信息。除本协议约定的例外情形外，未经监护人事先同意，陌陌科技不会使用或向任何第三方透露未成年人的个人隐私信息。任何18岁以下的用户不得下载和使用陌陌科技通过陌陌软件提供的网络游戏。
+                                    </li>
+
+                                </ul>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>四、未成年人隐私保护</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        1、本网站将建立相应合理程序，以保护未成年人个人信息的安全。本网站郑重声明：任何十六岁以下的未成年人参加网上活动应事先得到家长或其法定监护人（以下统称为“监护人”）的明确同意。
+                                    </li>
+
+                                    <li>
+                                        2、未经监护人同意，未成年人私自上网或者冒用成人名义上网的行为将可能缺乏与未成年人相应的信息安全保护措施。
+                                    </li>
+
+                                    <li>
+                                        3、监护人应承担保护未成年人相关网络隐私的首要责任。
+                                    </li>
+
+                                    <li>
+                                        4、本网站收集未成年人的个人信息，仅为更好服务于未成年人特定要求的目的，相关资料仅作为保护未成年人参与网络活动时的安全之用，而不会保留这些信息做进一步或其他商业目的的使用。
+                                    </li>
+
+                                    <li>
+                                        5、未经监护人同意，本网站将不会使用未成年人的个人信息，亦不会向任何第三方披露或传送可识别该未成人的个人信息。
+                                    </li>
+
+                                    <li>
+                                        6、若经未成年人的监护人同意，本网站可对未成年人的个人信息进行收集，本网站将向监护人提供：
+                                        <p>（1）审视其子女或被监护人相关信息的机会；</p>
+                                        <p>（2）拒绝其子女或被监护人相关个人信息被进一步收集或使用的可能；</p>
+                                        <p>（3）变更或删除其子女或被监护人个人信息。</p>
+                                    </li>
+
+                                    <li>
+                                        7、监护人有权拒绝本网站与其子女或被监护人做进一步的联络。
+                                    </li>
+
+                                </ul>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>五、个人信息的使用与披露</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        所有个人标识信息均应根据2000年《互联网信息服务管理办法》及其他有关数据保护的法规予以保存。”GlobZip平台”使用用户的个人信息是为了向用户提供”GlobZip平台”的相关信息、更好地向用户提供服务并对”GlobZip平台”网站本身进行广告宣传。
+
+                                    </li>
+
+                                    <li>
+                                        “GlobZip平台”有权为以下目的披露个人的专有信息，且本网站不对此承担任何责任：
+                                        <p>1、回复政府部门或准政府部门的质询；或依法保护”GlobZip平台”的权利或财产、本网站和/或本网站的其他用户；</p>
+                                        <p>2、为免除您在生命、身体或财产方面的紧急危险；</p>
+                                        <p>3、为防止他人权益的重大危害；</p>
+                                        <p>4、为增进公共利益，且无害于您的重大利益；</p>
+                                        <p>5、遵守适用法律的规定；</p>
+                                        <p>6、根据”GlobZip平台”服务协议或”GlobZip平台”其他相关声明所列的条款，有必要进行相关信息公开的；</p>
+                                        <p>7、已取得您的同意；</p>
+                                        <p>8、为体现公平公正原则，需要对用户的部分信息进行公示的；</p>
+                                        <p>9、与”GlobZip平台”的关联公司和战略合作伙伴分享客户资料，以及其他需要公开、编辑或透露个人信息的情况。 请用户注意，除上述关于个人标识信息共享的规定外，”GlobZip平台”可能将用户的信息发送至其他国家，包括发送至中国以外的国家，以满足”GlobZip平台”业务和管理的需要。”GlobZip平台”将按照中国网络和信息安全的规定进行上述信息的境外传送。中国以外的部分地区可能没有相关的信息保护法律，或对个人标识的保护程度低于中国提供的保护程度。用户向”GlobZip平台”提交个人标识信息即表示用户确认：尽管”GlobZip平台”按照本政策规定的方式使用用户的信息，但”GlobZip平台”将不对收取和处理用户的数据的第三方使用用户的数据承担任何责任。
+                                        </p>
+                                    </li>
+
+                                </ul>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>六、Cookies</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        1、Cookies是指一种技术，当使用者访问设有Cookies装置的本网站时，本网站的服务器会自动发送Cookies至用户浏览器内，并储存到其电脑硬盘内。此Cookies负责记录日后您到访本网站的种种活动、网络个人资料、浏览习惯等。
+                                    </li>
+
+                                    <li>
+                                        2、”GlobZip平台”使用Cookies仅为为所有用户提供更加周到的个性化服务之目的。运用Cookies技术，本网站能够知道哪些网页或内容受欢迎。此外，本网站将会运用Cookies追访您的喜好，使您在访问我们的网站时能够得到更周密更细致的良好服务。
+                                    </li>
+
+                                    <li>
+                                        3、Cookies不会跟踪个人信息。当您注册成为本网站会员时，”GlobZip平台”会使用Cookies。在这种情况下，会存储有用信息，使您再次访问我们的网站时可辨认您的身份，从而向您提供感兴趣的信息资料或储存账号密码等，以便您造访本网站时不必每次重复登录。
+                                    </li>
+
+                                    <li>
+                                        4、来自”GlobZip平台”的Cookies只能被”GlobZip平台”读取。您可以选择接受或拒绝Cookie。大多数网络浏览器会自动接受Cookie，但您通常可根据自己的需要来修改浏览器的设置以拒绝Cookie。如果您的浏览器被设置为拒绝Cookies，您仍然能够访问我们的大多数网页，但是您可能无法完全体验”GlobZip平台”全部的网络服务或本网站的特色互动功能。
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>七、电子邮件</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        请注意，”GlobZip平台”可能为以下目的向用户发送电子邮件和/或短消息：
+                                        <ul>
+                                            <li>
+                                                1、作为服务的一部分向用户发送电子邮件和/或短消息。例如，”GlobZip平台”可能会在以下情况下向用户发送邮件：
+                                                <p>（1）注册完成后向用户发送电子邮件和/或短消息，告知用户的帐号详细信息；</p>
+                                                <p>（2）就”GlobZip平台”提供的服务向用户发送提示性邮件和/或短消息（特别是在用户尚未使用或使用时间较短的情况下）；</p>
+                                                <p>（3）向用户发送用户要求提供的信息或购物券；</p>
+                                                <p>（4）发送新闻；</p>
+                                                <p>（5）发送促销邮件和/或短消息；</p>
+                                                <p>（6）向用户提供相关服务。</p>
+                                            </li>
+                                            <li>
+                                                2、针对”GlobZip平台”可能发送的新闻、营销或促销邮件和/或短消息，”GlobZip平台”用户可选择取消订阅，只需点击邮件下方取消订阅链接，”GlobZip平台”将不再为取消订阅用户发送促销邮件，但关于订单相关邮件将会继续发送。
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>八、免责</dt>
+                            <dd>
+                                就下列相关事宜的发生，”GlobZip平台”不承担任何法律责任：
+                                <ul>
+                                    <li>
+                                        1、由于您将登录账号及密码告知他人或与他人共享注册帐户，由此导致的任何个人信息泄露，或其他非因”GlobZip平台”原因导致的个人信息泄漏；
+                                    </li>
+
+                                    <li>
+                                        2、任何由于黑客政击、计算机病毒侵入或发作、因政府管制而造成的暂时性关闭等影响网络正常经营之非”GlobZip平台”原因而造成的个人信息泄露、丢失、被盗用或被篡改等；
+                                    </li>
+
+                                    <li>
+                                        3、任何第三方根据”GlobZip平台”的各服务声明及服务协议中所列明的情况使用您的个人信息，由此所产生的纠纷；
+                                    </li>
+
+                                    <li>
+                                        4、”GlobZip平台”在服务协议及各类规则中列明的所有免责情形；
+                                    </li>
+
+                                    <li>
+                                        5、”GlobZip平台”的网页上有与其他网站网页的链接。”GlobZip平台”对其他任何网站的内容、隐私政策、运营情况或经营这些网站的公司的行为概不负责。在向这些与”GlobZip平台”链接的网站提供个人信息之前，请查阅它们的隐私政策。由于与本网站链接的其它网站所造成的个人信息泄露及由此而导致的任何法律争议和后果，”GlobZip平台”概不负责；
+                                    </li>
+
+                                    <li>
+                                        6、任何因不可抗力所导致的后果。
+                                    </li>
+
+                                </ul>
+                            </dd>
+                        </dl>
+
+                    </div>
+
+                    <!-- 关于我们 about -->
+                    <div class="tab-pane fade section-5 in active" id="section-5">
+                        <dl>
+                            <dt>愿景</dt>
+                            <dd>成为全球最大线上撮合，线下服务的的翻译平台</dd>
+                        </dl>
+
+                        <dl>
+                            <dt>使命</dt>
+                            <dd>让拥有多语言能力的人，实现自己的价值；让需要翻译的，更方便快捷找到所需要的翻译</dd>
+                        </dl>
+
+                        <dl>
+                            <dt>服务理念</dt>
+                            <dd>
+                                <ul class="list-unstyled">
+                                    <li>为译员和翻译需求者提供安全，便捷，可靠的的服务平台。</li>
+                                    <li>我们的团队不墨守成规，敢于接受挑战；尊重个性；</li>
+                                    <li>鼓励差异化，以推动我们更好地前进。</li>
+                                </ul>
+                            </dd>
+                        </dl>
+
+                        <dl>
+                            <dt>发展历程</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        <span class="time">2015年11月</span>
+                                        <span>公司成立</span>
+                                    </li>
+                                    <li>
+                                        <span class="time">2015年12月</span>
+                                        <span>创立GlobZip品牌，并在欧美注册商标</span>
+                                    </li>
+                                    <li>
+                                        <span class="time">2016年3月</span>
+                                        <span>成立北京分公司</span>
+                                    </li>
+                                    <li>
+                                        <span class="time">2016年4月</span>
+                                        <span>北美推广团队组建，欧洲推广团队组建</span>
+                                    </li>
+                                    <li>
+                                        <span class="time">2016年7月</span>
+                                        <span>产品上线运营</span>
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <!-- 联系我们 contact -->
+                    <div class="tab-pane fade section-6" id="section-6">
+
+                        <div id="carousel-example-generic3" class="carousel slide" data-ride="carousel">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img src="images/map.jpg" alt="code-bg">
+                                    <div class="code-caption">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <dl>
+                                    <dt>商务洽谈</dt>
+                                    <dd>
+                                        <dl class="dl-horizontal">
+                                            <dt>联系人: </dt>
+                                            <dd>李狄皓</dd>
+
+                                            <dt>邮箱: </dt>
+                                            <dd>li.dihao(at)immomo.com</dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                            </div>
+
+                            <div class="col-md-6">
+                                <dl>
+                                    <dt>表情合作</dt>
+                                    <dd>
+                                        <dl class="dl-horizontal">
+                                            <dt>联系人: </dt>
+                                            <dd>李狄皓</dd>
+
+                                            <dt>邮箱: </dt>
+                                            <dd>li.dihao(at)immomo.com</dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                            </div>
+
+                            <div class="col-md-6">
+                                <dl>
+                                    <dt>媒体采访</dt>
+                                    <dd>
+                                        <dl class="dl-horizontal">
+                                            <dt>联系人: </dt>
+                                            <dd>李狄皓</dd>
+
+                                            <dt>邮箱: </dt>
+                                            <dd>li.dihao(at)immomo.com</dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                            </div>
+
+                            <div class="col-md-6">
+                                <dl>
+                                    <dt>游戏合作</dt>
+                                    <dd>
+                                        <dl class="dl-horizontal">
+                                            <dt>联系人: </dt>
+                                            <dd>李狄皓</dd>
+
+                                            <dt>邮箱: </dt>
+                                            <dd>li.dihao(at)immomo.com</dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                            </div>
+
+                            <div class="col-md-12">
+                                <dl>
+                                    <dt>客服帮助</dt>
+                                    <dd>
+                                        <p>为及时解决您的问题，建议您通过客户端提交意见反馈，我们会尽快在24小时内受理您的问题</p>
+                                        <p>1. 客服热线：028-62836666（服务时间8:30 - 22:00）</p>
+                                        <p>2. 在陌陌科技官方微博留言 @GlobZip（http://weibo.com/globzip）</p>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <hr class="featurette-divider" />
+
+    <!-- 关于信息 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <ul class="col-xs-12 col-sm-6 col-md-6">
+                    <li>
+                        <a href="agree.html">用户协议</a>
+                    </li>
+                    <li>
+                        <a href="help.html">问题帮助</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">联系我们</a>
+                    </li>
+                    <li>
+                        <a href="downloads.html">下载APP</a>
+                    </li>
+                </ul>
+
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <dl>
+                        <dt><h1>400-000-0000</h1></dt>
+                        <dd class="visible-xs">
+                            <p>工作日: &nbsp;10:00 - 19:00</p>
+                            <p>官方邮箱: &nbsp;kefu@globzip.com</p>
+                        </dd>
+                        <dd class="hidden-xs">
+                            <dl class="dl-horizontal">
+                                <dt>工作日: </dt>
+                                <dd>10:00 - 19:00</dd>
+
+                                <dt>官方邮箱: </dt>
+                                <dd>kefu@globzip.com</dd>
+                            </dl>
+                        </dd>
+                    </dl>
+                    <div class="row hidden-xs">
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            <div class="thumbnail">
+                                <img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
+                                <div class="caption">
+                                    <p>官方微信</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            <div class="thumbnail">
+                                <img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
+                                <div class="caption">
+                                    <p>官方微博</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            <div class="thumbnail">
+                                <img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
+                                <div class="caption">
+                                    <p>Facebook</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            <div class="thumbnail">
+                                <img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
+                                <div class="caption">
+                                    <p>推特</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>GUOKR © 2015 LOVINGLY MADE IN SHANGHAI 沪ICP备16011529号-1 </p>
+            <p>上海壹零捌信息技术有限公司</p>
+        </div>
+    </footer>
 
 
 </body>
+
 </html>

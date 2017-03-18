@@ -1,484 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title></title>
-	<meta name="viewport" content=" width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/common.css" rel="stylesheet">
-	<link href="css/global.css" rel="stylesheet">
-	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/bootstrap-hover-dropdown.min.js"></script>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content=" width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-hover-dropdown.min.js"></script>
 </head>
+
 <body class="help_html" data-spy="scroll" data-target="#myScrollspy">
 
-	<!-- 头部菜单 -->
-	<nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+    <!-- 头部菜单 -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">
-				<img alt="Brand" src="images/logo.png">
-			</a>
+                <a class="navbar-brand" href="#">
+                    <img alt="Brand" src="images/logo.png">
+                </a>
+            </div>
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="user.html">用户端</a></li>
+                    <li><a href="interpreter.html">译员端</a></li>
+                    <li class="hidden-xs active"><a href="help.html">问题帮助</a></li>
+                    <li class="visible-xs dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">问题帮助<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="help_1.html">关于globzip</a></li>
+                            <li><a href="help_2.html">我是译员</a></li>
+                            <li><a href="help_3.html">我是用户</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle visible-xs" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
+                        <a href="mix.html" class="dropdown-toggle hidden-xs" data-toggle="false" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="mix.html">加入我们</a></li>
+                            <li><a href="news.html">支付协议</a></li>
+                            <li><a href="agree.html">服务协议</a></li>
+                            <li><a href="intimate.html">隐私条款</a></li>
+                            <li><a href="about.html">关于我们</a></li>
+                            <li><a href="contact.html">联系我们</a></li>
+                        </ul>
+                    </li>
+                    <li class="lang"><a class="active" href="#contact">中文</a>|<a href="#contact">English</a></li>
+                </ul>
+            </div>
         </div>
-	
-        <div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav navbar-right"">
-				<li><a href="index.html">首页</a></li>
-				<li><a href="user.html">用户端</a></li>
-				<li><a href="interpreter.html">译员端</a></li>
-				<li class="hidden-xs active"><a href="help.html">问题帮助</a></li>
-				<li class="visible-xs dropdown active">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">问题帮助<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="help_1.html">关于globzip</a></li>
-						<li><a href="help_2.html">我是译员</a></li>
-						<li><a href="help_3.html">我是用户</a></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle visible-xs" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
-					<a href="mix.html" class="dropdown-toggle hidden-xs" data-toggle="false" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于GlobZip <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="mix.html">加入我们</a></li>
-						<li><a href="news.html">支付协议</a></li>
-						<li><a href="agree.html">服务协议</a></li>
-						<li><a href="intimate.html">隐私条款</a></li>
-						<li><a href="about.html">关于我们</a></li>
-						<li><a href="contact.html">联系我们</a></li>
-					</ul>
-				</li>
-				<li class="lang"><a class="active" href="#contact">中文</a>|<a href="#contact">English</a></li>
-			</ul>
-        </div>
-      </div>
     </nav>
-	
-	<img class="visible-xs" src="images/photo_01.jpg" alt="" style="width: 100%;">
-	
-	<!-- banner图 第一个div  可加的calss  container   加入后container 限定了宽度   否则 没有限定宽度   显示效果拭图片大小决定 -->
-	<div class="banner hidden-xs">
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
-			<!-- Wrapper for slides -->
-			<div class="carousel-inner" role="listbox">
-				<div class="item active">
-					<img src="" alt="" style="background-image: url('images/banner_help.jpg')">
-				</div>
-			</div>
+    <img class="visible-xs" src="images/photo_01.jpg" alt="" style="width: 100%;">
 
-		</div>
-	</div>
+    <!-- banner图 第一个div  可加的calss  container   加入后container 限定了宽度   否则 没有限定宽度   显示效果拭图片大小决定 -->
+    <div class="banner hidden-xs">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="" alt="" style="background-image: url('images/banner_help.jpg')">
+                </div>
+            </div>
 
-	<!-- 当前位置 -->
-	<div class="container gps hidden-xs">
-		<span>当前位置: </span>
-		<span>首页</span>
-		<span>&nbsp;&nbsp;>&nbsp;</span>
-		<span>问题帮助</span>
-	</div>
+        </div>
+    </div>
 
 
-	<!-- 问题 -->
-	<div class="container issue">
-		 <div class="row">
-		 	<div class="col-md-3" id="myScrollspy">
-	            <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="600">
-	                <li><a href="#section-1" data-toggle="tab">关于globzip</a></li>
-	                <li class="active"><a href="#section-2" data-toggle="tab">我是译员</a></li>
-	                <li><a href="#section-3" data-toggle="tab">我是用户</a></li>
-	            </ul>
-	        </div>
+    <!-- 当前位置 -->
+    <div class="container gps hidden-xs">
+        <span>当前位置: </span>
+        <span>首页</span>
+        <span>&nbsp;&nbsp;>&nbsp;</span>
+        <span>问题帮助</span>
+    </div>
 
-	        <div class="col-md-9">
 
-				<div id="myTabContent" class="tab-content">
-	        		<!-- 关于globzip -->
-					<div class="tab-pane fade section-1" id="section-1">
-						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="section_1_1">
-									<h4 class="panel-title">
-										<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_1_1" aria-expanded="true" aria-controls="collapse_1_1">
+    <!-- 问题 -->
+    <div class="container issue">
+        <div class="row">
+            <div class="col-md-3" id="myScrollspy">
+                <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="600">
+                    <li><a href="#section-1" data-toggle="tab">关于globzip</a></li>
+                    <li class="active"><a href="#section-2" data-toggle="tab">我是译员</a></li>
+                    <li><a href="#section-3" data-toggle="tab">我是用户</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-9">
+
+                <div id="myTabContent" class="tab-content">
+                    <!-- 关于globzip -->
+                    <div class="tab-pane fade section-1" id="section-1">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="section_1_1">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_1_1" aria-expanded="true" aria-controls="collapse_1_1">
 										一、GlobZip平台是什么？
 										</a>
-									</h4>
-								</div>
+                                    </h4>
+                                </div>
 
-								<div id="collapse_1_1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="section_1_1">
-									<div class="panel-body">
-										商务或者旅行者，在要到达的城市，找到当地的翻译，使之提供语言服务以及其它延伸的服务例如：租车、订酒店、接机等
-									</div>
-								</div>
-							</div>
+                                <div id="collapse_1_1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="section_1_1">
+                                    <div class="panel-body">
+                                        商务或者旅行者，在要到达的城市，找到当地的翻译，使之提供语言服务以及其它延伸的服务例如：租车、订酒店、接机等
+                                    </div>
+                                </div>
+                            </div>
 
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="section_1_2">
-									<h4 class="panel-title">
-										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_1_2" aria-expanded="false" aria-controls="collapse_1_2">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="section_1_2">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_1_2" aria-expanded="false" aria-controls="collapse_1_2">
 										二、GlobZip平台如何定义译员和用户?
 										</a>
-									</h4>
-								</div>
+                                    </h4>
+                                </div>
 
-								<div id="collapse_1_2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_1_2">
-									<div class="panel-body">
-										译员：至少精通除母语外的另外一种或者多种语言
-										<br/>
-										用户：需要当地翻译服务的人或者团队
-									</div>
-								</div>
-							</div>
+                                <div id="collapse_1_2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_1_2">
+                                    <div class="panel-body">
+                                        译员：至少精通除母语外的另外一种或者多种语言
+                                        <br/> 用户：需要当地翻译服务的人或者团队
+                                    </div>
+                                </div>
+                            </div>
 
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="section_1_3">
-									<h4 class="panel-title">
-										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_1_3" aria-expanded="false" aria-controls="collapse_1_3">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="section_1_3">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_1_3" aria-expanded="false" aria-controls="collapse_1_3">
 										三、GlobZip平台如何实现用户与译员的切换？
 										</a>
-									</h4>
-								</div>
+                                    </h4>
+                                </div>
 
-								<div id="collapse_1_3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_1_3">
-									<div class="panel-body">
-										GlobZip平台链接译员和用户，让两者通过GlobZip平台达成服务契约。下载安装APP后，默认的是用户的界面。通过用户界面，用户可以搜索译员。如果您是译员，可以在用户界面中“我”，申请成为译员，申请成为译员后，切换到译员模式，在译员界面，译员可以通过任务进行抢单，也可以管理自己的日程安排。
-									</div>
-								</div>
-							</div>
+                                <div id="collapse_1_3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_1_3">
+                                    <div class="panel-body">
+                                        GlobZip平台链接译员和用户，让两者通过GlobZip平台达成服务契约。下载安装APP后，默认的是用户的界面。通过用户界面，用户可以搜索译员。如果您是译员，可以在用户界面中“我”，申请成为译员，申请成为译员后，切换到译员模式，在译员界面，译员可以通过任务进行抢单，也可以管理自己的日程安排。
+                                    </div>
+                                </div>
+                            </div>
 
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="section_1_4">
-									<h4 class="panel-title">
-										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_1_4" aria-expanded="false" aria-controls="collapse_1_4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="section_1_4">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_1_4" aria-expanded="false" aria-controls="collapse_1_4">
 										四、双方交易如何达成？交易的达成有两种路径。
 										</a>
-									</h4>
-								</div>
+                                    </h4>
+                                </div>
 
-								<div id="collapse_1_4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_1_4">
-									<div class="panel-body">
-										<p>1、用户寻找译员</p>
+                                <div id="collapse_1_4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_1_4">
+                                    <div class="panel-body">
+                                        <p>1、用户寻找译员</p>
 
-											<p class="text_indent">1）用户首先找到译员：通过输入目的地搜索或者在首页系统推荐的译员中，找出适合的译员。</p>
-											<p class="center">
-												<img src="images/help/1.png" /><img src="images/help/2.png" />
-												<p class="center">输入目的地，翻译语言检索合适译员</p>
-											</p>
-											<p class="text_indent">2）点击译员详情------下单------输入你的任务详情------确认预约------等待译员回复</p>
-											<p class="center">
-												<img src="images/help/3.png" /><img src="images/help/4.png" />
-												<p class="center">查看译员服务详细资料，点击下单</p>
-											</p>
-											<p class="center">
-												<img src="images/help/5.png" /><img src="images/help/6.png" />
-												<p class="center">填写预约信息，预约译员成功，等待译员回复</p>
-											</p>
-										<p>2、用户发布需求</p>
-											<p class="text_indent">1）用户点击发布需求，输入具体内容（翻译语言、类型、预约时间等信息）点击发布</p>
-											<p class="center">
-												<img src="images/help/7.png" /><img src="images/help/8.png" />
-												<p class="center">输入任务信息（翻译语言、类型、预约时间等信息），点击发布</p>
-											</p>
-											<p class="text_indent">2）系统将匹配合适译员来抢单，完成任务与译员服务的匹配</p>
-										<p>3、译员通过任务抢单</p>
-											<p class="text_indent">1）首先申请成为译员-----我-----申请成为译员------填写个人资料----填写服务内容</p>
-											<p class="center">
-												<img src="images/help/9.png" /><img src="images/help/10.png" />
-												<p class="center">选择“我”中的申请成为译员，完善个人资料</p>
-											</p>
-											<p class="center">
-												<img src="images/help/11.png" /><img src="images/help/12.png" />
-												<p class="center">填写服务内容，提交材料，等待3个工作日的审核</p>
-											</p>
-											<p class="text_indent">2）切换到译员模式-----任务（在任务中找打适合自己的任务）-----抢单-----等待用户回复</p>
-											<p class="center">
-												<img src="images/help/13.png" /><img src="images/help/14.png" />
-												<p class="center">切换译员模式，选择合适自己的任务，抢单</p>
-											</p>
+                                        <p class="text_indent">1）用户首先找到译员：通过输入目的地搜索或者在首页系统推荐的译员中，找出适合的译员。</p>
+                                        <p class="center">
+                                            <img src="images/help/1.png" /><img src="images/help/2.png" />
+                                            <p class="center">输入目的地，翻译语言检索合适译员</p>
+                                        </p>
+                                        <p class="text_indent">2）点击译员详情------下单------输入你的任务详情------确认预约------等待译员回复</p>
+                                        <p class="center">
+                                            <img src="images/help/3.png" /><img src="images/help/4.png" />
+                                            <p class="center">查看译员服务详细资料，点击下单</p>
+                                        </p>
+                                        <p class="center">
+                                            <img src="images/help/5.png" /><img src="images/help/6.png" />
+                                            <p class="center">填写预约信息，预约译员成功，等待译员回复</p>
+                                        </p>
+                                        <p>2、用户发布需求</p>
+                                        <p class="text_indent">1）用户点击发布需求，输入具体内容（翻译语言、类型、预约时间等信息）点击发布</p>
+                                        <p class="center">
+                                            <img src="images/help/7.png" /><img src="images/help/8.png" />
+                                            <p class="center">输入任务信息（翻译语言、类型、预约时间等信息），点击发布</p>
+                                        </p>
+                                        <p class="text_indent">2）系统将匹配合适译员来抢单，完成任务与译员服务的匹配</p>
+                                        <p>3、译员通过任务抢单</p>
+                                        <p class="text_indent">1）首先申请成为译员-----我-----申请成为译员------填写个人资料----填写服务内容</p>
+                                        <p class="center">
+                                            <img src="images/help/9.png" /><img src="images/help/10.png" />
+                                            <p class="center">选择“我”中的申请成为译员，完善个人资料</p>
+                                        </p>
+                                        <p class="center">
+                                            <img src="images/help/11.png" /><img src="images/help/12.png" />
+                                            <p class="center">填写服务内容，提交材料，等待3个工作日的审核</p>
+                                        </p>
+                                        <p class="text_indent">2）切换到译员模式-----任务（在任务中找打适合自己的任务）-----抢单-----等待用户回复</p>
+                                        <p class="center">
+                                            <img src="images/help/13.png" /><img src="images/help/14.png" />
+                                            <p class="center">切换译员模式，选择合适自己的任务，抢单</p>
+                                        </p>
 
-									</div>
-								</div>
-							</div>
+                                    </div>
+                                </div>
+                            </div>
 
-						</div>
-					</div>
+                        </div>
+                    </div>
 
-					<div class="tab-pane fade section-2 in active" id="section-2">
-						<div class="panel-group" id="accordion_2" role="tablist" aria-multiselectable="true">
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="section_2_1">
-									<h4 class="panel-title">
-										<a role="button" data-toggle="collapse" data-parent="#accordion_2" href="#collapse_2_1" aria-expanded="true" aria-controls="collapse_2_1">
+                    <div class="tab-pane fade section-2 in active" id="section-2">
+                        <div class="panel-group" id="accordion_2" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="section_2_1">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion_2" href="#collapse_2_1" aria-expanded="true" aria-controls="collapse_2_1">
 										一、如何申请成为译员？
 										</a>
-									</h4>
-								</div>
+                                    </h4>
+                                </div>
 
-								<div id="collapse_2_1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="section_2_1">
-									<div class="panel-body">
-										<p>只要你至少精通除母语外的另外一种或者多种语言，都可以申请成为译员。在首页或者最下面的图标中“我”，都可以找到成为译员的路径。</p>
-										<p>点击“我”-----申请成为译员----填写个人资料----填写服务内容</p>
-										<p>特别说明几点：</p>
-										<p>如何填写个人说明：个人说明指的是译员的性格、可以提供的除了语言服务的其他说明，例如，以前有什么成功案例，可以接机、可以订酒店、对当地的了解程度等等，目的就是为了能够更好地让用户对译员的认可。</p>
-										<p>如何填写服务描述：服务描述主要展示语言的服务方面的特长，例如，口译，陪同翻译同传，专业背景等等</p>
-									</div>
-								</div>
-							</div>
+                                <div id="collapse_2_1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="section_2_1">
+                                    <div class="panel-body">
+                                        <p>只要你至少精通除母语外的另外一种或者多种语言，都可以申请成为译员。在首页或者最下面的图标中“我”，都可以找到成为译员的路径。</p>
+                                        <p>点击“我”-----申请成为译员----填写个人资料----填写服务内容</p>
+                                        <p>特别说明几点：</p>
+                                        <p>如何填写个人说明：个人说明指的是译员的性格、可以提供的除了语言服务的其他说明，例如，以前有什么成功案例，可以接机、可以订酒店、对当地的了解程度等等，目的就是为了能够更好地让用户对译员的认可。</p>
+                                        <p>如何填写服务描述：服务描述主要展示语言的服务方面的特长，例如，口译，陪同翻译同传，专业背景等等</p>
+                                    </div>
+                                </div>
+                            </div>
 
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="section_2_2">
-									<h4 class="panel-title">
-										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_2" href="#collapse_2_2" aria-expanded="false" aria-controls="collapse_2_2">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="section_2_2">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_2" href="#collapse_2_2" aria-expanded="false" aria-controls="collapse_2_2">
 										二、Globzip平台对译员有什么要求？
 										</a>
-									</h4>
-								</div>
+                                    </h4>
+                                </div>
 
-								<div id="collapse_2_2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_2_2">
-									<div class="panel-body">
-										不同的用户，可能需要不同的陪同翻译。一般的旅游，其实只要完成基本的沟通交流即可。但是，特殊的情况可能需要的翻译不仅仅是沟通交流问题，还需要翻译具有专业背景。
-									</div>
-								</div>
-							</div>
+                                <div id="collapse_2_2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_2_2">
+                                    <div class="panel-body">
+                                        不同的用户，可能需要不同的陪同翻译。一般的旅游，其实只要完成基本的沟通交流即可。但是，特殊的情况可能需要的翻译不仅仅是沟通交流问题，还需要翻译具有专业背景。
+                                    </div>
+                                </div>
+                            </div>
 
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="section_2_3">
-									<h4 class="panel-title">
-										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_2" href="#collapse_2_3" aria-expanded="false" aria-controls="collapse_2_3">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="section_2_3">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_2" href="#collapse_2_3" aria-expanded="false" aria-controls="collapse_2_3">
 										三、译员界面下的“任务”
 										</a>
-									</h4>
-								</div>
+                                    </h4>
+                                </div>
 
-								<div id="collapse_2_3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_2_3">
-									<div class="panel-body">
-									</div>
-								</div>
-							</div>
+                                <div id="collapse_2_3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_2_3">
+                                    <div class="panel-body">
+                                    </div>
+                                </div>
+                            </div>
 
 
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="section_2_4">
-									<h4 class="panel-title">
-										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_2" href="#collapse_2_4" aria-expanded="false" aria-controls="collapse_2_4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="section_2_4">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_2" href="#collapse_2_4" aria-expanded="false" aria-controls="collapse_2_4">
 										四、任务是用户发布的
 										</a>
-									</h4>
-								</div>
+                                    </h4>
+                                </div>
 
-								<div id="collapse_2_4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_2_4">
-									<div class="panel-body">
-										任务是用户发布的，其目的是为了找到合适的译员。译员根据任务内容，确定是否有时间或者是否适合本人。如果译员能够完成任务，可以通过抢单和用户交易。所有用户发布的任务都会在这里呈现，译员可以在这里寻找适合自己的任务，生成订单
-									</div>
-								</div>
-							</div>
+                                <div id="collapse_2_4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_2_4">
+                                    <div class="panel-body">
+                                        任务是用户发布的，其目的是为了找到合适的译员。译员根据任务内容，确定是否有时间或者是否适合本人。如果译员能够完成任务，可以通过抢单和用户交易。所有用户发布的任务都会在这里呈现，译员可以在这里寻找适合自己的任务，生成订单
+                                    </div>
+                                </div>
+                            </div>
 
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="section_2_5">
-									<h4 class="panel-title">
-										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_2" href="#collapse_2_5" aria-expanded="false" aria-controls="collapse_2_5">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="section_2_5">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_2" href="#collapse_2_5" aria-expanded="false" aria-controls="collapse_2_5">
 										五、译员界面下的“管理”
 										</a>
-									</h4>
-								</div>
+                                    </h4>
+                                </div>
 
-								<div id="collapse_2_5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_2_5">
-									<div class="panel-body">
-										<p class="text_indent">(1)待应邀：用户认为这个译员满足自己的需求，直接给这个译员“下单”，下单后，就会在这个译员的待应邀呈现出来，并有通知到达译员，译员可以判断，适合就生成订单，用户支付</p>
-										<p class="text_indent">(2)订单管理：译员生成的订单呈现在这里</p>
-										<p class="text_indent">(3)已抢单：在用户发布的任务中，找到合适的抢单，抢单后等待用户答复，用户认为合适，生成订单。</p>
-									</div>
-								</div>
-							</div>
+                                <div id="collapse_2_5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_2_5">
+                                    <div class="panel-body">
+                                        <p class="text_indent">(1)待应邀：用户认为这个译员满足自己的需求，直接给这个译员“下单”，下单后，就会在这个译员的待应邀呈现出来，并有通知到达译员，译员可以判断，适合就生成订单，用户支付</p>
+                                        <p class="text_indent">(2)订单管理：译员生成的订单呈现在这里</p>
+                                        <p class="text_indent">(3)已抢单：在用户发布的任务中，找到合适的抢单，抢单后等待用户答复，用户认为合适，生成订单。</p>
+                                    </div>
+                                </div>
+                            </div>
 
 
-						</div>
-					</div>
+                        </div>
+                    </div>
 
-					<div class="tab-pane fade section-3" id="section-3">
-						<div class="panel-group" id="accordion_3" role="tablist" aria-multiselectable="true">
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="section_3_1">
-									<h4 class="panel-title">
-										<a role="button" data-toggle="collapse" data-parent="#accordion_3" href="#collapse_3_1" aria-expanded="true" aria-controls="collapse_3_1">
+                    <div class="tab-pane fade section-3" id="section-3">
+                        <div class="panel-group" id="accordion_3" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="section_3_1">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion_3" href="#collapse_3_1" aria-expanded="true" aria-controls="collapse_3_1">
 										一、Globzip平台上，任务是什么意思？
 										</a>
-									</h4>
-								</div>
+                                    </h4>
+                                </div>
 
-								<div id="collapse_3_1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="section_3_1">
-									<div class="panel-body">
-										任务是用户发布的，其目的是为了找到合适的译员。译员根据任务内容，确定是否有时间或者是否适合本人。如果译员能够完成任务，可以通过抢单和用户交易。
-									</div>
-								</div>
-							</div>
+                                <div id="collapse_3_1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="section_3_1">
+                                    <div class="panel-body">
+                                        任务是用户发布的，其目的是为了找到合适的译员。译员根据任务内容，确定是否有时间或者是否适合本人。如果译员能够完成任务，可以通过抢单和用户交易。
+                                    </div>
+                                </div>
+                            </div>
 
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="section_3_2">
-									<h4 class="panel-title">
-										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_3" href="#collapse_3_2" aria-expanded="false" aria-controls="collapse_3_2">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="section_3_2">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_3" href="#collapse_3_2" aria-expanded="false" aria-controls="collapse_3_2">
 										二、用户如何发布任务
 										</a>
-									</h4>
-								</div>
+                                    </h4>
+                                </div>
 
-								<div id="collapse_3_2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_3_2">
-									<div class="panel-body">
-										点击“+”，填写任务资料，发布任务，就会有合适的译员与用户联系
-									</div>
-								</div>
-							</div>
+                                <div id="collapse_3_2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_3_2">
+                                    <div class="panel-body">
+                                        点击“+”，填写任务资料，发布任务，就会有合适的译员与用户联系
+                                    </div>
+                                </div>
+                            </div>
 
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="section_3_3">
-									<h4 class="panel-title">
-										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_3" href="#collapse_3_3" aria-expanded="false" aria-controls="collapse_3_3">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="section_3_3">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_3" href="#collapse_3_3" aria-expanded="false" aria-controls="collapse_3_3">
 										三、“输入目的地”起到什么作用？
 										</a>
-									</h4>
-								</div>
+                                    </h4>
+                                </div>
 
-								<div id="collapse_3_3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_3_3">
-									<div class="panel-body">
-										目的地指的是用户要到达的城市或者地区，通过输入服务地点，可以匹配出当地的译员
-									</div>
-								</div>
-							</div>
+                                <div id="collapse_3_3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_3_3">
+                                    <div class="panel-body">
+                                        目的地指的是用户要到达的城市或者地区，通过输入服务地点，可以匹配出当地的译员
+                                    </div>
+                                </div>
+                            </div>
 
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="section_3_4">
-									<h4 class="panel-title">
-										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_3" href="#collapse_3_4" aria-expanded="false" aria-controls="collapse_3_4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="section_3_4">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_3" href="#collapse_3_4" aria-expanded="false" aria-controls="collapse_3_4">
 										四、输入目的地和输入语种两者作用是什么？
 										</a>
-									</h4>
-								</div>
+                                    </h4>
+                                </div>
 
-								<div id="collapse_3_4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_3_4">
-									<div class="panel-body">
-										输入目的地和输入语种两者可以找到用户所需要的译员，只是找到译员的路径不同。
-									</div>
-								</div>
-							</div>
+                                <div id="collapse_3_4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_3_4">
+                                    <div class="panel-body">
+                                        输入目的地和输入语种两者可以找到用户所需要的译员，只是找到译员的路径不同。
+                                    </div>
+                                </div>
+                            </div>
 
-							<div class="panel panel-default">
-								<div class="panel-heading" role="tab" id="section_3_5">
-									<h4 class="panel-title">
-										<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_3" href="#collapse_3_5" aria-expanded="false" aria-controls="collapse_3_5">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="section_3_5">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion_3" href="#collapse_3_5" aria-expanded="false" aria-controls="collapse_3_5">
 										四、用户界面下的 “ 管理 ” 功能
 										</a>
-									</h4>
-								</div>
+                                    </h4>
+                                </div>
 
-								<div id="collapse_3_5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_3_5">
-									<div class="panel-body">
-										<p class="text_indent">（1）任务：是指用户发布的所用任务，都会在这儿展现，用户可以修改任务，管理任务</p>
-										<p class="text_indent">（2）订单：用户有发布任务到生成订单，所生成的订单会在这里呈现。</p>
-									</div>
-								</div>
-							</div>
+                                <div id="collapse_3_5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="section_3_5">
+                                    <div class="panel-body">
+                                        <p class="text_indent">（1）任务：是指用户发布的所用任务，都会在这儿展现，用户可以修改任务，管理任务</p>
+                                        <p class="text_indent">（2）订单：用户有发布任务到生成订单，所生成的订单会在这里呈现。</p>
+                                    </div>
+                                </div>
+                            </div>
 
 
-						</div>
-					</div>
-					
-				</div>
+                        </div>
+                    </div>
 
-	        </div>
+                </div>
 
-		</div>
-	</div>
+            </div>
 
-	
-	<hr class="featurette-divider"/>
+        </div>
+    </div>
 
-	<!-- 关于信息 -->
-	<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<ul class="col-xs-12 col-sm-6 col-md-6">
-					<li>
-						<a href="agree.html">用户协议</a>
-					</li>
-					<li>
-						<a href="help.html">问题帮助</a>
-					</li>
-					<li>
-						<a href="contact.html">联系我们</a>
-					</li>
-					<li>
-						<a href="downloads.html">下载APP</a>
-					</li>
-				</ul>
 
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<dl>
-						<dt><h1>400-000-0000</h1></dt>
-						<dd class="visible-xs">
-							<p>工作日: &nbsp;10:00 - 19:00</p>
-							<p>官方邮箱: &nbsp;kefu@globzip.com</p>
-						</dd>
-						<dd class="hidden-xs">
-							<dl class="dl-horizontal">
-								<dt>工作日: </dt>
-								<dd>10:00 - 19:00</dd>
+    <hr class="featurette-divider" />
 
-								<dt>官方邮箱: </dt>
-								<dd>kefu@globzip.com</dd>
-							</dl>
-						</dd>
-					</dl>
-					<div class="row hidden-xs">
-						<div class="col-xs-6 col-sm-3 col-md-3">
-							<div class="thumbnail">
-								<img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
-								<div class="caption">
-									<p>官方微信</p>
-								</div>
-							</div>
-						</div>
+    <!-- 关于信息 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <ul class="col-xs-12 col-sm-6 col-md-6">
+                    <li>
+                        <a href="agree.html">用户协议</a>
+                    </li>
+                    <li>
+                        <a href="help.html">问题帮助</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">联系我们</a>
+                    </li>
+                    <li>
+                        <a href="downloads.html">下载APP</a>
+                    </li>
+                </ul>
 
-						<div class="col-xs-6 col-sm-3 col-md-3">
-							<div class="thumbnail">
-								<img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
-								<div class="caption">
-									<p>官方微博</p>
-								</div>
-							</div>
-						</div>
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <dl>
+                        <dt><h1>400-000-0000</h1></dt>
+                        <dd class="visible-xs">
+                            <p>工作日: &nbsp;10:00 - 19:00</p>
+                            <p>官方邮箱: &nbsp;kefu@globzip.com</p>
+                        </dd>
+                        <dd class="hidden-xs">
+                            <dl class="dl-horizontal">
+                                <dt>工作日: </dt>
+                                <dd>10:00 - 19:00</dd>
 
-						<div class="col-xs-6 col-sm-3 col-md-3">
-							<div class="thumbnail">
-								<img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
-								<div class="caption">
-									<p>Facebook</p>
-								</div>
-							</div>
-						</div>
+                                <dt>官方邮箱: </dt>
+                                <dd>kefu@globzip.com</dd>
+                            </dl>
+                        </dd>
+                    </dl>
+                    <div class="row hidden-xs">
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            <div class="thumbnail">
+                                <img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
+                                <div class="caption">
+                                    <p>官方微信</p>
+                                </div>
+                            </div>
+                        </div>
 
-						<div class="col-xs-6 col-sm-3 col-md-3">
-							<div class="thumbnail">
-								<img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
-								<div class="caption">
-									<p>推特</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<p>GUOKR © 2015 LOVINGLY MADE IN SHANGHAI   沪ICP备16011529号-1 </p>
-			<p>上海壹零捌信息技术有限公司</p>
-		</div>
-	</footer>
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            <div class="thumbnail">
+                                <img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
+                                <div class="caption">
+                                    <p>官方微博</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            <div class="thumbnail">
+                                <img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
+                                <div class="caption">
+                                    <p>Facebook</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-3 col-md-3">
+                            <div class="thumbnail">
+                                <img class="codeImg" src="images/2code.jpg" alt="code" style="width: 80px;height: 80px;">
+                                <div class="caption">
+                                    <p>推特</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>GUOKR © 2015 LOVINGLY MADE IN SHANGHAI 沪ICP备16011529号-1 </p>
+            <p>上海壹零捌信息技术有限公司</p>
+        </div>
+    </footer>
 
 
 </body>
+
 </html>
