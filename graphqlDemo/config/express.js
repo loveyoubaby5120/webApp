@@ -16,16 +16,13 @@ module.exports = () => {
   const app = express();
 
   app.use(bodyParser.json());
+  app.use(bodyParser.text({ type: 'application/graphql' }));
 
 
   app.use((req, res, next) => {
-
     let nowDate = new Date().getTime();
-
     console.log("\t-->   ".dim.gray + req.method.bold + "  " + req.originalUrl.dim);
-
     next();
-
     if (res.statusCode == 200) {
       console.log("\t<--   ".dim.gray + req.method.bold + "  " + req.originalUrl.dim + "  " + (res.statusCode + "").green + "  " + ((new Date().getTime() - nowDate) + "ms").yellow);
     }
@@ -39,10 +36,6 @@ module.exports = () => {
   log.use(app);
 
   app.use('/graphql', require('../app/api/graphql'));
-
-  // app.post('/graphql', (req, res) => {
-  //   res.send('Hello!');
-  // });
 
   app.use((err, req, res, next) => {
     res.status(404);

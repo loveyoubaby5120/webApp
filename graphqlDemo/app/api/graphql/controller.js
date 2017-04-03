@@ -9,8 +9,11 @@ export const list = (req, res, next) => {
 };
 
 export const create = (req, res, next) => {
+  console.log(req)
+  console.log(req.body)
   graphql(schema, req.body)
     .then((result) => {
+      console.log(result)
       res.send(JSON.stringify(result, null, 2));
     })
 };
