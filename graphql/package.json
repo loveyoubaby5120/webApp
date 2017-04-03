@@ -1,0 +1,28 @@
+{
+  "name": "graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "express": "^4.15.2",
+    "body-parser": "^1.15.2",
+    "colors": "^1.1.2",
+    "composable-middleware": "^0.3.0",
+    "cookie-parser": "^1.4.3",
+    "crypto": "0.0.3",
+    "formidable": "^1.0.17",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "log4js": "^0.6.38",
+    "moment": "^2.14.1",
+    "querystring": "^0.2.0",
+    "request": "^2.74.0",
+    "url": "^0.11.0"
+  }
+}

@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+
+const app = require('../app.js');
+const config = require('../config/config.js');
+
+app.listen(config.port, () => {
+  console.log('app start, listening on port', config.port);
+});
