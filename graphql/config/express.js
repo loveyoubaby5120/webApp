@@ -4,13 +4,10 @@
 // const colors = require("colors")
 import colors from 'colors';
 import express from 'express';
-// const express = require('express');
 import bodyParser from 'body-parser';
-// const bodyParser = require('body-parser');
-// const querystring = require('querystring');
 import querystring from 'querystring';
+// import schema from '../app/schema';
 import log from './logHelper';
-// const log = require('./logHelper');
 const logger = log.helper;
 
 module.exports = () => {
@@ -40,6 +37,12 @@ module.exports = () => {
   app.use(express.static('./public'));
 
   log.use(app);
+
+  // app.use('/api/users', require('./api/users'));
+
+  app.post('/graphql', (req, res) => {
+    res.send('Hello!');
+  });
 
   app.use((err, req, res, next) => {
     res.status(404);
