@@ -1,13 +1,17 @@
 /**
  * Created by youpeng on 16/7/28.
  */
-const colors = require("colors")
-const express = require('express');
-const bodyParser = require('body-parser');
-const log = require('./logHelper');
+// const colors = require("colors")
+import colors from 'colors';
+import express from 'express';
+// const express = require('express');
+import bodyParser from 'body-parser';
+// const bodyParser = require('body-parser');
+// const querystring = require('querystring');
+import querystring from 'querystring';
+import log from './logHelper';
+// const log = require('./logHelper');
 const logger = log.helper;
-const auth = require('../app/authChecked/authChecked');
-const querystring = require('querystring');
 
 module.exports = () => {
 
@@ -36,7 +40,6 @@ module.exports = () => {
   app.use(express.static('./public'));
 
   log.use(app);
-
 
   app.use((err, req, res, next) => {
     res.status(404);

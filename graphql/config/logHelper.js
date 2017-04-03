@@ -94,14 +94,14 @@ exports.use = (app) => {
 }
 
 // 判断日志目录是否存在，不存在时创建日志目录  
-const checkAndCreateDir = (dir) => {
+function checkAndCreateDir(dir) {
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
   }
 }
 
 // 指定的字符串是否绝对路径  
-const isAbsoluteDir = (path) => {
+function isAbsoluteDir(path) {
   if (path == null)
     return false;
   let len = path.length;
