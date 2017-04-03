@@ -38,11 +38,11 @@ module.exports = () => {
 
   log.use(app);
 
-  // app.use('/api/users', require('./api/users'));
+  app.use('/graphql', require('../app/api/graphql'));
 
-  app.post('/graphql', (req, res) => {
-    res.send('Hello!');
-  });
+  // app.post('/graphql', (req, res) => {
+  //   res.send('Hello!');
+  // });
 
   app.use((err, req, res, next) => {
     res.status(404);
