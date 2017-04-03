@@ -13,7 +13,23 @@ let schema = new GraphQLSchema({
     fields: {
       count: {
         type: GraphQLInt,
-        resolve: function () {
+        //Add description
+        description: 'The count!',
+        resolve: () => {
+          return count;
+        }
+      }
+    }
+  }),
+  //Note：this is the newly added mutation query
+  mutation: new GraphQLObjectType({
+    name: 'RootMutationType',
+    fields: {
+      updateCount: {
+        type: GraphQLInt,
+        description: 'Update the count',
+        resolve: () => {
+          count += 1;
           return count;
         }
       }
