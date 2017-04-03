@@ -1,0 +1,7 @@
+node_modules
+public
+.idea
+npm-debug.log
+.vscode
+dev.sqlite
+.DS_Store
