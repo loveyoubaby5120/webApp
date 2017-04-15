@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Confirm } from 'saas/common/Confirm';
 
-class BaseInfo extends React.Component<void, void> {
+class BaseInfo extends React.Component<any, void> {
   constructor(props) {
     super(props);
   }

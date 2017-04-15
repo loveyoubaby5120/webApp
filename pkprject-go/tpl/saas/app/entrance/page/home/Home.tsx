@@ -13,7 +13,6 @@ export class HomeView extends React.Component<{ router: any; } & WithAppState, v
   }
 
   render() {
-
     return (
       <LayoutBase>
         <Style rules={{
