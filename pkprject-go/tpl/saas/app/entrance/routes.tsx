@@ -1,10 +1,6 @@
 import * as React from 'react';
 import { Router, Route, IndexRedirect, browserHistory } from 'react-router';
-import { route as userRoute } from './page/user/routes';
 import { route as homeRoute } from './page/home/routes';
-import { loginRequired } from 'common/auth';
-import { UserCenter } from './page/user/UserInfo';
-import { ResetPassword } from './page/user/ResetPassword';
 import { WithAppState, withAppState } from 'saas/common/AppStateStore';
 import { Querier, pendingMessage } from 'common/graphql';
 import { get as getPath } from 'object-path';
@@ -93,11 +89,8 @@ export class RootInfo extends React.Component<any & WithAppState, void> {
 }
 
 export const routes = (<Router history={browserHistory}>
-  {userRoute}
   <Route path='/' component={withAppState(RootInfo)}>
     <IndexRedirect to='home' />
     {homeRoute}
-    <Route path='usercenter' component={UserCenter} />
-    <Route path='resetPassword' component={ResetPassword} />
   </Route>
 </Router>);
