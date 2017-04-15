@@ -3,7 +3,7 @@ import { Link } from 'common/Link';
 import * as Radium from 'radium';
 import { WithAppState, withAppState } from 'saas/common/AppStateStore';
 import { withRouter } from 'react-router';
-import { BaseStyles } from '../../BaseStyles';
+import { BaseStyles } from 'saas/common/BaseStyles';
 let Style = Radium.Style;
 
 interface Props {
@@ -31,25 +31,25 @@ export class BaseInfoBox extends React.Component<WithAppState & Props, State> {
             lineHeight: '32px',
           },
         }} />
-        <div style={[BaseStyles.title]}>
+        <div style={[]}>
           高考分数
         </div>
-        <div style={[BaseStyles.option]}>
-          <label htmlFor='total_score' style={[BaseStyles.option.label]}>
+        <div style={[]}>
+          <label htmlFor='total_score' style={[]}>
             总分
               <span style={[{ color: 'red' }]}>*</span>
           </label>
-          <div style={[BaseStyles.option.input]}>
+          <div style={[]}>
             <input type='number'
               className='form-control' />
           </div>
         </div>
         <div style={[{ marginBottom: '40px' }]}>
-          <label htmlFor='discipline' style={[BaseStyles.option.label]}>
+          <label htmlFor='discipline' style={[]}>
             文理
               <span style={[{ color: 'red' }]}>*</span>
           </label>
-          <div style={[BaseStyles.option.input]}>
+          <div style={[]}>
             <select id='discipline'
               className='form-control'
               style={[{ width: '173px' }]}>
@@ -63,7 +63,6 @@ export class BaseInfoBox extends React.Component<WithAppState & Props, State> {
           className='btn btn-success'
           style={[
             { width: '100px' },
-            BaseStyles.opStyle,
           ]}>
           {
             this.props.location.query.url ?
@@ -78,7 +77,6 @@ export class BaseInfoBox extends React.Component<WithAppState & Props, State> {
                 to={this.props.location.query.url}
                 style={[
                   { width: '100px' },
-                  BaseStyles.opStyle,
                 ]}>返回</Link>
             )
             : ''
