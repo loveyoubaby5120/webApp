@@ -49,7 +49,7 @@ export class ConfirmView extends React.Component<WithAppState & void, void> {
               :
               ''
           }
-          <b style={[BaseStyles.title.title]}>{this.props.data.confirm.title}</b>
+          <b style={[BaseStyles.confirm.title]}>{this.props.data.confirm.title}</b>
           <div style={[
             {
               margin: '20px 0px',
@@ -69,7 +69,7 @@ export class ConfirmView extends React.Component<WithAppState & void, void> {
             {
               this.props.data.confirm.ok ?
                 (
-                  <button style={[BaseStyles.opStyle]}
+                  <button style={[BaseStyles.confirm.opStyle]}
                     className='btn btn-success'
                     onClick={this.onOk}>
                     确定
@@ -82,7 +82,7 @@ export class ConfirmView extends React.Component<WithAppState & void, void> {
             {
               this.props.data.confirm.cancel ?
                 (
-                  <button style={[BaseStyles.opStyle]}
+                  <button style={[BaseStyles.confirm.opStyle]}
                     className='btn btn-default'
                     onClick={this.props.data.closeConfirm}>
                     关闭

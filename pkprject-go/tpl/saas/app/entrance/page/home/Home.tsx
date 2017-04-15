@@ -2,14 +2,9 @@ import * as React from 'react';
 import { withRouter } from 'react-router';
 import { Base as LayoutBase } from 'saas/common/layout/Base';
 import { WithAppState, withAppState } from 'saas/common/AppStateStore';
-import { staticBaseURL } from 'common/staticURL';
 import * as Radium from 'radium';
-import { nav } from '../../PublicData';
+import { minghuNav } from '../../PublicData';
 let Style = Radium.Style;
-
-export const staticURL = (img: string) => {
-  return staticBaseURL('saas/' + img);
-};
 
 @Radium
 export class HomeView extends React.Component<{ router: any; } & WithAppState, void> {
@@ -18,7 +13,6 @@ export class HomeView extends React.Component<{ router: any; } & WithAppState, v
   }
 
   render() {
-    let navList = nav(this.props.data.appState.site);
 
     return (
       <LayoutBase>
@@ -34,7 +28,7 @@ export class HomeView extends React.Component<{ router: any; } & WithAppState, v
           style={[
           ]}>
           {
-            navList.map((r, i) => {
+            minghuNav.map((r, i) => {
               return (
                 <div key={i} className='col-sm-12'>
                   <p className='col-sm-12'
@@ -54,7 +48,7 @@ export class HomeView extends React.Component<{ router: any; } & WithAppState, v
                           <div className='thumbnail'
                             onClick={(ev) => {
                               ev.preventDefault();
-                              if (item.openWindow) {
+                              if (item['openWindow']) {
                                 window.open(item.link);
                               } else {
                                 window.location.href = item.link;
@@ -67,7 +61,7 @@ export class HomeView extends React.Component<{ router: any; } & WithAppState, v
                                 padding: '20px 15px',
                               },
                             ]}>
-                            <img src={staticURL(item.icon)}
+                            <img src=''
                               style={[
                                 {
                                   float: 'left',

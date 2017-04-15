@@ -49,14 +49,14 @@ export const minghuNav = [
         permissions: [
         ],
       },
-      // {
-      //   name: '职业数据库',
-      //   link: '/',
-      //   icon: 'career.jpg',
-      //   describe: '精解150种常见职业，全面知晓职业概况',
-      //   permissions: [
-      //   ],
-      // },
+      {
+        name: '职业数据库',
+        link: '/',
+        icon: 'career.jpg',
+        describe: '精解150种常见职业，全面知晓职业概况',
+        permissions: [
+        ],
+      },
       {
         name: '课程数据库',
         link: 'https://www.applysquare.com/course_core-cn/',
@@ -83,68 +83,3 @@ export const minghuNav = [
     ]
   },
 ];
-
-export const fangfangNav = [
-  {
-    navTitle: '在线调查系统',
-    childer: [
-      {
-        name: '问卷设计',
-        link: '/survey/project',
-        openWindow: false,
-        icon: 'survey.jpg',
-        describe: '',
-        permissions: [
-        ],
-      },
-      {
-        name: '问卷发布',
-        link: '/survey/questionnaire',
-        openWindow: false,
-        icon: 'survey.jpg',
-        describe: '',
-        permissions: [
-        ],
-      },
-    ]
-  },
-  {
-    navTitle: '高考报考',
-    childer: [
-      {
-        name: '高考报考辅助系统',
-        link: '/gaokao',
-        openWindow: false,
-        icon: 'gaokao.jpg',
-        describe: '根据考生高考分数，基于学校近十年分数线和录取情况，融合学校实力等因素，预测考生录取概率',
-        permissions: [
-        ],
-      },
-    ]
-  },
-  {
-    navTitle: '个人中心',
-    childer: [
-      {
-        name: '个人中心',
-        link: '/usercenter',
-        openWindow: false,
-        icon: 'userInfo.jpg',
-        describe: '管理个人资料和密码等个人信息',
-        permissions: [
-        ],
-      },
-    ]
-  },
-];
-
-
-export const nav = (site) => {
-  if (site === 'minghu') {
-    return minghuNav;
-  } else if (site === 'fangfang') {
-    return fangfangNav;
-  } else {
-    return [];
-  }
-};

@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { Router, Route, IndexRedirect, browserHistory } from 'react-router';
 import { route as cepingRoute } from './page/ceping/routes';
-import { loginRequired } from 'common/auth';
 
-@loginRequired
 export class RootInfo extends React.Component<any, void> {
   constructor(props) {
     super(props);
