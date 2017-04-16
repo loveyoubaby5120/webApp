@@ -17,7 +17,7 @@ let styles = {
   },
 };
 
-@Radium
+// @Radium
 export class ConfirmView extends React.Component<WithAppState & void, void> {
   constructor(props) {
     super(props);

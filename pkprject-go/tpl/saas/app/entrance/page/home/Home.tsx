@@ -6,13 +6,14 @@ import * as Radium from 'radium';
 import { minghuNav } from '../../PublicData';
 let Style = Radium.Style;
 
-@Radium
+// @Radium
 export class HomeView extends React.Component<{ router: any; } & WithAppState, void> {
   constructor(props) {
     super(props);
   }
 
   render() {
+
     return (
       <LayoutBase>
         <Style rules={{
