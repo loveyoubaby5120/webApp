@@ -1,0 +1,15 @@
+{
+  "name": "fusebox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "fuse-box": "^1.3.131",
+    "typescript": "^2.2.2"
+  }
+}
