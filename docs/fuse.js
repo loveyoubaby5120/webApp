@@ -2,6 +2,7 @@ const {
   BannerPlugin, UglifyJSPlugin,
   FuseBox, SVGPlugin, CSSPlugin, SassPlugin,
   TypeScriptHelpers, BabelPlugin, JSONPlugin, HTMLPlugin,
+  EnvPlugin, ReplacePlugin, UglifyESPlugin,
 } = require("fuse-box");
 
 
@@ -16,6 +17,14 @@ let fuse = new FuseBox({
   },
   // 默认情况下，缓存处于开启状态。FuseBox将.fusebox在您的项目路径中创建一个文件夹，并存储相关文件。
   cache: true,
+  // 您可以将您的包变量公开window（在浏览器中）或exports（在Node中）。
+  package: {
+      name: 'myLibrary',
+      main: 'index.js'
+  },
+  globals: {
+      myLibrary: 'myLibrary'
+  },
   // 输出文件
   outFile: "./build/out.js",
   // 启用的日志和调试功能，它们会降低性能。
@@ -25,6 +34,10 @@ let fuse = new FuseBox({
   modulesFolder: "src/modules",
   // 插件
   plugins: [
+    // 创建全局变量，只能在后面的plugins js 里面使用，所以需要提到前面执行 console.log(process.env.NODE_ENV)
+    EnvPlugin({ NODE_ENV: "production" }),
+    // 替换变量
+    ReplacePlugin({ "process.env.NODE_ENV": JSON.stringify("production") }),
     // 使用UglifyJS2压缩 JavaScript代码
     UglifyJSPlugin(options),
     // 在包的顶部添加带有静态文本的注释

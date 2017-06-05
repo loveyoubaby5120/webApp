@@ -1,24 +1,33 @@
-const fsbx = require('fuse-box');
+const {
+  BannerPlugin, UglifyJSPlugin,
+  FuseBox, SVGPlugin, CSSPlugin, SassPlugin,
+  TypeScriptHelpers, BabelPlugin, JSONPlugin, HTMLPlugin,
+  EnvPlugin, ReplacePlugin, UglifyESPlugin,
+} = require("fuse-box");
 
-const fuseBox = fsbx.FuseBox.init({
+const fuseBox = FuseBox.init({
+  hash: true,
   homeDir: 'src/',
-  sourceMap: {
-    bundleReference: 'app.js.map',
-    outFile: './dist/app.js.map'
-  },
+  sourceMaps: true,
   outFile: './dist/app.js',
+  tsConfig : './tsconfig.json',
   plugins: [
+    EnvPlugin({ NODE_ENV: "magic" }),
+    ReplacePlugin({ "process.env.NODE_ENV": JSON.stringify("production") }),
     [
-      fsbx.SassPlugin({ outputStyle: 'compressed' }),
-      fsbx.CSSPlugin({})
+      SassPlugin({ outputStyle: 'compressed' }),
+      CSSPlugin({})
     ],
-    fsbx.TypeScriptHelpers(),
-    fsbx.JSONPlugin(),
-    fsbx.HTMLPlugin({ useDefault: false })
+    UglifyJSPlugin(),
+    UglifyESPlugin(),
+    TypeScriptHelpers(),
+    JSONPlugin(),
+    HTMLPlugin({ useDefault: false }),
   ]
 });
 
 fuseBox.devServer('>app.ts', {
   port: 4446,
-  httpServer: false
+  httpServer: false,
+  hmr: false,
 });
