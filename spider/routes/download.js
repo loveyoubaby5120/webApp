@@ -73,8 +73,8 @@ router.get('/', function(req, res, next) {
 
 	for(key in conference){
         let Json = [];
-        let size = 30;
-        for (i = 0; i < 10; i++){
+        let size = 50;
+        for (i = 0; i < 20; i++){
             let options = {
                 uri: 'http://dblp.uni-trier.de/search/publ/inc',
                 qs: {
@@ -96,7 +96,8 @@ router.get('/', function(req, res, next) {
 function httpRequest(Json, str, end, res) {
 	var arr = Json.slice(str,end);
     async.forEachLimit(arr, 50, function (item, callback) {
-        request(item, function (error, response, body) {
+        console.log(item)
+        requestHtml(item, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 if (body) {
                     $ = cheerio.load(body);
@@ -109,7 +110,6 @@ function httpRequest(Json, str, end, res) {
                             }
                         }
 					}
-                    
 				}
 			}
 			else{
@@ -125,13 +125,7 @@ function httpRequest(Json, str, end, res) {
 				console.log('结束');
 			}
 
-		},function(err, result){
-			if(err){
-				console.log('获取链接失败');
-			}else{
-				console.log('获取链接结束');
-			}
-		});
+        });
 	});
 }
 
@@ -140,11 +134,11 @@ function downloadXML(id, filename) {
     ids = ids.slice(0, ids.length-1);
     let urlSuffix = `http://dblp.uni-trier.de/rec/xml/${id}.xml`;
     let filenamePath = `./public/upload/${filename}/${ids.join('/')}`;
-    console.log(urlSuffix)
-    request({uri: urlSuffix}, function (error, response, body) {
+    // console.log(urlSuffix)
+    requestHtml({ uri: urlSuffix }, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             if (body) {
-                console.log(urlSuffix + " success")
+                // console.log(urlSuffix + " success")
                 mkdirs(filenamePath, function () {
                     fs.writeFile(`./public/upload/${filename}/${id}.xml`, body, function (err) {
                         if (err) throw err
@@ -158,14 +152,18 @@ function downloadXML(id, filename) {
             console.log("statusCode",response.statusCode)
         }
 
-    },function(err, result){
+    });
+};
+
+function requestHtml(option, callback) { 
+    request(option, callback, function(err, result){
         if(err){
             console.log('获取链接失败');
         }else{
             console.log('获取链接结束');
         }
     });
-};
+}
 
 //递归创建目录 异步方法  
 function mkdirs(dirname, callback) {  
