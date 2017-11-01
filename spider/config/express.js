@@ -28,7 +28,8 @@ module.exports = function(){
 	var weixin = require('../routes/weixin');
 	// var bd = require('../routes/bd');
 	// var newrank = require('../routes/newrank');
-	var demo = require('../routes/demo');
+    var demo = require('../routes/demo');
+    var download = require('../routes/download');
 	var yyzc = require('../routes/yyzc');
 	// var wechatData = require('../routes/wechatData');
 	var wiki = require('../routes/wiki');
@@ -46,7 +47,8 @@ module.exports = function(){
 	app.use('/wiki', wiki);
 	app.use('/map', map);
 	app.use('/people', people);
-	// app.use('/', demo);
+    // app.use('/', demo);
+    app.use('/download', download);
 
 	app.use(function(req, res, next){
 		res.status(404);
