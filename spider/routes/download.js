@@ -8,13 +8,13 @@ var rp = require('request-promise');
 var path = require("path");  
 
 let conference = [
-    'Annual Conference on Neural Information Processing Systems',
+    // 'Annual Conference on Neural Information Processing Systems',
     // 'International Conference on Machine Learning',
     // 'Annual Conference on Computational Learning Theory',
     // 'International Conference on Uncertaintyin Artificial Intelligence',
     // 'International Conference on Learning Representations',
-    // 'International Joint Conference on Artificial Intelligence',
-    // 'AAAI Conference on Artificial Intelligence',
+    'International Joint Conference on Artificial Intelligence',
+    'AAAI Conference on Artificial Intelligence',
     // 'International Conference on Artificial Intelligence and Statistics',
     // 'European Conference on Artificial Intelligence',
     // 'International Conference on Principles of Knowledge Representation and Reasoning',
@@ -96,9 +96,9 @@ router.get('/', function(req, res, next) {
 function httpRequest(Json, str, end, res) {
     var arr = Json.slice(str, end);
     async.forEachLimit(arr, 50, function (item, callback) {
-        console.log(item)
+        // console.log(item)
         requestHtml(item, function (error, response, body) {
-            console.log(body)
+            // console.log(body)
             if (!error && response.statusCode == 200) {
                 if (body) {
                     $ = cheerio.load(body);
