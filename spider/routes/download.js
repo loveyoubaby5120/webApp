@@ -7,27 +7,86 @@ var cheerio = require('cheerio');
 var rp = require('request-promise');
 var path = require("path");  
 
-var keys = [
-    'Annual Conference on Neural Information Processing Systems'
+let conference = [
+    'Annual Conference on Neural Information Processing Systems',
+    'International Conference on Machine Learning',
+    'Annual Conference on Computational Learning Theory',
+    'International Conference on Uncertaintyin Artificial Intelligence',
+    'International Conference on Learning Representations',
+    'International Joint Conference on Artificial Intelligence',
+    'AAAI Conference on Artificial Intelligence',
+    'International Conference on Artificial Intelligence and Statistics',
+    'European Conference on Artificial Intelligence',
+    'International Conference on Principles of Knowledge Representation and Reasoning',
+    'International Conference on Case- Based Reasoning',
+    'ACM Knowledge Discovery and Data Mining',
+    'International Conference on Data Mining',
+    'IEEE International Conference on Data Engineering',
+    'International Conference on Research on Development in Information Retrieval',
+    'ACM International Conference on Web Search and Data Mining',
+    'SIAM International Conference on Data Mining',
+    'European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases',
+    'International World Wide Web Conferences',
+    'ACM International Conference on Information and Knowledge Management',
+    'International Conference on Very Large Data Bases',
+    'IEEE Conference on Computer Vision and Pattern Recognition',
+    'International Conference on Computer Vision',
+    'European Conference on Computer Vision',
+    'ACM International Conference on Multimedia',
+    'Asian Conference on Computer Vision',
+    'Annual Meeting of the Association for Computational Linguistics',
+    'Conference on Empirical Methods on Natural Language Processing',
+    'International Conference on Computational Linguistics',
+    'Applied Natural Language Processing Conference (ANLP)',
+    'European Chapter of ACL (EACL)',
+    'North American Chapter of ACL (NAACL)',
+    'IEEE International Conference on Robotics and Automation',
+    'International Conference on Automated Planning and Scheduling',
+    'International Joint Conference on Autonomous Agents and Multi- agent Systems',
+    'International Conference on Intelligent RObots and Systems - IROS',
+    'Robotics: Science and Systems(http://www.roboticsproceedings.org/)',
+];
+
+let journal = [
+    'Journal of Machine Learning Research (JMLR)',
+    'Pattern Recognition',
+    'IEEE Trans on Pattern Analysis and Machine Intelligence',
+    'ACM Transactions on Intelligent Systems and Technology (TIST)',
+    'Artificial Intelligence',
+    'IEEE Transactions on Knowledge and Data Engineering',
+    'ACM Transactions on Information Systems',
+    'ACM Transactions on Knowledge Discovery from Data',
+    'International Journal of Computer Vision',
+    'Computer Vision and Image Understanding',
+    'IEEE Transactions on Image Processing',
+    'IEEE/ ACM Transactions on Audio, Speech, and Language Processing',
+    'Transactions of the Association of the Computational Linguistics',
+    'Computational Linguistics Journal',
+    'ACM Transactions on Speech and Language Processing',
+    'IEEE Transactions on Robotics',
+    'The International Journal of Robotics Research (IJRR)',
 ];
 /* GET home page. */
 
 router.get('/', function(req, res, next) {
 	console.log('start spider');
 
-	for(key in keys){
+	for(key in conference){
+        let Json = [];
+        let size = 30;
+        for (i = 0; i < 10; i++){
+            let options = {
+                uri: 'http://dblp.uni-trier.de/search/publ/inc',
+                qs: {
+                    q: conference[key],
+                    h: size,
+                    f: i * size,
+                },
+            };
+    
+            Json.push(options);
+        }
 
-		var Json = [];
-        var options = {
-            uri: 'http://dblp.uni-trier.de/search/publ/inc',
-            qs: {
-                q: keys[key],
-                h: 30,
-                f: 0,
-            },
-        };
-
-        Json.push(options);
 		httpRequest(Json,0,50,res);
 	}
 	console.log('end spider');
