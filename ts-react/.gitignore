@@ -1,0 +1,22 @@
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Folders
+_obj
+_test
+
+# Architecture specific extensions/prefixes
+*.[568vq]
+[568vq].out
+
+*.test
+*.prof
+/node_modules
+/dist
+/npm-debug.log
+.tags
+.tags_sorted_by_file
+/tmp
+.DS_Store

@@ -1,0 +1,19 @@
+{
+    "name": "@types/react-router-bootstrap",
+    "version": "0.0.27",
+    "description": "TypeScript definitions for react-router-bootstrap",
+    "license": "MIT",
+    "author": "Vincent Lesierse <https://github.com/vlesierse>",
+    "main": "",
+    "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/react": "*",
+        "@types/react-router": "file:../react-router"
+    },
+    "typings": "index.d.ts",
+    "typesPublisherContentHash": "dd2b426e5b6930372a48edce4e668a83ffe9a7013e3b1b90335c4acd61c99765"
+}

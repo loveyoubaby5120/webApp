@@ -1,0 +1,30 @@
+.simditor-body img {
+    max-width: 100%;
+    height: auto;
+}
+
+.simditor-clearhtml-fa-eraser:before {
+  content: "\f12d";
+  font-family: FontAwesome;
+}
+
+.simditor .simditor-body li.simditor-checkitem {
+  margin: 0;
+  pointer-events: none;
+  list-style-type: none;
+}
+.simditor .simditor-body li.simditor-checkitem::before {
+  content: "\f096";
+  font-family: FontAwesome;
+  pointer-events: all;
+  display: inline-block;
+  margin-left: -29px;
+  width: 30px;
+  cursor: pointer;
+  vertical-align: middle;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.simditor .simditor-body li.simditor-checkitem.simditor-checkitem-checked::before {
+  content: "\f046";
+}

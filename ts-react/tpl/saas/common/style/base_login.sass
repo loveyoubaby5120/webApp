@@ -1,0 +1,89 @@
+$imgUrl: '//cdn.applysquare.net';
+
+.animation
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    padding-top: 90px
+    animation: myfirst 12s infinite
+    @at-root
+        @keyframes myfirst
+            0%
+                background-image: url(#{$imgUrl}/static/img/ccss/banner_1.jpg)
+            33%
+                background-image: url(#{$imgUrl}/static/img/ccss/banner_1.jpg)
+            66%
+                background-image: url(#{$imgUrl}/static/img/ccss/banner_2.jpg)
+            100%
+                background-image: url(#{$imgUrl}/static/img/ccss/banner_3.jpg)
+
+.animationHome
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    height: 100%
+    animation: myfirst 12s infinite
+    @at-root
+        @keyframes myfirst
+            0%
+                background-image: url(#{$imgUrl}/static/img/ccss/banner_4.jpg)
+            33%
+                background-image: url(#{$imgUrl}/static/img/ccss/banner_4.jpg)
+            66%
+                background-image: url(#{$imgUrl}/static/img/ccss/banner_2.jpg)
+            100%
+                background-image: url(#{$imgUrl}/static/img/ccss/banner_3.jpg)
+
+.checkAnimation
+    color: #66CC66
+    animation: myfirst2 1s
+    @at-root
+        @keyframes myfirst2
+            0%
+                color: #000
+            100%
+                color: #66CC66
+.checkAnimation2
+    color: #66CC66
+    animation: myfirst2 3s
+
+.checkAnimation3
+    color: #66CC66
+    animation: myfirst2 4s
+
+.checkAnimation4
+    color: #66CC66
+    animation: myfirst2 5s
+
+.upcheck-click-disabled
+    opacity: 0
+    z-index: 0
+    animation: upCheckClickDisabled 5s
+    @at-root
+        @keyframes upCheckClickDisabled
+            0%
+                opacity: 1
+                z-index: 1
+            100%
+                opacity: 0
+                z-index: 0
+
+.upcheck-click
+    position: absolute
+    left: 0
+    opacity: 1
+    z-index: 1
+    animation: upCheckClick 5s
+    @at-root
+        @keyframes upCheckClick
+            0%
+                opacity: 0
+                z-index: -1
+            100%
+                opacity: 1
+                z-index: 1
