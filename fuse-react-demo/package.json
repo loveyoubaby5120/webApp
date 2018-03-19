@@ -45,9 +45,14 @@
         "node-sass": "^4.5.2",
         "tslib": "^1.6.0",
         "typescript": "^2.2.1",
-        "uglify-js": "^3.0.15"
+        "uglify-js": "^3.0.15",
+        "jquery": "3.2.0",
+        "Promise": "6.1.0",
+        "jquery.cookie": "1.4.1"
     },
     "dependencies": {
+        "@types/jquery": "2.0.32",
+        "@types/jquery.cookie": "1.4.28",
         "antd": "~2.13.0",
         "deepcopy": "^0.6.3",
         "enquire.js": "^2.1.1",
