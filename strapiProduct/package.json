@@ -21,8 +21,7 @@
   "dependencies": {
     "lodash": "4.x.x",
     "strapi": "3.0.0-alpha.11.3",
-    "strapi-bookshelf": "3.0.0-alpha.11.3",
-    "pg": "7.4.1"
+    "strapi-mongoose": "3.0.0-alpha.11.3"
   },
   "author": {
     "name": "pankai",
@@ -37,7 +36,7 @@
     }
   ],
   "strapi": {
-    "uuid": "06d4855e-8f7b-4fd3-9730-776f2c8a1b52"
+    "uuid": "98a504b9-5dac-4b95-9faf-51237c4e7706"
   },
   "engines": {
     "node": ">= 7.0.0",
